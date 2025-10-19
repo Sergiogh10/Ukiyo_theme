@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #8B4513; /* warm-terracotta */
+  --color-primary-50: #FDF7F3; /* warm-terracotta-50 */
+  --color-primary-100: #F9E8D9; /* warm-terracotta-100 */
+  --color-primary-200: #F2D1B3; /* warm-terracotta-200 */
+  --color-primary-300: #E8B48D; /* warm-terracotta-300 */
+  --color-primary-400: #D19767; /* warm-terracotta-400 */
+  --color-primary-500: #B8794A; /* warm-terracotta-500 */
+  --color-primary-600: #8B4513; /* warm-terracotta-600 */
+  --color-primary-700: #6B3410; /* warm-terracotta-700 */
+  --color-primary-800: #4A240B; /* warm-terracotta-800 */
+  --color-primary-900: #2A1406; /* warm-terracotta-900 */
+
+  /* Secondary Colors */
+  --color-secondary: #9CAF88; /* sage-green */
+  --color-secondary-50: #F7F9F5; /* sage-green-50 */
+  --color-secondary-100: #EDF2E8; /* sage-green-100 */
+  --color-secondary-200: #DBE5D1; /* sage-green-200 */
+  --color-secondary-300: #C9D8BA; /* sage-green-300 */
+  --color-secondary-400: #B7CBA3; /* sage-green-400 */
+  --color-secondary-500: #9CAF88; /* sage-green-500 */
+  --color-secondary-600: #7D8C6D; /* sage-green-600 */
+  --color-secondary-700: #5E6952; /* sage-green-700 */
+  --color-secondary-800: #3F4637; /* sage-green-800 */
+  --color-secondary-900: #20231C; /* sage-green-900 */
+
+  /* Accent Colors */
+  --color-accent: #D4A574; /* golden-sand */
+  --color-accent-50: #FDF9F4; /* golden-sand-50 */
+  --color-accent-100: #F9F0E4; /* golden-sand-100 */
+  --color-accent-200: #F2E1C9; /* golden-sand-200 */
+  --color-accent-300: #EBD2AE; /* golden-sand-300 */
+  --color-accent-400: #E4C393; /* golden-sand-400 */
+  --color-accent-500: #D4A574; /* golden-sand-500 */
+  --color-accent-600: #B8905F; /* golden-sand-600 */
+  --color-accent-700: #9C7B4A; /* golden-sand-700 */
+  --color-accent-800: #806635; /* golden-sand-800 */
+  --color-accent-900: #645120; /* golden-sand-900 */
+
+  /* Background Colors */
+  --color-background: #FEFCF8; /* warm-white */
+  --color-surface: #F5F2ED; /* subtle-cream */
+
+  /* Text Colors */
+  --color-text-primary: #2C2C2C; /* rich-charcoal */
+  --color-text-secondary: #6B6B6B; /* medium-gray */
+
+  /* Status Colors */
+  --color-success: #7A9471; /* natural-green */
+  --color-success-50: #F6F8F5; /* natural-green-50 */
+  --color-success-100: #EDF1EB; /* natural-green-100 */
+  --color-success-200: #DBE3D7; /* natural-green-200 */
+  --color-success-300: #C9D5C3; /* natural-green-300 */
+  --color-success-400: #B7C7AF; /* natural-green-400 */
+  --color-success-500: #7A9471; /* natural-green-500 */
+  --color-success-600: #65795C; /* natural-green-600 */
+  --color-success-700: #505E47; /* natural-green-700 */
+  --color-success-800: #3B4332; /* natural-green-800 */
+  --color-success-900: #26281D; /* natural-green-900 */
+
+  --color-warning: #C4915C; /* warm-amber */
+  --color-warning-50: #FBF7F3; /* warm-amber-50 */
+  --color-warning-100: #F6EDE2; /* warm-amber-100 */
+  --color-warning-200: #EDDBC5; /* warm-amber-200 */
+  --color-warning-300: #E4C9A8; /* warm-amber-300 */
+  --color-warning-400: #DBB78B; /* warm-amber-400 */
+  --color-warning-500: #C4915C; /* warm-amber-500 */
+  --color-warning-600: #A5784D; /* warm-amber-600 */
+  --color-warning-700: #865F3E; /* warm-amber-700 */
+  --color-warning-800: #67462F; /* warm-amber-800 */
+  --color-warning-900: #482D20; /* warm-amber-900 */
+
+  --color-error: #A0674B; /* earthy-red */
+  --color-error-50: #F8F5F3; /* earthy-red-50 */
+  --color-error-100: #F0E8E3; /* earthy-red-100 */
+  --color-error-200: #E1D1C7; /* earthy-red-200 */
+  --color-error-300: #D2BAAB; /* earthy-red-300 */
+  --color-error-400: #C3A38F; /* earthy-red-400 */
+  --color-error-500: #A0674B; /* earthy-red-500 */
+  --color-error-600: #85553E; /* earthy-red-600 */
+  --color-error-700: #6A4331; /* earthy-red-700 */
+  --color-error-800: #4F3124; /* earthy-red-800 */
+  --color-error-900: #341F17; /* earthy-red-900 */
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Crimson Text', serif;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .font-accent {
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-inter font-semibold transition-all duration-300 ease-out hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-300;
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.08);
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white px-6 py-3 rounded-lg font-inter font-semibold transition-all duration-300 ease-out hover:bg-secondary-600 focus:outline-none focus:ring-2 focus:ring-secondary-300;
+    box-shadow: 0 4px 20px rgba(156, 175, 136, 0.08);
+  }
+
+  .card {
+    @apply bg-white rounded-lg p-6 transition-all duration-300 ease-out;
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.08);
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(139, 69, 19, 0.12);
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-surface rounded-lg bg-white text-text-primary placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-transparent transition-all duration-300 ease-out;
+  }
+
+  .parallax-element {
+    transition: transform 300ms ease-out;
+  }
+
+  .content-separator {
+    @apply border-t border-surface;
+  }
+}
+
+@layer utilities {
+  .text-shadow-soft {
+    text-shadow: 0 2px 4px rgba(44, 44, 44, 0.1);
+  }
+
+  .bg-gradient-warm {
+    background: linear-gradient(135deg, var(--color-background) 0%, var(--color-surface) 100%);
+  }
+
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-700) 100%);
+  }
+
+  .bg-gradient-secondary {
+    background: linear-gradient(135deg, var(--color-secondary-500) 0%, var(--color-secondary-600) 100%);
+  }
+}
