@@ -6,7 +6,7 @@ get_header();
 ?>
 
 <!-- Hero Section -->
-<section class="relative pt-24 pb-20 overflow-hidden font-satoshi">
+<section class="relative pt-24 pb-20 overflow-hidden font-satoshi bg-surface">
   <div class="absolute inset-0 opacity-5">
     <svg class="w-full h-full" viewBox="0 0 100 100" fill="currentColor">
       <pattern id="cultural-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">

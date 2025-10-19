@@ -2764,3 +2764,127 @@ input[type="range"].accent-primary::-moz-range-thumb:hover {
   .font-satoshi { font-family: var(--font-sans) !important; }
   .font-telma   { font-family: var(--font-display) !important; }
 }
+
+/* === UKIYO Reviews Grid (paleta personalizada) === */
+.ukiyo-rg {
+  --rg-bg: #EDEBE5;            /* fondo neutro arena */
+  --rg-white: #FFFFFF;         /* blanco puro */
+  --rg-beige: #B4AAA0;         /* neutro medio */
+  --rg-green: #9BAE9E;         /* tono verde grisáceo */
+  --rg-sand: #EBD2AE;          /* arena cálida */
+  --rg-gold: #ddcbb7;          /* acento dorado */
+  --rg-radius: 12px;
+  --rg-shadow: 5px 5px 20px rgba(0,0,0,0.08);
+
+  width: 100%;
+  background: var(--rg-bg);
+  padding: 3rem 1.5rem;
+  border-radius: 24px;
+  color: var(--rg-beige);
+}
+
+.ukiyo-rg .rg-inner {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-rows: repeat(2, 22rem);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.ukiyo-rg .rg-card {
+  padding: 1.5rem 1.8rem;
+  border-radius: var(--rg-radius);
+  box-shadow: var(--rg-shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--rg-white);
+  color: #2b2b2b;
+}
+
+/* Variaciones de fondo con la paleta UKIYO */
+.ukiyo-rg .rg-card--cream  { background: var(--rg-bg); color: #2b2b2b; }
+.ukiyo-rg .rg-card--sand   { background: var(--rg-sand); color: #3b3227; }
+.ukiyo-rg .rg-card--green  { background: var(--rg-green); color: var(--rg-white); }
+.ukiyo-rg .rg-card--gold   { background: var(--rg-gold); color: var(--rg-white); }
+.ukiyo-rg .rg-card--white  { background: var(--rg-white); color: #2b2b2b; }
+
+/* Cabecera */
+.ukiyo-rg .rg-header { display:flex; align-items:flex-start; flex-direction:column; gap:0rem; }
+.ukiyo-rg .rg-user { display:flex; }
+.ukiyo-rg .rg-user-box { margin-right: 0rem; }
+.ukiyo-rg .rg-detbox { display:flex; flex-direction:column; justify-content:center; }
+
+.ukiyo-rg .rg-name {
+  margin: 0;
+  font-weight: 600;
+  font-size: .95rem;
+  color: #2b2b2b;
+}
+.ukiyo-rg .rg-designation {
+  margin: 0;
+  font-size: .85rem;
+  color: var(--rg-beige);
+  opacity: .9;
+}
+
+/* Rating */
+.ukiyo-rg .rg-rating { display:flex; align-items:center; gap:.25rem; }
+.ukiyo-rg .rg-star {
+  width: 1rem;
+  height: 1rem;
+  color: var(--rg-gold);
+}
+.ukiyo-rg .rg-score {
+  margin-left:.25rem;
+  font-size:.75rem;
+  color: var(--rg-beige);
+  opacity:.9;
+}
+
+/* Texto */
+.ukiyo-rg .rg-review { margin-top: .9rem; }
+.ukiyo-rg .rg-title {
+  font-size: 1.2rem;
+  line-height: 1.45;
+  margin: 0 0 .6rem 0;
+  font-weight: 700;
+  color: #2b2b2b;
+}
+.ukiyo-rg .rg-text {
+  font-size: .95rem;
+  line-height: 1.55;
+  margin: 0;
+  color: #4b4b4b;
+  opacity: .9;
+}
+
+/* Ajustes de contraste en tarjetas oscuras */
+.ukiyo-rg .rg-card--green .rg-name,
+.ukiyo-rg .rg-card--gold .rg-name,
+.ukiyo-rg .rg-card--green .rg-title,
+.ukiyo-rg .rg-card--gold .rg-title,
+.ukiyo-rg .rg-card--green .rg-text,
+.ukiyo-rg .rg-card--gold .rg-text {
+  color: var(--rg-white);
+}
+.ukiyo-rg .rg-card--green .rg-designation,
+.ukiyo-rg .rg-card--gold .rg-designation,
+.ukiyo-rg .rg-card--green .rg-score,
+.ukiyo-rg .rg-card--gold .rg-score {
+  color: var(--rg-white);
+  opacity: .85;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .ukiyo-rg .rg-inner {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    grid-template-rows: none;
+  }
+}
+@media (max-width: 640px) {
+  .ukiyo-rg { padding: 1.5rem; }
+  .ukiyo-rg .rg-inner { display: flex; flex-direction: column; }
+}

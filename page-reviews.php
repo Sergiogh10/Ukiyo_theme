@@ -12,36 +12,44 @@ $uri = get_template_directory_uri();
  */
 $reviews = [
   [
-    'name' => 'María & Javier',
-    'meta' => 'Viaje a Colombia · 12 días',
-    'img'  => $uri . '/images/reviews/maria-javier.jpg',
+    'name' => 'Maite & Ramón',
+    'meta' => 'Viaje a Indonesia · 15 días',
+    'img'  => $uri . '/images/reviews/caballos.jpg',
     'alt'  => 'María y Javier en Cartagena',
     'text' => 'Queríamos un viaje “de verdad” y lo conseguimos: gente local, música, comida y calma. Nada de prisas ni turisteo. Volvimos con amigos y con ganas de repetir.',
     'rating' => 5
   ],
   [
-    'name' => 'Irene R.',
+    'name' => 'Cristina',
     'meta' => 'Indonesia · 15 días',
-    'img'  => $uri . '/images/reviews/irene.jpg',
+    'img'  => $uri . '/images/reviews/costaricareview.jpg',
     'alt'  => 'Irene en terrazas de arroz',
     'text' => 'El itinerario fue una pasada y se notó la mano local. Lo mejor: las conversaciones con familias y artesanos. Sentí que viajaba, no que “visitaba”.',
     'rating' => 5
   ],
   [
-    'name' => 'David & Laura',
-    'meta' => 'Costa Rica · 10 días',
-    'img'  => $uri . '/images/reviews/david-laura.jpg',
+    'name' => 'Carmen & Jose Ángel',
+    'meta' => 'Indonesia · 18 días',
+    'img'  => $uri . '/images/reviews/indonesiareview.jpg',
     'alt'  => 'David y Laura en bosque nuboso',
     'text' => 'Naturaleza brutal y alojamientos con mucho encanto. Todo fluyó sin pensar en logística. Simplemente disfrutamos.',
     'rating' => 5
   ],
   [
-    'name' => 'Sofía M.',
-    'meta' => 'Marruecos · 8 días',
-    'img'  => $uri . '/images/reviews/sofia.jpg',
+    'name' => 'María R.',
+    'meta' => 'Indonesia (Java) · 4 días',
+    'img'  => $uri . '/images/reviews/costarica2review.jpg',
     'alt'  => 'Sofía en medina',
     'text' => 'Cercanía, respeto y experiencias fuera de lo obvio. Me sentí acompañada en todo momento.',
     'rating' => 4.8
+  ],
+  [
+    'name' => 'Carolina & Carmen',
+    'meta' => 'Cuba · 15 días',
+    'img'  => $uri . '/images/reviews/conjulian.jpg',
+    'alt'  => 'Greta en La Sierra',
+    'text' => 'Un lugar cómodo para desconectar y disfrutar sin prisas. Trato cercano y auténtico; volveré seguro.',
+    'rating' => 5
   ],
 ];
 ?>
@@ -84,76 +92,107 @@ $reviews = [
   </div>
 </section>
 
+<style>
+/* Scoped fixes for Reviews layout */
+.ukiyo-rg .rg-inner{display:grid;grid-gap:1.5rem;grid-template-rows:repeat(2,22rem);grid-template-columns:repeat(4,minmax(0,1fr));}
+.ukiyo-rg .rg-pos-a{grid-column:1/3;grid-row:1/2;}
+.ukiyo-rg .rg-pos-b{grid-column:3/4;grid-row:1/2;}
+.ukiyo-rg .rg-pos-c{grid-column:4/5;grid-row:1/3;}
+.ukiyo-rg .rg-pos-d{grid-column:2/4;grid-row:2/3;}
+.ukiyo-rg .rg-pos-e{grid-column:1/2;grid-row:2/3;}
+@media (max-width:1000px){
+  .ukiyo-rg .rg-inner{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;}
+  .ukiyo-rg .rg-pos-a,.ukiyo-rg .rg-pos-b,.ukiyo-rg .rg-pos-c,.ukiyo-rg .rg-pos-d,.ukiyo-rg .rg-pos-e{grid-column:1/3;grid-row:auto;}
+}
+@media (max-width:640px){
+  .ukiyo-rg .rg-inner{display:flex;flex-direction:column;}
+}
+/* Color/contrast adjustments using your palette variables already in main.css */
+.ukiyo-rg .rg-card--green .rg-name,
+.ukiyo-rg .rg-card--gold .rg-name,
+.ukiyo-rg .rg-card--green .rg-title,
+.ukiyo-rg .rg-card--gold .rg-title,
+.ukiyo-rg .rg-card--green .rg-text,
+.ukiyo-rg .rg-card--gold .rg-text{color:#FFFFFF;}
+.ukiyo-rg .rg-card--green .rg-designation,
+.ukiyo-rg .rg-card--gold .rg-designation,
+.ukiyo-rg .rg-card--green .rg-score,
+.ukiyo-rg .rg-card--gold .rg-score{color:#FFFFFF;opacity:.85;}
+</style>
+
 <section class="py-14 bg-surface">
-  <div class="container mx-auto px-6">
-
-    <!-- Puedes añadir, quitar u ordenar reviews editando el array $reviews al inicio del archivo -->
-
-    <ul role="list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <?php foreach ($reviews as $i => $r): ?>
-        <li class="group relative rounded-2xl bg-white/70 backdrop-blur-[2px] ring-1 ring-border/60 hover:ring-border transition overflow-hidden">
-          <article class="h-full flex flex-col">
-            <figure class="aspect-[4/3] overflow-hidden">
-              <img
-                src="<?php echo esc_url($r['img']); ?>"
-                alt="<?php echo esc_attr($r['alt']); ?>"
-                class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700 ease-out"
-                loading="lazy"
-                decoding="async"
-                onerror="this.src='https://images.pexels.com/photos/1430117/pexels-photo-1430117.jpeg'; this.onerror=null;">
-            </figure>
-
-            <div class="p-6 flex-1 flex flex-col">
-              <!-- Rating visual estático -->
-              <div class="flex items-center gap-1 mb-3" aria-label="Valoración">
-                <?php
-                  $full = floor($r['rating']);
-                  $half = ($r['rating'] - $full) >= 0.5 ? 1 : 0;
-                  for ($s=0; $s < $full; $s++) {
-                    echo '<svg class="w-4 h-4 text-amber-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.803 2.036a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.803-2.036a1 1 0 00-1.175 0l-2.803 2.036c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81H7.03a1 1 0 00.951-.69l1.07-3.292z"/></svg>';
-                  }
-                  if ($half) {
-                    echo '<svg class="w-4 h-4 text-amber-500" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="half"><stop offset="50%" stop-color="currentColor"/><stop offset="50%" stop-color="transparent"/></linearGradient></defs><path fill="url(#half)" d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.401 8.168L12 18.896l-7.335 3.869 1.401-8.168L.132 9.21l8.2-1.192z"/></svg>';
-                  }
-                ?>
-                <span class="ml-2 text-xs text-text-tertiary"><?php echo number_format($r['rating'], 1); ?>/5</span>
-              </div>
-
-              <blockquote class="text-base text-text-primary leading-relaxed">
-                “<?php echo esc_html($r['text']); ?>”
-              </blockquote>
-
-              <footer class="mt-5 flex items-center gap-3">
-                <div class="size-10 rounded-full overflow-hidden ring-1 ring-border/60">
-                  <img src="<?php echo esc_url($r['img']); ?>" alt="" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                </div>
-                <div>
-                  <p class="text-sm font-satoshi text-text-primary">
-                    <?php echo esc_html($r['name']); ?>
-                  </p>
-                  <p class="text-xs text-text-tertiary">
-                    <?php echo esc_html($r['meta']); ?>
-                  </p>
-                </div>
-              </footer>
+  <div class="ukiyo-rg">
+    <div class="rg-inner">
+      <?php
+        // Paletas de tarjeta (rota entre varias)
+        $paletas = ['green','green','green','green','green'];
+        $posiciones = ['pos-a','pos-b','pos-c','pos-d','pos-e'];
+        foreach ($reviews as $i => $r):
+          $palette = $paletas[$i % count($paletas)];
+          $pos = $posiciones[$i % count($posiciones)];
+      ?>
+        <article class="rg-card rg-card--<?php echo esc_attr($palette); ?> rg-<?php echo esc_attr($pos); ?>"
+          style="background-image:url('<?php echo esc_url($r['img']); ?>'); background-size:cover; background-position:center; background-blend-mode: multiply;">        
+          <!-- Cabecera: avatar opcional eliminado; dejamos nombre + meta -->
+        <header class="rg-header">
+          <div class="rg-user">
+            <div class="rg-user-box">
+              <!-- Si quisieras iniciales en un circulito, descomenta:
+              <div class="rg-initials"><?php echo strtoupper(substr($r['name'],0,1)); ?></div>
+              -->
             </div>
-          </article>
-        </li>
-      <?php endforeach; ?>
-    </ul>
+            <div class="rg-detbox">
+              <p class="rg-name"><?php echo esc_html($r['name']); ?></p>
+              <p class="rg-designation"><?php echo esc_html($r['meta']); ?></p>
+            </div>
+          </div>
 
-    <!-- CTA -->
-    <div class="mt-16 text-center">
-      <a href="<?php echo esc_url( site_url('/planifica-tu-viaje') ); ?>"
-         class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-white font-semibold hover:bg-primary/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary transition">
-        Diseña tu aventura
-        <svg aria-hidden="true" class="size-4" viewBox="0 0 24 24" fill="none">
-          <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-      <p class="mt-3 text-sm text-text-tertiary">Sin compromiso. Empezamos con una conversación.</p>
+          <!-- Rating -->
+          <div class="rg-rating" aria-label="Valoración">
+            <?php
+              $full = floor($r['rating']);
+              $half = ($r['rating'] - $full) >= 0.5 ? 1 : 0;
+              for ($s=0; $s < $full; $s++) {
+                echo '<svg class="rg-star" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.803 2.036a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.803-2.036a1 1 0 00-1.175 0l-2.803 2.036c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81H7.03a1 1 0 00.951-.69l1.07-3.292z"/></svg>';
+              }
+              if ($half) {
+                echo '<svg class="rg-star" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="rg-half"><stop offset="50%" stop-color="currentColor"/><stop offset="50%" stop-color="transparent"/></linearGradient></defs><path fill="url(#rg-half)" d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.401 8.168L12 18.896l-7.335 3.869 1.401-8.168L.132 9.21l8.2-1.192z"/></svg>';
+              }
+            ?>
+            <span class="rg-score"><?php echo number_format($r['rating'], 1); ?>/5</span>
+          </div>
+        </header>
+
+        <!-- Texto -->
+        <div class="rg-review">
+          <h4 class="rg-title">
+            <?php
+              // Primeras frases del texto como “titulo corto”
+              $titulo = wp_trim_words($r['text'], 18, '…');
+              echo esc_html($titulo);
+            ?>
+          </h4>
+          <p class="rg-text">“ <?php echo esc_html($r['text']); ?> ”</p>
+        </div>
+      </article>
+      <?php endforeach; ?>
     </div>
   </div>
+</section>
+    <!-- CTA -->
+     
+<section class="py-20 bg-gradient-primary text-white text-center">
+    <div class="container mx-auto px-6 max-w-3xl">
+        <h2 class="text-display font-telma mb-6">¿No encuentras tu viaje ideal?</h2>
+        <p class="text-xl mb-8 opacity-90">Cada persona viaja a su manera.
+Cuéntanos qué te mueve y crearemos juntos una experiencia que encaje contigo.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="<?php echo esc_url( site_url('/planifica-tu-viaje') ); ?>" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/80 transition" aria-label="Abrir formulario para contarnos tu idea">
+  Cuéntanos tu idea
+</a>
+            <!-- <a href="<?php echo esc_url( site_url('/about') ); ?>" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition">Hablar con un Curador</a> -->
+        </div>
+    </div>
 </section>
 
 <!-- Accesibilidad: reducir animaciones si el usuario lo prefiera -->
