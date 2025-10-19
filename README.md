@@ -93,15 +93,6 @@ Trabaja sobre tailwind.css y recompila.
 Creemos en viajar sin prisa, en la belleza de lo efímero y en conectar con las culturas desde el respeto.
 Cada destino es una historia; cada historia, una transformación.
 
-⸻
-
-## 📬 Contacto
-
-🌐 ukiyotravel.com
-📧 contacto@ukiyotravel.com
-📸 @ukiyo.travel
-
-⸻
 
 ## Licencia
 
