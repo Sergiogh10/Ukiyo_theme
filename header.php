@@ -40,6 +40,9 @@
                 <a href="<?php echo esc_url( get_permalink( get_page_by_path('pricing') ) ); ?>" 
                    class="text-text-secondary hover:text-primary transition-colors duration-300">Precios</a>
 
+                <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" 
+                   class="text-text-secondary hover:text-primary transition-colors duration-300">Viajes de autor</a>
+
               <!--  <a href="<?php echo esc_url( site_url('/sustainability') ); ?>" 
                    class="text-text-secondary hover:text-primary transition-colors duration-300">Sostenibilidad</a> -->
 
@@ -72,6 +75,7 @@
                 <a href="<?php echo esc_url( get_permalink( get_page_by_path('experiencias') ) ); ?>" class="text-text-secondary">Destinos</a>
                <!-- <a href="<?php echo esc_url( get_permalink( get_page_by_path('guias') ) ); ?>" class="text-text-secondary">Guías</a> -->
                 <a href="<?php echo esc_url( get_permalink( get_page_by_path('pricing') ) ); ?>" class="text-text-secondary">Precios</a>
+                <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" class="text-text-secondary">Viajes de autor</a>
                <!-- <a href="<?php echo esc_url( site_url('/sustainability') ); ?>" class="text-text-secondary">Sostenibilidad</a> -->
                 <a href="<?php echo esc_url( get_permalink( get_page_by_path('nosotros') ) ); ?>" class="text-text-secondary">Nosotros</a>
                 <a href="<?php echo esc_url( get_permalink( get_page_by_path('resenas') ) ); ?>" class="text-text-secondary">Reseñas</a>
