@@ -146,14 +146,14 @@ $uri = get_template_directory_uri();
         <h2 class="text-2xl md:text-3xl font-semibold text-text-primary">Los autores</h2>
         <div class="mt-6 grid gap-6 md:grid-cols-2">
           <div class="flex gap-4 items-start">
-            <img src="<?php echo esc_url($uri.'/images/viajesautor/luis.jpg'); ?>" alt="Luis" class="w-16 h-16 rounded-full object-cover ring-1 ring-border/60" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/luis5.jpg" alt="Luis" class="w-16 h-16 rounded-full object-cover ring-1 ring-border/60" />
             <div>
               <h3 class="font-semibold text-text-primary">Luis · Guía costarricense y fotógrafo</h3>
               <p class="text-text-secondary">Lleva años esperando la luz justa en humedales y bosques tropicales. Su Pantanal es silencio, paciencia y respeto por la fauna.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
-            <img src="<?php echo esc_url($uri.'/images/viajesautor/moha.jpg'); ?>" alt="Moha" class="w-16 h-16 rounded-full object-cover ring-1 ring-border/60" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/moha1.png" alt="Moha" class="w-16 h-16 rounded-full object-cover ring-1 ring-border/60" />
             <div>
               <h3 class="font-semibold text-text-primary">Moha · Guía marroquí</h3>
               <p class="text-text-secondary">Nacido en el Atlas, conoce el desierto por dentro: los zocos que importan, los silencios que merecen la pena y el té en el lugar adecuado.</p>
@@ -185,14 +185,33 @@ $uri = get_template_directory_uri();
             </details>
           </div>
         </div>
-        <div class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md p-6">
-          <h3 class="font-semibold text-text-primary">¿Prefieres hablarlo?</h3>
-          <p class="mt-2 text-text-secondary">Cuéntanos qué buscas y diseñamos tu experiencia con el autor que mejor encaje.</p>
-          <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" class="inline-flex items-center rounded-lg ring-1 ring-border/70 bg-white/80 backdrop-blur-md text-text-primary hover:bg-white px-4 py-2.5 text-sm">Planifica tu viaje</a>
-        </div>
       </div>
     </div>
   </section>
-</main>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-primary text-white">
+      <div class="container mx-auto px-6 text-center">
+          <div class="max-w-3xl mx-auto">
+              <h2 class="text-display font-crimson mb-6">
+                  ¿Listo para el viaje de tu vida?
+              </h2>
+              <p class="text-xl mb-8 opacity-90">
+                  Todo viaje empieza con una conversación.
+                  Cuéntanos qué te inspira y crearemos juntos una experiencia que te haga vivir el mundo de otra forma.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                  <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" 
+                    class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 transition-all duration-300 shadow-soft">
+                      Hablemos de tu viaje
+                  </a>
+                  <a href="<?php echo esc_url( get_permalink( get_page_by_path('experiencias') ) ); ?>" 
+                    class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300">
+                      Ver más destinos
+                  </a>
+              </div>
+          </div>
+      </div>
+  </section>
 
 <?php get_footer(); ?>
