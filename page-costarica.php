@@ -24,10 +24,10 @@ get_header();
                     <span class="bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">Aventura y paraíso</span>
                 </div>
                 <h1 class="text-4xl lg:text-6xl font-crimson text-white mb-4">
-                    INDONESIA <span class="text-accent">Tierra de dioses</span>
+                    COSTA RICA <span class="text-accent">Biodiversidad pura</span>
                 </h1>
                 <p class="text-xl text-white/90 max-w-3xl">
-                    Una travesía entre templos sagrados, arrozales infinitos y tradiciones vivas.
+                    Explora con nosotros la península de Osa, Corcovado y los bosques nubosos de Monteverde; amaneceres en selva, ríos claros y encuentros respetuosos con la vida salvaje.
                 </p>
             </div>
         </div>
@@ -55,7 +55,7 @@ get_header();
                     </svg>
                 </div>
                 <h3 class="font-crimson text-lg text-text-primary">Ubicación</h3>
-                <p class="text-text-secondary">Indonesia</p>
+                <p class="text-text-secondary">Costa Rica</p>
             </div>
             <div class="text-center">
                 <div class="w-12 h-12 bg-accent-100 text-accent rounded-lg flex items-center justify-center mx-auto mb-3">
@@ -97,38 +97,38 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row gap-8">
                             <div class="lg:w-1/3">
-                                <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=600&auto=format&fit=crop" alt="Ceremonia del té balinesa" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                                <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=600&auto=format&fit=crop" alt="Corcovado, Península de Osa" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                             </div>
                             <div class="lg:w-2/3">
                                 <div class="flex items-center mb-4">
                                     <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-semibold mr-4">1</div>
-                                    <h3 class="text-2xl font-crimson text-text-primary">MONTE BROMO</h3>
+                                    <h3 class="text-2xl font-crimson text-text-primary">CORCOVADO (Península de Osa)</h3>
                                 </div>
                                 <div class="mb-6">
-                                    <span class="inline-block bg-primary-100 text-primary px-3 py-1 rounded-full text-sm font-medium mr-2">Arte Tradicional</span>
-                                    <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium">Agricultura Orgánica</span>
+                                    <span class="inline-block bg-primary-100 text-primary px-3 py-1 rounded-full text-sm font-medium mr-2">Vida salvaje</span>
+                                    <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium">Senderismo costero</span>
                                 </div>
                                 <p class="text-text-secondary mb-6">
-                                    Comenzamos nuestro viaje en el corazón cultural de Bali. Participa en un taller de pintura tradicional con maestros locales, aprende sobre los pigmentos naturales y las técnicas ancestrales. Por la tarde, visita una granja orgánica familiar donde comprenderás la filosofía Tri Hita Karana.
+                                  Comenzamos en el corazón salvaje de Costa Rica. Caminatas entre selva y playa, observación de guacamayos, monos aulladores y rastros de tapir. Al regreso, café costarricense en el lodge y tiempo para revisar fotografías.
                                 </p>
                                 <div class="space-y-3">
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>9:00 AM:</strong> Taller de pintura tradicional balinesa</span>
+                                        <span class="text-text-secondary"><strong>7:00 AM:</strong> Sendero costero y observación de fauna</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>2:00 PM:</strong> Visita a granja orgánica familiar</span>
+                                        <span class="text-text-secondary"><strong>1:00 PM:</strong> Almuerzo en lodge y descanso</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>6:00 PM:</strong> Cena vegana con ingredientes de la granja</span>
+                                        <span class="text-text-secondary"><strong>4:00 PM:</strong> Caminata corta al atardecer (playa y manglar)</span>
                                     </div>
                                 </div>
                             </div>
@@ -141,38 +141,38 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row-reverse gap-8">
                             <div class="lg:w-1/3">
-                                <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=600&auto=format&fit=crop" alt="Ceremonia en templo balinés" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                                <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=600&auto=format&fit=crop" alt="Bosque nuboso de Monteverde" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                             </div>
                             <div class="lg:w-2/3">
                                 <div class="flex items-center mb-4">
                                     <div class="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center font-semibold mr-4">2</div>
-                                    <h3 class="text-2xl font-crimson text-text-primary">BALI</h3>
+                                    <h3 class="text-2xl font-crimson text-text-primary">MONTEVERDE</h3>
                                 </div>
                                 <div class="mb-6">
-                                    <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium mr-2">Espiritualidad</span>
-                                    <span class="inline-block bg-accent-100 text-accent px-3 py-1 rounded-full text-sm font-medium">Meditación</span>
+                                    <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium mr-2">Bosque Nuboso</span>
+                                    <span class="inline-block bg-accent-100 text-accent px-3 py-1 rounded-full text-sm font-medium">Puentes Colgantes</span>
                                 </div>
                                 <p class="text-text-secondary mb-6">
-                                    Despierta antes del amanecer para participar en una auténtica ceremonia en el templo Pura Tirta Empul. Acompañado de un guía espiritual local, aprende sobre los rituales de purificación y participa en la meditación matutina junto a los devotos locales.
+                                  Amanecer entre nubes y helechos arborescentes. Caminata por puentes colgantes y observación de aves (quetzal en temporada). Tarde de cafetal y taller de tostado artesanal.
                                 </p>
                                 <div class="space-y-3">
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>5:30 AM:</strong> Ceremonia de purificación en Tirta Empul</span>
+                                        <span class="text-text-secondary"><strong>6:30 AM:</strong> Caminata en bosque nuboso</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>10:00 AM:</strong> Sesión de meditación con maestro local</span>
+                                        <span class="text-text-secondary"><strong>11:00 AM:</strong> Ruta de puentes colgantes</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>3:00 PM:</strong> Reflexión y diario personal en jardines sagrados</span>
+                                        <span class="text-text-secondary"><strong>3:30 PM:</strong> Visita a cafetal y cata</span>
                                     </div>
                                 </div>
                             </div>
@@ -185,38 +185,38 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row gap-8">
                             <div class="lg:w-1/3">
-                                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=600&auto=format&fit=crop" alt="Clase de cocina balinesa" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=600&auto=format&fit=crop" alt="Canales de Tortuguero" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                             </div>
                             <div class="lg:w-2/3">
                                 <div class="flex items-center mb-4">
                                     <div class="w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-semibold mr-4">3</div>
-                                    <h3 class="text-2xl font-crimson text-text-primary">NUSA PENIDA</h3>
+                                    <h3 class="text-2xl font-crimson text-text-primary">TORTUGUERO</h3>
                                 </div>
                                 <div class="mb-6">
-                                    <span class="inline-block bg-accent-100 text-accent px-3 py-1 rounded-full text-sm font-medium mr-2">Gastronomía</span>
-                                    <span class="inline-block bg-primary-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Cocina Tradicional</span>
+                                    <span class="inline-block bg-accent-100 text-accent px-3 py-1 rounded-full text-sm font-medium mr-2">Navegación</span>
+                                    <span class="inline-block bg-primary-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Observación</span>
                                 </div>
                                 <p class="text-text-secondary mb-6">
-                                    Acompáñanos en una experiencia culinaria completa. Comienza con una visita al mercado tradicional de Ubud para seleccionar ingredientes frescos y locales, seguido de una clase de cocina práctica con una familia balinesa en su hogar.
+                                  Navegación por canales al amanecer: garzas, caimanes y monos cariblancos. Visita al pequeño pueblo y tiempo libre en el lodge junto al río.
                                 </p>
                                 <div class="space-y-3">
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>7:00 AM:</strong> Tour guiado por el mercado tradicional</span>
+                                        <span class="text-text-secondary"><strong>5:30 AM:</strong> Safari en bote por canales</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>10:00 AM:</strong> Clase de cocina práctica con familia local</span>
+                                        <span class="text-text-secondary"><strong>10:30 AM:</strong> Paseo por el pueblo y artesanías</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>1:00 PM:</strong> Comida comunitaria y compartir historias</span>
+                                        <span class="text-text-secondary"><strong>4:00 PM:</strong> Tarde libre / taller de fotografía</span>
                                     </div>
                                 </div>
                             </div>
@@ -229,38 +229,38 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row-reverse gap-8">
                             <div class="lg:w-1/3">
-                                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=600&auto=format&fit=crop" alt="Taller de artesanías balinesas" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=600&auto=format&fit=crop" alt="Volcán Arenal y La Fortuna" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                             </div>
                             <div class="lg:w-2/3">
                                 <div class="flex items-center mb-4">
                                     <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-semibold mr-4">4</div>
-                                    <h3 class="text-2xl font-crimson text-text-primary">KOMODO</h3>
+                                    <h3 class="text-2xl font-crimson text-text-primary">ARENAL & LA FORTUNA</h3>
                                 </div>
                                 <div class="mb-6">
-                                    <span class="inline-block bg-primary-100 text-primary px-3 py-1 rounded-full text-sm font-medium mr-2">Sostenibilidad</span>
-                                    <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium">Comunidad</span>
+                                    <span class="inline-block bg-primary-100 text-primary px-3 py-1 rounded-full text-sm font-medium mr-2">Termales</span>
+                                    <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium">Cascadas</span>
                                 </div>
                                 <p class="text-text-secondary mb-6">
-                                    Dedica este día a aprender técnicas artesanales sostenibles mientras contribuyes directamente a la economía local. Participa en talleres de tejido de bambú y creación de ofrendas tradicionales, y conéctate profundamente con la comunidad local.
+                                  Sendero a la catarata de La Fortuna y relax en aguas termales al atardecer. Paisajes volcánicos y miradores con vista al Arenal.
                                 </p>
                                 <div class="space-y-3">
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>9:00 AM:</strong> Taller de tejido de bambú sostenible</span>
+                                        <span class="text-text-secondary"><strong>9:00 AM:</strong> Caminata a la catarata</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>2:00 PM:</strong> Creación de ofrendas ceremoniales</span>
+                                        <span class="text-text-secondary"><strong>2:00 PM:</strong> Circuito de miradores</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>5:00 PM:</strong> Intercambio cultural con la comunidad</span>
+                                        <span class="text-text-secondary"><strong>6:30 PM:</strong> Termales y cena ligera</span>
                                     </div>
                                 </div>
                             </div>
@@ -273,38 +273,38 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row gap-8">
                             <div class="lg:w-1/3">
-                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=600&auto=format&fit=crop" alt="Amanecer en volcán Batur" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=600&auto=format&fit=crop" alt="Caribe Sur: Puerto Viejo y Cahuita" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                             </div>
                             <div class="lg:w-2/3">
                                 <div class="flex items-center mb-4">
                                     <div class="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center font-semibold mr-4">5</div>
-                                    <h3 class="text-2xl font-crimson text-text-primary">LOMBOK</h3>
+                                    <h3 class="text-2xl font-crimson text-text-primary">CARIBE SUR</h3>
                                 </div>
                                 <div class="mb-6">
-                                    <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium mr-2">Naturaleza</span>
-                                    <span class="inline-block bg-accent-100 text-accent px-3 py-1 rounded-full text-sm font-medium">Reflexión</span>
+                                    <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium mr-2">Parque Cahuita</span>
+                                    <span class="inline-block bg-accent-100 text-accent px-3 py-1 rounded-full text-sm font-medium">Cultura Afrocaribeña</span>
                                 </div>
                                 <p class="text-text-secondary mb-6">
-                                    Culmina tu experiencia con un trekking al amanecer en el volcán Batur, seguido de una ceremonia de reflexión y cierre. Este día te permitirá integrar todas las experiencias vividas y establecer intenciones para tu regreso a casa.
+                                  Caminata costera por Cahuita con posibilidad de esnórquel (según condiciones). Tarde en Puerto Viejo: ritmos caribeños y cocina local.
                                 </p>
                                 <div class="space-y-3">
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>4:00 AM:</strong> Trekking al volcán Batur para el amanecer</span>
+                                        <span class="text-text-secondary"><strong>8:00 AM:</strong> Sendero costero y fauna</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>10:00 AM:</strong> Ceremonia de reflexión y cierre</span>
+                                        <span class="text-text-secondary"><strong>12:30 PM:</strong> Esnórquel opcional</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>2:00 PM:</strong> Integración y establecimiento de intenciones</span>
+                                        <span class="text-text-secondary"><strong>6:00 PM:</strong> Paseo por Puerto Viejo</span>
                                     </div>
                                 </div>
                             </div>
@@ -336,7 +336,7 @@ get_header();
                         </svg>
                     </div>
                     <h3 class="text-lg font-crimson text-text-primary mb-2">Alojamiento Premium</h3>
-                    <p class="text-text-secondary text-sm">4 noches en resort eco-sostenible en el corazón de Ubud con vista a los arrozales</p>
+                    <p class="text-text-secondary text-sm">Lodges y eco-hoteles seleccionados en Osa, Monteverde y Arenal (según ruta)</p>
                 </div>
 
                 <!-- Meals -->
@@ -347,7 +347,7 @@ get_header();
                         </svg>
                     </div>
                     <h3 class="text-lg font-crimson text-text-primary mb-2">Gastronomía Completa</h3>
-                    <p class="text-text-secondary text-sm">Todas las comidas incluidas con opciones vegetarianas, ingredientes orgánicos locales</p>
+                    <p class="text-text-secondary text-sm">Desayunos diarios y algunas comidas incluidas. Opciones vegetarianas y productos locales.</p>
                 </div>
 
                 <!-- Transportation -->
@@ -369,7 +369,7 @@ get_header();
                         </svg>
                     </div>
                     <h3 class="text-lg font-crimson text-text-primary mb-2">Guía Cultural Experto</h3>
-                    <p class="text-text-secondary text-sm">Guía local bilingüe especializado en cultura balinesa y prácticas espirituales</p>
+                    <p class="text-text-secondary text-sm">Guía naturalista bilingüe, especialista en naturaleza costarricense y conservación</p>
                 </div>
 
                 <!-- Activities -->
@@ -380,7 +380,7 @@ get_header();
                         </svg>
                     </div>
                     <h3 class="text-lg font-crimson text-text-primary mb-2">Todas las Actividades</h3>
-                    <p class="text-text-secondary text-sm">Talleres, ceremonias, clases de cocina, materiales y entradas incluidas</p>
+                    <p class="text-text-secondary text-sm">Caminatas guiadas, navegación por canales, entradas a parques nacionales y experiencias locales</p>
                 </div>
 
                 <!-- Support -->
@@ -420,25 +420,25 @@ get_header();
                                 <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                 </svg>
-                                <span class="text-text-secondary text-sm">Ropa cómoda y respetuosa para templos</span>
+                                <span class="text-text-secondary text-sm">Ropa ligera de secado rápido y capa impermeable</span>
                             </div>
                             <div class="flex items-start">
                                 <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                 </svg>
-                                <span class="text-text-secondary text-sm">Calzado cómodo para caminar y trekking ligero</span>
+                                <span class="text-text-secondary text-sm">Calzado cerrado con buena suela / botas de trekking</span>
                             </div>
                             <div class="flex items-start">
                                 <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                 </svg>
-                                <span class="text-text-secondary text-sm">Protector solar biodegradable y repelente natural</span>
+                                <span class="text-text-secondary text-sm">Protector solar, gorra y repelente (preferible biodegradable)</span>
                             </div>
                             <div class="flex items-start">
                                 <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                 </svg>
-                                <span class="text-text-secondary text-sm">Mente abierta para experiencias culturales auténticas</span>
+                                <span class="text-text-secondary text-sm">Bolsa estanca para cámara/móvil y actitud curiosa</span>
                             </div>
                         </div>
                     </div>
@@ -451,19 +451,19 @@ get_header();
                                 <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
                                 </svg>
-                                <span class="text-text-secondary text-sm">Nivel físico moderado requerido para algunas actividades</span>
+                                <span class="text-text-secondary text-sm">Nivel físico moderado para senderos y humedad</span>
                             </div>
                             <div class="flex items-start">
                                 <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
                                 </svg>
-                                <span class="text-text-secondary text-sm">Respeto absoluto por las tradiciones locales</span>
+                                <span class="text-text-secondary text-sm">Respeto por la fauna y normas de parques (no alimentar, no tocar)</span>
                             </div>
                             <div class="flex items-start">
                                 <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
                                 </svg>
-                                <span class="text-text-secondary text-sm">Grupos pequeños (máximo 8 personas) para experiencia íntima</span>
+                                <span class="text-text-secondary text-sm">Grupos pequeños (máx. 8) para experiencia íntima</span>
                             </div>
                             <div class="flex items-start">
                                 <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">

@@ -104,6 +104,7 @@ Viajes auténticos, sostenibles y creados a tu medida.                </p>
                 <ul class="space-y-2 text-white/80">
                     <li><a href="<?php echo esc_url( get_permalink( get_page_by_path('nosotros') ) ); ?>" class="hover:text-accent transition-colors">Nosotros</a></li>
                     <li><a href="<?php echo esc_url( get_permalink( get_page_by_path('experiencias') ) ); ?>" class="hover:text-accent transition-colors">Destinos</a></li>
+                    <li><a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" class="hover:text-accent transition-colors">Viajes de autor</a></li>
                    <!-- <li><a href="<?php echo esc_url( site_url('/sustainability') ); ?>" class="hover:text-accent transition-colors">Sostenibilidad</a></li> -->
                     <li><a href="<?php echo esc_url( get_permalink( get_page_by_path('pricing') ) ); ?>" class="hover:text-accent transition-colors">Precios</a></li>
                     <li><a href="<?php echo esc_url( get_permalink( get_page_by_path('resenas') ) ); ?>" class="hover:text-accent transition-colors">Reseñas</a></li>

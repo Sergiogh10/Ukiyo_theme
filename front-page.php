@@ -66,7 +66,7 @@ Elige lo que quieres sentir y deja que el viaje haga el resto.
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Transformación Cultural -->
-                <div class="group cursor-pointer" onclick="window.location.href='<?php echo esc_url( site_url('/experiences') ); ?>'">
+                <div class="group cursor-pointer" onclick="window.location.href='<?php echo esc_url( get_permalink( get_page_by_path('indonesia') ) ); ?>'">
                     <div class="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/indonesia/balines.jpg"
                             alt="Transformación Cultural"
@@ -82,7 +82,7 @@ Viajar aquí no es ver otra cultura, es dejar que te cambie un poco la tuya.</p>
                 </div>
 
                 <!-- Aventuras Sostenibles -->
-                <div class="group cursor-pointer" onclick="window.location.href='<?php echo esc_url( site_url('/sustainability') ); ?>'">
+                <div class="group cursor-pointer" onclick="window.location.href='<?php echo esc_url( get_permalink( get_page_by_path('costarica') ) ); ?>'">
                     <div class="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/loro.jpg"
                             alt="Aventuras Sostenibles"
@@ -98,7 +98,7 @@ Aquí se respira lento. Aquí todo vuelve a su sitio.</p>
                 </div>
 
                 <!-- Experiencias Ocultas -->
-               <div class="group cursor-pointer" onclick="window.location.href='<?php echo esc_url( site_url('/experiences') ); ?>'">
+               <div class="group cursor-pointer" onclick="window.location.href='<?php echo esc_url( get_permalink( get_page_by_path('colombia') ) ); ?>'">
                     <div class="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/emotion-based/colombiana.jpg"
                             alt="Experiencias Ocultas"
@@ -114,7 +114,7 @@ Colombia no se visita, se vive bailando.</p>
                 </div>
 
                 <!-- Tu Viaje Soñado -->
-                <div class="group cursor-pointer" onclick="window.location.href='<?php echo esc_url( site_url('/experiences') ); ?>'">
+                <div class="group cursor-pointer" onclick="window.location.href='<?php echo esc_url( get_permalink( get_page_by_path('marruecos') ) ); ?>'">
                     <div class="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/marruecos/camello.jpg"
                             alt="Tu Viaje Soñado"
