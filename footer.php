@@ -11,7 +11,7 @@
             <div class="lg:col-span-2">
                 <div class="flex items-center space-x-3 mb-6">
                     <a href="<?php echo esc_url(home_url('/')); ?>">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/logo/logoblanco.png"
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/logo/logoblanconuevo.png"
                              alt="<?php bloginfo('name'); ?> Logo"
                              class="h-8 md:h-10 w-auto" />
                     </a>

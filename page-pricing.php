@@ -98,54 +98,38 @@ $template_uri = get_template_directory_uri();
     </header>
     <br>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+
       <!-- Tier 1 -->
       <article class="group relative rounded-2xl overflow-hidden ring-1 ring-border/60 hover:ring-border transition bg-surface/50 flex flex-col">
         <div class="text-center p-8">
           <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-5">
             <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
           </div>
-          <h3 class="text-2xl font-satoshi text-text-primary mb-1">Espíritu mochilero</h3>
-          <p class="text-primary text-lg">La guía experta</p>
+          <h3 class="text-2xl font-satoshi text-text-primary mb-1">Aventura premium</h3>
+          <p class="text-primary text-lg">Una experiencia integral</p>
         </div>
 
         <div class="px-8">
           <div class="text-center mb-4">
-            <div class="text-3xl font-satoshi text-primary">€60</div>
-            <p class="text-sm text-text-tertiary">por día organizado</p>
+            <div class="text-3xl font-satoshi text-primary">Consultar precio</div>
+            <p class="text-sm text-text-tertiary">viaje completo</p>
           </div>
           <p class="text-text-secondary text-center mb-6 leading-relaxed">
-            Organización experta de experiencias auténticas. Tú llevas la logística; nosotros abrimos puertas locales.
+          Para quienes buscan comodidad y personalización, manteniendo autenticidad y contacto local.
           </p>
         </div>
 
         <div class="px-8 pb-6">
           <h4 class="font-satoshi text-lg text-text-primary mb-3">Incluye</h4>
           <ul class="space-y-2">
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Videollamadas de organización</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Programa completo</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Asesoramiento logístico y cultural</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Apoyo 24/7 durante la experiencia</span></li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Todo del nivel “Espíritu mochilero”</span></li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Vuelos y traslados</span></li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Alojamientos seleccionados</span></li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Gastronomía local auténtica</span></li>
           </ul>
         </div>
 
         <div class="mt-auto p-8 pt-0">
-          <a href="#consultation" class="btn-primary w-full text-center block">Conoce más</a>
-          <div class="mt-4 text-center">
-            <button class="text-primary font-medium hover:underline" onclick="toggleSampleItinerary('curator')">Ver itinerario de ejemplo</button>
-          </div>
-          <div id="curator-itinerary" class="hidden mt-6 p-4 bg-surface/60 rounded-lg">
-            <h5 class="font-satoshi text-text-primary mb-3">5 días en Colombia — Ritmo y café</h5>
-            <ul class="space-y-2 text-sm text-text-secondary">
-              <li>• Comuna 13 + miradores en Medellín</li>
-              <li>• Finca cafetera con cata de origen</li>
-              <li>• Getsemaní y ciudad amurallada</li>
-              <li>• Snorkel en aguas claras (Caribe)</li>
-              <li>• Sabores locales y música en vivo</li>
-            </ul>
-            <div class="mt-4 p-3 bg-primary/5 rounded border-l-4 border-primary">
-              <p class="text-sm text-primary">Total estimado: €300 (5 días × €60)</p>
-            </div>
-          </div>
         </div>
       </article>
 
@@ -160,48 +144,31 @@ $template_uri = get_template_directory_uri();
           <div class="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-5">
             <svg class="w-10 h-10 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
-          <h3 class="text-2xl font-satoshi text-text-primary mb-1">Aventura premium</h3>
-          <p class="text-secondary text-lg">Una experiencia integral</p>
+          <h3 class="text-2xl font-satoshi text-text-primary mb-1">Espíritu mochilero</h3>
+          <p class="text-secondary text-lg">La guía experta</p>
         </div>
 
         <div class="px-8">
           <div class="text-center mb-4">
-            <div class="text-3xl font-satoshi text-secondary">Consultar precio</div>
-            <p class="text-sm text-text-tertiary">viaje completo</p>
+            <div class="text-3xl font-satoshi text-secondary">60 €</div>
+            <p class="text-sm text-text-tertiary">por día organizado</p>
           </div>
           <p class="text-text-secondary text-center mb-6 leading-relaxed">
-            Para quienes buscan comodidad y personalización, manteniendo autenticidad y contacto local.
+          Organización experta de experiencias auténticas. Tú llevas la logística; nosotros abrimos puertas locales.
           </p>
         </div>
 
         <div class="px-8 pb-6">
           <h4 class="font-satoshi text-lg text-text-primary mb-3">Incluye</h4>
           <ul class="space-y-2">
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Todo del nivel “Espíritu mochilero”</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Vuelos y traslados premium</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Alojamientos seleccionados</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Gastronomía local auténtica</span></li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Videollamadas de organización</span></li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Programa completo</span></li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Asesoramiento logístico y cultural</span></li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Apoyo 24/7 durante la experiencia</span></li>
           </ul>
         </div>
 
         <div class="mt-auto p-8 pt-0">
-          <a href="#consultation" class="btn-secondary w-full text-center block">Conoce más</a>
-          <div class="mt-4 text-center">
-            <button class="text-secondary font-medium hover:underline" onclick="toggleSampleItinerary('architect')">Ver itinerario de ejemplo</button>
-          </div>
-          <div id="architect-itinerary" class="hidden mt-6 p-4 bg-surface/60 rounded-lg">
-            <h5 class="font-satoshi text-text-primary mb-3">10 días en Colombia — Conexión profunda</h5>
-            <ul class="space-y-2 text-sm text-text-secondary">
-              <li>• Traslados privados + vuelos internos</li>
-              <li>• Eco-alojamiento Pacífico + casa colonial</li>
-              <li>• Finca cafetera en zona de origen</li>
-              <li>• Ruta cultural y gastronomía local</li>
-              <li>• Acompañamiento continuo UKIYO</li>
-            </ul>
-            <div class="mt-4 p-3 bg-secondary/5 rounded border-l-4 border-secondary">
-              <p class="text-sm text-secondary">Presupuesto a medida</p>
-            </div>
-          </div>
         </div>
       </article>
 
@@ -217,8 +184,8 @@ $template_uri = get_template_directory_uri();
 
         <div class="px-8">
           <div class="text-center mb-4">
-            <div class="text-3xl font-satoshi text-accent">€12,000+</div>
-            <p class="text-sm text-text-tertiary">experiencia completa</p>
+            <div class="text-3xl font-satoshi text-accent">Consultar precio</div>
+            <p class="text-sm text-text-tertiary">viaje completo</p>
           </div>
           <p class="text-text-secondary text-center mb-6 leading-relaxed">
             Entrega total a una experiencia de lujo consciente. Ideal para lunas de miel, aniversarios o viajes-vida.
@@ -229,29 +196,13 @@ $template_uri = get_template_directory_uri();
           <h4 class="font-satoshi text-lg text-text-primary mb-3">Incluye</h4>
           <ul class="space-y-2">
             <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Todo del nivel “Aventura premium”</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Alojamientos de lujo exclusivos</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Excursiones privadas y únicas</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Experiencias gastronómicas memorables</span></li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Lujo sostenible</span></li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Excursiones privadas</span></li>
+            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Experiencias gastronómicas</span></li>
           </ul>
         </div>
 
         <div class="mt-auto p-8 pt-0">
-          <a href="#consultation" class="inline-flex items-center justify-center bg-accent text-white px-6 py-3 rounded-lg font-semibold transition hover:bg-accent-600 w-full">Conoce más</a>
-          <div class="mt-4 text-center">
-            <button class="text-accent font-medium hover:underline" onclick="toggleSampleItinerary('luxury')">Ver experiencia de ejemplo</button>
-          </div>
-          <div id="luxury-itinerary" class="hidden mt-6 p-4 bg-surface/60 rounded-lg">
-            <h5 class="font-satoshi text-text-primary mb-3">14 días — Lujo consciente</h5>
-            <ul class="space-y-2 text-sm text-text-secondary">
-              <li>• Vuelos premium + traslados dedicados</li>
-              <li>• Ryokan / villa privada según destino</li>
-              <li>• Experiencias privadas con expertos</li>
-              <li>• Bienestar diario y gastronomía local</li>
-            </ul>
-            <div class="mt-4 p-3 bg-accent/5 rounded border-l-4 border-accent">
-              <p class="text-sm text-accent">Inversión personalizada</p>
-            </div>
-          </div>
         </div>
       </article>
     </div>
