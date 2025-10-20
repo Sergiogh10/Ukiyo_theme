@@ -109,7 +109,7 @@ get_header();
 <!-- CTA -->
 <section class="py-20 bg-gradient-primary text-white text-center">
     <div class="container mx-auto px-6 max-w-3xl">
-        <h2 class="text-display font-telma mb-6">¿No encuentras tu viaje ideal?</h2>
+        <h2 class="text-display font-satoshi mb-6">¿No encuentras tu viaje ideal?</h2>
         <p class="text-xl mb-8 opacity-90">Cada persona viaja a su manera.
 Cuéntanos qué te mueve y crearemos juntos una experiencia que encaje contigo.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">

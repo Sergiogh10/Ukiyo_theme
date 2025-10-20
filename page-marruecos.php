@@ -19,16 +19,16 @@ get_header();
         <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-12">
             <div class="container mx-auto max-w-4xl">
                 <div class="flex flex-wrap items-center gap-3 mb-6">
-                    <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">Biodiversidad</span>
-                    <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">Inmersión Cultural</span>
-                    <span class="bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">Aventura y paraíso</span>
+                    <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">Desierto</span>
+                    <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">Cultura y hospitalidad</span>
+                    <span class="bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">Aventura y calma</span>
                 </div>
                 <h1 class="text-4xl lg:text-6xl font-crimson text-white mb-4">
-                    INDONESIA <span class="text-accent">Tierra de dioses</span>
+                    MARRUECOS <span class="text-accent">Desierto y tradición</span>
                 </h1>
                 <p class="text-xl text-white/90 max-w-3xl">
-                    Una travesía entre templos sagrados, arrozales infinitos y tradiciones vivas.
-                </p>
+                Desde las montañas del Atlas hasta las dunas infinitas de Merzouga, Marruecos despierta los sentidos.  
+                Una tierra donde la calma del desierto se entrelaza con la energía de las medinas y el aroma del té a la menta.                </p>
             </div>
         </div>
     </div>
@@ -45,7 +45,7 @@ get_header();
                     </svg>
                 </div>
                 <h3 class="font-crimson text-lg text-text-primary">Recomendación</h3>
-                <p class="text-text-secondary">+15 días</p>
+                <p class="text-text-secondary">5–8 días</p>
             </div>
             <div class="text-center">
                 <div class="w-12 h-12 bg-secondary-100 text-secondary rounded-lg flex items-center justify-center mx-auto mb-3">
@@ -55,7 +55,7 @@ get_header();
                     </svg>
                 </div>
                 <h3 class="font-crimson text-lg text-text-primary">Ubicación</h3>
-                <p class="text-text-secondary">Indonesia</p>
+                <p class="text-text-secondary">Marruecos</p>
             </div>
             <div class="text-center">
                 <div class="w-12 h-12 bg-accent-100 text-accent rounded-lg flex items-center justify-center mx-auto mb-3">
@@ -73,7 +73,7 @@ get_header();
                     </svg>
                 </div>
                 <h3 class="font-crimson text-lg text-text-primary">Mejor Época</h3>
-                <p class="text-text-secondary">Abr-Sep</p>
+                <p class="text-text-secondary">Oct–Abr</p>
             </div>
         </div>
     </div>
@@ -94,223 +94,148 @@ get_header();
         <div class="max-w-4xl mx-auto">
             <!-- Aquí incluyes tus días 1 a 5 tal cual los pasaste -->
             <div class="mb-12">
-                    <div class="card hover:shadow-card-hover transition-all duration-300">
-                        <div class="flex flex-col lg:flex-row gap-8">
-                            <div class="lg:w-1/3">
-                                <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=600&auto=format&fit=crop" alt="Ceremonia del té balinesa" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                <div class="card hover:shadow-card-hover transition-all duration-300">
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <div class="lg:w-1/3">
+                            <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=600&auto=format&fit=crop" alt="Atardecer en Erg Chebbi" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                        </div>
+                        <div class="lg:w-2/3">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-semibold mr-4">1</div>
+                                <h3 class="text-2xl font-crimson text-text-primary">ERG CHEBBI (Merzouga)</h3>
                             </div>
-                            <div class="lg:w-2/3">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-semibold mr-4">1</div>
-                                    <h3 class="text-2xl font-crimson text-text-primary">MONTE BROMO</h3>
-                                </div>
-                                <div class="mb-6">
-                                    <span class="inline-block bg-primary-100 text-primary px-3 py-1 rounded-full text-sm font-medium mr-2">Arte Tradicional</span>
-                                    <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium">Agricultura Orgánica</span>
-                                </div>
-                                <p class="text-text-secondary mb-6">
-                                    Comenzamos nuestro viaje en el corazón cultural de Bali. Participa en un taller de pintura tradicional con maestros locales, aprende sobre los pigmentos naturales y las técnicas ancestrales. Por la tarde, visita una granja orgánica familiar donde comprenderás la filosofía Tri Hita Karana.
-                                </p>
-                                <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>9:00 AM:</strong> Taller de pintura tradicional balinesa</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>2:00 PM:</strong> Visita a granja orgánica familiar</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>6:00 PM:</strong> Cena vegana con ingredientes de la granja</span>
-                                    </div>
-                                </div>
+                            <div class="mb-6">
+                                <span class="inline-block bg-primary-100 text-primary px-3 py-1 rounded-full text-sm font-medium mr-2">Dunas</span>
+                                <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium">Atardecer</span>
+                            </div>
+                            <p class="text-text-secondary mb-6">
+                              Llegada a Merzouga y primer contacto con el Sahara. Subimos a las dunas de Erg Chebbi para ver cómo el sol tiñe de oro el horizonte. Té de bienvenida en haima y cena tradicional.
+                            </p>
+                            <div class="space-y-3">
+                                <span class="text-text-secondary"><strong>5:00 PM:</strong> Paseo por las dunas y puesta de sol</span>
+                                <span class="text-text-secondary"><strong>7:30 PM:</strong> Cena bereber en campamento</span>
+                                <span class="text-text-secondary"><strong>10:00 PM:</strong> Cielo estrellado y silencio del desierto</span>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Day 2 -->
-                <div class="mb-12">
-                    <div class="card hover:shadow-card-hover transition-all duration-300">
-                        <div class="flex flex-col lg:flex-row-reverse gap-8">
-                            <div class="lg:w-1/3">
-                                <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=600&auto=format&fit=crop" alt="Ceremonia en templo balinés" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+            <!-- Day 2 -->
+            <div class="mb-12">
+                <div class="card hover:shadow-card-hover transition-all duration-300">
+                    <div class="flex flex-col lg:flex-row-reverse gap-8">
+                        <div class="lg:w-1/3">
+                            <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=600&auto=format&fit=crop" alt="Música gnawa en Khamlia" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                        </div>
+                        <div class="lg:w-2/3">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center font-semibold mr-4">2</div>
+                                <h3 class="text-2xl font-crimson text-text-primary">KHAMLIA & ALREDEDORES</h3>
                             </div>
-                            <div class="lg:w-2/3">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center font-semibold mr-4">2</div>
-                                    <h3 class="text-2xl font-crimson text-text-primary">BALI</h3>
-                                </div>
-                                <div class="mb-6">
-                                    <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium mr-2">Espiritualidad</span>
-                                    <span class="inline-block bg-accent-100 text-accent px-3 py-1 rounded-full text-sm font-medium">Meditación</span>
-                                </div>
-                                <p class="text-text-secondary mb-6">
-                                    Despierta antes del amanecer para participar en una auténtica ceremonia en el templo Pura Tirta Empul. Acompañado de un guía espiritual local, aprende sobre los rituales de purificación y participa en la meditación matutina junto a los devotos locales.
-                                </p>
-                                <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>5:30 AM:</strong> Ceremonia de purificación en Tirta Empul</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>10:00 AM:</strong> Sesión de meditación con maestro local</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>3:00 PM:</strong> Reflexión y diario personal en jardines sagrados</span>
-                                    </div>
-                                </div>
+                            <div class="mb-6">
+                                <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium mr-2">Música Gnawa</span>
+                                <span class="inline-block bg-accent-100 text-accent px-3 py-1 rounded-full text-sm font-medium">Cultura</span>
+                            </div>
+                            <p class="text-text-secondary mb-6">
+                              Visita a Khamlia para disfrutar de música gnawa y conocer su historia. Paseo por palmerales y ksar cercanos. Almuerzo local y tiempo para fotos con la luz suave de la tarde.
+                            </p>
+                            <div class="space-y-3">
+                                <span class="text-text-secondary"><strong>10:00 AM:</strong> Concierto gnawa y conversación</span>
+                                <span class="text-text-secondary"><strong>1:30 PM:</strong> Almuerzo local</span>
+                                <span class="text-text-secondary"><strong>4:30 PM:</strong> Paseo por palmeral y ksar</span>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Day 3 -->
-                <div class="mb-12">
-                    <div class="card hover:shadow-card-hover transition-all duration-300">
-                        <div class="flex flex-col lg:flex-row gap-8">
-                            <div class="lg:w-1/3">
-                                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=600&auto=format&fit=crop" alt="Clase de cocina balinesa" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+            <!-- Day 3 -->
+            <div class="mb-12">
+                <div class="card hover:shadow-card-hover transition-all duration-300">
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <div class="lg:w-1/3">
+                            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=600&auto=format&fit=crop" alt="Ruta 4x4 por pistas y oasis" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                        </div>
+                        <div class="lg:w-2/3">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-semibold mr-4">3</div>
+                                <h3 class="text-2xl font-crimson text-text-primary">PISTAS & OASIS EN 4x4</h3>
                             </div>
-                            <div class="lg:w-2/3">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-semibold mr-4">3</div>
-                                    <h3 class="text-2xl font-crimson text-text-primary">NUSA PENIDA</h3>
-                                </div>
-                                <div class="mb-6">
-                                    <span class="inline-block bg-accent-100 text-accent px-3 py-1 rounded-full text-sm font-medium mr-2">Gastronomía</span>
-                                    <span class="inline-block bg-primary-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Cocina Tradicional</span>
-                                </div>
-                                <p class="text-text-secondary mb-6">
-                                    Acompáñanos en una experiencia culinaria completa. Comienza con una visita al mercado tradicional de Ubud para seleccionar ingredientes frescos y locales, seguido de una clase de cocina práctica con una familia balinesa en su hogar.
-                                </p>
-                                <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>7:00 AM:</strong> Tour guiado por el mercado tradicional</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>10:00 AM:</strong> Clase de cocina práctica con familia local</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>1:00 PM:</strong> Comida comunitaria y compartir historias</span>
-                                    </div>
-                                </div>
+                            <div class="mb-6">
+                                <span class="inline-block bg-accent-100 text-accent px-3 py-1 rounded-full text-sm font-medium mr-2">Aventura</span>
+                                <span class="inline-block bg-primary-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Oasis</span>
+                            </div>
+                            <p class="text-text-secondary mb-6">
+                              Jornada en 4x4 por hamadas y pistas del desierto. Paradas en oasis, encuentro con familias nómadas y té bajo la sombra de las acacias. Fotografía de paisaje y texturas.
+                            </p>
+                            <div class="space-y-3">
+                                <span class="text-text-secondary"><strong>9:00 AM:</strong> Ruta 4x4 hacia oasis</span>
+                                <span class="text-text-secondary"><strong>1:00 PM:</strong> Té con familia nómada</span>
+                                <span class="text-text-secondary"><strong>5:00 PM:</strong> Regreso a Merzouga</span>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Day 4 -->
-                <div class="mb-12">
-                    <div class="card hover:shadow-card-hover transition-all duration-300">
-                        <div class="flex flex-col lg:flex-row-reverse gap-8">
-                            <div class="lg:w-1/3">
-                                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=600&auto=format&fit=crop" alt="Taller de artesanías balinesas" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+            <!-- Day 4 -->
+            <div class="mb-12">
+                <div class="card hover:shadow-card-hover transition-all duration-300">
+                    <div class="flex flex-col lg:flex-row-reverse gap-8">
+                        <div class="lg:w-1/3">
+                            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=600&auto=format&fit=crop" alt="Mercado de Rissani y kasbahs" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                        </div>
+                        <div class="lg:w-2/3">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-semibold mr-4">4</div>
+                                <h3 class="text-2xl font-crimson text-text-primary">RISSANI & KASBAHS</h3>
                             </div>
-                            <div class="lg:w-2/3">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-semibold mr-4">4</div>
-                                    <h3 class="text-2xl font-crimson text-text-primary">KOMODO</h3>
-                                </div>
-                                <div class="mb-6">
-                                    <span class="inline-block bg-primary-100 text-primary px-3 py-1 rounded-full text-sm font-medium mr-2">Sostenibilidad</span>
-                                    <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium">Comunidad</span>
-                                </div>
-                                <p class="text-text-secondary mb-6">
-                                    Dedica este día a aprender técnicas artesanales sostenibles mientras contribuyes directamente a la economía local. Participa en talleres de tejido de bambú y creación de ofrendas tradicionales, y conéctate profundamente con la comunidad local.
-                                </p>
-                                <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>9:00 AM:</strong> Taller de tejido de bambú sostenible</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>2:00 PM:</strong> Creación de ofrendas ceremoniales</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>5:00 PM:</strong> Intercambio cultural con la comunidad</span>
-                                    </div>
-                                </div>
+                            <div class="mb-6">
+                                <span class="inline-block bg-primary-100 text-primary px-3 py-1 rounded-full text-sm font-medium mr-2">Mercado</span>
+                                <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium">Arquitectura</span>
+                            </div>
+                            <p class="text-text-secondary mb-6">
+                              Mañana en el mercado de Rissani entre especias, dátiles y artesanía. Visita a kasbahs de adobe y ksour históricos. Regreso al desierto para un atardecer tranquilo.
+                            </p>
+                            <div class="space-y-3">
+                                <span class="text-text-secondary"><strong>9:00 AM:</strong> Mercado de Rissani</span>
+                                <span class="text-text-secondary"><strong>12:30 PM:</strong> Kasbahs y ksour</span>
+                                <span class="text-text-secondary"><strong>6:30 PM:</strong> Atardecer en Erg Chebbi</span>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Day 5 -->
-                <div class="mb-12">
-                    <div class="card hover:shadow-card-hover transition-all duration-300">
-                        <div class="flex flex-col lg:flex-row gap-8">
-                            <div class="lg:w-1/3">
-                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=600&auto=format&fit=crop" alt="Amanecer en volcán Batur" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+            <!-- Day 5 -->
+            <div class="mb-12">
+                <div class="card hover:shadow-card-hover transition-all duration-300">
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <div class="lg:w-1/3">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=600&auto=format&fit=crop" alt="Cielo nocturno en Merzouga" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                        </div>
+                        <div class="lg:w-2/3">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center font-semibold mr-4">5</div>
+                                <h3 class="text-2xl font-crimson text-text-primary">NOCHES DE HAIMA</h3>
                             </div>
-                            <div class="lg:w-2/3">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center font-semibold mr-4">5</div>
-                                    <h3 class="text-2xl font-crimson text-text-primary">LOMBOK</h3>
-                                </div>
-                                <div class="mb-6">
-                                    <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium mr-2">Naturaleza</span>
-                                    <span class="inline-block bg-accent-100 text-accent px-3 py-1 rounded-full text-sm font-medium">Reflexión</span>
-                                </div>
-                                <p class="text-text-secondary mb-6">
-                                    Culmina tu experiencia con un trekking al amanecer en el volcán Batur, seguido de una ceremonia de reflexión y cierre. Este día te permitirá integrar todas las experiencias vividas y establecer intenciones para tu regreso a casa.
-                                </p>
-                                <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>4:00 AM:</strong> Trekking al volcán Batur para el amanecer</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>10:00 AM:</strong> Ceremonia de reflexión y cierre</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>2:00 PM:</strong> Integración y establecimiento de intenciones</span>
-                                    </div>
-                                </div>
+                            <div class="mb-6">
+                                <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium mr-2">Cielo Estrellado</span>
+                                <span class="inline-block bg-accent-100 text-accent px-3 py-1 rounded-full text-sm font-medium">Haima</span>
+                            </div>
+                            <p class="text-text-secondary mb-6">
+                              Tiempo para descansar, paseo en dromedario opcional y observación del cielo nocturno. Historias junto al fuego y música tradicional. Cierre del viaje con calma.
+                            </p>
+                            <div class="space-y-3">
+                                <span class="text-text-secondary"><strong>8:00 AM:</strong> Mañana libre / dromedario opcional</span>
+                                <span class="text-text-secondary"><strong>5:30 PM:</strong> Caminata suave por las dunas</span>
+                                <span class="text-text-secondary"><strong>9:30 PM:</strong> Estrellas y té en la haima</span>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </section>
@@ -336,7 +261,7 @@ get_header();
                         </svg>
                     </div>
                     <h3 class="text-lg font-crimson text-text-primary mb-2">Alojamiento Premium</h3>
-                    <p class="text-text-secondary text-sm">4 noches en resort eco-sostenible en el corazón de Ubud con vista a los arrozales</p>
+                    <p class="text-text-secondary text-sm">Campamentos en haimas y riad/bivouac seleccionados en Merzouga y alrededores</p>
                 </div>
 
                 <!-- Meals -->
@@ -347,7 +272,7 @@ get_header();
                         </svg>
                     </div>
                     <h3 class="text-lg font-crimson text-text-primary mb-2">Gastronomía Completa</h3>
-                    <p class="text-text-secondary text-sm">Todas las comidas incluidas con opciones vegetarianas, ingredientes orgánicos locales</p>
+                    <p class="text-text-secondary text-sm">Desayunos y cenas incluidas en el desierto; cocina local y opciones vegetarianas</p>
                 </div>
 
                 <!-- Transportation -->
@@ -358,7 +283,7 @@ get_header();
                         </svg>
                     </div>
                     <h3 class="text-lg font-crimson text-text-primary mb-2">Transporte Privado</h3>
-                    <p class="text-text-secondary text-sm">Todos los traslados en vehículo privado con conductor local experimentado</p>
+                    <p class="text-text-secondary text-sm">Traslados 4x4/dromedario según actividad y vehículo privado entre puntos</p>
                 </div>
 
                 <!-- Guide -->
@@ -369,7 +294,7 @@ get_header();
                         </svg>
                     </div>
                     <h3 class="text-lg font-crimson text-text-primary mb-2">Guía Cultural Experto</h3>
-                    <p class="text-text-secondary text-sm">Guía local bilingüe especializado en cultura balinesa y prácticas espirituales</p>
+                    <p class="text-text-secondary text-sm">Guía local bilingüe, especialista en cultura amazigh y vida en el desierto</p>
                 </div>
 
                 <!-- Activities -->
@@ -380,7 +305,7 @@ get_header();
                         </svg>
                     </div>
                     <h3 class="text-lg font-crimson text-text-primary mb-2">Todas las Actividades</h3>
-                    <p class="text-text-secondary text-sm">Talleres, ceremonias, clases de cocina, materiales y entradas incluidas</p>
+                    <p class="text-text-secondary text-sm">Paseos por dunas, música gnawa, visitas a palmerales/ksar y observación de estrellas</p>
                 </div>
 
                 <!-- Support -->
@@ -420,25 +345,25 @@ get_header();
                                 <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                 </svg>
-                                <span class="text-text-secondary text-sm">Ropa cómoda y respetuosa para templos</span>
+                                <span class="text-text-secondary text-sm">Ropa ligera, pañuelo/bufanda para el viento y capa para la noche</span>
                             </div>
                             <div class="flex items-start">
                                 <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                 </svg>
-                                <span class="text-text-secondary text-sm">Calzado cómodo para caminar y trekking ligero</span>
+                                <span class="text-text-secondary text-sm">Calzado cerrado con buena suela para arena y roca</span>
                             </div>
                             <div class="flex items-start">
                                 <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                 </svg>
-                                <span class="text-text-secondary text-sm">Protector solar biodegradable y repelente natural</span>
+                                <span class="text-text-secondary text-sm">Protector solar, gafas de sol y cantimplora reutilizable</span>
                             </div>
                             <div class="flex items-start">
                                 <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                 </svg>
-                                <span class="text-text-secondary text-sm">Mente abierta para experiencias culturales auténticas</span>
+                                <span class="text-text-secondary text-sm">Efectivo para compras locales y té</span>
                             </div>
                         </div>
                     </div>
@@ -451,19 +376,19 @@ get_header();
                                 <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
                                 </svg>
-                                <span class="text-text-secondary text-sm">Nivel físico moderado requerido para algunas actividades</span>
+                                <span class="text-text-secondary text-sm">Clima desértico: noches frescas y días secos</span>
                             </div>
                             <div class="flex items-start">
                                 <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
                                 </svg>
-                                <span class="text-text-secondary text-sm">Respeto absoluto por las tradiciones locales</span>
+                                <span class="text-text-secondary text-sm">Respeto por las costumbres locales (vestimenta y fotografía)</span>
                             </div>
                             <div class="flex items-start">
                                 <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
                                 </svg>
-                                <span class="text-text-secondary text-sm">Grupos pequeños (máximo 8 personas) para experiencia íntima</span>
+                                <span class="text-text-secondary text-sm">Grupos pequeños (máx. 8) para experiencia íntima</span>
                             </div>
                             <div class="flex items-start">
                                 <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">

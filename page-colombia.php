@@ -9,7 +9,7 @@ get_header();
 <section class="relative">
     <div class="relative h-[60vh] lg:h-[70vh] overflow-hidden">
         <img src="<?php echo get_template_directory_uri(); ?>/images/colombia/valledelcocora.jpg"
-             alt="Colombia"
+             alt="Valle del Cocora, Quindío"
              class="w-full h-full object-cover" 
              loading="lazy"
              onerror="this.src='https://images.pexels.com/photos/2404370/pexels-photo-2404370.jpeg'; this.onerror=null;" />
@@ -20,14 +20,14 @@ get_header();
             <div class="container mx-auto max-w-4xl">
                 <div class="flex flex-wrap items-center gap-3 mb-6">
                     <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">Café de origen</span>
+                    <span class="bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">Pacífico & Caribe</span>
                     <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">Alegría vibrante</span>
-                    <span class="bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">Naturaleza y Caribe</span>
                 </div>
                 <h1 class="text-4xl lg:text-6xl font-telma text-white mb-4">
                     COLOMBIA <span class="text-accent">Alegría que se queda</span>
                 </h1>
                 <p class="text-xl text-white/90 max-w-3xl">
-                    Un viaje de color, música y sabor: del Paisaje Cafetero al Caribe, con gente que te hace sentir en casa.
+                    Del Paisaje Cafetero al Caribe: Medellín, Eje Cafetero, Nuquí, Cartagena y Providencia. Colores, música y sabores — con gente que te hace sentir en casa desde el primer día.
                 </p>
             </div>
         </div>
@@ -45,7 +45,7 @@ get_header();
                     </svg>
                 </div>
                 <h3 class="font-satoshi text-lg text-text-primary">Recomendación</h3>
-                <p class="text-text-secondary">12–14 días</p>
+                <p class="text-text-secondary">10–14 días</p>
             </div>
             <div class="text-center">
                 <div class="w-12 h-12 bg-secondary-100 text-secondary rounded-lg flex items-center justify-center mx-auto mb-3">
@@ -98,7 +98,7 @@ get_header();
                         <div class="flex flex-col lg:flex-row gap-8">
                             <div class="lg:w-1/3 aspect-[4/3] overflow-hidden rounded-lg">
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/colombia/medellin.jpg" 
-                                     alt="Medellin" 
+                                     alt="Medellín" 
                                      class="w-full h-64 lg:h-full object-cover rounded-lg" 
                                      loading="lazy" 
                                      onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
@@ -146,7 +146,7 @@ get_header();
                         <div class="flex flex-col lg:flex-row-reverse gap-8">
                             <div class="lg:w-1/3">
                             <img src="<?php echo get_template_directory_uri(); ?>/images/guides/ejecafetero.jpg" 
-                                     alt="Medellin" 
+                                     alt="Eje Cafetero – Valle de Cocora" 
                                      class="w-full h-64 lg:h-full object-cover rounded-lg" 
                                      loading="lazy" 
                                      onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />                            </div>
@@ -193,7 +193,7 @@ get_header();
                         <div class="flex flex-col lg:flex-row gap-8">
                             <div class="lg:w-1/3">
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/colombia/ballenasnuqui.jpg" 
-                                     alt="Medellin" 
+                                     alt="Nuquí – Pacífico colombiano" 
                                      class="w-full h-64 lg:h-full object-cover rounded-lg" 
                                      loading="lazy" 
                                      onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />                            </div>
@@ -240,7 +240,7 @@ get_header();
                         <div class="flex flex-col lg:flex-row-reverse gap-8">
                             <div class="lg:w-1/3">
                             <img src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/colombiacalle.jpg" 
-                                     alt="Medellin" 
+                                     alt="Cartagena de Indias – Ciudad amurallada" 
                                      class="w-full h-64 lg:h-full object-cover rounded-lg" 
                                      loading="lazy" 
                                      onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />                            </div>
@@ -287,7 +287,7 @@ get_header();
                         <div class="flex flex-col lg:flex-row gap-8">
                             <div class="lg:w-1/3">
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/colombia/cayoprovidencia.jpg" 
-                                     alt="Medellin" 
+                                     alt="Providencia – Mar de siete colores" 
                                      class="w-full h-64 lg:h-full object-cover rounded-lg" 
                                      loading="lazy" 
                                      onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />                            </div>
