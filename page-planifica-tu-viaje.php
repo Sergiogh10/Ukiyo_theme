@@ -28,6 +28,7 @@ if ( 'POST' === $_SERVER['REQUEST_METHOD'] && isset($_POST['ukiyo_trip_nonce']) 
     $email        = isset($_POST['email']) ? sanitize_email($_POST['email']) : '';
     $whatsapp     = isset($_POST['whatsapp']) ? sanitize_text_field($_POST['whatsapp']) : '';
     $country      = isset($_POST['country']) ? sanitize_text_field($_POST['country']) : '';
+    $duration    = isset($_POST['duration']) ? sanitize_text_field($_POST['duration']) : '';
     $start_date   = isset($_POST['start_date']) ? sanitize_text_field($_POST['start_date']) : '';
     $end_date     = isset($_POST['end_date']) ? sanitize_text_field($_POST['end_date']) : '';
     $budget       = isset($_POST['budget']) ? sanitize_text_field($_POST['budget']) : '';
@@ -56,7 +57,7 @@ if ( 'POST' === $_SERVER['REQUEST_METHOD'] && isset($_POST['ukiyo_trip_nonce']) 
             "Email: $email",
             "WhatsApp/Telegram: $whatsapp",
             "País/ciudad: $country",
-            "Fechas: $start_date ➜ $end_date",
+            "Duración prevista: $duration",
             "Presupuesto aprox.: $budget",
             "Nº viajeros: $travelers",
             "Ritmo del viaje (1-chill / 5-intenso): $pace",
@@ -163,15 +164,12 @@ get_header();
           </div>
         </div>
 
-        <!-- Fechas y presupuesto -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+        <!-- Duración -->
+        <div class="grid grid-cols-1 gap-6 mt-8">
           <div>
-            <label class="block text-sm font-medium text-text-primary mb-2">Fecha de inicio</label>
-            <input type="date" name="start_date" class="w-full p-3 rounded-lg border border-surface focus:border-primary focus:ring-2 focus:ring-primary/20" value="<?php echo isset($start_date)? esc_attr($start_date):''; ?>" />
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-text-primary mb-2">Fecha de fin</label>
-            <input type="date" name="end_date" class="w-full p-3 rounded-lg border border-surface focus:border-primary focus:ring-2 focus:ring-primary/20" value="<?php echo isset($end_date)? esc_attr($end_date):''; ?>" />
+            <label class="block text-sm font-medium text-text-primary mb-2">Duración prevista del viaje</label>
+            <input type="text" name="duration" class="w-full p-3 rounded-lg border border-surface focus:border-primary focus:ring-2 focus:ring-primary/20" value="<?php echo isset($duration)? esc_attr($duration):''; ?>" placeholder="Ej.: 10–12 días" />
+            <p class="mt-1 text-xs text-text-secondary">Puede ser un rango aproximado (p. ej., 10–12 días).</p>
           </div>
         </div>
 
@@ -368,7 +366,7 @@ get_header();
           <label class="inline-flex items-start gap-3">
             <input type="checkbox" name="gdpr" value="1" <?php checked( isset($gdpr) && $gdpr ); ?> class="mt-1">
             <span class="text-sm text-text-secondary">
-              Acepto la <a href="<?php echo esc_url( site_url('/privacidad') ); ?>" class="text-primary underline">política de privacidad</a> y que me contactéis para diseñar mi viaje.
+              Acepto la <a href="<?php echo esc_url( get_permalink( get_page_by_path('privacidad') ) ); ?>" class="text-primary underline">política de privacidad</a> y que me contactéis para diseñar mi viaje.
             </span>
           </label>
         </div>
@@ -381,10 +379,6 @@ get_header();
             </svg>
             Enviar y diseñar mi aventura
           </button>
-
-          <a href="<?php echo esc_url( site_url('/experiencias') ); ?>" class="btn-secondary px-8 py-4 text-lg inline-flex items-center justify-center">
-            Ver experiencias ejemplo
-          </a>
         </div>
         <script>
         document.addEventListener('change', function(e){

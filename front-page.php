@@ -34,7 +34,7 @@ get_header(); ?>
                         <a href="<?php echo esc_url( site_url('/experiences') ); ?>" class="btn-primary text-lg px-8 py-4">
                             Diseña tu aventura
                         </a>
-                        <a href="<?php echo esc_url( site_url('/chronicles') ); ?>" class="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/30 transition-all duration-300">
+                        <a href="<?php echo esc_url( get_permalink( get_page_by_path('resenas') ) ); ?>" class="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/30 transition-all duration-300">
                             Historias de Viajeros
                         </a>
                     </div>

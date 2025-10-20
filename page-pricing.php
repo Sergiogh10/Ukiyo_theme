@@ -42,8 +42,8 @@ $template_uri = get_template_directory_uri();
         Cada viaje está diseñado con cuidado, respeto y detalle. Lo auténtico no tiene precio, pero sí un valor.
       </p>
       <figure class="mt-8 inline-flex">
-        <blockquote class="bg-white/10 backdrop-blur-sm border border-white/20 text-white italic px-5 py-3 rounded-lg">
-          «Lo importante no es cuánto cuesta un viaje, sino lo que te deja dentro».
+        <blockquote class="bg-black/10 backdrop-blur-sm border border-white/20 text-black italic px-5 py-3 rounded-lg">
+  «Lo importante no es cuánto cuesta un viaje, sino lo que te deja dentro».
         </blockquote>
       </figure>
     </div>
