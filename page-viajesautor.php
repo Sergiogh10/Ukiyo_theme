@@ -59,8 +59,8 @@ $uri = get_template_directory_uri();
               <span>Grupos reducidos</span>
             </div>
             <div class="mt-6 flex items-center gap-3">
-              <a href="<?php echo esc_url( home_url('/contacto') ); ?>" class="inline-flex items-center rounded-lg ring-1 ring-border/70 bg-white/80 backdrop-blur-md text-text-primary hover:bg-white px-4 py-2.5 text-sm">Descubre su aventura</a>
-              <a href="<?php echo esc_url( home_url('/contacto') ); ?>" class="inline-flex items-center rounded-lg ring-1 ring-border/70 bg-white/80 backdrop-blur-md text-text-primary hover:bg-white px-4 py-2.5 text-sm">Consultar precio</a>
+              <a href="<?php echo esc_url( get_permalink( get_page_by_path('pantanal') ) ); ?>" class="inline-flex items-center rounded-lg ring-1 ring-border/70 bg-white/80 backdrop-blur-md text-text-primary hover:bg-white px-4 py-2.5 text-sm">Descubre su aventura</a>
+              <!-- <a href="<?php echo esc_url( home_url('/contacto') ); ?>" class="inline-flex items-center rounded-lg ring-1 ring-border/70 bg-white/80 backdrop-blur-md text-text-primary hover:bg-white px-4 py-2.5 text-sm">Consultar precio</a> -->
             </div>
           </div>
         </article>
@@ -85,8 +85,8 @@ $uri = get_template_directory_uri();
               <span>Grupos reducidos</span>
             </div>
             <div class="mt-6 flex items-center gap-3">
-              <a href="<?php echo esc_url( home_url('/contacto') ); ?>" class="inline-flex items-center rounded-lg ring-1 ring-border/70 bg-white/80 backdrop-blur-md text-text-primary hover:bg-white px-4 py-2.5 text-sm">Descubre su aventura</a>
-              <a href="<?php echo esc_url( home_url('/contacto') ); ?>" class="inline-flex items-center rounded-lg ring-1 ring-border/70 bg-white/80 backdrop-blur-md text-text-primary hover:bg-white px-4 py-2.5 text-sm">Consultar precio</a>
+              <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajedeautormoha') ) ); ?>" class="inline-flex items-center rounded-lg ring-1 ring-border/70 bg-white/80 backdrop-blur-md text-text-primary hover:bg-white px-4 py-2.5 text-sm">Descubre su aventura</a>
+              <!-- <a href="<?php echo esc_url( home_url('/contacto') ); ?>" class="inline-flex items-center rounded-lg ring-1 ring-border/70 bg-white/80 backdrop-blur-md text-text-primary hover:bg-white px-4 py-2.5 text-sm">Consultar precio</a> -->
             </div>
           </div>
         </article>
