@@ -502,15 +502,15 @@ get_header();
                 ¿Listo para vivir Colombia?
             </h2>
             <p class="text-xl mb-8 opacity-90">
-                Únete a un recorrido auténtico por Colombia: Medellín, Eje Cafetero, Nuquí, Cartagena y Providencia.<br>
-                Plazas limitadas para mantener la experiencia íntima y personal.
+                Conecta con la esencia de Colombia.
+                Déjate guiar por UKIYO a través de Medellín, el Eje Cafetero, Nuquí, Cartagena y Providencia en un recorrido creado solo para ti.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <a href="<?php echo site_url('/experiences'); ?>" 
                    class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 transition-all duration-300 shadow-soft">
-                    Solicitar propuesta
+                    Hablemos de tu viaje
                 </a>
-                <a href="<?php echo site_url('/guides'); ?>" 
+                <a href="<?php echo esc_url( get_permalink( get_page_by_path('experiencias') ) ); ?>" 
                    class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300">
                     Ver más destinos
                 </a>

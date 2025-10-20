@@ -483,23 +483,22 @@ get_header();
     <div class="container mx-auto px-6 text-center">
         <div class="max-w-3xl mx-auto">
             <h2 class="text-display font-crimson mb-6">
-                ¿Listo para tu Transformación?
+                ¿Listo para el viaje de tu vida?
             </h2>
             <p class="text-xl mb-8 opacity-90">
-                Únete a nosotros en esta experiencia única de inmersión cultural en Bali. 
-                Plazas limitadas para garantizar una experiencia íntima y personalizada.
+                No solo viajes a Bali, vívelo.
+                Con UKIYO, cada templo, cada arrozal y cada sonrisa local se convierte en parte de una experiencia creada exclusivamente para ti.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <a href="<?php echo site_url('/experiences'); ?>" 
+                <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" 
                    class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 transition-all duration-300 shadow-soft">
-                    Reservar Ahora
+                    Hablemos de tu viaje
                 </a>
-                <a href="<?php echo site_url('/guides'); ?>" 
+                <a href="<?php echo esc_url( get_permalink( get_page_by_path('experiencias') ) ); ?>" 
                    class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300">
-                    Ver Más Guías
+                    Ver más destinos
                 </a>
             </div>
-            <p class="text-sm opacity-70">Próximas salidas: Mayo y Septiembre 2025</p>
         </div>
     </div>
 </section>

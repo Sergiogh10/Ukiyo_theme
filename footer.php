@@ -114,9 +114,9 @@ Viajes auténticos, sostenibles y creados a tu medida.                </p>
         <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p class="text-white/60 text-sm">© <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. Todos los derechos reservados.</p>
             <div class="flex space-x-6 mt-4 md:mt-0">
-                <a href="<?php echo esc_url( site_url('/privacy') ); ?>" class="text-white/60 hover:text-accent text-sm transition-colors">Privacidad</a>
-                <a href="<?php echo esc_url( site_url('/terms') ); ?>" class="text-white/60 hover:text-accent text-sm transition-colors">Términos</a>
-                <a href="<?php echo esc_url( site_url('/cookies') ); ?>" class="text-white/60 hover:text-accent text-sm transition-colors">Cookies</a>
+                <a href="<?php echo esc_url( get_permalink( get_page_by_path('privacidad') ) ); ?>" class="text-white/60 hover:text-accent text-sm transition-colors">Privacidad</a>
+                <a href="<?php echo esc_url( get_permalink( get_page_by_path('terminos') ) ); ?>" class="text-white/60 hover:text-accent text-sm transition-colors">Términos</a>
+                <a href="<?php echo esc_url( get_permalink( get_page_by_path('cookies') ) ); ?>" class="text-white/60 hover:text-accent text-sm transition-colors">Cookies</a>
             </div>
         </div>
     </div>

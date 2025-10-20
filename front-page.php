@@ -269,10 +269,10 @@ Descubre las experiencias de quienes ya viajaron con nosotros.
 Todo gran viaje nace de una idea, una emoción o una simple curiosidad.
 Cuéntanos qué te mueve y diseñaremos una experiencia que te haga sentir el mundo de verdad.                </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="<?php echo esc_url( site_url('/experiences') ); ?>" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 transition-all duration-300 shadow-soft">
+                    <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 transition-all duration-300 shadow-soft">
                         Diseña tu aventura
                     </a>
-                    <a href="<?php echo esc_url( site_url('/about') ); ?>" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300">
+                    <a href="<?php echo esc_url( get_permalink( get_page_by_path('nosotros') ) ); ?>" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300">
                         Conoce UKIYO
                     </a>
                 </div>

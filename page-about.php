@@ -432,10 +432,10 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
 Todo viaje empieza con una conversación.
 Cuéntanos qué te inspira y crearemos juntos una experiencia que te haga vivir el mundo de otra forma.      </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="<?php echo site_url('/experiencias'); ?>" 
+        <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" 
            class="bg-white text-primary px-8 py-4 rounded-lg font-satoshi-bold hover:bg-accent-50 transition-all duration-300 shadow-soft">
 Hablemos de tu idea        </a>
-        <a href="<?php echo site_url('/cronicas'); ?>" 
+        <a href="<?php echo esc_url( get_permalink( get_page_by_path('resenas') ) ); ?>" 
            class="border-2 border-white text-white px-8 py-4 rounded-lg font-satoshi-bold hover:bg-white hover:text-primary transition-all duration-300">
           Lee Nuestras Historias
         </a>
