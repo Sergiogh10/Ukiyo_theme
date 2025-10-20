@@ -8,7 +8,7 @@ get_header();
 <!-- Hero Section -->
 <section class="relative">
     <div class="relative h-[60vh] lg:h-[70vh] overflow-hidden">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/colombia/valledelcocora.jpg"
+        <img src="<?php echo get_template_directory_uri(); ?>/images/colombia/colombia2.jpg"
              alt="Valle del Cocora, Quindío"
              class="w-full h-full object-cover" 
              loading="lazy"
@@ -97,7 +97,7 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row gap-8">
                             <div class="lg:w-1/3 aspect-[4/3] overflow-hidden rounded-lg">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/colombia/medellin.jpg" 
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/colombia/colombia5.jpg"
                                      alt="Medellín" 
                                      class="w-full h-64 lg:h-full object-cover rounded-lg" 
                                      loading="lazy" 
@@ -145,7 +145,7 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row-reverse gap-8">
                             <div class="lg:w-1/3">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/guides/ejecafetero.jpg" 
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/colombia/colombia4.jpg"
                                      alt="Eje Cafetero – Valle de Cocora" 
                                      class="w-full h-64 lg:h-full object-cover rounded-lg" 
                                      loading="lazy" 
@@ -192,7 +192,7 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row gap-8">
                             <div class="lg:w-1/3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/colombia/ballenasnuqui.jpg" 
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/colombia/ballenasnuqui.jpg"
                                      alt="Nuquí – Pacífico colombiano" 
                                      class="w-full h-64 lg:h-full object-cover rounded-lg" 
                                      loading="lazy" 
@@ -239,7 +239,7 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row-reverse gap-8">
                             <div class="lg:w-1/3">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/colombiacalle.jpg" 
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/colombiacalle.jpg"
                                      alt="Cartagena de Indias – Ciudad amurallada" 
                                      class="w-full h-64 lg:h-full object-cover rounded-lg" 
                                      loading="lazy" 

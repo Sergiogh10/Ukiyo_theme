@@ -8,7 +8,7 @@ get_header();
 <!-- Hero Section -->
 <section class="relative">
     <div class="relative h-[60vh] lg:h-[70vh] overflow-hidden">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/guides/montebromo.jpg"
+        <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/cr3.jpg"
              alt="Bromo"
              class="w-full h-full object-cover" 
              loading="lazy"
@@ -97,7 +97,7 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row gap-8">
                             <div class="lg:w-1/3">
-                                <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=600&auto=format&fit=crop" alt="Corcovado, Península de Osa" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/loro.jpg" alt="Corcovado, Península de Osa" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                             </div>
                             <div class="lg:w-2/3">
                                 <div class="flex items-center mb-4">
@@ -141,7 +141,7 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row-reverse gap-8">
                             <div class="lg:w-1/3">
-                                <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=600&auto=format&fit=crop" alt="Bosque nuboso de Monteverde" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/cr2.jpg" alt="Bosque nuboso de Monteverde" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                             </div>
                             <div class="lg:w-2/3">
                                 <div class="flex items-center mb-4">
@@ -185,7 +185,7 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row gap-8">
                             <div class="lg:w-1/3">
-                                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=600&auto=format&fit=crop" alt="Canales de Tortuguero" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/cr1.jpg" alt="Canales de Tortuguero" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                             </div>
                             <div class="lg:w-2/3">
                                 <div class="flex items-center mb-4">
@@ -229,7 +229,7 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row-reverse gap-8">
                             <div class="lg:w-1/3">
-                                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=600&auto=format&fit=crop" alt="Volcán Arenal y La Fortuna" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/costarricense.jpg" alt="Volcán Arenal y La Fortuna" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                             </div>
                             <div class="lg:w-2/3">
                                 <div class="flex items-center mb-4">
@@ -273,7 +273,7 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row gap-8">
                             <div class="lg:w-1/3">
-                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=600&auto=format&fit=crop" alt="Caribe Sur: Puerto Viejo y Cahuita" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/loro.jpg" alt="Caribe Sur: Puerto Viejo y Cahuita" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                             </div>
                             <div class="lg:w-2/3">
                                 <div class="flex items-center mb-4">

@@ -8,7 +8,7 @@ get_header();
 <!-- Hero Section -->
 <section class="relative">
     <div class="relative h-[60vh] lg:h-[70vh] overflow-hidden">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/guides/montebromo.jpg"
+        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/marruecos5.jpg"
              alt="Bromo"
              class="w-full h-full object-cover" 
              loading="lazy"
@@ -97,7 +97,7 @@ get_header();
                 <div class="card hover:shadow-card-hover transition-all duration-300">
                     <div class="flex flex-col lg:flex-row gap-8">
                         <div class="lg:w-1/3">
-                            <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=600&auto=format&fit=crop" alt="Atardecer en Erg Chebbi" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/marruecos3.jpg" alt="Atardecer en Erg Chebbi" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                         </div>
                         <div class="lg:w-2/3">
                             <div class="flex items-center mb-4">
@@ -126,7 +126,7 @@ get_header();
                 <div class="card hover:shadow-card-hover transition-all duration-300">
                     <div class="flex flex-col lg:flex-row-reverse gap-8">
                         <div class="lg:w-1/3">
-                            <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=600&auto=format&fit=crop" alt="Música gnawa en Khamlia" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/marruecos2.jpg" alt="Música gnawa en Khamlia" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                         </div>
                         <div class="lg:w-2/3">
                             <div class="flex items-center mb-4">
@@ -155,7 +155,7 @@ get_header();
                 <div class="card hover:shadow-card-hover transition-all duration-300">
                     <div class="flex flex-col lg:flex-row gap-8">
                         <div class="lg:w-1/3">
-                            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=600&auto=format&fit=crop" alt="Ruta 4x4 por pistas y oasis" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/marruecos4.jpg" alt="Ruta 4x4 por pistas y oasis" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                         </div>
                         <div class="lg:w-2/3">
                             <div class="flex items-center mb-4">
@@ -184,7 +184,7 @@ get_header();
                 <div class="card hover:shadow-card-hover transition-all duration-300">
                     <div class="flex flex-col lg:flex-row-reverse gap-8">
                         <div class="lg:w-1/3">
-                            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=600&auto=format&fit=crop" alt="Mercado de Rissani y kasbahs" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/marruecos6.jpg" alt="Mercado de Rissani y kasbahs" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                         </div>
                         <div class="lg:w-2/3">
                             <div class="flex items-center mb-4">
@@ -213,7 +213,7 @@ get_header();
                 <div class="card hover:shadow-card-hover transition-all duration-300">
                     <div class="flex flex-col lg:flex-row gap-8">
                         <div class="lg:w-1/3">
-                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=600&auto=format&fit=crop" alt="Cielo nocturno en Merzouga" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/marruecos7.jpg" alt="Cielo nocturno en Merzouga" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                         </div>
                         <div class="lg:w-2/3">
                             <div class="flex items-center mb-4">
