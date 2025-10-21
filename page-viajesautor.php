@@ -167,22 +167,56 @@ $uri = get_template_directory_uri();
   <!-- FAQ -->
   <section class="bg-surface">
     <div class="container mx-auto px-6 md:px-8 pb-16">
-      <div class="grid gap-8 md:grid-cols-2">
-        <div class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md p-6">
-          <h3 class="font-semibold text-text-primary">Preguntas frecuentes</h3>
-          <div class="mt-4 space-y-3">
-            <details class="group rounded-lg ring-1 ring-border/60 bg-white/70 p-4">
-              <summary class="cursor-pointer font-medium text-text-primary">¿Las fechas son fijas?</summary>
-              <div class="mt-2 text-sm text-text-secondary">No. Son bajo demanda. Ajustamos ritmo y duración a tu disponibilidad.</div>
-            </details>
-            <details class="group rounded-lg ring-1 ring-border/60 bg-white/70 p-4">
-              <summary class="cursor-pointer font-medium text-text-primary">¿Cómo reservo?</summary>
-              <div class="mt-2 text-sm text-text-secondary">Escríbenos o solicita “Descubrir su aventura”. Te contactaremos para definir fechas, alcance y logística.</div>
-            </details>
-            <details class="group rounded-lg ring-1 ring-border/60 bg-white/70 p-4">
-              <summary class="cursor-pointer font-medium text-text-primary">¿Hay plazas limitadas?</summary>
-              <div class="mt-2 text-sm text-text-secondary">Sí. Grupos reducidos para mantener la experiencia íntima.</div>
-            </details>
+      <h2 class="text-display font-satoshi-bold mb-6">Preguntas frecuentes</h2>
+
+      <div data-accordion class="space-y-3">
+
+        <!-- Item 1 -->
+        <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
+          <button data-accordion-btn
+                  class="w-full flex items-center justify-between text-left px-5 py-4"
+                  aria-expanded="false" aria-controls="faq-1" id="faq-1-h">
+            <span class="font-medium text-text-primary">¿Cómo me apunto a la expedición?</span>
+            <svg class="w-5 h-5 flex-shrink-0 transition-transform duration-200 text-text-secondary"
+                 viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+          <div id="faq-1" role="region" aria-labelledby="faq-1-h"
+               data-accordion-panel class="hidden px-5 pb-5 text-sm text-text-primary">
+            Haz clic en “Reservar ahora” o “Consultar precio” y completa el formulario.
+            Confirmamos disponibilidad por email (o llamada si lo prefieres). La plaza
+            queda bloqueada al realizar el depósito de reserva.
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
+          <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
+                  aria-expanded="false" aria-controls="faq-2" id="faq-2-h">
+            <span class="font-medium text-text-primary">¿Cuándo y cómo tengo que pagar?</span>
+            <svg class="w-5 h-5 flex-shrink-0 transition-transform duration-200 text-text-secondary"
+                 viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/></svg>
+          </button>
+          <div id="faq-2" role="region" aria-labelledby="faq-2-h"
+               data-accordion-panel class="hidden px-5 pb-5 text-sm text-text-primary">
+            Depósito para confirmar plaza y resto antes de la salida (fecha en la confirmación).
+            Aceptamos transferencia y tarjeta. Recibirás factura y justificante.
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
+          <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
+                  aria-expanded="false" aria-controls="faq-3" id="faq-3-h">
+            <span class="font-medium text-text-primary">¿Cómo hago para llegar al punto de inicio de la expedición?</span>
+            <svg class="w-5 h-5 flex-shrink-0 transition-transform duration-200 text-text-secondary"
+                 viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/></svg>
+          </button>
+          <div id="faq-3" role="region" aria-labelledby="faq-3-h"
+               data-accordion-panel class="hidden px-5 pb-5 text-sm text-text-primary">
+            Tras reservar, enviamos dossier con aeropuerto recomendado, horarios y opciones de traslado.
+            Podemos coordinar tu llegada o darte instrucciones para el punto de encuentro.
           </div>
         </div>
       </div>
@@ -215,3 +249,29 @@ $uri = get_template_directory_uri();
   </section>
 
 <?php get_footer(); ?>
+
+<script>
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-accordion-btn]');
+  if (!btn) return;
+  const item = btn.closest('[data-accordion-item]');
+  const panel = item.querySelector('[data-accordion-panel]');
+  const group = item.parentElement;
+
+  // Cerrar los que estén abiertos (acordeón exclusivo)
+  group.querySelectorAll('[data-accordion-btn][aria-expanded="true"]').forEach(b => {
+    if (b !== btn) {
+      b.setAttribute('aria-expanded', 'false');
+      const p = b.closest('[data-accordion-item]').querySelector('[data-accordion-panel]');
+      p.classList.add('hidden');
+      b.querySelector('svg')?.classList.remove('rotate-180');
+    }
+  });
+
+  // Toggle actual
+  const open = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', String(!open));
+  panel.classList.toggle('hidden', open);
+  btn.querySelector('svg')?.classList.toggle('rotate-180', !open);
+});
+</script>

@@ -241,7 +241,7 @@ Descubre las experiencias de quienes ya viajaron con nosotros.
                             </div>
                         </div>
                     </div>
-                    <a href="<?php echo esc_url( site_url('/chronicles') ); ?>" class="btn-secondary">Leer Más Historias</a>
+                    <a href="<?php echo esc_url( get_permalink( get_page_by_path('resenas') ) ); ?>" class="btn-secondary">Leer Más Historias</a>
                 </div>
 
                 <!-- Story Image -->
