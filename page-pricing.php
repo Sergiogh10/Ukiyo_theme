@@ -12,7 +12,7 @@ $template_uri = get_template_directory_uri();
   <div class="absolute inset-0 pointer-events-none">
     <img
       src="<?php echo $template_uri; ?>/images/destination-mood/aventura.jpg"
-      alt=""
+      alt="Precio"
       class="w-full h-full object-cover opacity-20"
       loading="lazy"
       decoding="async"

@@ -38,7 +38,7 @@ get_header();
                   <img
                     src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/tucan.jpg"
                     alt="Costa Rica: bosque nuboso y tucán en libertad"
-                    class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700 ease-out"
+                    class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700 ease-out mask-image"
                     loading="lazy" decoding="async" />
                   <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0"></div>
                 </figure>
@@ -56,7 +56,7 @@ get_header();
                   <img
                     src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/palanquerascartagena.jpg"
                     alt="Colombia: colores, ritmos y sonrisas en Cartagena"
-                    class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700 ease-out"
+                    class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700 ease-out mask-image"
                     loading="lazy" decoding="async" />
                   <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0"></div>
                 </figure>
@@ -74,7 +74,7 @@ get_header();
                   <img
                     src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/dragonkomodo.jpg"
                     alt="Indonesia: tradición, naturaleza y mar de islas"
-                    class="w-full h-full object-cover object-center group-hover:scale-[1.03] transition duration-700 ease-out"
+                    class="w-full h-full object-cover object-center group-hover:scale-[1.03] transition duration-700 ease-out mask-image"
                     loading="lazy" decoding="async" />
                   <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0"></div>
                 </figure>
@@ -92,7 +92,7 @@ get_header();
                   <img
                     src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/desiertomarruecos.jpg"
                     alt="Marruecos: dunas, zocos y hospitalidad bereber"
-                    class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700 ease-out"
+                    class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700 ease-out mask-image"
                     loading="lazy" decoding="async" />
                   <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0"></div>
                 </figure>

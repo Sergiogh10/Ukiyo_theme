@@ -12,7 +12,7 @@ $uri = get_template_directory_uri();
     <div class="relative h-[60vh] lg:h-[70vh] overflow-hidden">
         <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/pantanal6.jpg"
              alt="Pantanal jaguar"
-             class="w-full h-full object-cover mask-b-from-80%" 
+             class="w-full h-full object-cover object-bottom mask-image" 
              loading="lazy"
              onerror="this.src='https://images.pexels.com/photos/2404370/pexels-photo-2404370.jpeg'; this.onerror=null;" />
         <!-- Content Overlay -->

@@ -12,11 +12,9 @@ $uri = get_template_directory_uri();
     <div class="relative h-[60vh] lg:h-[70vh] overflow-hidden">
         <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/marruecos7.jpg"
              alt="Bromo"
-             class="w-full h-full object-cover" 
+             class="w-full h-full object-cover mask-image" 
              loading="lazy"
-             onerror="this.src='https://images.pexels.com/photos/2404370/pexels-photo-2404370.jpeg'; this.onerror=null;" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-        
+             onerror="this.src='https://images.pexels.com/photos/2404370/pexels-photo-2404370.jpeg'; this.onerror=null;" />        
         <!-- Content Overlay -->
         <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-12">
             <div class="container mx-auto max-w-4xl">
