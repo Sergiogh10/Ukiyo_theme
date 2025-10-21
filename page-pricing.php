@@ -9,11 +9,12 @@ $template_uri = get_template_directory_uri();
 <!-- ===================== HERO ===================== -->
 <section class="relative pt-24 pb-20 overflow-hidden font-satoshi">
   <!-- Fondo con imagen al 20% -->
+  <div class="absolute inset-0 -z-10 bg-gradient-warm"></div>
   <div class="absolute inset-0 pointer-events-none">
     <img
       src="<?php echo $template_uri; ?>/images/destination-mood/aventura.jpg"
       alt="Precio"
-      class="w-full h-full object-cover opacity-20"
+      class="w-full h-full object-cover opacity-20 mask-fade-b"
       loading="lazy"
       decoding="async"
       aria-hidden="true"
@@ -51,7 +52,7 @@ $template_uri = get_template_directory_uri();
 </section>
 
 <!-- ===================== FILOSOFÍA ===================== -->
-<section class="py-16 bg-gradient-warm">
+<section class="py-16 bg-gradient-warm fade-bottom fade-top">
   <div class="container mx-auto px-6">
     <header class="text-center max-w-3xl mx-auto mb-12">
       <h2 class="text-4xl font-satoshi text-text-primary tracking-tight">

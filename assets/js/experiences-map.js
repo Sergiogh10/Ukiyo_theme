@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Tiles satélite Esri
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-        attribution: 'Tiles © Esri, Maxar, Earthstar Geographics'
+        
     }).addTo(map);
 
     // Icono SVG con la U

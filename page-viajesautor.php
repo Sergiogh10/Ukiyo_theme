@@ -42,7 +42,7 @@ $uri = get_template_directory_uri();
         <!-- Card Luis -->
         <article class="group rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
           <figure class="aspect-[16/9] overflow-hidden">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/pantanal6.jpg" alt="Fotografía en Pantanal por Luis" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" loading="lazy" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/pantanal6.jpg" alt="Fotografía en Pantanal por Luis" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] mask-image" loading="lazy" />
           </figure>
           <div class="p-6 md:p-7 flex-1 flex flex-col">
             <div class="flex items-center gap-3">
@@ -68,7 +68,7 @@ $uri = get_template_directory_uri();
         <!-- Card Moha -->
         <article class="group rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
           <figure class="aspect-[16/9] overflow-hidden">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/marruecos7.jpg" alt="Dunas del Sáhara en Merzouga con Moha" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" loading="lazy" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/marruecos7.jpg" alt="Dunas del Sáhara en Merzouga con Moha" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] mask-image" loading="lazy" />
           </figure>
           <div class="p-6 md:p-7 flex-1 flex flex-col">
             <div class="flex items-center gap-3">
@@ -141,8 +141,8 @@ $uri = get_template_directory_uri();
 
   <!-- AUTORES (mini bios) -->
   <section class="bg-surface">
-    <div class="container mx-auto px-6 md:px-8 pb-12 md:pb-16">
-      <div class="rounded-2xl ring-1 ring-border/60 bg-white/70 backdrop-blur-md p-6">
+    <div class="container mx-auto px-6 md:px-8 py-6 md:py-16 pb-12">
+      <div class="max-w-5xl mx-auto">
         <h2 class="text-2xl md:text-3xl font-semibold text-text-primary">Los autores</h2>
         <div class="mt-6 grid gap-6 md:grid-cols-2">
           <div class="flex gap-4 items-start">
@@ -166,7 +166,7 @@ $uri = get_template_directory_uri();
 
   <!-- FAQ -->
   <section class="bg-surface">
-    <div class="container mx-auto px-6 md:px-8 pb-16">
+    <div class="container mx-auto px-6 md:px-8 pb-12">
       <h2 class="text-display font-satoshi-bold mb-6">Preguntas frecuentes</h2>
 
       <div data-accordion class="space-y-3">
