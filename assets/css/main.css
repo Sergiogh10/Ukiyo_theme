@@ -2911,3 +2911,86 @@ input[type="range"].accent-primary::-moz-range-thumb:hover {
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
 }
+
+.fade-top {
+  -webkit-mask-image: linear-gradient(to top, black 80%, transparent 100%);
+          mask-image: linear-gradient(to top, black 80%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+/* ===== Timeline vertical ===== */
+.timeline {
+  position: relative;
+}
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 16px;
+}
+.timeline-item .card { /* para que el rail “abrace” la altura del stop */
+  position: relative;
+}
+
+/* rail (línea) */
+.timeline-rail {
+  position: relative;
+}
+.timeline-rail::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  transform: translateX(-50%);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--color-primary-300),
+    var(--color-primary-300) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  opacity: 0.8;
+  z-index: 0;
+}
+
+.timeline-icon {
+  position: absolute;
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  bottom: 50%;
+  transform: translate(-30%,-150%);
+}
+
+/* punto (dot) */
+.timeline-dot {
+  position: absolute;
+  top: 50px;           /* alinea con header de la card */
+  left: 20px;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  display: flex;
+  z-index: 1;
+  border-radius: 999px;
+  background: var(--primary, #1f7a8c); /* color base si faltan utilidades */
+  border: 3px solid #fff;              /* para contraste sobre la línea */
+  box-shadow: 0 0 0 2px var(--primary, #1f7a8c);
+}
+
+.timeline-dot svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Opcional: último item sin línea extendida (añade .is-last al último .timeline-item) */
+.timeline-item.is-last .timeline-rail::before {
+  bottom: 18px; /* termina justo bajo el dot */
+}
+
+/* Utilidades opcionales si no existen */
+.bg-primary\/10 { background-color: rgba(31, 122, 140, 0.10); }
+.bg-secondary\/10 { background-color: rgba(217, 119, 6, 0.10); }
+.bg-accent\/10 { background-color: rgba(214, 93, 177, 0.10); }
