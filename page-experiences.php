@@ -36,8 +36,8 @@ get_header();
               <a href="<?php echo esc_url( get_permalink( get_page_by_path('costarica') ) ); ?>" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 rounded-2xl">
                 <figure class="aspect-[16/9] overflow-hidden relative">
                   <img
-                    src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/tucan.jpg"
-                    alt="Costa Rica: bosque nuboso y tucán en libertad"
+                    src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/viajes-personalizados-por-el-mundo-costa-rica.jpg"
+                    alt="Viaje personalizado a Costa Rica con Ukiyo: selva, volcanes y océano"
                     class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700 ease-out mask-image"
                     loading="lazy" decoding="async" />
                   <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0"></div>
@@ -54,8 +54,8 @@ get_header();
               <a href="<?php echo esc_url( get_permalink( get_page_by_path('colombia') ) ); ?>" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 rounded-2xl">
                 <figure class="aspect-[16/9] overflow-hidden relative">
                   <img
-                    src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/palanquerascartagena.jpg"
-                    alt="Colombia: colores, ritmos y sonrisas en Cartagena"
+                    src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/viajes-personalizados-por-el-mundo-colombia.jpg"
+                    alt="Viaje personalizado a Colombia con Ukiyo: Cartagena, color y aroma a café"
                     class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700 ease-out mask-image"
                     loading="lazy" decoding="async" />
                   <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0"></div>
@@ -72,8 +72,8 @@ get_header();
               <a href="<?php echo esc_url( get_permalink( get_page_by_path('indonesia') ) ); ?>" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 rounded-2xl">
                 <figure class="aspect-[16/9] overflow-hidden relative">
                   <img
-                    src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/dragonkomodo.jpg"
-                    alt="Indonesia: tradición, naturaleza y mar de islas"
+                    src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/viajes-personalizados-por-el-mundo-indonesia.jpg"
+                    alt="Viaje personalizado a Indonesia con Ukiyo: tradición, naturaleza y mar de islas"
                     class="w-full h-full object-cover object-center group-hover:scale-[1.03] transition duration-700 ease-out mask-image"
                     loading="lazy" decoding="async" />
                   <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0"></div>
@@ -90,8 +90,8 @@ get_header();
               <a href="<?php echo esc_url( get_permalink( get_page_by_path('marruecos') ) ); ?>" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 rounded-2xl">
                 <figure class="aspect-[16/9] overflow-hidden relative">
                   <img
-                    src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/desiertomarruecos.jpg"
-                    alt="Marruecos: dunas, zocos y hospitalidad bereber"
+                    src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/viajes-personalizados-por-el-mundo-marruecos.jpg"
+                    alt="Viaje personalizado a Marruecos con Ukiyo: dunas, zocos y hospitalidad bereber"
                     class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700 ease-out mask-image"
                     loading="lazy" decoding="async" />
                   <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0"></div>

@@ -8,8 +8,8 @@ get_header();
 <!-- Hero Section -->
 <section class="relative">
     <div class="relative h-[60vh] lg:h-[70vh] overflow-hidden">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/colombia/colombia2.jpg"
-             alt="Valle del Cocora, Quindío"
+        <img src="<?php echo get_template_directory_uri(); ?>/images/colombia/viajes-a-colombia-personalizados-palanquera.jpg"
+             alt="Valle del Cocora en un viaje a Colombia personalizado con Ukiyo"
              class="w-full h-full object-cover" 
              loading="lazy"
              onerror="this.src='https://images.pexels.com/photos/2404370/pexels-photo-2404370.jpeg'; this.onerror=null;" />
@@ -97,8 +97,8 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row gap-8">
                             <div class="lg:w-1/3 aspect-[4/3] overflow-hidden rounded-lg">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/colombia/colombia5.jpg"
-                                     alt="Medellín" 
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/colombia/viajes-a-colombia-personalizados-medellin.jpg"
+                                     alt="Medellín durante un viaje a Colombia personalizado con Ukiyo" 
                                      class="w-full h-64 lg:h-full object-cover rounded-lg" 
                                      loading="lazy" 
                                      onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
@@ -145,8 +145,8 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row-reverse gap-8">
                             <div class="lg:w-1/3">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/colombia/colombia4.jpg"
-                                     alt="Eje Cafetero – Valle de Cocora" 
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/colombia/viajes-a-colombia-personalizados-eje-cafetero-valle-de-cocora.jpg"
+                                     alt="Eje Cafetero y Valle de Cocora en un viaje a Colombia personalizado" 
                                      class="w-full h-64 lg:h-full object-cover rounded-lg" 
                                      loading="lazy" 
                                      onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />                            </div>
@@ -192,8 +192,8 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row gap-8">
                             <div class="lg:w-1/3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/colombia/ballenasnuqui.jpg"
-                                     alt="Nuquí – Pacífico colombiano" 
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/colombia/viajes-a-colombia-personalizados-nuqui-pacifico-colombiano.jpg"
+                                     alt="Nuquí, Pacífico colombiano, durante un viaje a Colombia personalizado" 
                                      class="w-full h-64 lg:h-full object-cover rounded-lg" 
                                      loading="lazy" 
                                      onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />                            </div>
@@ -239,8 +239,8 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row-reverse gap-8">
                             <div class="lg:w-1/3">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/colombiacalle.jpg"
-                                     alt="Cartagena de Indias – Ciudad amurallada" 
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/viajes-a-colombia-personalizados-cartagena-ciudad-amurallada.jpg"
+                                     alt="Cartagena de Indias, ciudad amurallada, en un viaje a Colombia personalizado" 
                                      class="w-full h-64 lg:h-full object-cover rounded-lg" 
                                      loading="lazy" 
                                      onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />                            </div>
@@ -286,8 +286,8 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row gap-8">
                             <div class="lg:w-1/3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/colombia/cayoprovidencia.jpg" 
-                                     alt="Providencia – Mar de siete colores" 
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/colombia/viajes-a-colombia-personalizados-providencia-mar-siete-colores.jpg" 
+                                     alt="Providencia y el mar de siete colores en un viaje a Colombia personalizado con Ukiyo" 
                                      class="w-full h-64 lg:h-full object-cover rounded-lg" 
                                      loading="lazy" 
                                      onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />                            </div>

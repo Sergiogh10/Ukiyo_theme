@@ -8,8 +8,8 @@ get_header();
 <!-- Hero Section -->
 <section class="relative">
     <div class="relative h-[60vh] lg:h-[70vh] overflow-hidden">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/cr3.jpg"
-             alt="Bromo"
+        <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-osa-corcovado-hero.jpg"
+             alt="Costa Rica, Península de Osa y Corcovado en un viaje personalizado con Ukiyo"
              class="w-full h-full object-cover" 
              loading="lazy"
              onerror="this.src='https://images.pexels.com/photos/2404370/pexels-photo-2404370.jpeg'; this.onerror=null;" />
@@ -97,7 +97,7 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row gap-8">
                             <div class="lg:w-1/3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/loro.jpg" alt="Corcovado, Península de Osa" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-personalizados-ukiyo-guacamayo.jpg" alt="Corcovado, Península de Osa, durante un viaje a Costa Rica personalizado con Ukiyo" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                             </div>
                             <div class="lg:w-2/3">
                                 <div class="flex items-center mb-4">
@@ -141,7 +141,7 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row-reverse gap-8">
                             <div class="lg:w-1/3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/cr2.jpg" alt="Bosque nuboso de Monteverde" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-monteverde-bosque-nuboso.jpg" alt="Bosque nuboso de Monteverde en un viaje a Costa Rica personalizado" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                             </div>
                             <div class="lg:w-2/3">
                                 <div class="flex items-center mb-4">
@@ -185,7 +185,7 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row gap-8">
                             <div class="lg:w-1/3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/cr1.jpg" alt="Canales de Tortuguero" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-canales.jpg" alt="Canales de Tortuguero en un viaje a Costa Rica personalizado" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                             </div>
                             <div class="lg:w-2/3">
                                 <div class="flex items-center mb-4">
@@ -229,7 +229,7 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row-reverse gap-8">
                             <div class="lg:w-1/3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/costarricense.jpg" alt="Volcán Arenal y La Fortuna" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-volcan-arenal-la-fortuna.jpg" alt="Volcán Arenal y La Fortuna en un viaje a Costa Rica personalizado" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                             </div>
                             <div class="lg:w-2/3">
                                 <div class="flex items-center mb-4">
@@ -273,7 +273,7 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row gap-8">
                             <div class="lg:w-1/3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/loro.jpg" alt="Caribe Sur: Puerto Viejo y Cahuita" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-caribe-sur-cahuita.jpg" alt="Caribe Sur, Parque Cahuita y Puerto Viejo en un viaje a Costa Rica personalizado" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                             </div>
                             <div class="lg:w-2/3">
                                 <div class="flex items-center mb-4">

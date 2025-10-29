@@ -10,8 +10,8 @@ $uri = get_template_directory_uri();
   <!-- HERO -->
 <section class="relative">
     <div class="relative h-[60vh] lg:h-[70vh] overflow-hidden">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/pantanal6.jpg"
-             alt="Pantanal jaguar"
+        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-jaguar-hero.jpg"
+             alt="Jaguar en el Pantanal durante un viaje de autor con guía experto (Luis)"
              class="w-full h-full object-cover object-bottom mask-image" 
              loading="lazy"
              onerror="this.src='https://images.pexels.com/photos/2404370/pexels-photo-2404370.jpeg'; this.onerror=null;" />
@@ -82,8 +82,8 @@ Conocerás a las personas que hacen posible la conservación de la zona.
     <!-- Contenido -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-30 container mx-auto px-6 md:px-8 py-10 md:py-14 max-w-8xl">
     <div class="flex flex-col items-start">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/luis5.jpg"
-           alt="Luis Acuña"
+      <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-luis-acuna.jpg"
+           alt="Luis Acuña, guía experto en naturaleza y fotografía del Pantanal"
            class="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover ring-1 ring-border/60 bg-white/80" />
       <h2 class="mt-4 text-xl font-semibold text-text-primary">Luis Acuña</h2>
       <p class="mt-1 text-sm text-text-secondary max-w-xs">Guía costarricense y fotógrafo profesional. Conoce los diferentes sonidos de la selva y localiza a los animales más escurridizos.</p>
@@ -160,9 +160,9 @@ Conocerás a las personas que hacen posible la conservación de la zona.
   <section class="py-20 bg-surface">
     <div class="container mx-auto px-6 md:px-8 pb-12 md:pb-16">
       <div class="grid gap-4 md:grid-cols-3">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/luisacuña.png" alt="Pantanal 1" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/pantanal2.jpg" alt="Pantanal 2" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/pantanal3.jpg" alt="Pantanal 3" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-luis-acuna-campo.png" alt="Luis Acuña durante el viaje de autor al Pantanal" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-rio-amanecer.jpg" alt="Amanecer en el río durante un viaje de autor al Pantanal con Ukiyo" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-fauna-aves.jpg" alt="Aves del Pantanal en un viaje de autor con guía experto" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
       </div>
     </div>
   </section>

@@ -60,7 +60,7 @@ $reviews = [
   <div class="absolute inset-0 pointer-events-none">
     <img
       src="<?php echo $uri; ?>/images/colombia/ballenasnuqui.jpg"
-      alt=""
+      alt="Ballenas nuqui"
       class="w-full h-full object-cover opacity-20"
       loading="lazy"
       decoding="async"

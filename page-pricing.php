@@ -12,8 +12,8 @@ $template_uri = get_template_directory_uri();
   <div class="absolute inset-0 -z-10 bg-gradient-warm"></div>
   <div class="absolute inset-0 pointer-events-none">
     <img
-      src="<?php echo $template_uri; ?>/images/destination-mood/aventura.jpg"
-      alt="Precio"
+      src="<?php echo $template_uri; ?>/images/destination-mood/precios-de-viajes-personalizados-ukiyo-hero.jpg"
+      alt="Precios de viajes personalizados Ukiyo"
       class="w-full h-full object-cover opacity-20 mask-fade-b"
       loading="lazy"
       decoding="async"

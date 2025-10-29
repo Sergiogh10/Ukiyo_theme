@@ -8,8 +8,8 @@ get_header();
 <!-- Hero Section -->
 <section class="relative">
     <div class="relative h-[60vh] lg:h-[70vh] overflow-hidden">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/dragonkomodo.jpg"
-             alt="Bromo"
+        <img src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/viajes-personalizados-por-el-mundo-indonesia.jpg"
+             alt="Parque Nacional de Komodo en un viaje a Indonesia personalizado con Ukiyo"
              class="w-full h-full object-cover" 
              loading="lazy"
              onerror="this.src='https://images.pexels.com/photos/2404370/pexels-photo-2404370.jpeg'; this.onerror=null;" />
@@ -98,7 +98,7 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row gap-8">
                             <div class="lg:w-1/3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/guides/montebromo.jpg" alt="Ceremonia del té balinesa" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/guides/viajes-a-indonesia-personalizados-monte-bromo.jpg" alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                             </div>
                             <div class="lg:w-2/3">
                                 <div class="flex items-center mb-4">
@@ -142,7 +142,7 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row-reverse gap-8">
                             <div class="lg:w-1/3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/indonesia/indonesia1.jpg" alt="Ceremonia en templo balinés" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/indonesia/viajes-a-indonesia-personalizados-bali-tirta-empul.jpg" alt="Templo Tirta Empul en Bali durante un viaje a Indonesia personalizado" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                             </div>
                             <div class="lg:w-2/3">
                                 <div class="flex items-center mb-4">
@@ -186,7 +186,7 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row gap-8">
                             <div class="lg:w-1/3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/indonesia/indonesia2.jpg" alt="Clase de cocina balinesa" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/indonesia/viajes-a-indonesia-personalizados-nusa-penida.jpg" alt="Nusa Penida y sus acantilados en un viaje a Indonesia personalizado" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                             </div>
                             <div class="lg:w-2/3">
                                 <div class="flex items-center mb-4">
@@ -230,7 +230,7 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row-reverse gap-8">
                             <div class="lg:w-1/3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/indonesia/indonesia3.jpg" alt="Taller de artesanías balinesas" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/indonesia/viajes-a-indonesia-personalizados-komodo-islas.jpg" alt="Islas de Komodo en un viaje a Indonesia personalizado con Ukiyo" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                             </div>
                             <div class="lg:w-2/3">
                                 <div class="flex items-center mb-4">
@@ -274,7 +274,7 @@ get_header();
                     <div class="card hover:shadow-card-hover transition-all duration-300">
                         <div class="flex flex-col lg:flex-row gap-8">
                             <div class="lg:w-1/3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/indonesia/indonesia4.jpg" alt="Amanecer en volcán Batur" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/indonesia/viajes-a-indonesia-personalizados-lombok-volcan-batur.jpg" alt="Amanecer en el volcán Batur durante un viaje a Indonesia personalizado" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
                             </div>
                             <div class="lg:w-2/3">
                                 <div class="flex items-center mb-4">

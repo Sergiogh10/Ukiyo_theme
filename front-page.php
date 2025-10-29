@@ -11,7 +11,7 @@ get_header(); ?>
     <section class="relative h-screen overflow-hidden">
         <!-- Video Background -->
         <div class="absolute inset-0 w-full h-full">
-            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" 
+            <img src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/viajes-personalizados-ukiyo-portada.jpg" 
                  alt="Artesano tradicional trabajando" 
                  class="w-full h-full object-cover" loading="lazy"
                  onerror="this.src='https://images.pexels.com/photos/1450360/pexels-photo-1450360.jpeg?auto=compress&cs=tinysrgb&w=2940&h=1960&dpr=2'; this.onerror=null;" />
@@ -31,7 +31,7 @@ get_header(); ?>
                         Experiencias auténticas, sostenibles y pensadas al detalle para que vivas el viaje, no solo lo hagas.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 animate-slide-up">
-                        <a href="<?php echo esc_url( site_url('/experiences') ); ?>" class="btn-primary text-lg px-8 py-4">
+                        <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" class="btn-primary text-lg px-8 py-4">
                             Diseña tu aventura
                         </a>
                         <a href="<?php echo esc_url( get_permalink( get_page_by_path('resenas') ) ); ?>" class="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/30 transition-all duration-300">
@@ -68,8 +68,8 @@ Elige lo que quieres sentir y deja que el viaje haga el resto.
                 <!-- Transformación Cultural -->
                 <div class="group cursor-pointer" onclick="window.location.href='<?php echo esc_url( get_permalink( get_page_by_path('indonesia') ) ); ?>'">
                     <div class="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/indonesia/balines.jpg"
-                            alt="Transformación Cultural"
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/indonesia/viajes-personalizados-ukiyo-artesano-balines.jpg"
+                            alt="Artesano balinés trabajando en un taller local"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             loading="lazy" />
                         <div class="absolute inset-0 bg-gradient-to-t from-primary-900/80 via-transparent to-transparent"></div>
@@ -84,8 +84,8 @@ Viajar aquí no es ver otra cultura, es dejar que te cambie un poco la tuya.</p>
                 <!-- Aventuras Sostenibles -->
                 <div class="group cursor-pointer" onclick="window.location.href='<?php echo esc_url( get_permalink( get_page_by_path('costarica') ) ); ?>'">
                     <div class="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/loro.jpg"
-                            alt="Aventuras Sostenibles"
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-personalizados-ukiyo-guacamayo.jpg"
+                            alt="Guacamayo observado en la selva tropical durante un viaje personalizado con Ukiyo"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             loading="lazy" />
                         <div class="absolute inset-0 bg-gradient-to-t from-secondary-900/80 via-transparent to-transparent"></div>
@@ -100,8 +100,8 @@ Aquí se respira lento. Aquí todo vuelve a su sitio.</p>
                 <!-- Experiencias Ocultas -->
                <div class="group cursor-pointer" onclick="window.location.href='<?php echo esc_url( get_permalink( get_page_by_path('colombia') ) ); ?>'">
                     <div class="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/emotion-based/colombiana.jpg"
-                            alt="Experiencias Ocultas"
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/emotion-based/viajes-personalizados-ukiyo-palanquera.jpg"
+                            alt="Palanquera en Cartagena de Indias durante un viaje personalizado a Colombia con Ukiyo"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             loading="lazy" />
                         <div class="absolute inset-0 bg-gradient-to-t from-accent-900/80 via-transparent to-transparent"></div>
@@ -116,8 +116,8 @@ Colombia no se visita, se vive bailando.</p>
                 <!-- Tu Viaje Soñado -->
                 <div class="group cursor-pointer" onclick="window.location.href='<?php echo esc_url( get_permalink( get_page_by_path('marruecos') ) ); ?>'">
                     <div class="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/marruecos/camello.jpg"
-                            alt="Tu Viaje Soñado"
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/marruecos/viajes-personalizados-ukiyo-camello-marruecos.jpg"
+                            alt="Camello en el desierto de Merzouga durante un viaje personalizado a Marruecos con Ukiyo"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             loading="lazy" />
                         <div class="absolute inset-0 bg-gradient-to-t from-primary-700/80 via-transparent to-transparent"></div>
@@ -149,8 +149,8 @@ Por eso diseñamos tu experiencia a medida: fiel a tu ritmo, tus ganas y tu form
                 <!-- Despertar Espiritual -->
                 <div class="card group cursor-pointer hover:shadow-card-hover" onclick="window.location.href='<?php echo esc_url( site_url('/experiences') ); ?>'">
                     <div class="relative overflow-hidden rounded-lg mb-6 aspect-video">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/indonesiagorro.jpg"
-                            alt="Despertar Espiritual"
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/viajes-a-medida-ukiyo-aventurero-bali.jpg"
+                            alt="Viajero explorando los arrozales de Bali en un viaje de aventura personalizado con Ukiyo"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                             loading="lazy" />
                     </div>
@@ -169,8 +169,8 @@ Para quienes buscan sentir la tierra bajo los pies y la libertad en cada paso.  
                 <!-- Conexión Auténtica -->
                 <div class="card group cursor-pointer hover:shadow-card-hover" onclick="window.location.href='<?php echo esc_url( site_url('/experiences') ); ?>'">
                     <div class="relative overflow-hidden rounded-lg mb-6 aspect-video">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/mujerindonesia.jpg"
-                            alt="Conexión Auténtica"
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/viajes-a-medida-ukiyo-anciana-indonesia.jpg"
+                            alt="Anciana indonesia sonriendo en un mercado local durante un viaje cultural con Ukiyo"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                             loading="lazy" />
                     </div>
@@ -189,8 +189,8 @@ Para quienes viajan para comprender, no solo para mirar.                    </p>
                 <!-- Lujo Consciente -->
                 <div class="card group cursor-pointer hover:shadow-card-hover" onclick="window.location.href='<?php echo esc_url( site_url('/sustainability') ); ?>'">
                     <div class="relative overflow-hidden rounded-lg mb-6 aspect-video">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/vistasindonesia.jpg"
-                            alt="Lujo Consciente"
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/viajes-a-medida-ukiyo-pareja-acantilado.jpg"
+                            alt="Pareja contemplando un acantilado en un viaje romántico personalizado con Ukiyo"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                             loading="lazy" />
                     </div>
@@ -247,8 +247,8 @@ Descubre las experiencias de quienes ya viajaron con nosotros.
                 <!-- Story Image -->
                 <div class="order-1 lg:order-2">
                     <div class="relative overflow-hidden rounded-lg aspect-[4/3]">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/indonesia.jpg"
-                            alt="Indonesia"
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/experiencias-reales-ukiyo-isla-padar.jpg"
+                            alt="Isla Padar vista desde el mirador durante un viaje personalizado por Indonesia con Ukiyo"
                             class="w-full h-full object-cover"
                             loading="lazy" />
                         <div class="absolute inset-0 bg-gradient-to-t from-primary-900/30 to-transparent"></div>
@@ -269,7 +269,7 @@ Descubre las experiencias de quienes ya viajaron con nosotros.
 Todo gran viaje nace de una idea, una emoción o una simple curiosidad.
 Cuéntanos qué te mueve y diseñaremos una experiencia que te haga sentir el mundo de verdad.                </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 transition-all duration-300 shadow-soft">
+                    <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300">
                         Diseña tu aventura
                     </a>
                     <a href="<?php echo esc_url( get_permalink( get_page_by_path('nosotros') ) ); ?>" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300">

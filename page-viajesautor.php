@@ -4,7 +4,6 @@
  * Description: Landing premium de viajes de autor con estilo UKIYO.
  */
 get_header();
-$uri = get_template_directory_uri();
 ?>
 
 <main id="primary" class="relative">
@@ -42,25 +41,42 @@ $uri = get_template_directory_uri();
         <!-- Card Luis -->
         <article class="group rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
           <figure class="aspect-[16/9] overflow-hidden">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/pantanal6.jpg" alt="Fotografía en Pantanal por Luis" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] mask-image" loading="lazy" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-jaguar-hero.jpg" alt="Jaguar en el Pantanal durante un viaje de autor con guía experto (Luis)" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] mask-image" loading="lazy" />
           </figure>
           <div class="p-6 md:p-7 flex-1 flex flex-col">
             <div class="flex items-center gap-3">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/luisacuña.png" alt="Luis, guía y fotógrafo" class="w-12 h-12 rounded-full object-cover ring-1 ring-border/60" loading="lazy" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-luis-acuna.jpg" alt="Luis Acuña, guía experto en naturaleza y fotografía del Pantanal" class="w-12 h-12 rounded-full object-cover ring-1 ring-border/60" loading="lazy" />
               <div>
                 <h3 class="text-xl font-semibold text-text-primary">Pantanal de Brasil, tras el rastro del jaguar</h3>
                 <p class="text-sm text-text-secondary">Por Luis · Guía costarricense y fotógrafo de naturaleza</p>
               </div>
             </div>
             <p class="mt-4 text-text-secondary">Un viaje fotográfico de campo: madrugadas en bote, humedales infinitos y la paciencia necesaria para ese instante en el que aparece el jaguar. Bajo demanda, ritmo pausado y enfoque naturalista.</p>
-            <div class="mt-5 flex items-center gap-3 text-sm text-text-tertiary">
-              <span>Duración sugerida: 8–10 días</span>
-              <span class="px-2">·</span>
-              <span>Grupos reducidos</span>
+
+            <!-- Meta pills -->
+            <div class="flex flex-wrap items-center gap-2 text-sm py-2">
+              <span class="inline-flex items-center gap-2 rounded-full bg-white/70 ring-1 ring-border/60 py-2.5 text-text-secondary">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="font-medium">Duración sugerida: 8–10 días</span>
+              </span>
+              <span class="inline-flex items-center gap-2 rounded-full bg-white/70 ring-1 ring-border/60 py-2.5 text-text-secondary">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20v-2a3 3 0 00-5.356-1.857M17 20H7m0 0H2v-2a3 3 0 015.356-1.857M7 20v-2a3 3 0 015.356-1.857" />
+                </svg>
+                <span class="font-medium">Grupos reducidos</span>
+              </span>
             </div>
-            <div class="mt-6 flex items-center gap-3">
-              <a href="<?php echo esc_url( get_permalink( get_page_by_path('pantanal') ) ); ?>" class="inline-flex items-center rounded-lg ring-1 ring-border/70 bg-white/80 backdrop-blur-md text-text-primary hover:bg-white px-4 py-2.5 text-sm">Descubre su aventura</a>
-              <!-- <a href="<?php echo esc_url( home_url('/contacto') ); ?>" class="inline-flex items-center rounded-lg ring-1 ring-border/70 bg-white/80 backdrop-blur-md text-text-primary hover:bg-white px-4 py-2.5 text-sm">Consultar precio</a> -->
+
+            <!-- CTA buttons -->
+            <div class="flex items-center gap-3 py-2">
+              <a href="<?php echo esc_url( get_permalink( get_page_by_path('pantanal') ) ); ?>" class="btn-primary inline-flex items-center py-2.5">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+                Descubre su aventura
+              </a>
             </div>
           </div>
         </article>
@@ -68,25 +84,42 @@ $uri = get_template_directory_uri();
         <!-- Card Moha -->
         <article class="group rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
           <figure class="aspect-[16/9] overflow-hidden">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/marruecos7.jpg" alt="Dunas del Sáhara en Merzouga con Moha" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] mask-image" loading="lazy" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viajes-a-marruecos-personalizados-merzouga-cielo-nocturno-haima.jpg" alt="Cielo nocturno en Merzouga durante un viaje a Marruecos personalizado (Moha)" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] mask-image" loading="lazy" />
           </figure>
           <div class="p-6 md:p-7 flex-1 flex flex-col">
             <div class="flex items-center gap-3">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/luisacuña.png" alt="Moha, guía bereber" class="w-12 h-12 rounded-full object-cover ring-1 ring-border/60" loading="lazy" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viaje-de-autor-a-marruecos-con-guia-local-moha.png" alt="Moha, guía bereber local en Marruecos" class="w-12 h-12 rounded-full object-cover ring-1 ring-border/60" loading="lazy" />
               <div>
                 <h3 class="text-xl font-semibold text-text-primary">Merzouga íntimo: desierto, medinas y hospitalidad bereber</h3>
                 <p class="text-sm text-text-secondary">Por Moha · Guía marroquí, nacido en el Atlas</p>
               </div>
             </div>
             <p class="mt-4 text-text-secondary">Entre kasbahs, té a la menta y cielos que crujen de estrellas. Ritmo sin prisas, paradas donde tiene sentido y noches en campamentos escogidos por su silencio.</p>
-            <div class="mt-5 flex items-center gap-3 text-sm text-text-tertiary">
-              <span>Duración sugerida: 5 días</span>
-              <span class="px-2">·</span>
-              <span>Grupos reducidos</span>
+
+            <!-- Meta pills -->
+            <div class="flex flex-wrap items-center gap-2 text-sm py-2">
+              <span class="inline-flex items-center gap-2 rounded-full bg-white/70 ring-1 ring-border/60 py-2.5 text-text-secondary">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="font-medium">Duración sugerida: 5 días</span>
+              </span>
+              <span class="inline-flex items-center gap-2 rounded-full bg-white/70 ring-1 ring-border/60 py-2.5 text-text-secondary">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20v-2a3 3 0 00-5.356-1.857M17 20H7m0 0H2v-2a3 3 0 015.356-1.857M7 20v-2a3 3 0 015.356-1.857" />
+                </svg>
+                <span class="font-medium">Grupos reducidos</span>
+              </span>
             </div>
-            <div class="mt-6 flex items-center gap-3">
-              <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajedeautormoha') ) ); ?>" class="inline-flex items-center rounded-lg ring-1 ring-border/70 bg-white/80 backdrop-blur-md text-text-primary hover:bg-white px-4 py-2.5 text-sm">Descubre su aventura</a>
-              <!-- <a href="<?php echo esc_url( home_url('/contacto') ); ?>" class="inline-flex items-center rounded-lg ring-1 ring-border/70 bg-white/80 backdrop-blur-md text-text-primary hover:bg-white px-4 py-2.5 text-sm">Consultar precio</a> -->
+
+            <!-- CTA buttons -->
+            <div class="flex items-center gap-3 py-2">
+              <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajedeautormoha') ) ); ?>" class="btn-primary inline-flex items-center py-2.5">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+                Descubre su aventura
+              </a>
             </div>
           </div>
         </article>
@@ -146,14 +179,14 @@ $uri = get_template_directory_uri();
         <h2 class="text-2xl md:text-3xl font-semibold text-text-primary">Los autores</h2>
         <div class="mt-6 grid gap-6 md:grid-cols-2">
           <div class="flex gap-4 items-start">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/luis5.jpg" alt="Luis" class="w-16 h-16 rounded-full object-cover ring-1 ring-border/60" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-luis-acuna.jpg" alt="Luis Acuña, guía costarricense y fotógrafo de naturaleza" class="w-16 h-16 rounded-full object-cover ring-1 ring-border/60" />
             <div>
               <h3 class="font-semibold text-text-primary">Luis · Guía costarricense y fotógrafo</h3>
               <p class="text-text-secondary">Lleva años esperando la luz justa en humedales y bosques tropicales. Su Pantanal es silencio, paciencia y respeto por la fauna.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/moha1.png" alt="Moha" class="w-16 h-16 rounded-full object-cover ring-1 ring-border/60" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viaje-de-autor-a-marruecos-con-guia-local-moha.png" alt="Moha, guía marroquí y anfitrión local" class="w-16 h-16 rounded-full object-cover ring-1 ring-border/60" />
             <div>
               <h3 class="font-semibold text-text-primary">Moha · Guía marroquí</h3>
               <p class="text-text-secondary">Nacido en el Atlas, conoce el desierto por dentro: los zocos que importan, los silencios que merecen la pena y el té en el lugar adecuado.</p>

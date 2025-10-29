@@ -54,8 +54,8 @@ Así nació UKIYO: para viajar distinto, para viajar de verdad.        </p>
         <!-- Founder -->
         <div class="lg:col-span-1">
           <div class="aspect-[3/4] rounded-lg overflow-hidden mb-6">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/sergio.jpg"
-                 alt="Sergio García, Fundador de UKIYO"
+            <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/agencia-de-viajes-personalizados-ukiyo-sergio-garcia.jpg"
+                 alt="Sergio García, fundador de Ukiyo, agencia de viajes personalizados"
                  class="w-full h-full object-cover"
                  loading="lazy"
                  onerror="this.src='https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg'; this.onerror=null;" />
@@ -100,8 +100,8 @@ Así nació UKIYO: para viajar distinto, para viajar de verdad.        </p>
       <!-- Helena -->
       <div class="card text-center group hover:shadow-card-hover">
         <div class="aspect-square rounded-full overflow-hidden mx-auto mb-6 w-32 h-32">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/hele.jpg"
-               alt="Helena Valenzuela"
+          <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/agencia-de-viajes-personalizados-ukiyo-helena-valenzuela.jpg"
+               alt="Helena Valenzuela, coordinadora experta en Ukiyo"
                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
         </div>
         <h3 class="text-xl font-satoshi-bold text-text-primary mb-2">Helena Valenzuela</h3>
@@ -114,8 +114,8 @@ Así nació UKIYO: para viajar distinto, para viajar de verdad.        </p>
       <!-- Victor -->
       <div class="card text-center group hover:shadow-card-hover">
         <div class="aspect-square rounded-full overflow-hidden mx-auto mb-6 w-32 h-32">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/victor.jpg"
-               alt="Victor García-Heras"
+          <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/agencia-de-viajes-personalizados-ukiyo-victor-garcia-heras.jpg"
+               alt="Víctor García-Heras, creador de contenido en Ukiyo"
                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
         </div>
         <h3 class="text-xl font-satoshi-bold text-text-primary mb-2">Victor García-Heras</h3>
@@ -128,14 +128,14 @@ Así nació UKIYO: para viajar distinto, para viajar de verdad.        </p>
       <!-- Daniel -->
       <div class="card text-center group hover:shadow-card-hover">
         <div class="aspect-square rounded-full overflow-hidden mx-auto mb-6 w-32 h-32">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/dani.jpg"
-               alt="Daniel Valero"
+          <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/agencia-de-viajes-personalizados-ukiyo-sergio-garcia-equipo.jpg"
+               alt="Sergio García, mochilero y miembro del equipo Ukiyo"
                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
         </div>
-        <h3 class="text-xl font-satoshi-bold text-text-primary mb-2">Daniel Valero</h3>
-        <p class="text-primary font-medium mb-3">CTO de UKIYO</p>
+        <h3 class="text-xl font-satoshi-bold text-text-primary mb-2">Sergio Garcia</h3>
+        <p class="text-primary font-medium mb-3">Mochilero ante todo</p>
         <p class="text-text-secondary text-sm mb-4">
-          Combina tecnología y creatividad para que la experiencia digital y la logística de cada viaje sean impecables.
+          Antes de cualquier puesto, soy amante de descubrir rincones y un gran disfrutón de cada viaje. "El mundo es demasiado bonito como para querer recorrerlo entero"
         </p>
       </div>
     </div>
@@ -281,8 +281,8 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
       <!-- Testimonial 1 -->
       <div class="card">
         <div class="flex items-start space-x-4 mb-6">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/davidtulamben.png"
-               alt="David Tulamben"
+          <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/colaborador-ukiyo-david-tulamben-bali.png"
+               alt="David Tulamben, emprendedor local en Bali y colaborador de Ukiyo"
                class="w-16 h-16 rounded-full object-cover"
                loading="lazy"
                onerror="this.src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg'; this.onerror=null;" />
@@ -309,8 +309,8 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
       <!-- Testimonial 2 -->
       <div class="card">
         <div class="flex items-start space-x-4 mb-6">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/alexistortuguero.jpeg"
-               alt="Alexis Tortuguero"
+          <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/colaborador-ukiyo-alexis-tortuguero-conservacionista.jpg"
+               alt="Alexis, biólogo conservacionista en Tortuguero y colaborador de Ukiyo"
                class="w-16 h-16 rounded-full object-cover"
                loading="lazy"
                onerror="this.src='https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg'; this.onerror=null;" />
