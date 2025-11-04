@@ -55,17 +55,9 @@ get_header();
 
             <!-- Meta pills -->
             <div class="flex flex-wrap items-center gap-2 text-sm py-2">
+              <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">8 días</span>
+                    <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">Grupos reducidos</span>
               <span class="inline-flex items-center gap-2 rounded-full bg-white/70 ring-1 ring-border/60 py-2.5 text-text-secondary">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span class="font-medium">Duración sugerida: 8–10 días</span>
-              </span>
-              <span class="inline-flex items-center gap-2 rounded-full bg-white/70 ring-1 ring-border/60 py-2.5 text-text-secondary">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20v-2a3 3 0 00-5.356-1.857M17 20H7m0 0H2v-2a3 3 0 015.356-1.857M7 20v-2a3 3 0 015.356-1.857" />
-                </svg>
-                <span class="font-medium">Grupos reducidos</span>
               </span>
             </div>
 
@@ -98,17 +90,9 @@ get_header();
 
             <!-- Meta pills -->
             <div class="flex flex-wrap items-center gap-2 text-sm py-2">
+              <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">8 días</span>
+                    <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">Grupos reducidos</span>
               <span class="inline-flex items-center gap-2 rounded-full bg-white/70 ring-1 ring-border/60 py-2.5 text-text-secondary">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span class="font-medium">Duración sugerida: 5 días</span>
-              </span>
-              <span class="inline-flex items-center gap-2 rounded-full bg-white/70 ring-1 ring-border/60 py-2.5 text-text-secondary">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20v-2a3 3 0 00-5.356-1.857M17 20H7m0 0H2v-2a3 3 0 015.356-1.857M7 20v-2a3 3 0 015.356-1.857" />
-                </svg>
-                <span class="font-medium">Grupos reducidos</span>
               </span>
             </div>
 
@@ -127,13 +111,13 @@ get_header();
     </div>
   </section>
 
-  <!-- CÓMO FUNCIONA -->
-  <section class="bg-surface">
-    <div class="container mx-auto px-6 md:px-8 py-12 md:py-16">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-semibold text-text-primary">Cómo funciona</h2>
+  <section class="py-20 bg-surface">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-display font-satoshi text-text-primary mb-4">
+          Cómo <span class="text-primary">funciona</span>
+        </h2>
         <br>
-
         <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 relative">
           <!-- Step 1 -->
           <div class="relative rounded-2xl bg-white shadow-sm ring-1 ring-border/60 p-6">
@@ -173,10 +157,13 @@ get_header();
   </section>
 
   <!-- AUTORES (mini bios) -->
-  <section class="bg-surface">
-    <div class="container mx-auto px-6 md:px-8 py-6 md:py-16 pb-12">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-semibold text-text-primary">Los autores</h2>
+  <section class="py-20 bg-surface">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-display font-satoshi text-text-primary mb-4">
+          Los <span class="text-primary">autores</span>
+        </h2>
+        <br>
         <div class="mt-6 grid gap-6 md:grid-cols-2">
           <div class="flex gap-4 items-start">
             <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-luis-acuna.jpg" alt="Luis Acuña, guía costarricense y fotógrafo de naturaleza" class="w-16 h-16 rounded-full object-cover ring-1 ring-border/60" />

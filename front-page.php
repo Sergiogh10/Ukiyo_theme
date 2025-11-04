@@ -231,7 +231,7 @@ Descubre las experiencias de quienes ya viajaron con nosotros.
                             “Mi viaje a Indonesia con UKIYO no fue solo turismo, fue descubrir el país de verdad. Recorrer los arrozales de Ubud, nadar con mantas raya oceánicas y ver el amanecer en las islas de Komodo. Sin duda, el viaje de mi vida.”
                         </blockquote>
                         <div class="flex items-center">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/sergio.jpg"
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/agencia-de-viajes-personalizados-ukiyo-sergio-garcia.jpg"
                                 alt="Sergio García-Heras"
                                 class="w-12 h-12 rounded-full object-cover mr-4"
                                 loading="lazy" />
@@ -267,7 +267,7 @@ Descubre las experiencias de quienes ya viajaron con nosotros.
                 </h2>
                 <p class="text-xl mb-8 opacity-90">
 Todo gran viaje nace de una idea, una emoción o una simple curiosidad.
-Cuéntanos qué te mueve y diseñaremos una experiencia que te haga sentir el mundo de verdad.                </p>
+Cuéntanos qué te mueve y diseñaremos una experiencia que te haga sentir el mundo de verdad.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300">
                         Diseña tu aventura

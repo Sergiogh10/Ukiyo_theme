@@ -104,7 +104,7 @@
 
 @font-face {
   font-family: 'Rowdies';
-  src: url('../fonts/rowdies/Rowdies-Light.ttf') format('truetype');
+  src: url('/wp-content/themes/Ukiyo/assets/fonts/rowdies/Rowdies-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -112,7 +112,7 @@
 
 @font-face {
   font-family: 'Rowdies';
-  src: url('../fonts/rowdies/Rowdies-Regular.ttf') format('truetype');
+  src: url('/wp-content/themes/Ukiyo/assets/fonts/rowdies/Rowdies-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -120,7 +120,7 @@
 
 @font-face {
   font-family: 'Rowdies';
-  src: url('../fonts/rowdies/Rowdies-Bold.ttf') format('truetype');
+  src: url('/wp-content/themes/Ukiyo/assets/fonts/rowdies/Rowdies-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;

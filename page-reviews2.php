@@ -66,7 +66,7 @@ get_header();
               "name" => "María y Edu",
               "destination" => "Isla de Java, Indonesia",
               "rating" => 5,
-              "review" => "Todo perfectamente coordinado, desde los traslados hasta las excursiones. ¡Repetiría sin dudarlo!",
+              "review" => "Gracias a Ukiyo no solo visitamos Indonesia, si no que la vivimos de verdad. Desde el primer día sentimos mucha tranquilidad ya que todo estaba perfectamente organizado y pudimos despreocuparnos y pensar solo en disfrutar. Cuidaron cada detalle y nos crearon un itinerario adaptado a lo que buscábamos, un viaje auténtico, con alma, lejos de lo típico y de los que te dejan huella. Sin duda lo fue y al recordarlo seguimos emocionándonos. Estamos deseando repetir con ellos en nuestro próximo destino!",
               "date" => "Julio 2025",
               "image" => "resena-maria-edu-java-indonesia.jpg"
             ],
