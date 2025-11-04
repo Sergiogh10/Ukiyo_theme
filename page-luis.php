@@ -19,19 +19,19 @@ $uri = get_template_directory_uri();
         <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-12">
             <div class="container mx-auto max-w-4xl">
                 <div class="flex flex-wrap items-center gap-3 mb-6">
-                    <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">15 días</span>
+                    <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">8 días</span>
                     <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">Grupos reducidos</span>
                     <span class="bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">Plazas limitadas</span>
                 </div>
-                <h1 class="text-4xl lg:text-6xl font-crimson text-white mb-4">
-                    Pantanal: <span class="text-accent">tras el rastro del jaguar</span>
+                <h1 class="text-4xl font-rowdies mb-4">
+                    Pantanal: <span>tras el rastro del jaguar</span>
                 </h1>
-                <p class="text-xl text-white/90 max-w-3xl">
+                <p class="text-xl max-w-3xl">
                 Recorreremos con Luis, fotógrafo y guía profesional, los humedales infinitos de Brasil, disfrutando de amaneceres en bote, con la paciencia que requiere el instante.</p>
-                <div class="inline-flex items-baseline rounded-lg bg-white/80 backdrop-blur-md ring-1 ring-border/60 px-4 py-2">
-                  <span class="text-sm text-white mr-2">Desde</span>
-                  <span class="text-2xl font-semibold text-white">1500€</span>
-                  <span class="text-xs text-white ml-2">/persona</span>
+                <div class="inline-flex items-baseline rounded-lg bg-white/80 backdrop-blur-md ring-1 ring-border/60 py-2">
+                  <span class="text-sm mr-2">Desde</span>
+                  <span class="text-2xl font-semibold">3400€</span>
+                  <span class="text-xs ml-2">/persona</span>
                 </div>
             </div>
         </div>
@@ -126,7 +126,11 @@ Conocerás a las personas que hacen posible la conservación de la zona.
             <ul class="space-y-2 text-center mb-4">
               <li class="flex justify-center"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Guía/autor (Luis) durante todo el viaje</span></li>
               <li class="flex justify-center"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Navegaciones y permisos locales</span></li>
-              <li class="flex justify-center"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Alojamiento en lodge seleccionado</span></li>
+              <li class="flex justify-center"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Alojamiento seleccionado</span></li>
+              <li class="flex justify-center"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">7 noches en régimen pensión completa</span></li>
+              <li class="flex justify-center"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Safari en 4x4 o bote</span></li>
+              <li class="flex justify-center"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Almuerzo y cena del primer día</span></li>
+              <li class="flex justify-center"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Seguro de viaje</span></li>
               <li class="flex justify-center"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Asesoría fotográfica en campo</span></li>
             </ul>
           </div>
@@ -160,22 +164,22 @@ Conocerás a las personas que hacen posible la conservación de la zona.
   <section class="py-20 bg-surface">
     <div class="container mx-auto px-6 md:px-8 pb-12 md:pb-16">
       <div class="grid gap-4 md:grid-cols-3">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-luis-acuna-campo.png" alt="Luis Acuña durante el viaje de autor al Pantanal" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-luis-acuna-campo.jpg" alt="Luis Acuña durante el viaje de autor al Pantanal" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
         <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-rio-amanecer.jpg" alt="Amanecer en el río durante un viaje de autor al Pantanal con Ukiyo" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
         <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-fauna-aves.jpg" alt="Aves del Pantanal en un viaje de autor con guía experto" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-<section class="py-20 bg-surface">
-  <div class="container mx-auto px-6 md:px-8 pb-16">
-    <div class="max-w-5xl mx-auto text-center">
+ <!-- FAQ -->
+ <!--<section class="py-20 bg-gradient-secondary text-white font-satoshi">
+  <div class="container mx-auto px-6">
+    <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-display font-satoshi-bold mb-6">Preguntas frecuentes</h2>
 
-      <div data-accordion class="space-y-3">
+      <div data-accordion class="space-y-3"> -->
 
-        <!-- Item 1 -->
+        <!-- Item 1 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn
                   class="w-full flex items-center justify-between text-left px-5 py-4"
@@ -192,9 +196,9 @@ Conocerás a las personas que hacen posible la conservación de la zona.
             Confirmamos disponibilidad por email (o llamada si lo prefieres). La plaza
             queda bloqueada al realizar el depósito de reserva.
           </div>
-        </div>
+        </div> -->
 
-        <!-- Item 2 -->
+        <!-- Item 2 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-2" id="faq-2-h">
@@ -207,9 +211,9 @@ Conocerás a las personas que hacen posible la conservación de la zona.
             Depósito para confirmar plaza y resto antes de la salida (fecha en la confirmación).
             Aceptamos transferencia y tarjeta. Recibirás factura y justificante.
           </div>
-        </div>
+        </div> -->
 
-        <!-- Item 3 -->
+        <!-- Item 3 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-3" id="faq-3-h">
@@ -222,9 +226,10 @@ Conocerás a las personas que hacen posible la conservación de la zona.
             Tras reservar, enviamos dossier con aeropuerto recomendado, horarios y opciones de traslado.
             Podemos coordinar tu llegada o darte instrucciones para el punto de encuentro.
           </div>
-        </div>
+        </div> -->
 
-        <!-- 4 -->
+        <!-- Repite los demás con el mismo patrón -->
+        <!-- 4 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-4" id="faq-4-h">
@@ -236,9 +241,9 @@ Conocerás a las personas que hacen posible la conservación de la zona.
             En la confirmación tienes el contacto del coordinador. A la llegada, dirígete al punto acordado.
             Hacemos briefing de bienvenida: seguridad, plan del día y recomendaciones de equipo.
           </div>
-        </div>
+        </div> -->
 
-        <!-- 5 -->
+        <!-- 5 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-5" id="faq-5-h">
@@ -250,9 +255,9 @@ Conocerás a las personas que hacen posible la conservación de la zona.
             Si la operativa lo permite, puedes incorporarte más tarde. Coordinamos traslado (puede tener coste).
             Los servicios no disfrutados del inicio no son reembolsables.
           </div>
-        </div>
+        </div> -->
 
-        <!-- 6 -->
+        <!-- 6 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-6" id="faq-6-h">
@@ -264,9 +269,9 @@ Conocerás a las personas que hacen posible la conservación de la zona.
             Lodges pequeños y seleccionados. Por defecto, habitación doble/twin compartida.
             Individual disponible con suplemento y según disponibilidad. En zonas remotas puede haber baños compartidos.
           </div>
-        </div>
+        </div> -->
 
-        <!-- 7 -->
+        <!-- 7 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-7" id="faq-7-h">
@@ -278,9 +283,9 @@ Conocerás a las personas que hacen posible la conservación de la zona.
             Política de cancelación clara: el depósito puede no ser reembolsable; el resto depende de la antelación.
             Te enviaremos condiciones exactas. Recomendamos seguro con cobertura de cancelación.
           </div>
-        </div>
+        </div> -->
 
-        <!-- 8 -->
+        <!-- 8 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-8" id="faq-8-h">
@@ -292,9 +297,9 @@ Conocerás a las personas que hacen posible la conservación de la zona.
             Recomendado a partir de 12 años (menores con adulto). Para mayores de 70,
             aconsejamos certificado médico y comentar necesidades específicas.
           </div>
-        </div>
+        </div> -->
 
-        <!-- 9 -->
+        <!-- 9 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-9" id="faq-9-h">
@@ -306,9 +311,9 @@ Conocerás a las personas que hacen posible la conservación de la zona.
             Depende del itinerario. Hay navegación y pasarelas en naturaleza. Escríbenos para evaluar
             adaptaciones razonables; algunas zonas pueden no ser accesibles.
           </div>
-        </div>
+        </div> -->
 
-        <!-- 10 -->
+        <!-- 10 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-10" id="faq-10-h">
@@ -320,9 +325,9 @@ Conocerás a las personas que hacen posible la conservación de la zona.
             No. Caminatas sencillas y navegación. Talleres de fotografía para todos los niveles.
             Si alguna actividad exige técnica, lo indicamos con antelación.
           </div>
-        </div>
+        </div> -->
 
-        <!-- 11 -->
+        <!-- 11 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-11" id="faq-11-h">
@@ -334,9 +339,9 @@ Conocerás a las personas que hacen posible la conservación de la zona.
             Por defecto, no está incluido salvo que se indique en la ficha. Podemos gestionarlo
             con coberturas adecuadas para la actividad.
           </div>
-        </div>
+        </div> -->
 
-        <!-- 12 -->
+        <!-- 12 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-12" id="faq-12-h">
@@ -348,9 +353,9 @@ Conocerás a las personas que hacen posible la conservación de la zona.
             Depende de la póliza: asistencia médica, repatriación, equipaje, RC y, opcionalmente,
             cancelación por causas justificadas. Enviamos la póliza con límites y exclusiones.
           </div>
-        </div>
+        </div> -->
 
-        <!-- 13 -->
+        <!-- 13 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-13" id="faq-13-h">
@@ -366,7 +371,7 @@ Conocerás a las personas que hacen posible la conservación de la zona.
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- CTA Section -->
 <section class="py-20 bg-gradient-warm">

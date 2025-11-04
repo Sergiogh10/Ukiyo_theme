@@ -10,7 +10,7 @@ $uri = get_template_directory_uri();
   <!-- HERO -->
 <section class="relative">
     <div class="relative h-[60vh] lg:h-[70vh] overflow-hidden">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/marruecos7.jpg"
+        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viajes-a-marruecos-personalizados-erg-chebbi-merzouga.jpg"
              alt="Bromo"
              class="w-full h-full object-cover mask-image" 
              loading="lazy"
@@ -23,16 +23,16 @@ $uri = get_template_directory_uri();
                     <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">Grupos reducidos</span>
                     <span class="bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">Plazas limitadas</span>
                 </div>
-                <h1 class="text-4xl lg:text-6xl font-crimson text-white mb-4">
-                    Merzouga: <span class="text-accent">territorio bereber</span>
+                <h1 class="text-4xl font-rowdies mb-4">
+                    Merzouga: <span>territorio bereber</span>
                 </h1>
-                <p class="text-xl text-white/90 max-w-3xl">
+                <p class="text-xl max-w-3xl">
                 Recorreremos con <strong>Moha</strong>, guía bereber de Merzouga, las dunas de <em>Erg Chebbi</em>, los palmerales y los oasis; atardeceres en el desierto y noches bajo un cielo de millones de estrellas.</p>
                 <div class="mt-6">
-                  <div class="inline-flex items-baseline rounded-lg bg-white/80 backdrop-blur-md ring-1 ring-border/60 px-4 py-2">
-                    <span class="text-sm text-white mr-2">Desde</span>
-                    <span class="text-2xl font-semibold text-white">600€</span>
-                    <span class="text-xs text-white ml-2">/persona</span>
+                  <div class="inline-flex items-baseline rounded-lg bg-white/80 backdrop-blur-md ring-1 ring-border/60 py-2">
+                    <span class="text-sm mr-2">Desde</span>
+                    <span class="text-2xl font-semibold">600€</span>
+                    <span class="text-xs ml-2">/persona</span>
                   </div>
                 </div>
             </div>
@@ -82,7 +82,7 @@ $uri = get_template_directory_uri();
     <!-- Contenido -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-30 container mx-auto px-6 md:px-8 py-10 md:py-14 max-w-8xl">
     <div class="flex flex-col items-start">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/moha1.png"
+      <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viaje-de-autor-a-marruecos-con-guia-local-moha.jpg"
            alt="Luis Acuña"
            class="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover ring-1 ring-border/60 bg-white/80" />
       <h2 class="mt-4 text-xl font-semibold text-text-primary">Moha</h2>
@@ -161,22 +161,22 @@ $uri = get_template_directory_uri();
   <section class="bg-surface">
     <div class="container mx-auto px-6 md:px-8 pb-12 md:pb-16">
       <div class="grid gap-4 md:grid-cols-3">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/marruecos1.jpg" alt="Merzouga 1" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/marruecos2.jpg" alt="Merzouga 2" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/marruecos6.jpg" alt="Merzouga 3" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viajes-a-marruecos-personalizados-rissani-kasbahs.jpg" alt="Viajes a marruecos personalizados rissani" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viajes-a-marruecos-personalizados-pistas-oasis-4x4.jpg" alt="Viajes a marruecos en 4x4" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viajes-a-marruecos-personalizados-khamlia-musica-gnawa.jpg" alt="Viajes a marruecos personalizados" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-<section class="py-20 bg-gradient-secondary text-white font-satoshi">
+ <!--<section class="py-20 bg-gradient-secondary text-white font-satoshi">
   <div class="container mx-auto px-6">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-display font-satoshi-bold mb-6">Preguntas frecuentes</h2>
 
-      <div data-accordion class="space-y-3">
+      <div data-accordion class="space-y-3"> -->
 
-        <!-- Item 1 -->
+        <!-- Item 1 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn
                   class="w-full flex items-center justify-between text-left px-5 py-4"
@@ -193,9 +193,9 @@ $uri = get_template_directory_uri();
             Confirmamos disponibilidad por email (o llamada si lo prefieres). La plaza
             queda bloqueada al realizar el depósito de reserva.
           </div>
-        </div>
+        </div> -->
 
-        <!-- Item 2 -->
+        <!-- Item 2 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-2" id="faq-2-h">
@@ -208,9 +208,9 @@ $uri = get_template_directory_uri();
             Depósito para confirmar plaza y resto antes de la salida (fecha en la confirmación).
             Aceptamos transferencia y tarjeta. Recibirás factura y justificante.
           </div>
-        </div>
+        </div> -->
 
-        <!-- Item 3 -->
+        <!-- Item 3 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-3" id="faq-3-h">
@@ -223,10 +223,10 @@ $uri = get_template_directory_uri();
             Tras reservar, enviamos dossier con aeropuerto recomendado, horarios y opciones de traslado.
             Podemos coordinar tu llegada o darte instrucciones para el punto de encuentro.
           </div>
-        </div>
+        </div> -->
 
         <!-- Repite los demás con el mismo patrón -->
-        <!-- 4 -->
+        <!-- 4 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-4" id="faq-4-h">
@@ -238,9 +238,9 @@ $uri = get_template_directory_uri();
             En la confirmación tienes el contacto del coordinador. A la llegada, dirígete al punto acordado.
             Hacemos briefing de bienvenida: seguridad, plan del día y recomendaciones de equipo.
           </div>
-        </div>
+        </div> -->
 
-        <!-- 5 -->
+        <!-- 5 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-5" id="faq-5-h">
@@ -252,9 +252,9 @@ $uri = get_template_directory_uri();
             Si la operativa lo permite, puedes incorporarte más tarde. Coordinamos traslado (puede tener coste).
             Los servicios no disfrutados del inicio no son reembolsables.
           </div>
-        </div>
+        </div> -->
 
-        <!-- 6 -->
+        <!-- 6 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-6" id="faq-6-h">
@@ -266,9 +266,9 @@ $uri = get_template_directory_uri();
             Lodges pequeños y seleccionados. Por defecto, habitación doble/twin compartida.
             Individual disponible con suplemento y según disponibilidad. En zonas remotas puede haber baños compartidos.
           </div>
-        </div>
+        </div> -->
 
-        <!-- 7 -->
+        <!-- 7 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-7" id="faq-7-h">
@@ -280,9 +280,9 @@ $uri = get_template_directory_uri();
             Política de cancelación clara: el depósito puede no ser reembolsable; el resto depende de la antelación.
             Te enviaremos condiciones exactas. Recomendamos seguro con cobertura de cancelación.
           </div>
-        </div>
+        </div> -->
 
-        <!-- 8 -->
+        <!-- 8 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-8" id="faq-8-h">
@@ -294,9 +294,9 @@ $uri = get_template_directory_uri();
             Recomendado a partir de 12 años (menores con adulto). Para mayores de 70,
             aconsejamos certificado médico y comentar necesidades específicas.
           </div>
-        </div>
+        </div> -->
 
-        <!-- 9 -->
+        <!-- 9 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-9" id="faq-9-h">
@@ -308,9 +308,9 @@ $uri = get_template_directory_uri();
             Depende del itinerario. Hay navegación y pasarelas en naturaleza. Escríbenos para evaluar
             adaptaciones razonables; algunas zonas pueden no ser accesibles.
           </div>
-        </div>
+        </div> -->
 
-        <!-- 10 -->
+        <!-- 10 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-10" id="faq-10-h">
@@ -322,9 +322,9 @@ $uri = get_template_directory_uri();
             No. Caminatas sencillas y navegación. Talleres de fotografía para todos los niveles.
             Si alguna actividad exige técnica, lo indicamos con antelación.
           </div>
-        </div>
+        </div> -->
 
-        <!-- 11 -->
+        <!-- 11 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-11" id="faq-11-h">
@@ -336,9 +336,9 @@ $uri = get_template_directory_uri();
             Por defecto, no está incluido salvo que se indique en la ficha. Podemos gestionarlo
             con coberturas adecuadas para la actividad.
           </div>
-        </div>
+        </div> -->
 
-        <!-- 12 -->
+        <!-- 12 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-12" id="faq-12-h">
@@ -350,9 +350,9 @@ $uri = get_template_directory_uri();
             Depende de la póliza: asistencia médica, repatriación, equipaje, RC y, opcionalmente,
             cancelación por causas justificadas. Enviamos la póliza con límites y exclusiones.
           </div>
-        </div>
+        </div> -->
 
-        <!-- 13 -->
+        <!-- 13 
         <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
           <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                   aria-expanded="false" aria-controls="faq-13" id="faq-13-h">
@@ -368,7 +368,7 @@ $uri = get_template_directory_uri();
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- CTA Section -->
 <section class="py-20 bg-gradient-warm">

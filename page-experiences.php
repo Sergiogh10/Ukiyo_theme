@@ -43,7 +43,7 @@ get_header();
                   <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0"></div>
                 </figure>
                 <div class="p-6">
-                  <h3 class="text-2xl font-telma text-text-primary group-hover:text-primary transition">Costa Rica</h3>
+                  <h3 class="text-2xl font-rowdies text-text-primary group-hover:text-primary transition">Costa Rica</h3>
                   <p class="mt-2 text-sm text-text-secondary">Selva, volcanes y océano. Pura vida sin prisas.</p>
                 </div>
               </a>
@@ -61,7 +61,7 @@ get_header();
                   <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0"></div>
                 </figure>
                 <div class="p-6">
-                  <h3 class="text-2xl font-telma text-text-primary group-hover:text-primary transition">Colombia</h3>
+                  <h3 class="text-2xl font-rowdies text-text-primary group-hover:text-primary transition">Colombia</h3>
                   <p class="mt-2 text-sm text-text-secondary">Ritmo, color y aroma a café. Un país que se vive.</p>
                 </div>
               </a>
@@ -79,7 +79,7 @@ get_header();
                   <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0"></div>
                 </figure>
                 <div class="p-6">
-                  <h3 class="text-2xl font-telma text-text-primary group-hover:text-primary transition">Indonesia</h3>
+                  <h3 class="text-2xl font-rowdies text-text-primary group-hover:text-primary transition">Indonesia</h3>
                   <p class="mt-2 text-sm text-text-secondary">Espiritualidad, tradición y paisajes que impresionan.</p>
                 </div>
               </a>
@@ -97,7 +97,7 @@ get_header();
                   <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0"></div>
                 </figure>
                 <div class="p-6">
-                  <h3 class="text-2xl font-telma text-text-primary group-hover:text-primary transition">Marruecos</h3>
+                  <h3 class="text-2xl font-rowdies text-text-primary group-hover:text-primary transition">Marruecos</h3>
                   <p class="mt-2 text-sm text-text-secondary">Zocos, desierto y una hospitalidad que no se olvida.</p>
                 </div>
               </a>

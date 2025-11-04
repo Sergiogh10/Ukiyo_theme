@@ -47,7 +47,7 @@ get_header();
             <div class="flex items-center gap-3">
               <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-luis-acuna.jpg" alt="Luis Acuña, guía experto en naturaleza y fotografía del Pantanal" class="w-12 h-12 rounded-full object-cover ring-1 ring-border/60" loading="lazy" />
               <div>
-                <h3 class="text-xl font-semibold text-text-primary">Pantanal de Brasil, tras el rastro del jaguar</h3>
+                <h3 class="text-xl font-rowdies text-text-primary">Pantanal de Brasil, tras el rastro del jaguar</h3>
                 <p class="text-sm text-text-secondary">Por Luis · Guía costarricense y fotógrafo de naturaleza</p>
               </div>
             </div>
@@ -88,9 +88,9 @@ get_header();
           </figure>
           <div class="p-6 md:p-7 flex-1 flex flex-col">
             <div class="flex items-center gap-3">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viaje-de-autor-a-marruecos-con-guia-local-moha.png" alt="Moha, guía bereber local en Marruecos" class="w-12 h-12 rounded-full object-cover ring-1 ring-border/60" loading="lazy" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viaje-de-autor-a-marruecos-con-guia-local-moha.jpg" alt="Moha, guía bereber local en Marruecos" class="w-12 h-12 rounded-full object-cover ring-1 ring-border/60" loading="lazy" />
               <div>
-                <h3 class="text-xl font-semibold text-text-primary">Merzouga íntimo: desierto, medinas y hospitalidad bereber</h3>
+                <h3 class="text-xl font-rowdies text-text-primary">Merzouga íntimo: desierto, medinas y hospitalidad bereber</h3>
                 <p class="text-sm text-text-secondary">Por Moha · Guía marroquí, nacido en el Atlas</p>
               </div>
             </div>
@@ -186,7 +186,7 @@ get_header();
             </div>
           </div>
           <div class="flex gap-4 items-start">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viaje-de-autor-a-marruecos-con-guia-local-moha.png" alt="Moha, guía marroquí y anfitrión local" class="w-16 h-16 rounded-full object-cover ring-1 ring-border/60" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viaje-de-autor-a-marruecos-con-guia-local-moha.jpg" alt="Moha, guía marroquí y anfitrión local" class="w-16 h-16 rounded-full object-cover ring-1 ring-border/60" />
             <div>
               <h3 class="font-semibold text-text-primary">Moha · Guía marroquí</h3>
               <p class="text-text-secondary">Nacido en el Atlas, conoce el desierto por dentro: los zocos que importan, los silencios que merecen la pena y el té en el lugar adecuado.</p>
