@@ -281,7 +281,8 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
       <!-- Testimonial 1 -->
       <div class="card">
         <div class="flex items-start space-x-4 mb-6">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/colaborador-ukiyo-david-tulamben-bali.png"
+          <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/colaborador-ukiyo-david-tulamben-bali.jpg
+          "
                alt="David Tulamben, emprendedor local en Bali y colaborador de Ukiyo"
                class="w-16 h-16 rounded-full object-cover"
                loading="lazy"

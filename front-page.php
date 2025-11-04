@@ -147,7 +147,7 @@ Por eso diseñamos tu experiencia a medida: fiel a tu ritmo, tus ganas y tu form
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Despertar Espiritual -->
-                <div class="card group cursor-pointer hover:shadow-card-hover" onclick="window.location.href='<?php echo esc_url( site_url('/experiences') ); ?>'">
+                <div class="card group cursor-pointer hover:shadow-card-hover" onclick="window.location.href='<?php echo esc_url( get_permalink( get_page_by_path('experiencias') ) ); ?>'">
                     <div class="relative overflow-hidden rounded-lg mb-6 aspect-video">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/viajes-a-medida-ukiyo-aventurero-bali.jpg"
                             alt="Viajero explorando los arrozales de Bali en un viaje de aventura personalizado con Ukiyo"
@@ -167,7 +167,7 @@ Para quienes buscan sentir la tierra bajo los pies y la libertad en cada paso.  
                 </div>
 
                 <!-- Conexión Auténtica -->
-                <div class="card group cursor-pointer hover:shadow-card-hover" onclick="window.location.href='<?php echo esc_url( site_url('/experiences') ); ?>'">
+                <div class="card group cursor-pointer hover:shadow-card-hover" onclick="window.location.href='<?php echo esc_url( get_permalink( get_page_by_path('experiencias') ) ); ?>'">
                     <div class="relative overflow-hidden rounded-lg mb-6 aspect-video">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/viajes-a-medida-ukiyo-anciana-indonesia.jpg"
                             alt="Anciana indonesia sonriendo en un mercado local durante un viaje cultural con Ukiyo"
@@ -187,7 +187,7 @@ Para quienes viajan para comprender, no solo para mirar.                    </p>
                 </div>
 
                 <!-- Lujo Consciente -->
-                <div class="card group cursor-pointer hover:shadow-card-hover" onclick="window.location.href='<?php echo esc_url( site_url('/sustainability') ); ?>'">
+                <div class="card group cursor-pointer hover:shadow-card-hover" onclick="window.location.href='<?php echo esc_url( get_permalink( get_page_by_path('experiencias') ) ); ?>'">
                     <div class="relative overflow-hidden rounded-lg mb-6 aspect-video">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/viajes-a-medida-ukiyo-pareja-acantilado.jpg"
                             alt="Pareja contemplando un acantilado en un viaje romántico personalizado con Ukiyo"
