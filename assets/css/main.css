@@ -2948,6 +2948,34 @@ input[type="range"].accent-primary::-moz-range-thumb:hover {
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
 }
+
+/* Difuminar hacia la izquierda (se ve a la derecha, se pierde a la izquierda) */
+.mask-left {
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
+          mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
+}
+
+/* Versión más corta, como tu .mask-fade-b pero a la izquierda */
+.mask-fade-l {
+  -webkit-mask-image: linear-gradient(to left, black 70%, transparent 100%);
+          mask-image: linear-gradient(to left, black 70%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+
+/* Como tu fade-bottom pero lateral */
+.fade-left {
+  -webkit-mask-image: linear-gradient(to left, black 80%, transparent 100%);
+          mask-image: linear-gradient(to left, black 80%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+/* difuminar hacia la derecha (se ve más a la izquierda) */
+.mask-right {
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
+          mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
+}
+
 /* ===== Timeline vertical ===== */
 .timeline {
   position: relative;

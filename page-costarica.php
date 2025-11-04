@@ -81,7 +81,7 @@ get_header();
 
 <!-- Day-by-Day Itinerary -->
 <section class="py-20 bg-surface">
-    <div class="container mx-auto px-6">
+    <div class="relative mx-auto px-6">
         <div class="text-center mb-16">
             <h2 class="text-display font-crimson text-text-primary mb-4">
                 Nuestros <span class="text-primary">imprescindibles</span>
@@ -91,223 +91,395 @@ get_header();
             </p>
         </div>
 
-        <div class="max-w-4xl mx-auto">
-            <!-- Aquí incluyes tus días 1 a 5 tal cual los pasaste -->
+            <!-- Day 1 -->
             <div class="mb-12">
-                    <div class="card hover:shadow-card-hover transition-all duration-300">
-                        <div class="flex flex-col lg:flex-row gap-8">
-                            <div class="lg:w-1/3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-personalizados-ukiyo-guacamayo.jpg" alt="Corcovado, Península de Osa, durante un viaje a Costa Rica personalizado con Ukiyo" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                <div class="bg-white/90 border border-surface/40 rounded-2xl overflow-hidden shadow-soft">
+                    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+                        <!-- Left content -->
+                        <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
+                            <div>
+                                <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">CORCOVADO</h1>
+                                <p class="mb-6"> Cuando la mayoría piensa en Indonesia, imagina Bali. Pero si te alejas solo un poco, cruzando el estrecho, te espera Java, una isla que late con la fuerza del fuego y la calma de los templos. Aquí no vienes a desconectar… vienes a sentir. </p>
+                                <p>Java es donde todo empieza: los volcanes más imponentes del país, las ciudades coloniales que conservan el alma de Indonesia y una espiritualidad tan presente que se respira en cada amanecer entre arrozales.</p>
+                                <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
+                                <div class="grid sm:grid-cols-2 gap-6">
+                                    <!-- Trip detail -->
+                                    <div>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">JAVA</span>?</h4>
+                                    </div>
+                                    <div class="space-y-3">
+                                    <div class="flex items-start">
+                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-text-secondary"><strong>Monte Bromo:</strong> Taller de tejido de bambú sostenible</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-text-secondary"><strong>Ijen:</strong> Creación de ofrendas ceremoniales</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-text-secondary"><strong>Prambanan:</strong> Intercambio cultural con la comunidad</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-text-secondary"><strong>Borobudur:</strong> Intercambio cultural con la comunidad</span>
+                                    </div>
+                                </div>
+                                    <!-- Services provided
+                                    <div>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">Incluye</h4>
+                                        <ul class="space-y-2 text-sm text-text-secondary">
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Jeep 4x4 al amanecer
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Guía local
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Miradores principales
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Asistencia Ukiyo
+                                            </li>
+                                        </ul>
+                                    </div> -->
+                                </div>
                             </div>
-                            <div class="lg:w-2/3">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-semibold mr-4">1</div>
-                                    <h3 class="text-2xl font-crimson text-text-primary">CORCOVADO (Península de Osa)</h3>
+                        </div>
+                        <!-- Right image -->
+                        <div class="relative min-h-[280px] lg:min-h-full overflow-hidden">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-rana-ojos-rojos.jpg" alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo" class="w-full h-full mask-left" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                            <div class="absolute"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 y 3 -->
+
+            <div class="mb-12">
+                <div class="bg-white/90 border border-surface/40 rounded-2xl overflow-hidden shadow-soft">
+                    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+                        
+                        <!-- Imagen a la izquierda -->
+                        <div class="relative min-h-[280px] lg:min-h-full overflow-hidden">
+                            <img
+                                src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-monteverde.jpg"
+                                alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo"
+                                class="w-full h-full object-cover mask-right"
+                                loading="lazy"
+                                onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;"
+                            />
+                        </div>
+
+                        <!-- Texto a la derecha -->
+                        <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
+                            <div>
+                                <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">MONTEVERDE</h1>
+                                <p class="mb-6"> Cuando la mayoría piensa en Indonesia, imagina Bali. Pero si te alejas solo un poco, cruzando el estrecho, te espera Java, una isla que late con la fuerza del fuego y la calma de los templos. Aquí no vienes a desconectar… vienes a sentir. </p>
+                                <p>Java es donde todo empieza: los volcanes más imponentes del país, las ciudades coloniales que conservan el alma de Indonesia y una espiritualidad tan presente que se respira en cada amanecer entre arrozales.</p>
+                                <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
+                                <div class="grid sm:grid-cols-2 gap-6">
+                                    <!-- Trip detail -->
+                                    <div>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">JAVA</span>?</h4>
+                                    </div>
+                                    <div class="space-y-3">
+                                    <div class="flex items-start">
+                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-text-secondary"><strong>Monte Bromo:</strong> Taller de tejido de bambú sostenible</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-text-secondary"><strong>Ijen:</strong> Creación de ofrendas ceremoniales</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-text-secondary"><strong>Prambanan:</strong> Intercambio cultural con la comunidad</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-text-secondary"><strong>Borobudur:</strong> Intercambio cultural con la comunidad</span>
+                                    </div>
                                 </div>
-                                <div class="mb-6">
-                                    <span class="inline-block bg-primary-100 text-primary px-3 py-1 rounded-full text-sm font-medium mr-2">Vida salvaje</span>
-                                    <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium">Senderismo costero</span>
-                                </div>
-                                <p class="text-text-secondary mb-6">
-                                  Comenzamos en el corazón salvaje de Costa Rica. Caminatas entre selva y playa, observación de guacamayos, monos aulladores y rastros de tapir. Al regreso, café costarricense en el lodge y tiempo para revisar fotografías.
-                                </p>
-                                <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>7:00 AM:</strong> Sendero costero y observación de fauna</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>1:00 PM:</strong> Almuerzo en lodge y descanso</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>4:00 PM:</strong> Caminata corta al atardecer (playa y manglar)</span>
-                                    </div>
+                                    <!-- Services provided
+                                    <div>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">Incluye</h4>
+                                        <ul class="space-y-2 text-sm text-text-secondary">
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Jeep 4x4 al amanecer
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Guía local
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Miradores principales
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Asistencia Ukiyo
+                                            </li>
+                                        </ul>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Day 2 -->
-                <div class="mb-12">
-                    <div class="card hover:shadow-card-hover transition-all duration-300">
-                        <div class="flex flex-col lg:flex-row-reverse gap-8">
-                            <div class="lg:w-1/3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-monteverde-bosque-nuboso.jpg" alt="Bosque nuboso de Monteverde en un viaje a Costa Rica personalizado" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
-                            </div>
-                            <div class="lg:w-2/3">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center font-semibold mr-4">2</div>
-                                    <h3 class="text-2xl font-crimson text-text-primary">MONTEVERDE</h3>
-                                </div>
-                                <div class="mb-6">
-                                    <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium mr-2">Bosque Nuboso</span>
-                                    <span class="inline-block bg-accent-100 text-accent px-3 py-1 rounded-full text-sm font-medium">Puentes Colgantes</span>
-                                </div>
-                                <p class="text-text-secondary mb-6">
-                                  Amanecer entre nubes y helechos arborescentes. Caminata por puentes colgantes y observación de aves (quetzal en temporada). Tarde de cafetal y taller de tostado artesanal.
-                                </p>
-                                <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>6:30 AM:</strong> Caminata en bosque nuboso</span>
+            <div class="mb-12">
+                <div class="bg-white/90 border border-surface/40 rounded-2xl overflow-hidden shadow-soft">
+                    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+                        <!-- Left content -->
+                        <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
+                            <div>
+                                <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">TORTUGUERO</h1>
+                                <p class="mb-6"> Cuando la mayoría piensa en Indonesia, imagina Bali. Pero si te alejas solo un poco, cruzando el estrecho, te espera Java, una isla que late con la fuerza del fuego y la calma de los templos. Aquí no vienes a desconectar… vienes a sentir. </p>
+                                <p>Java es donde todo empieza: los volcanes más imponentes del país, las ciudades coloniales que conservan el alma de Indonesia y una espiritualidad tan presente que se respira en cada amanecer entre arrozales.</p>
+                                <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
+                                <div class="grid sm:grid-cols-2 gap-6">
+                                    <!-- Trip detail -->
+                                    <div>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">JAVA</span>?</h4>
                                     </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>11:00 AM:</strong> Ruta de puentes colgantes</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>3:30 PM:</strong> Visita a cafetal y cata</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Day 3 -->
-                <div class="mb-12">
-                    <div class="card hover:shadow-card-hover transition-all duration-300">
-                        <div class="flex flex-col lg:flex-row gap-8">
-                            <div class="lg:w-1/3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-canales.jpg" alt="Canales de Tortuguero en un viaje a Costa Rica personalizado" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
-                            </div>
-                            <div class="lg:w-2/3">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-semibold mr-4">3</div>
-                                    <h3 class="text-2xl font-crimson text-text-primary">TORTUGUERO</h3>
-                                </div>
-                                <div class="mb-6">
-                                    <span class="inline-block bg-accent-100 text-accent px-3 py-1 rounded-full text-sm font-medium mr-2">Navegación</span>
-                                    <span class="inline-block bg-primary-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Observación</span>
-                                </div>
-                                <p class="text-text-secondary mb-6">
-                                  Navegación por canales al amanecer: garzas, caimanes y monos cariblancos. Visita al pequeño pueblo y tiempo libre en el lodge junto al río.
-                                </p>
-                                <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>5:30 AM:</strong> Safari en bote por canales</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>10:30 AM:</strong> Paseo por el pueblo y artesanías</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>4:00 PM:</strong> Tarde libre / taller de fotografía</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Day 4 -->
-                <div class="mb-12">
-                    <div class="card hover:shadow-card-hover transition-all duration-300">
-                        <div class="flex flex-col lg:flex-row-reverse gap-8">
-                            <div class="lg:w-1/3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-volcan-arenal-la-fortuna.jpg" alt="Volcán Arenal y La Fortuna en un viaje a Costa Rica personalizado" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
-                            </div>
-                            <div class="lg:w-2/3">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-semibold mr-4">4</div>
-                                    <h3 class="text-2xl font-crimson text-text-primary">ARENAL & LA FORTUNA</h3>
-                                </div>
-                                <div class="mb-6">
-                                    <span class="inline-block bg-primary-100 text-primary px-3 py-1 rounded-full text-sm font-medium mr-2">Termales</span>
-                                    <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium">Cascadas</span>
-                                </div>
-                                <p class="text-text-secondary mb-6">
-                                  Sendero a la catarata de La Fortuna y relax en aguas termales al atardecer. Paisajes volcánicos y miradores con vista al Arenal.
-                                </p>
-                                <div class="space-y-3">
+                                    <div class="space-y-3">
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>9:00 AM:</strong> Caminata a la catarata</span>
+                                        <span class="text-text-secondary"><strong>Monte Bromo:</strong> Taller de tejido de bambú sostenible</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>2:00 PM:</strong> Circuito de miradores</span>
+                                        <span class="text-text-secondary"><strong>Ijen:</strong> Creación de ofrendas ceremoniales</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>6:30 PM:</strong> Termales y cena ligera</span>
+                                        <span class="text-text-secondary"><strong>Prambanan:</strong> Intercambio cultural con la comunidad</span>
                                     </div>
+                                    <div class="flex items-start">
+                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-text-secondary"><strong>Borobudur:</strong> Intercambio cultural con la comunidad</span>
+                                    </div>
+                                </div>
+                                    <!-- Services provided
+                                    <div>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">Incluye</h4>
+                                        <ul class="space-y-2 text-sm text-text-secondary">
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Jeep 4x4 al amanecer
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Guía local
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Miradores principales
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Asistencia Ukiyo
+                                            </li>
+                                        </ul>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Right image -->
+                        <div class="relative min-h-[280px] lg:min-h-full overflow-hidden">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-atardecer.jpg" alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo" class="w-full h-full mask-left" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                            <div class="absolute"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 4 y 5 -->
+
+            <div class="mb-12">
+                <div class="bg-white/90 border border-surface/40 rounded-2xl overflow-hidden shadow-soft">
+                    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+                        
+                        <!-- Imagen a la izquierda -->
+                        <div class="relative min-h-[280px] lg:min-h-full overflow-hidden">
+                            <img
+                                src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-rio-celeste.jpg"
+                                alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo"
+                                class="w-full h-full object-cover mask-right"
+                                loading="lazy"
+                                onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;"
+                            />
+                        </div>
+
+                        <!-- Texto a la derecha -->
+                        <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
+                            <div>
+                                <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">LA FORTUNA</h1>
+                                <p class="mb-6"> Cuando la mayoría piensa en Indonesia, imagina Bali. Pero si te alejas solo un poco, cruzando el estrecho, te espera Java, una isla que late con la fuerza del fuego y la calma de los templos. Aquí no vienes a desconectar… vienes a sentir. </p>
+                                <p>Java es donde todo empieza: los volcanes más imponentes del país, las ciudades coloniales que conservan el alma de Indonesia y una espiritualidad tan presente que se respira en cada amanecer entre arrozales.</p>
+                                <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
+                                <div class="grid sm:grid-cols-2 gap-6">
+                                    <!-- Trip detail -->
+                                    <div>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">JAVA</span>?</h4>
+                                    </div>
+                                    <div class="space-y-3">
+                                    <div class="flex items-start">
+                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-text-secondary"><strong>Monte Bromo:</strong> Taller de tejido de bambú sostenible</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-text-secondary"><strong>Ijen:</strong> Creación de ofrendas ceremoniales</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-text-secondary"><strong>Prambanan:</strong> Intercambio cultural con la comunidad</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-text-secondary"><strong>Borobudur:</strong> Intercambio cultural con la comunidad</span>
+                                    </div>
+                                </div>
+                                    <!-- Services provided
+                                    <div>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">Incluye</h4>
+                                        <ul class="space-y-2 text-sm text-text-secondary">
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Jeep 4x4 al amanecer
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Guía local
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Miradores principales
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Asistencia Ukiyo
+                                            </li>
+                                        </ul>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Day 5 -->
-                <div class="mb-12">
-                    <div class="card hover:shadow-card-hover transition-all duration-300">
-                        <div class="flex flex-col lg:flex-row gap-8">
-                            <div class="lg:w-1/3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-caribe-sur-cahuita.jpg" alt="Caribe Sur, Parque Cahuita y Puerto Viejo en un viaje a Costa Rica personalizado" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+            <div class="mb-12">
+                <div class="bg-white/90 border border-surface/40 rounded-2xl overflow-hidden shadow-soft">
+                    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+                        <!-- Left content -->
+                        <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
+                            <div>
+                                <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">PUERTO VIEJO</h1>
+                                <p class="mb-6"> Cuando la mayoría piensa en Indonesia, imagina Bali. Pero si te alejas solo un poco, cruzando el estrecho, te espera Java, una isla que late con la fuerza del fuego y la calma de los templos. Aquí no vienes a desconectar… vienes a sentir. </p>
+                                <p>Java es donde todo empieza: los volcanes más imponentes del país, las ciudades coloniales que conservan el alma de Indonesia y una espiritualidad tan presente que se respira en cada amanecer entre arrozales.</p>
+                                <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
+                                <div class="grid sm:grid-cols-2 gap-6">
+                                    <!-- Trip detail -->
+                                    <div>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">JAVA</span>?</h4>
+                                    </div>
+                                    <div class="space-y-3">
+                                    <div class="flex items-start">
+                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-text-secondary"><strong>Monte Bromo:</strong> Taller de tejido de bambú sostenible</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-text-secondary"><strong>Ijen:</strong> Creación de ofrendas ceremoniales</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-text-secondary"><strong>Prambanan:</strong> Intercambio cultural con la comunidad</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-text-secondary"><strong>Borobudur:</strong> Intercambio cultural con la comunidad</span>
+                                    </div>
+                                </div>
+                                    <!-- Services provided
+                                    <div>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">Incluye</h4>
+                                        <ul class="space-y-2 text-sm text-text-secondary">
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Jeep 4x4 al amanecer
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Guía local
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Miradores principales
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Asistencia Ukiyo
+                                            </li>
+                                        </ul>
+                                    </div> -->
+                                </div>
                             </div>
-                            <div class="lg:w-2/3">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center font-semibold mr-4">5</div>
-                                    <h3 class="text-2xl font-crimson text-text-primary">CARIBE SUR</h3>
-                                </div>
-                                <div class="mb-6">
-                                    <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium mr-2">Parque Cahuita</span>
-                                    <span class="inline-block bg-accent-100 text-accent px-3 py-1 rounded-full text-sm font-medium">Cultura Afrocaribeña</span>
-                                </div>
-                                <p class="text-text-secondary mb-6">
-                                  Caminata costera por Cahuita con posibilidad de esnórquel (según condiciones). Tarde en Puerto Viejo: ritmos caribeños y cocina local.
-                                </p>
-                                <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>8:00 AM:</strong> Sendero costero y fauna</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>12:30 PM:</strong> Esnórquel opcional</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>6:00 PM:</strong> Paseo por Puerto Viejo</span>
-                                    </div>
-                                </div>
-                            </div>
+                        </div>
+                        <!-- Right image -->
+                        <div class="relative min-h-[280px] lg:min-h-full overflow-hidden">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-mono.jpg" alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo" class="w-full h-full mask-left" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                            <div class="absolute"></div>
                         </div>
                     </div>
                 </div>
