@@ -19,16 +19,19 @@ get_header();
         <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-12">
             <div class="container mx-auto max-w-4xl">
                 <div class="flex flex-wrap items-center gap-3 mb-6">
-                    <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">Desierto</span>
-                    <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">Cultura y hospitalidad</span>
-                    <span class="bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">Aventura y calma</span>
+                    <span class="badge-elevada">Desierto</span>
+                    <span class="badge-elevada">Cultura y hospitalidad</span>
+                    <span class="badge-elevada">Aventura y calma</span>
                 </div>
-                <h1 class="text-4xl lg:text-6xl font-crimson text-white mb-4">
-                    MARRUECOS <span class="text-accent">Desierto y tradición</span>
-                </h1>
-                <p class="text-xl text-white/90 max-w-3xl">
+                <div class="hero-overlay-box">
+                    <h1 class="text-4xl lg:text-6xl font-rowdies text-white mb-4 pl-4">
+                    MARRUECOS: <br>
+                    <span class="text-accent">Desierto y tradición</span>
+                    </h1>
+                    <p class="text-xl text-white/90 max-w-3xl pl-4">
                 Desde las montañas del Atlas hasta las dunas infinitas de Merzouga, Marruecos despierta los sentidos.  
                 Una tierra donde la calma del desierto se entrelaza con la energía de las medinas y el aroma del té a la menta.                </p>
+                </div>
             </div>
         </div>
     </div>
@@ -81,7 +84,7 @@ get_header();
 
 <!-- Day-by-Day Itinerary -->
 <section class="py-20 bg-surface">
-    <div class="container mx-auto px-6">
+    <div class="relative mx-auto px-6">
         <div class="text-center mb-16">
             <h2 class="text-display font-crimson text-text-primary mb-4">
                 Nuestros <span class="text-primary">imprescindibles</span>
@@ -91,151 +94,398 @@ get_header();
             </p>
         </div>
 
-        <div class="max-w-4xl mx-auto">
-            <!-- Aquí incluyes tus días 1 a 5 tal cual los pasaste -->
+        <!-- Day 1 -->
             <div class="mb-12">
-                <div class="card hover:shadow-card-hover transition-all duration-300">
-                    <div class="flex flex-col lg:flex-row gap-8">
-                        <div class="lg:w-1/3">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viajes-a-marruecos-personalizados-erg-chebbi-merzouga.jpg" alt="Erg Chebbi en Merzouga durante un viaje a Marruecos personalizado con Ukiyo" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                <div class="bg-white/90 border border-surface/40 rounded-2xl overflow-hidden shadow-soft">
+                    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+                        <!-- Left content -->
+                        <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
+                            <div>
+                                <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">MARRAKECH</h1>
+                                <p class="mb-6">Marrakech vibra con el color de sus zocos, el sonido de la plaza Jemaa el-Fna y la calma escondida de sus riads. Es la puerta de entrada perfecta a Marruecos: intensa, acogedora y llena de belleza.</p>
+                                <p>Te llevaremos por sus jardines, palacios y medina para que descubras la parte más auténtica de la ciudad, con paradas en talleres de artesanos, terrazas con vistas al Atlas y gastronomía local.</p>
+                                <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
+                                <div class="grid sm:grid-cols-2 gap-6">
+                                    <!-- Trip detail -->
+                                    <div>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">MARRAKECH</span>?</h4>
+                                    </div>
+                                    <div class="space-y-3">
+                                        <div class="flex items-start">
+                                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-text-secondary"><strong>Medina histórica:</strong> callejuelas, zocos y vida local.</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-text-secondary"><strong>Palacios y jardines:</strong> Bahía, Majorelle y rincones secretos.</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-text-secondary"><strong>Gastronomía local:</strong> cena en riad o terraza al atardecer.</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-text-secondary"><strong>Experiencia sensorial:</strong> té a la menta, especias y artesanía.</span>
+                                        </div>
+                                    </div>
+                                    <!-- Services provided
+                                    <div>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">Incluye</h4>
+                                        <ul class="space-y-2 text-sm text-text-secondary">
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Jeep 4x4 al amanecer
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Guía local
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Miradores principales
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Asistencia Ukiyo
+                                            </li>
+                                        </ul>
+                                    </div> -->
+                                </div>
+                            </div>
                         </div>
-                        <div class="lg:w-2/3">
-                            <div class="flex items-center mb-4">
-                                <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-semibold mr-4">1</div>
-                                <h3 class="text-2xl font-crimson text-text-primary">ERG CHEBBI (Merzouga)</h3>
-                            </div>
-                            <div class="mb-6">
-                                <span class="inline-block bg-primary-100 text-primary px-3 py-1 rounded-full text-sm font-medium mr-2">Dunas</span>
-                                <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium">Atardecer</span>
-                            </div>
-                            <p class="text-text-secondary mb-6">
-                              Llegada a Merzouga y primer contacto con el Sahara. Subimos a las dunas de Erg Chebbi para ver cómo el sol tiñe de oro el horizonte. Té de bienvenida en haima y cena tradicional.
-                            </p>
-                            <div class="space-y-3">
-                                <span class="text-text-secondary"><strong>5:00 PM:</strong> Paseo por las dunas y puesta de sol</span>
-                                <span class="text-text-secondary"><strong>7:30 PM:</strong> Cena bereber en campamento</span>
-                                <span class="text-text-secondary"><strong>10:00 PM:</strong> Cielo estrellado y silencio del desierto</span>
+                        <!-- Right image -->
+                        <div class="relative min-h-[280px] lg:min-h-full overflow-hidden">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/marruecos/viajes-personalizados-ukiyo-marruecos-marrakech.jpg" alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo" class="w-full h-full mask-left" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                            <div class="absolute"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 y 3 -->
+
+            <div class="mb-12">
+                <div class="bg-white/90 border border-surface/40 rounded-2xl overflow-hidden shadow-soft">
+                    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+                        
+                        <!-- Imagen a la izquierda -->
+                        <div class="relative min-h-[280px] lg:min-h-full overflow-hidden">
+                            <img
+                                src="<?php echo get_template_directory_uri(); ?>/images/marruecos/viajes-personalizados-ukiyo-marruecos-fez.jpg"
+                                alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo"
+                                class="w-full h-full object-cover mask-right"
+                                loading="lazy"
+                                onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;"
+                            />
+                        </div>
+
+                        <!-- Texto a la derecha -->
+                        <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
+                            <div>
+                                <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">FEZ</h1>
+                                <p class="mb-6">Fez es la ciudad más tradicional de Marruecos, un lugar donde la vida sigue en su ritmo de hace siglos. Su medina es un laberinto declarado Patrimonio de la Humanidad.</p>
+                                <p>Te proponemos recorrerla con guía local para entender sus tenerías, sus escuelas coránicas, los oficios antiguos y la vida cotidiana de sus habitantes.</p>
+                                <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
+                                <div class="grid sm:grid-cols-2 gap-6">
+                                    <!-- Trip detail -->
+                                    <div>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">FEZ</span>?</h4>
+                                    </div>
+                                    <div class="space-y-3">
+                                        <div class="flex items-start">
+                                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-text-secondary"><strong>Medina de Fez el-Bali:</strong> la más grande y auténtica del país.</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-text-secondary"><strong>Tenerías tradicionales:</strong> proceso de cuero único.</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-text-secondary">Artesanía y cerámica azul de Fez.</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-text-secondary">Gastronomía clásica marroquí en restaurante local.</span>
+                                        </div>
+                                    </div>
+                                    <!-- Services provided
+                                    <div>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">Incluye</h4>
+                                        <ul class="space-y-2 text-sm text-text-secondary">
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Jeep 4x4 al amanecer
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Guía local
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Miradores principales
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Asistencia Ukiyo
+                                            </li>
+                                        </ul>
+                                    </div> -->
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Day 2 -->
             <div class="mb-12">
-                <div class="card hover:shadow-card-hover transition-all duration-300">
-                    <div class="flex flex-col lg:flex-row-reverse gap-8">
-                        <div class="lg:w-1/3">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viajes-a-marruecos-personalizados-khamlia-musica-gnawa.jpg" alt="Música gnawa en Khamlia durante un viaje a Marruecos personalizado" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                <div class="bg-white/90 border border-surface/40 rounded-2xl overflow-hidden shadow-soft">
+                    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+                        <!-- Left content -->
+                        <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
+                            <div>
+                                <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">MERZOUGA</h1>
+                                <p class="mb-6">Merzouga es el punto de encuentro con el Sáhara: dunas doradas, silencio absoluto y cielos estrellados. Aquí el viaje se vuelve más lento y profundo.</p>
+                                <p>Incluimos la experiencia completa de desierto: dromedario al atardecer, noche en haima bereber, música local y salida de sol sobre las dunas.</p>
+                                <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
+                                <div class="grid sm:grid-cols-2 gap-6">
+                                    <!-- Trip detail -->
+                                    <div>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">MERZOUGA</span>?</h4>
+                                    </div>
+                                    <div class="space-y-3">
+                                        <div class="flex items-start">
+                                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-text-secondary">Ruta en dromedario al atardecer.</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-text-secondary">Noche en campamento del desierto.</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-text-secondary">Amanecer en las dunas de Erg Chebbi.</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-text-secondary">Recorrido 4x4 por aldeas y oasis.</span>
+                                        </div>
+                                    </div>
+                                    <!-- Services provided
+                                    <div>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">Incluye</h4>
+                                        <ul class="space-y-2 text-sm text-text-secondary">
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Jeep 4x4 al amanecer
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Guía local
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Miradores principales
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Asistencia Ukiyo
+                                            </li>
+                                        </ul>
+                                    </div> -->
+                                </div>
+                            </div>
                         </div>
-                        <div class="lg:w-2/3">
-                            <div class="flex items-center mb-4">
-                                <div class="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center font-semibold mr-4">2</div>
-                                <h3 class="text-2xl font-crimson text-text-primary">KHAMLIA & ALREDEDORES</h3>
-                            </div>
-                            <div class="mb-6">
-                                <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium mr-2">Música Gnawa</span>
-                                <span class="inline-block bg-accent-100 text-accent px-3 py-1 rounded-full text-sm font-medium">Cultura</span>
-                            </div>
-                            <p class="text-text-secondary mb-6">
-                              Visita a Khamlia para disfrutar de música gnawa y conocer su historia. Paseo por palmerales y ksar cercanos. Almuerzo local y tiempo para fotos con la luz suave de la tarde.
-                            </p>
-                            <div class="space-y-3">
-                                <span class="text-text-secondary"><strong>10:00 AM:</strong> Concierto gnawa y conversación</span>
-                                <span class="text-text-secondary"><strong>1:30 PM:</strong> Almuerzo local</span>
-                                <span class="text-text-secondary"><strong>4:30 PM:</strong> Paseo por palmeral y ksar</span>
+                        <!-- Right image -->
+                        <div class="relative min-h-[280px] lg:min-h-full overflow-hidden">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/marruecos/viajes-personalizados-ukiyo-marruecos-merzouga.jpg" alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo" class="w-full h-full mask-left" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                            <div class="absolute"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 4 y 5 -->
+
+            <div class="mb-12">
+                <div class="bg-white/90 border border-surface/40 rounded-2xl overflow-hidden shadow-soft">
+                    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+                        
+                        <!-- Imagen a la izquierda -->
+                        <div class="relative min-h-[280px] lg:min-h-full overflow-hidden">
+                            <img
+                                src="<?php echo get_template_directory_uri(); ?>/images/marruecos/viajes-personalizados-ukiyo-marruecos-aitbenhaddou.jpg"
+                                alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo"
+                                class="w-full h-full object-cover mask-right"
+                                loading="lazy"
+                                onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;"
+                            />
+                        </div>
+
+                        <!-- Texto a la derecha -->
+                        <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
+                            <div>
+                                <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">AIT BEN HADDOU</h1>
+                                <p class="mb-6">Aït Ben Haddou es uno de los ksar más bonitos de Marruecos, escenario de películas y paso histórico de caravanas. Es perfecto para conocer la arquitectura de barro del sur.</p>
+                                <p>Te proponemos recorrerlo con calma, descubrir sus miradores y combinarlo con el valle de Ouarzazate y el Alto Atlas.</p>
+                                <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
+                                <div class="grid sm:grid-cols-2 gap-6">
+                                    <!-- Trip detail -->
+                                    <div>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">AIT BEN HADDOU</span>?</h4>
+                                    </div>
+                                    <div class="space-y-3">
+                                        <div class="flex items-start">
+                                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-text-secondary">Visita guiada al ksar (UNESCO).</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-text-secondary">Miradores con vistas al valle y al Atlas.</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-text-secondary">Paradas fotográficas en la ruta del sur.</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-text-secondary">Cultura bereber y set de cine.</span>
+                                        </div>
+                                    </div>
+                                    <!-- Services provided
+                                    <div>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">Incluye</h4>
+                                        <ul class="space-y-2 text-sm text-text-secondary">
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Jeep 4x4 al amanecer
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Guía local
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Miradores principales
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Asistencia Ukiyo
+                                            </li>
+                                        </ul>
+                                    </div> -->
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Day 3 -->
             <div class="mb-12">
-                <div class="card hover:shadow-card-hover transition-all duration-300">
-                    <div class="flex flex-col lg:flex-row gap-8">
-                        <div class="lg:w-1/3">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viajes-a-marruecos-personalizados-pistas-oasis-4x4.jpg" alt="Ruta 4x4 entre pistas y oasis en un viaje a Marruecos personalizado" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                <div class="bg-white/90 border border-surface/40 rounded-2xl overflow-hidden shadow-soft">
+                    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+                        <!-- Left content -->
+                        <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
+                            <div>
+                                <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">RISSANI</h1>
+                                <p class="mb-6">Rissani es la antigua capital caravanera del Tafilalet y hoy sigue siendo un mercado vivo donde se mezcla la gente del desierto.</p>
+                                <p>Es una parada ideal para conocer el Marruecos más auténtico: palmerales, kasbahs de adobe y comercio tradicional.</p>
+                                <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
+                                <div class="grid sm:grid-cols-2 gap-6">
+                                    <!-- Trip detail -->
+                                    <div>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">RISSANI</span>?</h4>
+                                    </div>
+                                    <div class="space-y-3">
+                                        <div class="flex items-start">
+                                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-text-secondary">Mercado tradicional de Rissani.</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-text-secondary">Palmerales y kasbahs de adobe.</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-text-secondary">Encuentro con familias locales.</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-text-secondary">Historia caravanera del sur de Marruecos.</span>
+                                        </div>
+                                    </div>
+                                    <!-- Services provided
+                                    <div>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">Incluye</h4>
+                                        <ul class="space-y-2 text-sm text-text-secondary">
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Jeep 4x4 al amanecer
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Guía local
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Miradores principales
+                                            </li>
+                                            <li class="flex items-center gap-2">
+                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
+                                                Asistencia Ukiyo
+                                            </li>
+                                        </ul>
+                                    </div> -->
+                                </div>
+                            </div>
                         </div>
-                        <div class="lg:w-2/3">
-                            <div class="flex items-center mb-4">
-                                <div class="w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-semibold mr-4">3</div>
-                                <h3 class="text-2xl font-crimson text-text-primary">PISTAS & OASIS EN 4x4</h3>
-                            </div>
-                            <div class="mb-6">
-                                <span class="inline-block bg-accent-100 text-accent px-3 py-1 rounded-full text-sm font-medium mr-2">Aventura</span>
-                                <span class="inline-block bg-primary-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Oasis</span>
-                            </div>
-                            <p class="text-text-secondary mb-6">
-                              Jornada en 4x4 por hamadas y pistas del desierto. Paradas en oasis, encuentro con familias nómadas y té bajo la sombra de las acacias. Fotografía de paisaje y texturas.
-                            </p>
-                            <div class="space-y-3">
-                                <span class="text-text-secondary"><strong>9:00 AM:</strong> Ruta 4x4 hacia oasis</span>
-                                <span class="text-text-secondary"><strong>1:00 PM:</strong> Té con familia nómada</span>
-                                <span class="text-text-secondary"><strong>5:00 PM:</strong> Regreso a Merzouga</span>
-                            </div>
+                        <!-- Right image -->
+                        <div class="relative min-h-[280px] lg:min-h-full overflow-hidden">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/marruecos/viajes-personalizados-ukiyo-marruecos-rissani.jpg" alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo" class="w-full h-full mask-left" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
+                            <div class="absolute"></div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Day 4 -->
-            <div class="mb-12">
-                <div class="card hover:shadow-card-hover transition-all duration-300">
-                    <div class="flex flex-col lg:flex-row-reverse gap-8">
-                        <div class="lg:w-1/3">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viajes-a-marruecos-personalizados-rissani-kasbahs.jpg" alt="Mercado de Rissani y kasbahs en un viaje a Marruecos personalizado" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
-                        </div>
-                        <div class="lg:w-2/3">
-                            <div class="flex items-center mb-4">
-                                <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-semibold mr-4">4</div>
-                                <h3 class="text-2xl font-crimson text-text-primary">RISSANI & KASBAHS</h3>
-                            </div>
-                            <div class="mb-6">
-                                <span class="inline-block bg-primary-100 text-primary px-3 py-1 rounded-full text-sm font-medium mr-2">Mercado</span>
-                                <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium">Arquitectura</span>
-                            </div>
-                            <p class="text-text-secondary mb-6">
-                              Mañana en el mercado de Rissani entre especias, dátiles y artesanía. Visita a kasbahs de adobe y ksour históricos. Regreso al desierto para un atardecer tranquilo.
-                            </p>
-                            <div class="space-y-3">
-                                <span class="text-text-secondary"><strong>9:00 AM:</strong> Mercado de Rissani</span>
-                                <span class="text-text-secondary"><strong>12:30 PM:</strong> Kasbahs y ksour</span>
-                                <span class="text-text-secondary"><strong>6:30 PM:</strong> Atardecer en Erg Chebbi</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Day 5 -->
-            <div class="mb-12">
-                <div class="card hover:shadow-card-hover transition-all duration-300">
-                    <div class="flex flex-col lg:flex-row gap-8">
-                        <div class="lg:w-1/3">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viajes-a-marruecos-personalizados-merzouga-cielo-nocturno-haima.jpg" alt="Cielo nocturno en Merzouga desde la haima en un viaje a Marruecos personalizado" class="w-full h-64 lg:h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
-                        </div>
-                        <div class="lg:w-2/3">
-                            <div class="flex items-center mb-4">
-                                <div class="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center font-semibold mr-4">5</div>
-                                <h3 class="text-2xl font-crimson text-text-primary">NOCHES DE HAIMA</h3>
-                            </div>
-                            <div class="mb-6">
-                                <span class="inline-block bg-secondary-100 text-secondary px-3 py-1 rounded-full text-sm font-medium mr-2">Cielo Estrellado</span>
-                                <span class="inline-block bg-accent-100 text-accent px-3 py-1 rounded-full text-sm font-medium">Haima</span>
-                            </div>
-                            <p class="text-text-secondary mb-6">
-                              Tiempo para descansar, paseo en dromedario opcional y observación del cielo nocturno. Historias junto al fuego y música tradicional. Cierre del viaje con calma.
-                            </p>
-                            <div class="space-y-3">
-                                <span class="text-text-secondary"><strong>8:00 AM:</strong> Mañana libre / dromedario opcional</span>
-                                <span class="text-text-secondary"><strong>5:30 PM:</strong> Caminata suave por las dunas</span>
-                                <span class="text-text-secondary"><strong>9:30 PM:</strong> Estrellas y té en la haima</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             </div>
         </div>
     </section>
@@ -245,82 +495,82 @@ get_header();
     <div class="container mx-auto px-6">
         <div class="text-center mb-16">
             <h2 class="text-display font-crimson text-text-primary mb-4">
-                ¿Qué <span class="text-accent">Incluye</span>?
+                Información <span class="text-accent">de interés</span>
             </h2>
             <p class="text-lg text-text-secondary max-w-2xl mx-auto">
-                Todo lo necesario para una experiencia transformadora y sin preocupaciones.
+                Datos prácticos para preparar tu viaje a Marruecos con tranquilidad.
             </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Accommodation -->
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary-100 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-crimson text-text-primary mb-2">Alojamiento Premium</h3>
-                    <p class="text-text-secondary text-sm">Campamentos en haimas y riad/bivouac seleccionados en Merzouga y alrededores</p>
+            <!-- Moneda local -->
+            <div class="text-center">
+                <div class="w-16 h-16 bg-primary-100 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .843-3 1.882 0 1.04 1.343 1.882 3 1.882s3 .843 3 1.882C15 14.843 13.657 15 12 15m0-7c1.11 0 2.08.402 2.6 1M12 4v2m0 12v2m8-10a8 8 0 11-16 0 8 8 0 0116 0z" />
+                    </svg>
                 </div>
+                <h3 class="text-lg font-crimson text-text-primary mb-2">Moneda</h3>
+                <p class="text-text-secondary text-sm">Dirham marroquí (MAD). Se puede cambiar en destino o sacar en cajeros. En zonas turísticas se acepta a veces EUR.</p>
+            </div>
 
-                <!-- Meals -->
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-secondary-100 text-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-crimson text-text-primary mb-2">Gastronomía Completa</h3>
-                    <p class="text-text-secondary text-sm">Desayunos y cenas incluidas en el desierto; cocina local y opciones vegetarianas</p>
+            <!-- Hora local -->
+            <div class="text-center">
+                <div class="w-16 h-16 bg-secondary-100 text-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                 </div>
+                <h3 class="text-lg font-crimson text-text-primary mb-2">Hora local</h3>
+                <p class="text-text-secondary text-sm">Normalmente es -1 h respecto a España (península). En algunos periodos puede coincidir la hora.</p>
+            </div>
 
-                <!-- Transportation -->
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-accent-100 text-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-crimson text-text-primary mb-2">Transporte Privado</h3>
-                    <p class="text-text-secondary text-sm">Traslados 4x4/dromedario según actividad y vehículo privado entre puntos</p>
+            <!-- Mejor época -->
+            <div class="text-center">
+                <div class="w-16 h-16 bg-accent-100 text-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7l1.664 9.148A2 2 0 006.64 18h10.72a2 2 0 001.976-1.852L21 7M5 7h14M9 11v4m6-4v4" />
+                    </svg>
                 </div>
+                <h3 class="text-lg font-crimson text-text-primary mb-2">Mejor época</h3>
+                <p class="text-text-secondary text-sm">Primavera (mar–may) y otoño (sep–nov) para combinar ciudad y desierto sin calor extremo.</p>
+            </div>
 
-                <!-- Guide -->
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary-100 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-crimson text-text-primary mb-2">Guía Cultural Experto</h3>
-                    <p class="text-text-secondary text-sm">Guía local bilingüe, especialista en cultura amazigh y vida en el desierto</p>
+            <!-- Entrada al país -->
+            <div class="text-center">
+                <div class="w-16 h-16 bg-primary-100 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 1.657-1.343 3-3 3H5l-2 2V5a2 2 0 012-2h6a2 2 0 012 2v4zm0 0h2a2 2 0 012 2v1m-2 4l2 2 4-4" />
+                    </svg>
                 </div>
+                <h3 class="text-lg font-crimson text-text-primary mb-2">Entrada al país</h3>
+                <p class="text-text-secondary text-sm">Para españoles: hasta 90 días sin visado. Pasaporte con validez y alojamiento/contacto de entrada.</p>
+            </div>
 
-                <!-- Activities -->
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-secondary-100 text-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-crimson text-text-primary mb-2">Todas las Actividades</h3>
-                    <p class="text-text-secondary text-sm">Paseos por dunas, música gnawa, visitas a palmerales/ksar y observación de estrellas</p>
+            <!-- Electricidad -->
+            <div class="text-center">
+                <div class="w-16 h-16 bg-secondary-100 text-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
                 </div>
+                <h3 class="text-lg font-crimson text-text-primary mb-2">Electricidad</h3>
+                <p class="text-text-secondary text-sm">220V y enchufe tipo C/E (igual que en España). No suele hacer falta adaptador.</p>
+            </div>
 
-                <!-- Support -->
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-accent-100 text-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-crimson text-text-primary mb-2">Soporte 24/7</h3>
-                    <p class="text-text-secondary text-sm">Asistencia completa durante todo el viaje y coordinador UKIYO disponible</p>
+            <!-- Cultura y vestimenta -->
+            <div class="text-center">
+                <div class="w-16 h-16 bg-accent-100 text-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .843-3 1.882 0 1.04 1.343 1.882 3 1.882s3 .843 3 1.882C15 14.843 13.657 15 12 15m0-7a4 4 0 110 8 4 4 0 010-8zm0 11v2m0-18v2" />
+                    </svg>
                 </div>
+                <h3 class="text-lg font-crimson text-text-primary mb-2">Cultura y respeto</h3>
+                <p class="text-text-secondary text-sm">País mayoritariamente musulmán. Se recomienda vestir de forma respetuosa y pedir permiso para fotografiar.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 
 <!-- Practical Information -->
@@ -329,7 +579,7 @@ get_header();
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-display font-crimson text-text-primary mb-4">
-                    Información <span class="text-primary">Práctica</span>
+                    Recomendaciones <span class="text-primary">UKIYO</span>
                 </h2>
                 <p class="text-lg text-text-secondary max-w-2xl mx-auto">
                     Todo lo que necesitas saber para prepararte para esta experiencia transformadora.

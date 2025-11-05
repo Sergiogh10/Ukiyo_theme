@@ -17,19 +17,22 @@ get_header();
         
         <!-- Content Overlay -->
         <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-12">
-            <div class="container mx-auto max-w-4xl">
-                <div class="flex flex-wrap items-center gap-3 mb-6">
-                    <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">Biodiversidad</span>
-                    <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">Inmersión Cultural</span>
-                    <span class="bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">Aventura y paraíso</span>
-                </div>
-                <h1 class="text-4xl lg:text-6xl font-crimson text-white mb-4">
-                    COSTA RICA <span class="text-accent">Biodiversidad pura</span>
-                </h1>
-                <p class="text-xl text-white/90 max-w-3xl">
-                    Explora con nosotros la península de Osa, Corcovado y los bosques nubosos de Monteverde; amaneceres en selva, ríos claros y encuentros respetuosos con la vida salvaje.
-                </p>
+          <div class="container mx-auto max-w-4xl">
+            <div class="flex flex-wrap items-center gap-3 mb-6">
+              <span class="badge-elevada">Biodiversidad</span>
+              <span class="badge-elevada">Inmersión cultural</span>
+              <span class="badge-elevada">Aventura y paraíso</span>
             </div>
+            <div class="hero-overlay-box">
+              <h1 class="text-4xl lg:text-6xl font-rowdies text-white mb-4 pl-4">
+                COSTA RICA: <br>
+                <span class="text-accent">Biodiversidad pura</span>
+              </h1>
+              <p class="text-xl text-white/90 max-w-3xl pl-4">
+                Explora con nosotros la Península de Osa, Corcovado y los bosques nubosos de Monteverde; amaneceres en la selva, ríos claros y encuentros respetuosos con la vida salvaje.
+              </p>
+            </div>
+          </div>
         </div>
     </div>
 </section>
@@ -99,38 +102,38 @@ get_header();
                         <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
                             <div>
                                 <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">CORCOVADO</h1>
-                                <p class="mb-6"> Cuando la mayoría piensa en Indonesia, imagina Bali. Pero si te alejas solo un poco, cruzando el estrecho, te espera Java, una isla que late con la fuerza del fuego y la calma de los templos. Aquí no vienes a desconectar… vienes a sentir. </p>
-                                <p>Java es donde todo empieza: los volcanes más imponentes del país, las ciudades coloniales que conservan el alma de Indonesia y una espiritualidad tan presente que se respira en cada amanecer entre arrozales.</p>
+                                <p class="mb-6">Corcovado es la joya de la Península de Osa y donde la naturaleza de Costa Rica se muestra sin filtros: selva primaria, playas salvajes y muchísima fauna.</p>
+                                <p>Te llevamos con guía naturalista para recorrer los senderos, buscar guacamayos, monos y, con suerte, tapires, y vivir la parte más salvaje del viaje.</p>
                                 <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
                                 <div class="grid sm:grid-cols-2 gap-6">
                                     <!-- Trip detail -->
                                     <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">JAVA</span>?</h4>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">CORCOVADO</span>?</h4>
                                     </div>
                                     <div class="space-y-3">
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>Monte Bromo:</strong> Taller de tejido de bambú sostenible</span>
+                                        <span class="text-text-secondary"><strong>Selva primaria:</strong> uno de los lugares más biodiversos del planeta.</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>Ijen:</strong> Creación de ofrendas ceremoniales</span>
+                                        <span class="text-text-secondary"><strong>Avistamiento de fauna:</strong> guacamayos, monos, perezosos y más.</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>Prambanan:</strong> Intercambio cultural con la comunidad</span>
+                                        <span class="text-text-secondary"><strong>Senderos costeros:</strong> selva que llega hasta el mar.</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>Borobudur:</strong> Intercambio cultural con la comunidad</span>
+                                        <span class="text-text-secondary"><strong>Lodges sostenibles:</strong> integración total con la naturaleza.</span>
                                     </div>
                                 </div>
                                     <!-- Services provided
@@ -188,38 +191,38 @@ get_header();
                         <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
                             <div>
                                 <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">MONTEVERDE</h1>
-                                <p class="mb-6"> Cuando la mayoría piensa en Indonesia, imagina Bali. Pero si te alejas solo un poco, cruzando el estrecho, te espera Java, una isla que late con la fuerza del fuego y la calma de los templos. Aquí no vienes a desconectar… vienes a sentir. </p>
-                                <p>Java es donde todo empieza: los volcanes más imponentes del país, las ciudades coloniales que conservan el alma de Indonesia y una espiritualidad tan presente que se respira en cada amanecer entre arrozales.</p>
+                                <p class="mb-6">Monteverde es el bosque nuboso más conocido de Costa Rica: puentes colgantes, niebla, orquídeas y aves que solo viven aquí.</p>
+                                <p>Incluimos caminata guiada y tiempo libre para disfrutar del clima fresco de montaña, cafeterías y productos locales.</p>
                                 <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
                                 <div class="grid sm:grid-cols-2 gap-6">
                                     <!-- Trip detail -->
                                     <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">JAVA</span>?</h4>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">MONTEVERDE</span>?</h4>
                                     </div>
                                     <div class="space-y-3">
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>Monte Bromo:</strong> Taller de tejido de bambú sostenible</span>
+                                        <span class="text-text-secondary"><strong>Bosque nuboso:</strong> senderos entre niebla y vegetación densa.</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>Ijen:</strong> Creación de ofrendas ceremoniales</span>
+                                        <span class="text-text-secondary"><strong>Puentes colgantes:</strong> vistas sobre el dosel del bosque.</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>Prambanan:</strong> Intercambio cultural con la comunidad</span>
+                                        <span class="text-text-secondary"><strong>Fauna y aves:</strong> posibilidad de ver quetzal según época.</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>Borobudur:</strong> Intercambio cultural con la comunidad</span>
+                                        <span class="text-text-secondary"><strong>Productos locales:</strong> café, queso y artesanía de montaña.</span>
                                     </div>
                                 </div>
                                     <!-- Services provided
@@ -258,38 +261,38 @@ get_header();
                         <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
                             <div>
                                 <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">TORTUGUERO</h1>
-                                <p class="mb-6"> Cuando la mayoría piensa en Indonesia, imagina Bali. Pero si te alejas solo un poco, cruzando el estrecho, te espera Java, una isla que late con la fuerza del fuego y la calma de los templos. Aquí no vienes a desconectar… vienes a sentir. </p>
-                                <p>Java es donde todo empieza: los volcanes más imponentes del país, las ciudades coloniales que conservan el alma de Indonesia y una espiritualidad tan presente que se respira en cada amanecer entre arrozales.</p>
+                                <p class="mb-6">Tortuguero es la Costa Rica de canales: selva, agua y Caribe. Solo se llega en bote o avioneta y eso lo hace especial.</p>
+                                <p>Haremos el safari en bote al amanecer para ver caimanes, monos y aves, y según la temporada podrás presenciar el desove de tortugas.</p>
                                 <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
                                 <div class="grid sm:grid-cols-2 gap-6">
                                     <!-- Trip detail -->
                                     <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">JAVA</span>?</h4>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">TORTUGUERO</span>?</h4>
                                     </div>
                                     <div class="space-y-3">
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>Monte Bromo:</strong> Taller de tejido de bambú sostenible</span>
+                                        <span class="text-text-secondary"><strong>Canales al amanecer:</strong> observación de fauna desde el agua.</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>Ijen:</strong> Creación de ofrendas ceremoniales</span>
+                                        <span class="text-text-secondary"><strong>Pueblo caribeño:</strong> vida local y ritmo tranquilo.</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>Prambanan:</strong> Intercambio cultural con la comunidad</span>
+                                        <span class="text-text-secondary"><strong>Desove de tortugas:</strong> de julio a octubre.</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>Borobudur:</strong> Intercambio cultural con la comunidad</span>
+                                        <span class="text-text-secondary"><strong>Lodges en la selva:</strong> dormir rodeado de sonidos naturales.</span>
                                     </div>
                                 </div>
                                     <!-- Services provided
@@ -347,38 +350,38 @@ get_header();
                         <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
                             <div>
                                 <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">LA FORTUNA</h1>
-                                <p class="mb-6"> Cuando la mayoría piensa en Indonesia, imagina Bali. Pero si te alejas solo un poco, cruzando el estrecho, te espera Java, una isla que late con la fuerza del fuego y la calma de los templos. Aquí no vienes a desconectar… vienes a sentir. </p>
-                                <p>Java es donde todo empieza: los volcanes más imponentes del país, las ciudades coloniales que conservan el alma de Indonesia y una espiritualidad tan presente que se respira en cada amanecer entre arrozales.</p>
+                                <p class="mb-6">La Fortuna es la base para explorar el Volcán Arenal: cataratas, termales y rutas fáciles con vistas al volcán.</p>
+                                <p>Es la parte más relajada del viaje y donde solemos dejar tiempo libre para que disfrutes del hotel o actividades opcionales.</p>
                                 <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
                                 <div class="grid sm:grid-cols-2 gap-6">
                                     <!-- Trip detail -->
                                     <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">JAVA</span>?</h4>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">LA FORTUNA</span>?</h4>
                                     </div>
                                     <div class="space-y-3">
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>Monte Bromo:</strong> Taller de tejido de bambú sostenible</span>
+                                        <span class="text-text-secondary"><strong>Catarata La Fortuna:</strong> baño en agua fresca.</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>Ijen:</strong> Creación de ofrendas ceremoniales</span>
+                                        <span class="text-text-secondary"><strong>Volcán Arenal:</strong> senderos y miradores.</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>Prambanan:</strong> Intercambio cultural con la comunidad</span>
+                                        <span class="text-text-secondary"><strong>Termales:</strong> relajación después de las excursiones.</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>Borobudur:</strong> Intercambio cultural con la comunidad</span>
+                                        <span class="text-text-secondary"><strong>Actividades:</strong> tirolina, rafting suave o puentes colgantes.</span>
                                     </div>
                                 </div>
                                     <!-- Services provided
@@ -417,38 +420,38 @@ get_header();
                         <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
                             <div>
                                 <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">PUERTO VIEJO</h1>
-                                <p class="mb-6"> Cuando la mayoría piensa en Indonesia, imagina Bali. Pero si te alejas solo un poco, cruzando el estrecho, te espera Java, una isla que late con la fuerza del fuego y la calma de los templos. Aquí no vienes a desconectar… vienes a sentir. </p>
-                                <p>Java es donde todo empieza: los volcanes más imponentes del país, las ciudades coloniales que conservan el alma de Indonesia y una espiritualidad tan presente que se respira en cada amanecer entre arrozales.</p>
+                                <p class="mb-6">El Caribe Sur (Puerto Viejo, Cahuita, Manzanillo) es la parte más bohemia y relajada de Costa Rica: selva pegada al mar y ritmo afrocaribeño.</p>
+                                <p>Lo incluimos para que termines el viaje en la playa, con buena gastronomía y la posibilidad de visitar el Parque Nacional Cahuita.</p>
                                 <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
                                 <div class="grid sm:grid-cols-2 gap-6">
                                     <!-- Trip detail -->
                                     <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">JAVA</span>?</h4>
+                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">CARIBE SUR</span>?</h4>
                                     </div>
                                     <div class="space-y-3">
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>Monte Bromo:</strong> Taller de tejido de bambú sostenible</span>
+                                        <span class="text-text-secondary"><strong>Parque Nacional Cahuita:</strong> sendero costero con fauna.</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>Ijen:</strong> Creación de ofrendas ceremoniales</span>
+                                        <span class="text-text-secondary"><strong>Playas de Punta Uva / Manzanillo:</strong> aguas tranquilas y paisaje.</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>Prambanan:</strong> Intercambio cultural con la comunidad</span>
+                                        <span class="text-text-secondary"><strong>Gastronomía afrocaribeña:</strong> rice & beans, coco y especias.</span>
                                     </div>
                                     <div class="flex items-start">
                                         <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-text-secondary"><strong>Borobudur:</strong> Intercambio cultural con la comunidad</span>
+                                        <span class="text-text-secondary"><strong>Ambiente relajado:</strong> perfecto para cerrar la ruta.</span>
                                     </div>
                                 </div>
                                     <!-- Services provided
@@ -492,82 +495,82 @@ get_header();
     <div class="container mx-auto px-6">
         <div class="text-center mb-16">
             <h2 class="text-display font-crimson text-text-primary mb-4">
-                ¿Qué <span class="text-accent">Incluye</span>?
+                Información <span class="text-accent">de interés</span>
             </h2>
             <p class="text-lg text-text-secondary max-w-2xl mx-auto">
-                Todo lo necesario para una experiencia transformadora y sin preocupaciones.
+                Datos prácticos para preparar tu viaje a Costa Rica con total tranquilidad.
             </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Accommodation -->
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary-100 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-crimson text-text-primary mb-2">Alojamiento Premium</h3>
-                    <p class="text-text-secondary text-sm">Lodges y eco-hoteles seleccionados en Osa, Monteverde y Arenal (según ruta)</p>
+            <!-- Moneda local -->
+            <div class="text-center">
+                <div class="w-16 h-16 bg-primary-100 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .843-3 1.882 0 1.04 1.343 1.882 3 1.882s3 .843 3 1.882C15 14.843 13.657 15 12 15m0-7c1.11 0 2.08.402 2.6 1M12 4v2m0 12v2m8-10a8 8 0 11-16 0 8 8 0 0116 0z" />
+                    </svg>
                 </div>
+                <h3 class="text-lg font-crimson text-text-primary mb-2">Moneda</h3>
+                <p class="text-text-secondary text-sm">Colón costarricense (CRC). Se acepta USD en muchas zonas turísticas. Recomendable llevar tarjeta.</p>
+            </div>
 
-                <!-- Meals -->
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-secondary-100 text-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-crimson text-text-primary mb-2">Gastronomía Completa</h3>
-                    <p class="text-text-secondary text-sm">Desayunos diarios y algunas comidas incluidas. Opciones vegetarianas y productos locales.</p>
+            <!-- Hora local -->
+            <div class="text-center">
+                <div class="w-16 h-16 bg-secondary-100 text-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                 </div>
+                <h3 class="text-lg font-crimson text-text-primary mb-2">Hora local</h3>
+                <p class="text-text-secondary text-sm">Costa Rica suele tener -7 h respecto a España (península) cuando España está en horario de verano, y -6 h el resto del año.</p>
+            </div>
 
-                <!-- Transportation -->
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-accent-100 text-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-crimson text-text-primary mb-2">Transporte Privado</h3>
-                    <p class="text-text-secondary text-sm">Todos los traslados en vehículo privado con conductor local experimentado</p>
+            <!-- Mejor época -->
+            <div class="text-center">
+                <div class="w-16 h-16 bg-accent-100 text-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .843-3 1.882C9 10.96 10.343 12 12 12s3 .843 3 1.882C15 14.843 13.657 15 12 15m0-7c1.11 0 2.08.402 2.6 1M12 4v2m0 12v2m8-10a8 8 0 11-16 0 8 8 0 0116 0z" />
+                    </svg>
                 </div>
+                <h3 class="text-lg font-crimson text-text-primary mb-2">Mejor época</h3>
+                <p class="text-text-secondary text-sm">De diciembre a abril es la temporada más seca. De mayo a noviembre hay más lluvia pero selva más verde.</p>
+            </div>
 
-                <!-- Guide -->
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary-100 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-crimson text-text-primary mb-2">Guía Cultural Experto</h3>
-                    <p class="text-text-secondary text-sm">Guía naturalista bilingüe, especialista en naturaleza costarricense y conservación</p>
+            <!-- Visado y entrada -->
+            <div class="text-center">
+                <div class="w-16 h-16 bg-primary-100 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 1.657-1.343 3-3 3H5l-2 2V5a2 2 0 012-2h6a2 2 0 012 2v4zm0 0h2a2 2 0 012 2v1m-2 4l2 2 4-4" />
+                    </svg>
                 </div>
+                <h3 class="text-lg font-crimson text-text-primary mb-2">Entrada al país</h3>
+                <p class="text-text-secondary text-sm">Para españoles: estancia turística hasta 90 días sin visado, pasaporte en vigor y vuelo de salida.</p>
+            </div>
 
-                <!-- Activities -->
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-secondary-100 text-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-crimson text-text-primary mb-2">Todas las Actividades</h3>
-                    <p class="text-text-secondary text-sm">Caminatas guiadas, navegación por canales, entradas a parques nacionales y experiencias locales</p>
+            <!-- Electricidad -->
+            <div class="text-center">
+                <div class="w-16 h-16 bg-secondary-100 text-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
                 </div>
+                <h3 class="text-lg font-crimson text-text-primary mb-2">Electricidad</h3>
+                <p class="text-text-secondary text-sm">110V, enchufe tipo A/B (como EE.UU.). Necesitarás adaptador desde España.</p>
+            </div>
 
-                <!-- Support -->
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-accent-100 text-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-crimson text-text-primary mb-2">Soporte 24/7</h3>
-                    <p class="text-text-secondary text-sm">Asistencia completa durante todo el viaje y coordinador UKIYO disponible</p>
+            <!-- Salud y seguridad -->
+            <div class="text-center">
+                <div class="w-16 h-16 bg-accent-100 text-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .843-3 1.882 0 1.04 1.343 1.882 3 1.882s3 .843 3 1.882C15 14.843 13.657 15 12 15m0-7a4 4 0 110 8 4 4 0 010-8zm0 11v2m0-18v2" />
+                    </svg>
                 </div>
+                <h3 class="text-lg font-crimson text-text-primary mb-2">Salud y seguridad</h3>
+                <p class="text-text-secondary text-sm">No hay vacunas obligatorias desde España. Recomendable seguro de viaje y repelente para zonas de selva.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 
 <!-- Practical Information -->
@@ -576,7 +579,7 @@ get_header();
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-display font-crimson text-text-primary mb-4">
-                    Información <span class="text-primary">Práctica</span>
+                    Recomendaciones <span class="text-primary">UKIYO</span>
                 </h2>
                 <p class="text-lg text-text-secondary max-w-2xl mx-auto">
                     Todo lo que necesitas saber para prepararte para esta experiencia transformadora.

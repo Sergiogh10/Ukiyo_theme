@@ -63,45 +63,6 @@
   font-weight:900; font-style:italic; font-display:swap;
 }
 
-/* === TELMA === */
-@font-face{
-  font-family:'Telma';
-  src:url('../fonts/telma/Telma-Light.woff2') format('woff2'),
-      url('../fonts/telma/Telma-Light.woff') format('woff');
-  font-weight:300; font-style:normal; font-display:swap;
-}
-@font-face{
-  font-family:'Telma';
-  src:url('../fonts/telma/Telma-Regular.woff2') format('woff2'),
-      url('../fonts/telma/Telma-Regular.woff') format('woff');
-  font-weight:400; font-style:normal; font-display:swap;
-}
-@font-face{
-  font-family:'Telma';
-  src:url('../fonts/telma/Telma-Medium.woff2') format('woff2'),
-      url('../fonts/telma/Telma-Medium.woff') format('woff');
-  font-weight:500; font-style:normal; font-display:swap;
-}
-@font-face{
-  font-family:'Telma';
-  src:url('../fonts/telma/Telma-Bold.woff2') format('woff2'),
-      url('../fonts/telma/Telma-Bold.woff') format('woff');
-  font-weight:700; font-style:normal; font-display:swap;
-}
-@font-face{
-  font-family:'Telma';
-  src:url('../fonts/telma/Telma-Black.woff2') format('woff2'),
-      url('../fonts/telma/Telma-Black.woff') format('woff');
-  font-weight:900; font-style:normal; font-display:swap;
-}
-/* Variable (si la usas) */
-@font-face{
-  font-family:'Telma';
-  src:url('../fonts/telma/Telma-Variable.woff2') format('woff2'),
-      url('../fonts/telma/Telma-Variable.woff') format('woff');
-  font-weight:300 900; font-style:normal; font-display:swap;
-}
-
 @font-face {
   font-family: 'Rowdies';
   src: url('/wp-content/themes/Ukiyo/assets/fonts/rowdies/Rowdies-Light.ttf') format('truetype');
@@ -135,7 +96,7 @@
 /* === Global Typography (Satoshi default, Telma for country names) === */
 :root{
   --font-sans: 'Satoshi', 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  --font-display: 'Telma', Georgia, 'Times New Roman', serif;
+  --font-display: Georgia, 'Times New Roman', serif;
 }
 
 /* Base */
@@ -2949,31 +2910,51 @@ input[type="range"].accent-primary::-moz-range-thumb:hover {
           mask-repeat: no-repeat;
 }
 
-/* Difuminar hacia la izquierda (se ve a la derecha, se pierde a la izquierda) */
+/* --- Móvil (por defecto) --- */
 .mask-left {
-  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
-          mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
-}
-
-/* Versión más corta, como tu .mask-fade-b pero a la izquierda */
-.mask-fade-l {
-  -webkit-mask-image: linear-gradient(to left, black 70%, transparent 100%);
-          mask-image: linear-gradient(to left, black 70%, transparent 100%);
+  /* en pantallas pequeñas se convierte en mask-top */
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+          mask-image: linear-gradient(to top, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
 }
 
-/* Como tu fade-bottom pero lateral */
-.fade-left {
-  -webkit-mask-image: linear-gradient(to left, black 80%, transparent 100%);
-          mask-image: linear-gradient(to left, black 80%, transparent 100%);
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-}
-/* difuminar hacia la derecha (se ve más a la izquierda) */
 .mask-right {
-  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
-          mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
+  /* en móvil se comporta como tu mask-image (fade-bottom) */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+          mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+
+/* --- Escritorio (a partir de 1024px) --- */
+@media (min-width: 1024px) {
+  .mask-left {
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
+            mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
+  }
+
+  .mask-right {
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
+            mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
+  }
+}
+
+.badge-elevada {
+  background: #EBD2AE; /* o el color que uses para primary */
+  color: #2b2b2b;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0,0,0,.35);
+}
+
+/* para el overlay del título */
+.hero-overlay-box {
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(6px);
+  border-radius: 1rem; /* o 1rem si quieres caja */
 }
 
 /* ===== Timeline vertical ===== */
