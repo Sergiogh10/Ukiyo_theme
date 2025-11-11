@@ -58,9 +58,9 @@ get_header();
               "name" => "Maite y Ramón",
               "destination" => "Bali, Indonesia",
               "rating" => 5,
-              "review" => "Una experiencia inolvidable. La organización fue perfecta, los guías excelentes y cada detalle cuidado al máximo.",
+              "review" => "Experiencia y plan de viaje con Ukiyo 200% recomendable. Fuimos de viaje de novios a Bali y la verdad es que no pudo ser mejor, no solo por el destino en sí que ofrece de todo (cultura, playas, paisajes preciosos y todo tipo de actividades), también gracias a Sergio que nos guió el viaje y nos lo cuadró todo perfectamente, además da consejos y recomendaciones que no lo suelen hacer las agencias habitualmente. Lo recomendaría una y mil veces, profesional como la copa de un pino!",
               "date" => "Septiembre 2024",
-              "image" => "resena-maite-ramon-bali-indonesia.jpg"
+              "image" => "resena-maite-ramon-bali-indonesia-2.jpg"
             ],
             [
               "name" => "María y Edu",
@@ -74,7 +74,7 @@ get_header();
               "name" => "Carmen y Jose Ángel",
               "destination" => "Komodo, Indonesia",
               "rating" => 5,
-              "review" => "Ver a los animales en libertad fue mágico. La logística impecable nos permitió disfrutar sin preocupaciones.",
+              "review" => "Viajar a Indonesia con Ukiyo ha sido una aventura excepcional, un viaje personalizado al 100% donde hemos podido disfrutar de experiencias auténticas y humanas, sin el agobio del turismo masivo. El esfuerzo y el trabajo detrás de la organización ha hecho que nuestro viaje sea muy toppp. Muchas gracias equipo 🙌🏼 ¡Estamos deseando repetir!",
               "date" => "Septiembre 2025",
               "image" => "resena-carmen-jose-komodo-indonesia.jpg"
             ],
