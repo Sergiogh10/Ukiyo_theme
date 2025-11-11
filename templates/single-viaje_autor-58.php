@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Viaje de Autor – Luis
+ * Single template for viaje_autor post ID 58
  * Description: Ficha de viaje de autor (Luis – Pantanal).
  */
 get_header();
