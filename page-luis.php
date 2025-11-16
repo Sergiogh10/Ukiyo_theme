@@ -23,14 +23,16 @@ $uri = get_template_directory_uri();
                     <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">Grupos reducidos</span>
                     <span class="bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">Plazas limitadas</span>
                 </div>
-                <h1 class="text-4xl font-rowdies mb-4">
-                    Pantanal: <span>tras el rastro del jaguar</span>
-                </h1>
-                <p class="text-xl max-w-3xl">
+                <div class="hero-overlay-box">
+                    <h1 class="text-4xl lg:text-6xl font-rowdies text-white mb-4 pl-4">
+                    Pantanal: <br>
+                    <span class="text-accent">Tras el rastro del jaguar</span>
+                    </h1>
+                    <p class="text-xl text-white/90 max-w-3xl pl-4">
                 Recorreremos con Luis, fotógrafo y guía profesional, los humedales infinitos de Brasil, disfrutando de amaneceres en bote, con la paciencia que requiere el instante.</p>
-                <div class="inline-flex items-baseline rounded-lg bg-white/80 backdrop-blur-md ring-1 ring-border/60 py-2">
+                <div class="hero-overlay-box pl-4">
                   <span class="text-sm mr-2">Desde</span>
-                  <span class="text-2xl font-semibold">3400€</span>
+                  <span class="text-2xl font-semibold">3.400€</span>
                   <span class="text-xs ml-2">/persona</span>
                 </div>
             </div>
@@ -373,27 +375,17 @@ Conocerás a las personas que hacen posible la conservación de la zona.
   </div>
 </section> -->
 
-<!-- CTA Section -->
-<section class="py-20 bg-gradient-warm">
-    <div class="container mx-auto px-6 text-center">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-display font-crimson mb-6">
-                No sólo es una búsqueda del jaguar, es una experiencia apasionante
-            </h2>
-            <p class="text-xl mb-8 opacity-90">
-                Con UKIYO y Luis, cada amanecer, cada reflejo en el río y cada silencio compartido 
-                se transforma en una experiencia única de observación, paciencia y conexión con la vida salvaje.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" 
-                   class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 transition-all duration-300 shadow-soft">
-                    Descubre el pantanal con Luis
-                </a>
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" 
-                   class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 transition-all duration-300 shadow-soft">
-                    Ver más viajes de autor
-                </a>
-            </div>
+<!-- CTA -->
+<section class="py-20 bg-gradient-primary text-white text-center">
+    <div class="container mx-auto px-6 max-w-3xl">
+        <h2 class="text-display font-satoshi mb-6">¿No encuentras tu viaje ideal?</h2>
+        <p class="text-xl mb-8 opacity-90">Cada persona viaja a su manera.
+        Cuéntanos qué te mueve y crearemos juntos una experiencia que encaje contigo.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="<?php echo esc_url( site_url('/planifica-tu-viaje') ); ?>" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/80 transition" aria-label="Abrir formulario para contarnos tu idea">
+            Cuéntanos tu idea
+            </a>
+            <!-- <a href="<?php echo esc_url( site_url('/about') ); ?>" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition">Hablar con un Curador</a> -->
         </div>
     </div>
 </section>

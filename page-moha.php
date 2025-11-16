@@ -23,17 +23,17 @@ $uri = get_template_directory_uri();
                     <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">Grupos reducidos</span>
                     <span class="bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">Plazas limitadas</span>
                 </div>
-                <h1 class="text-4xl font-rowdies mb-4">
-                    Merzouga: <span>territorio bereber</span>
-                </h1>
-                <p class="text-xl max-w-3xl">
+                <div class="hero-overlay-box">
+                    <h1 class="text-4xl lg:text-6xl font-rowdies text-white mb-4 pl-4">
+                    Merzouga: <br>
+                    <span class="text-accent">Territorio bereber</span>
+                    </h1>
+                    <p class="text-xl text-white/90 max-w-3xl pl-4">
                 Recorreremos con <strong>Moha</strong>, guía bereber de Merzouga, las dunas de <em>Erg Chebbi</em>, los palmerales y los oasis; atardeceres en el desierto y noches bajo un cielo de millones de estrellas.</p>
-                <div class="mt-6">
-                  <div class="inline-flex items-baseline rounded-lg bg-white/80 backdrop-blur-md ring-1 ring-border/60 py-2">
-                    <span class="text-sm mr-2">Desde</span>
-                    <span class="text-2xl font-semibold">600€</span>
-                    <span class="text-xs ml-2">/persona</span>
-                  </div>
+                <div class="hero-overlay-box pl-4">
+                  <span class="text-sm mr-2">Desde</span>
+                  <span class="text-2xl font-semibold">600€</span>
+                  <span class="text-xs ml-2">/persona</span>
                 </div>
             </div>
         </div>
@@ -370,26 +370,17 @@ $uri = get_template_directory_uri();
   </div>
 </section> -->
 
-<!-- CTA Section -->
-<section class="py-20 bg-gradient-warm">
-    <div class="container mx-auto px-6 text-center">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-display font-crimson mb-6">
-                No es cruzar dunas: es entender el desierto
-            </h2>
-            <p class="text-xl mb-8 opacity-90">
-                Con UKIYO y Moha, cada atardecer, cada té compartido y cada noche estrellada se transforman en una experiencia íntima de silencio, aprendizaje y conexión con el Sahara.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" 
-                   class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 transition-all duration-300 shadow-soft">
-                    Descubre Merzouga con Moha
-                </a>
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" 
-                   class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 transition-all duration-300 shadow-soft">
-                    Ver más viajes de autor
-                </a>
-            </div>
+<!-- CTA -->
+<section class="py-20 bg-gradient-primary text-white text-center">
+    <div class="container mx-auto px-6 max-w-3xl">
+        <h2 class="text-display font-satoshi mb-6">¿No encuentras tu viaje ideal?</h2>
+        <p class="text-xl mb-8 opacity-90">Cada persona viaja a su manera.
+        Cuéntanos qué te mueve y crearemos juntos una experiencia que encaje contigo.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="<?php echo esc_url( site_url('/planifica-tu-viaje') ); ?>" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/80 transition" aria-label="Abrir formulario para contarnos tu idea">
+            Cuéntanos tu idea
+            </a>
+            <!-- <a href="<?php echo esc_url( site_url('/about') ); ?>" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition">Hablar con un Curador</a> -->
         </div>
     </div>
 </section>

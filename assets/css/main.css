@@ -2952,9 +2952,7 @@ input[type="range"].accent-primary::-moz-range-thumb:hover {
 
 /* para el overlay del título */
 .hero-overlay-box {
-  background: rgba(0,0,0,0.2);
-  backdrop-filter: blur(6px);
-  border-radius: 1rem; /* o 1rem si quieres caja */
+  text-shadow: 0 0 10px black;
 }
 
 /* ===== Timeline vertical ===== */

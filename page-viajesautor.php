@@ -40,6 +40,7 @@ get_header();
       <div class="grid gap-8 md:grid-cols-2">
         <!-- Card Luis -->
         <article class="group rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
+          <a href="<?php echo esc_url( get_permalink( get_page_by_path('pantanal') ) ); ?>">
           <figure class="aspect-[16/9] overflow-hidden">
             <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-jaguar-hero.jpg" alt="Jaguar en el Pantanal durante un viaje de autor con guía experto (Luis)" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] mask-image" loading="lazy" />
           </figure>
@@ -75,6 +76,7 @@ get_header();
 
         <!-- Card Moha -->
         <article class="group rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
+          <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajedeautormoha') ) ); ?>">
           <figure class="aspect-[16/9] overflow-hidden">
             <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viajes-a-marruecos-personalizados-merzouga-cielo-nocturno-haima.jpg" alt="Cielo nocturno en Merzouga durante un viaje a Marruecos personalizado (Moha)" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] mask-image" loading="lazy" />
           </figure>
