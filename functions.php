@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Seguridad
 }
 
-require_once get_template_directory() . '/inc/cpt-viaje-autor.php';
+require_once __DIR__ . '/inc/cpt-viaje-autor.php';
 
 function ukiyo_enqueue_assets() {
     // CSS

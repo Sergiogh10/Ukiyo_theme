@@ -1,5 +1,4 @@
 <?php
-// inc/cpt-viaje-autor.php
 
 add_action('after_switch_theme', function () {
     // Asegura que el CPT esté registrado antes de flushear:
@@ -48,12 +47,27 @@ function load_post_template_by_id($single_template)
 {
     global $post;
 
+    if (!$post) {
+        error_log('⚠️ load_post_template_by_id: $post es null');
+        return $single_template;
+    }
+
+    error_log('🔎 SINGLE TEMPLATE → post_type: ' . $post->post_type . ' | ID: ' . $post->ID);
+
     if ('viaje_autor' === $post->post_type) {
-        $tmp_template = get_template_directory() . '/templates/single-' . $post->post_type .'-' . $post->ID . '.php';
+        $tmp_template = get_template_directory() . '/templates/single-' . $post->post_type . '-' . $post->ID . '.php';
+
+        error_log('🧩 Buscando plantilla por ID: ' . $tmp_template);
+        error_log('📁 ¿Existe archivo?: ' . (file_exists($tmp_template) ? 'SÍ' : 'NO'));
 
         if (file_exists($tmp_template)) {
+            error_log('✅ Usando plantilla personalizada por ID');
             $single_template = $tmp_template;
+        } else {
+            error_log('➡️ No existe plantilla por ID, se mantiene la que venía: ' . $single_template);
         }
+    } else {
+        error_log('ℹ️ No es viaje_autor, se mantiene plantilla: ' . $single_template);
     }
 
     return $single_template;
