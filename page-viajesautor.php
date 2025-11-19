@@ -61,9 +61,10 @@ get_header();
           $autor_subtitulo = get_post_meta( get_the_ID(), 'autor_subtitulo', true ); // ej: "Guía costarricense y fotógrafo..."
           $duracion        = get_post_meta( get_the_ID(), 'duracion_viaje', true );   // ej: "8 días"
           $grupos          = get_post_meta( get_the_ID(), 'grupos_viaje', true );     // ej: "Grupos reducidos"
+          $precio_desde = get_post_meta( get_the_ID(), 'precio_desde', true );
           ?>
 
-          <article class="group rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
+          <article class="group rounded-2xl border-2 border-black bg-white/80 backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
             <a href="<?php the_permalink(); ?>">
               <figure class="aspect-[16/9] overflow-hidden">
                 <?php if ( has_post_thumbnail() ) : ?>
@@ -122,46 +123,55 @@ get_header();
                 </p>
               <?php endif; ?>
 
-              <!-- Meta pills -->
-              <div class="flex flex-wrap items-center gap-2 text-sm py-2">
-                <?php if ( $duracion ) : ?>
-                  <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
-                    <?php echo esc_html( $duracion ); ?>
-                  </span>
-                <?php endif; ?>
+              <!-- Meta pills + precio -->
+              <div class="flex items-center justify-between gap-4 py-2">
+                <!-- Pills a la izquierda -->
+                <div class="flex flex-wrap items-center gap-2 text-sm">
+                  <?php if ( $duracion ) : ?>
+                    <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+                      <?php echo esc_html( $duracion ); ?>
+                    </span>
+                  <?php endif; ?>
 
-                <?php if ( $grupos ) : ?>
-                  <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">
-                    <?php echo esc_html( $grupos ); ?>
-                  </span>
+                  <?php if ( $grupos ) : ?>
+                    <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">
+                      <?php echo esc_html( $grupos ); ?>
+                    </span>
+                  <?php endif; ?>
+                </div>
+
+                <!-- Precio a la derecha -->
+                <?php if ( $precio_desde ) : ?>
+                  <div class="text-2xl text-text-secondary whitespace-nowrap">
+                    Desde
+                    <span class="font-semibold text-text-primary">
+                      <?php echo esc_html( $precio_desde ); ?>
+                    </span>
+                  </div>
                 <?php endif; ?>
               </div>
-
-              <!-- CTA buttons -->
-              <div class="flex items-center gap-3 py-2 mt-auto">
-                <a href="<?php the_permalink(); ?>" class="btn-primary inline-flex items-center py-2.5">
-                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                  </svg>
-                  Descubre su aventura
-                </a>
-              </div>
-            </div>
           </article>
 
         <?php endwhile; ?>
       </div>
 
       <!-- Paginación -->
-      <div class="mt-10 flex justify-center">
+      <div class="mt-10 flex justify-center margin-top-8">
         <?php
-        echo paginate_links([
+        $links = paginate_links([
           'total'     => $viajes_query->max_num_pages,
           'current'   => $paged,
           'mid_size'  => 1,
           'prev_text' => '&laquo; Anterior',
           'next_text' => 'Siguiente &raquo;',
+          'type'      => 'list', // 🔹 esto hace que devuelva <ul><li>...</li></ul>
         ]);
+
+        if ( $links ) {
+          echo '<nav class="pagination" aria-label="Paginación de viajes de autor">';
+          echo $links;
+          echo '</nav>';
+        }
         ?>
       </div>
 

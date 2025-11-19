@@ -25,6 +25,7 @@ function ukiyo_render_viaje_autor_metabox( $post ) {
     $duracion_viaje  = get_post_meta( $post->ID, 'duracion_viaje', true );
     $grupos_viaje    = get_post_meta( $post->ID, 'grupos_viaje', true );
     $autor_avatar    = get_post_meta( $post->ID, 'autor_avatar', true );
+    $precio_desde = get_post_meta( $post->ID, 'precio_desde', true );
     ?>
     
     <style>
@@ -102,6 +103,19 @@ function ukiyo_render_viaje_autor_metabox( $post ) {
                 Puedes subir la imagen a la biblioteca y pegar aquí la URL.
             </p>
         </div>
+
+        <div class="ukiyo-metabox-group">
+            <div class="ukiyo-metabox-title">Precio desde</div>
+            <div class="ukiyo-metabox-field">
+        <label for="precio_desde">Precio desde (para mostrar en la ficha y el listado)</label>
+        <input
+            type="text"
+            id="precio_desde"
+            name="precio_desde"
+            value="<?php echo esc_attr( $precio_desde ); ?>"
+            placeholder="Ejemplo: 600€"
+        />
+        </div>
     </div>
     <?php
 }
@@ -132,6 +146,7 @@ add_action( 'save_post_viaje_autor', function ( $post_id ) {
         'duracion_viaje',
         'grupos_viaje',
         'autor_avatar',
+        'precio_desde',
     ];
 
     foreach ( $fields as $field ) {

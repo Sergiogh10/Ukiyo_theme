@@ -3483,3 +3483,38 @@ input[type="range"].accent-primary::-moz-range-thumb:hover {
   font-weight: 600;
   border-bottom: 2px solid var(--color-primary);
 }
+
+.pagination .page-numbers {
+  display: flex;
+  gap: 0.5rem;              /* espacio entre 1, 2, Siguiente */
+  list-style: none;
+  padding: 40px 0;
+  margin: 0;
+}
+
+.pagination .page-numbers li a,
+.pagination .page-numbers li span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  padding: 0 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(0,0,0,0.1); /* puedes ajustar al color de border */
+  background: rgba(255,255,255,0.8);
+  font-size: 0.875rem;
+}
+
+/* Página actual */
+.pagination .page-numbers li span.current {
+  background: var(--color-primary, #000); /* ajusta a tu color primary */
+  color: #fff;
+  border-color: transparent;
+}
+
+/* Hover */
+.pagination .page-numbers li a:hover {
+  background: var(--color-primary, #000);
+  color: #fff;
+}
