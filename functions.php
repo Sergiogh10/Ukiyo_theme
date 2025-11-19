@@ -8,6 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 require_once __DIR__ . '/inc/cpt-viaje-autor.php';
+require_once __DIR__ . '/inc/meta-viaje-autor.php';
 
 function ukiyo_enqueue_assets() {
     // CSS

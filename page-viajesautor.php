@@ -35,83 +35,145 @@ get_header();
 </section>
 
   <!-- LISTADO AUTORES / VIAJES -->
-  <section id="viajes" class="bg-surface">
-    <div class="container mx-auto px-6 md:px-8 py-12 md:py-16">
+<section id="viajes" class="bg-surface">
+  <div class="container mx-auto px-6 md:px-8 py-12 md:py-16">
+
+    <?php
+    // Paginación: página actual
+    $paged = max( 1, get_query_var('paged'), get_query_var('page') );
+
+    $viajes_query = new WP_Query([
+      'post_type'      => 'viaje_autor',
+      'post_status'    => 'publish',
+      'posts_per_page' => 6,
+      'paged'          => $paged,
+      'orderby'        => 'date',
+      'order'          => 'DESC',
+    ]);
+    ?>
+
+    <?php if ( $viajes_query->have_posts() ) : ?>
       <div class="grid gap-8 md:grid-cols-2">
-        <!-- Card Luis -->
-        <article class="group rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
-          <a href="<?php echo esc_url( get_permalink(86) ); ?>">
-          <figure class="aspect-[16/9] overflow-hidden">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-jaguar-hero.jpg" alt="Jaguar en el Pantanal durante un viaje de autor con guía experto (Luis)" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] mask-image" loading="lazy" />
-          </figure>
-          <div class="p-6 md:p-7 flex-1 flex flex-col">
-            <div class="flex items-center gap-3">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-luis-acuna.jpg" alt="Luis Acuña, guía experto en naturaleza y fotografía del Pantanal" class="w-12 h-12 rounded-full object-cover ring-1 ring-border/60" loading="lazy" />
-              <div>
-                <h3 class="text-xl font-rowdies text-text-primary">Pantanal de Brasil, tras el rastro del jaguar</h3>
-                <p class="text-sm text-text-secondary">Por Luis · Guía costarricense y fotógrafo de naturaleza</p>
+        <?php while ( $viajes_query->have_posts() ) : $viajes_query->the_post(); ?>
+
+          <?php
+          // Opcionales: campos personalizados (si los quieres usar luego)
+          $autor_subtitulo = get_post_meta( get_the_ID(), 'autor_subtitulo', true ); // ej: "Guía costarricense y fotógrafo..."
+          $duracion        = get_post_meta( get_the_ID(), 'duracion_viaje', true );   // ej: "8 días"
+          $grupos          = get_post_meta( get_the_ID(), 'grupos_viaje', true );     // ej: "Grupos reducidos"
+          ?>
+
+          <article class="group rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
+            <a href="<?php the_permalink(); ?>">
+              <figure class="aspect-[16/9] overflow-hidden">
+                <?php if ( has_post_thumbnail() ) : ?>
+                  <?php the_post_thumbnail( 'large', [
+                    'class'   => 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] mask-image',
+                    'loading' => 'lazy',
+                  ] ); ?>
+                <?php else : ?>
+                  <img 
+                    src="<?php echo get_template_directory_uri(); ?>/images/placeholders/viaje-autor-placeholder.jpg"
+                    alt="<?php the_title_attribute(); ?>"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] mask-image"
+                    loading="lazy"
+                  />
+                <?php endif; ?>
+              </figure>
+            </a>
+
+            <div class="p-6 md:p-7 flex-1 flex flex-col">
+              <div class="flex items-center gap-3">
+                <?php
+                // Avatar opcional: si algún día quieres usar un campo personalizado 'autor_avatar'
+                $autor_avatar = get_post_meta( get_the_ID(), 'autor_avatar', true );
+                if ( $autor_avatar ) : ?>
+                  <img 
+                    src="<?php echo esc_url( $autor_avatar ); ?>"
+                    alt="<?php the_title_attribute(); ?>"
+                    class="w-12 h-12 rounded-full object-cover ring-1 ring-border/60"
+                    loading="lazy"
+                  />
+                <?php endif; ?>
+
+                <div>
+                  <h3 class="text-xl font-rowdies">
+                    <a href="<?php the_permalink(); ?>" 
+                      class="text-text-primary hover:text-accent">
+                      <?php the_title(); ?>
+                    </a>
+                  </h3>
+                  <p class="text-sm text-text-secondary font-satoshi">
+                    <?php
+                    if ( $autor_subtitulo ) {
+                      echo esc_html( $autor_subtitulo );
+                    } else {
+                      // Fallback: nombre del autor de WP
+                      printf( 'Por %s', esc_html( get_the_author() ) );
+                    }
+                    ?>
+                  </p>
+                </div>
+              </div>
+
+              <?php if ( has_excerpt() ) : ?>
+                <p class="mt-4 text-text-secondary">
+                  <?php echo get_the_excerpt(); ?>
+                </p>
+              <?php endif; ?>
+
+              <!-- Meta pills -->
+              <div class="flex flex-wrap items-center gap-2 text-sm py-2">
+                <?php if ( $duracion ) : ?>
+                  <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <?php echo esc_html( $duracion ); ?>
+                  </span>
+                <?php endif; ?>
+
+                <?php if ( $grupos ) : ?>
+                  <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <?php echo esc_html( $grupos ); ?>
+                  </span>
+                <?php endif; ?>
+              </div>
+
+              <!-- CTA buttons -->
+              <div class="flex items-center gap-3 py-2 mt-auto">
+                <a href="<?php the_permalink(); ?>" class="btn-primary inline-flex items-center py-2.5">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                  Descubre su aventura
+                </a>
               </div>
             </div>
-            <p class="mt-4 text-text-secondary">Un viaje fotográfico de campo: madrugadas en bote, humedales infinitos y la paciencia necesaria para ese instante en el que aparece el jaguar. Bajo demanda, ritmo pausado y enfoque naturalista.</p>
+          </article>
 
-            <!-- Meta pills -->
-            <div class="flex flex-wrap items-center gap-2 text-sm py-2">
-              <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">8 días</span>
-                    <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">Grupos reducidos</span>
-              <span class="inline-flex items-center gap-2 rounded-full bg-white/70 ring-1 ring-border/60 py-2.5 text-text-secondary">
-              </span>
-            </div>
-
-            <!-- CTA buttons -->
-            <div class="flex items-center gap-3 py-2">
-              <a href="<?php echo esc_url( get_permalink( get_page_by_path('pantanal') ) ); ?>" class="btn-primary inline-flex items-center py-2.5">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-                Descubre su aventura
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card Moha -->
-        <article class="group rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
-          <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajedeautormoha') ) ); ?>">
-          <figure class="aspect-[16/9] overflow-hidden">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viajes-a-marruecos-personalizados-merzouga-cielo-nocturno-haima.jpg" alt="Cielo nocturno en Merzouga durante un viaje a Marruecos personalizado (Moha)" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] mask-image" loading="lazy" />
-          </figure>
-          <div class="p-6 md:p-7 flex-1 flex flex-col">
-            <div class="flex items-center gap-3">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viaje-de-autor-a-marruecos-con-guia-local-moha.jpg" alt="Moha, guía bereber local en Marruecos" class="w-12 h-12 rounded-full object-cover ring-1 ring-border/60" loading="lazy" />
-              <div>
-                <h3 class="text-xl font-rowdies text-text-primary">Merzouga íntimo: desierto, medinas y hospitalidad bereber</h3>
-                <p class="text-sm text-text-secondary">Por Moha · Guía marroquí, nacido en el Atlas</p>
-              </div>
-            </div>
-            <p class="mt-4 text-text-secondary">Entre kasbahs, té a la menta y cielos que crujen de estrellas. Ritmo sin prisas, paradas donde tiene sentido y noches en campamentos escogidos por su silencio.</p>
-
-            <!-- Meta pills -->
-            <div class="flex flex-wrap items-center gap-2 text-sm py-2">
-              <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">8 días</span>
-                    <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">Grupos reducidos</span>
-              <span class="inline-flex items-center gap-2 rounded-full bg-white/70 ring-1 ring-border/60 py-2.5 text-text-secondary">
-              </span>
-            </div>
-
-            <!-- CTA buttons -->
-            <div class="flex items-center gap-3 py-2">
-              <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajedeautormoha') ) ); ?>" class="btn-primary inline-flex items-center py-2.5">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-                Descubre su aventura
-              </a>
-            </div>
-          </div>
-        </article>
+        <?php endwhile; ?>
       </div>
-    </div>
-  </section>
+
+      <!-- Paginación -->
+      <div class="mt-10 flex justify-center">
+        <?php
+        echo paginate_links([
+          'total'     => $viajes_query->max_num_pages,
+          'current'   => $paged,
+          'mid_size'  => 1,
+          'prev_text' => '&laquo; Anterior',
+          'next_text' => 'Siguiente &raquo;',
+        ]);
+        ?>
+      </div>
+
+    <?php else : ?>
+      <p class="text-text-secondary">
+        Aún no hay viajes de autor publicados. Pronto habrá aventuras por aquí.
+      </p>
+    <?php endif; ?>
+
+    <?php wp_reset_postdata(); ?>
+  </div>
+</section>
 
   <section class="py-20 bg-surface">
     <div class="container mx-auto px-6">

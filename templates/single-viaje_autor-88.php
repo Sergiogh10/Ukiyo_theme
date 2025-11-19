@@ -1,38 +1,37 @@
 <?php
 /*
- * Single template for viaje_autor post ID 86
- * Description: Ficha de viaje de autor (Luis – Pantanal).
+ * Single template for viaje_autor post ID 88
+ * Description: Ficha de viaje de autor (Moha - Merzouga).
  */
 get_header();
 $uri = get_template_directory_uri();
 ?>
-
   <!-- HERO -->
 <section class="relative">
     <div class="relative h-[60vh] lg:h-[70vh] overflow-hidden">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-jaguar-hero.jpg"
-             alt="Jaguar en el Pantanal durante un viaje de autor con guía experto (Luis)"
-             class="w-full h-full object-cover object-bottom mask-image" 
+        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viajes-a-marruecos-personalizados-erg-chebbi-merzouga.jpg"
+             alt="Bromo"
+             class="w-full h-full object-cover mask-image" 
              loading="lazy"
-             onerror="this.src='https://images.pexels.com/photos/2404370/pexels-photo-2404370.jpeg'; this.onerror=null;" />
+             onerror="this.src='https://images.pexels.com/photos/2404370/pexels-photo-2404370.jpeg'; this.onerror=null;" />        
         <!-- Content Overlay -->
         <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-12">
             <div class="container mx-auto max-w-4xl">
                 <div class="flex flex-wrap items-center gap-3 mb-6">
-                    <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">8 días</span>
+                    <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">A medida</span>
                     <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">Grupos reducidos</span>
                     <span class="bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">Plazas limitadas</span>
                 </div>
                 <div class="hero-overlay-box">
-                  <h1 class="text-4xl lg:text-6xl font-rowdies text-white mb-4 pl-4">
-                      Pantanal: <br>
-                    <span class="text-accent">tras el rastro del jaguar</span>
-                  </h1>
-                  <p class="text-xl text-white/90 max-w-3xl pl-4">
-                  Recorreremos con Luis, fotógrafo y guía profesional, los humedales infinitos de Brasil, disfrutando de amaneceres en bote, con la paciencia que requiere el instante.</p>
+                    <h1 class="text-4xl lg:text-6xl font-rowdies text-white mb-4 pl-4">
+                    Merzouga: <br>
+                    <span class="text-accent">Territorio bereber</span>
+                    </h1>
+                    <p class="text-xl text-white/90 max-w-3xl pl-4">
+                Recorreremos con <strong>Moha</strong>, guía bereber de Merzouga, las dunas de <em>Erg Chebbi</em>, los palmerales y los oasis; atardeceres en el desierto y noches bajo un cielo de millones de estrellas.</p>
                 <div class="hero-overlay-box pl-4">
                   <span class="text-sm mr-2">Desde</span>
-                  <span class="text-2xl font-semibold">3.400€</span>
+                  <span class="text-2xl font-semibold">600€</span>
                   <span class="text-xs ml-2">/persona</span>
                 </div>
             </div>
@@ -45,12 +44,10 @@ $uri = get_template_directory_uri();
   <div class="container mx-auto px-6">
     <header class="text-center max-w-3xl mx-auto mb-12">
       <h2 class="text-4xl font-satoshi text-text-primary tracking-tight">
-        Una aventura <span class="text-secondary">única</span>
+        Una aventura en <span class="text-secondary">Merzouga</span>
       </h2>
       <p class="mt-4 text-lg text-text-secondary leading-relaxed">
-        Viajar con Luis no es hacer un safari más: es aprender a mirar.
-Cada día tiene un propósito —no una lista de lugares—, y cada salida está pensada para aumentar tus posibilidades de ver al jaguar en su entorno natural, sin forzarlo.
-Conocerás a las personas que hacen posible la conservación de la zona.
+        Viajar con <strong>Moha</strong> no es un tour más: es aprender a leer el desierto. Cada día tiene un propósito —no una lista de “checkpoints”—: orientarte entre dunas, conocer familias nómadas y entender la vida amazigh. Aquí el ritmo lo marca el sol, el viento y la arena.
       </p>
     </header>
 
@@ -59,22 +56,22 @@ Conocerás a las personas que hacen posible la conservación de la zona.
         <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
           <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
         </div>
-        <h3 class="text-xl font-satoshi text-text-primary mb-2">Amanecer en los humedales</h3>
-        <p class="text-text-secondary">Cuando la niebla cubre el agua y los monos despiertan, empieza la jornada. Salidas en bote con primeras luces, cámaras listas y silencio absoluto.</p>
+        <h3 class="text-xl font-satoshi text-text-primary mb-2">Amanecer en Erg Chebbi</h3>
+        <p class="text-text-secondary">Antes de la primera luz, subimos a las dunas para ver cómo el sol enciende el horizonte. Silencio, horizonte limpio y té al amanecer en el campamento.</p>
       </li>
       <li class="text-center bg-white/60 backdrop-blur-sm rounded-2xl p-8 ring-1 ring-border/60">
         <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-secondary/10 flex items-center justify-center">
           <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
         </div>
-        <h3 class="text-xl font-satoshi text-text-primary mb-2">Rastros y paciencia</h3>
-        <p class="text-text-secondary">Luis te enseñará cómo interpretar señales, huellas y sonidos. Aquí no se trata de suerte, sino de aprender a entender el ritmo del Pantanal.</p>
+        <h3 class="text-xl font-satoshi text-text-primary mb-2">Rastros y orientación</h3>
+        <p class="text-text-secondary">Moha te enseñará a leer el desierto: huellas de dromedario y zorro del desierto, dirección del viento y caminos invisibles entre dunas.</p>
       </li>
       <li class="text-center bg-white/60 backdrop-blur-sm rounded-2xl p-8 ring-1 ring-border/60">
         <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center">
           <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
         </div>
-        <h3 class="text-xl font-satoshi text-text-primary mb-2">Conversaciones al final del día</h3>
-        <p class="text-text-secondary">De vuelta al lodge, las charlas giran en torno a lo vivido, la fotografía y las historias del lugar. Sin prisas, sin grupos grandes, solo lo esencial.</p>
+        <h3 class="text-xl font-satoshi text-text-primary mb-2">Té y historias bajo las estrellas</h3>
+        <p class="text-text-secondary">Al caer el sol, cena en haima, música gnawa y conversación sobre la cultura amazigh y la antigua ruta de caravanas.</p>
       </li>
     </ul>
   </div>
@@ -84,21 +81,21 @@ Conocerás a las personas que hacen posible la conservación de la zona.
     <!-- Contenido -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-30 container mx-auto px-6 md:px-8 py-10 md:py-14 max-w-8xl">
     <div class="flex flex-col items-start">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-luis-acuna.jpg"
-           alt="Luis Acuña, guía experto en naturaleza y fotografía del Pantanal"
+      <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viaje-de-autor-a-marruecos-con-guia-local-moha.jpg"
+           alt="Luis Acuña"
            class="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover ring-1 ring-border/60 bg-white/80" />
-      <h2 class="mt-4 text-xl font-semibold text-text-primary">Luis Acuña</h2>
-      <p class="mt-1 text-sm text-text-secondary max-w-xs">Guía costarricense y fotógrafo profesional. Conoce los diferentes sonidos de la selva y localiza a los animales más escurridizos.</p>
+      <h2 class="mt-4 text-xl font-semibold text-text-primary">Moha</h2>
+      <p class="mt-1 text-sm text-text-secondary max-w-xs">Guía bereber de Merzouga. Conoce cada duna de Erg Chebbi y comparte las tradiciones amazigh con respeto y cercanía.</p>
     </div>
     <div class="text-text-secondary text-[15px] space-y-4">
-      <p>“Soy Luis, un guía turístico y fotógrafo de vida silvestre con experiencia. Estoy decidido a hacer un impacto positivo en las personas y el planeta.</p>
-      <p>Imagino cada tour de vida silvestre como una semilla, plantada en el corazón de cada viajero que pone un pie en el paraíso biodiverso de Costa Rica. Es por eso que visualizo un legado que trasciende fronteras y generaciones; pronto entenderás.</p>
-      <p>A medida que los viajeros se unen a mí en un viaje por las impresionantes regiones de Corcovado y Osa, les ayudo a ver que no son meros observadores, son participantes en una gran danza interconectada de la vida. Disfruto mostrando a las personas animales en su hábitat y su comportamiento en diferentes situaciones. Cada fotografía que mis clientes toman es un testimonio de la belleza que prospera en estas tierras, una belleza que exige ser preservada.</p>
+      <p>“Me llamo Moha y nací en una pequeña jaima a los pies de las dunas de Erg Chebbi, cerca de Merzouga. Mi familia es amazigh, descendiente de nómadas que recorrían el desierto con sus dromedarios, guiándose por las estrellas y el viento. Desde niño, el desierto fue mi escuela: aprendí a orientarme por la forma en que se curva una duna, a reconocer las huellas en la arena y a escuchar el silencio como si hablara.</p>
+      <p>Cuando tenía ocho años, acompañé por primera vez a mi padre en una ruta de tres días con una pequeña caravana. Recuerdo que al anochecer, mientras preparábamos el fuego, él me dijo: “El desierto no se conquista, se respeta. Si lo escuchas, siempre te mostrará el camino.” Esa frase me marcó para siempre.</p>
+      <p>A los quince años empecé a ayudar como guía para pequeños grupos de viajeros que llegaban curiosos por ver el amanecer sobre las dunas. No hablaba mucho su idioma, pero descubrí que una sonrisa, un buen té y una buena historia podían cruzar cualquier frontera. Con el tiempo aprendí español, francés e inglés, no en una escuela, sino alrededor del fuego, conversando con quienes venían de lejos.</p>
     </div>
     <div class="text-text-secondary text-[15px] space-y-4">
-      <p>Cuando cae la noche, la sinfonía de la naturaleza continúa — sí, ChatGPT me ayudó con esa frase —. Pero es cierto, resuena conmigo porque mis tours nocturnos se centran en observar reptiles y anfibios, estos fascinantes seres ofrecen un vistazo a un mundo a menudo pasado por alto. Por la noche hay más historias esperando ser descubiertas y contadas a tus seres queridos.</p>
-      <p>Cuando los viajeros regresan a sus países, llevan consigo más que recuerdos y fotografías. Llevan un respeto y amor renovados o nuevos — depende — por la naturaleza, una chispa encendida por sus experiencias. La verdad es que más a menudo de lo que piensas, las personas me dicen que quieren volver a visitar Costa Rica. Es esta chispa la que espero que encienda una llama, inspirándolos a ellos y a quienes los rodean a unirse en el esfuerzo por proteger y preservar a la Madre Naturaleza.</p>
-      <p>En esencia, mi misión no es solo guiar, sino iluminar, inspirar e inculcar un sentido de responsabilidad hacia nuestro planeta. Un tour a la vez, estoy sembrando semillas de cambio, cultivando un jardín global de defensores de la naturaleza. Este es mi legado, mi contribución a un futuro donde la armonía entre humanos y naturaleza no es solo un sueño, sino una realidad”.</p>
+      <p>Hoy dedico mi vida a mostrar mi hogar con orgullo, pero también con respeto. No llevo a la gente solo a hacer una ruta en dromedario: les explico por qué el té se sirve tres veces, qué significan los tatuajes tradicionales, cómo los antiguos nómadas leían las estrellas y qué siente alguien que, como yo, ha crecido donde el cielo parece tocar la arena.</p>
+      <p>Me gusta caminar descalzo sobre la duna más alta al atardecer y ver cómo el desierto cambia de color. A veces, cuando estoy con viajeros que se sientan en silencio, sé que empiezan a entender lo que mi padre me enseñó: aquí no se necesita prisa, solo dejar que el desierto te hable.</p>
+      <p>Ser guía para mí no es un trabajo. Es una forma de compartir raíces, mostrar que detrás de cada huella hay una historia y que Erg Chebbi no es solo un lugar bonito, sino un hogar lleno de vida y memoria".</p>
     </div>
   </div>
 </section>
@@ -707,38 +704,17 @@ Conocerás a las personas que hacen posible la conservación de la zona.
     </div>
   </section>
 
-  <!-- GALERÍA SIMPLE -->
-  <section class="py-20 bg-surface">
-    <div class="container mx-auto px-6 md:px-8 pb-12 md:pb-16">
-      <div class="grid gap-4 md:grid-cols-3">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-luis-acuna-campo.jpg" alt="Luis Acuña durante el viaje de autor al Pantanal" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-rio-amanecer.jpg" alt="Amanecer en el río durante un viaje de autor al Pantanal con Ukiyo" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-fauna-aves.jpg" alt="Aves del Pantanal en un viaje de autor con guía experto" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
-      </div>
-    </div>
-  </section>
-
-<!-- CTA Section -->
+<!-- CTA -->
 <section class="py-20 bg-gradient-primary text-white text-center">
     <div class="container mx-auto px-6 max-w-3xl">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-xl mb-8 opacity-90">
-                No sólo es una búsqueda del jaguar, es una experiencia apasionante
-            </h2>
-            <p class="text-xl mb-8 opacity-90">
-                Con UKIYO y Luis, cada amanecer, cada reflejo en el río y cada silencio compartido 
-                se transforma en una experiencia única de observación, paciencia y conexión con la vida salvaje.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" 
-                   class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/80 transition">
-                    Descubre el pantanal con Luis
-                </a>
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" 
-                   class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/80 transition">
-                    Ver más viajes de autor
-                </a>
-            </div>
+        <h2 class="text-display font-satoshi mb-6">¿No encuentras tu viaje ideal?</h2>
+        <p class="text-xl mb-8 opacity-90">Cada persona viaja a su manera.
+        Cuéntanos qué te mueve y crearemos juntos una experiencia que encaje contigo.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="<?php echo esc_url( site_url('/planifica-tu-viaje') ); ?>" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/80 transition" aria-label="Abrir formulario para contarnos tu idea">
+            Cuéntanos tu idea
+            </a>
+            <!-- <a href="<?php echo esc_url( site_url('/about') ); ?>" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition">Hablar con un Curador</a> -->
         </div>
     </div>
 </section>
