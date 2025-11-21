@@ -117,7 +117,7 @@ get_header();
               <img
                 src="<?php echo esc_url($img); ?>"
                 alt="<?php echo esc_attr($r['name'] . ' - ' . $r['destination'] . ' | Viaje personalizado con Ukiyo'); ?>"
-                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 mask-image"
                 loading="lazy"
                 onerror="this.src='https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg'; this.onerror=null;"
               />

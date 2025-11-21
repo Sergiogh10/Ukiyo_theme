@@ -32,13 +32,13 @@ Viajes auténticos, sostenibles y creados a tu medida.                </p>
                         </svg>
                         <span>info@viajesukiyo.com</span>
                     </a>
-                   <a href="https://instagram.com/ukiyo.oficial" target="_blank" class="flex items-center text-white/60 hover:text-accent transition-colors" aria-label="Instagram">
+                   <!-- <a href="https://instagram.com/ukiyo.oficial" target="_blank" class="flex items-center text-white/60 hover:text-accent transition-colors" aria-label="Instagram">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 mr-2">
                             <path d="M7.001 2C4.243 2 2 4.243 2 7.001v9.998C2 19.757 4.243 22 7.001 22h9.998C19.757 22 22 19.757 22 17V7.001C22 4.243 19.757 2 17 2H7.001zM20 17c0 1.654-1.346 3-3.001 3H7.001A3.004 3.004 0 0 1 4 17V7.001C4 5.346 5.346 4 7.001 4H17C18.654 4 20 5.346 20 7.001V17z"/>
                             <path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.001A3.001 3.001 0 1 1 12 9a3.001 3.001 0 0 1 0 6.001zM17.5 6a1.5 1.5 0 1 1-3.001 0A1.5 1.5 0 0 1 17.5 6z"/>
                         </svg>
                         <span>Instagram</span>
-                    </a>
+                    </a> -->
                 </div>
             </div>
 

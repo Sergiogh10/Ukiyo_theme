@@ -186,45 +186,18 @@ get_header();
 </section>
 
   <section class="py-20 bg-surface">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
+    <div class="container mx-auto">
+      <div class="text-center mb-4">
         <h2 class="text-display font-satoshi text-text-primary mb-4">
           Cómo <span class="text-primary">funciona</span>
         </h2>
         <br>
-        <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          <!-- Step 1 -->
-          <div class="relative rounded-2xl bg-white shadow-sm ring-1 ring-border/60 p-6">
-            <!-- number bubble -->
-            <span class="absolute -top-4 left-6 inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#D4A574] text-white font-semibold">1</span>
-            <h3 class="mt-3 font-semibold text-text-primary text-lg">Conecta con el autor</h3>
-            <p class="mt-2 text-text-secondary text-sm leading-relaxed">Lee su historia, mira sus fotos y entiende su mirada del destino.</p>
-            <!-- arrow to next (desktop) -->
-            <span class="hidden md:block absolute top-1/2 -right-5 -translate-y-1/2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#D4A574]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </span>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="relative rounded-2xl bg-white shadow-sm ring-1 ring-border/60 p-6">
-            <span class="absolute -top-4 left-6 inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#D4A574] text-white font-semibold">2</span>
-            <h3 class="mt-3 font-semibold text-text-primary text-lg">Definimos tu viaje</h3>
-            <p class="mt-2 text-text-secondary text-sm leading-relaxed">Fechas bajo demanda, ritmo y enfoque a tu medida. Plazas limitadas.</p>
-            <span class="hidden md:block absolute top-1/2 -right-5 -translate-y-1/2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#D4A574]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </span>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="relative rounded-2xl bg-white shadow-sm ring-1 ring-border/60 p-6">
-            <span class="absolute -top-4 left-6 inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#D4A574] text-white font-semibold">3</span>
-            <h3 class="mt-3 font-semibold text-text-primary text-lg">Lo organizamos desde dentro</h3>
-            <p class="mt-2 text-text-secondary text-sm leading-relaxed">Operado por gente de allí, con la calma y la autenticidad de UKIYO.</p>
-          </div>
+        <div class="mt-2 relative">
+          <img 
+            src="<?php echo get_template_directory_uri(); ?>/images/stepscomplete.png" 
+            alt="Cómo funciona" 
+            class="w-[70%] mx-auto h-auto rounded-2xl shadow-sm"
+          />
         </div>
       </div>
     </div>
@@ -232,31 +205,69 @@ get_header();
 
   <!-- AUTORES (mini bios) -->
   <section class="py-20 bg-surface">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-display font-satoshi text-text-primary mb-4">
-          Los <span class="text-primary">autores</span>
-        </h2>
-        <br>
-        <div class="mt-6 grid gap-6 md:grid-cols-2">
-          <div class="flex gap-4 items-start">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-luis-acuna.jpg" alt="Luis Acuña, guía costarricense y fotógrafo de naturaleza" class="w-16 h-16 rounded-full object-cover ring-1 ring-border/60" />
-            <div>
-              <h3 class="font-semibold text-text-primary">Luis · Guía costarricense y fotógrafo</h3>
-              <p class="text-text-secondary">Lleva años esperando la luz justa en humedales y bosques tropicales. Su Pantanal es silencio, paciencia y respeto por la fauna.</p>
-            </div>
-          </div>
-          <div class="flex gap-4 items-start">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viaje-de-autor-a-marruecos-con-guia-local-moha.jpg" alt="Moha, guía marroquí y anfitrión local" class="w-16 h-16 rounded-full object-cover ring-1 ring-border/60" />
-            <div>
-              <h3 class="font-semibold text-text-primary">Moha · Guía marroquí</h3>
-              <p class="text-text-secondary">Nacido en el Atlas, conoce el desierto por dentro: los zocos que importan, los silencios que merecen la pena y el té en el lugar adecuado.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="container mx-auto px-6">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-display font-satoshi text-text-primary mb-2">
+        Los <span class="text-primary">autores</span>
+      </h2>
     </div>
-  </section>
+
+    <div class="grid gap-8 md:grid-cols-4">
+
+      <!-- CARD LUIS -->
+      <article class="rounded-2xl border-2 border-black bg-white/80 backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
+
+        <!-- Imagen más pequeña -->
+        <div class="aspect-[4/3]">
+          <img
+            src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-luis-acuna.jpg"
+            alt="Luis Acuña, guía costarricense"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] mask-image"
+          />
+        </div>
+
+        <!-- Texto más compacto -->
+        <div class="p-4">
+          <h3 class="text-base font-semibold text-text-primary">
+            Luis · Guía costarricense y fotógrafo
+          </h3>
+          <p class="text-text-secondary mt-1 text-sm leading-relaxed">
+            Lleva años esperando la luz justa en humedales y bosques tropicales. 
+            Su Pantanal es silencio, paciencia y respeto por la fauna.
+          </p>
+        </div>
+
+      </article>
+
+
+      <!-- CARD MOHA -->
+      <article class="rounded-2xl border-2 border-black bg-white/80 backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
+
+        <div class="aspect-[4/3]">
+          <img
+            src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viaje-de-autor-a-marruecos-con-guia-local-moha.jpg"
+            alt="Moha, guía marroquí"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] mask-image"
+          />
+        </div>
+
+        <div class="p-4">
+          <h3 class="text-base font-semibold text-text-primary">
+            Moha · Guía marroquí
+          </h3>
+          <p class="text-text-secondary mt-1 text-sm leading-relaxed">
+            Nacido en el Atlas, conoce el desierto por dentro: los zocos que importan, 
+            los silencios que merecen la pena y el té en el lugar adecuado.
+          </p>
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+</section>
 
   <!-- FAQ -->
   <section class="bg-surface">
