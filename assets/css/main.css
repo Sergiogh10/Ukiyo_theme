@@ -819,7 +819,7 @@ body {
 .btn-secondary {
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(156 175 136 / var(--tw-bg-opacity, 1));
+  background-color: rgb(26 113 150 / var(--tw-bg-opacity, 1));
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0.75rem;
@@ -2922,7 +2922,7 @@ input[type="range"].accent-primary::-moz-range-thumb:hover {
   max-width: 1200px;
   display: grid;
   grid-gap: 1.5rem;
-  grid-template-rows: repeat(2, 22rem);
+  grid-template-rows: auto;
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
@@ -3050,12 +3050,33 @@ input[type="range"].accent-primary::-moz-range-thumb:hover {
   color: var(--rg-white);
 }
 
+
 .ukiyo-rg .rg-card--green .rg-designation,
 .ukiyo-rg .rg-card--gold .rg-designation,
 .ukiyo-rg .rg-card--green .rg-score,
 .ukiyo-rg .rg-card--gold .rg-score {
   color: var(--rg-white);
   opacity: .85;
+}
+
+/* Imagen de reseña */
+.ukiyo-rg .rg-image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.ukiyo-rg .rg-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.ukiyo-rg .rg-card:hover .rg-image img {
+  transform: scale(1.05);
 }
 
 /* Responsive */

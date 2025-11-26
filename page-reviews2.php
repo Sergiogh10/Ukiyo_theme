@@ -82,7 +82,7 @@ get_header();
               "name" => "Carolina y Carmen",
               "destination" => "Cuba",
               "rating" => 5,
-              "review" => "Itinerario equilibrado entre tradición y modernidad. Hoteles excelentes y experiencias memorables.",
+              "review" => "Lo mejor de Cuba es su gente. La calidez, las risas, las historias compartidas sin prisa… cada conversación parecía un pequeño tesoro. Pasar una tarde aprendiendo a bailar son con una familia local fue uno de esos momentos que te reconcilian con la vida. Regresé con el corazón lleno y la sensación de haber viajado no solo a un lugar, sino a una manera distinta de vivir.",
               "date" => "Julio 2024",
               "image" => "resena-carolina-carmen-cuba.jpg"
             ],
@@ -90,7 +90,7 @@ get_header();
               "name" => "Sergio y Helena",
               "destination" => "Costa Rica",
               "rating" => 5,
-              "review" => "Auroras, glaciares y cascadas espectaculares. Nos llevaron a rincones que solos no habríamos encontrado.",
+              "review" => "Cada día era una aventura diferente: caminatas entre selvas que parecen respirar, amaneceres acompañados por el sonido de los monos aulladores y encuentros con animales que jamás imaginamos ver tan cerca. Fue imposible no emocionarnos. Volvimos a casa con la sensación de haber vivido algo auténtico, profundo y transformador. Costa Rica no solo es un destino; es un viaje que se queda en el corazón.",
               "date" => "Mayo 2023",
               "image" => "resena-sergio-helena-costa-rica.jpg"
             ],
@@ -98,7 +98,7 @@ get_header();
               "name" => "Berta y Rubén",
               "destination" => "Marruecos",
               "rating" => 5,
-              "review" => "Viaje perfecto en familia. Actividades para los niños y relax para nosotros. Todo muy bien organizado.",
+              "review" => "Viajar a Marruecos fue como abrir una puerta a otro mundo, pero la noche en el desierto fue directamente magia. Cruzar las dunas en dromedario al atardecer, ver cómo el cielo se tiñe de naranja y escuchar solo el silencio fue una sensación que nunca olvidaré.",
               "date" => "Febrero 2024",
               "image" => "resena-berta-ruben-marruecos.jpg"
             ],

@@ -1,27 +1,30 @@
 <?php
 /*
- * Single template for viaje_autor post ID 143
- * Description: Ficha de viaje de autor (Moha - Merzouga).
+ * Single template for viaje_autor post ID 179
+ * Description: Ficha de viaje de autor (Moha – Marruecos).
  */
 get_header();
 $uri = get_template_directory_uri();
 ?>
+
   <!-- HERO -->
 <section class="relative">
-    <div class="relative h-[60vh] lg:h-[70vh] overflow-hidden">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viajes-a-marruecos-personalizados-erg-chebbi-merzouga.jpg"
-             alt="Bromo"
-             class="w-full h-full object-cover mask-image" 
-             loading="lazy"
-             onerror="this.src='https://images.pexels.com/photos/2404370/pexels-photo-2404370.jpeg'; this.onerror=null;" />        
-        <!-- Content Overlay -->
-            <!-- Content Overlay -->
+  <div class="relative h-[60vh] lg:h-[70vh] overflow-hidden">
+    <img 
+      src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-rutadesierto.jpg"
+      alt="Dunas de Erg Chebbi en Merzouga durante un viaje al desierto de Marruecos"
+      class="w-full h-full object-cover object-bottom mask-image"
+      loading="lazy"
+      onerror="this.src='https://images.pexels.com/photos/3889843/pexels-photo-3889843.jpeg'; this.onerror=null;"
+    />
+
+    <!-- Content Overlay -->
     <div class="absolute bottom-0 left-0 right-0 p-4 md:p-6 lg:p-12">
       <div class="container mx-auto max-w-4xl">
         
         <!-- Badges -->
         <div class="flex flex-wrap items-center gap-3 mb-6">
-          <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">4 días / 3 noches</span>
+          <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">3 días / 2 noches</span>
           <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">Atlas + Sahara</span>
           <span class="bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">Plazas limitadas</span>
         </div>
@@ -29,18 +32,18 @@ $uri = get_template_directory_uri();
         <div class="hero-overlay-box">
           <h1 class="text-3xl md:text-4xl lg:text-6xl font-rowdies text-white mb-4 pl-4">
             Marruecos: <br>
-            <span class="text-accent">4 días hacia el corazón del Sahara</span>
+            <span class="text-accent">del Atlas a las dunas doradas del Sahara</span>
           </h1>
 
           <p class="text-xl text-white/90 max-w-3xl pl-4">
-            “Cuatro días de ruta imprescindible desde Marrakech, cruzando kasbahs legendarias,
+            “Tres días de ruta imprescindible desde Marrakech, cruzando kasbahs legendarias,
             gargantas imponentes y el silencio infinito de Erg Chebbi.”
           </p>
 
           <!-- Precio -->
           <div class="hero-overlay-box pl-4">
             <span class="text-sm mr-2">Desde</span>
-            <span class="text-2xl font-semibold">400 €</span>
+            <span class="text-2xl font-semibold">350 €</span>
             <span class="text-xs ml-2">/persona</span>
           </div>
         </div>
@@ -49,26 +52,26 @@ $uri = get_template_directory_uri();
     </div>
   </div>
 </section>
-
   <!-- NARRATIVA / HIGHLIGHTS -->
 <section class="py-16 bg-gradient-warm">
   <div class="container mx-auto px-6">
     <header class="text-center max-w-3xl mx-auto mb-12">
       <h2 class="text-4xl font-satoshi text-text-primary tracking-tight">
-        Un viaje hacia el <span class="text-secondary">Sahara</span>
+        Una aventura <span class="text-secondary">inolvidable</span>
       </h2>
       <p class="mt-4 text-lg text-text-secondary leading-relaxed">
-        Este recorrido de 4 días hacia Merzouga es mucho más que un traslado al desierto: 
-        es una travesía por el Alto Atlas, las kasbahs históricas y los valles que dan vida a Marruecos. 
-        Cada día suma escenarios diferentes —montañas, gargantas, oasis y dunas infinitas— hasta llegar al 
-        silencio dorado del Sahara. Aquí, la hospitalidad bereber, la calma del desierto y las noches estrelladas 
-        convierten el viaje en una experiencia que permanece.
+        Este viaje al desierto de Marruecos es una ruta esencial para conectar con la cultura bereber,
+        los paisajes del Alto Atlas y la magia del Sahara. Desde kasbahs milenarias hasta desfiladeros
+        impresionantes y noches bajo las estrellas, cada día está diseñado para mostrar la esencia
+        más auténtica del sur de Marruecos.  
+        A lo largo del camino descubrirás pueblos tradicionales, oasis, valles infinitos y las dunas
+        doradas de Erg Chebbi, viviendo una experiencia que solo Marruecos puede ofrecer.
       </p>
     </header>
 
     <ul role="list" class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-      <!-- PUNTO 1 -->
+      <!-- Punto 1 -->
       <li class="text-center bg-white/60 backdrop-blur-sm rounded-2xl p-8 ring-1 ring-border/60">
         <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
           <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -76,14 +79,14 @@ $uri = get_template_directory_uri();
               d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
           </svg>
         </div>
-        <h3 class="text-xl font-satoshi text-text-primary mb-2">Amanecer en las dunas</h3>
+        <h3 class="text-xl font-satoshi text-text-primary mb-2">Paisajes que transforman</h3>
         <p class="text-text-secondary">
-          La salida del sol sobre Erg Chebbi es uno de los momentos más icónicos del viaje. 
-          El desierto despierta en silencio mientras la luz transforma lentamente el paisaje.
+          Montañas del Atlas, kasbahs históricas, gargantas imponentes y el Sahara infinito.  
+          En solo 3 días recorrerás algunos de los escenarios más icónicos y cambiantes de Marruecos.
         </p>
       </li>
 
-      <!-- PUNTO 2 -->
+      <!-- Punto 2 -->
       <li class="text-center bg-white/60 backdrop-blur-sm rounded-2xl p-8 ring-1 ring-border/60">
         <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-secondary/10 flex items-center justify-center">
           <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,14 +94,14 @@ $uri = get_template_directory_uri();
               d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
           </svg>
         </div>
-        <h3 class="text-xl font-satoshi text-text-primary mb-2">Ruta de kasbahs y gargantas</h3>
+        <h3 class="text-xl font-satoshi text-text-primary mb-2">Experiencias auténticas</h3>
         <p class="text-text-secondary">
-          Desde Aït Ben Haddou hasta las Gargantas del Todra, el camino revela la arquitectura 
-          fortificada, oasis y valles que han marcado la historia comercial del sur de Marruecos.
+          Camina por Ait Ben Haddou, explora el Valle del Dades, recorre las Gargantas del Todra
+          y vive una noche inolvidable en jaimas bereberes bajo un cielo lleno de estrellas.
         </p>
       </li>
 
-      <!-- PUNTO 3 -->
+      <!-- Punto 3 -->
       <li class="text-center bg-white/60 backdrop-blur-sm rounded-2xl p-8 ring-1 ring-border/60">
         <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center">
           <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -106,10 +109,10 @@ $uri = get_template_directory_uri();
               d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
           </svg>
         </div>
-        <h3 class="text-xl font-satoshi text-text-primary mb-2">Noche en jaima</h3>
+        <h3 class="text-xl font-satoshi text-text-primary mb-2">Cercanía y cultura</h3>
         <p class="text-text-secondary">
-          Música tradicional, cena bereber y un cielo estrellado imposible de olvidar. 
-          La noche en el campamento es el alma del viaje, un momento de calma absoluta y conexión.
+          Viajarás acompañado por un guía local de habla hispana que te introducirá
+          en la cultura bereber, sus tradiciones y la historia detrás de cada lugar.
         </p>
       </li>
 
@@ -181,329 +184,150 @@ $uri = get_template_directory_uri();
     </nav>
   </div>
 
-    <!-- Itinerary -->
-    <div id="itinerary" class="experienceSection">
-      <ol class="experienceList">
+  <!-- Itinerary -->
+  <div id="itinerary" class="experienceSection">
+    <ol class="experienceList">
 
-        <!-- LLEGADA -->
-        <li class="experienceItemList">
-          <div class="decorativeCircleList">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-trip-arrival.svg" alt="" />
-          </div>
-          <h3 class="text-2xl font-rowdies text-text-primary mb-1">
-            <span class="block text-sm text-text-secondary font-satoshi">Llegada</span>
-            MARRAKECH
-          </h3>
-          <p class="mt-2 text-text-secondary max-w-xl">
-            Encuentro con vuestro guía/conductor en Marrakech e inicio de la ruta hacia el sur,
-            cruzando el Alto Atlas para adentrarnos en los paisajes más auténticos de Marruecos.
-          </p>
-        </li>
+      <!-- SALIDA -->
+      <li class="experienceItemList">
+        <div class="decorativeCircleList">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-trip-arrival.svg" alt="" />
+        </div>
+        <h3 class="text-2xl font-rowdies text-text-primary mb-1">
+          <span class="block text-sm text-text-secondary font-satoshi">Salida</span>
+          MARRAKECH
+        </h3>
+        <p class="mt-2 text-text-secondary max-w-xl">
+          Recogida en tu alojamiento, aeropuerto o punto acordado. 
+          Comenzamos la ruta hacia el sur cruzando el Alto Atlas y adentrándonos en paisajes cada vez más áridos y espectaculares.
+        </p>
+      </li>
 
-        <!-- 1. ALTO ATLAS – AÏT BEN HADDOU – OUARZAZATE – VALLE DEL DADÈS -->
-        <li class="experienceItemList">
-          <button class="decorativeCircleList accordion-trigger">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-plus.svg" alt="" />
-          </button>
+      <!-- DÍA 1 -->
+      <li class="experienceItemList">
+        <button class="decorativeCircleList accordion-trigger">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-plus.svg" alt="" />
+        </button>
 
-          <h3 class="experienceTitle accordion-trigger text-2xl font-rowdies text-text-primary mb-1">
-            1. ALTO ATLAS · AÏT BEN HADDOU · OUARZAZATE · VALLE DEL DADÈS
-            <span class="h3-subtitle">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-nights.svg" alt="" />
-              1 noche
-            </span>
-          </h3>
+        <h3 class="experienceTitle accordion-trigger text-2xl font-rowdies text-text-primary mb-1">
+          1. ALTO ATLAS · AIT BEN HADDOU · VALLE DEL DADES
+          <span class="h3-subtitle">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-nights.svg" alt="" />
+            1 noche
+          </span>
+        </h3>
 
-          <div class="exp-content">
-            <div class="experienceSplit">
-              <div class="experienceSplit-text">
-                <p>
-                  Cruzamos el espectacular puerto de Tizi N’tichka, con vistas a las cumbres del Alto Atlas,
-                  y hacemos parada en Aït Ben Haddou, la kasbah más famosa del país y Patrimonio de la Unesco.
-                  Tras recorrer Ouarzazate, seguimos la Ruta de las Mil Kasbahs hasta llegar al Valle del Dadès.
-                </p>
-              </div>
-              <figure class="experienceSplit-media">
-                <img
-                src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-marrakech.jpg"
+        <div class="exp-content">
+          <div class="experienceSplit">
+            <div class="experienceSplit-text">
+              <p>
+                Atravesamos el paso de Tizi N’Tichka, el más alto del Atlas, con paradas panorámicas en pueblos bereberes. 
+                Visitamos la mítica kasbah de Ait Ben Haddou (Patrimonio UNESCO) y continuamos por la Ruta de las Mil Kasbahs 
+                hasta llegar al Valle del Dades.
+              </p>
+            </div>
+            <figure class="experienceSplit-media">
+              <img
+                src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-ait.jpg"
                 alt="Kasbah de Ait Ben Haddou y Valle del Dades" />
-              </figure>
-            </div>
-
-            <!-- ALOJAMIENTO -->
-            <div class="decorativeCircleListinside mt-10">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-hotel-bell.svg">
-            </div>
-            <h3 class="text-2xl font-rowdies">Alojamiento</h3>
-            <h4 class="text-xl font-semibold text-text-primary">Riad con encanto en el Valle del Dadès</h4>
-            <p class="text-text-primary mt-1">
-              Noche en riad tradicional con cena incluida, rodeados de montañas y palmerales.
-            </p>
-
-            <!-- ACTIVIDADES -->
-            <div class="decorativeCircleListinside mt-10">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-active.svg" class="ukiyo-icon">
-            </div>
-            <h3 class="text-2xl font-rowdies">Actividades</h3>
-
-            <div class="ukiyo-activities-wrapper relative mt-4">
-              <div class="ukiyo-activities-slider">
-
-                <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-valle.jpg" alt="" class="activity-cover">
-                  <div class="p-4">
-                    <div class="flex items-center gap-2 text-sm text-gray-500">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-clock.svg" width="14">
-                      <span>Día completo</span>
-                    </div>
-                    <h4 class="mt-1 text-lg font-semibold">Cruce del Alto Atlas</h4>
-                    <p class="mt-1 text-gray-600">
-                      Recorrido panorámico por Tizi N’tichka con paradas fotográficas en pueblos bereberes.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-ait.jpg" alt="" class="activity-cover">
-                  <div class="p-4">
-                    <div class="flex items-center gap-2 text-sm text-gray-500">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-clock.svg" width="14">
-                      <span>2h</span>
-                    </div>
-                    <h4 class="mt-1 text-lg font-semibold">Visita a Aït Ben Haddou</h4>
-                    <p class="mt-1 text-gray-600">
-                      Paseo por la kasbah más icónica de Marruecos, escenario de películas y series.
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
+            </figure>
           </div>
-        </li>
+          <br>
 
-        <!-- 2. GARGANTAS DEL TODRA – MERZOUGA -->
-        <li class="experienceItemList">
-          <button class="decorativeCircleList accordion-trigger">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-plus.svg" alt="" />
-          </button>
-
-          <h3 class="experienceTitle accordion-trigger text-2xl font-rowdies text-text-primary mb-1">
-            2. GARGANTAS DEL TODRA · DESIERTO DE MERZOUGA
-            <span class="h3-subtitle">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-nights.svg" alt="" />
-              1 noche
-            </span>
+          <!-- ALOJAMIENTO -->
+          <div class="decorativeCircleListinside mt-10">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-hotel-bell.svg">
+          </div>
+          <h3 class="text-2xl font-rowdies">
+            <span class="block text-sm text-text-secondary font-satoshi">Alojamiento</span>
+            Riad en el Valle del Dades
           </h3>
 
-          <div class="exp-content">
-            <div class="experienceSplit">
-              <div class="experienceSplit-text">
-                <p>
-                  Caminamos por las impresionantes Gargantas del Todra antes de poner rumbo al Sahara.
-                  Al llegar a Merzouga, cambiamos el vehículo por dromedarios para entrar en Erg Chebbi al atardecer.
-                  Las dunas nos llevan hasta el campamento de jaimas.
-                </p>
-              </div>
-              <figure class="experienceSplit-media">
-                <img
-                  src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-camellossalvajes.jpg"
-                  alt="Dunas de Erg Chebbi" />
-              </figure>
+          <p class="text-text-primary mt-1">
+            Noche en un riad tradicional rodeado de paisaje montañoso, con cena incluida.
+          </p>
+        </div>
+      </li>
+
+      <!-- DÍA 2 -->
+      <li class="experienceItemList">
+        <button class="decorativeCircleList accordion-trigger">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-plus.svg" alt="" />
+        </button>
+
+        <h3 class="experienceTitle accordion-trigger text-2xl font-rowdies text-text-primary mb-1">
+          2. GARGANTAS DEL TODRA · MERZOUGA
+          <span class="h3-subtitle">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-nights.svg" alt="" />
+            1 noche
+          </span>
+        </h3>
+
+        <div class="exp-content">
+          <div class="experienceSplit">
+            <div class="experienceSplit-text">
+              <p>
+                Tras desayunar, visitamos las impresionantes Gargantas del Todra y caminamos entre paredes de roca de hasta 200 metros. 
+                Más tarde llegamos a Merzouga, cambiamos el vehículo por dromedarios (o 4×4 si prefieres) y cruzamos las dunas de Erg Chebbi 
+                al atardecer para llegar al campamento.
+              </p>
             </div>
-
-            <div class="decorativeCircleListinside mt-10">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-hotel-bell.svg">
-            </div>
-            <h3 class="text-2xl font-rowdies">Alojamiento</h3>
-            <h4 class="text-xl font-semibold text-text-primary">Campamento bereber en jaima</h4>
-            <p class="text-text-primary mt-1">
-              Noche bajo las estrellas con cena tradicional y ambiente bereber en plena duna.
-            </p>
-
-            <div class="decorativeCircleListinside mt-10">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-active.svg" class="ukiyo-icon">
-            </div>
-            <h3 class="text-2xl font-rowdies">Actividades</h3>
-
-            <div class="ukiyo-activities-wrapper relative mt-4">
-              <div class="ukiyo-activities-slider">
-
-                <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-camello.jpg" alt="" class="activity-cover">
-                  <div class="p-4">
-                    <div class="flex items-center gap-2 text-sm text-gray-500">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-clock.svg" width="14">
-                      <span>1h 30m</span>
-                    </div>
-                    <h4 class="mt-1 text-lg font-semibold">Paseo en dromedario al atardecer</h4>
-                    <p class="mt-1 text-gray-600">
-                      Entramos en las dunas al ritmo del Sahara hasta llegar al campamento con puesta de sol.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-desierto-noche.jpg" alt="" class="activity-cover">
-                  <div class="p-4">
-                    <div class="flex items-center gap-2 text-sm text-gray-500">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-clock.svg" width="14">
-                      <span>Noche</span>
-                    </div>
-                    <h4 class="mt-1 text-lg font-semibold">Cena bereber y cielo estrellado</h4>
-                    <p class="mt-1 text-gray-600">
-                      Música, fuego y conversación bajo uno de los cielos más limpios del planeta.
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
+            <figure class="experienceSplit-media">
+              <img
+                src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-valle.jpg"
+                alt="Gargantas del Todra y llegada al desierto" />
+            </figure>
           </div>
-        </li>
+          <br>
 
-        <!-- 3. MERZOUGA – RISSANI – N’KOB – OUARZAZATE -->
-        <li class="experienceItemList">
-          <button class="decorativeCircleList accordion-trigger">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-plus.svg" alt="" />
-          </button>
-
-          <h3 class="experienceTitle accordion-trigger text-2xl font-rowdies text-text-primary mb-1">
-            3. MERZOUGA · RISSANI · VALLE DEL DRAA · OUARZAZATE
-            <span class="h3-subtitle">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-nights.svg" alt="" />
-              1 noche
-            </span>
+          <!-- ALOJAMIENTO -->
+          <div class="decorativeCircleListinside mt-10">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-hotel-bell.svg">
+          </div>
+          <h3 class="text-2xl font-rowdies">
+            <span class="block text-sm text-text-secondary font-satoshi">Alojamiento</span>
+            Campamento bereber en Erg Chebbi
           </h3>
 
-          <div class="exp-content">
-            <div class="experienceSplit">
-              <div class="experienceSplit-text">
-                <p>
-                  Despertamos en el desierto para ver el amanecer sobre las dunas y regresamos a Merzouga.
-                  Después visitamos la medina de Rissani y viajamos hacia Ouarzazate atravesando pueblos
-                  como Alnif, Tazarine y N’kob, con desvío al Valle del Draa y su gigantesco palmeral.
-                </p>
-              </div>
-              <figure class="experienceSplit-media">
-                <img
-                  src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-ruta.jpg"
-                  alt="Palmeral del Valle del Draa" />
-              </figure>
+          <p class="text-text-primary mt-1">
+            Noche en jaimas cómodas, cena tradicional y cielo estrellado en pleno Sahara.
+          </p>
+        </div>
+      </li>
+
+      <!-- DÍA 3 -->
+      <li class="experienceItemList">
+        <button class="decorativeCircleList accordion-trigger">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-plus.svg" alt="" />
+        </button>
+
+        <h3 class="experienceTitle accordion-trigger text-2xl font-rowdies text-text-primary mb-1">
+          3. RISSANI · VALLE DEL DRAA · REGRESO A MARRAKECH
+        </h3>
+
+        <div class="exp-content">
+          <div class="experienceSplit">
+            <div class="experienceSplit-text">
+              <p>
+                Amanecer en las dunas y regreso en camello o 4×4. 
+                Paramos en Rissani para visitar su medina tradicional y continuamos por el Valle del Draa, 
+                el palmeral más grande de África. De vuelta cruzamos el Atlas y llegamos a Marrakech por la tarde/noche.
+              </p>
             </div>
-
-            <div class="decorativeCircleListinside mt-10">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-hotel-bell.svg">
-            </div>
-            <h3 class="text-2xl font-rowdies">Alojamiento</h3>
-            <h4 class="text-xl font-semibold text-text-primary">Hotel confortable en Ouarzazate</h4>
-            <p class="text-text-primary mt-1">
-              Noche con cena incluida en la capital del sur marroquí.
-            </p>
-
-            <div class="decorativeCircleListinside mt-10">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-active.svg" class="ukiyo-icon">
-            </div>
-            <h3 class="text-2xl font-rowdies">Actividades</h3>
-
-            <div class="ukiyo-activities-wrapper relative mt-4">
-              <div class="ukiyo-activities-slider">
-
-                <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-te.jpg" alt="" class="activity-cover">
-                  <div class="p-4">
-                    <div class="flex items-center gap-2 text-sm text-gray-500">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-clock.svg" width="14">
-                      <span>1h</span>
-                    </div>
-                    <h4 class="mt-1 text-lg font-semibold">Amanecer en Erg Chebbi</h4>
-                    <p class="mt-1 text-gray-600">
-                      Subimos las dunas para despedirnos del Sahara con la mejor luz del día.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-mercado.jpg" alt="" class="activity-cover">
-                  <div class="p-4">
-                    <div class="flex items-center gap-2 text-sm text-gray-500">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-clock.svg" width="14">
-                      <span>2h</span>
-                    </div>
-                    <h4 class="mt-1 text-lg font-semibold">Visita a Rissani</h4>
-                    <p class="mt-1 text-gray-600">
-                      Paseo por su medina tradicional, corazón cultural del desierto.
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
+            <figure class="experienceSplit-media">
+              <img
+                src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-ruta.jpg"
+                alt="Valle del Draa y regreso a Marrakech" />
+            </figure>
           </div>
-        </li>
+        </div>
+      </li>
 
-        <!-- 4. OUARZAZATE – ALTO ATLAS – MARRAKECH -->
-        <li class="experienceItemList">
-          <button class="decorativeCircleList accordion-trigger">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-plus.svg" alt="" />
-          </button>
+    </ol>
+  </div>
+</section>
 
-          <h3 class="experienceTitle accordion-trigger text-2xl font-rowdies text-text-primary mb-1">
-            4. OUARZAZATE · KASBAH TAOURIRT · REGRESO A MARRAKECH
-            <span class="h3-subtitle">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-nights.svg" alt="" />
-              Fin del viaje
-            </span>
-          </h3>
-
-          <div class="exp-content">
-            <div class="experienceSplit">
-              <div class="experienceSplit-text">
-                <p>
-                  Última mirada al sur de Marruecos con visita opcional a la Kasbah de Taourirt,
-                  una de las mejor conservadas del país. Después cruzamos de nuevo el Alto Atlas
-                  rumbo a Marrakech, donde finaliza el recorrido.
-                </p>
-              </div>
-              <figure class="experienceSplit-media">
-                <img
-                  src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-marrakech.jpg"
-                  alt="Kasbah de Taourirt en Ouarzazate" />
-              </figure>
-            </div>
-
-            <div class="decorativeCircleListinside mt-10">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-active.svg" class="ukiyo-icon">
-            </div>
-            <h3 class="text-2xl font-rowdies">Actividades</h3>
-
-            <div class="ukiyo-activities-wrapper relative mt-4">
-              <div class="ukiyo-activities-slider">
-
-                <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-templo.jpg" alt="" class="activity-cover">
-                  <div class="p-4">
-                    <div class="flex items-center gap-2 text-sm text-gray-500">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-clock.svg" width="14">
-                      <span>1h</span>
-                    </div>
-                    <h4 class="mt-1 text-lg font-semibold">Kasbah de Taourirt (opcional)</h4>
-                    <p class="mt-1 text-gray-600">
-                      Un cierre cultural perfecto antes de emprender la vuelta al Atlas.
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </li>
-
-      </ol>
-    </div>
-  </section>
-
-<!-- ¿Qué incluye? -->
+  <!-- ¿Qué incluye? -->
 <section id="includes" class="py-2 bg-white">
   <div class="container mx-auto py-12 md:py-16">
     <div class="grid gap-8 md:grid-cols-2">
@@ -527,7 +351,7 @@ $uri = get_template_directory_uri();
               <svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
               </svg>
-              <span class="text-text-secondary">Transporte en 4×4 o mini van con aire acondicionado durante todo el recorrido</span>
+              <span class="text-text-secondary">Transporte en vehículo cómodo y climatizado durante todo el recorrido</span>
             </li>
 
             <li class="flex justify-center">
@@ -541,14 +365,7 @@ $uri = get_template_directory_uri();
               <svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
               </svg>
-              <span class="text-text-secondary">Combustible y logística completa durante la ruta</span>
-            </li>
-
-            <li class="flex justify-center">
-              <svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-              </svg>
-              <span class="text-text-secondary">1 noche en riad tradicional en el Valle del Dadès con cena y desayuno</span>
+              <span class="text-text-secondary">1 noche en riad tradicional en el Valle del Dades con cena y desayuno</span>
             </li>
 
             <li class="flex justify-center">
@@ -556,13 +373,6 @@ $uri = get_template_directory_uri();
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
               </svg>
               <span class="text-text-secondary">1 noche en campamento bereber en Erg Chebbi (jaimas confort) con cena y desayuno</span>
-            </li>
-
-            <li class="flex justify-center">
-              <svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-              </svg>
-              <span class="text-text-secondary">1 noche en hotel confortable en Ouarzazate con cena y desayuno</span>
             </li>
 
             <li class="flex justify-center">
@@ -619,7 +429,7 @@ $uri = get_template_directory_uri();
               <svg class="w-5 h-5 text-error mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm2.828-10.828a1 1 0 00-1.414-1.414L10 8.586 8.586 7.172a1 1 0 00-1.414 1.414L8.586 10l-1.414 1.414a1 1 0 001.414 1.414L10 11.414l1.414 1.414a1 1 0 001.414-1.414L11.414 10l1.414-1.414z" clip-rule="evenodd"/>
               </svg>
-              <span class="text-text-secondary">Entradas a monumentos o museos (Aït Ben Haddou, Kasbah Taourirt, etc.)</span>
+              <span class="text-text-secondary">Entradas a monumentos o museos (Ait Ben Haddou, Ouarzazate, etc.)</span>
             </li>
 
             <li class="flex justify-center">
@@ -637,13 +447,14 @@ $uri = get_template_directory_uri();
   </div>
 </section>
 
-<!-- FAQs -->
+  <!-- FAQs -->
 <section id="faqs" class="py-12 bg-white">
   <div class="container mx-auto px-6 md:px-8 pb-12">
     <h2 class="text-display font-satoshi-bold mb-6 text-center">Preguntas frecuentes</h2>
 
     <div data-accordion class="space-y-3 max-w-3xl mx-auto">
 
+      <!-- Item 1: viaje privado -->
       <!-- Item 1: viaje privado -->
       <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
         <button data-accordion-btn
@@ -674,9 +485,8 @@ $uri = get_template_directory_uri();
         </button>
         <div id="faq-2" role="region" aria-labelledby="faq-2-h"
              data-accordion-panel class="hidden px-5 pb-5 text-sm text-text-primary">
-          La ruta base es la de 4 días hacia Merzouga, pero al ser un viaje privado
-          <strong>podemos ajustar el ritmo y algunas paradas</strong> (tiempos de visita, descansos o desvíos),
-          siempre que no comprometan la logística del desierto.
+          No. La ruta está <strong>diseñada específicamente</strong> para maximizar las probabilidades de avistamiento 
+          y fotografía de fauna. Cada ubicación, horario y transición forma parte de un itinerario optimizado.
         </div>
       </div>
 
@@ -709,8 +519,8 @@ $uri = get_template_directory_uri();
         </button>
         <div id="faq-4" role="region" aria-labelledby="faq-4-h"
              data-accordion-panel class="hidden px-5 pb-5 text-sm text-text-primary">
-          Sí. Vuestro <strong>guía/conductor</strong> os acompaña durante todo el recorrido,
-          y en el desierto contaréis además con el equipo bereber del campamento para la experiencia en Erg Chebbi.
+          Sí. El <strong>Autor del viaje</strong> estará con vosotros durante todo el itinerario, acompañando cada salida, 
+          resolviendo dudas y ayudando en la fotografía de fauna en campo.
         </div>
       </div>
 
@@ -727,13 +537,12 @@ $uri = get_template_directory_uri();
         <div id="faq-5" role="region" aria-labelledby="faq-5-h"
              data-accordion-panel class="hidden px-5 pb-5 text-sm text-text-primary">
 
-          El precio está calculado en base a grupo de 4 personas.  
-          Si viajáis menos, se aplica un suplemento por persona:
+          El precio depende del tamaño del grupo:
 
           <ul class="mt-3 space-y-1 text-text-primary">
-            <li>— <strong>4 personas:</strong> 400 € por persona</li>
-            <li>— <strong>3 personas:</strong> 440 € por persona</li>
-            <li>— <strong>2 personas:</strong> 590 € por persona</li>
+            <li>— <strong>4 personas:</strong> 350 € por persona</li>
+            <li>— <strong>3 personas:</strong> 390 € adicionales por persona</li>
+            <li>— <strong>2 personas:</strong> 490 € adicionales por persona</li>
           </ul>
 
           Todos los precios incluyen alojamiento, transporte y actividades según el programa.
@@ -742,7 +551,7 @@ $uri = get_template_directory_uri();
 
       <!-- Item 6: depósito -->
       <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
-        <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
+        <button data-accordion-btn class="w/w-full flex items-center justify-between text-left px-5 py-4"
                 aria-expanded="false" aria-controls="faq-6" id="faq-6-h">
           <span class="font-medium text-text-primary">¿Cuál es el depósito para reservar?</span>
           <svg class="w-5 h-5 flex-shrink-0 transition-transform duration-200 text-text-secondary"
@@ -752,7 +561,7 @@ $uri = get_template_directory_uri();
         </button>
         <div id="faq-6" role="region" aria-labelledby="faq-6-h"
              data-accordion-panel class="hidden px-5 pb-5 text-sm text-text-primary">
-          Para confirmar la reserva se requiere un <strong>depósito de 500 €</strong>.  
+          Para asegurar tu plaza se requiere un <strong>depósito de 500 €</strong>.  
           El resto del importe se abona antes del inicio del viaje siguiendo las indicaciones de la organización.
         </div>
       </div>
@@ -761,7 +570,7 @@ $uri = get_template_directory_uri();
   </div>
 </section>
 
-  <!-- Best Time 
+  <!-- Best Time
   <section id="best-time" class="py-12 bg-white">
     <div class="container mx-auto px-6">
       <h2 class="text-3xl font-rowdies text-text-primary mb-4 text-center">Mejor época para viajar</h2>
@@ -854,17 +663,44 @@ $uri = get_template_directory_uri();
     </div>
   </section> -->
 
-<!-- CTA -->
+  <!-- GALERÍA SIMPLE -->
+  <section class="py-20 bg-surface">
+    <div class="container mx-auto px-6 md:px-8 pb-12 md:pb-16">
+      <div class="grid gap-4 md:grid-cols-3">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-marrakech.jpg" alt="Luis Acuña durante el viaje de autor al Pantanal" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-mercado.jpg" alt="Amanecer en el río durante un viaje de autor al Pantanal con Ukiyo" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-desierto-noche.jpg" alt="Aves del Pantanal en un viaje de autor con guía experto" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+<!-- CTA Section -->
 <section class="py-20 bg-gradient-primary text-white text-center">
     <div class="container mx-auto px-6 max-w-3xl">
-        <h2 class="text-display font-satoshi mb-6">¿No encuentras tu viaje ideal?</h2>
-        <p class="text-xl mb-8 opacity-90">Cada persona viaja a su manera.
-        Cuéntanos qué te mueve y crearemos juntos una experiencia que encaje contigo.</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="<?php echo esc_url( site_url('/planifica-tu-viaje') ); ?>" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/80 transition" aria-label="Abrir formulario para contarnos tu idea">
-            Cuéntanos tu idea
-            </a>
-            <!-- <a href="<?php echo esc_url( site_url('/about') ); ?>" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition">Hablar con un Curador</a> -->
+        <div class="max-w-3xl mx-auto">
+
+            <h2 class="text-xl mb-8 opacity-90">
+                No es un viaje cualquiera: es el Desierto de Marruecos vivido de forma auténtica
+            </h2>
+
+            <p class="text-xl mb-8 opacity-90">
+                Tres días diseñados para sentir la inmensidad del Sahara, recorrer pueblos bereberes 
+                y dormir bajo un cielo estrellado imposible de olvidar. Un itinerario pensado para 
+                saborear cada momento: desde las gargantas del Todra hasta las dunas doradas de Erg Chebbi.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" 
+                   class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/80 transition">
+                    Quiero vivir Marruecos
+                </a>
+
+                <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" 
+                   class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/80 transition">
+                    Ver más viajes
+                </a>
+            </div>
+
         </div>
     </div>
 </section>

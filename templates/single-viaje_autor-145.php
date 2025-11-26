@@ -111,17 +111,17 @@ $uri = get_template_directory_uri();
     </div>
     <div class="text-text-secondary text-[15px] space-y-4">
       <p>“Soy Luis, un guía turístico y fotógrafo de vida silvestre con experiencia. Estoy decidido a hacer un impacto positivo en las personas y el planeta.</p>
-      <div id="bio-hidden-1" class="hidden md:block space-y-4">
+      <div id="bio-hidden-1" class="hidden lg:block space-y-4">
         <p>Imagino cada tour de vida silvestre como una semilla, plantada en el corazón de cada viajero que pone un pie en el paraíso biodiverso de Costa Rica. Es por eso que visualizo un legado que trasciende fronteras y generaciones; pronto entenderás.</p>
         <p>A medida que los viajeros se unen a mí en un viaje por las impresionantes regiones de Corcovado y Osa, les ayudo a ver que no son meros observadores, son participantes en una gran danza interconectada de la vida. Disfruto mostrando a las personas animales en su hábitat y su comportamiento en diferentes situaciones. Cada fotografía que mis clientes toman es un testimonio de la belleza que prospera en estas tierras, una belleza que exige ser preservada.</p>
       </div>
     </div>
-    <div id="bio-hidden-2" class="text-text-secondary text-[15px] space-y-4 hidden md:block">
+    <div id="bio-hidden-2" class="text-text-secondary text-[15px] space-y-4 hidden lg:block">
       <p>Cuando cae la noche, la sinfonía de la naturaleza continúa — sí, ChatGPT me ayudó con esa frase —. Pero es cierto, resuena conmigo porque mis tours nocturnos se centran en observar reptiles y anfibios, estos fascinantes seres ofrecen un vistazo a un mundo a menudo pasado por alto. Por la noche hay más historias esperando ser descubiertas y contadas a tus seres queridos.</p>
       <p>Cuando los viajeros regresan a sus países, llevan consigo más que recuerdos y fotografías. Llevan un respeto y amor renovados o nuevos — depende — por la naturaleza, una chispa encendida por sus experiencias. La verdad es que más a menudo de lo que piensas, las personas me dicen que quieren volver a visitar Costa Rica. Es esta chispa la que espero que encienda una llama, inspirándolos a ellos y a quienes los rodean a unirse en el esfuerzo por proteger y preservar a la Madre Naturaleza.</p>
       <p>En esencia, mi misión no es solo guiar, sino iluminar, inspirar e inculcar un sentido de responsabilidad hacia nuestro planeta. Un tour a la vez, estoy sembrando semillas de cambio, cultivando un jardín global de defensores de la naturaleza. Este es mi legado, mi contribución a un futuro donde la armonía entre humanos y naturaleza no es solo un sueño, sino una realidad”.</p>
     </div>
-    <button id="bio-read-more" class="md:hidden text-primary font-semibold mt-2 hover:underline focus:outline-none">Leer más</button>
+    <button id="bio-read-more" class="lg:hidden text-primary font-semibold mt-2 hover:underline focus:outline-none">Leer más</button>
     <script>
       document.getElementById('bio-read-more').addEventListener('click', function() {
         document.getElementById('bio-hidden-1').classList.remove('hidden');
@@ -137,7 +137,7 @@ $uri = get_template_directory_uri();
     <div class="container mx-auto">
       <nav class="trip-nav ukiyo-nav flex justify-center border-surface bg-background/80 backdrop-blur-sm py-4">
         <ul class="flex flex-wrap justify-center space-x-4 md:space-x-10 text-sm md:text-base font-medium">
-          <li><a href="#itinerary" class="font-rowdies text-sm md:text-2xl hover:text-primary transition-colors duration-300 active">Itinerario</a></li>
+          <li><a href="#itinerary" class="font-rowdies text-sm md:text-2xl hover:text-primary transition-colors duration-300 nav-active">Itinerario</a></li>
           <li><a href="#includes" class="font-rowdies text-sm md:text-2xl hover:text-primary transition-colors duration-300">¿Qué incluye?</a></li>
           <li><a href="#faqs" class="font-rowdies text-sm md:text-2xl hover:text-primary transition-colors duration-300">FAQs</a></li>
           <!-- <li><a href="#best-time" class="font-rowdies text-sm md:text-xl hover:text-primary transition-colors duration-300">Mejores épocas</a></li> -->
@@ -479,7 +479,7 @@ $uri = get_template_directory_uri();
               </div>
               <figure class="experienceSplit-media">
                 <img
-                  src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-queztalvolando.jpg"
+                  src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-perezoso.jpg"
                   alt="Bosque nuboso en San Gerardo de Dota" />
               </figure>
             </div>
