@@ -780,9 +780,9 @@ body {
 }
 
 .btn-primary {
-  border-radius: 0.5rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(139 69 19 / var(--tw-bg-opacity, 1));
+  border-radius: 1.5rem;
+  background-color: transparent;
+  border: 2px solid rgb(246, 207, 102);
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0.75rem;
@@ -799,7 +799,7 @@ body {
 
 .btn-primary:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(107 52 16 / var(--tw-bg-opacity, 1));
+  background-color: rgb(246, 207, 102 / var(--tw-bg-opacity, 1));
 }
 
 .btn-primary:focus {
@@ -817,9 +817,9 @@ body {
 }
 
 .btn-secondary {
-  border-radius: 0.5rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(26 113 150 / var(--tw-bg-opacity, 1));
+  border-radius: 1.5rem;
+  background-color: transparent;
+  border: 2px solid white;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0.75rem;
@@ -836,7 +836,7 @@ body {
 
 .btn-secondary:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(125 140 109 / var(--tw-bg-opacity, 1));
+  background-color: rgb(246, 207, 102 / var(--tw-bg-opacity, 1));
 }
 
 .btn-secondary:focus {
@@ -1609,7 +1609,7 @@ body {
 }
 
 .rounded-2xl {
-  border-radius: 1rem;
+  border-radius: 1.5rem;
 }
 
 .rounded-full {
@@ -1617,7 +1617,7 @@ body {
 }
 
 .rounded-lg {
-  border-radius: 0.5rem;
+  border-radius: 1.5rem;
 }
 
 .border {
@@ -2503,7 +2503,8 @@ body {
 
 .hover\:text-primary:hover {
   --tw-text-opacity: 1;
-  color: rgb(139 69 19 / var(--tw-text-opacity, 1));
+  color: rgb(000 000 000 / var(--tw-text-opacity, 1));
+  font-weight: 700;
 }
 
 .hover\:text-primary-700:hover {
@@ -3099,8 +3100,13 @@ input[type="range"].accent-primary::-moz-range-thumb:hover {
 }
 
 .mask-image {
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+}
+
+.mask-image-sf {
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 90%, rgba(245 242 237) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 90%, rgba(245 242 237) 100%);
 }
 
 .mask-fade-b {

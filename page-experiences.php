@@ -6,29 +6,43 @@
 get_header();
 ?>
 
-<!-- Hero Section -->
-<section class="pt-24 pb-12 bg-gradient-warm">
-  <div class="container mx-auto px-6">
-    <div class="text-center max-w-4xl mx-auto">
-      <h1 class="text-hero font-satoshi text-text-primary mb-6">
-        Explora a través de las <span class="text-primary">emociones</span>
-      </h1>
-      <p class="text-xl text-text-secondary mb-8 max-w-3xl mx-auto">
-        Elige lo que quieres sentir y descubre destinos que se viven de verdad.
-        Solo trabajamos con países que conocemos de primera mano.
-      </p>
+<!-- HERO -->
+  <section class="relative flex items-center justify-center overflow-hidden" style="min-height: 50vh; padding-top: 8rem; padding-bottom: 4rem;">
+    <!-- Background Image -->
+    <div class="absolute inset-0 w-full h-full">
+      <img src="<?php echo get_template_directory_uri(); ?>/images/heroimages/viajes-autor-ukiyo-indonesiaarrozal.jpg" 
+           alt="Viajes de autor" 
+           class="w-full h-full object-cover mask-image" 
+           loading="eager" />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
     </div>
-  </div>
-</section>
 
-<!-- Interactive Map -->
+    <!-- Contenido Hero - Centrado -->
+    <div class="relative z-10 w-full">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">
+            Premium
+          </span>
+          <h2 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
+            El viaje de tu <span class="text-accent-300">vida</span>
+          </h2>
+          <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed text-shadow">
+          Descubre los destinos que ya conocemos profundamente, para poderte organizar un viaje de ensueño 
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Interactive Map 
 <section class="mb-12" aria-labelledby="map-title">
   <h2 id="map-title" class="sr-only">Mapa de destinos</h2>
   <div id="map" class="w-full h-[480px] rounded-2xl shadow-lg ring-1 ring-border/60"></div>
-</section>
+</section> -->
 
 <!-- Experience Cards Grid -->
-<section class="py-12">
+<section class="py-12 bg-background">
     <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Costa Rica -->
@@ -106,21 +120,28 @@ get_header();
     </div>
 </section>
 
-<!-- CTA -->
-<section class="py-20 bg-gradient-primary text-white text-center">
-    <div class="container mx-auto px-6 max-w-3xl">
-        <h2 class="text-display font-satoshi mb-6">¿No encuentras tu viaje ideal?</h2>
-        <p class="text-xl mb-8 opacity-90">Cada persona viaja a su manera.
-Cuéntanos qué te mueve y crearemos juntos una experiencia que encaje contigo.</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="<?php echo esc_url( site_url('/planifica-tu-viaje') ); ?>" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/80 transition" aria-label="Abrir formulario para contarnos tu idea">
-  Cuéntanos tu idea
-</a>
-            <!-- <a href="<?php echo esc_url( site_url('/about') ); ?>" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition">Hablar con un Curador</a> -->
+    <!-- CTA FINAL -->
+    <section class="py-20 bg-background text-text-secondary">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-display font-satoshi mb-6 reveal-on-scroll">
+                    ¿No encuentras tu viaje ideal?
+                </h2>
+                <p class="text-xl mb-8 opacity-90 reveal-on-scroll delay-100">
+                    Cada persona viaja a su manera.
+                    Cuéntanos qué te mueve y crearemos juntos una experiencia que encaje contigo.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center reveal-on-scroll delay-200">
+                    <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" class="btn-primary text-text-secondary">
+                        Cuéntanos tu idea
+                    </a>
+                    <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" class="btn-primary text-text-secondary">
+                        Explora nuestros viajes
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
-
+    </section>
 <style>
 /* Accesibilidad: clase sr-only por si Tailwind la purgó */
 .sr-only{
@@ -135,7 +156,7 @@ Cuéntanos qué te mueve y crearemos juntos una experiencia que encaje contigo.<
 }
 </style>
 
-<script>
+<!-- <script>
 (function(){
   function initUkiyoMap(){
     var el = document.getElementById('map');
@@ -187,6 +208,6 @@ Cuéntanos qué te mueve y crearemos juntos una experiencia que encaje contigo.<
     window.addEventListener('load', initUkiyoMap, { once: true });
   }
 })();
-</script>
+</script> -->
 
 <?php get_footer(); ?>

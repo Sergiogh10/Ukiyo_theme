@@ -6,53 +6,43 @@ get_header();
 $template_uri = get_template_directory_uri();
 ?>
 
-<!-- ===================== HERO ===================== -->
-<section class="relative pt-24 pb-20 overflow-hidden font-satoshi">
-  <!-- Fondo con imagen al 20% -->
-  <div class="absolute inset-0 -z-10 bg-gradient-warm"></div>
-  <div class="absolute inset-0 pointer-events-none">
-    <img
-      src="<?php echo $template_uri; ?>/images/destination-mood/precios-de-viajes-personalizados-ukiyo-hero.jpg"
-      alt="Precios de viajes personalizados Ukiyo"
-      class="w-full h-full object-cover opacity-20 mask-fade-b"
-      loading="lazy"
-      decoding="async"
-      aria-hidden="true"
-      onerror="this.src='https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg'; this.onerror=null;">
-  </div>
-  <div class="absolute inset-0 opacity-5">
-    <svg class="w-full h-full" viewBox="0 0 100 100" fill="currentColor">
-      <pattern id="cultural-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-        <circle cx="10" cy="10" r="2" opacity="0.3"/>
-        <path d="M5 5l10 10M15 5l-10 10" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
-      </pattern>
-      <rect width="100%" height="100%" fill="url(#cultural-pattern)"/>
-    </svg>
-  </div>
-
-  <div class="container mx-auto px-6 relative z-10">
-    <div class="max-w-4xl mx-auto text-center">
-      <span class="inline-block px-4 py-2 bg-primary-100 text-primary rounded-full text-sm font-satoshi font-medium mb-6">
-        Comienza tu aventura
-      </span>
-      <h1 class="text-hero font-satoshi-bold text-text-primary mb-6">
-        Invertir en <span class="text-primary">recuerdos</span>
-      </h1>
-      <p class="text-xl font-satoshi text-text-secondary max-w-3xl mx-auto leading-relaxed">
-        En UKIYO no vendemos paquetes ni vacaciones: creamos experiencias personales, honestas y llenas de sentido.
-        Cada viaje está diseñado con cuidado, respeto y detalle. Lo auténtico no tiene precio, pero sí un valor.
-      </p>
-      <figure class="mt-8 inline-flex">
-        <blockquote class="bg-black/10 backdrop-blur-sm border border-white/20 text-black italic px-5 py-3 rounded-lg">
-  «Lo importante no es cuánto cuesta un viaje, sino lo que te deja dentro».
-        </blockquote>
-      </figure>
+  <!-- HERO -->
+  <section class="relative flex items-center justify-center overflow-hidden" style="min-height: 50vh; padding-top: 8rem; padding-bottom: 4rem;">
+    <!-- Background Image -->
+    <div class="absolute inset-0 w-full h-full">
+      <img src="<?php echo get_template_directory_uri(); ?>/images/heroimages/viajes-autor-ukiyo-indonesiaplaya.jpg" 
+           alt="Viajes de autor" 
+           class="w-full h-full object-cover mask-image" 
+           loading="eager" />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
     </div>
-  </div>
-</section>
+
+    <!-- Contenido Hero - Centrado -->
+    <div class="relative z-10 w-full">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <span class="inline-block px-4 py-2 btn-primary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">
+            Precios
+          </span>
+          <h2 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
+            Invertir en <span class="text-accent-300">recuerdos</span>
+          </h2>
+          <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed text-shadow">
+            En UKIYO no vendemos paquetes ni vacaciones: creamos experiencias personales, honestas y llenas de sentido.
+            Cada viaje está diseñado con cuidado, respeto y detalle. Lo auténtico no tiene precio, pero sí un valor.          
+          </p>
+          <figure class="mt-8 inline-flex">
+            <blockquote class="btn-primary backdrop-blur-sm border border-white/20 text-black italic px-5 py-3 rounded-lg">
+  «Lo importante no es cuánto cuesta un viaje, sino lo que te deja dentro».
+            </blockquote>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
 
 <!-- ===================== FILOSOFÍA ===================== -->
-<section class="py-16 bg-gradient-warm fade-bottom fade-top">
+<section class="py-16 bg-background fade-bottom fade-top">
   <div class="container mx-auto px-6">
     <header class="text-center max-w-3xl mx-auto mb-12">
       <h2 class="text-4xl font-satoshi text-text-primary tracking-tight">
@@ -91,7 +81,7 @@ $template_uri = get_template_directory_uri();
 </section>
 
 <!-- ===================== TIERS ===================== -->
-<section class="py-20 bg-white">
+<section class="py-20 bg-background">
   <div class="container mx-auto px-6">
     <header class="text-center max-w-2xl mx-auto mb-24">
       <h2 class="text-4xl font-satoshi text-text-primary tracking-tight">Niveles de <span class="text-primary">aventura</span></h2>
@@ -221,7 +211,7 @@ $template_uri = get_template_directory_uri();
 </section>
 
 <!-- ===================== RESERVA / CALENDAR ===================== -->
-<section id="consultation" class="py-16 bg-surface">
+<section id="consultation" class="py-16 bg-background">
   <div class="container mx-auto px-6">
     <header class="text-center max-w-2xl mx-auto mb-8">
       <h2 class="text-4xl font-satoshi text-text-primary">Reserva una <span class="text-primary">videollamada</span></h2>

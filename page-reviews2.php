@@ -5,46 +5,37 @@ get_header();
 
 <main class="min-h-screen bg-background">
 
-<!-- ===================== HERO ===================== -->
-<section class="relative pt-24 pb-20 overflow-hidden font-satoshi">
-  <!-- Fondo con imagen al 20% -->
-  <div class="absolute inset-0 pointer-events-none">
-    <img
-      src="<?php echo get_template_directory_uri(); ?>/images/colombia/viajes-a-colombia-personalizados-nuqui-pacifico-colombiano.jpg"
-      alt="Viajeros compartiendo sus experiencias personalizadas con Ukiyo"
-      class="w-full h-full object-cover object-top mask-image opacity-20"
-      loading="lazy"
-      decoding="async"
-      aria-hidden="true"
-      onerror="this.src='https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg'; this.onerror=null;">
-  </div>
-  <div class="absolute inset-0 opacity-5">
-    <svg class="w-full h-full" viewBox="0 0 100 100" fill="currentColor">
-      <pattern id="cultural-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-        <circle cx="10" cy="10" r="2" opacity="0.3"/>
-        <path d="M5 5l10 10M15 5l-10 10" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
-      </pattern>
-      <rect width="100%" height="100%" fill="url(#cultural-pattern)"/>
-    </svg>
-  </div>
-
-  <div class="container mx-auto px-6 relative z-10">
-    <div class="max-w-4xl mx-auto text-center">
-      <span class="inline-block px-4 py-2 bg-primary-100 text-primary rounded-full text-sm font-satoshi font-medium mb-6">
-        Reviews
-      </span>
-      <h1 class="text-hero font-satoshi-bold text-text-primary mb-6">
-        Historias de <span class="text-primary">viajeros</span>
-      </h1>
-      <p class="text-xl font-satoshi text-text-secondary max-w-3xl mx-auto leading-relaxed">
-                Opiniones reales de viajeros que confiaron en UKIYO. Experiencias auténticas, sostenibles y creadas a medida.
-      </p>
+  <!-- HERO -->
+  <section class="relative flex items-center justify-center overflow-hidden" style="min-height: 50vh; padding-top: 8rem; padding-bottom: 4rem;">
+    <!-- Background Image -->
+    <div class="absolute inset-0 w-full h-full">
+      <img src="<?php echo get_template_directory_uri(); ?>/images/heroimages/viajes-autor-ukiyo-reviewfinal.jpg" 
+           alt="Viajes de autor" 
+           class="w-full h-full object-cover mask-image" 
+           loading="eager" />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
     </div>
-  </div>
-</section>
+
+    <!-- Contenido Hero - Centrado -->
+    <div class="relative z-10 w-full">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">
+            Reviews
+          </span>
+          <h2 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
+            Historias de nuestros <span class="text-accent-300">viajeros</span>
+          </h2>
+          <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed text-shadow">
+          Opiniones reales de viajeros que confiaron en UKIYO. Experiencias auténticas, sostenibles y creadas a medida.       
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Reviews -->
-<section class="py-16 bg-white font-satoshi md:py-24 px-4">
+<section class="py-16 bg-background font-satoshi md:py-24 px-4">
     <div class="container mx-auto max-w-7xl">
         <div class="text-center mb-16">
             <h2 class="text-display font-satoshi-bold text-text-primary mb-4">
@@ -140,27 +131,28 @@ get_header();
     </div>
 </section>
 
-<!-- Journey Builder CTA -->
- <section class="py-20 bg-gradient-primary text-white">
-    <div class="container mx-auto px-6 text-center">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-display font-satoshi mb-6">
+    <!-- CTA FINAL -->
+    <section class="py-20 bg-background text-text-secondary">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-display font-satoshi mb-6 reveal-on-scroll">
                     Tu aventura empieza aquí
-            </h2>
-            <p class="text-xl mb-8 opacity-90">
-Todo gran viaje nace de una idea, una emoción o una simple curiosidad.
-Cuéntanos qué te mueve y diseñaremos una experiencia que te haga sentir el mundo de verdad.                </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300">
-                        Diseña tu aventura
-                </a>
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('nosotros') ) ); ?>" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300">
-                        Conoce UKIYO
-                </a>
+                </h2>
+                <p class="text-xl mb-8 opacity-90 reveal-on-scroll delay-100">
+                    Todo gran viaje nace de una idea, una emoción o una simple curiosidad.
+                    Cuéntanos qué te mueve y diseñaremos una experiencia que te haga sentir el mundo de verdad.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center reveal-on-scroll delay-200">
+                    <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" class="btn-primary text-text-secondary">
+                        Diseñar tu aventura
+                    </a>
+                    <a href="<?php echo esc_url( get_permalink( get_page_by_path('nosotros') ) ); ?>" class="btn-primary text-text-secondary">
+                        Conócenos
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 </main>
 

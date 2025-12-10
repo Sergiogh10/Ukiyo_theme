@@ -5,38 +5,40 @@
 get_header();
 ?>
 
-<!-- Hero Section -->
-<section class="relative pt-24 pb-20 overflow-hidden font-satoshi bg-surface">
-  <div class="absolute inset-0 opacity-5">
-    <svg class="w-full h-full" viewBox="0 0 100 100" fill="currentColor">
-      <pattern id="cultural-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-        <circle cx="10" cy="10" r="2" opacity="0.3"/>
-        <path d="M5 5l10 10M15 5l-10 10" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
-      </pattern>
-      <rect width="100%" height="100%" fill="url(#cultural-pattern)"/>
-    </svg>
-  </div>
-
-  <div class="container mx-auto px-6 relative z-10">
-    <div class="max-w-4xl mx-auto text-center">
-      <span class="inline-block px-4 py-2 bg-primary-100 text-primary rounded-full text-sm font-satoshi font-medium mb-6">
-        浮世 - El Mundo Flotante
-      </span>
-      <h1 class="text-hero font-satoshi-bold text-text-primary mb-6">
-        Creando <span class="text-primary">viajes con alma</span>
-      </h1>
-      <p class="text-xl font-satoshi text-text-secondary max-w-3xl mx-auto leading-relaxed">
-        Inspirados en el “mundo flotante” de la cultura japonesa, creamos experiencias que celebran el momento presente y la belleza de lo efímero. UKIYO nace de una forma distinta de entender los viajes: sin prisa, sin poses y sin guiones.
-Creemos que la verdadera belleza está en lo simple, en lo que sucede cuando conectas de verdad con un lugar.
-
-Por eso creamos experiencias honestas, sostenibles y llenas de vida.
-      </p>
+  <!-- HERO -->
+  <section class="relative flex items-center justify-center overflow-hidden" style="min-height: 50vh; padding-top: 8rem; padding-bottom: 4rem;">
+    <!-- Background Image -->
+    <div class="absolute inset-0 w-full h-full">
+      <img src="<?php echo get_template_directory_uri(); ?>/images/heroimages/viajes-autor-ukiyo-viajeros2.jpg" 
+           alt="Viajes de autor" 
+           class="w-full h-full object-cover mask-image" 
+           loading="eager" />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
     </div>
-  </div>
-</section>
+
+    <!-- Contenido Hero - Centrado -->
+    <div class="relative z-10 w-full">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">
+            浮世 - El Mundo Flotante
+          </span>
+          <h2 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
+            Creando viajes con <span class="text-accent-300">alma</span>
+          </h2>
+          <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed text-shadow">
+          Inspirados en el “mundo flotante” de la cultura japonesa, creamos experiencias que celebran el momento presente y la belleza de lo efímero. UKIYO nace de una forma distinta de entender los viajes: sin prisa, sin poses y sin guiones.
+          Creemos que la verdadera belleza está en lo simple, en lo que sucede cuando conectas de verdad con un lugar.
+
+          Por eso creamos experiencias honestas, sostenibles y llenas de vida.          
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 <!-- Founder Story -->
-<section class="py-20 bg-white font-satoshi">
+<section class="py-20 bg-background font-satoshi">
   <div class="container mx-auto px-6">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-16">
@@ -54,14 +56,14 @@ Así nació UKIYO: para viajar distinto, para viajar de verdad.        </p>
         <!-- Founder -->
         <div class="lg:col-span-1">
           <div class="aspect-[3/4] rounded-lg overflow-hidden mb-6">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/agencia-de-viajes-personalizados-ukiyo-sergio-garcia.jpg"
-                 alt="Sergio García, fundador de Ukiyo, agencia de viajes personalizados"
+            <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/agencia-de-viajes-personalizados-ukiyo-victor-garcia-heras.jpg"
+                 alt="Victor García, fundador de Ukiyo, agencia de viajes personalizados"
                  class="w-full h-full object-cover"
                  loading="lazy"
                  onerror="this.src='https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg'; this.onerror=null;" />
           </div>
           <div class="text-center">
-            <h3 class="text-xl font-satoshi-bold text-text-primary mb-2">Sergio García-Heras García</h3>
+            <h3 class="text-xl font-satoshi-bold text-text-primary mb-2">Victor García-Heras García</h3>
             <p class="text-text-secondary">Fundador y CEO</p>
           </div>
         </div>
@@ -73,7 +75,7 @@ Así nació UKIYO: para viajar distinto, para viajar de verdad.        </p>
               "Decidí aventurarme en UKIYO cuando descubrí que organizar un viaje no es nada fácil si quieres vivirlo de una manera diferente y alejado del turismo masivo. Quiero que la gente disfrute de experiencias personalizadas sin gastar su tiempo libre. Quiero que simplemente lleguen, descubran y vivan cada instante."
             </blockquote>
             <div class="space-y-6 text-text-secondary">
-              <p>Sergio nació en Madrid y desde joven ha sentido pasión por viajar y explorar culturas distintas. A lo largo de los años, ha combinado su espíritu aventurero con un enfoque analítico y práctico...</p>
+              <p>Victor nació en Madrid y desde joven ha sentido pasión por viajar y explorar culturas distintas. A lo largo de los años, ha combinado su espíritu aventurero con su canal de Youtube de una manera muy humilde...</p>
               <p>Tras descubrir lo complicado que puede ser organizar viajes verdaderamente personalizados y enriquecedores, decidió fundar UKIYO...</p>
               <p>UKIYO nace como puente entre cultura, tradición y lugares mágicos...</p>
             </div>
@@ -85,7 +87,7 @@ Así nació UKIYO: para viajar distinto, para viajar de verdad.        </p>
 </section>
 
 <!-- Team -->
-<section class="py-20 bg-surface font-satoshi">
+<section class="py-20 bg-background font-satoshi">
   <div class="container mx-auto px-6">
     <div class="text-center mb-16">
       <h2 class="text-display font-satoshi-bold text-text-primary mb-4">
@@ -125,7 +127,7 @@ Así nació UKIYO: para viajar distinto, para viajar de verdad.        </p>
         </p>
       </div>
 
-      <!-- Daniel -->
+      <!-- Sergio -->
       <div class="card text-center group hover:shadow-card-hover">
         <div class="aspect-square rounded-full overflow-hidden mx-auto mb-6 w-32 h-32">
           <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/agencia-de-viajes-personalizados-ukiyo-sergio-garcia-equipo.jpg"
@@ -135,7 +137,7 @@ Así nació UKIYO: para viajar distinto, para viajar de verdad.        </p>
         <h3 class="text-xl font-satoshi-bold text-text-primary mb-2">Sergio Garcia</h3>
         <p class="text-primary font-medium mb-3">Mochilero ante todo</p>
         <p class="text-text-secondary text-sm mb-4">
-          Antes de cualquier puesto, soy amante de descubrir rincones y un gran disfrutón de cada viaje. "El mundo es demasiado bonito como para querer recorrerlo entero"
+          Amante de descubrir rincones y un gran disfrutón de cada viaje. "El mundo es demasiado bonito como para no querer recorrerlo entero"
         </p>
       </div>
     </div>
@@ -143,7 +145,7 @@ Así nació UKIYO: para viajar distinto, para viajar de verdad.        </p>
 </section>
 
 <!-- Values Section -->
-<section class="py-20 bg-white font-satoshi">
+<section class="py-20 bg-background font-satoshi">
   <div class="container mx-auto px-6">
     <div class="text-center mb-16">
       <h2 class="text-display font-satoshi-bold text-text-primary mb-4">
@@ -160,7 +162,7 @@ Buscamos que cada experiencia honre tanto al viajero como a las comunidades que 
       <div class="text-center group">
         <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary-200 transition-colors duration-300">
           <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
           </svg>
         </div>
         <h3 class="text-xl font-satoshi-bold text-text-primary mb-3">Autenticidad</h3>
@@ -173,7 +175,7 @@ Queremos que conectes con la esencia de cada lugar: su gente, sus historias y su
       <div class="text-center group">
         <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-secondary-200 transition-colors duration-300">
           <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
           </svg>
         </div>
         <h3 class="text-xl font-satoshi-bold text-text-primary mb-3">Sostenibilidad</h3>
@@ -186,7 +188,8 @@ Cuidar el entorno, las culturas y las personas es la base de todo lo que hacemos
       <div class="text-center group">
         <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent-200 transition-colors duration-300">
           <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
           </svg>
         </div>
         <h3 class="text-xl font-satoshi-bold text-text-primary mb-3">Transparencia</h3>
@@ -198,8 +201,9 @@ Por eso cada decisión, recomendación o proveedor se elige con claridad y coher
       <!-- Bienestar -->
       <div class="text-center group">
         <div class="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-success-200 transition-colors duration-300">
-          <svg class="w-8 h-8 text-success" viewBox="0 0 32 32" fill="currentColor">
-            <path d="M30.039 2.719c-0.143-0.544-0.631-0.939-1.211-0.939-0.395 0-0.748 0.184-0.977 0.47..."/>
+          <svg class="w-8 h-8 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
           </svg>
         </div>
         <h3 class="text-xl font-satoshi-bold text-text-primary mb-3">Bienestar</h3>
@@ -211,48 +215,50 @@ Experiencias pensadas para disfrutar, reconectar y volver con una mirada diferen
   </div>
 </section>
 
-<!-- Partnership Philosophy -->
-<section class="py-20 bg-gradient-secondary text-white font-satoshi">
+<!-- Partnership Philosophy 
+<section class="py-20 bg-background font-satoshi">
   <div class="container mx-auto px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-display font-satoshi-bold mb-6">
-        Nuestra forma de <span class="text-accent-200">colaborar</span>
+    <div class="text-center mb-16">
+      <h2 class="text-display font-satoshi-bold text-text-primary mb-4">
+        Nuestra forma de <span class="text-secondary">colaborar</span>
       </h2>
-      <p class="text-xl mb-12 opacity-90 leading-relaxed">
+      <p class="text-lg text-text-secondary max-w-2xl mx-auto">
 En UKIYO no “tomamos” experiencias de las comunidades, las creamos juntos.
 Cada colaboración nace desde el respeto y la confianza, con el propósito de que el viaje aporte tanto al viajero como a quienes lo hacen posible.      </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Partnership Principle 1 -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> -->
+        <!-- Partnership Principle 1 
         <div class="text-center">
           <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
             <svg class="w-10 h-10 text-accent-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3v1H7l5 5 5-5h-2v-1c0-1.657-1.343-3-3-3z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" />
             </svg>
           </div>
           <h3 class="text-xl font-satoshi-bold mb-3">Beneficio Mutuo</h3>
           <p class="opacity-90">
 Cada experiencia genera un impacto real: valor económico directo para las comunidades locales y vivencias auténticas para nuestros viajeros.          </p>
-        </div>
+        </div> -->
 
-        <!-- Partnership Principle 2 -->
+        <!-- Partnership Principle 2 
         <div class="text-center">
           <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
             <svg class="w-10 h-10 text-accent-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.6-4A12 12 0 0112 2 12 12 0 013 9c0 5.6 3.8 10.3 9 11.6 5.2-1.3 9-6 9-11.6 0-1-.1-2-.4-3z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
           <h3 class="text-xl font-satoshi-bold mb-3">Respeto Cultural</h3>
           <p class="opacity-90">
 Las tradiciones se comparten, no se exhiben.
 Participamos desde la escucha y el reconocimiento, honrando siempre el origen de cada historia.          </p>
-        </div>
+        </div> -->
 
-        <!-- Partnership Principle 3 -->
+        <!-- Partnership Principle 3 
         <div class="text-center">
           <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
             <svg class="w-10 h-10 text-accent-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 8l8 8M16 8l-8 8" opacity="0.3" />
             </svg>
           </div>
           <h3 class="text-xl font-satoshi-bold mb-3">Impacto Duradero</h3>
@@ -263,10 +269,10 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
-<!-- Partner Testimonials -->
-<section class="py-20 bg-surface font-satoshi">
+<!-- Partner Testimonials 
+<section class="py-20 bg-background font-satoshi">
   <div class="container mx-auto px-6">
     <div class="text-center mb-16">
       <h2 class="text-display font-satoshi-bold text-text-primary mb-4">
@@ -277,8 +283,8 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
       </p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-      <!-- Testimonial 1 -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12"> -->
+      <!-- Testimonial 1 
       <div class="card">
         <div class="flex items-start space-x-4 mb-6">
           <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/colaborador-ukiyo-david-tulamben-bali.jpg
@@ -305,9 +311,9 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
           </svg>
           <span class="text-sm font-medium">Colaborador desde 2023</span>
         </div>
-      </div>
+      </div> -->
 
-      <!-- Testimonial 2 -->
+      <!-- Testimonial 2 
       <div class="card">
         <div class="flex items-start space-x-4 mb-6">
           <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/colaborador-ukiyo-alexis-tortuguero-conservacionista.jpg"
@@ -336,10 +342,10 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
  <!-- Company Timeline -->
-<section class="py-20 bg-white font-satoshi">
+<section class="py-20 bg-background font-satoshi">
   <div class="container mx-auto px-6">
     <div class="text-center mb-16">
       <h2 class="text-display font-satoshi-bold text-text-primary mb-4">
@@ -422,27 +428,29 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
   </div>
 </section>
 
-<!-- Call to Action -->
-<section class="py-20 bg-gradient-primary text-white font-satoshi">
-  <div class="container mx-auto px-6 text-center">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-display font-satoshi-bold mb-6">
-        Únete al Mundo Flotante
-      </h2>
-      <p class="text-xl mb-8 opacity-90">
-Todo viaje empieza con una conversación.
-Cuéntanos qué te inspira y crearemos juntos una experiencia que te haga vivir el mundo de otra forma.      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" 
-           class="bg-white text-primary px-8 py-4 rounded-lg font-satoshi-bold hover:bg-accent-50 transition-all duration-300 shadow-soft">
-Hablemos de tu idea        </a>
-        <a href="<?php echo esc_url( get_permalink( get_page_by_path('resenas') ) ); ?>" 
-           class="border-2 border-white text-white px-8 py-4 rounded-lg font-satoshi-bold hover:bg-white hover:text-primary transition-all duration-300">
-          Lee Nuestras Historias
-        </a>
+  <!-- CTA Section -->
+<section class="py-20 bg-background text-text-secondary">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+              <h2 class="text-display font-satoshi mb-6 reveal-on-scroll">
+                    ¿Listo para el viaje de tu vida?
+                </h2>
+              <p class="text-xl mb-8 opacity-90 reveal-on-scroll delay-100">
+                    Todo viaje empieza con una conversación.
+                  Cuéntanos qué te inspira y crearemos juntos una experiencia que te haga vivir el mundo de otra forma.
+                </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center reveal-on-scroll delay-200">
+                  <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" 
+                    class="btn-primary text-text-secondary">
+                      Hablemos de tu viaje
+                  </a>
+                  <a href="<?php echo esc_url( get_permalink( get_page_by_path('resenas') ) ); ?>" 
+                    class="btn-primary text-text-secondary">
+                      Lee nuestras Historias
+                  </a>
+              </div>
+          </div>
       </div>
-    </div>
-  </div>
 </section>
 
 <?php get_footer(); ?>

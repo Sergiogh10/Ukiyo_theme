@@ -8,34 +8,36 @@ get_header();
 
 <main id="primary" class="relative">
   <!-- HERO -->
-<section class="relative pt-24 pb-20 overflow-hidden font-satoshi bg-surface">
-  <div class="absolute inset-0 opacity-5">
-    <svg class="w-full h-full" viewBox="0 0 100 100" fill="currentColor">
-      <pattern id="cultural-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-        <circle cx="10" cy="10" r="2" opacity="0.3"/>
-        <path d="M5 5l10 10M15 5l-10 10" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
-      </pattern>
-      <rect width="100%" height="100%" fill="url(#cultural-pattern)"/>
-    </svg>
-  </div>
-
-  <div class="container mx-auto px-6 relative z-10">
-    <div class="max-w-4xl mx-auto text-center">
-      <span class="inline-block px-4 py-2 bg-primary-100 text-primary rounded-full text-sm font-satoshi font-medium mb-6">
-        Premium
-      </span>
-      <h1 class="text-hero font-satoshi-bold text-text-primary mb-6">
-        Viajes de <span class="text-primary">autor</span>
-      </h1>
-      <p class="text-xl font-satoshi text-text-secondary max-w-3xl mx-auto leading-relaxed">
-        No son tours. Son relatos vivos: el ojo del fotógrafo que espera la luz, la voz del guía que creció allí, el aroma del café al amanecer y la conversación con un artesano local. La historia te lleva; el “reservar ahora” surge solo.
-      </p>
+  <section class="relative flex items-center justify-center overflow-hidden" style="min-height: 50vh; padding-top: 8rem; padding-bottom: 4rem;">
+    <!-- Background Image -->
+    <div class="absolute inset-0 w-full h-full">
+      <img src="<?php echo get_template_directory_uri(); ?>/images/heroimages/viajes-autor-ukiyo-pantanal4.jpg" 
+           alt="Viajes de autor" 
+           class="w-full h-full object-cover mask-image" 
+           loading="eager" />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
     </div>
-  </div>
-</section>
+
+    <!-- Contenido Hero - Centrado -->
+    <div class="relative z-10 w-full">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">
+            Premium
+          </span>
+          <h2 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
+            Viajes de <span class="text-accent-300">autor</span>
+          </h2>
+          <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed text-shadow">
+            No son tours. Son relatos vivos: el ojo del fotógrafo que espera la luz, la voz del guía que creció allí, el aroma del café al amanecer y la conversación con un artesano local. La historia te lleva; el "reservar ahora" surge solo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- LISTADO AUTORES / VIAJES -->
-<section id="viajes" class="bg-surface">
+<section id="viajes" class="bg-background">
   <div class="container mx-auto px-6 md:px-8 py-12 md:py-16">
 
     <?php
@@ -64,9 +66,9 @@ get_header();
           $precio_desde = get_post_meta( get_the_ID(), 'precio_desde', true );
           ?>
 
-          <article class="group rounded-2xl border-2 border-black bg-white/80 backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
+          <article class="group rounded-2xl border-2 border-black bg-background backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
             <a href="<?php the_permalink(); ?>">
-              <figure class="aspect-[16/9] overflow-hidden">
+              <figure class="aspect-[16/9] overflow-hidden bg-surface">
                 <?php if ( has_post_thumbnail() ) : ?>
                   <?php the_post_thumbnail( 'large', [
                     'class'   => 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] mask-image',
@@ -98,7 +100,7 @@ get_header();
                 <?php endif; ?>
 
                 <div>
-                  <h3 class="text-xl font-rowdies">
+                  <h3 class="text-xl font-satoshi font-semibold">
                     <a href="<?php the_permalink(); ?>" 
                       class="text-text-primary hover:text-accent">
                       <?php the_title(); ?>
@@ -128,13 +130,13 @@ get_header();
                 <!-- Pills a la izquierda -->
                 <div class="flex flex-wrap items-center gap-2 text-sm">
                   <?php if ( $duracion ) : ?>
-                    <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <span class="btn-primary text-text-secondary px-3 py-1 rounded-full text-sm font-medium">
                       <?php echo esc_html( $duracion ); ?>
                     </span>
                   <?php endif; ?>
 
                   <?php if ( $grupos ) : ?>
-                    <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <span class="btn-primary text-text-secondary px-3 py-1 rounded-full text-sm font-medium">
                       <?php echo esc_html( $grupos ); ?>
                     </span>
                   <?php endif; ?>
@@ -185,7 +187,7 @@ get_header();
   </div>
 </section>
 
-  <section class="py-20 bg-surface">
+  <section class="py-20 bg-background">
     <div class="container mx-auto">
       <div class="text-center mb-4">
         <h2 class="text-display font-satoshi text-text-primary mb-4">
@@ -204,7 +206,7 @@ get_header();
   </section>
 
   <!-- AUTORES (mini bios) -->
-  <section class="py-20 bg-surface">
+  <section class="py-20 bg-background">
   <div class="container mx-auto px-6">
     
     <div class="text-center mb-16">
@@ -216,7 +218,7 @@ get_header();
     <div class="grid gap-8 md:grid-cols-4">
 
       <!-- CARD LUIS -->
-      <article class="rounded-2xl border-2 border-black bg-white/80 backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
+      <article class="rounded-2xl border-2 border-black bg-background backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
 
         <!-- Imagen más pequeña -->
         <div class="aspect-[4/3]">
@@ -242,7 +244,7 @@ get_header();
 
 
       <!-- CARD MOHA -->
-      <article class="rounded-2xl border-2 border-black bg-white/80 backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
+      <article class="rounded-2xl border-2 border-black bg-background backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
 
         <div class="aspect-[4/3]">
           <img
@@ -264,15 +266,42 @@ get_header();
 
       </article>
 
+      <!-- CARD DAVID -->
+      <article class="rounded-2xl border-2 border-black bg-background backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
+
+        <div class="aspect-[4/3]">
+          <img
+            src="<?php echo get_template_directory_uri(); ?>/images/autores/david/viaje-de-autor-bali-david.jpg"
+            alt="David, emprendedor balines"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] mask-image"
+          />
+        </div>
+
+        <div class="p-4">
+          <h3 class="text-base font-semibold text-text-primary">
+            David · Guía y emprendedor balinés
+          </h3>
+          <p class="text-text-secondary mt-1 text-sm leading-relaxed">
+            Conoce cada carretera y atajo de la isla. Su empresa de transporte es sinónimo de seguridad y sonrisas, llevándote a los rincones secretos de Bali lejos del tráfico habitual.
+          </p>
+        </div>
+
+      </article>
+
     </div>
 
   </div>
 </section>
 
   <!-- FAQ -->
-  <section class="bg-surface">
-    <div class="container mx-auto px-6 md:px-8 pb-12">
-      <h2 class="text-display font-satoshi-bold mb-6">Preguntas frecuentes</h2>
+ <section class="py-20 bg-background">
+  <div class="container mx-auto px-6">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-display font-satoshi text-text-primary mb-2">
+        Preguntas <span class="text-primary">frecuentes</span>
+      </h2>
+    </div>
 
       <div data-accordion class="space-y-3">
 
@@ -329,23 +358,23 @@ get_header();
   </section>
 
   <!-- CTA Section -->
-  <section class="py-20 bg-gradient-primary text-white">
-      <div class="container mx-auto px-6 text-center">
-          <div class="max-w-3xl mx-auto">
-              <h2 class="text-display font-crimson mb-6">
-                  ¿Listo para el viaje de tu vida?
-              </h2>
-              <p class="text-xl mb-8 opacity-90">
-                  Todo viaje empieza con una conversación.
+  <section class="py-20 bg-background text-text-secondary">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+              <h2 class="text-display font-satoshi mb-6 reveal-on-scroll">
+                    ¿Listo para el viaje de tu vida?
+                </h2>
+              <p class="text-xl mb-8 opacity-90 reveal-on-scroll delay-100">
+                    Todo viaje empieza con una conversación.
                   Cuéntanos qué te inspira y crearemos juntos una experiencia que te haga vivir el mundo de otra forma.
-              </p>
-              <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center reveal-on-scroll delay-200">
                   <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" 
-                    class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 transition-all duration-300 shadow-soft">
+                    class="btn-primary text-text-secondary">
                       Hablemos de tu viaje
                   </a>
                   <a href="<?php echo esc_url( get_permalink( get_page_by_path('experiencias') ) ); ?>" 
-                    class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300">
+                    class="btn-primary text-text-secondary">
                       Ver más destinos
                   </a>
               </div>
