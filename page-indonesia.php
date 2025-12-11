@@ -5,664 +5,303 @@
 get_header();
 ?>
 
-<!-- Hero Section -->
-<section class="relative">
-    <div class="relative h-[60vh] lg:h-[70vh] overflow-hidden">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/viajes-personalizados-por-el-mundo-indonesia.jpg"
-             alt="Parque Nacional de Komodo en un viaje a Indonesia personalizado con Ukiyo"
-             class="w-full h-full object-cover" 
-             loading="lazy"
-             onerror="this.src='https://images.pexels.com/photos/2404370/pexels-photo-2404370.jpeg'; this.onerror=null;" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-        
-        <!-- Content Overlay -->
-        <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-12">
-          <div class="container mx-auto max-w-4xl">
-            <div class="flex flex-wrap items-center gap-3 mb-6">
-              <span class="badge-elevada">Biodiversidad</span>
-              <span class="badge-elevada">Inmersión cultural</span>
-              <span class="badge-elevada">Aventura y paraíso</span>
-            </div>
-            <div class="hero-overlay-box">
-              <h1 class="text-4xl lg:text-6xl font-rowdies text-white mb-4 pl-4">
-                INDONESIA: <br>
-                <span class="text-accent">Tierra de dioses</span>
-              </h1>
-              <p class="text-xl text-white/90 max-w-3xl pl-4">
-                Una travesía entre templos sagrados, arrozales infinitos y tradiciones vivas.
-              </p>
-            </div>
-          </div>
+  <!-- HERO -->
+  <section class="relative flex items-center justify-center overflow-hidden" style="min-height: 50vh; padding-top: 8rem; padding-bottom: 4rem;">
+    <!-- Background Image -->
+    <div class="absolute inset-0 w-full h-full">
+      <img src="<?php echo get_template_directory_uri(); ?>/images/indonesia/viajes-autor-ukiyo-indonesiamanta.jpg" 
+           alt="Indonesia Viajes Ukiyo" 
+           class="w-full h-full object-cover mask-image" 
+           loading="eager" />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
+    </div>
+
+    <!-- Contenido Hero - Centrado -->
+    <div class="relative z-10 w-full">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center gap-3 mb-6">
+            <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">Templos sagrados</span>
+            <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">Biodiversidad</span>
+            <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">Cultura viva</span>
+          <h2 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
+            INDONESIA
+            <br>
+             <span class="text-accent-300">Tierra de dioses</span>
+          </h2>
+          <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed text-shadow">
+            Explora Java, Bali, Nusa Penida, Komodo y Raja Ampat. Templos milenarios, arrozales infinitos, dragones de Komodo y arrecifes de coral. Indonesia es espiritualidad y naturaleza en estado puro.
+          </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Intro Text Section -->
+
+<section class="py-24 px-6 md:px-12 max-w-4xl mx-auto text-center bg-background">
+      <div class="w-px h-16 bg-secondary/30 mx-auto mb-8"></div>
+      <p class="text-2xl md:text-3xl font-satoshi leading-relaxed text-text-secondary">
+        <span class="font-bold italic">Indonesia</span> es una travesía entre templos sagrados, arrozales infinitos y tradiciones vivas. Desde el amanecer en el Monte Bromo hasta el snorkel en Raja Ampat, cada isla guarda una historia única.
+      </p>
+</section>
+
+<!-- Features Section -->
+<?php
+$featuresData = [
+  ['id' => '1', 'title' => 'Templos Sagrados', 'description' => 'Borobudur, Prambanan y templos balineses de agua purificadora.', 'icon' => '<path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>'],
+  ['id' => '2', 'title' => 'Arrozales Infinitos', 'description' => 'Terrazas verdes esculpidas durante siglos en Bali y Java.', 'icon' => '<path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>'],
+  ['id' => '3', 'title' => 'Cultura Balinesa', 'description' => 'Danzas, ofrendas diarias y ceremonias que conectan con lo divino.', 'icon' => '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'],
+  ['id' => '4', 'title' => 'Islas Paradisíacas', 'description' => 'Desde Nusa Penida hasta Raja Ampat: playas vírgenes y arrecifes.', 'icon' => '<path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1C7 13 7 11 9.5 11c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1C7 19 7 17 9.5 17c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>'],
+  ['id' => '5', 'title' => 'Volcanes Activos', 'description' => 'Monte Bromo, Monte Batur: amaneceres épicos entre nubes.', 'icon' => '<path d="M3 20l3-3 3 3 3-3 3 3 3-3 3 3"/><path d="M3 14l3-3 3 3 3-3 3 3 3-3 3 3"/><path d="M3 8l3-3 3 3 3-3 3 3 3-3 3 3"/>'],
+  ['id' => '6', 'title' => 'Fauna Única', 'description' => 'Dragones de Komodo, orangutanes y mantarrayas gigantes.', 'icon' => '<circle cx="12" cy="12" r="3"/><path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.25M15.54 15.54l4.24 4.25M1 12h6M17 12h6M4.22 19.78l4.24-4.25M15.54 8.46l4.24-4.25"/>']
+];
+?>
+
+<section class="py-20 bg-background">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-satoshi text-text-primary mb-4">Lo que hace <span class="text-primary">única</span> a Indonesia</h2>
+      <p class="text-text-secondary max-w-xl mx-auto">El archipiélago de los mil matices.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <?php foreach ($featuresData as $feature): ?>
+      <div class="group p-8 border border-gray-100 hover:border-primary/30 rounded-2xl bg-surface/20 hover:bg-white transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+        <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <?php echo $feature['icon']; ?>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-text-primary mb-3 font-satoshi"><?php echo $feature['title']; ?></h3>
+        <p class="text-text-secondary leading-relaxed"><?php echo $feature['description']; ?></p>
+      </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- Experiences Carousel Section -->
+<?php
+$ukiyoCarouselItems = [
+    [
+        'id' => '1',
+        'title' => 'Monte Bromo',
+        'description' => 'Amanecer entre nubes y volcanes activos. El jeep 4x4 te lleva al mirador para ver el sol salir sobre el cráter humeante.',
+        'imagePath' => '/images/guides/viajes-a-indonesia-personalizados-monte-bromo.jpg',
+        'tag' => 'Java Oriental'
+    ],
+    [
+        'id' => '2',
+        'title' => 'Bali',
+        'description' => 'La isla de los dioses: arrozales de Ubud, templos de agua, ceremonias vivas y atardeceres en Tanah Lot.',
+        'imagePath' => '/images/indonesia/viajes-a-indonesia-personalizados-bali.jpg',
+        'tag' => 'Isla de Bali'
+    ],
+    [
+        'id' => '3',
+        'title' => 'Nusa Penida',
+        'description' => 'Acantilados impresionantes, Kelingking Beach y aguas turquesas. Snorkel con mantarrayas en Crystal Bay.',
+        'imagePath' => '/images/indonesia/viajes-a-indonesia-personalizados-nusa-penida.jpg',
+        'tag' => 'Islas Nusa'
+    ],
+    [
+        'id' => '4',
+        'title' => 'Parque Komodo',
+        'description' => 'El hogar del dragón de Komodo. Navegación entre islas, Playa Rosa y encuentros con fauna prehistórica.',
+        'imagePath' => '/images/indonesia/viajes-a-indonesia-personalizados-komodo-islas.jpg',
+        'tag' => 'Flores'
+    ],
+    [
+        'id' => '5',
+        'title' => 'Lombok',
+        'description' => 'La Bali auténtica: Monte Rinjani, Gili Islands sin coches y playas de surf salvaje en Kuta.',
+        'imagePath' => '/images/indonesia/viajes-a-indonesia-personalizados-lombok-volcan-batur.jpg',
+        'tag' => 'Isla de Lombok'
+    ],
+    [
+        'id' => '6',
+        'title' => 'Raja Ampat',
+        'description' => 'El último paraíso: arrecifes de coral, biodiversidad marina única y kayak entre islas vírgenes.',
+        'imagePath' => '/images/indonesia/viajes-a-indonesia-personalizados-raja-ampat.jpg',
+        'tag' => 'Papúa Occidental'
+    ],
+    [
+        'id' => '7',
+        'title' => 'Tirta Empul',
+        'description' => 'Ritual de purificación en aguas sagradas. Templo balinés donde locales y viajeros se conectan con lo divino.',
+        'imagePath' => '/images/indonesia/viajes-a-indonesia-personalizados-bali-tirta-empul.jpg',
+        'tag' => 'Templos de Bali'
+    ],
+    [
+        'id' => '8',
+        'title' => 'Kelingking Beach',
+        'description' => 'El icono de Nusa Penida: acantilado en forma de T-Rex y descenso épico a la playa virgen.',
+        'imagePath' => '/images/indonesia/viajes-a-indonesia-personalizados-kilingkin.jpg',
+        'tag' => 'Nusa Penida'
+    ]
+];
+?>
+
+<section class="py-24 bg-background overflow-hidden relative">
+    <div class="container mx-auto px-4 mb-12 flex flex-col md:flex-row justify-between items-end gap-6">
+        <div>
+            <span class="uppercase tracking-widest text-primary text-sm font-semibold mb-2 block font-satoshi">Imperdibles</span>
+            <h2 class="text-4xl md:text-5xl font-satoshi text-text-primary">Experiencias Ukiyo</h2>
+
+        </div>
+        <div class="flex gap-4">
+            <button id="scroll-left" class="p-3 border border-text-primary/20 rounded-full hover:bg-primary hover:text-white text-text-primary transition-colors duration-300" aria-label="Anterior">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m12 19-7-7 7-7"/>
+                    <path d="M19 12H5"/>
+                </svg>
+            </button>
+            <button id="scroll-right" class="p-3 border border-text-primary/20 rounded-full hover:bg-primary hover:text-white text-text-primary transition-colors duration-300" aria-label="Siguiente">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"/>
+                    <path d="m12 5 7 7-7 7"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Carousel Container -->
+    <div 
+        id="experiences-carousel"
+        class="flex gap-6 px-4 md:px-8 pb-12"
+        style="overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; scroll-behavior: smooth;"
+    >
+        <style>
+            #experiences-carousel::-webkit-scrollbar {
+                display: none;
+            }
+            .carousel-card {
+                transition: transform 0.3s ease;
+            }
+            .carousel-card:hover {
+                transform: translateY(-10px);
+            }
+            .carousel-card:hover .carousel-card-content {
+                transform: translateY(-10px);
+            }
+        </style>
+
+        <?php 
+
+        foreach ($ukiyoCarouselItems as $expItem): 
+
+            $imageUrl = get_template_directory_uri() . $expItem['imagePath'];
+        ?>
+        <div 
+            style="
+                flex-shrink: 0;
+                width: 85vw;
+                max-width: 400px;
+                height: 500px;
+                background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('<?php echo esc_url($imageUrl); ?>');
+                background-size: cover;
+                background-position: center;
+                border-radius: 1.5rem;
+                overflow: hidden;
+                position: relative;
+            "
+            class="carousel-card snap-center cursor-pointer"
+        >
+            <!-- Content -->
+            <div class="carousel-card-content" style="position: absolute; bottom: 0; left: 0; padding: 2rem; width: 100%; transition: transform 0.3s ease;">
+                <div style="color: #ff6b6b; font-size: 12px; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 600;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline;">
+                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    <?php echo esc_html($expItem['tag']); ?>
+                </div>
+                <h3 style="font-size: 2rem; margin-bottom: 0.75rem; color: white; font-weight: 600;"><?php echo esc_html($expItem['title']); ?></h3>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    <?php echo esc_html($expItem['description']); ?>
+                </p>
+
+            </div>
+        </div>
+        <?php endforeach; ?>
+
     </div>
 </section>
 
-<!-- Quick Info Bar -->
-<section class="bg-white py-8 border-b border-surface">
-    <div class="container mx-auto px-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            <div class="text-center">
-                <div class="w-12 h-12 bg-primary-100 text-primary rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                </div>
-                <h3 class="font-crimson text-lg text-text-primary">Recomendación</h3>
-                <p class="text-text-secondary">+15 días</p>
-            </div>
-            <div class="text-center">
-                <div class="w-12 h-12 bg-secondary-100 text-secondary rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                    </svg>
-                </div>
-                <h3 class="font-crimson text-lg text-text-primary">Ubicación</h3>
-                <p class="text-text-secondary">Indonesia</p>
-            </div>
-            <div class="text-center">
-                <div class="w-12 h-12 bg-accent-100 text-accent rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>
-                    </svg>
-                </div>
-                <h3 class="font-crimson text-lg text-text-primary">Grupo</h3>
-                <p class="text-text-secondary">En solitario, en pareja o en amigos</p>
-            </div>
-            <div class="text-center">
-                <div class="w-12 h-12 bg-primary-100 text-primary rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                    </svg>
-                </div>
-                <h3 class="font-crimson text-lg text-text-primary">Mejor Época</h3>
-                <p class="text-text-secondary">Abr-Sep</p>
-            </div>
-        </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.getElementById('experiences-carousel');
+    const leftBtn = document.getElementById('scroll-left');
+    const rightBtn = document.getElementById('scroll-right');
+
+    if (carousel && leftBtn && rightBtn) {
+        // Calculate scroll amount based on card width + gap
+        function getScrollAmount() {
+            const firstCard = carousel.querySelector('.carousel-card');
+            if (firstCard) {
+                const cardWidth = firstCard.offsetWidth;
+                const gap = 24; // gap-6 = 24px
+                return cardWidth + gap;
+            }
+            return 424; // fallback: 400px card + 24px gap
+        }
+
+        leftBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+        });
+
+        rightBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+        });
+    }
+});
+</script>
+
+<!-- AUTORES (mini bios) -->
+  <section class="py-20 bg-background">
+  <div class="container mx-auto px-6">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-satoshi text-text-primary mb-4">Conoce a nuestros <span class="text-primary">anfitriones</span></h2>
+      <p class="text-text-secondary max-w-xl mx-auto">Un viaje no son solo lugares, son personas. En Ukiyo, trabajamos con guías que no solo muestran el camino, sino que comparten su alma y el amor por su tierra.</p>
     </div>
-</section>
 
-<!-- Day-by-Day Itinerary -->
-<section class="py-20 bg-surface">
-    <div class="relative mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-display font-crimson text-text-primary mb-4">
-                Nuestros <span class="text-primary">imprescindibles</span>
-            </h2>
-            <p class="text-lg text-text-secondary max-w-2xl mx-auto">
-                Cada uno de estos lugares dejó un maravilloso recuerdo en nuestras retinas
-            </p>
+    <div class="grid gap-8 md:grid-cols-4">
+
+      <!-- CARD DAVID -->
+      <article class="rounded-2xl border-2 border-black bg-background backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
+
+        <div class="aspect-[4/3]">
+          <img
+            src="<?php echo get_template_directory_uri(); ?>/images/autores/david/viaje-de-autor-bali-david.jpg"
+            alt="David, emprendedor balines"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] mask-image"
+          />
         </div>
 
-            <!-- Day 1 -->
-            <div class="mb-12">
-                <div class="bg-white/90 border border-surface/40 rounded-2xl overflow-hidden shadow-soft">
-                    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
-                        <!-- Left content -->
-                        <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
-                            <div>
-                                <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">JAVA</h1>
-                                <p class="mb-6">Java es el corazón de Indonesia, una isla donde los volcanes se mezclan con templos milenarios y ciudades vibrantes. Un lugar donde cada amanecer parece encender la tierra y cada sonrisa te conecta con la esencia del país.</p>
-                                <p>Desde los templos de Borobudur y Prambanan hasta el Monte Bromo, Java combina naturaleza, espiritualidad y cultura en un mismo viaje.</p>
-                                <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
-                                <div class="grid sm:grid-cols-2 gap-6">
-                                    <!-- Trip detail -->
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">JAVA</span>?</h4>
-                                    </div>
-                                    <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Monte Bromo:</strong> Amanecer entre nubes y volcanes activos.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Templo de Borobudur:</strong> Patrimonio de la Humanidad y símbolo del budismo.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Templo de Prambanan:</strong> Arte hindú entre campos de arroz.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Yogyakarta:</strong> Cultura, arte y vida local.</span>
-                                    </div>
-                                </div>
-                                    <!-- Services provided
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">Incluye</h4>
-                                        <ul class="space-y-2 text-sm text-text-secondary">
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Jeep 4x4 al amanecer
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Guía local
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Miradores principales
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Asistencia Ukiyo
-                                            </li>
-                                        </ul>
-                                    </div> -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Right image -->
-                        <div class="relative min-h-[280px] lg:min-h-full overflow-hidden">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/guides/viajes-a-indonesia-personalizados-monte-bromo.jpg" alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo" class="w-full h-full mask-left" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
-                            <div class="absolute"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Day 2 y 3 -->
-
-            <div class="mb-12">
-                <div class="bg-white/90 border border-surface/40 rounded-2xl overflow-hidden shadow-soft">
-                    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
-                        
-                        <!-- Imagen a la izquierda -->
-                        <div class="relative min-h-[280px] lg:min-h-full overflow-hidden">
-                            <img
-                                src="<?php echo get_template_directory_uri(); ?>/images/indonesia/viajes-a-indonesia-personalizados-bali.jpg"
-                                alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo"
-                                class="w-full h-full object-cover mask-right"
-                                loading="lazy"
-                                onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;"
-                            />
-                        </div>
-
-                        <!-- Texto a la derecha -->
-                        <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
-                            <div>
-                                <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">BALI</h1>
-                                <p class="mb-6">Bali es la isla de los dioses: una mezcla perfecta entre cultura, espiritualidad y paisajes naturales. Desde los arrozales de Ubud hasta los templos frente al mar, todo en Bali invita a la calma y a la conexión.</p>
-                                <p>Su energía especial se siente en cada ceremonia, en los olores del incienso y en la hospitalidad balinesa que hace que el tiempo se detenga.</p>
-                                <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
-                                <div class="grid sm:grid-cols-2 gap-6">
-                                    <!-- Trip detail -->
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">BALI</span>?</h4>
-                                    </div>
-                                    <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Ubud:</strong> Arrozales, talleres de artesanía y templos escondidos.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Tanah Lot:</strong> Puestas de sol sobre el mar.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Tirta Empul:</strong> Ritual de purificación en aguas sagradas.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Cultura balinesa:</strong> Danzas, ofrendas y tradiciones vivas.</span>
-                                    </div>
-                                </div>
-                                    <!-- Services provided
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">Incluye</h4>
-                                        <ul class="space-y-2 text-sm text-text-secondary">
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Jeep 4x4 al amanecer
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Guía local
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Miradores principales
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Asistencia Ukiyo
-                                            </li>
-                                        </ul>
-                                    </div> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-12">
-                <div class="bg-white/90 border border-surface/40 rounded-2xl overflow-hidden shadow-soft">
-                    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
-                        <!-- Left content -->
-                        <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
-                            <div>
-                                <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">NUSA PENIDA</h1>
-                                <p class="mb-6">A tan solo media hora en barco desde Bali, Nusa Penida ofrece una naturaleza salvaje y acantilados impresionantes. Es el lugar donde el azul del mar parece no tener fin.</p>
-                                <p>Un paraíso para quienes buscan aventura, playas vírgenes y puntos de buceo con mantarrayas.</p>
-                                <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
-                                <div class="grid sm:grid-cols-2 gap-6">
-                                    <!-- Trip detail -->
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">NUSA PENIDA</span>?</h4>
-                                    </div>
-                                    <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Kelingking Beach:</strong> Icono natural de Indonesia.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Crystal Bay:</strong> Snorkel entre corales y peces tropicales.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Broken Beach:</strong> Arco de piedra sobre el mar turquesa.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Buceo con mantarrayas:</strong> Experiencia inolvidable.</span>
-                                    </div>
-                                </div>
-                                    <!-- Services provided
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">Incluye</h4>
-                                        <ul class="space-y-2 text-sm text-text-secondary">
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Jeep 4x4 al amanecer
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Guía local
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Miradores principales
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Asistencia Ukiyo
-                                            </li>
-                                        </ul>
-                                    </div> -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Right image -->
-                        <div class="relative min-h-[280px] lg:min-h-full overflow-hidden">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/indonesia/viajes-a-indonesia-personalizados-kilingkin.jpg" alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo" class="w-full h-full mask-left" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
-                            <div class="absolute"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Day 4 y 5 -->
-
-            <div class="mb-12">
-                <div class="bg-white/90 border border-surface/40 rounded-2xl overflow-hidden shadow-soft">
-                    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
-                        
-                        <!-- Imagen a la izquierda -->
-                        <div class="relative min-h-[280px] lg:min-h-full overflow-hidden">
-                            <img
-                                src="<?php echo get_template_directory_uri(); ?>/images/indonesia/viajes-a-indonesia-personalizados-nusa-penida.jpg"
-                                alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo"
-                                class="w-full h-full object-cover mask-right"
-                                loading="lazy"
-                                onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;"
-                            />
-                        </div>
-
-                        <!-- Texto a la derecha -->
-                        <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
-                            <div>
-                                <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">FLORES</h1>
-                                <p class="mb-6">Flores es la Indonesia más auténtica, una isla donde las montañas, la selva y las aldeas tradicionales se mezclan con playas de arena rosa y un ritmo de vida pausado.</p>
-                                <p>Desde aquí parten los barcos hacia el Parque Nacional de Komodo, hogar del mítico dragón.</p>
-                                <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
-                                <div class="grid sm:grid-cols-2 gap-6">
-                                    <!-- Trip detail -->
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">FLORES</span>?</h4>
-                                    </div>
-                                    <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Parque Nacional de Komodo:</strong> Navegación entre islas y fauna salvaje.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Isla de Padar:</strong> Amanecer panorámico.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Playa Rosa:</strong> Arena rosada y aguas cristalinas.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Pueblos locales:</strong> Cultura, tradiciones y hospitalidad.</span>
-                                    </div>
-                                </div>
-                                    <!-- Services provided
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">Incluye</h4>
-                                        <ul class="space-y-2 text-sm text-text-secondary">
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Jeep 4x4 al amanecer
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Guía local
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Miradores principales
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Asistencia Ukiyo
-                                            </li>
-                                        </ul>
-                                    </div> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-12">
-                <div class="bg-white/90 border border-surface/40 rounded-2xl overflow-hidden shadow-soft">
-                    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
-                        <!-- Left content -->
-                        <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
-                            <div>
-                                <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">LOMBOK</h1>
-                                <p class="mb-6">Lombok conserva la esencia tranquila que Bali perdió hace años. Es un destino de playas paradisíacas, arrozales y aldeas donde la vida se mueve al ritmo del sol.</p>
-                                <p>Ideal para descansar, practicar surf o adentrarse en el Monte Rinjani, uno de los volcanes más impresionantes de Indonesia.</p>
-                                <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
-                                <div class="grid sm:grid-cols-2 gap-6">
-                                    <!-- Trip detail -->
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">LOMBOK</span>?</h4>
-                                    </div>
-                                    <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Monte Rinjani:</strong> Trekking y vistas sobre el cráter.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Gili Islands:</strong> Playas sin coches y ambiente relajado.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Kuta Lombok:</strong> Surf y playas salvajes.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Pueblos sasak:</strong> Cultura tradicional de la isla.</span>
-                                    </div>
-                                </div>
-                                    <!-- Services provided
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">Incluye</h4>
-                                        <ul class="space-y-2 text-sm text-text-secondary">
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Jeep 4x4 al amanecer
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Guía local
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Miradores principales
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Asistencia Ukiyo
-                                            </li>
-                                        </ul>
-                                    </div> -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Right image -->
-                        <div class="relative min-h-[280px] lg:min-h-full overflow-hidden">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/indonesia/viajes-a-indonesia-personalizados-lombok-volcan-batur.jpg" alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo" class="w-full h-full mask-left" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
-                            <div class="absolute"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Day 6 -->
-
-            <div class="mb-12">
-                <div class="bg-white/90 border border-surface/40 rounded-2xl overflow-hidden shadow-soft">
-                    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
-                        
-                        <!-- Imagen a la izquierda -->
-                        <div class="relative min-h-[280px] lg:min-h-full overflow-hidden">
-                            <img
-                                src="<?php echo get_template_directory_uri(); ?>/images/indonesia/viajes-a-indonesia-personalizados-raja-ampat.jpg"
-                                alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo"
-                                class="w-full h-full object-cover mask-right"
-                                loading="lazy"
-                                onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;"
-                            />
-                        </div>
-
-                        <!-- Texto a la derecha -->
-                        <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
-                            <div>
-                                <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">RAJA AMPAT</h1>
-                                <p class="mb-6">Raja Ampat es el último paraíso de Indonesia, un archipiélago remoto donde el mar es tan transparente que parece irreal. Es un sueño para los amantes del buceo y la naturaleza intacta.</p>
-                                <p>Sus más de 1.500 islas son hogar de una biodiversidad marina sin igual, donde la conexión con la naturaleza es total.</p>
-                                <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
-                                <div class="grid sm:grid-cols-2 gap-6">
-                                    <!-- Trip detail -->
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">RAJA AMPAT</span>?</h4>
-                                    </div>
-                                    <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Buceo y snorkel:</strong> Arrecifes coralinos y fauna marina única.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Piaynemo:</strong> Vistas de islas verdes sobre aguas turquesas.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Kayak entre islas:</strong> Navega entre manglares y lagunas.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Contacto local:</strong> Comunidades papúes y su cultura.</span>
-                                    </div>
-                                </div>
-                                    <!-- Services provided
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">Incluye</h4>
-                                        <ul class="space-y-2 text-sm text-text-secondary">
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Jeep 4x4 al amanecer
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Guía local
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Miradores principales
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Asistencia Ukiyo
-                                            </li>
-                                        </ul>
-                                    </div> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!-- What's Included Section -->
-<section class="py-20 bg-white">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-display font-crimson text-text-primary mb-4">
-                Información <span class="text-accent">de interés</span>
-            </h2>
-            <p class="text-lg text-text-secondary max-w-2xl mx-auto">
-                Datos prácticos para organizar tu viaje por Indonesia con tranquilidad.
-            </p>
+        <div class="p-4">
+          <h3 class="text-base font-semibold text-text-primary">
+            David · Guía y emprendedor balinés
+          </h3>
+          <p class="text-text-secondary mt-1 text-sm leading-relaxed">
+            Conoce cada carretera y atajo de la isla. Su empresa de transporte es sinónimo de seguridad y sonrisas, llevándote a los rincones secretos de Bali lejos del tráfico habitual.
+          </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <!-- Moneda local -->
-            <div class="text-center">
-                <div class="w-16 h-16 bg-primary-100 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .843-3 1.882 0 1.04 1.343 1.882 3 1.882s3 .843 3 1.882C15 14.843 13.657 15 12 15m0-7c1.11 0 2.08.402 2.6 1M12 4v2m0 12v2m8-10a8 8 0 11-16 0 8 8 0 0116 0z" />
-                    </svg>
-                </div>
-                <h3 class="text-lg font-crimson text-text-primary mb-2">Moneda</h3>
-                <p class="text-text-secondary text-sm">Rupia indonesia (IDR). Es habitual pagar en efectivo, pero en zonas turísticas se acepta tarjeta. Recomendable llevar algo de efectivo al inicio.</p>
-            </div>
+      </article>
 
-            <!-- Hora local -->
-            <div class="text-center">
-                <div class="w-16 h-16 bg-secondary-100 text-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                </div>
-                <h3 class="text-lg font-crimson text-text-primary mb-2">Hora local</h3>
-                <p class="text-text-secondary text-sm">Indonesia tiene varios husos. Bali y Java suelen estar a +7 h respecto a España (península) cuando España está en invierno, y +6 h cuando España está en verano.</p>
-            </div>
-
-            <!-- Mejor época -->
-            <div class="text-center">
-                <div class="w-16 h-16 bg-accent-100 text-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7l1.664 9.148A2 2 0 006.64 18h10.72a2 2 0 001.976-1.852L21 7M5 7h14M9 11v4m6-4v4" />
-                    </svg>
-                </div>
-                <h3 class="text-lg font-crimson text-text-primary mb-2">Mejor época</h3>
-                <p class="text-text-secondary text-sm">La temporada seca suele ir de abril a septiembre. De octubre a marzo hay más lluvia, pero menos gente y paisajes más verdes.</p>
-            </div>
-
-            <!-- Visado -->
-            <div class="text-center">
-                <div class="w-16 h-16 bg-primary-100 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 1.657-1.343 3-3 3H5l-2 2V5a2 2 0 012-2h6a2 2 0 012 2v4zm0 0h2a2 2 0 012 2v1m-2 4l2 2 4-4" />
-                    </svg>
-                </div>
-                <h3 class="text-lg font-crimson text-text-primary mb-2">Entrada al país</h3>
-                <p class="text-text-secondary text-sm">Para españoles suele ser posible el visado "on arrival" (VOA) para estancias cortas. Pasaporte con validez mínima de 6 meses y billete de salida.</p>
-            </div>
-
-            <!-- Electricidad -->
-            <div class="text-center">
-                <div class="w-16 h-16 bg-secondary-100 text-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                </div>
-                <h3 class="text-lg font-crimson text-text-primary mb-2">Electricidad</h3>
-                <p class="text-text-secondary text-sm">220V y enchufe tipo C/F (igual que en España) en la mayoría de zonas. Normalmente no hace falta adaptador.</p>
-            </div>
-
-            <!-- Salud y cultura -->
-            <div class="text-center">
-                <div class="w-16 h-16 bg-accent-100 text-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .843-3 1.882 0 1.04 1.343 1.882 3 1.882s3 .843 3 1.882C15 14.843 13.657 15 12 15m0-7a4 4 0 110 8 4 4 0 010-8zm0 11v2m0-18v2" />
-                    </svg>
-                </div>
-                <h3 class="text-lg font-crimson text-text-primary mb-2">Salud y respeto</h3>
-                <p class="text-text-secondary text-sm">Seguro de viaje recomendado. En templos balineses se requiere ropa que cubra hombros y piernas.</p>
-            </div>
-        </div>
     </div>
+
+  </div>
 </section>
 
 
 <!-- Practical Information -->
-<section class="py-20 bg-surface">
+<section class="py-20 bg-background">
     <div class="container mx-auto px-6">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-display font-crimson text-text-primary mb-4">
+                <h2 class="text-display font-satoshi text-text-primary mb-4">
                     Recomendaciones <span class="text-primary">UKIYO</span>
                 </h2>
                 <p class="text-lg text-text-secondary max-w-2xl mx-auto">
@@ -673,7 +312,7 @@ get_header();
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- Preparation -->
                     <div class="card">
-                        <h3 class="text-xl font-crimson text-text-primary mb-4">Preparación Recomendada</h3>
+                        <h3 class="text-xl font-satoshi text-text-primary mb-4">Preparación Recomendada</h3>
                         <div class="space-y-3">
                             <div class="flex items-start">
                                 <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -704,7 +343,7 @@ get_header();
 
                     <!-- Important Notes -->
                     <div class="card">
-                        <h3 class="text-xl font-crimson text-text-primary mb-4">Consideraciones Importantes</h3>
+                        <h3 class="text-xl font-satoshi text-text-primary mb-4">Consideraciones Importantes</h3>
                         <div class="space-y-3">
                             <div class="flex items-start">
                                 <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -737,29 +376,27 @@ get_header();
         </div>
     </section>
 
-<!-- CTA Section -->
-<section class="py-20 bg-gradient-primary text-white">
-    <div class="container mx-auto px-6 text-center">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-display font-crimson mb-6">
-                ¿Listo para el viaje de tu vida?
-            </h2>
-            <p class="text-xl mb-8 opacity-90">
-                No solo viajes a Bali, vívelo.
-                Con UKIYO, cada templo, cada arrozal y cada sonrisa local se convierte en parte de una experiencia creada exclusivamente para ti.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" 
-                   class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 transition-all duration-300 shadow-soft">
-                    Hablemos de tu viaje
-                </a>
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('experiencias') ) ); ?>" 
-                   class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300">
-                    Ver más destinos
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+  <section class="py-20 bg-background text-text-secondary">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+              <h2 class="text-display font-satoshi mb-6 reveal-on-scroll">
+                    ¿Listo para vivir Indonesia?
+                </h2>
+              <p class="text-xl mb-8 opacity-90 reveal-on-scroll delay-100">
+                    Descubre la espiritualidad de Bali, los amaneceres volcánicos de Java y la biodiversidad de Raja Ampat. UKIYO diseña tu ruta perfecta por el archipiélago de los mil matices.
+                </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center reveal-on-scroll delay-200">
+                  <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" 
+                    class="btn-primary text-text-secondary">
+                      Hablemos de tu viaje
+                  </a>
+                  <a href="<?php echo esc_url( get_permalink( get_page_by_path('experiencias') ) ); ?>" 
+                    class="btn-primary text-text-secondary">
+                      Ver más destinos
+                  </a>
+              </div>
+          </div>
+      </div>
+  </section>
 
 <?php get_footer(); ?>

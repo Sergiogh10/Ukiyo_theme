@@ -12,7 +12,7 @@
 
 <?php
 // Detectar si estamos en la front-page o en la página de viajes de autor
-$use_transparent_header = is_front_page() || is_page_template('page-viajesautor.php') || is_page_template('page-pricing.php') || is_page_template('page-experiences.php');
+$use_transparent_header = is_front_page() || is_page_template('page-viajesautor.php') || is_page_template('page-pricing.php') || is_page_template('page-experiences.php') || is_page_template('page-reviews2.php') || is_page_template('page-about.php') || is_page_template('page-costarica.php') || is_page_template('page-colombia.php') || is_page_template('page-marruecos.php') || is_page_template('page-indonesia.php');
 ?>
 
 <?php if ($use_transparent_header) : ?>

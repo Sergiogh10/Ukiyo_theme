@@ -21,7 +21,7 @@ $template_uri = get_template_directory_uri();
     <div class="relative z-10 w-full">
       <div class="container mx-auto px-6">
         <div class="max-w-4xl mx-auto text-center">
-          <span class="inline-block px-4 py-2 btn-primary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">
+          <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">
             Precios
           </span>
           <h2 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
@@ -80,132 +80,214 @@ $template_uri = get_template_directory_uri();
   </div>
 </section>
 
+
 <!-- ===================== TIERS ===================== -->
-<section class="py-20 bg-background">
+<section class="min-h-screen flex justify-center items-center py-20 bg-background">
   <div class="container mx-auto px-6">
-    <header class="text-center max-w-2xl mx-auto mb-24">
-      <h2 class="text-4xl font-satoshi text-text-primary tracking-tight">Niveles de <span class="text-primary">aventura</span></h2>
-      <p class="mt-3 text-lg text-text-secondary">Tres niveles pensados para formas distintas de viajar.</p>
-    </header>
-    <br>
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h1 class="text-4xl font-satoshi">
+        <span class="text-primary tracking-wide">Planes </span>
+        <span class="text-text-primary">Flexibles</span>
+      </h1>
+      <p class="mt-4 text-lg text-text-secondary leading-relaxed">
+        Elige el plan que mejor se adapte a ti y a tu forma de viajar.
+      </p>
+    </div>
+
+    <!-- Pricing Cards -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-
-      <!-- Tier 1 -->
-      <article class="group relative rounded-2xl overflow-hidden border-2 border-primary bg-white shadow-sm hover:shadow-lg transition flex flex-col">
-        <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-          <br>
-          <span class="bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">Más valorado</span>
-        </div>
       
-        <div class="text-center p-8">
-          <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-5">
-            <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+      <!-- Basic Card -->
+      <article class="group rounded-2xl border-2 border-black bg-background backdrop-blur-md shadow-sm overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+        <!-- Image Header -->
+        <div class="relative h-64 w-full overflow-hidden" style="-webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%); mask-image: linear-gradient(to bottom, black 80%, transparent 100%);">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/heroimages/viajes-autor-ukiyo-viajeros2.jpg" 
+                 alt="Espíritu mochilero" 
+                 class="absolute inset-0 w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-500"></div>
+            <div class="absolute inset-0 flex items-center justify-center p-4">
+                <h2 class="text-4xl font-satoshi font-bold text-white text-center drop-shadow-md text-shadow">Espíritu mochilero</h2>
+            </div>
+        </div>
+        
+        <!-- Content -->
+        <div class="px-8 pb-8 pt-2 flex-grow flex flex-col">
+          <div class="text-center mb-6">
+            <p class="pt-2 tracking-wide text-secondary">
+              <br>
+              <span class="align-top text-lg">€ </span>
+              <span class="text-4xl font-bold">60</span>
+              <span class="text-sm font-medium opacity-80">/ día</span>
+            </p>
+            <hr class="mt-6 border-secondary/20 w-16 mx-auto">
           </div>
-          <h3 class="text-2xl font-satoshi text-text-primary mb-1">Aventura premium</h3>
-          <p class="text-primary text-lg">Una experiencia integral</p>
-        </div>
 
-        <div class="px-8">
-          <div class="text-center mb-4">
-            <div class="text-3xl font-satoshi text-primary">Consultar precio</div>
-            <p class="text-sm text-text-tertiary">viaje completo</p>
+          <div class="flex-grow space-y-4">
+            <p class="font-medium text-text-secondary text-left flex items-start">
+                <svg class="w-5 h-5 text-secondary mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="pl-2">
+                Comienza con <span class="text-text-primary font-semibold">videollamadas</span>
+                </span>
+            </p>
+            <p class="font-medium text-text-secondary text-left flex items-start">
+                <svg class="w-5 h-5 text-secondary mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="pl-2">
+                <span class="text-text-primary font-semibold">Programa completo</span> del viaje
+                </span>
+            </p>
+            <p class="font-medium text-text-secondary text-left flex items-start">
+                <svg class="w-5 h-5 text-secondary mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="pl-2">
+                Apoyo <span class="text-text-primary font-semibold">24/7</span>
+                </span>
+            </p>
           </div>
-          <p class="text-text-secondary text-center mb-6 leading-relaxed">
-          Para quienes buscan comodidad y personalización, manteniendo autenticidad y contacto local.
-          </p>
-        </div>
 
-        <div class="px-8 pb-6">
-          <h4 class="font-satoshi text-lg text-text-primary mb-3">Incluye</h4>
-          <ul class="space-y-2">
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Todo del nivel “Espíritu mochilero”</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Vuelos y traslados</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Alojamientos seleccionados</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Gastronomía local auténtica</span></li>
-          </ul>
-        </div>
-
-        <div class="mt-auto p-8 pt-0">
+          <a href="#consultation" class="block w-full mt-8">
+            <div class="w-full py-4 border-2 btn-primary text-text-secondary rounded-full font-semibold hover:bg-secondary hover:text-white transition-all duration-300 flex items-center justify-center group-hover:shadow-lg">
+              <span>Elegir Plan</span>
+              <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </div>
+          </a>
         </div>
       </article>
 
-      <!-- Tier 2 (Popular) -->
-      <article class="group relative rounded-2xl overflow-hidden border-2 border-secondary bg-white shadow-sm hover:shadow-lg transition flex flex-col">
-        <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-          <br>
-          <span class="bg-secondary text-white px-4 py-1 rounded-full text-sm font-semibold">Más popular</span>
+      <!-- Startup Card (Popular) -->
+      <article class="group rounded-2xl border-2 border-black bg-background backdrop-blur-md shadow-sm overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+        <div class="absolute top-4 right-4 z-30">
+             <span class="bg-primary text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm">Popular</span>
         </div>
-
-        <div class="text-center p-8">
-          <div class="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-5">
-            <svg class="w-10 h-10 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        
+        <!-- Image Header -->
+        <div class="relative h-64 w-full overflow-hidden" style="-webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%); mask-image: linear-gradient(to bottom, black 80%, transparent 100%);">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/heroimages/viajes-personalizados-ukiyo-viajeros3.jpg" 
+                 alt="Aventura premium" 
+                 class="absolute inset-0 w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-500"></div>
+            <div class="absolute inset-0 flex items-center justify-center p-4">
+                <h2 class="text-4xl font-satoshi font-bold text-white text-center drop-shadow-md text-shadow">Aventura premium</h2>
+            </div>
+        </div>
+        
+        <!-- Content -->
+        <div class="px-8 pb-8 pt-2 flex-grow flex flex-col">
+          <div class="text-center mb-6">
+            <p class="pt-2 tracking-wide text-primary">
+              <br>
+              <span class="text-4xl font-bold">15%</span>
+              <span class="text-sm font-medium opacity-80">/ viaje</span>
+            </p>
+            <hr class="mt-6 border-primary/20 w-16 mx-auto">
           </div>
-          <h3 class="text-2xl font-satoshi text-text-primary mb-1">Espíritu mochilero</h3>
-          <p class="text-secondary text-lg">La guía experta</p>
-        </div>
 
-        <div class="px-8">
-          <div class="text-center mb-4">
-            <div class="text-3xl font-satoshi text-secondary">60 €</div>
-            <p class="text-sm text-text-tertiary">por día organizado</p>
+          <div class="flex-grow space-y-4">
+            <p class="font-medium text-text-secondary text-left flex items-start">
+                <svg class="w-5 h-5 text-primary mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="pl-2">
+                Todo en <span class="text-text-primary font-semibold">Espíritu mochilero</span>
+                </span>
+            </p>
+            <p class="font-medium text-text-secondary text-left flex items-start">
+                <svg class="w-5 h-5 text-primary mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="pl-2">
+                <span class="text-text-primary font-semibold">Vuelos y traslados</span>
+                </span>
+            </p>
+            <p class="font-medium text-text-secondary text-left flex items-start">
+                <svg class="w-5 h-5 text-primary mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="pl-2">
+                <span class="text-text-primary font-semibold">Alojamientos</span> seleccionados
+                </span>
+            </p>
           </div>
-          <p class="text-text-secondary text-center mb-6 leading-relaxed">
-          Organización experta de experiencias auténticas. Tú llevas la logística; nosotros abrimos puertas locales.
-          </p>
-        </div>
 
-        <div class="px-8 pb-6">
-          <h4 class="font-satoshi text-lg text-text-primary mb-3">Incluye</h4>
-          <ul class="space-y-2">
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Videollamadas de organización</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Programa completo</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Asesoramiento logístico y cultural</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Apoyo 24/7 durante la experiencia</span></li>
-          </ul>
-        </div>
-
-        <div class="mt-auto p-8 pt-0">
+          <a href="#consultation" class="block w-full mt-8">
+            <div class="w-full py-4 btn-primary text-text-secondary rounded-full font-semibold hover:bg-primary-700 transition-all duration-300 flex items-center justify-center shadow-md group-hover:shadow-lg">
+              <span>Elegir Plan</span>
+              <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </div>
+          </a>
         </div>
       </article>
 
-      <!-- Tier 3 -->
-      <article class="group relative rounded-2xl overflow-hidden border-2 border-accent bg-white shadow-sm hover:shadow-lg transition flex flex-col">
-        <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-          <br>
-          <span class="bg-accent text-white px-4 py-1 rounded-full text-sm font-semibold">Más especial</span>
-        </div>  
-      
-        <div class="text-center p-8">
-          <div class="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-5">
-            <svg class="w-10 h-10 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+      <!-- Enterprise Card -->
+      <article class="group rounded-2xl border-2 border-black bg-background backdrop-blur-md shadow-sm overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+        <!-- Image Header -->
+        <div class="relative h-64 w-full overflow-hidden" style="-webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%); mask-image: linear-gradient(to bottom, black 80%, transparent 100%);">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/heroimages/viajes-autor-ukiyo-indonesiaplaya.jpg" 
+                 alt="Mundo flotante" 
+                 class="absolute inset-0 w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-500"></div>
+            <div class="absolute inset-0 flex items-center justify-center p-4">
+                <h2 class="text-4xl font-satoshi font-bold text-white text-center drop-shadow-md text-shadow">Mundo flotante</h2>
+            </div>
+        </div>
+        
+        <!-- Content -->
+        <div class="px-8 pb-8 pt-2 flex-grow flex flex-col">
+          <div class="text-center mb-6">
+            <p class="pt-2 tracking-wide text-accent">
+              <br>
+              <span class="text-4xl font-bold">Próximamente</span>
+            </p>
+            <hr class="mt-6 border-accent/20 w-16 mx-auto">
           </div>
-          <h3 class="text-2xl font-satoshi text-text-primary mb-1">Mundo flotante</h3>
-          <p class="text-accent text-lg">Vive la aventura de tu vida</p>
-        </div>
 
-        <div class="px-8">
-          <div class="text-center mb-4">
-            <div class="text-3xl font-satoshi text-accent">Consultar precio</div>
-            <p class="text-sm text-text-tertiary">viaje completo</p>
+          <div class="flex-grow space-y-4">
+            <p class="font-medium text-text-secondary text-left flex items-start">
+                <svg class="w-5 h-5 text-accent mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="pl-2">
+                Todo en <span class="text-text-primary font-semibold">Aventura premium</span>
+                </span>
+            </p>
+            <p class="font-medium text-text-secondary text-left flex items-start">
+                <svg class="w-5 h-5 text-accent mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="pl-2">
+                Experiencias de <span class="text-text-primary font-semibold">lujo sostenible</span>
+                </span>
+            </p>
+            <p class="font-medium text-text-secondary text-left flex items-start">
+                <svg class="w-5 h-5 text-accent mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="pl-2">
+                <span class="text-text-primary font-semibold">Excursiones</span> privadas
+                </span>
+            </p>
           </div>
-          <p class="text-text-secondary text-center mb-6 leading-relaxed">
-            Entrega total a una experiencia de lujo consciente. Ideal para lunas de miel, aniversarios o viajes-vida.
-          </p>
-        </div>
 
-        <div class="px-8 pb-6">
-          <h4 class="font-satoshi text-lg text-text-primary mb-3">Incluye</h4>
-          <ul class="space-y-2">
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Todo del nivel “Aventura premium”</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Lujo sostenible</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Excursiones privadas</span></li>
-            <li class="flex items-start"><svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-text-secondary">Experiencias gastronómicas</span></li>
-          </ul>
-        </div>
-
-        <div class="mt-auto p-8 pt-0">
+          <a href="#consultation" class="block w-full mt-8">
+            <div class="w-full py-4 border-2 btn-primary text-text-secondary rounded-full font-semibold hover:bg-accent hover:text-white transition-all duration-300 flex items-center justify-center group-hover:shadow-lg">
+              <span>Elegir Plan</span>
+              <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </div>
+          </a>
         </div>
       </article>
+
     </div>
   </div>
 </section>
@@ -220,22 +302,10 @@ $template_uri = get_template_directory_uri();
 
     <div class="text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-accent-600 w-full text-center block">
       <!-- Google Calendar Appointment Scheduling begin -->
-      <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-      <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-      <script>
-        (function() {
-          var target = document.currentScript;
-          window.addEventListener('load', function() {
-            if (!window.calendar || !calendar.schedulingButton) return;
-            calendar.schedulingButton.load({
-              url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0oQLbKSl4opWsa7UsNMaKHpbeLYSCjP0Dp5Rpkjcn009psVtBSzV0U2Z162p5nlBQPT0lH4b8e?gv=true',
-              color: '#8b4512',
-              label: 'Reservar una cita',
-              target: target
-            });
-          }, { once: true });
-        })();
-      </script>
+      <!-- Calendly inline widget begin -->
+  <div class="calendly-inline-widget" data-url="https://calendly.com/viajesukiyo-info/el-viaje-de-tu-vida?hide_gdpr_banner=1&background_color=fefcf8&text_color=6b6b6b&primary_color=f6cf66" style="min-width:320px;height:700px;"></div>
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <!-- Calendly inline widget end -->
       <!-- end Google Calendar Appointment Scheduling -->
     </div>
   </div>

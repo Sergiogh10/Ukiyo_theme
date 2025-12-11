@@ -1814,6 +1814,11 @@ body {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
 
+.bg-destination {
+  --tw-bg-opacity: 1;
+  background-color: rgb(235 232 221 / var(--tw-bg-opacity, 1));
+}
+
 .from-accent-900\/80 {
   --tw-gradient-from: rgb(100 81 32 / 0.8) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(100 81 32 / 0) var(--tw-gradient-to-position);

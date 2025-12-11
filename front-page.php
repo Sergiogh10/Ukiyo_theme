@@ -34,7 +34,7 @@ get_header(); ?>
             'description' => 'Desiertos infinitos, medinas llenas de vida y rutas alejadas del turismo masivo. Un viaje sensorial que te conecta con la esencia de un país fascinante.'
         ],
         [
-            'image' => get_template_directory_uri() . '/images/heroimages/viajes-personalizados-ukiyo-colombiaplaya.jpg',
+            'image' => get_template_directory_uri() . '/images/heroimages/viajes-personalizados-ukiyo-colombiaplaya3.jpg',
             'alt' => 'Viajes personalizados a Colombia',
             'title' => 'Vive Colombia',
             'subtitle' => 'con <span class="text-accent-300">ritmo y color</span>',

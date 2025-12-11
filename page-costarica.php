@@ -5,576 +5,321 @@
 get_header();
 ?>
 
-<!-- Hero Section -->
-<section class="relative">
-    <div class="relative h-[60vh] lg:h-[70vh] overflow-hidden">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-osa-corcovado-hero.jpg"
-             alt="Costa Rica, Península de Osa y Corcovado en un viaje personalizado con Ukiyo"
-             class="w-full h-full object-cover" 
-             loading="lazy"
-             onerror="this.src='https://images.pexels.com/photos/2404370/pexels-photo-2404370.jpeg'; this.onerror=null;" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-        
-        <!-- Content Overlay -->
-        <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-12">
-          <div class="container mx-auto max-w-4xl">
-            <div class="flex flex-wrap items-center gap-3 mb-6">
-              <span class="badge-elevada">Biodiversidad</span>
-              <span class="badge-elevada">Inmersión cultural</span>
-              <span class="badge-elevada">Aventura y paraíso</span>
-            </div>
-            <div class="hero-overlay-box">
-              <h1 class="text-4xl lg:text-6xl font-rowdies text-white mb-4 pl-4">
-                COSTA RICA: <br>
-                <span class="text-accent">Biodiversidad pura</span>
-              </h1>
-              <p class="text-xl text-white/90 max-w-3xl pl-4">
-                Explora con nosotros la Península de Osa, Corcovado y los bosques nubosos de Monteverde; amaneceres en la selva, ríos claros y encuentros respetuosos con la vida salvaje.
-              </p>
-            </div>
-          </div>
+  <!-- HERO -->
+  <section class="relative flex items-center justify-center overflow-hidden" style="min-height: 50vh; padding-top: 8rem; padding-bottom: 4rem;">
+    <!-- Background Image -->
+    <div class="absolute inset-0 w-full h-full">
+      <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-costarica-hero2.jpg" 
+           alt="Viajes de autor" 
+           class="w-full h-full object-cover mask-image" 
+           loading="eager" />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
+    </div>
+
+    <!-- Contenido Hero - Centrado -->
+    <div class="relative z-10 w-full">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center gap-3 mb-6">
+            <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">Biodiversidad</span>
+            <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">Inmersión cultural</span>
+            <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">Aventura y paraíso</span>
+          <h2 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
+            COSTA RICA
+            <br>
+             <span class="text-accent-300">Biodiversidad pura</span>
+          </h2>
+          <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed text-shadow">
+            Explora con nosotros la Península de Osa, Corcovado y los bosques nubosos de Monteverde; amaneceres en la selva, ríos claros y encuentros respetuosos con la vida salvaje.
+          </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Intro Text Section -->
+
+<section class="py-24 px-6 md:px-12 max-w-4xl mx-auto text-center bg-background">
+      <div class="w-px h-16 bg-secondary/30 mx-auto mb-8"></div>
+      <p class="text-2xl md:text-3xl font-satoshi leading-relaxed text-text-secondary">
+        <span class="font-bold italic">Costa Rica</span> es un país donde la naturaleza manda: selvas infinitas, volcanes activos, fauna salvaje y playas vírgenes en ambos océanos. Un destino perfecto para viajeros que buscan aventura, sostenibilidad y conexión real con la vida local.
+      </p>
+</section>
+
+<!-- Features Section -->
+<?php
+$featuresData = [
+  ['id' => '1', 'title' => 'Naturaleza Salvaje', 'description' => 'El 5% de la biodiversidad mundial en un solo lugar.', 'icon' => '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 6.5-2 11l-3 3"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>'],
+  ['id' => '2', 'title' => 'Dos Océanos', 'description' => 'Playas caribeñas de coral y olas del Pacífico en el mismo viaje.', 'icon' => '<path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1C7 13 7 11 9.5 11c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1C7 19 7 17 9.5 17c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>'],
+  ['id' => '3', 'title' => 'Cultura Tica', 'description' => 'La auténtica hospitalidad del "Pura Vida" te espera.', 'icon' => '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'],
+  ['id' => '4', 'title' => 'Aventura Real', 'description' => 'Rafting de clase mundial, canopy entre nubes y trekking volcánico.', 'icon' => '<circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>'],
+  ['id' => '5', 'title' => 'Biodiversidad', 'description' => 'Observa perezosos, tucanes y jaguares en su hábitat.', 'icon' => '<path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>'],
+  ['id' => '6', 'title' => 'Viaje Responsable', 'description' => 'Pioneros en ecoturismo y sostenibilidad global.', 'icon' => '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>']
+];
+?>
+
+<section class="py-20 bg-background">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-satoshi text-text-primary mb-4">Lo que hace <span class="text-primary">único</span> a este país</h2>
+      <p class="text-text-secondary max-w-xl mx-auto">Razones para perderse y encontrarse en Costa Rica.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <?php foreach ($featuresData as $feature): ?>
+      <div class="group p-8 border border-gray-100 hover:border-primary/30 rounded-2xl bg-surface/20 hover:bg-white transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+        <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <?php echo $feature['icon']; ?>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-text-primary mb-3 font-satoshi"><?php echo $feature['title']; ?></h3>
+        <p class="text-text-secondary leading-relaxed"><?php echo $feature['description']; ?></p>
+      </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- Experiences Carousel Section -->
+<?php
+$ukiyoCarouselItems = [
+    [
+        'id' => '1',
+        'title' => 'Corcovado',
+        'description' => 'La joya de la Península de Osa: selva primaria, playas salvajes y muchísima fauna. El lugar más intenso biológicamente.',
+        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-rana-ojos-rojos.jpg',
+        'tag' => 'Península de Osa'
+    ],
+    [
+        'id' => '2',
+        'title' => 'Monteverde',
+        'description' => 'El bosque nuboso más conocido: puentes colgantes, niebla, orquídeas y aves únicas en un clima fresco.',
+        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-monteverde.jpg',
+        'tag' => 'Bosque Nuboso'
+    ],
+    [
+        'id' => '3',
+        'title' => 'Tortuguero',
+        'description' => 'La Costa Rica de canales: selva, agua y Caribe. Safaris en bote y desove de tortugas en temporada.',
+        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-atardecer.jpg',
+        'tag' => 'Caribe Norte'
+    ],
+    [
+        'id' => '4',
+        'title' => 'La Fortuna',
+        'description' => 'Base para explorar el Volcán Arenal: cataratas, termales relajantes y rutas de senderismo con vistas.',
+        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-rio-celeste.jpg',
+        'tag' => 'Volcán Arenal'
+    ],
+    [
+        'id' => '5',
+        'title' => 'Puerto Viejo',
+        'description' => 'El Caribe Sur más bohemio: selva pegada al mar, ritmo afrocaribeño y el Parque Nacional Cahuita.',
+        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-mono.jpg',
+        'tag' => 'Caribe Sur'
+    ],
+    [
+        'id' => '6',
+        'title' => 'Manuel Antonio',
+        'description' => 'Playas paradisíacas y selva tropical en perfecta armonía. Monos capuchinos y perezosos a metros del mar.',
+        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-rana-ojos-rojos.jpg',
+        'tag' => 'Pacífico Central'
+    ],
+    [
+        'id' => '7',
+        'title' => 'Río Celeste',
+        'description' => 'El río de aguas turquesas más impresionante del país. Naturaleza volcánica en estado puro.',
+        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-rio-celeste.jpg',
+        'tag' => 'Tenorio'
+    ],
+    [
+        'id' => '8',
+        'title' => 'Guanacaste',
+        'description' => 'Playas vírgenes del Pacífico, surf de clase mundial y atardeceres inolvidables.',
+        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-atardecer.jpg',
+        'tag' => 'Pacífico Norte'
+    ]
+];
+?>
+
+<section class="py-24 bg-background overflow-hidden relative">
+    <div class="container mx-auto px-4 mb-12 flex flex-col md:flex-row justify-between items-end gap-6">
+        <div>
+            <span class="uppercase tracking-widest text-primary text-sm font-semibold mb-2 block font-satoshi">Imperdibles</span>
+            <h2 class="text-4xl md:text-5xl font-satoshi text-text-primary">Experiencias Ukiyo</h2>
+
+        </div>
+        <div class="flex gap-4">
+            <button id="scroll-left" class="p-3 border border-text-primary/20 rounded-full hover:bg-primary hover:text-white text-text-primary transition-colors duration-300" aria-label="Anterior">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m12 19-7-7 7-7"/>
+                    <path d="M19 12H5"/>
+                </svg>
+            </button>
+            <button id="scroll-right" class="p-3 border border-text-primary/20 rounded-full hover:bg-primary hover:text-white text-text-primary transition-colors duration-300" aria-label="Siguiente">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"/>
+                    <path d="m12 5 7 7-7 7"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Carousel Container -->
+    <div 
+        id="experiences-carousel"
+        class="flex gap-6 px-4 md:px-8 pb-12"
+        style="overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; scroll-behavior: smooth;"
+    >
+        <style>
+            #experiences-carousel::-webkit-scrollbar {
+                display: none;
+            }
+            .carousel-card {
+                transition: transform 0.3s ease;
+            }
+            .carousel-card:hover {
+                transform: translateY(-10px);
+            }
+            .carousel-card:hover .carousel-card-content {
+                transform: translateY(-10px);
+            }
+        </style>
+
+        <?php 
+
+        foreach ($ukiyoCarouselItems as $expItem): 
+
+            $imageUrl = get_template_directory_uri() . $expItem['imagePath'];
+        ?>
+        <div 
+            style="
+                flex-shrink: 0;
+                width: 85vw;
+                max-width: 400px;
+                height: 500px;
+                background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('<?php echo esc_url($imageUrl); ?>');
+                background-size: cover;
+                background-position: center;
+                border-radius: 1.5rem;
+                overflow: hidden;
+                position: relative;
+            "
+            class="carousel-card snap-center cursor-pointer"
+        >
+            <!-- Content -->
+            <div class="carousel-card-content" style="position: absolute; bottom: 0; left: 0; padding: 2rem; width: 100%; transition: transform 0.3s ease;">
+                <div style="color: #ff6b6b; font-size: 12px; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 600;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline;">
+                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    <?php echo esc_html($expItem['tag']); ?>
+                </div>
+                <h3 style="font-size: 2rem; margin-bottom: 0.75rem; color: white; font-weight: 600;"><?php echo esc_html($expItem['title']); ?></h3>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    <?php echo esc_html($expItem['description']); ?>
+                </p>
+
+            </div>
+        </div>
+        <?php endforeach; ?>
+
     </div>
 </section>
 
-<!-- Quick Info Bar -->
-<section class="bg-white py-8 border-b border-surface">
-    <div class="container mx-auto px-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            <div class="text-center">
-                <div class="w-12 h-12 bg-primary-100 text-primary rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                </div>
-                <h3 class="font-crimson text-lg text-text-primary">Recomendación</h3>
-                <p class="text-text-secondary">+15 días</p>
-            </div>
-            <div class="text-center">
-                <div class="w-12 h-12 bg-secondary-100 text-secondary rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                    </svg>
-                </div>
-                <h3 class="font-crimson text-lg text-text-primary">Ubicación</h3>
-                <p class="text-text-secondary">Costa Rica</p>
-            </div>
-            <div class="text-center">
-                <div class="w-12 h-12 bg-accent-100 text-accent rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>
-                    </svg>
-                </div>
-                <h3 class="font-crimson text-lg text-text-primary">Grupo</h3>
-                <p class="text-text-secondary">En solitario, en pareja o en amigos</p>
-            </div>
-            <div class="text-center">
-                <div class="w-12 h-12 bg-primary-100 text-primary rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                    </svg>
-                </div>
-                <h3 class="font-crimson text-lg text-text-primary">Mejor Época</h3>
-                <p class="text-text-secondary">Abr-Sep</p>
-            </div>
-        </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.getElementById('experiences-carousel');
+    const leftBtn = document.getElementById('scroll-left');
+    const rightBtn = document.getElementById('scroll-right');
+
+    if (carousel && leftBtn && rightBtn) {
+        // Debug: Check if carousel is scrollable
+        console.log('Carousel dimensions:', {
+            scrollWidth: carousel.scrollWidth,
+            clientWidth: carousel.clientWidth,
+            isScrollable: carousel.scrollWidth > carousel.clientWidth,
+            overflowX: window.getComputedStyle(carousel).overflowX
+        });
+
+        // Calculate scroll amount based on card width + gap
+        function getScrollAmount() {
+            const firstCard = carousel.querySelector('.carousel-card');
+            if (firstCard) {
+                const cardWidth = firstCard.offsetWidth;
+                const gap = 24; // gap-6 = 24px
+                console.log('Card width:', cardWidth, 'Gap:', gap, 'Total:', cardWidth + gap);
+                return cardWidth + gap;
+            }
+            return 424; // fallback: 400px card + 24px gap
+        }
+
+        leftBtn.addEventListener('click', () => {
+            const amount = getScrollAmount();
+            console.log('Scroll left:', amount, 'Current scroll:', carousel.scrollLeft);
+            carousel.scrollBy({ left: -amount, behavior: 'smooth' });
+            setTimeout(() => {
+                console.log('After scroll left, new position:', carousel.scrollLeft);
+            }, 500);
+        });
+
+        rightBtn.addEventListener('click', () => {
+            const amount = getScrollAmount();
+            console.log('Scroll right:', amount, 'Current scroll:', carousel.scrollLeft);
+            carousel.scrollBy({ left: amount, behavior: 'smooth' });
+            setTimeout(() => {
+                console.log('After scroll right, new position:', carousel.scrollLeft);
+            }, 500);
+        });
+    }
+});
+</script>
+
+<!-- AUTORES (mini bios) -->
+  <section class="py-20 bg-background">
+  <div class="container mx-auto px-6">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-satoshi text-text-primary mb-4">Conoce a nuestros <span class="text-primary">anfitriones</span></h2>
+      <p class="text-text-secondary max-w-xl mx-auto">Un viaje no son solo lugares, son personas. En Ukiyo, trabajamos con guías que no solo muestran el camino, sino que comparten su alma y el amor por su tierra.</p>
     </div>
-</section>
 
-<!-- Day-by-Day Itinerary -->
-<section class="py-20 bg-surface">
-    <div class="relative mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-display font-crimson text-text-primary mb-4">
-                Nuestros <span class="text-primary">imprescindibles</span>
-            </h2>
-            <p class="text-lg text-text-secondary max-w-2xl mx-auto">
-                Cada uno de estos lugares dejó un maravilloso recuerdo en nuestras retinas
-            </p>
+    <div class="grid gap-8 md:grid-cols-4">
+
+      <!-- CARD LUIS -->
+      <article class="rounded-2xl border-2 border-black bg-background backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
+
+        <!-- Imagen más pequeña -->
+        <div class="aspect-[4/3]">
+          <img
+            src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-luis-acuna.jpg"
+            alt="Luis Acuña, guía costarricense"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] mask-image"
+          />
         </div>
 
-            <!-- Day 1 -->
-            <div class="mb-12">
-                <div class="bg-white/90 border border-surface/40 rounded-2xl overflow-hidden shadow-soft">
-                    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
-                        <!-- Left content -->
-                        <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
-                            <div>
-                                <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">CORCOVADO</h1>
-                                <p class="mb-6">Corcovado es la joya de la Península de Osa y donde la naturaleza de Costa Rica se muestra sin filtros: selva primaria, playas salvajes y muchísima fauna.</p>
-                                <p>Te llevamos con guía naturalista para recorrer los senderos, buscar guacamayos, monos y, con suerte, tapires, y vivir la parte más salvaje del viaje.</p>
-                                <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
-                                <div class="grid sm:grid-cols-2 gap-6">
-                                    <!-- Trip detail -->
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">CORCOVADO</span>?</h4>
-                                    </div>
-                                    <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Selva primaria:</strong> uno de los lugares más biodiversos del planeta.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Avistamiento de fauna:</strong> guacamayos, monos, perezosos y más.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Senderos costeros:</strong> selva que llega hasta el mar.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Lodges sostenibles:</strong> integración total con la naturaleza.</span>
-                                    </div>
-                                </div>
-                                    <!-- Services provided
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">Incluye</h4>
-                                        <ul class="space-y-2 text-sm text-text-secondary">
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Jeep 4x4 al amanecer
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Guía local
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Miradores principales
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Asistencia Ukiyo
-                                            </li>
-                                        </ul>
-                                    </div> -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Right image -->
-                        <div class="relative min-h-[280px] lg:min-h-full overflow-hidden">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-rana-ojos-rojos.jpg" alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo" class="w-full h-full mask-left" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
-                            <div class="absolute"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Day 2 y 3 -->
-
-            <div class="mb-12">
-                <div class="bg-white/90 border border-surface/40 rounded-2xl overflow-hidden shadow-soft">
-                    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
-                        
-                        <!-- Imagen a la izquierda -->
-                        <div class="relative min-h-[280px] lg:min-h-full overflow-hidden">
-                            <img
-                                src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-monteverde.jpg"
-                                alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo"
-                                class="w-full h-full object-cover mask-right"
-                                loading="lazy"
-                                onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;"
-                            />
-                        </div>
-
-                        <!-- Texto a la derecha -->
-                        <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
-                            <div>
-                                <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">MONTEVERDE</h1>
-                                <p class="mb-6">Monteverde es el bosque nuboso más conocido de Costa Rica: puentes colgantes, niebla, orquídeas y aves que solo viven aquí.</p>
-                                <p>Incluimos caminata guiada y tiempo libre para disfrutar del clima fresco de montaña, cafeterías y productos locales.</p>
-                                <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
-                                <div class="grid sm:grid-cols-2 gap-6">
-                                    <!-- Trip detail -->
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">MONTEVERDE</span>?</h4>
-                                    </div>
-                                    <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Bosque nuboso:</strong> senderos entre niebla y vegetación densa.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Puentes colgantes:</strong> vistas sobre el dosel del bosque.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Fauna y aves:</strong> posibilidad de ver quetzal según época.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Productos locales:</strong> café, queso y artesanía de montaña.</span>
-                                    </div>
-                                </div>
-                                    <!-- Services provided
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">Incluye</h4>
-                                        <ul class="space-y-2 text-sm text-text-secondary">
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Jeep 4x4 al amanecer
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Guía local
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Miradores principales
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Asistencia Ukiyo
-                                            </li>
-                                        </ul>
-                                    </div> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-12">
-                <div class="bg-white/90 border border-surface/40 rounded-2xl overflow-hidden shadow-soft">
-                    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
-                        <!-- Left content -->
-                        <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
-                            <div>
-                                <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">TORTUGUERO</h1>
-                                <p class="mb-6">Tortuguero es la Costa Rica de canales: selva, agua y Caribe. Solo se llega en bote o avioneta y eso lo hace especial.</p>
-                                <p>Haremos el safari en bote al amanecer para ver caimanes, monos y aves, y según la temporada podrás presenciar el desove de tortugas.</p>
-                                <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
-                                <div class="grid sm:grid-cols-2 gap-6">
-                                    <!-- Trip detail -->
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">TORTUGUERO</span>?</h4>
-                                    </div>
-                                    <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Canales al amanecer:</strong> observación de fauna desde el agua.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Pueblo caribeño:</strong> vida local y ritmo tranquilo.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Desove de tortugas:</strong> de julio a octubre.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Lodges en la selva:</strong> dormir rodeado de sonidos naturales.</span>
-                                    </div>
-                                </div>
-                                    <!-- Services provided
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">Incluye</h4>
-                                        <ul class="space-y-2 text-sm text-text-secondary">
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Jeep 4x4 al amanecer
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Guía local
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Miradores principales
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Asistencia Ukiyo
-                                            </li>
-                                        </ul>
-                                    </div> -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Right image -->
-                        <div class="relative min-h-[280px] lg:min-h-full overflow-hidden">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-atardecer.jpg" alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo" class="w-full h-full mask-left" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
-                            <div class="absolute"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Day 4 y 5 -->
-
-            <div class="mb-12">
-                <div class="bg-white/90 border border-surface/40 rounded-2xl overflow-hidden shadow-soft">
-                    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
-                        
-                        <!-- Imagen a la izquierda -->
-                        <div class="relative min-h-[280px] lg:min-h-full overflow-hidden">
-                            <img
-                                src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-rio-celeste.jpg"
-                                alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo"
-                                class="w-full h-full object-cover mask-right"
-                                loading="lazy"
-                                onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;"
-                            />
-                        </div>
-
-                        <!-- Texto a la derecha -->
-                        <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
-                            <div>
-                                <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">LA FORTUNA</h1>
-                                <p class="mb-6">La Fortuna es la base para explorar el Volcán Arenal: cataratas, termales y rutas fáciles con vistas al volcán.</p>
-                                <p>Es la parte más relajada del viaje y donde solemos dejar tiempo libre para que disfrutes del hotel o actividades opcionales.</p>
-                                <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
-                                <div class="grid sm:grid-cols-2 gap-6">
-                                    <!-- Trip detail -->
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">LA FORTUNA</span>?</h4>
-                                    </div>
-                                    <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Catarata La Fortuna:</strong> baño en agua fresca.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Volcán Arenal:</strong> senderos y miradores.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Termales:</strong> relajación después de las excursiones.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Actividades:</strong> tirolina, rafting suave o puentes colgantes.</span>
-                                    </div>
-                                </div>
-                                    <!-- Services provided
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">Incluye</h4>
-                                        <ul class="space-y-2 text-sm text-text-secondary">
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Jeep 4x4 al amanecer
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Guía local
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Miradores principales
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Asistencia Ukiyo
-                                            </li>
-                                        </ul>
-                                    </div> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-12">
-                <div class="bg-white/90 border border-surface/40 rounded-2xl overflow-hidden shadow-soft">
-                    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
-                        <!-- Left content -->
-                        <div class="p-6 lg:p-10 flex flex-col justify-between gap-6">
-                            <div>
-                                <h1 class="text-display font-rowdies text-text-primary tracking-tight mb-2">PUERTO VIEJO</h1>
-                                <p class="mb-6">El Caribe Sur (Puerto Viejo, Cahuita, Manzanillo) es la parte más bohemia y relajada de Costa Rica: selva pegada al mar y ritmo afrocaribeño.</p>
-                                <p>Lo incluimos para que termines el viaje en la playa, con buena gastronomía y la posibilidad de visitar el Parque Nacional Cahuita.</p>
-                                <div class="h-px w-12 bg-text-secondary/30 mb-6"></div>
-                                <div class="grid sm:grid-cols-2 gap-6">
-                                    <!-- Trip detail -->
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">¿QUÉ NOS OFRECE <span class="text-primary">CARIBE SUR</span>?</h4>
-                                    </div>
-                                    <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Parque Nacional Cahuita:</strong> sendero costero con fauna.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Playas de Punta Uva / Manzanillo:</strong> aguas tranquilas y paisaje.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Gastronomía afrocaribeña:</strong> rice & beans, coco y especias.</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="text-text-secondary"><strong>Ambiente relajado:</strong> perfecto para cerrar la ruta.</span>
-                                    </div>
-                                </div>
-                                    <!-- Services provided
-                                    <div>
-                                        <h4 class="text-sm font-semibold tracking-wide text-text-primary mb-3 uppercase">Incluye</h4>
-                                        <ul class="space-y-2 text-sm text-text-secondary">
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Jeep 4x4 al amanecer
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Guía local
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Miradores principales
-                                            </li>
-                                            <li class="flex items-center gap-2">
-                                                <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs">●</span>
-                                                Asistencia Ukiyo
-                                            </li>
-                                        </ul>
-                                    </div> -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Right image -->
-                        <div class="relative min-h-[280px] lg:min-h-full overflow-hidden">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-mono.jpg" alt="Monte Bromo al amanecer en un viaje a Indonesia personalizado con Ukiyo" class="w-full h-full mask-left" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg'; this.onerror=null;" />
-                            <div class="absolute"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!-- What's Included Section -->
-<section class="py-20 bg-white">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-display font-crimson text-text-primary mb-4">
-                Información <span class="text-accent">de interés</span>
-            </h2>
-            <p class="text-lg text-text-secondary max-w-2xl mx-auto">
-                Datos prácticos para preparar tu viaje a Costa Rica con total tranquilidad.
-            </p>
+        <!-- Texto más compacto -->
+        <div class="p-4">
+          <h3 class="text-base font-semibold text-text-primary">
+            Luis · Guía costarricense y fotógrafo
+          </h3>
+          <p class="text-text-secondary mt-1 text-sm leading-relaxed">
+            Lleva años esperando la luz justa en humedales y bosques tropicales. 
+            Su Pantanal es silencio, paciencia y respeto por la fauna.
+          </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <!-- Moneda local -->
-            <div class="text-center">
-                <div class="w-16 h-16 bg-primary-100 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .843-3 1.882 0 1.04 1.343 1.882 3 1.882s3 .843 3 1.882C15 14.843 13.657 15 12 15m0-7c1.11 0 2.08.402 2.6 1M12 4v2m0 12v2m8-10a8 8 0 11-16 0 8 8 0 0116 0z" />
-                    </svg>
-                </div>
-                <h3 class="text-lg font-crimson text-text-primary mb-2">Moneda</h3>
-                <p class="text-text-secondary text-sm">Colón costarricense (CRC). Se acepta USD en muchas zonas turísticas. Recomendable llevar tarjeta.</p>
-            </div>
+      </article>
 
-            <!-- Hora local -->
-            <div class="text-center">
-                <div class="w-16 h-16 bg-secondary-100 text-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                </div>
-                <h3 class="text-lg font-crimson text-text-primary mb-2">Hora local</h3>
-                <p class="text-text-secondary text-sm">Costa Rica suele tener -7 h respecto a España (península) cuando España está en horario de verano, y -6 h el resto del año.</p>
-            </div>
-
-            <!-- Mejor época -->
-            <div class="text-center">
-                <div class="w-16 h-16 bg-accent-100 text-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .843-3 1.882C9 10.96 10.343 12 12 12s3 .843 3 1.882C15 14.843 13.657 15 12 15m0-7c1.11 0 2.08.402 2.6 1M12 4v2m0 12v2m8-10a8 8 0 11-16 0 8 8 0 0116 0z" />
-                    </svg>
-                </div>
-                <h3 class="text-lg font-crimson text-text-primary mb-2">Mejor época</h3>
-                <p class="text-text-secondary text-sm">De diciembre a abril es la temporada más seca. De mayo a noviembre hay más lluvia pero selva más verde.</p>
-            </div>
-
-            <!-- Visado y entrada -->
-            <div class="text-center">
-                <div class="w-16 h-16 bg-primary-100 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 1.657-1.343 3-3 3H5l-2 2V5a2 2 0 012-2h6a2 2 0 012 2v4zm0 0h2a2 2 0 012 2v1m-2 4l2 2 4-4" />
-                    </svg>
-                </div>
-                <h3 class="text-lg font-crimson text-text-primary mb-2">Entrada al país</h3>
-                <p class="text-text-secondary text-sm">Para españoles: estancia turística hasta 90 días sin visado, pasaporte en vigor y vuelo de salida.</p>
-            </div>
-
-            <!-- Electricidad -->
-            <div class="text-center">
-                <div class="w-16 h-16 bg-secondary-100 text-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                </div>
-                <h3 class="text-lg font-crimson text-text-primary mb-2">Electricidad</h3>
-                <p class="text-text-secondary text-sm">110V, enchufe tipo A/B (como EE.UU.). Necesitarás adaptador desde España.</p>
-            </div>
-
-            <!-- Salud y seguridad -->
-            <div class="text-center">
-                <div class="w-16 h-16 bg-accent-100 text-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .843-3 1.882 0 1.04 1.343 1.882 3 1.882s3 .843 3 1.882C15 14.843 13.657 15 12 15m0-7a4 4 0 110 8 4 4 0 010-8zm0 11v2m0-18v2" />
-                    </svg>
-                </div>
-                <h3 class="text-lg font-crimson text-text-primary mb-2">Salud y seguridad</h3>
-                <p class="text-text-secondary text-sm">No hay vacunas obligatorias desde España. Recomendable seguro de viaje y repelente para zonas de selva.</p>
-            </div>
-        </div>
     </div>
+
+  </div>
 </section>
 
 
 <!-- Practical Information -->
-<section class="py-20 bg-surface">
+<section class="py-20 bg-background">
     <div class="container mx-auto px-6">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-16">
@@ -653,29 +398,27 @@ get_header();
         </div>
     </section>
 
-<!-- CTA Section -->
-<section class="py-20 bg-gradient-primary text-white">
-    <div class="container mx-auto px-6 text-center">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-display font-crimson mb-6">
-                ¿Listo para el viaje de tu vida?
-            </h2>
-            <p class="text-xl mb-8 opacity-90">
-                Respira la esencia de Costa Rica.
-                Aventúrate por bosques nubosos, playas salvajes y pueblos con alma tica en una experiencia personalizada creada por UKIYO.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" 
-                   class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 transition-all duration-300 shadow-soft">
-                    Hablemos de tu viaje
-                </a>
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('experiencias') ) ); ?>" 
-                   class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300">
-                    Ver más destinos
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+  <section class="py-20 bg-background text-text-secondary">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+              <h2 class="text-display font-satoshi mb-6 reveal-on-scroll">
+                    ¿Listo para el viaje de tu vida?
+                </h2>
+              <p class="text-xl mb-8 opacity-90 reveal-on-scroll delay-100">
+                    Deja de soñarlo y empieza a vivirlo. Estamos listos para crear tu aventura perfecta.
+                </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center reveal-on-scroll delay-200">
+                  <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" 
+                    class="btn-primary text-text-secondary">
+                      Hablemos de tu viaje
+                  </a>
+                  <a href="<?php echo esc_url( get_permalink( get_page_by_path('experiencias') ) ); ?>" 
+                    class="btn-primary text-text-secondary">
+                      Ver más destinos
+                  </a>
+              </div>
+          </div>
+      </div>
+  </section>
 
 <?php get_footer(); ?>
