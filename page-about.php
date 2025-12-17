@@ -23,9 +23,9 @@ get_header();
           <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">
             浮世 - El Mundo Flotante
           </span>
-          <h2 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
+          <h1 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
             Creando viajes con <span class="text-accent-300">alma</span>
-          </h2>
+          </h1>
           <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed text-shadow">
           Inspirados en el “mundo flotante” de la cultura japonesa, creamos experiencias que celebran el momento presente y la belleza de lo efímero. UKIYO nace de una forma distinta de entender los viajes: sin prisa, sin poses y sin guiones.
           Creemos que la verdadera belleza está en lo simple, en lo que sucede cuando conectas de verdad con un lugar.
@@ -46,25 +46,23 @@ get_header();
           De un viaje <span class="text-accent">nació una idea</span>
         </h2>
         <p class="text-lg font-satoshi text-text-secondary max-w-2xl mx-auto">
-Todo empezó con una experiencia que nos hizo mirar los viajes de otra manera.
-Descubrimos que lo importante no era el destino, sino lo que sucedía en el camino: las conversaciones, los silencios, las miradas.
-
-Así nació UKIYO: para viajar distinto, para viajar de verdad.        </p>
+Así nació UKIYO.
+De la unión entre la mirada creativa de Víctor, capaz de transformar cualquier destino en emoción visual, y mi obsesión por viajar de forma auténtica, tranquila y consciente, acompañado siempre por Helena, que ha sido parte esencial de este camino.       </p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
         <!-- Founder -->
         <div class="lg:col-span-1">
           <div class="aspect-[3/4] rounded-lg overflow-hidden mb-6">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/agencia-de-viajes-personalizados-ukiyo-victor-garcia-heras.jpg"
-                 alt="Victor García, fundador de Ukiyo, agencia de viajes personalizados"
+            <img src="<?php echo get_template_directory_uri(); ?>/images/travellers/agencia-de-viajes-personalizados-ukiyo-fundadores.jpg"
+                 alt="Sergio García-Heras y Víctor García-Heras, fundadores de Ukiyo, agencia de viajes personalizados"
                  class="w-full h-full object-cover"
                  loading="lazy"
                  onerror="this.src='https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg'; this.onerror=null;" />
           </div>
           <div class="text-center">
-            <h3 class="text-xl font-satoshi-bold text-text-primary mb-2">Victor García-Heras García</h3>
-            <p class="text-text-secondary">Fundador y CEO</p>
+            <h3 class="text-xl font-satoshi-bold text-text-primary mb-2">Victor y Sergio</h3>
+            <p class="text-text-secondary">Fundadores</p>
           </div>
         </div>
 
@@ -72,12 +70,15 @@ Así nació UKIYO: para viajar distinto, para viajar de verdad.        </p>
         <div class="lg:col-span-2">
           <div class="prose prose-lg max-w-none">
             <blockquote class="text-xl font-satoshi text-text-primary mb-8 border-l-4 border-primary pl-6 italic">
-              "Decidí aventurarme en UKIYO cuando descubrí que organizar un viaje no es nada fácil si quieres vivirlo de una manera diferente y alejado del turismo masivo. Quiero que la gente disfrute de experiencias personalizadas sin gastar su tiempo libre. Quiero que simplemente lleguen, descubran y vivan cada instante."
+              "Hoy, UKIYO no es solo nuestra agencia:
+es la suma de nuestras pasiones, nuestras formas de viajar y nuestra manera de entender el mundo.
+Un proyecto familiar que busca que otras personas puedan vivir viajes reales, cuidados, lejos de lo masivo y cerca de lo esencial."
             </blockquote>
             <div class="space-y-6 text-text-secondary">
-              <p>Victor nació en Madrid y desde joven ha sentido pasión por viajar y explorar culturas distintas. A lo largo de los años, ha combinado su espíritu aventurero con su canal de Youtube de una manera muy humilde...</p>
-              <p>Tras descubrir lo complicado que puede ser organizar viajes verdaderamente personalizados y enriquecedores, decidió fundar UKIYO...</p>
-              <p>UKIYO nace como puente entre cultura, tradición y lugares mágicos...</p>
+              <p>Somos dos hermanos con caminos muy distintos, pero unidos por una misma forma de ver el mundo.</p>
+              <p>Víctor, creador de contenido y eterno buscador de historias, lleva años capturando momentos que inspiran a viajar.</p>
+              <p>Sergio, un viajero apasionado que recorre el mundo junto a Helena y que ha encontrado en cada viaje una forma de vida, una manera de comprender la belleza de lo auténtico.</p>
+              <p>Durante años viajamos por separado, aprendiendo, descubriendo y viviendo experiencias que, sin saberlo, nos estaban llevando exactamente al mismo lugar: crear algo juntos.</p>
             </div>
           </div>
         </div>
@@ -392,7 +393,7 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
             <div class="flex-1 pr-8 text-right">
               <h3 class="text-xl font-satoshi-bold text-text-primary mb-2">2023 - Abriendo horizontes</h3>
               <p class="text-text-secondary">
-                Tras una primera aventura en Latinoamérica, Sergio y Helena preparan un viaje que rompe los moldes de los viajes tradicionales. Se convierte en el viaje que cambia sus vidas: Indonesia.
+                Tras una primera aventura en Latinoamérica, Sergio y Helena preparan un viaje que rompe los moldes de los viajes tradicionales. Se convierte en el viaje que cambia sus vidas: Indonesia. Mientras tanto, Víctor comienza a involucrarse desde la creatividad, documentando y dando forma visual a cada una de sus experiencias a través de Youtube.
               </p>
             </div>
             <div class="w-4 h-4 bg-accent rounded-full border-4 border-white shadow-soft relative z-10"></div>
@@ -406,7 +407,7 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
             <div class="flex-1 pl-8">
               <h3 class="text-xl font-satoshi-bold text-text-primary mb-2">2024 - Primeros viajes organizados</h3>
               <p class="text-text-secondary">
-                Tras vivir sus viajes desde RRSS, los primeros amigos nos preguntan sobre la posibilidad de organizar sus viajes.
+                A través de redes sociales, amigos y conocidos empiezan a interesarse por sus rutas y experiencias. Les piden ayuda para organizar sus propios viajes, y aquí —sin planearlo— comienza a formarse la semilla de un proyecto.
               </p>
             </div>
           </div>
@@ -416,7 +417,7 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
             <div class="flex-1 pr-8 text-right">
               <h3 class="text-xl font-satoshi-bold text-text-primary mb-2">2025 - ¡A la aventura!</h3>
               <p class="text-text-secondary">
-                Decidimos abrir nuestra web. Desde una perspectiva humilde, y organizando sólo viajes en los que hayamos estado. Nuestra misión: asegurar una buena experiencia y calidad.
+                Sergio, Helena y Víctor dan el paso definitivo y nace la web de UKIYO. Lo hacen desde la humildad, organizando únicamente viajes que conocen de primera mano, fieles a un principio innegociable: ofrecer experiencias reales, cuidadas y de calidad.
               </p>
             </div>
             <div class="w-4 h-4 bg-primary rounded-full border-4 border-white shadow-soft relative z-10"></div>

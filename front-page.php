@@ -50,22 +50,35 @@ get_header(); ?>
             <!-- Slide <?php echo $index + 1; ?> -->
             <div class="hero-slide absolute inset-0 w-full h-full transition-opacity duration-300 <?php echo $index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'; ?>">
                 <!-- Fondo -->
-                <div class="absolute inset-0 w-full h-full">
-                    <img src="<?php echo esc_url($slide['image']); ?>" 
-                         alt="<?php echo esc_attr($slide['alt']); ?>" 
-                         class="w-full h-full object-cover" loading="lazy"
-                         onerror="this.src='https://images.pexels.com/photos/1450360/pexels-photo-1450360.jpeg?auto=compress&cs=tinysrgb&w=2940&h=1960&dpr=2'; this.onerror=null;" />
-                    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
+               <div class="absolute inset-0 w-full h-full">
+                <img 
+                    src="<?php echo esc_url($slide['image']); ?>"
+                    alt="<?php echo esc_attr($slide['alt']); ?>"
+                    class="w-full h-full object-cover"
+                    fetchpriority="<?php echo $index === 0 ? 'high' : 'low'; ?>"
+                    loading="<?php echo $index === 0 ? 'eager' : 'lazy'; ?>"
+                    decoding="async"
+                    sizes="100vw"
+                    onerror="this.src='https://images.pexels.com/photos/1450360/pexels-photo-1450360.jpeg?auto=compress&cs=tinysrgb&w=2940&h=1960&dpr=2'; this.onerror=null;"
+                />
+                <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
                 </div>
 
                 <!-- Contenido Hero - Centrado -->
                 <div class="relative z-10 h-full flex items-center justify-center">
                     <div class="container mx-auto px-6">
                         <div class="max-w-4xl mx-auto text-center">
+                            <?php if ($index === 0) : ?>
                             <h1 class="text-4xl md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
                                 <?php echo $slide['title']; ?><br />
                                 <?php echo $slide['subtitle']; ?>
                             </h1>
+                            <?php else : ?>
+                            <div class="text-4xl md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
+                                <?php echo $slide['title']; ?><br />
+                                <?php echo $slide['subtitle']; ?>
+                            </div>
+                            <?php endif; ?>
                             <p class="text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed text-shadow">
                                 <?php echo $slide['description']; ?>
                             </p>
@@ -249,7 +262,7 @@ get_header(); ?>
 
                 <!-- Pasos / proceso -->
                 <div class="space-y-6">
-                    <div class="card flex gap-4 items-start reveal-on-scroll delay-100">
+                    <div class="card flex gap-4 items-start bg-background reveal-on-scroll delay-100">
                         <div class="w-10 h-10 rounded-full btn-primary flex items-center justify-center text-secondary font-semibold">1</div>
                         <div>
                             <h3 class="font-semibold text-text-primary mb-1">Cuéntanos qué te apetece</h3>
@@ -258,7 +271,7 @@ get_header(); ?>
                             </p>
                         </div>
                     </div>
-                    <div class="card flex gap-4 items-start reveal-on-scroll delay-200">
+                    <div class="card flex gap-4 items-start bg-background reveal-on-scroll delay-200">
                         <div class="w-10 h-10 rounded-full btn-primary flex items-center justify-center text-secondary font-semibold">2</div>
                         <div>
                             <h3 class="font-semibold text-text-primary mb-1">Diseñamos tu ruta ideal</h3>
@@ -267,7 +280,7 @@ get_header(); ?>
                             </p>
                         </div>
                     </div>
-                    <div class="card flex gap-4 items-start reveal-on-scroll delay-300">
+                    <div class="card flex gap-4 items-start bg-background reveal-on-scroll delay-300">
                         <div class="w-10 h-10 rounded-full btn-primary flex items-center justify-center text-secondary font-semibold">3</div>
                         <div>
                             <h3 class="font-semibold text-text-primary mb-1">Reservas seguras y acompañamiento</h3>
@@ -361,38 +374,6 @@ get_header(); ?>
     <section class="py-20 bg-background">
         <div class="container mx-auto px-6">
             <div class="grid gap-12 lg:grid-cols-2 items-center">
-
-            <!-- Pasos / proceso -->
-                <div class="space-y-6">
-                    <div class="card flex gap-4 items-start reveal-on-scroll delay-100">
-                        <div class="w-10 h-10 rounded-full btn-primary flex items-center justify-center text-secondary font-semibold">1</div>
-                        <div>
-                            <h3 class="font-semibold text-text-primary mb-1">Elige tu viaje de autor</h3>
-                            <p class="text-text-secondary text-sm">
-                                Explora los itinerarios diseñados por personas locales que conocen cada rincón de su destino. Cada viaje tiene su propia personalidad.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card flex gap-4 items-start reveal-on-scroll delay-200">
-                        <div class="w-10 h-10 rounded-full btn-primary flex items-center justify-center text-secondary font-semibold">2</div>
-                        <div>
-                            <h3 class="font-semibold text-text-primary mb-1">Reserva tu plaza</h3>
-                            <p class="text-text-secondary text-sm">
-                                Los viajes de autor tienen fechas fijas y grupos reducidos. Reservas tu plaza y nosotros nos encargamos de toda la organización.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card flex gap-4 items-start reveal-on-scroll delay-300">
-                        <div class="w-10 h-10 rounded-full btn-primary flex items-center justify-center text-secondary font-semibold">3</div>
-                        <div>
-                            <h3 class="font-semibold text-text-primary mb-1">Viaja con el autor local</h3>
-                            <p class="text-text-secondary text-sm">
-                                Viajas acompañado por quien diseñó la ruta. Conoce el destino a través de sus ojos, sus historias y sus contactos locales.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Texto principal -->
                 <div>
                     <h2 class="text-display font-satoshi text-text-primary mb-4 reveal-on-scroll">
@@ -423,6 +404,36 @@ get_header(); ?>
                         <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" class="btn-primary text-text-secondary">
                             Prefiero un viaje a medida
                         </a>
+                    </div>
+                </div>
+                <!-- Pasos / proceso -->
+                <div class="space-y-6">
+                    <div class="card flex gap-4 items-start bg-background reveal-on-scroll delay-100">
+                        <div class="w-10 h-10 rounded-full btn-primary flex items-center justify-center text-secondary font-semibold">1</div>
+                        <div>
+                            <h3 class="font-semibold text-text-primary mb-1">Elige tu viaje de autor</h3>
+                            <p class="text-text-secondary text-sm">
+                                Explora los itinerarios diseñados por personas locales que conocen cada rincón de su destino. Cada viaje tiene su propia personalidad.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card flex gap-4 items-start bg-background reveal-on-scroll delay-200">
+                        <div class="w-10 h-10 rounded-full btn-primary flex items-center justify-center text-secondary font-semibold">2</div>
+                        <div>
+                            <h3 class="font-semibold text-text-primary mb-1">Reserva tu plaza</h3>
+                            <p class="text-text-secondary text-sm">
+                                Los viajes de autor tienen fechas fijas y grupos reducidos. Reservas tu plaza y nosotros nos encargamos de toda la organización.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card flex gap-4 items-start bg-background reveal-on-scroll delay-300">
+                        <div class="w-10 h-10 rounded-full btn-primary flex items-center justify-center text-secondary font-semibold">3</div>
+                        <div>
+                            <h3 class="font-semibold text-text-primary mb-1">Viaja con el autor local</h3>
+                            <p class="text-text-secondary text-sm">
+                                Viajas acompañado por quien diseñó la ruta. Conoce el destino a través de sus ojos, sus historias y sus contactos locales.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

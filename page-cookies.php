@@ -11,7 +11,7 @@ get_header();
 
 <main id="primary" class="relative">
 <!-- Hero Section -->
-<section class="relative pt-24 pb-20 overflow-hidden font-satoshi bg-surface">
+<section class="relative pt-24 pb-20 overflow-hidden font-satoshi bg-background">
   <div class="absolute inset-0 opacity-5">
     <svg class="w-full h-full" viewBox="0 0 100 100" fill="currentColor">
       <pattern id="cultural-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
@@ -24,7 +24,7 @@ get_header();
 
   <div class="container mx-auto px-6 relative z-10">
     <div class="max-w-4xl mx-auto text-center">
-      <span class="inline-block px-4 py-2 bg-primary-100 text-primary rounded-full text-sm font-satoshi font-medium mb-6">
+      <span class="inline-block px-4 py-2 btn-primary text-text-secondary rounded-full text-sm font-satoshi font-medium mb-6">
         Cookies
       </span>
       <h1 class="text-hero font-satoshi-bold text-text-primary mb-6">
@@ -35,7 +35,7 @@ get_header();
 </section>
 
   <!-- Índice + Contenido en dos columnas -->
-  <section class="bg-surface">
+  <section class="bg-background">
     <div class="container mx-auto px-6 md:px-8 py-10 md:py-14 lg:grid lg:grid-cols-12 lg:gap-10">
 
       <!-- Índice lateral fijo -->
@@ -61,12 +61,12 @@ get_header();
       <!-- Contenido -->
       <div class="lg:col-span-8">
         <div class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md shadow-sm p-6 md:p-8">
-          <div class="prose max-w-none prose-headings:text-text-primary prose-p:text-text-secondary prose-li:text-text-secondary leading-relaxed">
+          <div class="prose max-w-none prose-headings:text-text-primary prose-p:text-text-secondary prose-li:text-text-secondary prose-h2:mt-12 prose-h2:pt-8 leading-relaxed">
 
             <h2 id="que-son" class="scroll-mt-28">1. ¿Qué son las cookies?</h2>
             <p>Las cookies son pequeños archivos de datos que se almacenan en tu dispositivo cuando visitas un sitio web. Permiten que el sitio recuerde tus acciones y preferencias durante un tiempo y pueden servir para fines técnicos, analíticos o de personalización.</p>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="responsable" class="scroll-mt-28">2. Responsable</h2>
             <p><strong><?php echo esc_html( get_bloginfo('name') ); ?></strong> ("UKIYO").</p>
@@ -75,7 +75,7 @@ get_header();
               <li><strong>Dirección:</strong> <em>Indica aquí tu dirección fiscal</em></li>
             </ul>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="tipos" class="scroll-mt-28">3. Tipos de cookies</h2>
             <ul>
@@ -85,7 +85,7 @@ get_header();
               <li><strong>Publicitarias/remarketing:</strong> muestran anuncios relevantes basados en tu navegación (solo si lo aceptas).</li>
             </ul>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="finalidades" class="scroll-mt-28">4. Finalidades y base legal</h2>
             <ul>
@@ -95,13 +95,13 @@ get_header();
               <li><strong>Publicidad comportamental</strong> (base legal: consentimiento).</li>
             </ul>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="gestor" class="scroll-mt-28">5. Gestor de consentimiento</h2>
             <p>Al acceder al sitio verás un banner que te permite <strong>aceptar, rechazar o configurar</strong> las cookies no esenciales. Puedes modificar tu elección en cualquier momento desde el enlace <em>“Configurar cookies”</em> situado en el pie de página.</p>
             <p>Hasta que no otorgues consentimiento, no cargaremos cookies analíticas ni publicitarias.</p>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="configuracion" class="scroll-mt-28">6. Cómo configurar o desactivar las cookies</h2>
             <p>Puedes:</p>
@@ -119,17 +119,17 @@ get_header();
               </ul>
             </details>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="terceros" class="scroll-mt-28">7. Cookies de terceros</h2>
             <p>Algunas cookies pueden establecerse por terceros (por ejemplo, herramientas de analítica, mapas o reproductores embebidos). Estos terceros son responsables de sus propias políticas de privacidad/cookies.</p>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="retencion" class="scroll-mt-28">8. Periodo de conservación</h2>
             <p>Las cookies de sesión se eliminan al cerrar el navegador. Las persistentes permanecen durante un periodo definido que no excederá lo necesario para su finalidad (consulta la tabla siguiente).</p>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="tabla" class="scroll-mt-28">9. Tabla de cookies utilizadas</h2>
             <p class="text-sm">Esta tabla es orientativa; actualízala según tu implementación real.</p>
@@ -178,12 +178,12 @@ get_header();
             </div>
             <p class="mt-3 text-xs text-text-tertiary">Si cambias de herramienta de analítica o añades integraciones (mapas, vídeo, chat), recuerda actualizar esta tabla.</p>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="cambios" class="scroll-mt-28">10. Cambios en la política</h2>
             <p>Podemos actualizar esta política para reflejar cambios legales, técnicos o de servicio. Publicaremos la versión vigente en esta página.</p>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="contacto" class="scroll-mt-28">11. Contacto</h2>
             <p>Para cualquier duda, escríbenos a <a href="mailto:<?php echo antispambot( get_option('admin_email') ); ?>"><?php echo antispambot( get_option('admin_email') ); ?></a>.</p>

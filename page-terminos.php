@@ -11,7 +11,7 @@ get_header();
 
 <main id="primary" class="relative">
 <!-- Hero Section -->
-<section class="relative pt-24 pb-20 overflow-hidden font-satoshi bg-surface">
+<section class="relative pt-24 pb-20 overflow-hidden font-satoshi bg-background">
   <div class="absolute inset-0 opacity-5">
     <svg class="w-full h-full" viewBox="0 0 100 100" fill="currentColor">
       <pattern id="cultural-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
@@ -24,7 +24,7 @@ get_header();
 
   <div class="container mx-auto px-6 relative z-10">
     <div class="max-w-4xl mx-auto text-center">
-      <span class="inline-block px-4 py-2 bg-primary-100 text-primary rounded-full text-sm font-satoshi font-medium mb-6">
+      <span class="inline-block px-4 py-2 btn-primary text-text-secondary rounded-full text-sm font-satoshi font-medium mb-6">
         Términos
       </span>
       <h1 class="text-hero font-satoshi-bold text-text-primary mb-6">
@@ -35,7 +35,7 @@ get_header();
 </section>
 
   <!-- Índice + Contenido en diseño de dos columnas -->
-  <section class="bg-surface">
+  <section class="bg-background">
     <div class="container mx-auto px-6 md:px-8 py-10 md:py-14 lg:grid lg:grid-cols-12 lg:gap-10">
 
       <!-- Índice lateral fijo -->
@@ -68,8 +68,8 @@ get_header();
 
       <!-- Contenido -->
       <div class="lg:col-span-8">
-        <div class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md shadow-sm p-6 md:p-8">
-          <div class="prose max-w-none prose-headings:text-text-primary prose-p:text-text-secondary prose-li:text-text-secondary leading-relaxed">
+        <div class="rounded-2xl ring-1 ring-border/60 bg-background backdrop-blur-md shadow-sm p-6 md:p-8">
+          <div class="prose max-w-none prose-headings:text-text-primary prose-p:text-text-secondary prose-li:text-text-secondary prose-h2:mt-12 prose-h2:pt-8 leading-relaxed">
 
             <h2 id="identificacion" class="scroll-mt-28">1. Identificación</h2>
             <p><strong><?php echo esc_html( get_bloginfo('name') ); ?></strong> ("UKIYO").</p>
@@ -79,12 +79,12 @@ get_header();
               <li><strong>Identificación fiscal:</strong> <em>NIF/CIF</em></li>
             </ul>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="objeto" class="scroll-mt-28">2. Objeto del sitio</h2>
             <p>Este sitio ofrece información y servicios de consultoría y organización de viajes personalizados, experiencias culturales y asesoramiento en destinos. La navegación por el sitio implica la aceptación de estos términos.</p>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="uso" class="scroll-mt-28">3. Condiciones de uso</h2>
             <ul>
@@ -93,12 +93,12 @@ get_header();
               <li>Podemos limitar o denegar el acceso si detectamos uso contrario a estos términos.</li>
             </ul>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="cuentas" class="scroll-mt-28">4. Cuenta y acceso</h2>
             <p>Algunas áreas privadas (p. ej., portales de itinerarios) requieren cuenta. Eres responsable de mantener la confidencialidad de tus credenciales y de la actividad realizada con ellas. Notifícanos cualquier acceso no autorizado.</p>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="reservas" class="scroll-mt-28">5. Reservas y pagos</h2>
             <ul>
@@ -107,7 +107,7 @@ get_header();
               <li>Para bloquear disponibilidad, puede solicitarse un anticipo o depósito.</li>
             </ul>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="precios" class="scroll-mt-28">6. Precios y modificaciones</h2>
             <ul>
@@ -115,7 +115,7 @@ get_header();
               <li>Si se producen cambios relevantes antes del pago final, te lo comunicaremos y podrás aceptar o cancelar sin penalización si el cambio es sustancial.</li>
             </ul>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="cancelaciones" class="scroll-mt-28">7. Cancelaciones y cambios</h2>
             <ul>
@@ -124,7 +124,7 @@ get_header();
               <li>Las devoluciones, si proceden, se tramitan por el mismo medio de pago utilizado.</li>
             </ul>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="responsabilidad" class="scroll-mt-28">8. Responsabilidad</h2>
             <ul>
@@ -133,57 +133,57 @@ get_header();
               <li>Respondemos de forma diligente a la organización, selección de proveedores y atención al viajero.</li>
             </ul>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="terceros" class="scroll-mt-28">9. Proveedores y terceros</h2>
             <p>Determinadas experiencias son operadas por terceros (guías, transportes, alojamientos). Sus términos se aplican adicionalmente. Te informaremos de las condiciones relevantes al confirmarse la reserva.</p>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="propiedad" class="scroll-mt-28">10. Propiedad intelectual</h2>
             <p>El contenido del sitio (textos, imágenes, marcas, logotipos, diseños, código) es titularidad de UKIYO o de sus licenciantes. No se permite su reproducción o uso más allá del ámbito personal sin autorización expresa.</p>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="enlaces" class="scroll-mt-28">11. Enlaces externos</h2>
             <p>Este sitio puede enlazar a webs de terceros. UKIYO no controla su contenido ni asume responsabilidad por ellos. El uso de esos sitios queda bajo tu propia responsabilidad.</p>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="datos" class="scroll-mt-28">12. Protección de datos</h2>
             <p>Tratamos los datos conforme al RGPD y normativa aplicable. Para más información, consulta nuestra <a href="<?php echo esc_url( home_url('/politica-de-privacidad') ); ?>">Política de Privacidad</a>.</p>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="cookies" class="scroll-mt-28">13. Cookies</h2>
             <p>Utilizamos cookies propias y de terceros para fines técnicos y analíticos. Puedes gestionar tus preferencias en la <a href="<?php echo esc_url( home_url('/politica-de-cookies') ); ?>">Política de Cookies</a>.</p>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="seguridad" class="scroll-mt-28">14. Seguridad</h2>
             <p>Aplicamos medidas técnicas y organizativas razonables para proteger el sitio y la información, aunque ningún sistema es completamente seguro.</p>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="fuerza" class="scroll-mt-28">15. Fuerza mayor</h2>
             <p>No seremos responsables por retrasos o incumplimientos debidos a causas fuera de nuestro control razonable (fuerza mayor, caso fortuito).</p>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="reclamaciones" class="scroll-mt-28">16. Reclamaciones y atención al cliente</h2>
             <p>Puedes dirigir reclamaciones o solicitudes de información a <a href="mailto:<?php echo antispambot( get_option('admin_email') ); ?>"><?php echo antispambot( get_option('admin_email') ); ?></a>. Responderemos con la mayor diligencia posible.</p>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="ley" class="scroll-mt-28">17. Ley aplicable y jurisdicción</h2>
             <p>Estos términos se rigen por la legislación española. Salvo norma imperativa, las partes se someten a los juzgados y tribunales del domicilio del consumidor o, en su defecto, de Madrid (España).</p>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="cambios" class="scroll-mt-28">18. Modificaciones de los términos</h2>
             <p>Podemos actualizar estas condiciones por motivos legales o de servicio. Publicaremos la versión vigente en esta página e indicaremos la fecha de actualización.</p>
 
-            <hr class="my-8 border-border/50" />
+            <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="contacto" class="scroll-mt-28">19. Contacto</h2>
             <p>Para cualquier duda, escríbenos a <a href="mailto:<?php echo antispambot( get_option('admin_email') ); ?>"><?php echo antispambot( get_option('admin_email') ); ?></a>.</p>

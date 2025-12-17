@@ -23,9 +23,9 @@ get_header();
           <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">
             Reviews
           </span>
-          <h2 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
+          <h1 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
             Historias de nuestros <span class="text-accent-300">viajeros</span>
-          </h2>
+          </h1>
           <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed text-shadow">
           Opiniones reales de viajeros que confiaron en UKIYO. Experiencias auténticas, sostenibles y creadas a medida.       
           </p>

@@ -44,12 +44,12 @@ Viajes auténticos, sostenibles y creados a tu medida.                </p>
 
             <!-- Experiencias -->
             <div>
-                <h4 class="font-crimson text-lg mb-4">Experiencias</h4>
+                <h4 class="font-crimson text-lg mb-4">Destinos</h4>
                 <ul class="space-y-2 text-white/80">
-                    <li><a href="<?php echo esc_url( site_url('/experiences') ); ?>" class="hover:text-accent transition-colors">Transformación cultural</a></li>
-                    <li><a href="<?php echo esc_url( site_url('/sustainability') ); ?>" class="hover:text-accent transition-colors">Renovación natural</a></li>
-                    <li><a href="<?php echo esc_url( site_url('/experiences') ); ?>" class="hover:text-accent transition-colors">Alegría vibrante</a></li>
-                    <li><a href="<?php echo esc_url( site_url('/experiences') ); ?>" class="hover:text-accent transition-colors">Misterio sensorial</a></li>
+                    <li><a href="<?php echo esc_url( site_url('/indonesia') ); ?>" class="hover:text-accent transition-colors">Indonesia</a></li>
+                    <li><a href="<?php echo esc_url( site_url('/costarica') ); ?>" class="hover:text-accent transition-colors">Costa Rica</a></li>
+                    <li><a href="<?php echo esc_url( site_url('/marruecos') ); ?>" class="hover:text-accent transition-colors">Marruecos</a></li>
+                    <li><a href="<?php echo esc_url( site_url('/colombia') ); ?>" class="hover:text-accent transition-colors">Colombia</a></li>
                 </ul>
             </div>
 

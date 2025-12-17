@@ -10,7 +10,7 @@ get_header();
   <section class="relative flex items-center justify-center overflow-hidden" style="min-height: 50vh; padding-top: 8rem; padding-bottom: 4rem;">
     <!-- Background Image -->
     <div class="absolute inset-0 w-full h-full">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/heroimages/viajes-autor-ukiyo-indonesiaarrozal.jpg" 
+      <img src="<?php echo get_template_directory_uri(); ?>/images/indonesia/viajes-a-indonesia-personalizados-islas.jpg" 
            alt="Viajes de autor" 
            class="w-full h-full object-cover mask-image" 
            loading="eager" />
@@ -24,9 +24,9 @@ get_header();
           <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">
             Premium
           </span>
-          <h2 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
+          <h1 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
             El viaje de tu <span class="text-accent-300">vida</span>
-          </h2>
+          </h1>
           <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed text-shadow">
           Descubre los destinos que ya conocemos profundamente, para poderte organizar un viaje de ensueño 
           </p>
@@ -42,81 +42,158 @@ get_header();
 </section> -->
 
 <!-- Experience Cards Grid -->
-<section class="py-12 bg-background">
+<!-- Curated Destinations Accordion -->
+<style>
+    /* Critical styles for Accordion visibility without Tailwind build */
+    .ukiyo-accordion-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        height: auto;
+    }
+    .ukiyo-accordion-card {
+        position: relative;
+        flex: 1;
+        height: 300px; /* Mobile height */
+        border-radius: 0; /* Default no radius for continuity */
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+        display: flex;
+        align-items: flex-end; /* Align content to bottom */
+        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); /* shadow-xl */
+    }
+
+    /* Mobile: Top corners for first, Bottom corners for last */
+    .ukiyo-accordion-card:first-child {
+        border-radius: 1rem 1rem 0 0;
+    }
+    .ukiyo-accordion-card:last-child {
+        border-radius: 0 0 1rem 1rem;
+    }
+    
+    @media (min-width: 1024px) {
+        .ukiyo-accordion-container {
+            flex-direction: row;
+            height: 600px; /* Desktop fixed height */
+        }
+        .ukiyo-accordion-card {
+            height: auto; /* Stretch to fill container */
+        }
+        .ukiyo-accordion-card:hover {
+            flex-grow: 3; /* Expand on hover */
+        }
+
+        /* Desktop: Left corners for first, Right corners for last */
+        .ukiyo-accordion-card {
+            border-radius: 0; /* Reset for desktop switch */
+        }
+        
+        /* Prevent text wrapping/squashing by enforcing min-width on the text container */
+        .ukiyo-accordion-card .absolute.p-8 {
+            min-width: 400px;
+        }
+
+        .ukiyo-accordion-card:first-child {
+            border-radius: 1rem 0 0 1rem;
+        }
+        .ukiyo-accordion-card:last-child {
+            border-radius: 0 1rem 1rem 0;
+        }
+    }
+    
+    /* Overlay transition */
+    .ukiyo-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        transition: background-color 0.5s ease;
+    }
+    .ukiyo-accordion-card:hover .ukiyo-overlay {
+        background-color: rgba(0, 0, 0, 0);
+    }
+</style>
+
+  <section class="py-20 bg-background">
     <div class="container mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Costa Rica -->
-            <article class="group relative text-center rounded-2xl overflow-hidden ring-1 ring-border/60 hover:ring-border transition">
-              <a href="<?php echo esc_url( get_permalink( get_page_by_path('costarica') ) ); ?>" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 rounded-2xl">
-                <figure class="aspect-[16/9] overflow-hidden relative">
-                  <img
-                    src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/viajes-personalizados-por-el-mundo-costa-rica.jpg"
-                    alt="Viaje personalizado a Costa Rica con Ukiyo: selva, volcanes y océano"
-                    class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700 ease-out mask-image"
-                    loading="lazy" decoding="async" />
-                  <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0"></div>
-                </figure>
-                <div class="p-6">
-                  <h3 class="text-2xl font-rowdies text-text-primary group-hover:text-primary transition">Costa Rica</h3>
-                  <p class="mt-2 text-sm text-text-secondary">Selva, volcanes y océano. Pura vida sin prisas.</p>
-                </div>
-              </a>
-            </article>
+      <div class="text-center mb-16">
+        <h2 class="text-display font-satoshi text-text-primary mb-4">
+          Destinos <span class="text-primary">UKIYO</span>
+        </h2>
+        <p class="text-text-secondary max-w-2xl mx-auto">Lugares que conocemos profundamente y que han marcado nuestra historia. Selecciona un destino para descubrir su esencia y ver una propuesta de viaje diseñada para conectar.</p>
+      </div>
 
-            <!-- Colombia -->
-            <article class="group relative text-center rounded-2xl overflow-hidden ring-1 ring-border/60 hover:ring-border transition">
-              <a href="<?php echo esc_url( get_permalink( get_page_by_path('colombia') ) ); ?>" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 rounded-2xl">
-                <figure class="aspect-[16/9] overflow-hidden relative">
-                  <img
-                    src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/viajes-personalizados-por-el-mundo-colombia.jpg"
-                    alt="Viaje personalizado a Colombia con Ukiyo: Cartagena, color y aroma a café"
-                    class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700 ease-out mask-image"
-                    loading="lazy" decoding="async" />
-                  <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0"></div>
-                </figure>
-                <div class="p-6">
-                  <h3 class="text-2xl font-rowdies text-text-primary group-hover:text-primary transition">Colombia</h3>
-                  <p class="mt-2 text-sm text-text-secondary">Ritmo, color y aroma a café. Un país que se vive.</p>
-                </div>
-              </a>
-            </article>
+    <!-- Horizontal Accordion Layout -->
+    <div class="ukiyo-accordion-container">
+        <?php
+        $countries = [
+            [
+                'id' => 'indonesia',
+                'name' => 'Indonesia',
+                'tagline' => 'Tierra de dioses',
+                'image' => '/images/indonesia/viajes-a-indonesia-personalizados-nusa-penida.jpg',
+                'link' => get_permalink( get_page_by_path('indonesia') )
+            ],
+            [
+                'id' => 'costarica',
+                'name' => 'Costa Rica',
+                'tagline' => 'Biodiversidad pura',
+                'image' => '/images/costarica/viajes-a-costa-rica-personalizados-rio-celeste.jpg',
+                'link' => get_permalink( get_page_by_path('costarica') )
+            ],
+            [
+                'id' => 'colombia',
+                'name' => 'Colombia',
+                'tagline' => 'Alegría que se queda',
+                'image' => '/images/destination-mood/viajes-a-colombia-personalizados-cartagena-ciudad-amurallada.jpg',
+                'link' => get_permalink( get_page_by_path('colombia') )
+            ],
+            [
+                'id' => 'marruecos',
+                'name' => 'Marruecos',
+                'tagline' => 'Encrucijada de culturas',
+                'image' => '/images/marruecos/viajes-personalizados-ukiyo-marruecos-aitbenhaddou.jpg',
+                'link' => get_permalink( get_page_by_path('marruecos') )
+            ]
+        ];
 
-            <!-- Indonesia -->
-            <article class="group relative text-center rounded-2xl overflow-hidden ring-1 ring-border/60 hover:ring-border transition">
-              <a href="<?php echo esc_url( get_permalink( get_page_by_path('indonesia') ) ); ?>" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 rounded-2xl">
-                <figure class="aspect-[16/9] overflow-hidden relative">
-                  <img
-                    src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/viajes-personalizados-por-el-mundo-indonesia.jpg"
-                    alt="Viaje personalizado a Indonesia con Ukiyo: tradición, naturaleza y mar de islas"
-                    class="w-full h-full object-cover object-center group-hover:scale-[1.03] transition duration-700 ease-out mask-image"
-                    loading="lazy" decoding="async" />
-                  <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0"></div>
-                </figure>
-                <div class="p-6">
-                  <h3 class="text-2xl font-rowdies text-text-primary group-hover:text-primary transition">Indonesia</h3>
-                  <p class="mt-2 text-sm text-text-secondary">Espiritualidad, tradición y paisajes que impresionan.</p>
-                </div>
-              </a>
-            </article>
+        foreach ($countries as $country): 
+        ?>
+            <a 
+                href="<?php echo esc_url($country['link']); ?>"
+                class="ukiyo-accordion-card group ring-1 ring-slate-900/5 block"
+            >
+                <!-- Background Image -->
+                <img 
+                    src="<?php echo get_template_directory_uri() . $country['image']; ?>" 
+                    alt="<?php echo esc_attr($country['name']); ?>"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                
+                <!-- Overlays -->
+                <div class="ukiyo-overlay"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 lg:opacity-60 lg:group-hover:opacity-80 transition-opacity duration-300"></div>
 
-            <!-- Marruecos -->
-            <article class="group relative text-center rounded-2xl overflow-hidden ring-1 ring-border/60 hover:ring-border transition">
-              <a href="<?php echo esc_url( get_permalink( get_page_by_path('marruecos') ) ); ?>" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 rounded-2xl">
-                <figure class="aspect-[16/9] overflow-hidden relative">
-                  <img
-                    src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/viajes-personalizados-por-el-mundo-marruecos.jpg"
-                    alt="Viaje personalizado a Marruecos con Ukiyo: dunas, zocos y hospitalidad bereber"
-                    class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700 ease-out mask-image"
-                    loading="lazy" decoding="async" />
-                  <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0"></div>
-                </figure>
-                <div class="p-6">
-                  <h3 class="text-2xl font-rowdies text-text-primary group-hover:text-primary transition">Marruecos</h3>
-                  <p class="mt-2 text-sm text-text-secondary">Zocos, desierto y una hospitalidad que no se olvida.</p>
+                <!-- Text Content -->
+                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 p-8 flex flex-col justify-end items-center text-center">
+                    <div class="transform transition-all duration-300 translate-y-0 w-full flex flex-col items-center">
+
+                        <!-- Title (Always visible) -->
+                        <h3 style="font-size: 2rem; margin-bottom: 0px; color: white; font-weight: 600; line-height: 1.1;" class="transition-all duration-300 group-hover:mb-3 whitespace-nowrap">
+                            <?php echo esc_html($country['name']); ?>
+                        </h3>
+
+                        <!-- Description & Button (Hidden by default, expands down on hover) -->
+                        <div class="max-h-0 opacity-0 group-hover:max-h-[200px] group-hover:opacity-100 transition-all duration-500 ease-out overflow-hidden">
+                            <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 15px; margin-bottom: 1rem;">
+                                <?php echo esc_html($country['tagline']); ?>. Descubre los secretos de <?php echo esc_html($country['name']); ?> con un itinerario personalizado.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-              </a>
-            </article>
-        </div>
+            </a>
+        <?php endforeach; ?>
     </div>
 </section>
 

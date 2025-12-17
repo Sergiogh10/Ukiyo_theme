@@ -24,9 +24,9 @@ $uri = get_template_directory_uri();
         
         <!-- Badges -->
         <div class="flex flex-wrap items-center gap-3 mb-6">
-          <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">3 días / 2 noches</span>
-          <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">Atlas + Sahara</span>
-          <span class="bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">Plazas limitadas</span>
+          <span class="btn-primary text-white px-3 py-1 rounded-full text-sm font-medium">3 días / 2 noches</span>
+          <span class="btn-primary text-white px-3 py-1 rounded-full text-sm font-medium">Atlas + Sahara</span>
+          <span class="btn-primary text-white px-3 py-1 rounded-full text-sm font-medium">Plazas limitadas</span>
         </div>
 
         <div class="hero-overlay-box">
@@ -53,7 +53,7 @@ $uri = get_template_directory_uri();
   </div>
 </section>
   <!-- NARRATIVA / HIGHLIGHTS -->
-<section class="py-16 bg-gradient-warm">
+<section class="py-16 bg-background">
   <div class="container mx-auto px-6">
     <header class="text-center max-w-3xl mx-auto mb-12">
       <h2 class="text-4xl font-satoshi text-text-primary tracking-tight">
@@ -72,8 +72,8 @@ $uri = get_template_directory_uri();
     <ul role="list" class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
       <!-- Punto 1 -->
-      <li class="text-center bg-white/60 backdrop-blur-sm rounded-2xl p-8 ring-1 ring-border/60">
-        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+      <li class="text-center bg-background backdrop-blur-sm rounded-2xl p-8 ring-1 ring-border/60">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-background flex items-center justify-center">
           <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
@@ -87,8 +87,8 @@ $uri = get_template_directory_uri();
       </li>
 
       <!-- Punto 2 -->
-      <li class="text-center bg-white/60 backdrop-blur-sm rounded-2xl p-8 ring-1 ring-border/60">
-        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-secondary/10 flex items-center justify-center">
+      <li class="text-center bg-background backdrop-blur-sm rounded-2xl p-8 ring-1 ring-border/60">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-background flex items-center justify-center">
           <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
@@ -102,8 +102,8 @@ $uri = get_template_directory_uri();
       </li>
 
       <!-- Punto 3 -->
-      <li class="text-center bg-white/60 backdrop-blur-sm rounded-2xl p-8 ring-1 ring-border/60">
-        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center">
+      <li class="text-center bg-background backdrop-blur-sm rounded-2xl p-8 ring-1 ring-border/60">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-background flex items-center justify-center">
           <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
@@ -120,13 +120,13 @@ $uri = get_template_directory_uri();
   </div>
 </section>
 
-<section class="py-20 bg-white">
+<section class="py-20 bg-background">
     <!-- Contenido -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-30 container mx-auto px-6 md:px-8 py-10 md:py-14 max-w-8xl">
     <div class="flex flex-col items-start">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viaje-de-autor-a-marruecos-con-guia-local-moha.jpg"
+      <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/autor-moha2.png"
            alt="Moha, guía local amazigh experto del desierto"
-           class="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover ring-1 ring-border/60 bg-white/80" />
+           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] bg-background" />
       <h2 class="mt-4 text-xl font-semibold text-text-primary">Moha</h2>
       <p class="mt-1 text-sm text-text-secondary max-w-xs">
         Guía local amazigh nacido en Merzouga. Conoce cada duna, cada estrella y cada historia del desierto.
@@ -173,9 +173,9 @@ $uri = get_template_directory_uri();
 </section>
 
   <!-- Trip Content -->
-<section class="py-2 bg-white">
+<section class="py-2 bg-background">
   <div class="container mx-auto">
-    <nav class="trip-nav ukiyo-nav flex justify-center border-surface bg-background/80 backdrop-blur-sm py-4">
+    <nav class="trip-nav ukiyo-nav flex justify-center border-surface bg-background backdrop-blur-sm py-4">
       <ul class="flex flex-wrap justify-center space-x-4 md:space-x-10 text-sm md:text-base font-medium">
         <li><a href="#itinerary" class="font-rowdies text-sm md:text-2xl hover:text-primary transition-colors duration-300 nav-active">Itinerario</a></li>
         <li><a href="#includes" class="font-rowdies text-sm md:text-2xl hover:text-primary transition-colors duration-300">¿Qué incluye?</a></li>
@@ -328,14 +328,14 @@ $uri = get_template_directory_uri();
 </section>
 
   <!-- ¿Qué incluye? -->
-<section id="includes" class="py-2 bg-white">
+<section id="includes" class="py-2 bg-background">
   <div class="container mx-auto py-12 md:py-16">
     <div class="grid gap-8 md:grid-cols-2">
 
       <!-- INCLUYE -->
-      <article class="group relative rounded-2xl overflow-hidden border-2 border-secondary bg-white shadow-sm hover:shadow-lg transition flex flex-col">
+      <article class="group relative rounded-2xl overflow-hidden border-2 border-secondary bg-background shadow-sm hover:shadow-lg transition flex flex-col">
         <div class="text-center p-8">
-          <div class="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-5">
+          <div class="w-20 h-20 bg-background rounded-full flex items-center justify-center mx-auto mb-5">
             <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#4CAF50">
               <path d="M7.29417 12.9577L10.5048 16.1681L17.6729 9" stroke="#4CAF50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
               <circle cx="12" cy="12" r="10" stroke="#4CAF50" stroke-width="2"></circle>
@@ -388,10 +388,10 @@ $uri = get_template_directory_uri();
 
       <!-- NO INCLUYE -->
       <article
-        class="group relative rounded-2xl overflow-hidden border-2 bg-white shadow-sm hover:shadow-lg transition flex flex-col"
+        class="group relative rounded-2xl overflow-hidden border-2 bg-background shadow-sm hover:shadow-lg transition flex flex-col"
         style="border-color: #8B1E3F;">
         <div class="text-center p-8">
-          <div class="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-5">
+          <div class="w-20 h-20 bg-background rounded-full flex items-center justify-center mx-auto mb-5">
             <svg class="w-10 h-10" fill="#8B1E3F" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 16q0 3.264 1.28 6.208t3.392 5.12 5.12 3.424 6.208 1.248 6.208-1.248 5.12-3.424 3.392-5.12 1.28-6.208-1.28-6.208-3.392-5.12-5.088-3.392-6.24-1.28q-3.264 0-6.208 1.28t-5.12 3.392-3.392 5.12-1.28 6.208zM4 16q0-3.264 1.6-6.016t4.384-4.352 6.016-1.632 6.016 1.632 4.384 4.352 1.6 6.016-1.6 6.048-4.384 4.352-6.016 1.6-6.016-1.6-4.384-4.352-1.6-6.048zM9.76 20.256q0 0.832 0.576 1.408t1.44 0.608 1.408-0.608l2.816-2.816 2.816 2.816q0.576 0.608 1.408 0.608t1.44-0.608 0.576-1.408-0.576-1.408l-2.848-2.848 2.848-2.816q0.576-0.576 0.576-1.408t-0.576-1.408-1.44-0.608-1.408 0.608l-2.816 2.816-2.816-2.816q-0.576-0.608-1.408-0.608t-1.44 0.608-0.576 1.408 0.576 1.408l2.848 2.816-2.848 2.848q-0.576 0.576-0.576 1.408z"></path>
             </svg>
@@ -448,7 +448,7 @@ $uri = get_template_directory_uri();
 </section>
 
   <!-- FAQs -->
-<section id="faqs" class="py-12 bg-white">
+<section id="faqs" class="py-12 bg-background">
   <div class="container mx-auto px-6 md:px-8 pb-12">
     <h2 class="text-display font-satoshi-bold mb-6 text-center">Preguntas frecuentes</h2>
 
@@ -456,7 +456,7 @@ $uri = get_template_directory_uri();
 
       <!-- Item 1: viaje privado -->
       <!-- Item 1: viaje privado -->
-      <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
+      <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-background backdrop-blur-md">
         <button data-accordion-btn
                 class="w-full flex items-center justify-between text-left px-5 py-4"
                 aria-expanded="false" aria-controls="faq-1" id="faq-1-h">
@@ -474,7 +474,7 @@ $uri = get_template_directory_uri();
       </div>
 
       <!-- Item 2: modificar itinerario -->
-      <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
+      <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-background backdrop-blur-md">
         <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                 aria-expanded="false" aria-controls="faq-2" id="faq-2-h">
           <span class="font-medium text-text-primary">¿Podemos modificar el itinerario?</span>
@@ -491,7 +491,7 @@ $uri = get_template_directory_uri();
       </div>
 
       <!-- Item 3: documentación -->
-      <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
+      <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-background backdrop-blur-md">
         <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                 aria-expanded="false" aria-controls="faq-3" id="faq-3-h">
           <span class="font-medium text-text-primary">¿Qué documentación necesito?</span>
@@ -508,7 +508,7 @@ $uri = get_template_directory_uri();
       </div>
 
       <!-- Item 4: asistencia -->
-      <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
+      <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-background backdrop-blur-md">
         <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                 aria-expanded="false" aria-controls="faq-4" id="faq-4-h">
           <span class="font-medium text-text-primary">¿Habrá asistencia durante el viaje?</span>
@@ -525,7 +525,7 @@ $uri = get_template_directory_uri();
       </div>
 
       <!-- Item 5: precio -->
-      <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
+      <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-background backdrop-blur-md">
         <button data-accordion-btn class="w-full flex items-center justify-between text-left px-5 py-4"
                 aria-expanded="false" aria-controls="faq-5" id="faq-5-h">
           <span class="font-medium text-text-primary">¿Cuál es el precio del viaje?</span>
@@ -550,7 +550,7 @@ $uri = get_template_directory_uri();
       </div>
 
       <!-- Item 6: depósito -->
-      <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-white/80 backdrop-blur-md">
+      <div data-accordion-item class="rounded-2xl ring-1 ring-border/60 bg-background backdrop-blur-md">
         <button data-accordion-btn class="w/w-full flex items-center justify-between text-left px-5 py-4"
                 aria-expanded="false" aria-controls="faq-6" id="faq-6-h">
           <span class="font-medium text-text-primary">¿Cuál es el depósito para reservar?</span>
@@ -571,88 +571,88 @@ $uri = get_template_directory_uri();
 </section>
 
   <!-- Best Time
-  <section id="best-time" class="py-12 bg-white">
+  <section id="best-time" class="py-12 bg-background">
     <div class="container mx-auto px-6">
       <h2 class="text-3xl font-rowdies text-text-primary mb-4 text-center">Mejor época para viajar</h2>
       <div class="best-time-carousel mt-10">
-        <article class="best-time-card p-5 border border-surface rounded-2xl bg-white shadow-sm">
+        <article class="best-time-card p-5 border border-surface rounded-2xl bg-background shadow-sm">
           <div class="text-center mb-2">
             <h3 class="font-semibold text-text-primary">Enero</h3>
             <span class="best-time-badge bg-green-700 text-white text-xs font-semibold px-2 py-1 rounded-full">Ideal</span>
           </div>
           <p class="text-sm text-text-secondary">Temporada seca</p>
         </article>
-        <article class="best-time-card p-5 border border-surface rounded-2xl bg-white shadow-sm">
+        <article class="best-time-card p-5 border border-surface rounded-2xl bg-background shadow-sm">
           <div class="text-center mb-2">
             <h3 class="font-semibold text-text-primary">Febrero</h3>
             <span class="best-time-badge bg-green-700 text-white text-xs font-semibold px-2 py-1 rounded-full">Ideal</span>
           </div>
           <p class="text-sm text-text-secondary">Temporada seca</p>
         </article>
-        <article class="best-time-card p-5 border border-surface rounded-2xl bg-white shadow-sm">
+        <article class="best-time-card p-5 border border-surface rounded-2xl bg-background shadow-sm">
           <div class="text-center mb-2">
             <h3 class="font-semibold text-text-primary">Marzo</h3>
             <span class="best-time-badge bg-green-700 text-white text-xs font-semibold px-2 py-1 rounded-full">Ideal</span>
           </div>
           <p class="text-sm text-text-secondary">Temporada seca</p>
         </article>
-        <article class="best-time-card p-5 border border-surface rounded-2xl bg-white shadow-sm">
+        <article class="best-time-card p-5 border border-surface rounded-2xl bg-background shadow-sm">
           <div class="text-center mb-2">
             <h3 class="font-semibold text-text-primary">Abril</h3>
             <span class="best-time-badge bg-green-700 text-white text-xs font-semibold px-2 py-1 rounded-full">Ideal</span>
           </div>
           <p class="text-sm text-text-secondary">Temporada seca</p>
         </article>
-        <article class="best-time-card p-5 border border-surface rounded-2xl bg-white shadow-sm">
+        <article class="best-time-card p-5 border border-surface rounded-2xl bg-background shadow-sm">
           <div class="text-center mb-2">
             <h3 class="font-semibold text-text-primary">Mayo</h3>
             <span class="best-time-badge bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full">Bueno</span>
           </div>
           <p class="text-sm text-text-secondary">Temporada de lluvias</p>
         </article>
-        <article class="best-time-card p-5 border border-surface rounded-2xl bg-white shadow-sm">
+        <article class="best-time-card p-5 border border-surface rounded-2xl bg-background shadow-sm">
           <div class="text-center mb-2">
             <h3 class="font-semibold text-text-primary">Junio</h3>
             <span class="best-time-badge bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full">Bueno</span>
           </div>
           <p class="text-sm text-text-secondary">Temporada de lluvias</p>
         </article>
-        <article class="best-time-card p-5 border border-surface rounded-2xl bg-white shadow-sm">
+        <article class="best-time-card p-5 border border-surface rounded-2xl bg-background shadow-sm">
           <div class="text-center mb-2">
             <h3 class="font-semibold text-text-primary">Julio</h3>
             <span class="best-time-badge bg-red-100 text-red-700 text-xs font-semibold px-2 py-1 rounded-full">Malo</span>
           </div>
           <p class="text-sm text-text-secondary">Turismo masivo</p>
         </article>
-        <article class="best-time-card p-5 border border-surface rounded-2xl bg-white shadow-sm">
+        <article class="best-time-card p-5 border border-surface rounded-2xl bg-background shadow-sm">
           <div class="text-center mb-2">
             <h3 class="font-semibold text-text-primary">Agosto</h3>
             <span class="best-time-badge bg-red-100 text-red-700 text-xs font-semibold px-2 py-1 rounded-full">Malo</span>
           </div>
           <p class="text-sm text-text-secondary">Temporada de lluvias</p>
         </article>
-        <article class="best-time-card p-5 border border-surface rounded-2xl bg-white shadow-sm">
+        <article class="best-time-card p-5 border border-surface rounded-2xl bg-background shadow-sm">
           <div class="text-center mb-2">
             <h3 class="font-semibold text-text-primary">Septiembre</h3>
             <span class="best-time-badge bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full">Bueno</span>
           </div>
           <p class="text-sm text-text-secondary">Temporada de lluvias</p>
         </article>
-        <article class="best-time-card p-5 border border-surface rounded-2xl bg-white shadow-sm">
+        <article class="best-time-card p-5 border border-surface rounded-2xl bg-background shadow-sm">
           <div class="text-center mb-2">
             <h3 class="font-semibold text-text-primary">Octubre</h3>
             <span class="best-time-badge bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full">Bueno</span>
           </div>
           <p class="text-sm text-text-secondary">Temporada de lluvias</p>
         </article>
-        <article class="best-time-card p-5 border border-surface rounded-2xl bg-white shadow-sm">
+        <article class="best-time-card p-5 border border-surface rounded-2xl bg-background shadow-sm">
           <div class="text-center mb-2">
             <h3 class="font-semibold text-text-primary">Noviembre</h3>
             <span class="best-time-badge bg-green-700 text-white text-xs font-semibold px-2 py-1 rounded-full">Ideal</span>
           </div>
           <p class="text-sm text-text-secondary">Transición seca</p>
         </article>
-        <article class="best-time-card p-5 border border-surface rounded-2xl bg-white shadow-sm">
+        <article class="best-time-card p-5 border border-surface rounded-2xl bg-background shadow-sm">
           <div class="text-center mb-2">
             <h3 class="font-semibold text-text-primary">Diciembre</h3>
             <span class="best-time-badge bg-green-700 text-white text-xs font-semibold px-2 py-1 rounded-full">Ideal</span>
@@ -664,7 +664,7 @@ $uri = get_template_directory_uri();
   </section> -->
 
   <!-- GALERÍA SIMPLE -->
-  <section class="py-20 bg-surface">
+  <section class="py-20 bg-background">
     <div class="container mx-auto px-6 md:px-8 pb-12 md:pb-16">
       <div class="grid gap-4 md:grid-cols-3">
         <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-marrakech.jpg" alt="Luis Acuña durante el viaje de autor al Pantanal" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
@@ -675,35 +675,32 @@ $uri = get_template_directory_uri();
   </section>
 
 <!-- CTA Section -->
-<section class="py-20 bg-gradient-primary text-white text-center">
-    <div class="container mx-auto px-6 max-w-3xl">
-        <div class="max-w-3xl mx-auto">
-
-            <h2 class="text-xl mb-8 opacity-90">
-                No es un viaje cualquiera: es el Desierto de Marruecos vivido de forma auténtica
-            </h2>
-
-            <p class="text-xl mb-8 opacity-90">
-                Tres días diseñados para sentir la inmensidad del Sahara, recorrer pueblos bereberes 
+  <section class="py-20 bg-background text-text-secondary">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+              <h2 class="text-display font-satoshi mb-6 reveal-on-scroll">
+                    No es un viaje cualquiera: es el Desierto de Marruecos vivido de forma auténtica
+                </h2>
+              <p class="text-xl mb-8 opacity-90 reveal-on-scroll delay-100">
+                    Tres días diseñados para sentir la inmensidad del Sahara, recorrer pueblos bereberes 
                 y dormir bajo un cielo estrellado imposible de olvidar. Un itinerario pensado para 
                 saborear cada momento: desde las gargantas del Todra hasta las dunas doradas de Erg Chebbi.
-            </p>
+                </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center reveal-on-scroll delay-200">
+                  <a href="<?php echo esc_url( get_permalink( get_page_by_path('formularioautor') ) ); ?>" 
+                    class="btn-primary text-text-secondary">
+                      Quiero vivir Marruecos
+                  </a>
+                  <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" 
+                    class="btn-primary text-text-secondary">
+                      Ver más viajes
+                  </a>
+              </div>
+          </div>
+      </div>
+  </section>
 
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" 
-                   class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/80 transition">
-                    Quiero vivir Marruecos
-                </a>
 
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" 
-                   class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/80 transition">
-                    Ver más viajes
-                </a>
-            </div>
-
-        </div>
-    </div>
-</section>
 
 <?php get_footer(); ?>
 

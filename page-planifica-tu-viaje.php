@@ -10,7 +10,7 @@ if ( ! defined('ABSPATH') ) exit;
 $sent = false;
 $errors = [];
 $success_msg = '';
-$recipient = apply_filters('ukiyo_trip_form_recipient', get_option('admin_email')); // Cambiable por filtro si quieres
+$recipient = apply_filters('ukiyo_trip_form_recipient', 'info@viajesukiyo.com');
 
 if ( 'POST' === $_SERVER['REQUEST_METHOD'] && isset($_POST['ukiyo_trip_nonce']) ) {
     // Anti-spam: honeypot (no debería venir relleno)
@@ -48,30 +48,118 @@ if ( 'POST' === $_SERVER['REQUEST_METHOD'] && isset($_POST['ukiyo_trip_nonce']) 
     if ( empty($gdpr) )   { $errors[] = 'Debes aceptar la política de privacidad.'; }
 
     if ( empty($errors) ) {
-        // Construye el email
-        $subject = sprintf('Nueva solicitud de viaje - %s', $traveller_name);
-        $body_lines = [
-            "Nombre: $traveller_name",
-            "Email: $email",
-            "WhatsApp/Telegram: $whatsapp",
-            "País/ciudad: $country",
-            "Duración prevista: $duration",
-            "Presupuesto aprox.: $budget",
-            "Nº viajeros: $travelers",
-            "Ritmo del viaje (1-chill / 5-intenso): $pace",
-            "Estilos de viaje: " . ( $styles ? implode(', ', $styles) : '—' ),
-            "Intereses: " . ( $interests ? implode(', ', $interests) : '—' ),
-            "Regiones de interés: " . ( $regions ? implode(', ', $regions) : '—' ),
-            "Vibe del viaje: $trip_vibe",
-            "Consentimiento: " . ( $gdpr ? 'Aceptado' : 'No' ),
-            "",
-            "Enviado desde: " . home_url(),
-        ];
-        $body = implode("\n", $body_lines);
+        // Construye el email HTML
+        $subject = sprintf('✨ Nueva solicitud de viaje - %s', $traveller_name);
+        
+        // Build HTML email
+        $body = '
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Solicitud de Viaje</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, \'Helvetica Neue\', Arial, sans-serif; background-color: #f5f2ed; color: #2c2c2c;">
+    <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #f5f2ed; padding: 40px 20px;">
+        <tr>
+            <td align="center">
+                <!-- Main Container -->
+                <table cellpadding="0" cellspacing="0" border="0" width="600" style="max-width: 600px; background-color: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 4px 20px rgba(139, 69, 19, 0.08);">
+                    
+                    <!-- Header with gradient -->
+                    <tr>
+                        <td style="background: linear-gradient(135deg, #F6CF66 0%, #E8B48D 100%); padding: 40px 40px 30px; text-align: center;">
+                            <h1 style="margin: 0; font-size: 32px; font-weight: 700; color: #2c2c2c; letter-spacing: -0.5px;">✨ Nueva Solicitud de Viaje</h1>
+                            <p style="margin: 10px 0 0; font-size: 16px; color: #2c2c2c; opacity: 0.9;">Un futuro viajero quiere explorar el mundo contigo</p>
+                        </td>
+                    </tr>
+                    
+                    <!-- Traveler Info Section -->
+                    <tr>
+                        <td style="padding: 40px 40px 20px;">
+                            <div style="background-color: #fffbf0; border-left: 4px solid #F6CF66; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+                                <h2 style="margin: 0 0 15px; font-size: 20px; font-weight: 600; color: #2c2c2c;">👤 Datos del Viajero</h2>
+                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                    <tr>
+                                        <td style="padding: 8px 0; font-size: 15px; color: #6b6b6b; width: 40%;">Nombre:</td>
+                                        <td style="padding: 8px 0; font-size: 15px; font-weight: 600; color: #2c2c2c;">' . esc_html($traveller_name) . '</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px 0; font-size: 15px; color: #6b6b6b;">Email:</td>
+                                        <td style="padding: 8px 0; font-size: 15px; font-weight: 600; color: #2c2c2c;"><a href="mailto:' . esc_attr($email) . '" style="color: #2c2c2c; text-decoration: none;">' . esc_html($email) . '</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            
+                            <!-- Destinations Section -->
+                            <div style="margin-bottom: 30px;">
+                                <h2 style="margin: 0 0 15px; font-size: 20px; font-weight: 600; color: #2c2c2c; border-bottom: 2px solid #F6CF66; padding-bottom: 10px;">🌍 Destinos de Interés</h2>
+                                <p style="margin: 0; font-size: 16px; color: #2c2c2c; background-color: #fffbf0; padding: 15px; border-radius: 8px; font-weight: 500;">' . ( $regions ? esc_html(implode(', ', $regions)) : '—' ) . '</p>
+                            </div>
+                            
+                            <!-- Trip Details Grid -->
+                            <div style="margin-bottom: 30px;">
+                                <h2 style="margin: 0 0 15px; font-size: 20px; font-weight: 600; color: #2c2c2c; border-bottom: 2px solid #E8B48D; padding-bottom: 10px;">✈️ Detalles del Viaje</h2>
+                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                    <tr>
+                                        <td style="padding: 12px; background-color: #f9f9f9; border-radius: 8px; width: 48%; vertical-align: top;" valign="top">
+                                            <p style="margin: 0; font-size: 13px; color: #6b6b6b; text-transform: uppercase; letter-spacing: 0.5px;">Duración</p>
+                                            <p style="margin: 5px 0 0; font-size: 16px; font-weight: 600; color: #2c2c2c;">' . esc_html($duration) . '</p>
+                                        </td>
+                                        <td style="width: 4%;"></td>
+                                        <td style="padding: 12px; background-color: #f9f9f9; border-radius: 8px; width: 48%; vertical-align: top;" valign="top">
+                                            <p style="margin: 0; font-size: 13px; color: #6b6b6b; text-transform: uppercase; letter-spacing: 0.5px;">Viajeros</p>
+                                            <p style="margin: 5px 0 0; font-size: 16px; font-weight: 600; color: #2c2c2c;">' . esc_html($travelers) . '</p>
+                                        </td>
+                                    </tr>
+                                    <tr><td colspan="3" style="height: 12px;"></td></tr>
+                                    <tr>
+                                        <td style="padding: 12px; background-color: #f9f9f9; border-radius: 8px; width: 48%; vertical-align: top;" valign="top">
+                                            <p style="margin: 0; font-size: 13px; color: #6b6b6b; text-transform: uppercase; letter-spacing: 0.5px;">Ritmo</p>
+                                            <p style="margin: 5px 0 0; font-size: 16px; font-weight: 600; color: #2c2c2c;">' . esc_html($pace) . '</p>
+                                        </td>
+                                        <td style="width: 4%;"></td>
+                                        <td style="padding: 12px; background-color: #f9f9f9; border-radius: 8px; width: 48%; vertical-align: top;" valign="top">
+                                            <p style="margin: 0; font-size: 13px; color: #6b6b6b; text-transform: uppercase; letter-spacing: 0.5px;">Vibe</p>
+                                            <p style="margin: 5px 0 0; font-size: 16px; font-weight: 600; color: #2c2c2c;">' . esc_html($trip_vibe) . '</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            
+                            <!-- Preferences Section -->
+                            <div style="margin-bottom: 20px;">
+                                <h2 style="margin: 0 0 15px; font-size: 20px; font-weight: 600; color: #2c2c2c; border-bottom: 2px solid #C9D8BA; padding-bottom: 10px;">🎨 Preferencias de Viaje</h2>
+                                <div style="margin-bottom: 15px;">
+                                    <p style="margin: 0 0 8px; font-size: 14px; color: #6b6b6b; font-weight: 500;">Estilos:</p>
+                                    <p style="margin: 0; font-size: 15px; color: #2c2c2c; background-color: #f0f4ed; padding: 12px; border-radius: 8px;">' . ( $styles ? esc_html(implode(', ', $styles)) : '—' ) . '</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td style="background-color: #2c2c2c; padding: 30px 40px; text-align: center;">
+                            <p style="margin: 0 0 10px; font-size: 14px; color: #f5f2ed; opacity: 0.8;">Solicitud enviada desde</p>
+                            <a href="' . esc_url(home_url()) . '" style="color: #F6CF66; text-decoration: none; font-size: 16px; font-weight: 600;">' . esc_html(home_url()) . '</a>
+                            <p style="margin: 15px 0 0; font-size: 13px; color: #f5f2ed; opacity: 0.6;">Ukiyo - Viajes que Transforman</p>
+                        </td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>';
 
-        // Cabeceras
+        // Cabeceras para HTML
         $headers = [];
-        $headers[] = 'Content-Type: text/plain; charset=UTF-8';
+        $headers[] = 'Content-Type: text/html; charset=UTF-8';
+        $headers[] = 'From: Ukiyo Viajes <info@viajesukiyo.com>';
+        $headers[] = 'MIME-Version: 1.0';
         if ( $email ) {
             $headers[] = 'Reply-To: ' . $traveller_name . ' <' . $email . '>';
         }
@@ -91,7 +179,7 @@ get_header();
 ?>
 
 <!-- HERO / Intro -->
-<section class="relative pt-24 pb-16 overflow-hidden bg-surface from-primary-50 via-accent-50 to-secondary-50">
+<section class="relative pt-24 pb-16 overflow-hidden bg-background from-primary-50 via-accent-50 to-secondary-50">
   <div class="absolute inset-0 opacity-10 pointer-events-none">
     <svg class="w-full h-full" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <rect width="100%" height="100%" fill="url(#ukiyo-pattern)"/>
@@ -100,9 +188,9 @@ get_header();
 
   <div class="container mx-auto px-6 relative z-10">
     <div class="max-w-3xl mx-auto text-center">
-      <span class="inline-block bg-surface text-primary px-4 py-2 rounded-full text-sm font-satoshi mb-4">Planifica tu viaje</span>
+      <span class="inline-block btn-primary text-text-secondary px-4 py-2 rounded-full text-sm font-satoshi mb-4">Planifica tu viaje</span>
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-crimson text-text-primary leading-tight mb-4">
-        Cuéntanos <span class="text-transparent bg-surface from-primary via-secondary to-accent bg-clip-text">cómo viajas</span>
+        Cuéntanos <span class="text-transparent bg-background from-primary via-secondary to-accent bg-clip-text">cómo viajas</span>
       </h1>
       <p class="text-lg text-text-secondary max-w-2xl mx-auto font-satoshi">
         Con estas preguntas rápidas te conocemos mejor y diseñamos una experiencia auténtica, sin turismo masivo. Es ameno, prometido
@@ -112,12 +200,12 @@ get_header();
 </section>
 
 <!-- FORM -->
-<section class="py-12 bg-surface">
+<section class="py-12 bg-background">
   <div class="container mx-auto px-6">
     <div class="max-w-5xl mx-auto">
 
       <?php if ( ! empty($errors) ) : ?>
-        <div class="mb-6 rounded-xl border border-red-200 bg-surface p-4 text-red-800 font-satoshi">
+        <div class="mb-6 rounded-xl border border-red-200 bg-background p-4 text-red-800 font-satoshi">
           <ul class="list-disc pl-6">
             <?php foreach ($errors as $e): ?>
               <li><?php echo esc_html($e); ?></li>
@@ -127,15 +215,15 @@ get_header();
       <?php endif; ?>
 
       <?php if ( $sent && $success_msg ) : ?>
-        <div class="mb-8 rounded-2xl border border-success-200 bg-surface p-6 text-success-900 shadow-card">
+        <div class="mb-8 rounded-2xl border border-success-200 bg-background p-6 text-success-900 shadow-card">
           <p class="font-satoshi font-semibold"><?php echo esc_html($success_msg); ?></p>
         </div>
       <?php endif; ?>
 
       <!-- Progress Bar -->
       <div class="w-full max-w-5xl mx-auto mb-6 px-4">
-        <div class="h-1 bg-surface rounded-full overflow-hidden">
-          <div id="progress-bar" class="h-full bg-primary transition-all duration-500 ease-out" style="width: 10%"></div>
+        <div class="h-1 bg-background rounded-full overflow-hidden">
+          <div id="progress-bar" class="h-full bg-background transition-all duration-500 ease-out" style="width: 10%"></div>
         </div>
         <div class="flex justify-between mt-2 text-xs font-medium text-gray-400 uppercase tracking-wider">
             <span>Progreso</span>
@@ -148,7 +236,7 @@ get_header();
         <input type="text" name="ukiyo_pot" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
         <!-- STEPS CONTAINER -->
-        <div class="flex-grow bg-surface relative p-6 md:p-10 overflow-hidden">
+        <div class="flex-grow bg-background relative p-6 md:p-10 overflow-hidden">
             
             <!-- STEP 1: Regions -->
             <div class="form-step active flex flex-col h-full" data-step="1">
@@ -380,16 +468,16 @@ get_header();
         </div>
 
         <!-- NAVIGATION FOOTER -->
-        <div class="bg-gray-50 p-6 border-t border-gray-100 flex justify-between items-center">
-            <button type="button" id="prevBtn" class="hidden px-6 py-3 text-gray-500 font-bold hover:text-primary transition-colors">
+        <div class="bg-background p-6 border-t flex justify-between items-center">
+            <button type="button" id="prevBtn" class="hidden px-6 py-3 btn-primary text-text-secondary font-bold hover:text-primary transition-colors">
                 ← Atrás
             </button>
             
-            <button type="button" id="nextBtn" class="ml-auto px-8 py-3 rounded-full bg-primary text-white font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+            <button type="button" id="nextBtn" class="ml-auto px-8 py-3 rounded-full btn-primary text-text-secondary font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
                 Siguiente
             </button>
 
-            <button type="submit" id="submitBtn" class="hidden ml-auto px-8 py-3 rounded-full bg-primary text-white font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all">
+            <button type="submit" id="submitBtn" class="hidden ml-auto px-8 py-3 rounded-full btn-primary text-text-secondary font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all">
                 Enviar Solicitud ✨
             </button>
         </div>
@@ -424,7 +512,7 @@ get_header();
             }
 
             .ukiyo-card-v2:hover {
-                border-color: var(--color-primary);
+                border-color: rgb(246, 207, 102);
                 transform: translateY(-4px);
                 box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.1);
             }
@@ -440,9 +528,9 @@ get_header();
 
             /* Selected State */
             .ukiyo-card-v2:has(input:checked) {
-                border-color: var(--color-primary);
+                border-color: rgb(246, 207, 102);
                 background-color: #fffbf0; /* Light primary tint */
-                box-shadow: 0 0 0 2px var(--color-primary);
+                box-shadow: 0 0 0 2px rgb(246, 207, 102);
             }
 
             .ukiyo-card-v2:has(input:checked) .ukiyo-card-content {
@@ -549,6 +637,30 @@ get_header();
                 return true;
             }
 
+            // Auto-advance on card selection
+            function setupAutoAdvance() {
+                steps.forEach((step, index) => {
+                    const stepNum = parseInt(step.dataset.step);
+                    
+                    // Only for card selection steps (1-6), not the contact form
+                    if (stepNum >= 1 && stepNum <= 6) {
+                        const inputs = step.querySelectorAll('input[type="radio"], input[type="checkbox"]');
+                        
+                        inputs.forEach(input => {
+                            input.addEventListener('change', () => {
+                                // Small delay for better UX (let user see the selection)
+                                setTimeout(() => {
+                                    if (index === currentStep && currentStep < totalSteps - 1) {
+                                        currentStep++;
+                                        updateUI();
+                                    }
+                                }, 300);
+                            });
+                        });
+                    }
+                });
+            }
+
             // Event Listeners
             nextBtn.addEventListener('click', () => {
                 if (validateStep(currentStep)) {
@@ -570,6 +682,7 @@ get_header();
 
             // Initialize
             updateUI();
+            setupAutoAdvance();
         });
         </script>
       </form>
@@ -578,7 +691,7 @@ get_header();
 </section>
 
 <!-- FAQ rápido / cierre -->
-<section class="py-12 bg-surface">
+<section class="py-12 bg-background">
   <div class="container mx-auto px-6">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl font-crimson text-text-primary mb-4">¿Qué pasa después?</h2>

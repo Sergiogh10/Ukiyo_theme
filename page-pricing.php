@@ -24,9 +24,9 @@ $template_uri = get_template_directory_uri();
           <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">
             Precios
           </span>
-          <h2 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
+          <h1 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
             Invertir en <span class="text-accent-300">recuerdos</span>
-          </h2>
+          </h1>
           <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed text-shadow">
             En UKIYO no vendemos paquetes ni vacaciones: creamos experiencias personales, honestas y llenas de sentido.
             Cada viaje está diseñado con cuidado, respeto y detalle. Lo auténtico no tiene precio, pero sí un valor.          
@@ -86,10 +86,10 @@ $template_uri = get_template_directory_uri();
   <div class="container mx-auto px-6">
     <!-- Header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <h1 class="text-4xl font-satoshi">
+      <h2 class="text-4xl font-satoshi">
         <span class="text-primary tracking-wide">Planes </span>
         <span class="text-text-primary">Flexibles</span>
-      </h1>
+      </h2>
       <p class="mt-4 text-lg text-text-secondary leading-relaxed">
         Elige el plan que mejor se adapte a ti y a tu forma de viajar.
       </p>

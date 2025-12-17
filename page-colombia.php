@@ -23,11 +23,11 @@ get_header();
             <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">Café de origen</span>
             <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">Transformación social</span>
             <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">Dos costas</span>
-          <h2 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
+          <h1 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
             COLOMBIA
             <br>
              <span class="text-accent-300">Alegría que se queda</span>
-          </h2>
+          </h1>
           <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed text-shadow">
             Explora el Eje Cafetero, el Pacífico salvaje de Nuquí, la ciudad amurallada de Cartagena y el Caribe de siete colores en Providencia. Colombia es café, color y transformación.
           </p>
@@ -67,11 +67,21 @@ $featuresData = [
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <?php foreach ($featuresData as $feature): ?>
       <div class="group p-8 border border-gray-100 hover:border-primary/30 rounded-2xl bg-surface/20 hover:bg-white transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-        <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+        <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6 transition-colors" style="transition: all 0.3s ease;">
+          <svg class="w-6 h-6 transition-colors" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
             <?php echo $feature['icon']; ?>
           </svg>
         </div>
+        <style>
+          .group:hover .w-12.h-12 {
+            background-color: var(--color-surface) !important;
+            border: 2px solid rgb(246, 207, 102) !important;
+          }
+          .group:hover .w-12.h-12 svg {
+            color: var(--color-text-secondary) !important;
+            stroke: var(--color-text-secondary) !important;
+          }
+        </style>
         <h3 class="text-xl font-bold text-text-primary mb-3 font-satoshi"><?php echo $feature['title']; ?></h3>
         <p class="text-text-secondary leading-relaxed"><?php echo $feature['description']; ?></p>
       </div>
@@ -168,7 +178,7 @@ $ukiyoCarouselItems = [
     <!-- Carousel Container -->
     <div 
         id="experiences-carousel"
-        class="flex gap-6 px-4 md:px-8 pb-12"
+        class="flex gap-6 px-4 md:px-8 pb-12 pt-8"
         style="overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; scroll-behavior: smooth;"
     >
         <style>
@@ -257,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<!-- AUTORES (mini bios) -->
+<!-- AUTORES (mini bios) 
   <section class="py-20 bg-background">
   <div class="container mx-auto px-6">
     
@@ -268,10 +278,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <div class="grid gap-8 md:grid-cols-4">
 
-      <!-- CARD LUIS -->
+      <!-- CARD LUIS 
       <article class="rounded-2xl border-2 border-black bg-background backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
 
-        <!-- Imagen más pequeña -->
+        <!-- Imagen más pequeña 
         <div class="aspect-[4/3]">
           <img
             src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-luis-acuna.jpg"
@@ -280,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function() {
           />
         </div>
 
-        <!-- Texto más compacto -->
+        <!-- Texto más compacto 
         <div class="p-4">
           <h3 class="text-base font-semibold text-text-primary">
             Luis · Guía costarricense y fotógrafo
@@ -294,7 +304,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </article>
 
 
-      <!-- CARD MOHA -->
+      <!-- CARD MOHA 
       <article class="rounded-2xl border-2 border-black bg-background backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
 
         <div class="aspect-[4/3]">
@@ -317,7 +327,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       </article>
 
-      <!-- CARD DAVID -->
+      <!-- CARD DAVID 
       <article class="rounded-2xl border-2 border-black bg-background backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
 
         <div class="aspect-[4/3]">
@@ -342,7 +352,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
   </div>
-</section>
+</section> -->
 
 
 <!-- Practical Information -->
