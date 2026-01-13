@@ -117,19 +117,19 @@ $ukiyoCarouselItems = [
         'id' => '3',
         'title' => 'Nusa Penida',
         'description' => 'Acantilados impresionantes, Kelingking Beach y aguas turquesas. Snorkel con mantarrayas en Crystal Bay.',
-        'imagePath' => '/images/indonesia/viajes-a-indonesia-personalizados-nusa-penida.jpg',
+        'imagePath' => '/images/indonesia/viajes-a-indonesia-personalizados-nusa-penida-2.jpg',
         'tag' => 'Islas Nusa'
     ],
     [
         'id' => '4',
         'title' => 'Parque Komodo',
         'description' => 'El hogar del dragón de Komodo. Navegación entre islas, Playa Rosa y encuentros con fauna prehistórica.',
-        'imagePath' => '/images/indonesia/viajes-a-indonesia-personalizados-komodo-islas.jpg',
+        'imagePath' => '/images/indonesia/viajes-a-indonesia-personalizados-komodo-2.jpg',
         'tag' => 'Flores'
     ],
     [
         'id' => '5',
-        'title' => 'Lombok',
+        'title' => 'Kuta',
         'description' => 'La Bali auténtica: Monte Rinjani, Gili Islands sin coches y playas de surf salvaje en Kuta.',
         'imagePath' => '/images/indonesia/viajes-a-indonesia-personalizados-lombok-volcan-batur.jpg',
         'tag' => 'Isla de Lombok'
@@ -145,7 +145,7 @@ $ukiyoCarouselItems = [
         'id' => '7',
         'title' => 'Tirta Empul',
         'description' => 'Ritual de purificación en aguas sagradas. Templo balinés donde locales y viajeros se conectan con lo divino.',
-        'imagePath' => '/images/indonesia/viajes-a-indonesia-personalizados-bali-tirta-empul.jpg',
+        'imagePath' => '/images/indonesia/viajes-a-indonesia-personalizados-bali-tirta-empul-2.jpg',
         'tag' => 'Templos de Bali'
     ],
     [

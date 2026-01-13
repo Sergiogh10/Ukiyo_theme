@@ -103,7 +103,7 @@ $ukiyoCarouselItems = [
         'id' => '1',
         'title' => 'Corcovado',
         'description' => 'La joya de la Península de Osa: selva primaria, playas salvajes y muchísima fauna. El lugar más intenso biológicamente.',
-        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-rana-ojos-rojos.jpg',
+        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-mono.jpg',
         'tag' => 'Península de Osa'
     ],
     [
@@ -131,28 +131,28 @@ $ukiyoCarouselItems = [
         'id' => '5',
         'title' => 'Puerto Viejo',
         'description' => 'El Caribe Sur más bohemio: selva pegada al mar, ritmo afrocaribeño y el Parque Nacional Cahuita.',
-        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-mono.jpg',
+        'imagePath' => '/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-mono.jpg',
         'tag' => 'Caribe Sur'
     ],
     [
         'id' => '6',
         'title' => 'Manuel Antonio',
         'description' => 'Playas paradisíacas y selva tropical en perfecta armonía. Monos capuchinos y perezosos a metros del mar.',
-        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-rana-ojos-rojos.jpg',
+        'imagePath' => '/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-tucanazul.jpg',
         'tag' => 'Pacífico Central'
     ],
     [
         'id' => '7',
-        'title' => 'Río Celeste',
+        'title' => 'Cañón Jurásico',
         'description' => 'El río de aguas turquesas más impresionante del país. Naturaleza volcánica en estado puro.',
-        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-rio-celeste.jpg',
+        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-cañonjurasico.jpg',
         'tag' => 'Tenorio'
     ],
     [
         'id' => '8',
         'title' => 'Guanacaste',
         'description' => 'Playas vírgenes del Pacífico, surf de clase mundial y atardeceres inolvidables.',
-        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-atardecer.jpg',
+        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-guanacaste.jpg',
         'tag' => 'Pacífico Norte'
     ]
 ];

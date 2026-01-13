@@ -143,17 +143,17 @@ $ukiyoCarouselItems = [
     ],
     [
         'id' => '7',
-        'title' => 'Nuquí Pacífico',
+        'title' => 'Barichara',
         'description' => 'Playas vírgenes donde la selva abraza el océano. Cascadas ocultas y absoluta desconexión.',
-        'imagePath' => '/images/colombia/viajes-a-colombia-personalizados-nuqui-pacifico-colombiano.jpg',
-        'tag' => 'Chocó Biogeográfico'
+        'imagePath' => '/images/colombia/viajes-a-colombia-personalizados-barichara.jpg',
+        'tag' => 'Santander'
     ],
     [
         'id' => '8',
-        'title' => 'Playa Colombiana',
+        'title' => 'Tayrona',
         'description' => 'Caribe colombiano: aguas cristalinas, palmeras y ritmos costeños bajo el sol tropical.',
-        'imagePath' => '/images/heroimages/viajes-personalizados-ukiyo-colombiaplaya.jpg',
-        'tag' => 'Costa Atlántica'
+        'imagePath' => '/images/colombia/viajes-a-colombia-personalizados-tayrona.jpg',
+        'tag' => 'Parque Nacional'
     ]
 ];
 ?>

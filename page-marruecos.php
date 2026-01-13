@@ -145,15 +145,15 @@ $ukiyoCarouselItems = [
         'id' => '7',
         'title' => 'Valle del Draa',
         'description' => 'Oasis de palmeras, kasbahs fortificadas y pistas que cruzan el Atlas hacia el desierto.',
-        'imagePath' => '/images/autores/moha/viajes-a-marruecos-personalizados-pistas-oasis-4x4.jpg',
+        'imagePath' => '/images/marruecos/viajes-personalizados-ukiyo-marruecos-draa.jpg',
         'tag' => 'Ruta del Sur'
     ],
     [
         'id' => '8',
-        'title' => 'Música Gnawa',
-        'description' => 'La banda sonora del desierto: ritmos bereberes, khamlia y la esencia espiritual de Marruecos.',
-        'imagePath' => '/images/autores/moha/viajes-a-marruecos-personalizados-khamlia-musica-gnawa.jpg',
-        'tag' => 'Cultura Viva'
+        'title' => 'Azrou',
+        'description' => 'El alma del Atlas Medio: bosques de cedros milenarios, macacos en libertad y la autenticidad bereber de Azrou.',
+        'imagePath' => '/images/marruecos/viajes-personalizados-ukiyo-marruecos-azrou.jpg',
+        'tag' => 'Atlas medio'
     ]
 ];
 ?>
