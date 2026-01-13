@@ -6,7 +6,13 @@ get_header();
 ?>
 
   <!-- HERO -->
-  <section class="relative flex items-center justify-center overflow-hidden" style="min-height: 50vh; padding-top: 8rem; padding-bottom: 4rem;">
+<style>
+  .hero-responsive { height: 100vh; }
+  @media (min-width: 1024px) {
+    .hero-responsive { height: auto !important; min-height: 50vh !important; }
+  }
+</style>
+  <section class="hero-responsive relative flex items-center justify-center overflow-hidden pt-32 pb-16">
     <!-- Background Image -->
     <div class="absolute inset-0 w-full h-full">
       <img src="<?php echo get_template_directory_uri(); ?>/images/indonesia/viajes-autor-ukiyo-indonesiamanta.jpg" 

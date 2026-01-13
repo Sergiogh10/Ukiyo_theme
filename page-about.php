@@ -6,7 +6,13 @@ get_header();
 ?>
 
   <!-- HERO -->
-  <section class="relative flex items-center justify-center overflow-hidden" style="min-height: 50vh; padding-top: 8rem; padding-bottom: 4rem;">
+<style>
+  .hero-responsive { height: 100vh; }
+  @media (min-width: 1024px) {
+    .hero-responsive { height: auto !important; min-height: 50vh !important; }
+  }
+</style>
+  <section class="hero-responsive relative flex items-center justify-center overflow-hidden pt-32 pb-16">
     <!-- Background Image -->
     <div class="absolute inset-0 w-full h-full">
       <img src="<?php echo get_template_directory_uri(); ?>/images/heroimages/viajes-autor-ukiyo-viajeros2.jpg" 
@@ -27,10 +33,7 @@ get_header();
             Creando viajes con <span class="text-accent-300">alma</span>
           </h1>
           <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed text-shadow">
-          Inspirados en el “mundo flotante” de la cultura japonesa, creamos experiencias que celebran el momento presente y la belleza de lo efímero. UKIYO nace de una forma distinta de entender los viajes: sin prisa, sin poses y sin guiones.
-          Creemos que la verdadera belleza está en lo simple, en lo que sucede cuando conectas de verdad con un lugar.
-
-          Por eso creamos experiencias honestas, sostenibles y llenas de vida.          
+          Inspirados en lo efímero del 'mundo flotante', celebramos el presente. Sin prisas ni guiones, buscamos la belleza en la conexión real con cada lugar. Experiencias honestas, sostenibles y vivas.          
           </p>
         </div>
       </div>
@@ -38,7 +41,7 @@ get_header();
   </section>
 
 <!-- Founder Story -->
-<section class="py-20 bg-background font-satoshi">
+<section class="py-12 bg-background font-satoshi">
   <div class="container mx-auto px-6">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-16">
@@ -88,7 +91,7 @@ Un proyecto familiar que busca que otras personas puedan vivir viajes reales, cu
 </section>
 
 <!-- Team -->
-<section class="py-20 bg-background font-satoshi">
+<section class="py-12 bg-background font-satoshi">
   <div class="container mx-auto px-6">
     <div class="text-center mb-16">
       <h2 class="text-display font-satoshi-bold text-text-primary mb-4">
@@ -146,7 +149,7 @@ Un proyecto familiar que busca que otras personas puedan vivir viajes reales, cu
 </section>
 
 <!-- Values Section -->
-<section class="py-20 bg-background font-satoshi">
+<section class="py-12 bg-background font-satoshi">
   <div class="container mx-auto px-6">
     <div class="text-center mb-16">
       <h2 class="text-display font-satoshi-bold text-text-primary mb-4">
@@ -346,7 +349,7 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
 </section> -->
 
  <!-- Company Timeline -->
-<section class="py-20 bg-background font-satoshi">
+<section class="py-12 bg-background font-satoshi">
   <div class="container mx-auto px-6">
     <div class="text-center mb-16">
       <h2 class="text-display font-satoshi-bold text-text-primary mb-4">
@@ -430,7 +433,7 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
 </section>
 
   <!-- CTA Section -->
-<section class="py-20 bg-background text-text-secondary">
+<section class="py-12 bg-background text-text-secondary">
         <div class="container mx-auto px-6 text-center">
             <div class="max-w-3xl mx-auto">
               <h2 class="text-display font-satoshi mb-6 reveal-on-scroll">

@@ -6,7 +6,13 @@ get_header();
 <main class="min-h-screen bg-background">
 
   <!-- HERO -->
-  <section class="relative flex items-center justify-center overflow-hidden" style="min-height: 50vh; padding-top: 8rem; padding-bottom: 4rem;">
+<style>
+  .hero-responsive { height: 100vh; }
+  @media (min-width: 1024px) {
+    .hero-responsive { height: auto !important; min-height: 50vh !important; }
+  }
+</style>
+  <section class="hero-responsive relative flex items-center justify-center overflow-hidden pt-32 pb-16">
     <!-- Background Image -->
     <div class="absolute inset-0 w-full h-full">
       <img src="<?php echo get_template_directory_uri(); ?>/images/heroimages/viajes-autor-ukiyo-reviewfinal.jpg" 
@@ -132,7 +138,7 @@ get_header();
 </section>
 
     <!-- CTA FINAL -->
-    <section class="py-20 bg-background text-text-secondary">
+    <section class="py-12 bg-background text-text-secondary">
         <div class="container mx-auto px-6 text-center">
             <div class="max-w-3xl mx-auto">
                 <h2 class="text-display font-satoshi mb-6 reveal-on-scroll">

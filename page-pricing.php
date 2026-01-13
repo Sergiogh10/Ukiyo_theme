@@ -7,7 +7,13 @@ $template_uri = get_template_directory_uri();
 ?>
 
   <!-- HERO -->
-  <section class="relative flex items-center justify-center overflow-hidden" style="min-height: 50vh; padding-top: 8rem; padding-bottom: 4rem;">
+<style>
+  .hero-responsive { height: 100vh; }
+  @media (min-width: 1024px) {
+    .hero-responsive { height: auto !important; min-height: 50vh !important; }
+  }
+</style>
+  <section class="hero-responsive relative flex items-center justify-center overflow-hidden pt-32 pb-16">
     <!-- Background Image -->
     <div class="absolute inset-0 w-full h-full">
       <img src="<?php echo get_template_directory_uri(); ?>/images/heroimages/viajes-autor-ukiyo-indonesiaplaya.jpg" 
@@ -31,18 +37,13 @@ $template_uri = get_template_directory_uri();
             En UKIYO no vendemos paquetes ni vacaciones: creamos experiencias personales, honestas y llenas de sentido.
             Cada viaje está diseñado con cuidado, respeto y detalle. Lo auténtico no tiene precio, pero sí un valor.          
           </p>
-          <figure class="mt-8 inline-flex">
-            <blockquote class="btn-primary backdrop-blur-sm border border-white/20 text-black italic px-5 py-3 rounded-lg">
-  «Lo importante no es cuánto cuesta un viaje, sino lo que te deja dentro».
-            </blockquote>
-          </figure>
         </div>
       </div>
     </div>
   </section>
 
 <!-- ===================== FILOSOFÍA ===================== -->
-<section class="py-16 bg-background fade-bottom fade-top">
+<section class="py-12 bg-background">
   <div class="container mx-auto px-6">
     <header class="text-center max-w-3xl mx-auto mb-12">
       <h2 class="text-4xl font-satoshi text-text-primary tracking-tight">
@@ -82,7 +83,7 @@ $template_uri = get_template_directory_uri();
 
 
 <!-- ===================== TIERS ===================== -->
-<section class="min-h-screen flex justify-center items-center py-20 bg-background">
+<section class="min-h-screen flex justify-center items-center py-12 bg-background">
   <div class="container mx-auto px-6">
     <!-- Header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
@@ -293,7 +294,7 @@ $template_uri = get_template_directory_uri();
 </section>
 
 <!-- ===================== RESERVA / CALENDAR ===================== -->
-<section id="consultation" class="py-16 bg-background">
+<section id="consultation" class="py-12 bg-background">
   <div class="container mx-auto px-6">
     <header class="text-center max-w-2xl mx-auto mb-8">
       <h2 class="text-4xl font-satoshi text-text-primary">Reserva una <span class="text-primary">videollamada</span></h2>
@@ -301,12 +302,10 @@ $template_uri = get_template_directory_uri();
     </header>
 
     <div class="text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-accent-600 w-full text-center block">
-      <!-- Google Calendar Appointment Scheduling begin -->
       <!-- Calendly inline widget begin -->
-  <div class="calendly-inline-widget" data-url="https://calendly.com/viajesukiyo-info/el-viaje-de-tu-vida?hide_gdpr_banner=1&background_color=fefcf8&text_color=6b6b6b&primary_color=f6cf66" style="min-width:320px;height:700px;"></div>
+  <div class="calendly-inline-widget" data-url="https://calendly.com/viajesukiyo-info/el-viaje-de-tu-vida?hide_gdpr_banner=1&background_color=fefcf8&text_color=6b6b6b&primary_color=f6cf66" style="min-width:320px;height:1000px;"></div>
   <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <!-- Calendly inline widget end -->
-      <!-- end Google Calendar Appointment Scheduling -->
     </div>
   </div>
 </section>

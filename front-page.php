@@ -13,7 +13,7 @@ get_header(); ?>
     // Array de slides para el hero
     $hero_slides = [
         [
-            'image' => get_template_directory_uri() . '/images/heroimages/viajes-personalizados-ukiyo-indonesiavolcan.jpg',
+            'image' => get_template_directory_uri() . '/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-orotina.jpg',
             'alt' => 'Viajes personalizados a Indonesia',
             'title' => 'Viajes personalizados',
             'subtitle' => 'que <span class="text-accent-300">te mueven por dentro</span>',
@@ -79,7 +79,7 @@ get_header(); ?>
                                 <?php echo $slide['subtitle']; ?>
                             </div>
                             <?php endif; ?>
-                            <p class="text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed text-shadow">
+                            <p class="hidden lg:block text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
                                 <?php echo $slide['description']; ?>
                             </p>
                             <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -90,7 +90,7 @@ get_header(); ?>
                                     Ver viajes de autor
                                 </a>
                             </div>
-                            <p class="mt-6 text-sm text-white/70">
+                            <p class="mt-6 text-sm text-white/70 hidden lg:block">
                                 ¿Prefieres leer experiencias reales primero? 
                                 <a href="<?php echo esc_url( get_permalink( get_page_by_path('resenas') ) ); ?>" class="underline hover:text-white">Descubre las reseñas de viajeros</a>.
                             </p>
@@ -102,21 +102,21 @@ get_header(); ?>
         </div>
 
         <!-- Navigation Arrows -->
-        <button id="prevHero" class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-3 md:p-4 rounded-full transition-all duration-300 hover:scale-110 z-50">
+        <button id="prevHero" class="hidden lg:block absolute left-4 md:left-8 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-3 md:p-4 rounded-full transition-all duration-300 hover:scale-110 z-40">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
             </svg>
         </button>
-        <button id="nextHero" class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-3 md:p-4 rounded-full transition-all duration-300 hover:scale-110 z-50">
+        <button id="nextHero" class="hidden lg:block absolute right-4 md:right-8 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-3 md:p-4 rounded-full transition-all duration-300 hover:scale-110 z-40">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
         </button>
 
         <!-- Pagination Dots -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3 z-50">
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3 z-40">
             <?php foreach ($hero_slides as $index => $slide) : ?>
-            <button class="hero-dot w-3 h-3 rounded-full transition-all duration-300 <?php echo $index === 0 ? 'bg-white w-8' : 'bg-white/50 hover:bg-white/70'; ?>" data-index="<?php echo $index; ?>"></button>
+            <button class="hero-dot h-3 rounded-full bg-white transition-all duration-300 <?php echo $index === 0 ? 'w-8' : 'w-3 opacity-50 hover:opacity-100'; ?>" data-index="<?php echo $index; ?>"></button>
             <?php endforeach; ?>
         </div>
     </section>
@@ -155,11 +155,11 @@ get_header(); ?>
             // Update dots
             dots.forEach((dot, i) => {
                 if (i === currentSlide) {
-                    dot.classList.remove('bg-white/50', 'hover:bg-white/70');
-                    dot.classList.add('bg-white', 'w-8');
+                    dot.classList.remove('w-3', 'opacity-50', 'hover:opacity-100');
+                    dot.classList.add('w-8');
                 } else {
-                    dot.classList.remove('bg-white', 'w-8');
-                    dot.classList.add('bg-white/50', 'hover:bg-white/70');
+                    dot.classList.remove('w-8');
+                    dot.classList.add('w-3', 'opacity-50', 'hover:opacity-100');
                 }
             });
         }
@@ -208,6 +208,47 @@ get_header(); ?>
         // Start autoplay
         startAutoplay();
 
+        // Swipe support (Touch and Mouse)
+        let startX = 0;
+        let endX = 0;
+        const sliderContainer = document.getElementById('heroSlider');
+
+        // Touch events
+        sliderContainer.addEventListener('touchstart', (e) => {
+            startX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        sliderContainer.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+
+        // Mouse events
+        sliderContainer.addEventListener('mousedown', (e) => {
+            startX = e.screenX;
+        });
+
+        sliderContainer.addEventListener('mouseup', (e) => {
+            endX = e.screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50; // minimum distance for swipe
+            if (endX < startX - swipeThreshold) {
+                // Swipe left -> Next slide
+                nextSlide();
+                stopAutoplay();
+                startAutoplay();
+            }
+            if (endX > startX + swipeThreshold) {
+                // Swipe right -> Prev slide
+                prevSlide();
+                stopAutoplay();
+                startAutoplay();
+            }
+        }
+
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') {
@@ -224,7 +265,7 @@ get_header(); ?>
     </script>
 
     <!-- SECCIÓN: VIAJES PERSONALIZADOS (EXPLICACIÓN + PASOS) -->
-    <section class="py-20 bg-background">
+    <section class="py-12 bg-background">
         <div class="container mx-auto px-6">
             <div class="grid gap-12 lg:grid-cols-2 items-center">
                 <!-- Texto principal -->
@@ -295,7 +336,7 @@ get_header(); ?>
     </section>
 
     <!-- NAVEGACIÓN POR EMOCIONES (APOYO A VIAJES PERSONALIZADOS) -->
-    <section class="py-20 bg-background">
+    <section class="py-12 bg-background">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-display font-satoshi text-text-primary mb-4 reveal-on-scroll">
@@ -306,7 +347,7 @@ get_header(); ?>
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                 <!-- Indonesia -->
                 <div class="group cursor-pointer reveal-on-scroll delay-100" onclick="window.location.href='<?php echo esc_url( get_permalink( get_page_by_path('indonesia') ) ); ?>'">
                     <div class="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
@@ -317,7 +358,7 @@ get_header(); ?>
                         <div class="absolute inset-0 bg-gradient-to-t from-primary-900/80 via-transparent to-transparent"></div>
                         <div class="absolute bottom-4 left-4 right-4">
                             <h3 class="text-xl font-satoshi text-white mb-2">Indonesia</h3>
-                            <p class="text-white/80 text-sm">Tradiciones vivas, templos y ceremonias. Ideal si buscas un viaje con mucha profundidad cultural.</p>
+                            <p class="text-white/80 text-sm hidden lg:block">Tradiciones vivas, templos y ceremonias. Ideal si buscas un viaje con mucha profundidad cultural.</p>
                         </div>
                     </div>
                 </div>
@@ -332,7 +373,7 @@ get_header(); ?>
                         <div class="absolute inset-0 bg-gradient-to-t from-secondary-900/80 via-transparent to-transparent"></div>
                         <div class="absolute bottom-4 left-4 right-4">
                             <h3 class="text-xl font-satoshi text-white mb-2">Costa Rica</h3>
-                            <p class="text-white/80 text-sm">Selvas, volcanes y vida salvaje. Perfecto si necesitas parar, respirar y reconectar con la naturaleza.</p>
+                            <p class="text-white/80 text-sm hidden lg:block">Selvas, volcanes y vida salvaje. Perfecto si necesitas parar, respirar y reconectar con la naturaleza.</p>
                         </div>
                     </div>
                 </div>
@@ -347,7 +388,7 @@ get_header(); ?>
                         <div class="absolute inset-0 bg-gradient-to-t from-accent-900/80 via-transparent to-transparent"></div>
                         <div class="absolute bottom-4 left-4 right-4">
                             <h3 class="text-xl font-satoshi text-white mb-2">Colombia</h3>
-                            <p class="text-white/80 text-sm">Colores, música y gente que te hace sentir en casa desde el primer día.</p>
+                            <p class="text-white/80 text-sm hidden lg:block">Colores, música y gente que te hace sentir en casa desde el primer día.</p>
                         </div>
                     </div>
                 </div>
@@ -362,7 +403,7 @@ get_header(); ?>
                         <div class="absolute inset-0 bg-gradient-to-t from-primary-700/80 via-transparent to-transparent"></div>
                         <div class="absolute bottom-4 left-4 right-4">
                             <h3 class="text-xl font-satoshi text-white mb-2">Marruecos</h3>
-                            <p class="text-white/80 text-sm">Desierto, medinas y rutas alejadas del turismo de masas. Puro viaje sensorial.</p>
+                            <p class="text-white/80 text-sm hidden lg:block">Desierto, medinas y rutas alejadas del turismo de masas. Puro viaje sensorial.</p>
                         </div>
                     </div>
                 </div>
@@ -371,7 +412,7 @@ get_header(); ?>
     </section>
 
     <!-- SECCIÓN: VIAJES DE AUTOR (EXPLICACIÓN + PASOS) -->
-    <section class="py-20 bg-background">
+    <section class="py-12 bg-background">
         <div class="container mx-auto px-6">
             <div class="grid gap-12 lg:grid-cols-2 items-center">
                 <!-- Texto principal -->
@@ -441,7 +482,7 @@ get_header(); ?>
     </section>
 
     <!-- NUEVA SECCIÓN: VIAJES DE AUTOR -->
-    <section class="py-20 bg-background">
+    <section class="py-12 bg-background">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-display font-satoshi text-text-primary mb-4 reveal-on-scroll">
@@ -546,11 +587,11 @@ get_header(); ?>
                                     </span>
                                 <?php endif; ?>
 
-                                <?php if ($grupos) : ?>
+                                <!--<?php if ($grupos) : ?>
                                     <span class="btn-primary text-text-secondary px-3 py-1 rounded-full text-sm font-medium">
                                         <?php echo esc_html($grupos); ?>
                                     </span>
-                                <?php endif; ?>
+                                <?php endif; ?>-->
                             </div>
 
                             <!-- Precio a la derecha -->
@@ -586,7 +627,7 @@ get_header(); ?>
     </section>
 
     <!-- REVIEWS: SLIDER DINÁMICO CON AUTOPLAY -->
-    <section class="py-20 bg-background" id="reviews">
+    <section class="py-12 bg-background" id="reviews">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-display font-satoshi text-text-primary mb-4 reveal-on-scroll">
@@ -693,12 +734,12 @@ get_header(); ?>
                 </div>
 
                 <!-- Navigation Arrows -->
-                <button id="prevReview" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 bg-white/90 hover:bg-white text-text-primary p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10">
+                <button id="prevReview" class="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-white/90 hover:bg-white text-text-primary p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-40">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                     </svg>
                 </button>
-                <button id="nextReview" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 bg-white/90 hover:bg-white text-text-primary p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10">
+                <button id="nextReview" class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-white/90 hover:bg-white text-text-primary p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-40">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                     </svg>
@@ -707,7 +748,7 @@ get_header(); ?>
                 <!-- Pagination Dots -->
                 <div class="flex justify-center gap-2 mt-8">
                     <?php foreach ($reviews as $index => $review) : ?>
-                    <button class="review-dot w-3 h-3 rounded-full transition-all duration-300 <?php echo $index === 0 ? 'bg-accent w-8' : 'bg-gray-300 hover:bg-gray-400'; ?>" data-index="<?php echo $index; ?>"></button>
+                    <button class="review-dot h-3 rounded-full bg-accent transition-all duration-300 <?php echo $index === 0 ? 'w-8' : 'w-3 opacity-50 hover:opacity-100'; ?>" data-index="<?php echo $index; ?>"></button>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -744,11 +785,11 @@ get_header(); ?>
                 // Update dots
                 dots.forEach((dot, i) => {
                     if (i === currentSlide) {
-                        dot.classList.remove('bg-gray-300', 'hover:bg-gray-400');
-                        dot.classList.add('bg-accent', 'w-8');
+                        dot.classList.remove('w-3', 'opacity-50', 'hover:opacity-100');
+                        dot.classList.add('w-8');
                     } else {
-                        dot.classList.remove('bg-accent', 'w-8');
-                        dot.classList.add('bg-gray-300', 'hover:bg-gray-400');
+                        dot.classList.remove('w-8');
+                        dot.classList.add('w-3', 'opacity-50', 'hover:opacity-100');
                     }
                 });
             }
@@ -794,6 +835,47 @@ get_header(); ?>
             slider.parentElement.addEventListener('mouseenter', stopAutoplay);
             slider.parentElement.addEventListener('mouseleave', startAutoplay);
 
+            // Swipe support (Touch and Mouse)
+            let startX = 0;
+            let endX = 0;
+            const sliderContainer = slider.parentElement; // Swipe on the container, not just the track
+
+            // Touch events
+            sliderContainer.addEventListener('touchstart', (e) => {
+                startX = e.changedTouches[0].screenX;
+            }, {passive: true});
+
+            sliderContainer.addEventListener('touchend', (e) => {
+                endX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, {passive: true});
+
+            // Mouse events
+            sliderContainer.addEventListener('mousedown', (e) => {
+                startX = e.screenX;
+            });
+
+            sliderContainer.addEventListener('mouseup', (e) => {
+                endX = e.screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                const swipeThreshold = 50; // minimum distance for swipe
+                if (endX < startX - swipeThreshold) {
+                    // Swipe left -> Next slide
+                    nextSlide();
+                    stopAutoplay();
+                    startAutoplay();
+                }
+                if (endX > startX + swipeThreshold) {
+                    // Swipe right -> Prev slide
+                    prevSlide();
+                    stopAutoplay();
+                    startAutoplay();
+                }
+            }
+
             // Start autoplay
             startAutoplay();
 
@@ -814,7 +896,7 @@ get_header(); ?>
     </section>
 
     <!-- CTA FINAL -->
-    <section class="py-20 bg-background text-text-secondary">
+    <section class="py-12 bg-background text-text-secondary">
         <div class="container mx-auto px-6 text-center">
             <div class="max-w-3xl mx-auto">
                 <h2 class="text-display font-satoshi mb-6 reveal-on-scroll">
@@ -828,8 +910,9 @@ get_header(); ?>
                     <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" class="btn-primary text-text-secondary">
                         Diseñar mi viaje a medida
                     </a>
-                    <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" class="btn-primary text-text-secondary">
-                        Ver viajes de autor
+                    <a href="https://wa.me/message/XD2DTYOAKBIAJ1" target="_blank" class="btn-primary text-text-secondary flex items-center gap-2">
+                        <img width="64" height="64" src="https://img.icons8.com/cotton/64/whatsapp--v4.png" alt="whatsapp--v4" class="w-6 h-6"/>
+                        Escríbenos por WhatsApp
                     </a>
                 </div>
             </div>

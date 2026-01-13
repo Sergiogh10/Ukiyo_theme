@@ -23,6 +23,8 @@ if ( 'POST' === $_SERVER['REQUEST_METHOD'] && isset($_POST['ukiyo_trip_nonce']) 
         $errors[] = 'Sesión no válida. Recarga e inténtalo de nuevo.';
     }
 
+
+
     // Recoge y sanea
     $traveller_name         = isset($_POST['traveller_name']) ? sanitize_text_field($_POST['traveller_name']) : '';
     $email        = isset($_POST['email']) ? sanitize_email($_POST['email']) : '';
@@ -38,7 +40,7 @@ if ( 'POST' === $_SERVER['REQUEST_METHOD'] && isset($_POST['ukiyo_trip_nonce']) 
     $interests    = isset($_POST['interests']) && is_array($_POST['interests']) ? array_map('sanitize_text_field', $_POST['interests']) : [];
     $regions      = isset($_POST['regions']) && is_array($_POST['regions']) ? array_map('sanitize_text_field', $_POST['regions']) : [];
     $prev_trips   = isset($_POST['prev_trips']) ? sanitize_textarea_field($_POST['prev_trips']) : '';
-    $trip_vibe    = isset($_POST['trip_vibe']) ? sanitize_text_field($_POST['trip_vibe']) : '';
+    $trip_vibe    = isset($_POST['trip_vibe']) && is_array($_POST['trip_vibe']) ? array_map('sanitize_text_field', $_POST['trip_vibe']) : [];
     $notes        = isset($_POST['notes']) ? sanitize_textarea_field($_POST['notes']) : '';
     $gdpr         = isset($_POST['gdpr']) ? sanitize_text_field($_POST['gdpr']) : '';
 
@@ -122,7 +124,7 @@ if ( 'POST' === $_SERVER['REQUEST_METHOD'] && isset($_POST['ukiyo_trip_nonce']) 
                                         <td style="width: 4%;"></td>
                                         <td style="padding: 12px; background-color: #f9f9f9; border-radius: 8px; width: 48%; vertical-align: top;" valign="top">
                                             <p style="margin: 0; font-size: 13px; color: #6b6b6b; text-transform: uppercase; letter-spacing: 0.5px;">Vibe</p>
-                                            <p style="margin: 5px 0 0; font-size: 16px; font-weight: 600; color: #2c2c2c;">' . esc_html($trip_vibe) . '</p>
+                                            <p style="margin: 5px 0 0; font-size: 16px; font-weight: 600; color: #2c2c2c;">' . ( $trip_vibe ? esc_html(implode(', ', $trip_vibe)) : '—' ) . '</p>
                                         </td>
                                     </tr>
                                 </table>
@@ -173,33 +175,57 @@ if ( 'POST' === $_SERVER['REQUEST_METHOD'] && isset($_POST['ukiyo_trip_nonce']) 
             $errors[] = 'Uy… no hemos podido enviar el correo. Inténtalo de nuevo en unos minutos.';
         }
     }
+
+    // Redirect to WhatsApp if requested and no errors
+    if ( empty($errors) && $sent && isset($_POST['submit_action']) && $_POST['submit_action'] === 'whatsapp' ) {
+        // Redirigir a WhatsApp
+        // Usamos el mismo enlace que en el CTA de la home
+        wp_redirect('https://wa.me/message/XD2DTYOAKBIAJ1');
+        exit;
+    }
 }
 
 get_header();
 ?>
 
-<!-- HERO / Intro -->
-<section class="relative pt-24 pb-16 overflow-hidden bg-background from-primary-50 via-accent-50 to-secondary-50">
-  <div class="absolute inset-0 opacity-10 pointer-events-none">
-    <svg class="w-full h-full" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect width="100%" height="100%" fill="url(#ukiyo-pattern)"/>
-    </svg>
+<!-- HERO STYLE -->
+<style>
+  .hero-experiences { height: 50vh; }
+  @media (min-width: 1024px) {
+    .hero-experiences { height: auto !important; min-height: 50vh !important; }
+  }
+</style>
+
+<section class="hero-experiences relative flex items-center justify-center overflow-hidden pt-32 pb-16 mb-12">
+  <!-- Background Image -->
+  <div class="absolute inset-0 w-full h-full">
+    <img src="<?php echo get_template_directory_uri(); ?>/images/destination-mood/viajes-a-colombia-personalizados-cartagena-ciudad-amurallada.jpg" 
+         alt="Planifica tu viaje" 
+         class="w-full h-full object-cover mask-image" 
+         loading="eager" />
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
   </div>
 
-  <div class="container mx-auto px-6 relative z-10">
-    <div class="max-w-3xl mx-auto text-center">
-      <span class="inline-block btn-primary text-text-secondary px-4 py-2 rounded-full text-sm font-satoshi mb-4">Planifica tu viaje</span>
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-crimson text-text-primary leading-tight mb-4">
-        Cuéntanos <span class="text-transparent bg-background from-primary via-secondary to-accent bg-clip-text">cómo viajas</span>
-      </h1>
-      <p class="text-lg text-text-secondary max-w-2xl mx-auto font-satoshi">
-        Con estas preguntas rápidas te conocemos mejor y diseñamos una experiencia auténtica, sin turismo masivo. Es ameno, prometido
-      </p>
+  <!-- Contenido Hero - Centrado -->
+  <div class="relative z-10 w-full">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">
+          A medida
+        </span>
+        <h1 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
+          Cuéntanos <span class="text-accent-300">cómo viajas</span>
+        </h1>
+        <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed text-shadow">
+          Con estas preguntas rápidas te conocemos mejor y diseñamos una experiencia auténtica. Es ameno, prometido.
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FORM -->
+
 <section class="py-12 bg-background">
   <div class="container mx-auto px-6">
     <div class="max-w-5xl mx-auto">
@@ -231,20 +257,20 @@ get_header();
         </div>
       </div>
 
-      <form method="post" id="ukiyo-v2-form" class="ukiyo-form w-full max-w-6xl mx-auto bg-surface rounded-3xl shadow-xl overflow-hidden relative min-h-[600px] flex flex-col">
+      <form method="post" id="ukiyo-v2-form" class="ukiyo-form w-full max-w-6xl mx-auto bg-surface rounded-3xl shadow-xl relative min-h-[600px] flex flex-col lg:overflow-hidden">
         <?php wp_nonce_field('ukiyo_trip_submit', 'ukiyo_trip_nonce'); ?>
         <input type="text" name="ukiyo_pot" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
         <!-- STEPS CONTAINER -->
-        <div class="flex-grow bg-background relative p-6 md:p-10 overflow-hidden">
+        <div class="flex-grow bg-background relative p-6 md:p-10 lg:overflow-hidden">
             
             <!-- STEP 1: Regions -->
             <div class="form-step active flex flex-col h-full" data-step="1">
-                <h3 class="text-3xl md:text-4xl font-crimson text-text-primary mb-2">¿Qué destino te llama?</h3>
+                <h3 class="text-4xl md:text-6xl font-satoshi text-text-primary mb-6 text-shadow">¿Qué destino te llama?</h3>
                 <p class="text-text-secondary mb-8">Desliza y elige uno o varios destinos para tu aventura.</p>
                 
                 <div class="flex-grow flex items-center">
-                    <div class="w-full flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-6 pb-8 px-2 scrollbar-hide" style="-webkit-overflow-scrolling: touch;">
+                    <div class="w-full flex flex-col items-center lg:flex-row lg:flex-nowrap lg:overflow-x-auto lg:snap-x lg:snap-mandatory lg:items-start gap-6 pb-8 px-2 scrollbar-hide" style="-webkit-overflow-scrolling: touch;">
                         <?php
                         $regions_all = [
                             [
@@ -291,11 +317,11 @@ get_header();
 
             <!-- STEP 2: Duration -->
             <div class="form-step hidden flex flex-col h-full" data-step="2">
-                <h3 class="text-3xl md:text-4xl font-crimson text-text-primary mb-2">¿Cuánto tiempo tienes?</h3>
+                <h3 class="text-4xl md:text-6xl font-satoshi text-text-primary mb-6 text-shadow">¿Cuánto tiempo tienes?</h3>
                 <p class="text-text-secondary mb-8">Selecciona la duración ideal para tu viaje.</p>
                 
                 <div class="flex-grow flex items-center">
-                    <div class="w-full flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-6 pb-8 px-2 scrollbar-hide">
+                    <div class="w-full flex flex-col items-center lg:flex-row lg:flex-nowrap lg:overflow-x-auto lg:snap-x lg:snap-mandatory lg:items-start gap-6 pb-8 px-2 scrollbar-hide">
                         <?php 
                         $durations = [
                             ['val' => '1 semana', 'emoji' => ''],
@@ -319,11 +345,11 @@ get_header();
 
             <!-- STEP 3: Travelers -->
             <div class="form-step hidden flex flex-col h-full" data-step="3">
-                <h3 class="text-3xl md:text-4xl font-crimson text-text-primary mb-2">¿Quiénes viajan?</h3>
+                <h3 class="text-4xl md:text-6xl font-satoshi text-text-primary mb-6 text-shadow">¿Quiénes viajan?</h3>
                 <p class="text-text-secondary mb-8">Cuéntanos con quién compartirás esta experiencia.</p>
                 
                 <div class="flex-grow flex items-center">
-                    <div class="w-full flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-6 pb-8 px-2 scrollbar-hide">
+                    <div class="w-full flex flex-col items-center lg:flex-row lg:flex-nowrap lg:overflow-x-auto lg:snap-x lg:snap-mandatory lg:items-start gap-6 pb-8 px-2 scrollbar-hide">
                         <?php 
                         $travelers = [
                             ['val' => 'Solo', 'label' => 'Solo/a', 'emoji' => ''],
@@ -347,11 +373,11 @@ get_header();
 
             <!-- STEP 4: Pace -->
             <div class="form-step hidden flex flex-col h-full" data-step="4">
-                <h3 class="text-3xl md:text-4xl font-crimson text-text-primary mb-2">¿Qué ritmo prefieres?</h3>
+                <h3 class="text-4xl md:text-6xl font-satoshi text-text-primary mb-6 text-shadow">¿Qué ritmo prefieres?</h3>
                 <p class="text-text-secondary mb-8">Elige la intensidad de tu viaje.</p>
                 
                 <div class="flex-grow flex items-center">
-                    <div class="w-full flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-6 pb-8 px-2 scrollbar-hide">
+                    <div class="w-full flex flex-col items-center lg:flex-row lg:flex-nowrap lg:overflow-x-auto lg:snap-x lg:snap-mandatory lg:items-start gap-6 pb-8 px-2 scrollbar-hide">
                         <?php 
                         $paces = [
                             ['val' => 'Relax', 'label' => 'Relax Total', 'desc' => 'Sin prisas, disfrutar del momento', 'emoji' => ''],
@@ -377,11 +403,11 @@ get_header();
 
             <!-- STEP 5: Styles -->
             <div class="form-step hidden flex flex-col h-full" data-step="5">
-                <h3 class="text-3xl md:text-4xl font-crimson text-text-primary mb-2">¿Qué estilo buscas?</h3>
-                <p class="text-text-secondary mb-8">Selecciona lo que más te inspire.</p>
+                <h3 class="text-4xl md:text-6xl font-satoshi text-text-primary mb-6 text-shadow">¿Qué estilo buscas?</h3>
+                <p class="text-text-secondary mb-8">Selecciona lo que más te inspire. Puedes marcar varios.</p>
                 
                 <div class="flex-grow flex items-center">
-                    <div class="w-full flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-6 pb-8 px-2 scrollbar-hide">
+                    <div class="w-full flex flex-col items-center lg:flex-row lg:flex-nowrap lg:overflow-x-auto lg:snap-x lg:snap-mandatory lg:items-start gap-6 pb-8 px-2 scrollbar-hide">
                         <?php
                         $styles_all = ['Inmersión cultural','Naturaleza','Gastronomía','Aventura suave'];
                         foreach($styles_all as $s): 
@@ -400,11 +426,11 @@ get_header();
 
             <!-- STEP 6: Vibe -->
             <div class="form-step hidden flex flex-col h-full" data-step="6">
-                <h3 class="text-3xl md:text-4xl font-crimson text-text-primary mb-2">¿Cuál es el vibe?</h3>
-                <p class="text-text-secondary mb-8">La esencia de tu viaje.</p>
+                <h3 class="text-4xl md:text-6xl font-satoshi text-text-primary mb-6 text-shadow">¿Cuál es el vibe?</h3>
+                <p class="text-text-secondary mb-8">La esencia de tu viaje. Elige una o varias.</p>
                 
                 <div class="flex-grow flex items-center">
-                    <div class="w-full flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-6 pb-8 px-2 scrollbar-hide">
+                    <div class="w-full flex flex-col items-center lg:flex-row lg:flex-nowrap lg:overflow-x-auto lg:snap-x lg:snap-mandatory lg:items-start gap-6 pb-8 px-2 scrollbar-hide">
                         <?php
                         $vibes = [
                             'Conexión profunda' => '',
@@ -416,7 +442,7 @@ get_header();
                         foreach($vibes as $label => $emoji): 
                         ?>
                         <label class="ukiyo-card-v2 snap-center shrink-0">
-                            <input type="radio" name="trip_vibe" value="<?php echo esc_attr($label); ?>" class="peer sr-only">
+                            <input type="checkbox" name="trip_vibe[]" value="<?php echo esc_attr($label); ?>" class="peer sr-only">
                             <div class="ukiyo-card-content">
                                 <span class="hidden mb-4"><?php echo $emoji; ?></span>
                                 <span class="text-xl font-bold font-satoshi text-text-primary"><?php echo esc_html($label); ?></span>
@@ -431,37 +457,48 @@ get_header();
 
             <!-- STEP 7: Contact -->
             <div class="form-step hidden flex flex-col h-full" data-step="7">
-                <h3 class="text-3xl md:text-4xl font-crimson text-text-primary mb-2">¡Último paso!</h3>
+                <h3 class="text-4xl md:text-6xl font-satoshi text-text-primary mb-6 text-shadow">¡Último paso!</h3>
                 <p class="text-text-secondary mb-8">Déjanos tus datos para contactarte.</p>
                 
-                <div class="max-w-2xl mx-auto w-full space-y-6">
+                <div class="space-y-6">
+                    <h3 class="text-xl font-satoshi font-semibold text-text-primary border-b border-gray-200 pb-2">1. Tus datos</h3>
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block rounded-2xl text-sm font-bold text-text-primary mb-2">Nombre completo *</label>
-                            <input type="text" name="traveller_name" required class="w-full p-4 rounded-2xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20">
-                        </div>
-                        <div>
-                            <label class="block rounded-2xl text-sm font-bold text-text-primary mb-2">Email *</label>
-                            <input type="email" name="email" required class="w-full p-4 rounded-2xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20">
-                        </div>
-                        <!--<div>
-                            <label class="block rounded-2xl text-sm font-bold text-text-primary mb-2">WhatsApp *</label>
-                            <input type="text" name="whatsapp" required class="w-full p-4 rounded-2xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20">
-                        </div>
-                        <div>
-                            <label class="block rounded-2xl text-sm font-bold text-text-primary mb-2">Ciudad / País</label>
-                            <input type="text" name="country" class="w-full p-4 rounded-2xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20">
-                        </div>-->
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Nombre completo *</label>
+                        <input type="text" name="traveller_name" required
+                            value="<?php echo isset($_POST['traveller_name']) ? esc_attr($_POST['traveller_name']) : ''; ?>"
+                            class="w-full rounded-2xl border-2 focus:border-primary focus:ring-primary py-3 px-4 bg-white/50 backdrop-blur-sm transition-shadow"
+                            style="border-color: rgb(246, 207, 102); background-color: var(--color-background);"
+                            placeholder="Tu nombre">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Teléfono / WhatsApp</label>
+                        <input type="tel" name="phone"
+                            value="<?php echo isset($_POST['phone']) ? esc_attr($_POST['phone']) : ''; ?>"
+                            class="w-full rounded-2xl border-2 focus:border-primary focus:ring-primary py-3 px-4 bg-white/50 backdrop-blur-sm transition-shadow"
+                            style="border-color: rgb(246, 207, 102); background-color: var(--color-background);"
+                            placeholder="+34 600 000 000">
+                    </div>
                     </div>
 
-                    <div class="pt-4">
-                        <label class="flex items-start gap-3 cursor-pointer p-4 rounded-2xl border border-gray-100 bg-gray-50 hover:bg-gray-100 transition-colors">
-                            <input type="checkbox" name="gdpr" value="1" required class="mt-1 w-5 h-5 text-primary border-gray-300 rounded-2xl focus:ring-primary">
-                            <span class="text-sm text-gray-600">
-                                Acepto la <a href="<?php echo esc_url( get_permalink( get_page_by_path('privacidad') ) ); ?>" class="text-primary underline font-bold">política de privacidad</a> y quiero que diseñéis mi viaje.
-                            </span>
-                        </label>
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Email *</label>
+                        <input type="email" name="email" required
+                            value="<?php echo isset($_POST['email']) ? esc_attr($_POST['email']) : ''; ?>"
+                            class="w-full rounded-2xl border-2 focus:border-primary focus:ring-primary py-3 px-4 bg-white/50 backdrop-blur-sm transition-shadow"
+                            style="border-color: rgb(246, 207, 102); background-color: var(--color-background);"
+                            placeholder="hola@ejemplo.com">
                     </div>
+                </div>
+                <br>
+                <div class="pt-4">
+                    <label class="flex items-start gap-3 cursor-pointer p-4 rounded-2xl border border-gray-100 bg-gray-50 hover:bg-gray-100 transition-colors">
+                        <input type="checkbox" name="gdpr" value="1" required class="mt-1 w-5 h-5 text-primary border-gray-300 rounded-2xl focus:ring-primary">
+                        <span class="text-sm text-gray-600">
+                            Acepto la <a href="<?php echo esc_url( get_permalink( get_page_by_path('privacidad') ) ); ?>" class="text-primary underline font-bold">política de privacidad</a> y quiero que diseñéis mi viaje.
+                        </span>
+                    </label>
                 </div>
             </div>
 
@@ -477,8 +514,12 @@ get_header();
                 Siguiente
             </button>
 
-            <button type="submit" id="submitBtn" class="hidden ml-auto px-8 py-3 rounded-full btn-primary text-text-secondary font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all">
-                Enviar Solicitud ✨
+            <button type="submit" id="submitBtn" name="submit_action" value="email" class="hidden ml-auto px-8 py-3 rounded-full btn-primary text-text-secondary font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all">
+                Enviar ✨
+            </button>
+            <button type="submit" id="submitWhatsappBtn" name="submit_action" value="whatsapp" class="hidden ml-auto px-8 py-3 rounded-full btn-primary text-text-secondary font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center gap-2">
+                <img width="64" height="64" src="https://img.icons8.com/cotton/64/whatsapp--v4.png" alt="whatsapp--v4" class="w-6 h-6"/>
+                Enviar y WhatsApp
             </button>
         </div>
 
@@ -497,7 +538,7 @@ get_header();
 
             .ukiyo-card-v2 {
                 width: 300px;
-                height: 300px;
+                height: 120px; /* Mobile height */
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -515,6 +556,12 @@ get_header();
                 border-color: rgb(246, 207, 102);
                 transform: translateY(-4px);
                 box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.1);
+            }
+
+            @media (min-width: 1024px) {
+                .ukiyo-card-v2 {
+                    height: 300px;
+                }
             }
 
             .ukiyo-card-content {
@@ -592,9 +639,11 @@ get_header();
                 if (currentStep === totalSteps - 1) {
                     nextBtn.classList.add('hidden');
                     submitBtn.classList.remove('hidden');
+                    document.getElementById('submitWhatsappBtn').classList.remove('hidden'); // Show WhatsApp button
                 } else {
                     nextBtn.classList.remove('hidden');
                     submitBtn.classList.add('hidden');
+                    document.getElementById('submitWhatsappBtn').classList.add('hidden'); // Hide WhatsApp button
                 }
 
                 // Scroll to top of form
@@ -648,6 +697,9 @@ get_header();
                         
                         inputs.forEach(input => {
                             input.addEventListener('change', () => {
+                                // Skip auto-advance for checkboxes (steps 1 and 5) to allow multi-selection
+                                if (input.type === 'checkbox') return;
+
                                 // Small delay for better UX (let user see the selection)
                                 setTimeout(() => {
                                     if (index === currentStep && currentStep < totalSteps - 1) {
@@ -693,9 +745,9 @@ get_header();
 <!-- FAQ rápido / cierre -->
 <section class="py-12 bg-background">
   <div class="container mx-auto px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-crimson text-text-primary mb-4">¿Qué pasa después?</h2>
-      <p class="text-text-secondary">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-display font-satoshi text-text-primary mb-6 reveal-on-scroll">¿Qué pasa después?</h2>
+      <p class="text-xl text-text-secondary mb-8 opacity-90 reveal-on-scroll delay-100">
         Te respondemos en breve con preguntas afinadas y una propuesta inicial. Ajustamos contigo hasta que el viaje sea 100% tú. Sin turismo masivo, sin guías enlatadas. 💫
       </p>
     </div>

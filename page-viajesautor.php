@@ -8,7 +8,13 @@ get_header();
 
 <main id="primary" class="relative">
   <!-- HERO -->
-  <section class="relative flex items-center justify-center overflow-hidden" style="min-height: 50vh; padding-top: 8rem; padding-bottom: 4rem;">
+<style>
+  .hero-responsive { height: 100vh; }
+  @media (min-width: 1024px) {
+    .hero-responsive { height: auto !important; min-height: 50vh !important; }
+  }
+</style>
+  <section class="hero-responsive relative flex items-center justify-center overflow-hidden pt-32 pb-16">
     <!-- Background Image -->
     <div class="absolute inset-0 w-full h-full">
       <img src="<?php echo get_template_directory_uri(); ?>/images/heroimages/viajes-autor-ukiyo-pantanal4.jpg" 
@@ -187,11 +193,11 @@ get_header();
   </div>
 </section>
 
-  <section class="py-20 bg-background">
+  <section class="py-12 bg-background">
     <div class="container mx-auto px-6">
       <div class="text-center mb-16">
         <h2 class="text-display font-satoshi text-text-primary mb-4">
-          Cómo <span class="text-primary">funciona</span>
+          ¿Cómo <span class="text-primary">funciona</span>?
         </h2>
         <p class="text-text-secondary max-w-2xl mx-auto">Tu viaje en 4 pasos sencillos</p>
       </div>
@@ -300,7 +306,7 @@ get_header();
 
         <!-- Connection Line (visible on desktop) -->
         <div class="hidden lg:block relative pointer-events-none">
-          <svg class="w-full h-2" style="margin-top: 4rem;">
+          <svg class="w-full h-2" style="margin-top: 3rem;">
             <line x1="12%" y1="0" x2="88%" y2="0" stroke="#F6CF66" stroke-width="3" stroke-dasharray="8,8" opacity="0.3"/>
           </svg>
         </div>
@@ -309,7 +315,7 @@ get_header();
   </section>
 
   <!-- AUTORES (mini bios) -->
-  <section class="py-10 bg-background">
+  <section class="py-12 bg-background">
   <div class="container mx-auto px-6">
     
     <div class="text-center">
@@ -397,7 +403,7 @@ get_header();
 </section>
 
   <!-- FAQ -->
- <section class="py-20 bg-background">
+ <section class="py-12 bg-background">
   <div class="container mx-auto px-6">
     
     <div class="text-center mb-16">
@@ -491,7 +497,7 @@ get_header();
   </section>
 
   <!-- CTA Section -->
-  <section class="py-20 bg-background text-text-secondary">
+  <section class="py-12 bg-background text-text-secondary">
         <div class="container mx-auto px-6 text-center">
             <div class="max-w-3xl mx-auto">
               <h2 class="text-display font-satoshi mb-6 reveal-on-scroll">

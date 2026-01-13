@@ -93,7 +93,7 @@
 
 @font-face {
   font-family: 'Rowdies';
-  src: url('/wp-content/themes/Ukiyo/assets/fonts/rowdies/Rowdies-Light.ttf') format('truetype');
+  src: url('../fonts/rowdies/Rowdies-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -101,7 +101,7 @@
 
 @font-face {
   font-family: 'Rowdies';
-  src: url('/wp-content/themes/Ukiyo/assets/fonts/rowdies/Rowdies-Regular.ttf') format('truetype');
+  src: url('../fonts/rowdies/Rowdies-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -109,7 +109,7 @@
 
 @font-face {
   font-family: 'Rowdies';
-  src: url('/wp-content/themes/Ukiyo/assets/fonts/rowdies/Rowdies-Bold.ttf') format('truetype');
+  src: url('../fonts/rowdies/Rowdies-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -2324,6 +2324,10 @@ body {
 
 .text-shadow-soft {
   text-shadow: 0 2px 4px rgba(44, 44, 44, 0.1);
+}
+
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .bg-gradient-warm {

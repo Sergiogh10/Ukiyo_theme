@@ -7,7 +7,13 @@ get_header();
 ?>
 
 <!-- HERO -->
-  <section class="relative flex items-center justify-center overflow-hidden" style="min-height: 50vh; padding-top: 8rem; padding-bottom: 4rem;">
+<style>
+  .hero-experiences { height: 100vh; }
+  @media (min-width: 1024px) {
+    .hero-experiences { height: auto !important; min-height: 50vh !important; }
+  }
+</style>
+  <section class="hero-experiences relative flex items-center justify-center overflow-hidden pt-32 pb-16">
     <!-- Background Image -->
     <div class="absolute inset-0 w-full h-full">
       <img src="<?php echo get_template_directory_uri(); ?>/images/indonesia/viajes-a-indonesia-personalizados-islas.jpg" 
@@ -41,8 +47,7 @@ get_header();
   <div id="map" class="w-full h-[480px] rounded-2xl shadow-lg ring-1 ring-border/60"></div>
 </section> -->
 
-<!-- Experience Cards Grid -->
-<!-- Curated Destinations Accordion -->
+<!-- Destinations Accordion -->
 <style>
     /* Critical styles for Accordion visibility without Tailwind build */
     .ukiyo-accordion-container {
@@ -55,7 +60,7 @@ get_header();
     .ukiyo-accordion-card {
         position: relative;
         flex: 1;
-        height: 300px; /* Mobile height */
+        min-height: 300px;
         border-radius: 0; /* Default no radius for continuity */
         overflow: hidden;
         cursor: pointer;
@@ -63,6 +68,7 @@ get_header();
         display: flex;
         align-items: flex-end; /* Align content to bottom */
         box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); /* shadow-xl */
+        background-color: #000; /* Fallback for visibility */
     }
 
     /* Mobile: Top corners for first, Bottom corners for last */
@@ -115,7 +121,7 @@ get_header();
     }
 </style>
 
-  <section class="py-20 bg-background">
+  <section class="py-12 bg-background">
     <div class="container mx-auto px-6">
       <div class="text-center mb-16">
         <h2 class="text-display font-satoshi text-text-primary mb-4">
@@ -185,7 +191,7 @@ get_header();
                         </h3>
 
                         <!-- Description & Button (Hidden by default, expands down on hover) -->
-                        <div class="max-h-0 opacity-0 group-hover:max-h-[200px] group-hover:opacity-100 transition-all duration-500 ease-out overflow-hidden">
+                        <div class="hidden lg:block max-h-0 opacity-0 group-hover:max-h-[200px] group-hover:opacity-100 transition-all duration-500 ease-out overflow-hidden">
                             <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 15px; margin-bottom: 1rem;">
                                 <?php echo esc_html($country['tagline']); ?>. Descubre los secretos de <?php echo esc_html($country['name']); ?> con un itinerario personalizado.
                             </p>
@@ -198,7 +204,7 @@ get_header();
 </section>
 
     <!-- CTA FINAL -->
-    <section class="py-20 bg-background text-text-secondary">
+    <section class="py-12 bg-background text-text-secondary">
         <div class="container mx-auto px-6 text-center">
             <div class="max-w-3xl mx-auto">
                 <h2 class="text-display font-satoshi mb-6 reveal-on-scroll">
@@ -209,7 +215,8 @@ get_header();
                     Cuéntanos qué te mueve y crearemos juntos una experiencia que encaje contigo.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center reveal-on-scroll delay-200">
-                    <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" class="btn-primary text-text-secondary">
+                    <a href="https://wa.me/message/XD2DTYOAKBIAJ1" target="_blank" class="btn-primary text-text-secondary flex items-center gap-2">
+                        <img width="64" height="64" src="https://img.icons8.com/cotton/64/whatsapp--v4.png" alt="whatsapp--v4" class="w-6 h-6"/>
                         Cuéntanos tu idea
                     </a>
                     <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" class="btn-primary text-text-secondary">

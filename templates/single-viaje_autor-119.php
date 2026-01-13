@@ -1116,12 +1116,117 @@ $uri = get_template_directory_uri();
   </section> -->
 
   <!-- GALERÍA SIMPLE -->
-  <section class="py-20 bg-background">
-    <div class="container mx-auto px-6 md:px-8 pb-12 md:pb-16">
-      <div class="grid gap-4 md:grid-cols-3">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/viaje-de-autor-al-pantanal-con-guia-experto-luis-acuna-campo.jpg" alt="Luis Acuña durante el viaje de autor al Pantanal" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-orotina.jpg" alt="Amanecer en el río durante un viaje de autor al Pantanal con Ukiyo" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-volcan.jpg" alt="Aves del Pantanal en un viaje de autor con guía experto" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
+  <section class="py-20 bg-background overflow-hidden">
+    <div class="container mx-auto px-6 md:px-8 mb-12 text-center">
+        <h2 class="text-3xl font-rowdies text-text-primary">Momentos <span class="text-primary">UKIYO</span></h2>
+    </div>
+
+    <style>
+      .marquee-container {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+      }
+      .marquee-inner {
+        display: flex;
+        width: max-content;
+        animation: marqueeScroll 40s linear infinite;
+      }
+      .marquee-container:hover .marquee-inner {
+        animation-play-state: paused;
+      }
+      @keyframes marqueeScroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      /* Gradient overlays to fade edges */
+      .marquee-overlay-left, .marquee-overlay-right {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100px;
+        z-index: 2;
+        pointer-events: none;
+      }
+      .marquee-overlay-left {
+        left: 0;
+        background: linear-gradient(to right, var(--color-background, #fff), transparent);
+      }
+      .marquee-overlay-right {
+        right: 0;
+        background: linear-gradient(to left, var(--color-background, #fff), transparent);
+      }
+      .marquee-card {
+        width: 20rem; /* w-80: 320px */
+        height: 28rem; /* larger height */
+      }
+      @media (max-width: 768px) {
+        .marquee-overlay-left, .marquee-overlay-right { width: 50px; }
+      }
+    </style>
+
+    <?php
+      // Definir las imágenes para el carrusel (6 únicas)
+      $gallery_items = [
+        [
+          'src' => get_template_directory_uri() . '/images/costarica/viajes-a-costa-rica-personalizados-rio-celeste.jpg',
+          'title' => 'Río Celeste',
+          'alt' => 'Río Celeste en Costa Rica'
+        ],
+        [
+          'src' => get_template_directory_uri() . '/images/costarica/viajes-a-costa-rica-personalizados-tucan-corcovado.jpg',
+          'title' => 'Tucán en Corcovado',
+          'alt' => 'Tucán en el Parque Nacional Corcovado'
+        ],
+        [
+          'src' => get_template_directory_uri() . '/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-mono.jpg',
+          'title' => 'Fauna en Tortuguero',
+          'alt' => 'Mono en Tortuguero'
+        ],
+        [
+          'src' => get_template_directory_uri() . '/images/costarica/viajes-a-costa-rica-personalizados-volcan-arenal-la-fortuna.jpg',
+          'title' => 'Volcán Arenal',
+          'alt' => 'Vista del Volcán Arenal'
+        ],
+        [
+          'src' => get_template_directory_uri() . '/images/costarica/viajes-a-costa-rica-personalizados-rana-ojos-rojos.jpg',
+          'title' => 'Rana de Ojos Rojos',
+          'alt' => 'Rana icónica de Costa Rica'
+        ],
+        [
+          'src' => get_template_directory_uri() . '/images/costarica/viajes-a-costa-rica-personalizados-monteverde-bosque-nuboso.jpg',
+          'title' => 'Bosque Nuboso',
+          'alt' => 'Bosque Nuboso de Monteverde'
+        ]
+      ];
+      
+      // Duplicar el array para crear un bucle infinito visualmente denso
+      // 4 items * 4 repeticiones = 16 items en total
+      $marquee_items = array_merge($gallery_items, $gallery_items, $gallery_items, $gallery_items);
+    ?>
+
+    <div class="marquee-container group">
+      <!-- Gradient Overlays -->
+      <div class="marquee-overlay-left"></div>
+      <div class="marquee-overlay-right"></div>
+
+      <div class="marquee-inner">
+        <?php foreach ($marquee_items as $item) : ?>
+          <div class="marquee-card mx-10 relative flex-shrink-0 rounded-xl overflow-hidden group/card transition-transform duration-300 hover:scale-[0.98]">
+             <img src="<?php echo esc_url($item['src']); ?>" 
+                  alt="<?php echo esc_attr($item['alt']); ?>" 
+                  class="w-full h-full object-cover"
+                  loading="lazy">
+             
+             <!-- Overlay con texto al hover -->
+             <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/70 to-transparent flex items-end justify-center pb-6 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
+                <p class="text-white text-lg font-semibold font-satoshi text-shadow px-4 text-center">
+                  <?php echo esc_html($item['title']); ?>
+                </p>
+             </div>
+          </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </section>
