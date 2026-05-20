@@ -7,3 +7,19 @@ seo-tools/.env
 *.pyc
 .DS_Store
 **/.DS_Store
+
+# Carpeta de imágenes (no se versiona; servida aparte)
+images/
+
+# Carpetas y archivos eliminados del repositorio (solo locales)
+docs/
+product-intro/
+promotion_one/
+ACTION-PLAN.md
+FULL-AUDIT-REPORT.md
+redesign_form.py
+redesign_form_v2.py
+webp-conversion-report.json
+webp-conversion-fallback-report.json
+webp-conversion-root-images-report.json
+webp-conversion-summary.json
