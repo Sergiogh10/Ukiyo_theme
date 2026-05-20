@@ -26,10 +26,10 @@
                         Descubre el lujo de la emoción a través de experiencias transformadoras que conectan tu alma con culturas auténticas y aventuras sostenibles.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 animate-slide-up">
-                        <a href="<?php echo home_url('/experience_discovery'); ?>" class="btn-primary text-lg px-8 py-4">
+                        <a href="<?php echo home_url('/planifica-tu-viaje'); ?>" class="btn-primary text-lg px-8 py-4">
                             Comienza tu Transformación
                         </a>
-                        <a href="<?php echo home_url('/traveler_chronicles'); ?>" class="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/30 transition-all duration-300">
+                        <a href="<?php echo home_url('/resenas'); ?>" class="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/30 transition-all duration-300">
                             Historias de Viajeros
                         </a>
                     </div>
@@ -59,7 +59,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Transformación Cultural -->
-                <div class="group cursor-pointer" onclick="window.location.href='<?php echo home_url('/experience_discovery'); ?>'">
+                <div class="group cursor-pointer" onclick="window.location.href='<?php echo home_url('/planifica-tu-viaje'); ?>'">
                     ...
                 </div>
 
@@ -69,12 +69,12 @@
                 </div>
 
                 <!-- Experiencias Ocultas -->
-                <div class="group cursor-pointer" onclick="window.location.href='<?php echo home_url('/experience_discovery'); ?>'">
+                <div class="group cursor-pointer" onclick="window.location.href='<?php echo home_url('/planifica-tu-viaje'); ?>'">
                     ...
                 </div>
 
                 <!-- Tu Viaje Soñado -->
-                <div class="group cursor-pointer" onclick="window.location.href='<?php echo home_url('/experience_discovery'); ?>'">
+                <div class="group cursor-pointer" onclick="window.location.href='<?php echo home_url('/planifica-tu-viaje'); ?>'">
                     ...
                 </div>
             </div>
@@ -85,7 +85,7 @@
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
             ...
-            <!-- Aquí igual, sustituyes los href='experience_discovery.html' por home_url('/experience_discovery') -->
+            <!-- Aquí igual, sustituyes los href='planifica-tu-viaje.html' por home_url('/planifica-tu-viaje') -->
         </div>
     </section>
 
@@ -93,7 +93,7 @@
     <section class="py-20 bg-surface">
         <div class="container mx-auto px-6">
             ...
-            <a href="<?php echo home_url('/traveler_chronicles'); ?>" class="btn-secondary">Leer Más Historias</a>
+            <a href="<?php echo home_url('/resenas'); ?>" class="btn-secondary">Leer Más Historias</a>
             ...
         </div>
     </section>
@@ -109,7 +109,7 @@
                     Cada gran viaje comienza con un sueño. Permítenos ayudarte a convertir ese sueño en una experiencia que cambiará tu perspectiva del mundo.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="<?php echo home_url('/experience_discovery'); ?>" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 transition-all duration-300 shadow-soft">
+                    <a href="<?php echo home_url('/planifica-tu-viaje'); ?>" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 transition-all duration-300 shadow-soft">
                         Diseña tu Experiencia
                     </a>
                     <a href="<?php echo home_url('/about_ukiyo'); ?>" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300">

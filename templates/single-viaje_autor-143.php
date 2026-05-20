@@ -866,11 +866,11 @@ $uri = get_template_directory_uri();
         Cuéntanos qué te mueve y crearemos juntos una experiencia que encaje contigo.
                 </p>
               <div class="flex flex-col sm:flex-row gap-4 justify-center reveal-on-scroll delay-200">
-                  <a href="<?php echo esc_url( get_permalink( get_page_by_path('formularioautor') ) ); ?>" 
+                  <a href="<?php echo esc_url( ukiyo_get_route_url( 'form_viaje_autor' ) ); ?>" 
                     class="btn-primary text-text-secondary">
                       Cuéntanos tu idea
                   </a>
-                  <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" 
+                  <a href="<?php echo esc_url( ukiyo_get_route_url( 'viajes_autor' ) ); ?>" 
                     class="btn-primary text-text-secondary">
                       Ver más viajes
                   </a>
@@ -879,7 +879,12 @@ $uri = get_template_directory_uri();
       </div>
   </section>
 
-<?php get_footer(); ?>
+<?php
+if ( function_exists( 'ukiyo_render_viaje_autor_blog_resources_section' ) ) {
+    ukiyo_render_viaje_autor_blog_resources_section( get_the_ID(), 'bg-white' );
+}
+get_footer();
+?>
 
 <script>
 document.addEventListener('click', (e) => {

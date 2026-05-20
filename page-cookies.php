@@ -27,7 +27,7 @@ get_header();
       <span class="inline-block px-4 py-2 btn-primary text-text-secondary rounded-full text-sm font-satoshi font-medium mb-6">
         Cookies
       </span>
-      <h1 class="text-hero font-satoshi-bold text-text-primary mb-6">
+      <h1 class="text-hero font-rowdies text-text-primary mb-6">
         Política de <span class="text-primary">cookies</span>
       </h1>
     </div>
@@ -71,8 +71,7 @@ get_header();
             <h2 id="responsable" class="scroll-mt-28">2. Responsable</h2>
             <p><strong><?php echo esc_html( get_bloginfo('name') ); ?></strong> ("UKIYO").</p>
             <ul>
-              <li><strong>Email:</strong> <a href="mailto:<?php echo antispambot( get_option('admin_email') ); ?>"><?php echo antispambot( get_option('admin_email') ); ?></a></li>
-              <li><strong>Dirección:</strong> <em>Indica aquí tu dirección fiscal</em></li>
+              <li><strong>Email:</strong> <a href="mailto:<?php echo antispambot( 'info@viajesukiyo.com' ); ?>"><?php echo antispambot( 'info@viajesukiyo.com' ); ?></a></li>
             </ul>
 
             <hr class="my-12 mb-4 border-border/50" />
@@ -186,7 +185,7 @@ get_header();
             <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="contacto" class="scroll-mt-28">11. Contacto</h2>
-            <p>Para cualquier duda, escríbenos a <a href="mailto:<?php echo antispambot( get_option('admin_email') ); ?>"><?php echo antispambot( get_option('admin_email') ); ?></a>.</p>
+            <p>Para cualquier duda, escríbenos a <a href="mailto:<?php echo antispambot( 'info@viajesukiyo.com' ); ?>"><?php echo antispambot( 'info@viajesukiyo.com' ); ?></a>.</p>
 
           </div>
         </div>

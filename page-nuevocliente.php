@@ -22,6 +22,11 @@ $errors = [];
 $success_msg = '';
 $recipient = apply_filters('ukiyo_trip_form_recipient', 'info@viajesukiyo.com');
 
+if ( isset($_GET['submitted']) && $_GET['submitted'] === '1' ) {
+    $sent = true;
+    $success_msg = '¡Gracias! Hemos recibido tus datos correctamente.';
+}
+
 if ( 'POST' === $_SERVER['REQUEST_METHOD'] && isset($_POST['ukiyo_client_nonce']) ) {
 
     // Anti-spam: honeypot
@@ -39,6 +44,7 @@ if ( 'POST' === $_SERVER['REQUEST_METHOD'] && isset($_POST['ukiyo_client_nonce']
     // Recoge y sanea
     $nombre      = sanitize_text_field($_POST['nombre'] ?? '');
     $apellidos   = sanitize_text_field($_POST['apellidos'] ?? '');
+    $fecha_nacim = sanitize_text_field($_POST['fecha_nacimiento'] ?? '');
     $dni         = sanitize_text_field($_POST['dni'] ?? '');
     $pasaporte   = sanitize_text_field($_POST['pasaporte'] ?? '');
     $caducidad   = sanitize_text_field($_POST['caducidad'] ?? '');
@@ -57,87 +63,37 @@ if ( 'POST' === $_SERVER['REQUEST_METHOD'] && isset($_POST['ukiyo_client_nonce']
 
     // Envío
     if ( empty($errors) ) {
-        $subject = sprintf('✨ Alta Nuevo Cliente - %s %s', $nombre, $apellidos);
 
-        // Template HTML similar al de viajes autor
-        $body = '
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alta Cliente</title>
-</head>
-<body style="margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,\'Helvetica Neue\',Arial,sans-serif;background-color:#f5f2ed;color:#2c2c2c;">
-  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#f5f2ed;padding:40px 20px;">
-    <tr>
-      <td align="center">
-        <table cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px;background-color:#ffffff;border-radius:24px;overflow:hidden;box-shadow:0 4px 20px rgba(139,69,19,0.08);">
-          <tr>
-            <td style="background:linear-gradient(135deg,#F6CF66 0%,#E8B48D 100%);padding:40px 40px 30px;text-align:center;">
-              <h1 style="margin:0;font-size:32px;font-weight:700;color:#2c2c2c;letter-spacing:-0.5px;">✨ Alta Nuevo Cliente</h1>
-            </td>
-          </tr>
+        // 1. Crear Cliente en el sistema (CPT ukiyo_client)
+        $post_data = [
+            'post_title'    => wp_strip_all_tags($nombre . ' ' . $apellidos),
+            'post_status'   => 'publish',
+            'post_type'     => 'ukiyo_client',
+        ];
+        $client_id = wp_insert_post($post_data);
 
-          <tr>
-            <td style="padding:40px 40px 20px;">
-              <div style="background-color:#fffbf0;border-left:4px solid #F6CF66;padding:20px;border-radius:12px;margin-bottom:30px;">
-                <h2 style="margin:0 0 15px;font-size:20px;font-weight:600;color:#2c2c2c;">👤 Datos Personales</h2>
-                <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                  <tr>
-                    <td style="padding:8px 0;font-size:15px;color:#6b6b6b;width:40%;">Nombre Completo:</td>
-                    <td style="padding:8px 0;font-size:15px;font-weight:600;color:#2c2c2c;">' . esc_html($nombre . ' ' . $apellidos) . '</td>
-                  </tr>
-                  <tr>
-                    <td style="padding:8px 0;font-size:15px;color:#6b6b6b;">DNI / NIE:</td>
-                    <td style="padding:8px 0;font-size:15px;font-weight:600;color:#2c2c2c;">' . esc_html($dni) . '</td>
-                  </tr>
-                  <tr>
-                    <td style="padding:8px 0;font-size:15px;color:#6b6b6b;">Pasaporte:</td>
-                    <td style="padding:8px 0;font-size:15px;font-weight:600;color:#2c2c2c;">' . esc_html($pasaporte) . ' (Cad: ' . esc_html($caducidad) . ')</td>
-                  </tr>
-                </table>
-              </div>
-
-              <div style="background-color:#f9f9f9;border-left:4px solid #cccccc;padding:20px;border-radius:12px;margin-bottom:30px;">
-                <h2 style="margin:0 0 15px;font-size:20px;font-weight:600;color:#2c2c2c;">📍 Dirección</h2>
-                <p style="margin:0 0 5px;font-size:15px;">' . esc_html($direccion) . '</p>
-                <p style="margin:0;font-size:15px;">' . esc_html($cp . ' - ' . $localidad . ' (' . $provincia . ')') . '</p>
-              </div>
-
-              <div style="margin-bottom:30px;">
-                <h2 style="margin:0 0 15px;font-size:20px;font-weight:600;color:#2c2c2c;border-bottom:2px solid #F6CF66;padding-bottom:10px;">📞 Contacto</h2>
-                <p style="margin:0 0 5px;font-size:15px;"><strong>Email:</strong> <a href="mailto:' . esc_attr($email) . '" style="color:#2c2c2c;text-decoration:none;">' . esc_html($email) . '</a></p>
-                <p style="margin:0;font-size:15px;"><strong>Teléfono:</strong> ' . esc_html($telefono) . '</p>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td style="background-color:#2c2c2c;padding:30px 40px;text-align:center;border-bottom-left-radius:24px;border-bottom-right-radius:24px;">
-              <p style="margin:0;color:#F6CF66;font-size:14px;font-weight:600;">Viajes UKIYO</p>
-            </td>
-          </tr>
-
-        </table>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>';
-
-        $headers = [];
-        $headers[] = 'Content-Type: text/html; charset=UTF-8';
-        $headers[] = 'From: Ukiyo Viajes <info@viajesukiyo.com>';
-        $headers[] = 'MIME-Version: 1.0';
-        if ( $email ) {
-            $headers[] = 'Reply-To: ' . $nombre . ' <' . $email . '>';
+        if ($client_id && !is_wp_error($client_id)) {
+            update_post_meta($client_id, '_ukiyo_cliente_nombre', $nombre);
+            update_post_meta($client_id, '_ukiyo_cliente_apellidos', $apellidos);
+            update_post_meta($client_id, '_ukiyo_cliente_fecha_nacimiento', $fecha_nacim);
+            update_post_meta($client_id, '_ukiyo_cliente_dni_nie', $dni);
+            update_post_meta($client_id, '_ukiyo_cliente_pasaporte_num', $pasaporte);
+            update_post_meta($client_id, '_ukiyo_cliente_pasaporte_caducidad', $caducidad);
+            update_post_meta($client_id, '_ukiyo_cliente_direccion', $direccion);
+            update_post_meta($client_id, '_ukiyo_cliente_localidad', $localidad);
+            update_post_meta($client_id, '_ukiyo_cliente_provincia', $provincia);
+            update_post_meta($client_id, '_ukiyo_cliente_codigo_postal', $cp);
+            update_post_meta($client_id, '_ukiyo_cliente_email', $email);
+            update_post_meta($client_id, '_ukiyo_cliente_telefono', $telefono);
+            update_post_meta($client_id, '_ukiyo_cliente_newsletter_ok', $gdpr ? '1' : '0'); // Basic assumption
         }
 
-        $sent = wp_mail( $recipient, $subject, $body, $headers );
+        // 2. Enviar Email de notificación (DESACTIVADO POR PETICIÓN DEL CLIENTE)
+        // $sent = wp_mail(...);
 
-        if ( $sent ) {
-            $success_msg = '¡Gracias! Hemos recibido tus datos correctamente.';
+        if ( $client_id && !is_wp_error($client_id) ) {
+            wp_safe_redirect( add_query_arg( 'submitted', '1', get_permalink() ) );
+            exit;
         } else {
             $errors[] = 'Hubo un problema al enviar los datos. Por favor intenta de nuevo.';
         }
@@ -252,7 +208,14 @@ get_header();
               </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-text-primary mb-2">Fecha de Nacimiento</label>
+                  <input type="date" name="fecha_nacimiento"
+                         value="<?php echo isset($_POST['fecha_nacimiento']) ? esc_attr($_POST['fecha_nacimiento']) : ''; ?>"
+                         class="w-full rounded-2xl border-2 focus:border-primary focus:ring-primary py-3 px-4 bg-white/50 backdrop-blur-sm transition-shadow"
+                         style="border-color: rgb(246, 207, 102); background-color: var(--color-background);">
+                </div>
                 <div>
                     <label class="block text-sm font-medium text-text-primary mb-2">DNI / NIE</label>
                     <input type="text" name="dni"
@@ -268,10 +231,9 @@ get_header();
                            style="border-color: rgb(246, 207, 102); background-color: var(--color-background);">
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-text-primary mb-2">Caducidad</label>
-                    <input type="text" name="caducidad"
+                    <label class="block text-sm font-medium text-text-primary mb-2">Caducidad Pasaporte</label>
+                    <input type="date" name="caducidad"
                            value="<?php echo isset($_POST['caducidad']) ? esc_attr($_POST['caducidad']) : ''; ?>"
-                           placeholder="DD/MM/AAAA"
                            class="w-full rounded-2xl border-2 focus:border-primary focus:ring-primary py-3 px-4 bg-white/50 backdrop-blur-sm transition-shadow"
                            style="border-color: rgb(246, 207, 102); background-color: var(--color-background);">
                 </div>
@@ -344,7 +306,7 @@ get_header();
             <label class="flex items-start gap-3 cursor-pointer group">
               <input type="checkbox" name="gdpr" required class="mt-1 rounded border-gray-300 text-primary focus:ring-primary" <?php checked(!empty($_POST['gdpr'])); ?>>
               <span class="text-sm text-text-secondary">
-                He leído y acepto la <a href="<?php echo esc_url( home_url('/politica-de-privacidad') ); ?>" target="_blank" class="text-primary hover:underline">política de privacidad</a>.
+                He leído y acepto la <a href="<?php echo esc_url( ukiyo_get_route_url( 'privacy' ) ); ?>" target="_blank" class="text-primary hover:underline">política de privacidad</a>.
               </span>
             </label>
 

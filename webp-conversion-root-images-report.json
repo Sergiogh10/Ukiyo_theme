@@ -1,0 +1,46 @@
+{
+  "total": 7,
+  "converted": 0,
+  "skipped": 0,
+  "errors": 7,
+  "before": 0,
+  "after": 0,
+  "saved": 0,
+  "results": [
+    {
+      "status": "error",
+      "source": "images/saily-banners-affordable-esim-1200x628-es.png",
+      "error": "[Errno 13] Permission denied: '/Applications/XAMPP/xamppfiles/htdocs/ukiyo/wp-content/themes/ukiyo/images/saily-banners-affordable-esim-1200x628-es.webp'"
+    },
+    {
+      "status": "error",
+      "source": "images/404.png",
+      "error": "[Errno 13] Permission denied: '/Applications/XAMPP/xamppfiles/htdocs/ukiyo/wp-content/themes/ukiyo/images/404.webp'"
+    },
+    {
+      "status": "error",
+      "source": "images/403.png",
+      "error": "[Errno 13] Permission denied: '/Applications/XAMPP/xamppfiles/htdocs/ukiyo/wp-content/themes/ukiyo/images/403.webp'"
+    },
+    {
+      "status": "error",
+      "source": "images/victor_ceo.JPG",
+      "error": "[Errno 13] Permission denied: '/Applications/XAMPP/xamppfiles/htdocs/ukiyo/wp-content/themes/ukiyo/images/victor_ceo.webp'"
+    },
+    {
+      "status": "error",
+      "source": "images/stepscomplete.png",
+      "error": "[Errno 13] Permission denied: '/Applications/XAMPP/xamppfiles/htdocs/ukiyo/wp-content/themes/ukiyo/images/stepscomplete.webp'"
+    },
+    {
+      "status": "error",
+      "source": "images/500.png",
+      "error": "[Errno 13] Permission denied: '/Applications/XAMPP/xamppfiles/htdocs/ukiyo/wp-content/themes/ukiyo/images/500.webp'"
+    },
+    {
+      "status": "error",
+      "source": "images/viajes-personalizados-ukiyo-indonesia.jpg",
+      "error": "[Errno 13] Permission denied: '/Applications/XAMPP/xamppfiles/htdocs/ukiyo/wp-content/themes/ukiyo/images/viajes-personalizados-ukiyo-indonesia.webp'"
+    }
+  ]
+}

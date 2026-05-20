@@ -1,0 +1,14 @@
+{
+  "source_images_checked": 730,
+  "converted_new_webp": 709,
+  "already_up_to_date": 21,
+  "missing_webp_equivalents": 0,
+  "known_bytes_saved": 1958149930,
+  "known_mb_saved": 1867.44,
+  "fallback_webp_path": "assets/optimized-webp",
+  "notes": [
+    "Original JPG/PNG files were kept for compatibility.",
+    "Seven root images could not receive sibling WebP files because images/ is owned by _www, so fallback WebP files were generated under assets/optimized-webp.",
+    "Three .jpg files contained AVIF data and were converted through an ffmpeg PNG intermediate plus cwebp."
+  ]
+}

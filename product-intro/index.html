@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <title>Ukiyo Product Intro</title>
+  </head>
+  <body>
+    <div
+      id="intro"
+      data-composition-id="ukiyo-product-intro"
+      data-start="0"
+      data-width="1920"
+      data-height="1080"
+      data-duration="10"
+    >
+      <audio
+        id="music"
+        data-start="0"
+        data-duration="10"
+        data-track-index="1"
+        data-volume="0.16"
+        src="assets/subtle-background.wav"
+      ></audio>
+
+      <div class="background" data-layout-ignore>
+        <div class="vignette"></div>
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+        <div class="horizon"></div>
+        <div class="grain"></div>
+      </div>
+
+      <main class="scene-content">
+        <p class="eyebrow">BESPOKE TRAVEL PLANNING</p>
+        <h1 class="title">UKIYO</h1>
+        <p class="subtitle">Journeys shaped around the way you want to feel.</p>
+        <div class="rule" aria-hidden="true"></div>
+      </main>
+
+      <style>
+        @font-face {
+          font-family: "Telma";
+          src: url("assets/fonts/telma/Telma-Regular.woff2") format("woff2");
+          font-weight: 400;
+          font-style: normal;
+          font-display: swap;
+        }
+
+        @font-face {
+          font-family: "Satoshi";
+          src: url("assets/fonts/satoshi/Satoshi-Variable.woff2") format("woff2");
+          font-weight: 300 900;
+          font-style: normal;
+          font-display: swap;
+        }
+
+        html,
+        body {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          overflow: hidden;
+          background: #0b090a;
+        }
+
+        #intro {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          background: #0b090a;
+          color: #f4efe7;
+          font-family: "Satoshi", Arial, sans-serif;
+        }
+
+        .background,
+        .vignette,
+        .grain,
+        .glow,
+        .horizon {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+        }
+
+        .vignette {
+          z-index: 1;
+          background:
+            radial-gradient(circle at 50% 44%, rgba(232, 184, 109, 0.1), transparent 31%),
+            radial-gradient(circle at 50% 120%, rgba(185, 175, 164, 0.12), transparent 42%),
+            radial-gradient(circle at center, transparent 42%, rgba(0, 0, 0, 0.58) 100%);
+        }
+
+        .glow {
+          z-index: 0;
+          filter: blur(40px);
+          transform-origin: center;
+        }
+
+        .glow-one {
+          width: 760px;
+          height: 760px;
+          inset: auto auto -330px 50%;
+          margin-left: -380px;
+          border-radius: 999px;
+          background: rgba(232, 184, 109, 0.2);
+        }
+
+        .glow-two {
+          width: 520px;
+          height: 520px;
+          inset: 110px 140px auto auto;
+          border-radius: 999px;
+          background: rgba(116, 92, 67, 0.14);
+        }
+
+        .horizon {
+          z-index: 2;
+          top: 64%;
+          height: 1px;
+          background: linear-gradient(90deg, transparent, rgba(232, 184, 109, 0.34), transparent);
+          opacity: 0.62;
+          transform: scaleX(0.74);
+        }
+
+        .grain {
+          z-index: 3;
+          opacity: 0.14;
+          background-image:
+            linear-gradient(rgba(244, 239, 231, 0.035) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(244, 239, 231, 0.025) 1px, transparent 1px);
+          background-size: 72px 72px, 72px 72px;
+          mask-image: radial-gradient(circle at center, black, transparent 78%);
+        }
+
+        .scene-content {
+          position: relative;
+          z-index: 5;
+          display: flex;
+          width: 100%;
+          height: 100%;
+          box-sizing: border-box;
+          padding: 164px 180px 152px;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 30px;
+          text-align: center;
+        }
+
+        .eyebrow {
+          margin: 0;
+          color: #e8b86d;
+          font-size: 25px;
+          font-weight: 650;
+          line-height: 1.2;
+          letter-spacing: 0.14em;
+        }
+
+        .title {
+          margin: 0;
+          max-width: 1320px;
+          color: #f4efe7;
+          font-family: "Telma", serif;
+          font-size: 194px;
+          font-weight: 400;
+          line-height: 0.9;
+          letter-spacing: 0.03em;
+          text-shadow: 0 0 40px rgba(232, 184, 109, 0.18);
+        }
+
+        .subtitle {
+          margin: 0;
+          max-width: 900px;
+          color: #d4c8ba;
+          font-size: 34px;
+          font-weight: 350;
+          line-height: 1.38;
+        }
+
+        .rule {
+          width: 210px;
+          height: 2px;
+          margin-top: 10px;
+          background: linear-gradient(90deg, transparent, #e8b86d, transparent);
+          opacity: 0.74;
+        }
+      </style>
+
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+      <script>
+        window.__timelines = window.__timelines || {};
+
+        const tl = gsap.timeline({ paused: true });
+
+        tl.from(".glow-one", { scale: 0.82, opacity: 0, duration: 2.0, ease: "sine.out" }, 0.1);
+        tl.from(".glow-two", { x: 40, y: -30, opacity: 0, duration: 1.8, ease: "power2.out" }, 0.2);
+        tl.from(".horizon", { scaleX: 0.18, opacity: 0, duration: 1.3, ease: "expo.out" }, 0.35);
+        tl.from(".grain", { opacity: 0, duration: 1.4, ease: "power1.out" }, 0.45);
+
+        tl.from(".eyebrow", { y: 22, opacity: 0, duration: 0.65, ease: "power3.out" }, 0.7);
+        tl.from(".title", { y: 42, scale: 0.965, opacity: 0, duration: 1.45, ease: "expo.out" }, 1.0);
+        tl.from(".subtitle", { y: 30, opacity: 0, duration: 0.82, ease: "power2.out" }, 2.05);
+        tl.from(".rule", { scaleX: 0.18, opacity: 0, duration: 0.72, ease: "back.out(1.25)" }, 2.45);
+
+        tl.to(".glow-one", { scale: 1.08, opacity: 0.84, duration: 6.2, ease: "sine.inOut" }, 2.1);
+        tl.to(".glow-two", { x: -24, y: 18, scale: 1.04, duration: 6.4, ease: "sine.inOut" }, 2.0);
+        tl.to(".horizon", { scaleX: 0.92, opacity: 0.5, duration: 5.6, ease: "sine.inOut" }, 2.4);
+
+        tl.to(".scene-content", { y: -18, opacity: 0, duration: 0.85, ease: "power2.in" }, 8.85);
+        tl.to(".background", { opacity: 0, duration: 0.95, ease: "power1.inOut" }, 9.05);
+
+        window.__timelines["ukiyo-product-intro"] = tl;
+      </script>
+    </div>
+  </body>
+</html>

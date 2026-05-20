@@ -3,6 +3,21 @@
  * Footer global de UKIYO
  */
 ?>
+<?php
+$destination_indonesia_url   = ukiyo_get_route_url('destination_indonesia');
+$destination_costa_rica_url  = ukiyo_get_route_url('destination_costa_rica');
+$destination_marruecos_url   = ukiyo_get_route_url('destination_marruecos');
+$destination_colombia_url    = ukiyo_get_route_url('destination_colombia');
+$about_url                   = ukiyo_get_route_url('about');
+$destinations_url            = ukiyo_get_route_url('destinations');
+$viajes_autor_url            = ukiyo_get_route_url('viajes_autor');
+$pricing_url                 = ukiyo_get_route_url('pricing');
+$reviews_url                 = ukiyo_get_route_url('reviews');
+$blog_url                    = home_url('/blog/');
+$privacy_url                 = ukiyo_get_route_url('privacy');
+$terms_url                   = ukiyo_get_route_url('terms');
+$cookies_url                 = ukiyo_get_route_url('cookies');
+?>
 <footer class="bg-text-primary text-white py-16">
     <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -19,7 +34,7 @@
                 <p class="text-white/80 mb-6 max-w-md">
 Viajes auténticos, sostenibles y creados a tu medida.                </p>
                 <div class="flex flex-col space-y-3">
-                    <a href="https://wa.me/message/XD2DTYOAKBIAJ1" target="_blank" class="flex items-center text-white/60 hover:text-accent transition-colors" aria-label="WhatsApp">
+                    <a href="https://wa.me/message/CS2LNI6YHSETO1" target="_blank" class="flex items-center text-white/60 hover:text-accent transition-colors" aria-label="WhatsApp">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -48,35 +63,51 @@ Viajes auténticos, sostenibles y creados a tu medida.                </p>
 
             <!-- Experiencias -->
             <div>
-                <h4 class="font-crimson text-lg mb-4">Destinos</h4>
+                <h4 class="font-rowdies text-lg mb-4">Destinos</h4>
                 <ul class="space-y-2 text-white/80">
-                    <li><a href="<?php echo esc_url( site_url('/indonesia') ); ?>" class="hover:text-accent transition-colors">Indonesia</a></li>
-                    <li><a href="<?php echo esc_url( site_url('/costarica') ); ?>" class="hover:text-accent transition-colors">Costa Rica</a></li>
-                    <li><a href="<?php echo esc_url( site_url('/marruecos') ); ?>" class="hover:text-accent transition-colors">Marruecos</a></li>
-                    <li><a href="<?php echo esc_url( site_url('/colombia') ); ?>" class="hover:text-accent transition-colors">Colombia</a></li>
+                    <li><a href="<?php echo esc_url( $destination_indonesia_url ); ?>" class="hover:text-accent transition-colors">Indonesia</a></li>
+                    <li><a href="<?php echo esc_url( $destination_costa_rica_url ); ?>" class="hover:text-accent transition-colors">Costa Rica</a></li>
+                    <li><a href="<?php echo esc_url( $destination_marruecos_url ); ?>" class="hover:text-accent transition-colors">Marruecos</a></li>
+                    <li><a href="<?php echo esc_url( $destination_colombia_url ); ?>" class="hover:text-accent transition-colors">Colombia</a></li>
                 </ul>
             </div>
 
             <!-- Compañía -->
             <div>
-                <h4 class="font-crimson text-lg mb-4">Compañía</h4>
+                <h4 class="font-rowdies text-lg mb-4">Compañía</h4>
                 <ul class="space-y-2 text-white/80">
-                    <li><a href="<?php echo esc_url( get_permalink( get_page_by_path('nosotros') ) ); ?>" class="hover:text-accent transition-colors">Nosotros</a></li>
-                    <li><a href="<?php echo esc_url( get_permalink( get_page_by_path('experiencias') ) ); ?>" class="hover:text-accent transition-colors">Destinos</a></li>
-                    <li><a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" class="hover:text-accent transition-colors">Viajes de autor</a></li>
+                    <li><a href="<?php echo esc_url( $about_url ); ?>" class="hover:text-accent transition-colors">Nosotros</a></li>
+                    <li><a href="<?php echo esc_url( $destinations_url ); ?>" class="hover:text-accent transition-colors">Destinos</a></li>
+                    <li><a href="<?php echo esc_url( $viajes_autor_url ); ?>" class="hover:text-accent transition-colors">Viajes de autor</a></li>
+                    <li><a href="<?php echo esc_url( $blog_url ); ?>" class="hover:text-accent transition-colors">Blog</a></li>
                    <!-- <li><a href="<?php echo esc_url( site_url('/sustainability') ); ?>" class="hover:text-accent transition-colors">Sostenibilidad</a></li> -->
-                    <li><a href="<?php echo esc_url( get_permalink( get_page_by_path('pricing') ) ); ?>" class="hover:text-accent transition-colors">Precios</a></li>
-                    <li><a href="<?php echo esc_url( get_permalink( get_page_by_path('resenas') ) ); ?>" class="hover:text-accent transition-colors">Reseñas</a></li>
+                    <li><a href="<?php echo esc_url( $pricing_url ); ?>" class="hover:text-accent transition-colors">Precios</a></li>
+                    <li><a href="<?php echo esc_url( $reviews_url ); ?>" class="hover:text-accent transition-colors">Reseñas</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p class="text-white/60 text-sm">© <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. Todos los derechos reservados.</p>
+            <p class="text-white/60 text-sm mb-4">© <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. Todos los derechos reservados.</p>
+            
+            <div class="flex flex-wrap justify-center items-center gap-2 md:gap-6 my-4 md:my-0">
+                <a href="https://colombia.travel" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300">
+                     <img src="<?php echo get_template_directory_uri(); ?>/images/logo/turismo_colombia.png" alt="Colombia Travel" class="h-8 md:h-12 w-auto">
+                </a>
+                <a href="https://www.visitcostarica.com" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300">
+                     <img src="<?php echo get_template_directory_uri(); ?>/images/logo/turismo_costarica.png" alt="Visit Costa Rica" class="h-8 md:h-12 w-auto">
+                </a>
+               <a href="https://www.indonesia.travel" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300">
+                     <img src="<?php echo get_template_directory_uri(); ?>/images/logo/turismo_indonesia.png" alt="Wonderful Indonesia" class="h-8 md:h-12 w-auto">
+                </a>
+               <a href="https://www.visitmorocco.com" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300">
+                     <img src="<?php echo get_template_directory_uri(); ?>/images/logo/turismo_marruecos.png" alt="Visit Morocco" class="h-8 md:h-12 w-auto">
+                </a>
+            </div>
             <div class="flex space-x-6 mt-4 md:mt-0">
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('privacidad') ) ); ?>" class="text-white/60 hover:text-accent text-sm transition-colors">Privacidad</a>
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('terminos') ) ); ?>" class="text-white/60 hover:text-accent text-sm transition-colors">Términos</a>
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('cookies') ) ); ?>" class="text-white/60 hover:text-accent text-sm transition-colors">Cookies</a>
+                <a href="<?php echo esc_url( $privacy_url ); ?>" class="text-white/60 hover:text-accent text-sm transition-colors">Privacidad</a>
+                <a href="<?php echo esc_url( $terms_url ); ?>" class="text-white/60 hover:text-accent text-sm transition-colors">Términos</a>
+                <a href="<?php echo esc_url( $cookies_url ); ?>" class="text-white/60 hover:text-accent text-sm transition-colors">Cookies</a>
             </div>
         </div>
     </div>

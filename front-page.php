@@ -6,6 +6,42 @@
 
 get_header(); ?>
 
+<?php
+$plan_trip_url            = ukiyo_get_route_url( 'plan_trip' );
+$viajes_autor_url         = ukiyo_get_route_url( 'viajes_autor' );
+$destinations_url         = ukiyo_get_route_url( 'destinations' );
+$reviews_url              = ukiyo_get_route_url( 'reviews' );
+$destination_indonesia    = ukiyo_get_route_url( 'destination_indonesia' );
+$destination_costa_rica   = ukiyo_get_route_url( 'destination_costa_rica' );
+$destination_colombia     = ukiyo_get_route_url( 'destination_colombia' );
+$destination_marruecos    = ukiyo_get_route_url( 'destination_marruecos' );
+?>
+
+<style>
+  .hero-responsive { height: 100vh; }
+  @media (min-width: 1024px) {
+    .hero-responsive { height: auto !important; min-height: 50vh !important; }
+  }
+  
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+  
+  /* Forced Custom Styles for Cards */
+  .ukiyo-card {
+      border-radius: 30px !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+      background: white;
+      border: 1px solid #f3f4f6;
+  }
+  .ukiyo-card:hover {
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15) !important;
+      transform: translateY(-8px) !important;
+      border-color: #e5e7eb;
+  }
+</style>
+
 <main>
 
     <!-- HERO: SLIDER DINÁMICO CON AUTOPLAY -->
@@ -13,32 +49,16 @@ get_header(); ?>
     // Array de slides para el hero
     $hero_slides = [
         [
-            'image' => get_template_directory_uri() . '/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-orotina.jpg',
-            'alt' => 'Viajes personalizados a Indonesia',
-            'title' => 'Viajes personalizados',
-            'subtitle' => 'que <span class="text-accent-300">te mueven por dentro</span>',
-            'description' => 'Diseñamos contigo un viaje a medida, lejos del turismo masivo. Rutas pensadas al detalle, alojamientos con alma y personas locales que te enseñan su mundo de verdad.'
-        ],
-        [
             'image' => get_template_directory_uri() . '/images/heroimages/viajes-personalizados-ukiyo-costaricatucan.jpg',
             'alt' => 'Viajes personalizados a Costa Rica',
-            'title' => 'Descubre Costa Rica',
-            'subtitle' => 'con <span class="text-accent-300">naturaleza salvaje</span>',
-            'description' => 'Selvas tropicales, volcanes activos y vida salvaje única. Un viaje para reconectar con la naturaleza y vivir experiencias auténticas en uno de los países más biodiversos del planeta.'
         ],
         [
             'image' => get_template_directory_uri() . '/images/heroimages/viajes-personalizados-ukiyo-marruecos.jpg',
             'alt' => 'Viajes personalizados a Marruecos',
-            'title' => 'Explora Marruecos',
-            'subtitle' => 'desde <span class="text-accent-300">el desierto al océano</span>',
-            'description' => 'Desiertos infinitos, medinas llenas de vida y rutas alejadas del turismo masivo. Un viaje sensorial que te conecta con la esencia de un país fascinante.'
         ],
         [
             'image' => get_template_directory_uri() . '/images/heroimages/viajes-personalizados-ukiyo-colombiaplaya3.jpg',
             'alt' => 'Viajes personalizados a Colombia',
-            'title' => 'Vive Colombia',
-            'subtitle' => 'con <span class="text-accent-300">ritmo y color</span>',
-            'description' => 'Música, colores vibrantes y gente que te hace sentir en casa desde el primer día. Descubre un país lleno de contrastes, desde el Caribe hasta el Pacífico colombiano.'
         ]
     ];
     ?>
@@ -48,7 +68,7 @@ get_header(); ?>
         <div id="heroSlider" class="relative h-full">
             <?php foreach ($hero_slides as $index => $slide) : ?>
             <!-- Slide <?php echo $index + 1; ?> -->
-            <div class="hero-slide absolute inset-0 w-full h-full transition-opacity duration-300 <?php echo $index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'; ?>">
+            <div class="hero-slide absolute inset-0 w-full h-full transition-opacity duration-300 <?php echo $index === 0 ? 'opacity-100 z-1' : 'opacity-0 z-0'; ?>">
                 <!-- Fondo -->
                <div class="absolute inset-0 w-full h-full">
                 <img 
@@ -59,46 +79,42 @@ get_header(); ?>
                     loading="<?php echo $index === 0 ? 'eager' : 'lazy'; ?>"
                     decoding="async"
                     sizes="100vw"
-                    onerror="this.src='https://images.pexels.com/photos/1450360/pexels-photo-1450360.jpeg?auto=compress&cs=tinysrgb&w=2940&h=1960&dpr=2'; this.onerror=null;"
+                    width="1600"
+                    height="1067"
                 />
                 <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
                 </div>
-
-                <!-- Contenido Hero - Centrado -->
-                <div class="relative z-10 h-full flex items-center justify-center">
-                    <div class="container mx-auto px-6">
-                        <div class="max-w-4xl mx-auto text-center">
-                            <?php if ($index === 0) : ?>
-                            <h1 class="text-4xl md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
-                                <?php echo $slide['title']; ?><br />
-                                <?php echo $slide['subtitle']; ?>
-                            </h1>
-                            <?php else : ?>
-                            <div class="text-4xl md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
-                                <?php echo $slide['title']; ?><br />
-                                <?php echo $slide['subtitle']; ?>
-                            </div>
-                            <?php endif; ?>
-                            <p class="hidden lg:block text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-                                <?php echo $slide['description']; ?>
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                                <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" class="btn-secondary text-lg px-8 py-4">
-                                    Diseña tu viaje a medida
-                                </a>
-                                <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" class="bg-white/20 backdrop-blur-sm text-lg text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/30 transition-all duration-300">
-                                    Ver viajes de autor
-                                </a>
-                            </div>
-                            <p class="mt-6 text-sm text-white/70 hidden lg:block">
-                                ¿Prefieres leer experiencias reales primero? 
-                                <a href="<?php echo esc_url( get_permalink( get_page_by_path('resenas') ) ); ?>" class="underline hover:text-white">Descubre las reseñas de viajeros</a>.
-                            </p>
-                        </div>
-                    </div>
-                </div>
             </div>
             <?php endforeach; ?>
+
+            <!-- STATIC CONTENT OVERLAY -->
+            <div class="absolute inset-0 z-50 flex flex-col items-center justify-center text-center px-4 pointer-events-none">
+                
+                <!-- Título principal -->
+                <h1 class="text-hero md:text-6xl font-rowdies text-white font-bold mb-4 text-shadow leading-none">
+                <span class="text-accent italic">Viajes a medida</span> y personalizados para quienes buscan algo más
+                </h1>
+                
+                <!-- Subtítulo elegante -->
+                <p class="text-xl font-satoshi text-white/90 italic font-light mb-6 text-shadow">
+                    Solo organizamos viajes que hemos vivido. Y eso lo cambia todo.
+                </p>
+                
+                <!-- Botones elegantes con glassmorphism -->
+                <div class="flex flex-col sm:flex-row gap-5 justify-center pointer-events-auto">
+                    <a href="<?php echo esc_url( $plan_trip_url ); ?>" 
+                       class="group relative overflow-hidden px-8 py-4 rounded-full font-semibold text-white transition-all duration-300"
+                       style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border: 1.5px solid rgba(255,255,255,0.4);">
+                        <span class="relative z-10">Diseña tu viaje a medida</span>
+                        <div class="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                    </a>
+                    <a href="<?php echo esc_url( $viajes_autor_url ); ?>" 
+                       class="px-8 py-4 text-white font-medium transition-all duration-300 hover:text-white/80"
+                       style="letter-spacing: 0.05em;">
+                        Ver viajes de autor →
+                    </a>
+                </div>
+            </div>
         </div>
 
         <!-- Navigation Arrows -->
@@ -145,9 +161,9 @@ get_header(); ?>
             slides.forEach((slide, i) => {
                 if (i === currentSlide) {
                     slide.classList.remove('opacity-0', 'z-0');
-                    slide.classList.add('opacity-100', 'z-10');
+                    slide.classList.add('opacity-100', 'z-1');
                 } else {
-                    slide.classList.remove('opacity-100', 'z-10');
+                    slide.classList.remove('opacity-100', 'z-1');
                     slide.classList.add('opacity-0', 'z-0');
                 }
             });
@@ -264,13 +280,80 @@ get_header(); ?>
     });
     </script>
 
+    <!-- VALUE PROPOSITION -->
+    <section class="py-16" style="background-color: #f5f8f1ff;">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 items-start">
+                
+                <!-- Columna 1: Titular -->
+                <div class="lg:col-span-1">
+                    <h2 class="relative font-rowdies text-4xl md:text-5xl leading-tight text-text-primary inline-block">
+                        <span class="relative z-10">
+                            <span class="italic text-[#1B4E38]">¿Por qué</span> somos<br>
+                            mejores?
+                        </span>
+                    </h2>
+                </div>
+
+                <!-- Columna 2 -->
+                <div class="lg:col-span-1">
+                    <div class="relative mb-4">
+                        <h3 class="font-satoshi font-semibold text-lg text-text-primary relative z-10">Sabemos lo que hacemos</h3>
+                        <svg class="absolute -bottom-2 left-0 w-24 h-2 text-[#C4D9C8]" viewBox="0 0 100 10" preserveAspectRatio="none">
+                             <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="2" fill="none" />
+                        </svg>
+                    </div>
+                    <p class="font-satoshi font-bold text-[#1B4E38] text-sm mb-2">Más que una agencia de viajes</p>
+                    <p class="font-satoshi text-text-secondary text-sm leading-relaxed">
+                        Viajes que conocemos porque los hemos vivido.
+                        Solo organizamos viajes a destinos donde hemos estado, explorado y entendido cada detalle.
+                        Nada de catálogos genéricos. Solo experiencia real.
+                    </p>
+                </div>
+
+                <!-- Columna 3 -->
+                <div class="lg:col-span-1">
+                    <div class="relative mb-4">
+                        <h3 class="font-satoshi font-semibold text-lg text-text-primary relative z-10">Experiencias inolvidables</h3>
+                        <svg class="absolute -bottom-2 left-0 w-24 h-2 text-[#C4D9C8]" viewBox="0 0 100 10" preserveAspectRatio="none">
+                             <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="2" fill="none" />
+                        </svg>
+                    </div>
+                    <p class="font-satoshi font-bold text-[#1B4E38] text-sm mb-2">Viajes diseñados contigo, desde cero</p>
+                    <p class="font-satoshi text-text-secondary text-sm leading-relaxed">
+                        Cada viaje es único porque cada viajero lo es.
+                        Escuchamos, proponemos y ajustamos cada itinerario para que encaje contigo,
+                        no con un modelo predefinido.
+                    </p>
+                </div>
+
+                <!-- Columna 4 -->
+                <div class="lg:col-span-1">
+                    <div class="relative mb-4">
+                        <h3 class="font-satoshi font-semibold text-lg text-text-primary relative z-10">Centrados en tí</h3>
+                        <svg class="absolute -bottom-2 left-0 w-24 h-2 text-[#C4D9C8]" viewBox="0 0 100 10" preserveAspectRatio="none">
+                             <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="2" fill="none" />
+                        </svg>
+                    </div>
+                    <p class="font-satoshi font-bold text-[#1B4E38] text-sm mb-2">Menos cantidad. Más intención.</p>
+                    <p class="font-satoshi text-text-secondary text-sm leading-relaxed">
+                        Preferimos hacer pocos viajes bien hechos.
+                        Sin prisas, sin masificación y con el tiempo necesario
+                        para que cada viaje tenga sentido.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- SECCIÓN: VIAJES PERSONALIZADOS (EXPLICACIÓN + PASOS) -->
     <section class="py-12 bg-background">
         <div class="container mx-auto px-6">
             <div class="grid gap-12 lg:grid-cols-2 items-center">
                 <!-- Texto principal -->
                 <div>
-                    <h2 class="text-display font-satoshi text-text-primary mb-4 reveal-on-scroll">
+                    <h2 class="text-display font-rowdies text-text-primary mb-4 reveal-on-scroll">
                         Viajes personalizados<br><span class="text-secondary">diseñados contigo</span>
                     </h2>
                     <p class="text-lg text-text-secondary mb-6 reveal-on-scroll delay-100">
@@ -292,10 +375,10 @@ get_header(); ?>
                         </li>
                     </ul>
                     <div class="mt-8 flex flex-wrap gap-4 reveal-on-scroll delay-300">
-                        <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" class="btn-primary text-text-secondary">
+                        <a href="<?php echo esc_url( $plan_trip_url ); ?>" class="btn-primary text-text-secondary">
                             Empezar mi viaje a medida
                         </a>
-                        <a href="<?php echo esc_url( get_permalink( get_page_by_path('experiencias') ) ); ?>" class="btn-primary text-text-secondary">
+                        <a href="<?php echo esc_url( $destinations_url ); ?>" class="btn-primary text-text-secondary">
                             Ver ideas de viaje
                         </a>
                     </div>
@@ -339,7 +422,7 @@ get_header(); ?>
     <section class="py-12 bg-background">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-display font-satoshi text-text-primary mb-4 reveal-on-scroll">
+                <h2 class="text-display font-rowdies text-text-primary mb-4 reveal-on-scroll">
                     Estos son nuestros <span class="text-primary">destinos</span>
                 </h2>
                 <p class="text-lg text-text-secondary max-w-2xl mx-auto reveal-on-scroll delay-100">
@@ -347,64 +430,128 @@ get_header(); ?>
                 </p>
             </div>
 
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                 <!-- Indonesia -->
-                <div class="group cursor-pointer reveal-on-scroll delay-100" onclick="window.location.href='<?php echo esc_url( get_permalink( get_page_by_path('indonesia') ) ); ?>'">
-                    <div class="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/indonesia/viajes-personalizados-ukiyo-artesano-balines.jpg"
-                            alt="Artesano balinés trabajando en un taller local"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            loading="lazy" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-primary-900/80 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 right-4">
-                            <h3 class="text-xl font-satoshi text-white mb-2">Indonesia</h3>
-                            <p class="text-white/80 text-sm hidden lg:block">Tradiciones vivas, templos y ceremonias. Ideal si buscas un viaje con mucha profundidad cultural.</p>
+                <div 
+                    style="
+                        width: 100%;
+                        height: 500px;
+                        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('<?php echo get_template_directory_uri(); ?>/images/indonesia/viajes-personalizados-ukiyo-artesano-balines.jpg');
+                        background-size: cover;
+                        background-position: center;
+                        border-radius: 1.5rem;
+                        overflow: hidden;
+                        position: relative;
+                        cursor: pointer;
+                    "
+                    class="reveal-on-scroll delay-100"
+                    onclick="window.location.href='<?php echo esc_url( $destination_indonesia ); ?>'"
+                >
+                    <div style="position: absolute; bottom: 0; left: 0; padding: 2rem; width: 100%;">
+                        <div style="color: #FF8C42; font-size: 12px; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 600;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline;">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Sudeste Asiático
                         </div>
+                        <h3 class="text-card-title font-rowdies text-white font-semibold mb-3">Indonesia</h3>
+                        <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 0.875rem;">
+                            Tradiciones vivas, templos y ceremonias. Ideal si buscas un viaje con mucha profundidad cultural.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Costa Rica -->
-                <div class="group cursor-pointer reveal-on-scroll delay-200" onclick="window.location.href='<?php echo esc_url( get_permalink( get_page_by_path('costarica') ) ); ?>'">
-                    <div class="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-personalizados-ukiyo-guacamayo.jpg"
-                            alt="Guacamayo observado en la selva tropical durante un viaje personalizado con Ukiyo"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            loading="lazy" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-secondary-900/80 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 right-4">
-                            <h3 class="text-xl font-satoshi text-white mb-2">Costa Rica</h3>
-                            <p class="text-white/80 text-sm hidden lg:block">Selvas, volcanes y vida salvaje. Perfecto si necesitas parar, respirar y reconectar con la naturaleza.</p>
+                <div 
+                    style="
+                        width: 100%;
+                        height: 500px;
+                        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-personalizados-ukiyo-guacamayo.jpg');
+                        background-size: cover;
+                        background-position: center;
+                        border-radius: 1.5rem;
+                        overflow: hidden;
+                        position: relative;
+                        cursor: pointer;
+                    "
+                    class="reveal-on-scroll delay-200"
+                    onclick="window.location.href='<?php echo esc_url( $destination_costa_rica ); ?>'"
+                >
+                    <div style="position: absolute; bottom: 0; left: 0; padding: 2rem; width: 100%;">
+                        <div style="color: #FF8C42; font-size: 12px; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 600;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline;">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            América Central
                         </div>
+                        <h3 class="text-card-title font-rowdies text-white font-semibold mb-3">Costa Rica</h3>
+                        <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 0.875rem;">
+                            Selvas, volcanes y vida salvaje. Perfecto si necesitas parar, respirar y reconectar con la naturaleza.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Colombia -->
-                <div class="group cursor-pointer reveal-on-scroll delay-300" onclick="window.location.href='<?php echo esc_url( get_permalink( get_page_by_path('colombia') ) ); ?>'">
-                    <div class="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/emotion-based/viajes-personalizados-ukiyo-palanquera.jpg"
-                            alt="Palanquera en Cartagena de Indias durante un viaje personalizado a Colombia con Ukiyo"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            loading="lazy" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-accent-900/80 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 right-4">
-                            <h3 class="text-xl font-satoshi text-white mb-2">Colombia</h3>
-                            <p class="text-white/80 text-sm hidden lg:block">Colores, música y gente que te hace sentir en casa desde el primer día.</p>
+                <div 
+                    style="
+                        width: 100%;
+                        height: 500px;
+                        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('<?php echo get_template_directory_uri(); ?>/images/emotion-based/viajes-personalizados-ukiyo-palanquera.jpg');
+                        background-size: cover;
+                        background-position: center;
+                        border-radius: 1.5rem;
+                        overflow: hidden;
+                        position: relative;
+                        cursor: pointer;
+                    "
+                    class="reveal-on-scroll delay-300"
+                    onclick="window.location.href='<?php echo esc_url( $destination_colombia ); ?>'"
+                >
+                    <div style="position: absolute; bottom: 0; left: 0; padding: 2rem; width: 100%;">
+                        <div style="color: #FF8C42; font-size: 12px; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 600;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline;">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Sudamérica
                         </div>
+                        <h3 class="text-card-title font-rowdies text-white font-semibold mb-3">Colombia</h3>
+                        <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 0.875rem;">
+                            Colores, música y gente que te hace sentir en casa desde el primer día. Perfecto si buscas un viaje lleno de vida y energía.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Marruecos -->
-                <div class="group cursor-pointer reveal-on-scroll delay-400" onclick="window.location.href='<?php echo esc_url( get_permalink( get_page_by_path('marruecos') ) ); ?>'">
-                    <div class="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/marruecos/viajes-personalizados-ukiyo-camello-marruecos.jpg"
-                            alt="Camello en el desierto de Merzouga durante un viaje personalizado a Marruecos con Ukiyo"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            loading="lazy" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-primary-700/80 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 right-4">
-                            <h3 class="text-xl font-satoshi text-white mb-2">Marruecos</h3>
-                            <p class="text-white/80 text-sm hidden lg:block">Desierto, medinas y rutas alejadas del turismo de masas. Puro viaje sensorial.</p>
+                <div 
+                    style="
+                        width: 100%;
+                        height: 500px;
+                        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('<?php echo get_template_directory_uri(); ?>/images/marruecos/viajes-personalizados-ukiyo-camello-marruecos.jpg');
+                        background-size: cover;
+                        background-position: center;
+                        border-radius: 1.5rem;
+                        overflow: hidden;
+                        position: relative;
+                        cursor: pointer;
+                    "
+                    class="reveal-on-scroll delay-400"
+                    onclick="window.location.href='<?php echo esc_url( $destination_marruecos ); ?>'"
+                >
+                    <div style="position: absolute; bottom: 0; left: 0; padding: 2rem; width: 100%;">
+                        <div style="color: #FF8C42; font-size: 12px; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 600;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline;">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Norte de África
                         </div>
+                        <h3 class="text-card-title font-rowdies text-white font-semibold mb-3">Marruecos</h3>
+                        <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 0.875rem;">
+                            Desierto, medinas y rutas alejadas del turismo de masas. Ideal si buscas un viaje sensorial que te desconecte.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -417,7 +564,7 @@ get_header(); ?>
             <div class="grid gap-12 lg:grid-cols-2 items-center">
                 <!-- Texto principal -->
                 <div>
-                    <h2 class="text-display font-satoshi text-text-primary mb-4 reveal-on-scroll">
+                    <h2 class="text-display font-rowdies text-text-primary mb-4 reveal-on-scroll">
                         Viajes de autor<br><span class="text-secondary">creados por locales</span>
                     </h2>
                     <p class="text-lg text-text-secondary mb-6 reveal-on-scroll delay-100">
@@ -439,10 +586,10 @@ get_header(); ?>
                         </li>
                     </ul>
                     <div class="mt-8 flex flex-wrap gap-4 reveal-on-scroll delay-300">
-                        <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" class="btn-primary text-text-secondary">
+                        <a href="<?php echo esc_url( $viajes_autor_url ); ?>" class="btn-primary text-text-secondary">
                             Ver todos los viajes de autor
                         </a>
-                        <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" class="btn-primary text-text-secondary">
+                        <a href="<?php echo esc_url( $plan_trip_url ); ?>" class="btn-primary text-text-secondary">
                             Prefiero un viaje a medida
                         </a>
                     </div>
@@ -485,7 +632,7 @@ get_header(); ?>
     <section class="py-12 bg-background">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-display font-satoshi text-text-primary mb-4 reveal-on-scroll">
+                <h2 class="text-display font-rowdies text-text-primary mb-4 reveal-on-scroll">
                     Viajes de autor <span class="text-accent">creados por personas locales</span>
                 </h2>
                 <p class="text-lg text-text-secondary max-w-3xl mx-auto reveal-on-scroll delay-100">
@@ -508,98 +655,111 @@ get_header(); ?>
                 $viajes_query = new WP_Query($args);
                 
                 if ($viajes_query->have_posts()) :
-                    while ($viajes_query->have_posts()) : $viajes_query->the_post();
-                        // Obtener la imagen destacada
-                        $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
-                        if (!$thumbnail_url) {
-                            $thumbnail_url = get_template_directory_uri() . '/images/placeholder-viaje.jpg';
-                        }
+                    while ($viajes_query->have_posts()) : $viajes_query->the_post(); // INICIO LOOP
                         
-                        // Obtener el extracto
-                        $excerpt = get_the_excerpt();
-                        if (empty($excerpt)) {
-                            $excerpt = wp_trim_words(get_the_content(), 20, '...');
-                        }
+                        // Opcionales: campos personalizados (si los quieres usar luego)
+                        $autor_subtitulo = get_post_meta( get_the_ID(), 'autor_subtitulo', true );
+                        $hero_subtitle   = get_post_meta( get_the_ID(), 'hero_subtitle', true );
+                        $duracion        = get_post_meta( get_the_ID(), 'duracion_viaje', true );
+                        $grupos          = get_post_meta( get_the_ID(), 'grupos_viaje', true );
+                        $precio_final    = get_post_meta( get_the_ID(), 'precio_final', true );
                         
-                        // Obtener taxonomías de destino
-                        $destinos = get_the_terms(get_the_ID(), 'destino');
-                        $destino_text = '';
-                        if ($destinos && !is_wp_error($destinos)) {
-                            $destino_names = array();
-                            foreach ($destinos as $destino) {
-                                $destino_names[] = $destino->name;
-                            }
-                            $destino_text = implode(' · ', $destino_names);
-                        }
-                        
-                        // Obtener campos personalizados
-                        $autor_subtitulo = get_post_meta(get_the_ID(), 'autor_subtitulo', true);
-                        $duracion = get_post_meta(get_the_ID(), 'duracion_viaje', true);
-                        $grupos = get_post_meta(get_the_ID(), 'grupos_viaje', true);
-                        $precio_desde = get_post_meta(get_the_ID(), 'precio_desde', true);
+                        // Expert Data
+                        $expert_name = get_post_meta( get_the_ID(), 'expert_name', true );
+                        $expert_title = get_post_meta( get_the_ID(), 'expert_title', true );
+                        $expert_image = get_post_meta( get_the_ID(), 'expert_image', true );
                 ?>
-                <article class="group rounded-2xl border-2 border-black bg-white/80 backdrop-blur-md shadow-sm overflow-hidden flex flex-col reveal-on-scroll delay-200">
-                    <a href="<?php the_permalink(); ?>">
-                        <figure class="aspect-[16/9] overflow-hidden">
-                            <?php if (has_post_thumbnail()) : ?>
-                                <?php the_post_thumbnail('large', [
-                                    'class' => 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] mask-image',
-                                    'loading' => 'lazy',
-                                ]); ?>
-                            <?php else : ?>
-                                <img 
-                                    src="<?php echo esc_url($thumbnail_url); ?>"
-                                    alt="<?php the_title_attribute(); ?>"
-                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] mask-image"
-                                    loading="lazy"
-                                />
-                            <?php endif; ?>
-                        </figure>
+                <article class="ukiyo-card group overflow-hidden flex flex-col bg-white border-2 border-transparent hover:border-black transition-all duration-300 rounded-2xl shadow-sm">
+                    <a href="<?php the_permalink(); ?>" class="block relative h-48 overflow-hidden">
+                        <?php 
+                        $hero_img = get_post_meta( get_the_ID(), 'hero_image', true );
+                        if ( has_post_thumbnail() ) : ?>
+                            <?php the_post_thumbnail( 'large', [
+                                'class'   => 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-105',
+                                'loading' => 'lazy',
+                            ] ); ?>
+                        <?php elseif ( $hero_img ) : ?>
+                            <img 
+                                src="<?php echo esc_url( $hero_img ); ?>"
+                                alt="<?php the_title_attribute(); ?>"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                loading="lazy"
+                            />
+                        <?php else : ?>
+                            <img 
+                                src="<?php echo get_template_directory_uri(); ?>/images/placeholders/viaje-autor-placeholder.jpg"
+                                alt="<?php the_title_attribute(); ?>"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                loading="lazy"
+                            />
+                        <?php endif; ?>
+                        
+                        <!-- White gradient overlay -->
+                        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent opacity-20"></div>
                     </a>
 
-                    <div class="p-6 md:p-7 flex-1 flex flex-col">
-                        <div>
-                            <h3 class="text-xl font-rowdies">
-                                <a href="<?php the_permalink(); ?>" class="text-text-primary hover:text-accent">
-                                    <?php the_title(); ?>
-                                </a>
-                            </h3>
-                            <?php if ($autor_subtitulo) : ?>
-                                <p class="text-sm text-text-secondary font-satoshi">
-                                    <?php echo esc_html($autor_subtitulo); ?>
-                                </p>
+                    <div class="p-6 flex-1 flex flex-col bg-white"> <!-- Ensure white bg for card body -->
+                        <div class="flex items-start gap-3 mb-6">
+                            <?php if ( $expert_image ) : ?>
+                                <div class="flex-shrink-0 relative rounded-full overflow-hidden border-2 border-white shadow-md" style="width: 48px; height: 48px; min-width: 48px;">
+                                    <img 
+                                        src="<?php echo esc_url( $expert_image ); ?>"
+                                        alt="<?php echo esc_attr( $expert_name ); ?>"
+                                        class="w-full h-full object-cover"
+                                        loading="lazy"
+                                    />
+                                </div>
                             <?php endif; ?>
+
+                            <div class="pt-0.5">
+                                <h3 class="text-xl font-rowdies font-black text-gray-900 leading-tight mb-1">
+                                    <a href="<?php the_permalink(); ?>" class="text-gray-900 hover:text-primary transition-colors">
+                                        <?php the_title(); ?><?php echo $hero_subtitle ? ': ' . esc_html($hero_subtitle) : ''; ?>
+                                    </a>
+                                </h3>
+                                <p class="text-sm text-gray-500 font-satoshi font-medium">
+                                    <?php
+                                    if ( $expert_name ) {
+                                        echo '<span class="text-[#B08D55] font-bold">' . esc_html( $expert_name ) . '</span>';
+                                        if ( $expert_title ) echo ' · ' . esc_html( $expert_title );
+                                    } elseif ( $autor_subtitulo ) {
+                                        echo esc_html( $autor_subtitulo );
+                                    } else {
+                                        printf( 'Por %s', esc_html( get_the_author() ) );
+                                    }
+                                    ?>
+                                </p>
+                            </div>
                         </div>
 
-                        <?php if (has_excerpt()) : ?>
-                            <p class="mt-4 text-text-secondary">
+                        <?php if ( has_excerpt() ) : ?>
+                            <p class="mt-2 mb-6 text-gray-600 text-sm leading-relaxed line-clamp-2 hidden">
                                 <?php echo get_the_excerpt(); ?>
                             </p>
                         <?php endif; ?>
 
                         <!-- Meta pills + precio -->
-                        <div class="flex items-center justify-between gap-4 py-2 mt-auto">
+                        <div class="mt-auto flex items-end justify-between gap-4 pt-4 border-t border-gray-50">
                             <!-- Pills a la izquierda -->
-                            <div class="flex flex-wrap items-center gap-2 text-sm">
-                                <?php if ($duracion) : ?>
-                                    <span class="btn-primary text-text-secondary px-3 py-1 rounded-full text-sm font-medium">
-                                        <?php echo esc_html($duracion); ?>
+                            <div class="flex flex-wrap items-center gap-2 text-sm mt-4">
+                                <?php if ( $duracion ) : ?>
+                                    <span class="px-4 py-1.5 rounded-full text-xs font-bold text-gray-700 border-2 border-[#F6CF66] bg-transparent">
+                                        <?php echo esc_html( $duracion ); ?>
                                     </span>
                                 <?php endif; ?>
 
-                                <!--<?php if ($grupos) : ?>
-                                    <span class="btn-primary text-text-secondary px-3 py-1 rounded-full text-sm font-medium">
-                                        <?php echo esc_html($grupos); ?>
+                                <?php if ( $grupos ) : ?>
+                                    <span class="px-4 py-1.5 rounded-full text-xs font-bold text-gray-700 border-2 border-[#F6CF66] bg-transparent">
+                                        <?php echo esc_html( $grupos ); ?>
                                     </span>
-                                <?php endif; ?>-->
+                                <?php endif; ?>
                             </div>
 
                             <!-- Precio a la derecha -->
-                            <?php if ($precio_desde) : ?>
-                                <div class="text-2xl text-text-secondary whitespace-nowrap">
-                                    Desde
-                                    <span class="font-semibold text-text-primary">
-                                        <?php echo esc_html($precio_desde); ?>
+                            <?php if ( $precio_final ) : ?>
+                                <div class="text-right mt-4">
+                                    <span class="text-xl font-rowdies font-bold text-gray-900 leading-none">
+                                        <?php echo esc_html( $precio_final ); ?>
                                     </span>
                                 </div>
                             <?php endif; ?>
@@ -607,7 +767,7 @@ get_header(); ?>
                     </div>
                 </article>
                 <?php
-                    endwhile;
+                    endwhile; // END LOOP
                     wp_reset_postdata();
                 else :
                 ?>
@@ -616,11 +776,11 @@ get_header(); ?>
                 </div>
                 <?php endif; ?>
             </div>
-            <br>
-            <br>
-            <div class="text-center mt-10">
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" class="btn-primary text-text-secondary">
-                    Ver todos los viajes de autor
+            
+            <div class="text-center mt-12">
+                <a href="<?php echo esc_url( $viajes_autor_url ); ?>" class="btn-primary text-text-secondary inline-flex items-center gap-2">
+                    Ver todos los viajes
+                    <?php echo ukiyo_icon( 'arrow_forward', 'text-sm' ); ?>
                 </a>
             </div>
         </div>
@@ -630,7 +790,7 @@ get_header(); ?>
     <section class="py-12 bg-background" id="reviews">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-display font-satoshi text-text-primary mb-4 reveal-on-scroll">
+                <h2 class="text-display font-rowdies text-text-primary mb-4 reveal-on-scroll">
                     Historias que <span class="text-accent">dejan huella</span>
                 </h2>
                 <p class="text-lg text-text-secondary max-w-2xl mx-auto reveal-on-scroll delay-100">
@@ -714,7 +874,7 @@ get_header(); ?>
                                         <?php endfor; ?>
                                     </div>
                                     
-                                    <h3 class="text-2xl md:text-3xl font-satoshi font-semibold text-text-primary mb-4">
+                                    <h3 class="text-2xl md:text-3xl font-rowdies font-semibold text-text-primary mb-4">
                                         "<?php echo esc_html($review['title']); ?>"
                                     </h3>
                                     
@@ -754,7 +914,7 @@ get_header(); ?>
             </div>
 
             <div class="text-center mt-12">
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('resenas') ) ); ?>" class="btn-primary text-text-secondary">
+                <a href="<?php echo esc_url( $reviews_url ); ?>" class="btn-primary text-text-secondary">
                     Leer más reseñas
                 </a>
             </div>
@@ -896,10 +1056,10 @@ get_header(); ?>
     </section>
 
     <!-- CTA FINAL -->
-    <section class="py-12 bg-background text-text-secondary">
+    <section class="py-12 text-text-secondary" style="background-color: #f5f8f1ff;">
         <div class="container mx-auto px-6 text-center">
             <div class="max-w-3xl mx-auto">
-                <h2 class="text-display font-satoshi mb-6 reveal-on-scroll">
+                <h2 class="text-display font-rowdies mb-6 reveal-on-scroll">
                     Tu aventura empieza aquí
                 </h2>
                 <p class="text-xl mb-8 opacity-90 reveal-on-scroll delay-100">
@@ -907,11 +1067,11 @@ get_header(); ?>
                     Cuéntanos qué te mueve y diseñaremos una experiencia que te haga sentir el mundo de verdad.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center reveal-on-scroll delay-200">
-                    <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" class="btn-primary text-text-secondary">
+                    <a href="<?php echo esc_url( $plan_trip_url ); ?>" class="btn-primary text-text-secondary">
                         Diseñar mi viaje a medida
                     </a>
-                    <a href="https://wa.me/message/XD2DTYOAKBIAJ1" target="_blank" class="btn-primary text-text-secondary flex items-center gap-2">
-                        <img width="64" height="64" src="https://img.icons8.com/cotton/64/whatsapp--v4.png" alt="whatsapp--v4" class="w-6 h-6"/>
+                    <a href="https://wa.me/message/CS2LNI6YHSETO1" target="_blank" class="btn-primary text-text-secondary flex items-center justify-center gap-2">
+                        <img width="64" height="64" src="https://img.icons8.com/cotton/64/whatsapp--v4.png" alt="Contactar con Viajes Ukiyo por WhatsApp" class="w-6 h-6"/>
                         Escríbenos por WhatsApp
                     </a>
                 </div>

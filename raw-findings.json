@@ -1,0 +1,83 @@
+[
+  {
+    "area": "Technical SEO",
+    "severity": "Warning",
+    "confidence": "Confirmed",
+    "finding": "Security headers are incomplete.",
+    "evidence": "security_headers.py score 50/100; missing HSTS, X-Frame-Options, X-Content-Type-Options, and Referrer-Policy.",
+    "impact": "Weak browser security posture can reduce trust and expose avoidable UX/security risk.",
+    "fix": "Add Strict-Transport-Security, X-Frame-Options, X-Content-Type-Options, and Referrer-Policy at the server/CDN level."
+  },
+  {
+    "area": "AI Search Readiness",
+    "severity": "Warning",
+    "confidence": "Confirmed",
+    "finding": "AI crawlers are not explicitly managed in robots.txt.",
+    "evidence": "robots_checker.py found robots.txt HTTP 200 but reported 11 AI crawlers not explicitly managed, including GPTBot, ClaudeBot, PerplexityBot, Google-Extended, Applebot-Extended, Bytespider, and CCBot.",
+    "impact": "The site has no explicit policy for AI crawler access, training, and citation behavior.",
+    "fix": "Add explicit allow/disallow groups for target AI crawlers in robots.txt based on the business policy."
+  },
+  {
+    "area": "AI Search Readiness",
+    "severity": "Warning",
+    "confidence": "Confirmed",
+    "finding": "llms.txt exists but is under-structured.",
+    "evidence": "llms_txt_checker.py found /llms.txt HTTP 200 with quality score 55/100, no title, no description, and no llms-full.txt.",
+    "impact": "AI answer engines get weaker site context and less reliable citation guidance.",
+    "fix": "Start llms.txt with a title, add a blockquote description, curate priority links, and consider adding llms-full.txt."
+  },
+  {
+    "area": "Images",
+    "severity": "Warning",
+    "confidence": "Confirmed",
+    "finding": "Several images lack useful alt text and many lack explicit dimensions.",
+    "evidence": "parse_html.py found 21 images; local count found 4 missing/empty alt attributes and 17 missing width/height attributes.",
+    "impact": "Missing alt weakens accessibility and image search context; missing dimensions can contribute to layout shifts.",
+    "fix": "Add descriptive alt text to non-decorative images and explicit width/height or CSS aspect-ratio for all layout images."
+  },
+  {
+    "area": "Internal Linking",
+    "severity": "Warning",
+    "confidence": "Confirmed",
+    "finding": "Two destination pages have weak internal link support and multiple links have no anchor text.",
+    "evidence": "internal_links.py crawled 19 pages and found potential orphan pages /viajes-a-medida-lanzarote and /viajes-a-medida-italia with one incoming link each; 28 links have no anchor text.",
+    "impact": "Low internal link equity and empty anchors reduce crawl context and topical relevance signals.",
+    "fix": "Add contextual links to Lanzarote and Italia from destination/category/blog pages and ensure image/card links have accessible text or aria-labels."
+  },
+  {
+    "area": "Content Quality",
+    "severity": "Warning",
+    "confidence": "Confirmed",
+    "finding": "Homepage text is harder to read than ideal for a consumer travel landing page.",
+    "evidence": "readability.py measured Flesch reading ease 21.6, grade 14.4, 27.4% complex words, and average paragraph length of 71 sentences.",
+    "impact": "Difficult copy can reduce engagement, comprehension, and conversion on mobile.",
+    "fix": "Break long review/copy blocks into shorter paragraphs, simplify sentence structure, and keep core commercial sections scan-friendly."
+  },
+  {
+    "area": "On-Page SEO",
+    "severity": "Warning",
+    "confidence": "Confirmed",
+    "finding": "Heading text extraction shows concatenated words in H1/H2 content.",
+    "evidence": "parse_html.py extracted H1 as 'Viajes a medidapara quienesbuscan algo más' and H2 examples such as '¿Por quésomosmejores?' and 'Viajes personalizadosdiseñados contigo'.",
+    "impact": "If the DOM text lacks spaces around styled spans, screen readers and search parsers may receive less natural heading text.",
+    "fix": "Add literal whitespace around inline heading spans or adjust markup so extracted text reads naturally."
+  },
+  {
+    "area": "On-Page SEO",
+    "severity": "Pass",
+    "confidence": "Confirmed",
+    "finding": "Core homepage metadata is present and well aligned.",
+    "evidence": "parse_html.py found title 'Viajes a medida y experiencias auténticas | Viajes UKIYO', meta description, index/follow robots, and canonical https://viajesukiyo.com/.",
+    "impact": "Search engines have clear indexability, canonical, and SERP snippet signals.",
+    "fix": "Maintain unique title and description on every key destination and itinerary page."
+  },
+  {
+    "area": "Schema",
+    "severity": "Pass",
+    "confidence": "Confirmed",
+    "finding": "Homepage JSON-LD exists and uses useful site-level entities.",
+    "evidence": "parse_html.py found JSON-LD graph with TravelAgency/Organization, WebSite SearchAction, ImageObject, and WebPage; validate_schema.py exited successfully.",
+    "impact": "Structured data supports entity understanding and brand/site context.",
+    "fix": "Enhance the TravelAgency entity with contactPoint, address/areaServed, and sameAs profiles where accurate."
+  }
+]

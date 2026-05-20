@@ -1243,11 +1243,11 @@ $uri = get_template_directory_uri();
                 se transforma en una experiencia única de observación, paciencia y conexión con la vida salvaje.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" 
+                <a href="<?php echo esc_url( ukiyo_get_route_url( 'plan_trip' ) ); ?>" 
                    class="btn-primary text-text-secondary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/80 transition">
                     Descubre Costa Rica con Luis
                 </a>
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" 
+                <a href="<?php echo esc_url( ukiyo_get_route_url( 'viajes_autor' ) ); ?>" 
                    class="btn-primary text-text-secondary px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/80 transition">
                     Ver más viajes de autor
                 </a>
@@ -1256,7 +1256,12 @@ $uri = get_template_directory_uri();
     </div>
 </section>
 
-<?php get_footer(); ?>
+<?php
+if ( function_exists( 'ukiyo_render_viaje_autor_blog_resources_section' ) ) {
+    ukiyo_render_viaje_autor_blog_resources_section( get_the_ID(), 'bg-white' );
+}
+get_footer();
+?>
 
 
 

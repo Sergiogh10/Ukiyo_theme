@@ -27,7 +27,7 @@ get_header();
       <span class="inline-block px-4 py-2 btn-primary text-text-secondary rounded-full text-sm font-satoshi font-medium mb-6">
         Términos
       </span>
-      <h1 class="text-hero font-satoshi-bold text-text-primary mb-6">
+      <h1 class="text-hero font-rowdies text-text-primary mb-6">
         Términos y <span class="text-primary">condiciones</span>
       </h1>
     </div>
@@ -74,9 +74,7 @@ get_header();
             <h2 id="identificacion" class="scroll-mt-28">1. Identificación</h2>
             <p><strong><?php echo esc_html( get_bloginfo('name') ); ?></strong> ("UKIYO").</p>
             <ul>
-              <li><strong>Email:</strong> <a href="mailto:<?php echo antispambot( get_option('admin_email') ); ?>"><?php echo antispambot( get_option('admin_email') ); ?></a></li>
-              <li><strong>Dirección:</strong> <em>Indica aquí tu dirección fiscal</em></li>
-              <li><strong>Identificación fiscal:</strong> <em>NIF/CIF</em></li>
+              <li><strong>Email:</strong> <a href="mailto:<?php echo antispambot( 'info@viajesukiyo.com' ); ?>"><?php echo antispambot( 'info@viajesukiyo.com' ); ?></a></li>
             </ul>
 
             <hr class="my-12 mb-4 border-border/50" />
@@ -151,12 +149,12 @@ get_header();
             <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="datos" class="scroll-mt-28">12. Protección de datos</h2>
-            <p>Tratamos los datos conforme al RGPD y normativa aplicable. Para más información, consulta nuestra <a href="<?php echo esc_url( home_url('/politica-de-privacidad') ); ?>">Política de Privacidad</a>.</p>
+            <p>Tratamos los datos conforme al RGPD y normativa aplicable. Para más información, consulta nuestra <a href="<?php echo esc_url( ukiyo_get_route_url( 'privacy' ) ); ?>">Política de Privacidad</a>.</p>
 
             <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="cookies" class="scroll-mt-28">13. Cookies</h2>
-            <p>Utilizamos cookies propias y de terceros para fines técnicos y analíticos. Puedes gestionar tus preferencias en la <a href="<?php echo esc_url( home_url('/politica-de-cookies') ); ?>">Política de Cookies</a>.</p>
+            <p>Utilizamos cookies propias y de terceros para fines técnicos y analíticos. Puedes gestionar tus preferencias en la <a href="<?php echo esc_url( ukiyo_get_route_url( 'cookies' ) ); ?>">Política de Cookies</a>.</p>
 
             <hr class="my-12 mb-4 border-border/50" />
 
@@ -171,7 +169,7 @@ get_header();
             <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="reclamaciones" class="scroll-mt-28">16. Reclamaciones y atención al cliente</h2>
-            <p>Puedes dirigir reclamaciones o solicitudes de información a <a href="mailto:<?php echo antispambot( get_option('admin_email') ); ?>"><?php echo antispambot( get_option('admin_email') ); ?></a>. Responderemos con la mayor diligencia posible.</p>
+            <p>Puedes dirigir reclamaciones o solicitudes de información a <a href="mailto:<?php echo antispambot( 'info@viajesukiyo.com' ); ?>"><?php echo antispambot( 'info@viajesukiyo.com' ); ?></a>. Responderemos con la mayor diligencia posible.</p>
 
             <hr class="my-12 mb-4 border-border/50" />
 
@@ -186,7 +184,7 @@ get_header();
             <hr class="my-12 mb-4 border-border/50" />
 
             <h2 id="contacto" class="scroll-mt-28">19. Contacto</h2>
-            <p>Para cualquier duda, escríbenos a <a href="mailto:<?php echo antispambot( get_option('admin_email') ); ?>"><?php echo antispambot( get_option('admin_email') ); ?></a>.</p>
+            <p>Para cualquier duda, escríbenos a <a href="mailto:<?php echo antispambot( 'info@viajesukiyo.com' ); ?>"><?php echo antispambot( 'info@viajesukiyo.com' ); ?></a>.</p>
 
           </div>
         </div>

@@ -14,15 +14,30 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ===========================
        2. Parallax (hero o elementos con clase .parallax-element)
     ============================ */
-    window.addEventListener("scroll", () => {
-        const scrolled = window.pageYOffset;
-        const parallaxElements = document.querySelectorAll(".parallax-element");
+    const parallaxElements = Array.from(document.querySelectorAll(".parallax-element"));
+    let parallaxTicking = false;
 
-        parallaxElements.forEach(el => {
+    if (parallaxElements.length) {
+        const updateParallax = () => {
+            const scrolled = window.pageYOffset;
             const speed = scrolled * 0.3;
-            el.style.transform = `translateY(${speed}px)`;
-        });
-    });
+
+            parallaxElements.forEach(el => {
+                el.style.transform = `translate3d(0, ${speed}px, 0)`;
+            });
+
+            parallaxTicking = false;
+        };
+
+        window.addEventListener("scroll", () => {
+            if (parallaxTicking) {
+                return;
+            }
+
+            parallaxTicking = true;
+            window.requestAnimationFrame(updateParallax);
+        }, { passive: true });
+    }
 
     /* ===========================
        3. Scroll suave para anchors internos

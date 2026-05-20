@@ -22,14 +22,33 @@ add_action('init', function () {
     register_post_type('viaje_autor', [
         'labels' => $labels,
         'public' => true,
-        'show_in_rest' => true, // Gutenberg + API
+        // REST API enabled so UKIYO OS (and other internal tools) can create
+        // viaje_autor drafts. The classic editor is preserved via the
+        // `use_block_editor_for_post_type` filter below — Gutenberg stays off
+        // so the existing metaboxes keep working.
+        'show_in_rest' => true,
+        'rest_base'    => 'viaje_autor',
         'show_in_menu' => true,
-        'has_archive' => true,
+        // The public listing is the curated page /viajes-de-autor/.
+        // Keeping the CPT archive enabled exposes /viajes/, which redirects and
+        // can appear as a 3XX URL in XML sitemaps.
+        'has_archive' => false,
         'menu_icon' => 'dashicons-airplane',
-        'supports' => ['title', 'editor', 'thumbnail', 'excerpt', 'revisions'],
+        'supports' => ['title', 'editor', 'thumbnail', 'excerpt', 'revisions', 'custom-fields'],
         'rewrite' => ['slug' => 'viajes', 'with_front' => false],
     ]);
 });
+
+add_action('init', function () {
+    $rewrite_version = '2026-05-02-disable-viaje-autor-archive';
+
+    if ( get_option( 'ukiyo_viaje_autor_rewrite_version' ) === $rewrite_version ) {
+        return;
+    }
+
+    flush_rewrite_rules( false );
+    update_option( 'ukiyo_viaje_autor_rewrite_version', $rewrite_version );
+}, 30);
 
 add_action('init', function () {
     register_taxonomy('destino', ['viaje_autor'], [
@@ -40,6 +59,15 @@ add_action('init', function () {
         'rewrite' => ['slug' => 'destino'],
     ]);
 });
+
+// Keep the classic editor for viaje_autor even though show_in_rest is true.
+// The existing metaboxes (`inc/meta-viaje-autor.php`) rely on it.
+add_filter('use_block_editor_for_post_type', function ($use, $post_type) {
+    if ($post_type === 'viaje_autor') {
+        return false;
+    }
+    return $use;
+}, 10, 2);
 
 add_filter('single_template', 'load_post_template_by_id');
 

@@ -815,11 +815,11 @@ $uri = get_template_directory_uri();
                 saborear cada momento: desde las gargantas del Todra hasta las dunas doradas de Erg Chebbi.
                 </p>
               <div class="flex flex-col sm:flex-row gap-4 justify-center reveal-on-scroll delay-200">
-                  <a href="<?php echo esc_url( get_permalink( get_page_by_path('formularioautor') ) ); ?>" 
+                  <a href="<?php echo esc_url( ukiyo_get_route_url( 'form_viaje_autor' ) ); ?>" 
                     class="btn-primary text-text-secondary">
                       Quiero vivir Marruecos
                   </a>
-                  <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" 
+                  <a href="<?php echo esc_url( ukiyo_get_route_url( 'viajes_autor' ) ); ?>" 
                     class="btn-primary text-text-secondary">
                       Ver más viajes
                   </a>
@@ -830,7 +830,12 @@ $uri = get_template_directory_uri();
 
 
 
-<?php get_footer(); ?>
+<?php
+if ( function_exists( 'ukiyo_render_viaje_autor_blog_resources_section' ) ) {
+    ukiyo_render_viaje_autor_blog_resources_section( get_the_ID(), 'bg-white' );
+}
+get_footer();
+?>
 
 <script>
 document.addEventListener('click', (e) => {

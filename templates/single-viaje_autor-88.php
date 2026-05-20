@@ -817,7 +817,12 @@ $uri = get_template_directory_uri();
     </div>
 </section>
 
-<?php get_footer(); ?>
+<?php
+if ( function_exists( 'ukiyo_render_viaje_autor_blog_resources_section' ) ) {
+    ukiyo_render_viaje_autor_blog_resources_section( get_the_ID(), 'bg-white' );
+}
+get_footer();
+?>
 
 
 

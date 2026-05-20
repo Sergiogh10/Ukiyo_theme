@@ -12,7 +12,33 @@
 
 <?php
 // Detectar si estamos en la front-page o en la página de viajes de autor
-$use_transparent_header = is_front_page() || is_page_template('page-viajesautor.php') || is_page_template('page-pricing.php') || is_page_template('page-experiences.php') || is_page_template('page-reviews2.php') || is_page_template('page-about.php') || is_page_template('page-costarica.php') || is_page_template('page-colombia.php') || is_page_template('page-marruecos.php') || is_page_template('page-indonesia.php') || is_page_template('page-formautor.php') || is_page_template('page-planifica-tu-viaje.php');
+$use_transparent_header = is_front_page() 
+    || is_page_template('page-viajesautor.php') 
+    || is_page_template('page-pricing.php') 
+    || is_page_template('page-experiences.php') 
+    || is_page_template('page-reviews2.php') 
+    || is_page_template('page-about.php') 
+    || is_page_template('page-costarica.php') 
+    || is_page_template('page-colombia.php') 
+    || is_page_template('page-marruecos.php') 
+    || is_page_template('page-indonesia.php') 
+    || is_page_template('page-formautor.php') 
+    || is_page_template('page-planifica-tu-viaje.php') 
+    || is_page_template('home.php') 
+    || is_singular('post') 
+    || is_singular('viaje_autor')
+    || ( function_exists('ukiyo_portal_is_trip_request') && ukiyo_portal_is_trip_request() )
+    || ( function_exists('ukiyo_portal_is_proposal_request') && ukiyo_portal_is_proposal_request() );
+
+$destinations_url = ukiyo_get_route_url('destinations');
+$pricing_url      = ukiyo_get_route_url('pricing');
+$viajes_autor_url = ukiyo_get_route_url('viajes_autor');
+$about_url        = ukiyo_get_route_url('about');
+$reviews_url      = ukiyo_get_route_url('reviews');
+$blog_url         = home_url('/blog/');
+$plan_trip_url    = ukiyo_get_route_url('plan_trip');
+$is_blog_section  = is_home() || is_singular('post') || is_category() || is_tag() || is_author() || is_date();
+$logo_size_class  = $is_blog_section ? 'h-7 md:h-8 lg:h-9' : 'h-8 md:h-10 lg:h-12';
 ?>
 
 <?php if ($use_transparent_header) : ?>
@@ -115,7 +141,7 @@ $use_transparent_header = is_front_page() || is_page_template('page-viajesautor.
                         id="site-logo"
                         src="<?php echo get_template_directory_uri(); ?>/images/logo/<?php echo $use_transparent_header ? 'logoblanconuevo.png' : 'logoukiyo.png'; ?>"
                         alt="<?php bloginfo('name'); ?> Logo"
-                        class="h-8 md:h-10 lg:h-12 w-auto transition-all duration-300"
+                        class="<?php echo esc_attr( $logo_size_class ); ?> w-auto transition-all duration-300"
                     />
                 </a>
             </div>
@@ -130,25 +156,28 @@ $use_transparent_header = is_front_page() || is_page_template('page-viajesautor.
                 <a href="<?php echo esc_url( home_url('/') ); ?>" 
                     class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_front_page() ? $active_class : ''; ?>">Inicio</a>
 
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('experiencias') ) ); ?>" 
-                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_page('experiencias') || is_page_template('page-experiences.php') ? $active_class : ''; ?>">Destinos</a>
+                <a href="<?php echo esc_url( $destinations_url ); ?>" 
+                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_page( array('experiencias', 'destinos') ) || is_page_template('page-experiences.php') ? $active_class : ''; ?>">Destinos</a>
 
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('pricing') ) ); ?>" 
-                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_page('pricing') ? $active_class : ''; ?>">Precios</a>
+                <a href="<?php echo esc_url( $pricing_url ); ?>" 
+                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_page( array('precios-viajes-a-medida', 'pricing') ) ? $active_class : ''; ?>">Precios</a>
 
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" 
+                <a href="<?php echo esc_url( $viajes_autor_url ); ?>" 
                     class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_page('viajes-de-autor') ? $active_class : ''; ?>">Viajes de autor</a>
 
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('nosotros') ) ); ?>"  
-                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_page('nosotros') ? $active_class : ''; ?>">Nosotros</a>
+                <a href="<?php echo esc_url( $blog_url ); ?>"
+                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo $is_blog_section ? $active_class : ''; ?>">Blog</a>
+
+                <a href="<?php echo esc_url( $about_url ); ?>"  
+                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_page( array('sobre-ukiyo', 'nosotros', 'about-ukiyo') ) ? $active_class : ''; ?>">Nosotros</a>
                 
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('resenas') ) ); ?>"  
-                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_page('resenas') ? $active_class : ''; ?>">Reseñas</a>
+                <a href="<?php echo esc_url( $reviews_url ); ?>"  
+                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_page( array('resenas', 'reseñas', 'reviews') ) ? $active_class : ''; ?>">Reseñas</a>
             </div>
 
             <!-- CTA Button -->
             <div class="hidden lg:block">
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>"
+                <a href="<?php echo esc_url( $plan_trip_url ); ?>"
                    class="btn-secondary">Planifica tu Viaje</a>
             </div>
 
@@ -165,12 +194,13 @@ $use_transparent_header = is_front_page() || is_page_template('page-viajesautor.
         <div class="lg:hidden hidden mt-4 pb-4 border-t border-surface" id="mobile-menu">
             <div class="flex flex-col space-y-4 mt-4">
                 <a href="<?php echo esc_url( home_url('/') ); ?>" class="<?php echo is_front_page() ? 'text-primary' : 'text-primary-900'; ?> font-semibold hover:text-primary transition-colors">Inicio</a>
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('experiencias') ) ); ?>" class="<?php echo is_page('experiencias') || is_page_template('page-experiences.php') ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors">Destinos</a>
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('pricing') ) ); ?>" class="<?php echo is_page('pricing') ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors">Precios</a>
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" class="<?php echo is_page('viajes-de-autor') ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors">Viajes de autor</a>
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('nosotros') ) ); ?>" class="<?php echo is_page('nosotros') ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors">Nosotros</a>
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('resenas') ) ); ?>" class="<?php echo is_page('resenas') ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors">Reseñas</a>
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" 
+                <a href="<?php echo esc_url( $destinations_url ); ?>" class="<?php echo is_page( array('experiencias', 'destinos') ) || is_page_template('page-experiences.php') ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors">Destinos</a>
+                <a href="<?php echo esc_url( $pricing_url ); ?>" class="<?php echo is_page( array('precios-viajes-a-medida', 'pricing') ) ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors">Precios</a>
+                <a href="<?php echo esc_url( $viajes_autor_url ); ?>" class="<?php echo is_page('viajes-de-autor') ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors">Viajes de autor</a>
+                <a href="<?php echo esc_url( $blog_url ); ?>" class="<?php echo $is_blog_section ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors">Blog</a>
+                <a href="<?php echo esc_url( $about_url ); ?>" class="<?php echo is_page( array('sobre-ukiyo', 'nosotros', 'about-ukiyo') ) ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors">Nosotros</a>
+                <a href="<?php echo esc_url( $reviews_url ); ?>" class="<?php echo is_page( array('resenas', 'reseñas', 'reviews') ) ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors">Reseñas</a>
+                <a href="<?php echo esc_url( $plan_trip_url ); ?>" 
                    class="btn-primary mt-4 inline-block text-center text-text-secondary">Planifica tu Viaje</a>
             </div>
         </div>

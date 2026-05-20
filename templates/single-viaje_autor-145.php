@@ -19,7 +19,7 @@ $uri = get_template_directory_uri();
         <div class="absolute bottom-0 left-0 right-0 p-4 md:p-6 lg:p-12">
             <div class="container mx-auto max-w-4xl">
                 <div class="flex flex-wrap items-center gap-3 mb-6">
-                    <span class="btn-primary text-white px-3 py-1 rounded-full text-sm font-medium">12 días / 11 noches</span>
+                    <span class="btn-primary text-white px-3 py-1 rounded-full text-sm font-medium">13 días / 12 noches</span>
                     <span class="btn-primary text-white px-3 py-1 rounded-full text-sm font-medium">Grupos reducidos</span>
                     <span class="btn-primary text-white px-3 py-1 rounded-full text-sm font-medium">Plazas limitadas</span>
                 </div>
@@ -1071,11 +1071,11 @@ $uri = get_template_directory_uri();
                 se transforma en una experiencia única de observación, paciencia y conexión con la vida salvaje.
                 </p>
               <div class="flex flex-col sm:flex-row gap-4 justify-center reveal-on-scroll delay-200">
-                  <a href="<?php echo esc_url( get_permalink( get_page_by_path('formularioautor') ) ); ?>" 
+                  <a href="<?php echo esc_url( ukiyo_get_route_url( 'form_viaje_autor' ) ); ?>" 
                     class="btn-primary text-text-secondary">
                       Descubre Costa Rica con Luis
                   </a>
-                  <a href="<?php echo esc_url( get_permalink( get_page_by_path('viajes-de-autor') ) ); ?>" 
+                  <a href="<?php echo esc_url( ukiyo_get_route_url( 'viajes_autor' ) ); ?>" 
                     class="btn-primary text-text-secondary">
                       Ver más viajes
                   </a>
@@ -1084,7 +1084,12 @@ $uri = get_template_directory_uri();
       </div>
   </section>
 
-<?php get_footer(); ?>
+<?php
+if ( function_exists( 'ukiyo_render_viaje_autor_blog_resources_section' ) ) {
+    ukiyo_render_viaje_autor_blog_resources_section( get_the_ID(), 'bg-white' );
+}
+get_footer();
+?>
 
 <script>
 document.addEventListener('click', (e) => {

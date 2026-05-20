@@ -18,7 +18,9 @@ get_header();
       <img src="<?php echo get_template_directory_uri(); ?>/images/heroimages/viajes-autor-ukiyo-reviewfinal.jpg" 
            alt="Viajes de autor" 
            class="w-full h-full object-cover mask-image" 
-           loading="eager" />
+           loading="eager"
+           fetchpriority="high"
+           decoding="async" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
     </div>
 
@@ -26,10 +28,16 @@ get_header();
     <div class="relative z-10 w-full">
       <div class="container mx-auto px-6">
         <div class="max-w-4xl mx-auto text-center">
+          <?php
+          ukiyo_render_breadcrumbs([
+              'class'      => 'mb-6 justify-center text-white/80',
+              'link_class' => 'text-white/80 hover:text-white transition-colors',
+          ]);
+          ?>
           <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">
             Reviews
           </span>
-          <h1 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
+          <h1 class="text-hero md:text-6xl lg:text-hero font-rowdies text-white mb-6 text-shadow">
             Historias de nuestros <span class="text-accent-300">viajeros</span>
           </h1>
           <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed text-shadow">
@@ -44,7 +52,7 @@ get_header();
 <section class="py-16 bg-background font-satoshi md:py-24 px-4">
     <div class="container mx-auto max-w-7xl">
         <div class="text-center mb-16">
-            <h2 class="text-display font-satoshi-bold text-text-primary mb-4">
+            <h2 class="text-display font-rowdies text-text-primary mb-4">
                 Recuerdos <span class="text-primary">únicos</span>
             </h2>
         </div>
@@ -116,7 +124,7 @@ get_header();
                 alt="<?php echo esc_attr($r['name'] . ' - ' . $r['destination'] . ' | Viaje personalizado con Ukiyo'); ?>"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 mask-image"
                 loading="lazy"
-                onerror="this.src='https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg'; this.onerror=null;"
+                decoding="async"
               />
             </div>
             <div class="p-6 space-y-3">
@@ -141,20 +149,21 @@ get_header();
     <section class="py-12 bg-background text-text-secondary">
         <div class="container mx-auto px-6 text-center">
             <div class="max-w-3xl mx-auto">
-                <h2 class="text-display font-satoshi mb-6 reveal-on-scroll">
+                <h2 class="text-display font-rowdies mb-6 reveal-on-scroll">
                     Tu aventura empieza aquí
                 </h2>
                 <p class="text-xl mb-8 opacity-90 reveal-on-scroll delay-100">
                     Todo gran viaje nace de una idea, una emoción o una simple curiosidad.
                     Cuéntanos qué te mueve y diseñaremos una experiencia que te haga sentir el mundo de verdad.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center reveal-on-scroll delay-200">
-                    <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" class="btn-primary text-text-secondary">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center reveal-on-scroll delay-200">
+                    <a href="<?php echo esc_url( ukiyo_get_route_url( 'plan_trip' ) ); ?>" class="btn-primary text-text-secondary">
                         Diseñar tu aventura
                     </a>
-                    <a href="<?php echo esc_url( get_permalink( get_page_by_path('nosotros') ) ); ?>" class="btn-primary text-text-secondary">
-                        Conócenos
-                    </a>
+                    <a href="https://wa.me/message/CS2LNI6YHSETO1" target="_blank" class="btn-primary text-text-secondary flex items-center gap-2">
+                        <img width="64" height="64" src="https://img.icons8.com/cotton/64/whatsapp--v4.png" alt="Contactar con Viajes Ukiyo por WhatsApp" class="w-6 h-6"/>
+                        Hablemos de tu viaje
+                  </a>
                 </div>
             </div>
         </div>

@@ -1,0 +1,9 @@
+client_secret_*.json
+seo-tools/.gsc-token.json
+seo-tools/gsc-*.json
+seo-tools/.env
+.env
+**/__pycache__/
+*.pyc
+.DS_Store
+**/.DS_Store

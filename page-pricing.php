@@ -19,7 +19,9 @@ $template_uri = get_template_directory_uri();
       <img src="<?php echo get_template_directory_uri(); ?>/images/heroimages/viajes-autor-ukiyo-indonesiaplaya.jpg" 
            alt="Viajes de autor" 
            class="w-full h-full object-cover mask-image" 
-           loading="eager" />
+           loading="eager"
+           fetchpriority="high"
+           decoding="async" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
     </div>
 
@@ -27,10 +29,16 @@ $template_uri = get_template_directory_uri();
     <div class="relative z-10 w-full">
       <div class="container mx-auto px-6">
         <div class="max-w-4xl mx-auto text-center">
+          <?php
+          ukiyo_render_breadcrumbs([
+              'class'      => 'mb-6 justify-center text-white/80',
+              'link_class' => 'text-white/80 hover:text-white transition-colors',
+          ]);
+          ?>
           <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">
             Precios
           </span>
-          <h1 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
+          <h1 class="text-hero md:text-6xl lg:text-hero font-rowdies text-white mb-6 text-shadow">
             Invertir en <span class="text-accent-300">recuerdos</span>
           </h1>
           <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed text-shadow">
@@ -46,7 +54,7 @@ $template_uri = get_template_directory_uri();
 <section class="py-12 bg-background">
   <div class="container mx-auto px-6">
     <header class="text-center max-w-3xl mx-auto mb-12">
-      <h2 class="text-4xl font-satoshi text-text-primary tracking-tight">
+      <h2 class="text-4xl font-rowdies text-text-primary tracking-tight">
         Nuestra filosofía de <span class="text-secondary">servicio</span>
       </h2>
       <p class="mt-4 text-lg text-text-secondary leading-relaxed">
@@ -60,21 +68,21 @@ $template_uri = get_template_directory_uri();
         <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
           <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
         </div>
-        <h3 class="text-xl font-satoshi text-text-primary mb-2">Conocimiento local</h3>
+        <h3 class="text-xl font-rowdies text-text-primary mb-2">Conocimiento local</h3>
         <p class="text-text-secondary">Red de guías, artesanos y comunidades. Conexiones reales, construidas desde el respeto.</p>
       </li>
       <li class="text-center bg-white/60 backdrop-blur-sm rounded-2xl p-8 ring-1 ring-border/60">
         <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-secondary/10 flex items-center justify-center">
           <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
         </div>
-        <h3 class="text-xl font-satoshi text-text-primary mb-2">Personalización total</h3>
+        <h3 class="text-xl font-rowdies text-text-primary mb-2">Personalización total</h3>
         <p class="text-text-secondary">Cada viaje se diseña desde cero. Se adapta a tu forma de viajar, tus intereses y tu ritmo.</p>
       </li>
       <li class="text-center bg-white/60 backdrop-blur-sm rounded-2xl p-8 ring-1 ring-border/60">
         <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center">
           <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
         </div>
-        <h3 class="text-xl font-satoshi text-text-primary mb-2">Acompañamiento constante</h3>
+        <h3 class="text-xl font-rowdies text-text-primary mb-2">Acompañamiento constante</h3>
         <p class="text-text-secondary">Estamos contigo en cada paso: planificación, viaje y regreso. Cuidamos los detalles de verdad.</p>
       </li>
     </ul>
@@ -87,7 +95,7 @@ $template_uri = get_template_directory_uri();
   <div class="container mx-auto px-6">
     <!-- Header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <h2 class="text-4xl font-satoshi">
+      <h2 class="text-4xl font-rowdies">
         <span class="text-primary tracking-wide">Planes </span>
         <span class="text-text-primary">Flexibles</span>
       </h2>
@@ -108,7 +116,7 @@ $template_uri = get_template_directory_uri();
                  class="absolute inset-0 w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110" />
             <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-500"></div>
             <div class="absolute inset-0 flex items-center justify-center p-4">
-                <h2 class="text-4xl font-satoshi font-bold text-white text-center drop-shadow-md text-shadow">Espíritu mochilero</h2>
+                <h2 class="text-4xl font-rowdies font-bold text-white text-center drop-shadow-md text-shadow">Espíritu mochilero</h2>
             </div>
         </div>
         
@@ -175,7 +183,7 @@ $template_uri = get_template_directory_uri();
                  class="absolute inset-0 w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110" />
             <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-500"></div>
             <div class="absolute inset-0 flex items-center justify-center p-4">
-                <h2 class="text-4xl font-satoshi font-bold text-white text-center drop-shadow-md text-shadow">Aventura premium</h2>
+                <h2 class="text-4xl font-rowdies font-bold text-white text-center drop-shadow-md text-shadow">Aventura premium</h2>
             </div>
         </div>
         
@@ -237,7 +245,7 @@ $template_uri = get_template_directory_uri();
                  class="absolute inset-0 w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110" />
             <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-500"></div>
             <div class="absolute inset-0 flex items-center justify-center p-4">
-                <h2 class="text-4xl font-satoshi font-bold text-white text-center drop-shadow-md text-shadow">Mundo flotante</h2>
+                <h2 class="text-4xl font-rowdies font-bold text-white text-center drop-shadow-md text-shadow">Mundo flotante</h2>
             </div>
         </div>
         
@@ -297,7 +305,7 @@ $template_uri = get_template_directory_uri();
 <section id="consultation" class="py-12 bg-background">
   <div class="container mx-auto px-6">
     <header class="text-center max-w-2xl mx-auto mb-8">
-      <h2 class="text-4xl font-satoshi text-text-primary">Reserva una <span class="text-primary">videollamada</span></h2>
+      <h2 class="text-4xl font-rowdies text-text-primary">Reserva una <span class="text-primary">videollamada</span></h2>
       <p class="mt-3 text-lg text-text-secondary">Coordina una conversación y vemos juntos el alcance, el ritmo y el presupuesto.</p>
     </header>
 

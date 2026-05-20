@@ -29,7 +29,7 @@ get_header();
           <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">
             浮世 - El Mundo Flotante
           </span>
-          <h1 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
+          <h1 class="text-hero md:text-6xl lg:text-hero font-rowdies text-white mb-6 text-shadow">
             Creando viajes con <span class="text-accent-300">alma</span>
           </h1>
           <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed text-shadow">
@@ -45,12 +45,12 @@ get_header();
   <div class="container mx-auto px-6">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-16">
-        <h2 class="text-display font-satoshi-bold text-text-primary mb-4">
+        <h2 class="text-display font-rowdies text-text-primary mb-4">
           De un viaje <span class="text-accent">nació una idea</span>
         </h2>
         <p class="text-lg font-satoshi text-text-secondary max-w-2xl mx-auto">
 Así nació UKIYO.
-De la unión entre la mirada creativa de Víctor, capaz de transformar cualquier destino en emoción visual, y mi obsesión por viajar de forma auténtica, tranquila y consciente, acompañado siempre por Helena, que ha sido parte esencial de este camino.       </p>
+De la unión entre la mirada creativa de Víctor, capaz de transformar cualquier destino en emoción visual, y la búsqueda de Sergio por viajes auténticos y conscientes, acompañado siempre por Helena, que ha sido parte esencial de este camino.       </p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
@@ -94,7 +94,7 @@ Un proyecto familiar que busca que otras personas puedan vivir viajes reales, cu
 <section class="py-12 bg-background font-satoshi">
   <div class="container mx-auto px-6">
     <div class="text-center mb-16">
-      <h2 class="text-display font-satoshi-bold text-text-primary mb-4">
+      <h2 class="text-display font-rowdies text-text-primary mb-4">
         Nuestros <span class="text-primary">especialistas</span>
       </h2>
       <p class="text-lg text-text-secondary max-w-2xl mx-auto">
@@ -152,7 +152,7 @@ Un proyecto familiar que busca que otras personas puedan vivir viajes reales, cu
 <section class="py-12 bg-background font-satoshi">
   <div class="container mx-auto px-6">
     <div class="text-center mb-16">
-      <h2 class="text-display font-satoshi-bold text-text-primary mb-4">
+      <h2 class="text-display font-rowdies text-text-primary mb-4">
         Nuestros <span class="text-secondary">Valores</span>
       </h2>
       <p class="text-lg text-text-secondary max-w-2xl mx-auto">
@@ -169,7 +169,7 @@ Buscamos que cada experiencia honre tanto al viajero como a las comunidades que 
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
           </svg>
         </div>
-        <h3 class="text-xl font-satoshi-bold text-text-primary mb-3">Autenticidad</h3>
+        <h3 class="text-xl font-rowdies text-text-primary mb-3">Autenticidad</h3>
         <p class="text-text-secondary">
 Diseñamos experiencias reales, lejos del turismo masivo.
 Queremos que conectes con la esencia de cada lugar: su gente, sus historias y su ritmo.        </p>
@@ -182,7 +182,7 @@ Queremos que conectes con la esencia de cada lugar: su gente, sus historias y su
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
           </svg>
         </div>
-        <h3 class="text-xl font-satoshi-bold text-text-primary mb-3">Sostenibilidad</h3>
+        <h3 class="text-xl font-rowdies text-text-primary mb-3">Sostenibilidad</h3>
         <p class="text-text-secondary">
 Colaboramos con proyectos locales y promovemos un turismo que cuida.
 Cuidar el entorno, las culturas y las personas es la base de todo lo que hacemos.        </p>
@@ -196,7 +196,7 @@ Cuidar el entorno, las culturas y las personas es la base de todo lo que hacemos
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
           </svg>
         </div>
-        <h3 class="text-xl font-satoshi-bold text-text-primary mb-3">Transparencia</h3>
+        <h3 class="text-xl font-rowdies text-text-primary mb-3">Transparencia</h3>
         <p class="text-text-secondary">
 Creemos que la confianza se gana con honestidad.
 Por eso cada decisión, recomendación o proveedor se elige con claridad y coherencia desde el primer día.        </p>
@@ -210,7 +210,7 @@ Por eso cada decisión, recomendación o proveedor se elige con claridad y coher
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
           </svg>
         </div>
-        <h3 class="text-xl font-satoshi-bold text-text-primary mb-3">Bienestar</h3>
+        <h3 class="text-xl font-rowdies text-text-primary mb-3">Bienestar</h3>
         <p class="text-text-secondary">
 Más que viajes, creamos momentos que inspiran y enriquecen.
 Experiencias pensadas para disfrutar, reconectar y volver con una mirada diferente.        </p>
@@ -352,7 +352,7 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
 <section class="py-12 bg-background font-satoshi">
   <div class="container mx-auto px-6">
     <div class="text-center mb-16">
-      <h2 class="text-display font-satoshi-bold text-text-primary mb-4">
+      <h2 class="text-display font-rowdies text-text-primary mb-4">
         Nuestro <span class="text-secondary">Viaje de Crecimiento</span>
       </h2>
       <p class="text-lg text-text-secondary max-w-2xl mx-auto">
@@ -370,7 +370,7 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
           <!-- 2021 -->
           <div class="relative flex items-center">
             <div class="flex-1 pr-8 text-right">
-              <h3 class="text-xl font-satoshi-bold text-text-primary mb-2">2021 - El Despertar</h3>
+              <h3 class="text-xl font-rowdies text-text-primary mb-2">2021 - El Despertar</h3>
               <p class="text-text-secondary">
                 Tras un periodo de cambios, Sergio conoce a Helena, su alma gemela, quien le transmite su ilusión por viajar y conocer culturas completamente diferentes a la nuestra.
               </p>
@@ -384,7 +384,7 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
             <div class="flex-1 pr-8"></div>
             <div class="w-4 h-4 bg-secondary rounded-full border-4 border-white shadow-soft relative z-10"></div>
             <div class="flex-1 pl-8">
-              <h3 class="text-xl font-satoshi-bold text-text-primary mb-2">2022 - Conociendo Costa Rica</h3>
+              <h3 class="text-xl font-rowdies text-text-primary mb-2">2022 - Conociendo Costa Rica</h3>
               <p class="text-text-secondary">
                 Llega su primera aventura juntos, Costa Rica, donde disfrutan de la naturaleza al estilo "Pura Vida".
               </p>
@@ -394,7 +394,7 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
           <!-- 2023 -->
           <div class="relative flex items-center">
             <div class="flex-1 pr-8 text-right">
-              <h3 class="text-xl font-satoshi-bold text-text-primary mb-2">2023 - Abriendo horizontes</h3>
+              <h3 class="text-xl font-rowdies text-text-primary mb-2">2023 - Abriendo horizontes</h3>
               <p class="text-text-secondary">
                 Tras una primera aventura en Latinoamérica, Sergio y Helena preparan un viaje que rompe los moldes de los viajes tradicionales. Se convierte en el viaje que cambia sus vidas: Indonesia. Mientras tanto, Víctor comienza a involucrarse desde la creatividad, documentando y dando forma visual a cada una de sus experiencias a través de Youtube.
               </p>
@@ -408,7 +408,7 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
             <div class="flex-1 pr-8"></div>
             <div class="w-4 h-4 bg-success rounded-full border-4 border-white shadow-soft relative z-10"></div>
             <div class="flex-1 pl-8">
-              <h3 class="text-xl font-satoshi-bold text-text-primary mb-2">2024 - Primeros viajes organizados</h3>
+              <h3 class="text-xl font-rowdies text-text-primary mb-2">2024 - Primeros viajes organizados</h3>
               <p class="text-text-secondary">
                 A través de redes sociales, amigos y conocidos empiezan a interesarse por sus rutas y experiencias. Les piden ayuda para organizar sus propios viajes, y aquí —sin planearlo— comienza a formarse la semilla de un proyecto.
               </p>
@@ -418,7 +418,7 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
           <!-- 2025 -->
           <div class="relative flex items-center">
             <div class="flex-1 pr-8 text-right">
-              <h3 class="text-xl font-satoshi-bold text-text-primary mb-2">2025 - ¡A la aventura!</h3>
+              <h3 class="text-xl font-rowdies text-text-primary mb-2">2025 - ¡A la aventura!</h3>
               <p class="text-text-secondary">
                 Sergio, Helena y Víctor dan el paso definitivo y nace la web de UKIYO. Lo hacen desde la humildad, organizando únicamente viajes que conocen de primera mano, fieles a un principio innegociable: ofrecer experiencias reales, cuidadas y de calidad.
               </p>
@@ -436,7 +436,7 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
 <section class="py-12 bg-background text-text-secondary">
         <div class="container mx-auto px-6 text-center">
             <div class="max-w-3xl mx-auto">
-              <h2 class="text-display font-satoshi mb-6 reveal-on-scroll">
+              <h2 class="text-display font-rowdies mb-6 reveal-on-scroll">
                     ¿Listo para el viaje de tu vida?
                 </h2>
               <p class="text-xl mb-8 opacity-90 reveal-on-scroll delay-100">
@@ -444,11 +444,11 @@ Queremos que cada viaje deje una huella positiva que permanezca mucho después d
                   Cuéntanos qué te inspira y crearemos juntos una experiencia que te haga vivir el mundo de otra forma.
                 </p>
               <div class="flex flex-col sm:flex-row gap-4 justify-center reveal-on-scroll delay-200">
-                  <a href="<?php echo esc_url( get_permalink( get_page_by_path('planifica-tu-viaje') ) ); ?>" 
-                    class="btn-primary text-text-secondary">
-                      Hablemos de tu viaje
+                  <a href="https://wa.me/message/CS2LNI6YHSETO1" target="_blank" class="btn-primary text-text-secondary flex items-center gap-2">
+                        <img width="64" height="64" src="https://img.icons8.com/cotton/64/whatsapp--v4.png" alt="Contactar con Viajes Ukiyo por WhatsApp" class="w-6 h-6"/>
+                        Hablemos de tu viaje
                   </a>
-                  <a href="<?php echo esc_url( get_permalink( get_page_by_path('resenas') ) ); ?>" 
+                  <a href="<?php echo esc_url( ukiyo_get_route_url( 'reviews' ) ); ?>" 
                     class="btn-primary text-text-secondary">
                       Lee nuestras Historias
                   </a>

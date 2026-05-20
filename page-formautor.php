@@ -7,6 +7,91 @@
 if ( ! defined('ABSPATH') ) exit;
 
 /**
+ * Helpers email confirmación React Email
+ */
+if ( ! function_exists( 'ukiyo_formautor_get_confirmation_email_html' ) ) {
+    function ukiyo_formautor_get_confirmation_email_html( $args = [] ) {
+        $defaults = [
+            'client_name'  => 'viajero',
+            'trip_name'    => 'un viaje de autor',
+            'whatsapp_url' => 'https://wa.me/message/CS2LNI6YHSETO1',
+            'website_url'  => home_url( '/viajes-de-autor/' ),
+        ];
+
+        $args         = wp_parse_args( $args, $defaults );
+        $react_path   = get_template_directory() . '/emails/out/interes_viaje_autor.html';
+        $replacements = [
+            '{{CLIENT_NAME}}'  => $args['client_name'],
+            '{{TRIP_NAME}}'    => $args['trip_name'],
+            '{{WHATSAPP_URL}}' => $args['whatsapp_url'],
+            '{{WEBSITE_URL}}'  => $args['website_url'],
+        ];
+
+        if ( file_exists( $react_path ) ) {
+            $html = file_get_contents( $react_path );
+
+            if ( false !== $html ) {
+                $html = strtr( $html, $replacements );
+                $html = ukiyo_email_replace_static_urls( $html );
+
+                return $html;
+            }
+        }
+
+        return wp_kses_post(
+            '<p>Hola ' . esc_html( $args['client_name'] ) . ',</p>' .
+            '<p>Gracias por tu interés en ' . esc_html( $args['trip_name'] ) . '.</p>' .
+            '<p>Muy pronto te contactaremos para contarte más detalles.</p>'
+        );
+    }
+}
+
+if ( ! function_exists( 'ukiyo_formautor_get_admin_email_html' ) ) {
+    function ukiyo_formautor_get_admin_email_html( $args = [] ) {
+        $defaults = [
+            'traveller_name'   => 'viajero',
+            'traveller_email'  => 'sin-email@example.com',
+            'traveller_phone'  => '—',
+            'trip_name'        => 'un viaje de autor',
+            'travellers_count' => '1',
+            'notes'            => '—',
+        ];
+
+        $args         = wp_parse_args( $args, $defaults );
+        $react_path   = get_template_directory() . '/emails/out/aviso_lead_viaje_autor.html';
+        $replacements = [
+            '{{TRAVELLER_NAME}}'   => $args['traveller_name'],
+            '{{TRAVELLER_EMAIL}}'  => $args['traveller_email'],
+            '{{TRAVELLER_PHONE}}'  => $args['traveller_phone'],
+            '{{TRIP_NAME}}'        => $args['trip_name'],
+            '{{TRAVELLERS_COUNT}}' => $args['travellers_count'],
+            '{{NOTES}}'            => $args['notes'],
+        ];
+
+        if ( file_exists( $react_path ) ) {
+            $html = file_get_contents( $react_path );
+
+            if ( false !== $html ) {
+                $html = strtr( $html, $replacements );
+                $html = ukiyo_email_replace_static_urls( $html );
+
+                return $html;
+            }
+        }
+
+        return wp_kses_post(
+            '<p><strong>Nuevo interés en Viaje de Autor</strong></p>' .
+            '<p><strong>Nombre:</strong> ' . esc_html( $args['traveller_name'] ) . '</p>' .
+            '<p><strong>Email:</strong> ' . esc_html( $args['traveller_email'] ) . '</p>' .
+            '<p><strong>Teléfono:</strong> ' . esc_html( $args['traveller_phone'] ) . '</p>' .
+            '<p><strong>Viaje:</strong> ' . esc_html( $args['trip_name'] ) . '</p>' .
+            '<p><strong>Viajeros:</strong> ' . esc_html( $args['travellers_count'] ) . '</p>' .
+            '<p><strong>Mensaje:</strong><br>' . nl2br( esc_html( $args['notes'] ) ) . '</p>'
+        );
+    }
+}
+
+/**
 
 
 /**
@@ -50,75 +135,16 @@ if ( 'POST' === $_SERVER['REQUEST_METHOD'] && isset($_POST['ukiyo_autor_nonce'])
     // Envío
     if ( empty($errors) ) {
         $subject = sprintf('✨ Interés en Viaje de Autor - %s', $traveller_name);
-
-        $body = '
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interés Viaje de Autor</title>
-</head>
-<body style="margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,\'Helvetica Neue\',Arial,sans-serif;background-color:#f5f2ed;color:#2c2c2c;">
-  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#f5f2ed;padding:40px 20px;">
-    <tr>
-      <td align="center">
-        <table cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px;background-color:#ffffff;border-radius:24px;overflow:hidden;box-shadow:0 4px 20px rgba(139,69,19,0.08);">
-          <tr>
-            <td style="background:linear-gradient(135deg,#F6CF66 0%,#E8B48D 100%);padding:40px 40px 30px;text-align:center;">
-              <h1 style="margin:0;font-size:32px;font-weight:700;color:#2c2c2c;letter-spacing:-0.5px;">✨ Interés en Viaje de Autor</h1>
-              <p style="margin:10px 0 0;font-size:16px;color:#2c2c2c;opacity:0.9;">Alguien quiere unirse a una de tus aventuras exclusivas</p>
-            </td>
-          </tr>
-
-          <tr>
-            <td style="padding:40px 40px 20px;">
-              <div style="background-color:#fffbf0;border-left:4px solid #F6CF66;padding:20px;border-radius:12px;margin-bottom:30px;">
-                <h2 style="margin:0 0 15px;font-size:20px;font-weight:600;color:#2c2c2c;">👤 Datos del Viajero</h2>
-                <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                  <tr>
-                    <td style="padding:8px 0;font-size:15px;color:#6b6b6b;width:40%;">Nombre:</td>
-                    <td style="padding:8px 0;font-size:15px;font-weight:600;color:#2c2c2c;">' . esc_html($traveller_name) . '</td>
-                  </tr>
-                  <tr>
-                    <td style="padding:8px 0;font-size:15px;color:#6b6b6b;">Email:</td>
-                    <td style="padding:8px 0;font-size:15px;font-weight:600;color:#2c2c2c;">
-                      <a href="mailto:' . esc_attr($email) . '" style="color:#2c2c2c;text-decoration:none;">' . esc_html($email) . '</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="padding:8px 0;font-size:15px;color:#6b6b6b;">Teléfono/WhatsApp:</td>
-                    <td style="padding:8px 0;font-size:15px;font-weight:600;color:#2c2c2c;">' . esc_html($phone) . '</td>
-                  </tr>
-                </table>
-              </div>
-
-              <div style="margin-bottom:30px;">
-                <h2 style="margin:0 0 15px;font-size:20px;font-weight:600;color:#2c2c2c;border-bottom:2px solid #F6CF66;padding-bottom:10px;">🗺️ Viaje de Interés</h2>
-                <p style="margin:0 0 10px;font-size:15px;"><strong>Viaje seleccionado:</strong> ' . esc_html($interested_trip) . '</p>
-                <p style="margin:0;font-size:15px;"><strong>Número de personas:</strong> ' . esc_html($travelers) . '</p>
-              </div>
-
-              <div style="margin-bottom:30px;">
-                <h2 style="margin:0 0 15px;font-size:20px;font-weight:600;color:#2c2c2c;border-bottom:2px solid #F6CF66;padding-bottom:10px;">💬 Mensaje / Dudas</h2>
-                <p style="margin:0;font-size:15px;line-height:1.6;color:#4a4a4a;">' . nl2br(esc_html($notes)) . '</p>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td style="background-color:#2c2c2c;padding:30px 40px;text-align:center;border-bottom-left-radius:24px;border-bottom-right-radius:24px;">
-              <p style="margin:0;color:#F6CF66;font-size:14px;font-weight:600;">Viajes UKIYO</p>
-              <p style="margin:5px 0 0;color:#888888;font-size:12px;">El arte de viajar despacio.</p>
-            </td>
-          </tr>
-
-        </table>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>';
+        $body = ukiyo_formautor_get_admin_email_html(
+            [
+                'traveller_name'   => $traveller_name,
+                'traveller_email'  => $email,
+                'traveller_phone'  => $phone ? $phone : '—',
+                'trip_name'        => $interested_trip ? $interested_trip : 'un viaje de autor',
+                'travellers_count' => (string) $travelers,
+                'notes'            => $notes ? $notes : '—',
+            ]
+        );
 
         $headers = [];
         $headers[] = 'Content-Type: text/html; charset=UTF-8';
@@ -132,6 +158,22 @@ if ( 'POST' === $_SERVER['REQUEST_METHOD'] && isset($_POST['ukiyo_autor_nonce'])
 
         if ( $sent ) {
             $success_msg = '¡Gracias! Hemos recibido tu solicitud. Te contactaremos muy pronto para hablar sobre esta aventura.';
+
+            // Enviar email de confirmación al usuario
+            if ( $email ) {
+                $trip_name    = ! empty( $interested_trip ) ? $interested_trip : 'un viaje de autor';
+                $user_body    = ukiyo_formautor_get_confirmation_email_html(
+                    [
+                        'client_name' => $traveller_name,
+                        'trip_name'   => $trip_name,
+                    ]
+                );
+                $user_subject = 'Hemos recibido tu interés - Ukiyo';
+                $user_headers = array( 'Content-Type: text/html; charset=UTF-8' );
+
+                wp_mail( $email, $user_subject, $user_body, $user_headers );
+            }
+
         } else {
             $errors[] = 'Hubo un problema al enviar el mensaje. Por favor intenta de nuevo.';
         }
@@ -172,11 +214,8 @@ $viajes_query = new WP_Query([
     <div class="relative z-10 w-full">
       <div class="container mx-auto px-6">
         <div class="max-w-4xl mx-auto text-center">
-          <span class="inline-block px-4 py-2 btn-secondary backdrop-blur-sm text-white rounded-full text-sm font-satoshi font-medium mb-6 text-shadow">
-            Únete
-          </span>
-          <h1 class="text-hero md:text-6xl lg:text-hero font-satoshi text-white mb-6 text-shadow">
-            Viajes con <span class="text-accent-300">Alma</span>
+          <h1 class="text-hero md:text-6xl lg:text-hero font-rowdies text-white mb-6 mt-8 text-shadow">
+            Reserva <span class="text-accent-300">ya</span>
           </h1>
           <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed text-shadow">
             Estás a un paso de vivir una experiencia única. Rellena este formulario y contactaremos contigo.
@@ -196,7 +235,7 @@ $viajes_query = new WP_Query([
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
           </div>
-          <h3 class="text-3xl font-satoshi font-bold text-text-primary mb-4">¡Mensaje recibido!</h3>
+          <h3 class="text-3xl font-rowdies font-bold text-text-primary mb-4">¡Mensaje recibido!</h3>
           <p class="text-lg text-text-secondary mb-8"><?php echo esc_html($success_msg); ?></p>
           <a href="<?php echo esc_url( home_url('/viajes-de-autor') ); ?>" class="btn-primary text-text-secondary inline-block">Ver más viajes</a>
         </div>
@@ -234,7 +273,7 @@ $viajes_query = new WP_Query([
 
           <!-- Datos Personales -->
           <div class="space-y-6">
-            <h3 class="text-xl font-satoshi font-semibold text-text-primary border-b border-gray-200 pb-2">1. Tus datos</h3>
+            <h3 class="text-xl font-rowdies font-semibold text-text-primary border-b border-gray-200 pb-2">1. Tus datos</h3>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -267,7 +306,7 @@ $viajes_query = new WP_Query([
 
           <!-- Datos del Viaje -->
           <div class="space-y-6">
-            <h3 class="text-xl font-satoshi font-semibold text-text-primary border-b border-gray-200 pb-2">2. El viaje</h3>
+            <h3 class="text-xl font-rowdies font-semibold text-text-primary border-b border-gray-200 pb-2">2. El viaje</h3>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -318,7 +357,7 @@ $viajes_query = new WP_Query([
             <label class="flex items-start gap-3 cursor-pointer group">
               <input type="checkbox" name="gdpr" required class="mt-1 rounded border-gray-300 text-primary focus:ring-primary" <?php checked(!empty($_POST['gdpr'])); ?>>
               <span class="text-sm text-text-secondary">
-                He leído y acepto la <a href="<?php echo esc_url( home_url('/politica-de-privacidad') ); ?>" target="_blank" class="text-primary hover:underline">política de privacidad</a>.
+                He leído y acepto la <a href="<?php echo esc_url( ukiyo_get_route_url( 'privacy' ) ); ?>" target="_blank" class="text-primary hover:underline">política de privacidad</a>.
                 Entiendo que mis datos se usarán para gestionar esta solicitud.
               </span>
             </label>

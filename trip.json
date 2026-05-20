@@ -1,0 +1,652 @@
+{
+    "title": "Norte de Marruecos: ciudades blancas, medinas azules y legado imperial",
+    "post_status": "draft",
+    "access_type": "proposal",
+    "destination": "Marruecos",
+    "dates": {
+        "start": "",
+        "end": "",
+        "display": "9 días / 8 noches"
+    },
+    "travelers": [],
+    "status": "planificacion",
+    "reference": "MAR-NORTE-TNG-CMN-9D",
+    "subtitle": "Una ruta privada desde Tánger hasta Casablanca atravesando el Atlántico, el Rif, las ciudades imperiales y la memoria viva de Marruecos.",
+    "welcome": "Bienvenidos a un viaje pausado por el norte de Marruecos, pensado para descubrir el país desde sus contrastes: la luz atlántica de Asilah, la herencia andalusí de Tetuán, el azul sereno de Chefchaouen, la profundidad histórica de Fez y el carácter monumental de Rabat y Casablanca.Durante la ruta viajaréis en privado, con tiempo suficiente para pasear, observar, descansar y dejar que cada ciudad revele su propio ritmo.",
+    "country_story_title": "Marruecos: entre el Atlántico, el Rif y las ciudades imperiales",
+    "country_story_subtitle": "Un país de capas, oficios, arquitectura y memoria compartida entre África, el mundo árabe y el Mediterráneo.",
+    "country_story": "Marruecos no se entiende de golpe. Se va revelando poco a poco, entre medinas que conservan sus oficios, ciudades blancas abiertas al océano, montañas del Rif y antiguos centros imperiales donde la historia sigue formando parte de la vida diaria.Este viaje recorre un Marruecos especialmente rico en matices: el norte mediterráneo, marcado por la influencia andalusí; la calma azul de Chefchaouen; la intensidad espiritual y artesanal de Fez; y la elegancia institucional de Rabat antes de llegar a Casablanca, la gran ciudad contemporánea del país.La ruta está pensada para viajar sin prisa, con traslados privados, noches bien repartidas y visitas que combinan patrimonio, paseos libres y momentos para disfrutar del ambiente local.",
+    "hero_image_id": 0,
+    "featured_image_id": 0,
+    "flights": [],
+    "itinerary": [
+        {
+            "place": "Asilah",
+            "place_description": "Asilah es una pequeña ciudad costera situada al sur de Tánger, abierta al Atlántico y conocida por su medina blanca, sus murales artísticos y su ambiente tranquilo. Es una primera parada perfecta para entrar en Marruecos de forma suave, entre calles encaladas, puertas azules y atardeceres junto al mar.",
+            "stay_days": 1,
+            "map_points": [
+                {
+                    "label": "Medina de Asilah",
+                    "url": "https: //www.google.com/maps/search/?api=1&query=Medina+of+Asilah+Morocco",
+                    "lat": 35.465,
+                    "lng": -6.034
+                },
+                {
+                    "label": "Murallas de Asilah",
+                    "url": "https: //www.google.com/maps/search/?api=1&query=Ramparts+of+Asilah+Morocco",
+                    "lat": 35.466,
+                    "lng": -6.036
+                }
+            ],
+            "accommodations": [
+                {
+                    "name": "Alojamiento en Asilah",
+                    "description": "Alojamiento incluido según disponibilidad y categoría confirmada.",
+                    "nights": 1,
+                    "address": "",
+                    "map_url": ""
+                }
+            ],
+            "days": [
+                {
+                    "day_number": 1,
+                    "title": "Llegada a Tánger y primera noche junto al Atlántico",
+                    "description": "Recogida en el puerto o aeropuerto de Tánger y salida hacia Asilah. El primer día está pensado como una entrada tranquila al viaje: llegada, traslado privado, paseo por la medina blanca y tiempo libre para disfrutar del ambiente costero al atardecer.",
+                    "location_name": "Asilah",
+                    "location_address": "Asilah, Marruecos",
+                    "location_map_url": "https: //www.google.com/maps/search/?api=1&query=Asilah+Morocco",
+                    "schedule": [
+                        "Recogida en Tánger puerto o aeropuerto.",
+                        "Traslado privado hacia Asilah.",
+                        "Llegada al alojamiento y tiempo para instalarse.",
+                        "Paseo libre por la medina y las murallas.",
+                        "Atardecer junto al Atlántico."
+                    ],
+                    "recommendations": [
+                        "Llevar algo cómodo para caminar por la medina.",
+                        "Guardar el atardecer para la zona de las murallas.",
+                        "Cenar pescado o cocina local en alguno de los restaurantes del centro."
+                    ],
+                    "image_ids": [],
+                    "activities": [
+                        {
+                            "title": "Paseo por la medina blanca de Asilah",
+                            "description": "Un primer contacto relajado con Marruecos entre calles encaladas, arte urbano, pequeñas tiendas y vistas al océano.",
+                            "modal_content": "La medina de Asilah es una de las más agradables del norte de Marruecos. A diferencia de otras medinas más intensas, aquí el ritmo es pausado y el paseo se disfruta sin necesidad de seguir un recorrido rígido.Sus calles blancas, puertas azules y murales convierten la ciudad en una parada muy fotogénica. La zona de las murallas permite abrir la mirada hacia el Atlántico y entender el carácter costero de la ciudad.Es una visita ideal para el primer día, especialmente después del traslado desde Tánger.",
+                            "visiting_hours": "Libre. Recomendado por la tarde y al atardecer.",
+                            "entry_price": "Gratis",
+                            "location_name": "Medina de Asilah",
+                            "location_address": "Medina, Asilah, Marruecos",
+                            "map_url": "https: //www.google.com/maps/search/?api=1&query=Medina+of+Asilah+Morocco",
+                            "image_ids": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "place": "Tetuán",
+            "place_description": "Tetuán conserva una de las medinas más auténticas del país y una fuerte huella andalusí. Es una ciudad menos expuesta al turismo masivo, con un casco histórico lleno de vida local, arquitectura blanca y una identidad muy marcada por su relación con el Mediterráneo.",
+            "stay_days": 1,
+            "map_points": [
+                {
+                    "label": "Medina de Tetuán",
+                    "url": "https: //www.google.com/maps/search/?api=1&query=Medina+of+Tetouan+Morocco",
+                    "lat": 35.572,
+                    "lng": -5.372
+                },
+                {
+                    "label": "Plaza Hassan II",
+                    "url": "https: //www.google.com/maps/search/?api=1&query=Place+Hassan+II+Tetouan",
+                    "lat": 35.571,
+                    "lng": -5.371
+                }
+            ],
+            "accommodations": [
+                {
+                    "name": "Alojamiento en Tetuán",
+                    "description": "Alojamiento incluido según disponibilidad y categoría confirmada.",
+                    "nights": 1,
+                    "address": "",
+                    "map_url": ""
+                }
+            ],
+            "days": [
+                {
+                    "day_number": 2,
+                    "title": "De Asilah a Tetuán, la huella andalusí del norte",
+                    "description": "Después del desayuno, salida hacia Tetuán. La jornada se centra en descubrir una ciudad con alma andalusí, elegante y auténtica, cuya medina ha sido reconocida por su valor histórico y urbano.",
+                    "location_name": "Tetuán",
+                    "location_address": "Tetuán, Marruecos",
+                    "location_map_url": "https: //www.google.com/maps/search/?api=1&query=Tetouan+Morocco",
+                    "schedule": [
+                        "Desayuno en Asilah.",
+                        "Traslado privado hacia Tetuán.",
+                        "Llegada y paseo por el centro histórico.",
+                        "Visita de la medina y alrededores.",
+                        "Noche en Tetuán."
+                    ],
+                    "recommendations": [
+                        "Dedicar tiempo a observar los oficios tradicionales dentro de la medina.",
+                        "Caminar sin prisa por la zona antigua, prestando atención a puertas, patios y detalles arquitectónicos.",
+                        "Probar cocina local del norte de Marruecos."
+                    ],
+                    "image_ids": [],
+                    "activities": [
+                        {
+                            "title": "Medina de Tetuán",
+                            "description": "Una de las medinas más auténticas de Marruecos, con fuerte influencia andalusí y vida local muy presente.",
+                            "modal_content": "La medina de Tetuán es una de las grandes joyas del norte de Marruecos. Menos turística que otras ciudades imperiales, conserva una atmósfera cotidiana muy especial, con zocos, talleres, callejuelas estrechas y arquitectura de raíz andalusí.El paseo permite entender la relación histórica entre Marruecos y Al-Ándalus, visible en la organización urbana, los colores, los patios y algunos detalles decorativos.Es una parada clave para descubrir un Marruecos más local y menos escenificado.",
+                            "visiting_hours": "Libre. Recomendado durante la mañana o primera hora de la tarde.",
+                            "entry_price": "Gratis",
+                            "location_name": "Medina de Tetuán",
+                            "location_address": "Medina, Tetuán, Marruecos",
+                            "map_url": "https: //www.google.com/maps/search/?api=1&query=Medina+of+Tetouan+Morocco",
+                            "image_ids": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "place": "Chefchaouen",
+            "place_description": "Chefchaouen, situada en las montañas del Rif, es una de las ciudades más reconocibles de Marruecos por sus callejuelas azules, su ambiente tranquilo y su entorno montañoso. Aunque es una parada popular, conserva rincones silenciosos si se recorre con calma.",
+            "stay_days": 1,
+            "map_points": [
+                {
+                    "label": "Plaza Uta el-Hammam",
+                    "url": "https: //www.google.com/maps/search/?api=1&query=Place+Outa+el+Hammam+Chefchaouen",
+                    "lat": 35.168,
+                    "lng": -5.263
+                },
+                {
+                    "label": "Medina de Chefchaouen",
+                    "url": "https: //www.google.com/maps/search/?api=1&query=Chefchaouen+Medina",
+                    "lat": 35.169,
+                    "lng": -5.263
+                }
+            ],
+            "accommodations": [
+                {
+                    "name": "Alojamiento en Chefchaouen",
+                    "description": "Alojamiento incluido según disponibilidad y categoría confirmada.",
+                    "nights": 1,
+                    "address": "",
+                    "map_url": ""
+                }
+            ],
+            "days": [
+                {
+                    "day_number": 3,
+                    "title": "Chefchaouen, la calma azul del Rif",
+                    "description": "Salida desde Tetuán hacia Chefchaouen, atravesando paisajes del norte marroquí hasta llegar a la ciudad azul. La tarde queda libre para perderse por sus calles, subir y bajar escaleras, descubrir pequeñas plazas y disfrutar del ambiente de montaña.",
+                    "location_name": "Chefchaouen",
+                    "location_address": "Chefchaouen, Marruecos",
+                    "location_map_url": "https: //www.google.com/maps/search/?api=1&query=Chefchaouen+Morocco",
+                    "schedule": [
+                        "Desayuno en Tetuán.",
+                        "Traslado privado hacia Chefchaouen.",
+                        "Llegada al alojamiento.",
+                        "Tiempo libre para recorrer la medina azul.",
+                        "Noche en Chefchaouen."
+                    ],
+                    "recommendations": [
+                        "Explorar temprano o al final de la tarde para evitar las horas de más afluencia.",
+                        "Subir con calma por las callejuelas altas de la medina.",
+                        "Llevar calzado cómodo: la ciudad tiene muchas cuestas y escaleras."
+                    ],
+                    "image_ids": [],
+                    "activities": [
+                        {
+                            "title": "Recorrido por la medina azul",
+                            "description": "Un paseo libre por las callejuelas azules, plazas y rincones más fotogénicos de Chefchaouen.",
+                            "modal_content": "Chefchaouen es una ciudad para caminar sin mapa. Sus calles azules, escaleras, puertas decoradas y pequeñas plazas crean una atmósfera muy distinta a la de otras ciudades marroquíes.La plaza Uta el-Hammam es uno de los puntos centrales de la medina, rodeada de cafés y con vistas a la kasbah. Desde allí, lo mejor es dejarse llevar por las calles laterales y buscar zonas más tranquilas.Más allá de la fotografía, Chefchaouen invita a bajar el ritmo y disfrutar del entorno del Rif.",
+                            "visiting_hours": "Libre. Recomendado por la mañana temprano o al atardecer.",
+                            "entry_price": "Gratis",
+                            "location_name": "Medina de Chefchaouen",
+                            "location_address": "Medina, Chefchaouen, Marruecos",
+                            "map_url": "https: //www.google.com/maps/search/?api=1&query=Chefchaouen+Medina",
+                            "image_ids": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "place": "Fez",
+            "place_description": "Fez es la capital espiritual y artesanal de Marruecos. Su medina, compleja y laberíntica, concentra siglos de historia, conocimiento, comercio y vida religiosa. Es una ciudad intensa, profunda y fundamental para entender el país.",
+            "stay_days": 2,
+            "map_points": [
+                {
+                    "label": "Fez el-Bali",
+                    "url": "https: //www.google.com/maps/search/?api=1&query=Fes+el+Bali+Morocco",
+                    "lat": 34.064,
+                    "lng": -4.973
+                },
+                {
+                    "label": "Curtiduría Chouara",
+                    "url": "https: //www.google.com/maps/search/?api=1&query=Chouara+Tannery+Fes",
+                    "lat": 34.066,
+                    "lng": -4.971
+                },
+                {
+                    "label": "Universidad Al Qarawiyyin",
+                    "url": "https: //www.google.com/maps/search/?api=1&query=University+of+Al+Qarawiyyin+Fes",
+                    "lat": 34.064,
+                    "lng": -4.973
+                }
+            ],
+            "accommodations": [
+                {
+                    "name": "Alojamiento en Fez",
+                    "description": "Alojamiento incluido durante dos noches según disponibilidad y categoría confirmada.",
+                    "nights": 2,
+                    "address": "",
+                    "map_url": ""
+                }
+            ],
+            "days": [
+                {
+                    "day_number": 4,
+                    "title": "Del Rif a Fez, llegada a la capital espiritual",
+                    "description": "Salida desde Chefchaouen hacia Fez atravesando los paisajes montañosos del Rif. La jornada está pensada como día de transición, llegada y primera toma de contacto con una de las ciudades más importantes de Marruecos.",
+                    "location_name": "Fez",
+                    "location_address": "Fez, Marruecos",
+                    "location_map_url": "https: //www.google.com/maps/search/?api=1&query=Fes+Morocco",
+                    "schedule": [
+                        "Desayuno en Chefchaouen.",
+                        "Traslado privado hacia Fez.",
+                        "Llegada al alojamiento.",
+                        "Tarde libre para descansar o dar un primer paseo.",
+                        "Noche en Fez."
+                    ],
+                    "recommendations": [
+                        "Reservar energía para la visita guiada del día siguiente.",
+                        "Dar un paseo corto por los alrededores del alojamiento si la llegada lo permite.",
+                        "Cenar cerca del riad o alojamiento para evitar desplazamientos largos por la noche."
+                    ],
+                    "image_ids": [],
+                    "activities": [
+                        {
+                            "title": "Primera toma de contacto con Fez",
+                            "description": "Llegada pausada a una ciudad intensa, ideal para situarse antes de la visita guiada completa.",
+                            "modal_content": "Fez es una ciudad que conviene descubrir poco a poco. Tras el traslado desde Chefchaouen, esta tarde está pensada para instalarse, descansar y empezar a percibir el ambiente de la ciudad sin entrar todavía en una visita profunda.Su medina puede resultar laberíntica, por lo que la visita guiada del día siguiente será el mejor momento para entender su historia, sus barrios y sus principales puntos de interés.",
+                            "visiting_hours": "Libre, según hora de llegada.",
+                            "entry_price": "Gratis",
+                            "location_name": "Fez",
+                            "location_address": "Fez, Marruecos",
+                            "map_url": "https: //www.google.com/maps/search/?api=1&query=Fes+Morocco",
+                            "image_ids": []
+                        }
+                    ]
+                },
+                {
+                    "day_number": 5,
+                    "title": "Fez el-Bali, oficios, zocos y memoria espiritual",
+                    "description": "Día completo dedicado a descubrir Fez con guía local. La visita permite recorrer la medina histórica, sus zocos, barrios artesanales, curtidurías y algunos de los espacios más importantes de la ciudad.",
+                    "location_name": "Fez",
+                    "location_address": "Fez, Marruecos",
+                    "location_map_url": "https: //www.google.com/maps/search/?api=1&query=Fes+el+Bali+Morocco",
+                    "schedule": [
+                        "Desayuno en el alojamiento.",
+                        "Encuentro con el guía local.",
+                        "Visita guiada de Fez el-Bali.",
+                        "Recorrido por zocos, barrios históricos y talleres tradicionales.",
+                        "Noche en Fez."
+                    ],
+                    "recommendations": [
+                        "Llevar efectivo para pequeñas compras o propinas.",
+                        "No tener prisa: Fez se disfruta mejor entrando en su ritmo.",
+                        "Preguntar al guía por los oficios tradicionales y la vida diaria de la medina."
+                    ],
+                    "image_ids": [],
+                    "activities": [
+                        {
+                            "title": "Visita guiada de Fez el-Bali",
+                            "description": "Recorrido con guía local por la medina histórica de Fez, sus zocos, curtidurías, madrasas y barrios tradicionales.",
+                            "modal_content": "Fez el-Bali es una de las medinas más fascinantes del mundo árabe. Sus calles estrechas forman un entramado vivo donde conviven comercio, religión, artesanía y vida cotidiana.Durante la visita guiada se recorren algunos de los lugares más representativos de la ciudad, como los alrededores de la Universidad de Al Qarawiyyin, los zocos tradicionales, las curtidurías y diferentes barrios de artesanos.La experiencia no consiste solo en ver monumentos, sino en entender cómo una ciudad medieval sigue funcionando como un organismo vivo en pleno siglo XXI.",
+                            "visiting_hours": "Según coordinación con el guía local. Recomendado por la mañana.",
+                            "entry_price": "Guía incluido. Entradas a monumentos no incluidas.",
+                            "location_name": "Fez el-Bali",
+                            "location_address": "Fez el-Bali, Fez, Marruecos",
+                            "map_url": "https: //www.google.com/maps/search/?api=1&query=Fes+el+Bali+Morocco",
+                            "image_ids": []
+                        },
+                        {
+                            "title": "Curtidurías de Fez",
+                            "description": "Uno de los lugares más emblemáticos de la ciudad, donde aún se conserva el trabajo tradicional del cuero.",
+                            "modal_content": "Las curtidurías de Fez son una de las imágenes más conocidas de Marruecos. Desde las terrazas cercanas se observan las cubas de tintes naturales y el proceso tradicional de tratamiento del cuero.Es una visita visualmente muy potente, pero también una forma de acercarse a uno de los oficios históricos de la ciudad. El olor puede ser intenso, por lo que muchos visitantes reciben unas hojas de menta al entrar en las terrazas.Conviene visitarlas acompañado del guía para evitar recorridos comerciales demasiado insistentes y entender mejor el contexto del lugar.",
+                            "visiting_hours": "Generalmente durante el día. Mejor por la mañana.",
+                            "entry_price": "Acceso habitualmente gratuito desde tiendas/terrazas; posibles compras opcionales.",
+                            "location_name": "Curtiduría Chouara",
+                            "location_address": "Fez, Marruecos",
+                            "map_url": "https: //www.google.com/maps/search/?api=1&query=Chouara+Tannery+Fes",
+                            "image_ids": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "place": "Meknes, Volubilis y Rabat",
+            "place_description": "Esta etapa conecta varias capas de la historia marroquí: Meknes, ciudad imperial; Volubilis, antiguo enclave romano; y Rabat, capital actual del país. Es una jornada completa, de mucho contenido histórico y traslados bien encadenados.",
+            "stay_days": 1,
+            "map_points": [
+                {
+                    "label": "Meknes",
+                    "url": "https: //www.google.com/maps/search/?api=1&query=Meknes+Morocco",
+                    "lat": 33.895,
+                    "lng": -5.554
+                },
+                {
+                    "label": "Volubilis",
+                    "url": "https: //www.google.com/maps/search/?api=1&query=Volubilis+Morocco",
+                    "lat": 34.071,
+                    "lng": -5.554
+                },
+                {
+                    "label": "Rabat",
+                    "url": "https: //www.google.com/maps/search/?api=1&query=Rabat+Morocco",
+                    "lat": 34.020,
+                    "lng": -6.841
+                }
+            ],
+            "accommodations": [
+                {
+                    "name": "Alojamiento en Rabat",
+                    "description": "Alojamiento incluido según disponibilidad y categoría confirmada.",
+                    "nights": 1,
+                    "address": "",
+                    "map_url": ""
+                }
+            ],
+            "days": [
+                {
+                    "day_number": 6,
+                    "title": "De Fez a Rabat pasando por Meknes y Volubilis",
+                    "description": "Salida desde Fez hacia Meknes, una de las ciudades imperiales de Marruecos. Después, continuación hacia las ruinas romanas de Volubilis antes de seguir camino hasta Rabat, donde se pasará la noche.",
+                    "location_name": "Rabat",
+                    "location_address": "Rabat, Marruecos",
+                    "location_map_url": "https: //www.google.com/maps/search/?api=1&query=Rabat+Morocco",
+                    "schedule": [
+                        "Desayuno en Fez.",
+                        "Salida hacia Meknes.",
+                        "Visita de los principales monumentos de Meknes.",
+                        "Continuación hacia Volubilis.",
+                        "Traslado final hacia Rabat y noche en la ciudad."
+                    ],
+                    "recommendations": [
+                        "Llevar agua y protección solar para la visita de Volubilis.",
+                        "Asumir el día como una jornada de ruta con varias paradas históricas.",
+                        "Tener la cámara preparada en Volubilis, especialmente si la luz acompaña."
+                    ],
+                    "image_ids": [],
+                    "activities": [
+                        {
+                            "title": "Meknes imperial",
+                            "description": "Parada en una de las ciudades imperiales de Marruecos, menos turística que Fez o Marrakech pero con gran peso histórico.",
+                            "modal_content": "Meknes fue una de las grandes capitales imperiales de Marruecos. Su historia está especialmente ligada al sultán Moulay Ismail, que convirtió la ciudad en un centro político y monumental de gran importancia.Durante la parada se visitan sus principales puntos de interés, con especial atención a sus puertas monumentales, plazas y restos del pasado imperial.Es una ciudad que ayuda a completar la lectura histórica del viaje antes de continuar hacia Volubilis y Rabat.",
+                            "visiting_hours": "Variable según monumentos y estado de conservación.",
+                            "entry_price": "Entradas no incluidas.",
+                            "location_name": "Meknes",
+                            "location_address": "Meknes, Marruecos",
+                            "map_url": "https: //www.google.com/maps/search/?api=1&query=Meknes+Morocco",
+                            "image_ids": []
+                        },
+                        {
+                            "title": "Ruinas romanas de Volubilis",
+                            "description": "Uno de los yacimientos arqueológicos más importantes de Marruecos, con restos romanos y vistas abiertas sobre el paisaje.",
+                            "modal_content": "Volubilis conserva los restos de una antigua ciudad romana situada en un entorno abierto y muy fotogénico. Sus columnas, mosaicos, arcos y trazado urbano permiten imaginar la importancia que tuvo este enclave en época antigua.La visita contrasta con las medinas y ciudades imperiales del viaje, incorporando una capa histórica anterior que muestra la diversidad cultural del territorio marroquí.Es recomendable recorrer el yacimiento con calma y llevar protección solar, especialmente en días despejados.",
+                            "visiting_hours": "Horario diurno. Puede variar según temporada.",
+                            "entry_price": "Entrada no incluida.",
+                            "location_name": "Volubilis",
+                            "location_address": "Volubilis, Marruecos",
+                            "map_url": "https: //www.google.com/maps/search/?api=1&query=Volubilis+Morocco",
+                            "image_ids": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "place": "Rabat y Casablanca",
+            "place_description": "La parte final del viaje une Rabat, capital política y ciudad elegante frente al Atlántico, con Casablanca, capital económica y rostro más contemporáneo del país. Es el cierre natural de la ruta: del patrimonio histórico a la gran ciudad moderna.",
+            "stay_days": 3,
+            "map_points": [
+                {
+                    "label": "Torre Hassan",
+                    "url": "https: //www.google.com/maps/search/?api=1&query=Hassan+Tower+Rabat",
+                    "lat": 34.024,
+                    "lng": -6.822
+                },
+                {
+                    "label": "Mausoleo de Mohammed V",
+                    "url": "https: //www.google.com/maps/search/?api=1&query=Mausoleum+of+Mohammed+V+Rabat",
+                    "lat": 34.023,
+                    "lng": -6.822
+                },
+                {
+                    "label": "Kasbah de los Udayas",
+                    "url": "https: //www.google.com/maps/search/?api=1&query=Kasbah+of+the+Udayas+Rabat",
+                    "lat": 34.031,
+                    "lng": -6.836
+                },
+                {
+                    "label": "Mezquita Hassan II",
+                    "url": "https: //www.google.com/maps/search/?api=1&query=Hassan+II+Mosque+Casablanca",
+                    "lat": 33.608,
+                    "lng": -7.632
+                }
+            ],
+            "accommodations": [
+                {
+                    "name": "Alojamiento en Casablanca",
+                    "description": "Alojamiento incluido según disponibilidad y categoría confirmada.",
+                    "nights": 2,
+                    "address": "",
+                    "map_url": ""
+                }
+            ],
+            "days": [
+                {
+                    "day_number": 7,
+                    "title": "Rabat monumental y llegada a Casablanca",
+                    "description": "Visita de los principales lugares de Rabat: la Torre Hassan, el Mausoleo de Mohammed V y la Kasbah de los Udayas. Después, salida hacia Casablanca. Llegada por la tarde-noche y fin de los servicios de Moha.",
+                    "location_name": "Casablanca",
+                    "location_address": "Casablanca, Marruecos",
+                    "location_map_url": "https: //www.google.com/maps/search/?api=1&query=Casablanca+Morocco",
+                    "schedule": [
+                        "Desayuno en Rabat.",
+                        "Visita de la Torre Hassan y el Mausoleo de Mohammed V.",
+                        "Paseo por la Kasbah de los Udayas.",
+                        "Traslado privado hacia Casablanca.",
+                        "Llegada a Casablanca y fin de los servicios de Moha."
+                    ],
+                    "recommendations": [
+                        "Disfrutar Rabat sin prisa: es una ciudad más ordenada y tranquila que otras paradas del viaje.",
+                        "En la Kasbah, acercarse a las vistas sobre el río y el Atlántico.",
+                        "Confirmar con antelación los horarios del traslado final hacia Casablanca."
+                    ],
+                    "image_ids": [],
+                    "activities": [
+                        {
+                            "title": "Torre Hassan y Mausoleo de Mohammed V",
+                            "description": "Uno de los conjuntos monumentales más importantes de Rabat, símbolo de la historia política y religiosa del país.",
+                            "modal_content": "La Torre Hassan y el Mausoleo de Mohammed V forman uno de los espacios más representativos de Rabat. La torre, inacabada, recuerda la ambición monumental de la ciudad, mientras que el mausoleo destaca por su arquitectura refinada y su importancia simbólica.El conjunto es amplio, elegante y muy distinto al ambiente de las medinas visitadas durante la ruta. Ayuda a entender Rabat como capital institucional del Marruecos contemporáneo.",
+                            "visiting_hours": "Horario diurno. Puede variar según actos oficiales o mantenimiento.",
+                            "entry_price": "Generalmente gratuito en zonas exteriores.",
+                            "location_name": "Torre Hassan",
+                            "location_address": "Boulevard Mohamed Lyazidi, Rabat, Marruecos",
+                            "map_url": "https: //www.google.com/maps/search/?api=1&query=Hassan+Tower+Rabat",
+                            "image_ids": []
+                        },
+                        {
+                            "title": "Kasbah de los Udayas",
+                            "description": "Un barrio histórico amurallado con calles tranquilas, casas blancas y azules y vistas hacia el Atlántico.",
+                            "modal_content": "La Kasbah de los Udayas es uno de los rincones más especiales de Rabat. Sus calles blancas y azules recuerdan al norte del país, pero con una elegancia propia y vistas abiertas hacia la desembocadura del río Bou Regreg y el Atlántico.Es una visita muy agradable para caminar, fotografiar detalles arquitectónicos y cerrar la etapa monumental de Rabat antes de continuar hacia Casablanca.",
+                            "visiting_hours": "Libre. Recomendado durante el día.",
+                            "entry_price": "Gratis",
+                            "location_name": "Kasbah de los Udayas",
+                            "location_address": "Kasbah des Oudayas, Rabat, Marruecos",
+                            "map_url": "https: //www.google.com/maps/search/?api=1&query=Kasbah+of+the+Udayas+Rabat",
+                            "image_ids": []
+                        }
+                    ]
+                },
+                {
+                    "day_number": 8,
+                    "title": "Casablanca, la gran ciudad atlántica",
+                    "description": "Día dedicado a conocer Casablanca, la capital económica de Marruecos. La visita permite acercarse a una ciudad más moderna y urbana, donde destaca especialmente la Mezquita Hassan II y el paseo marítimo atlántico.",
+                    "location_name": "Casablanca",
+                    "location_address": "Casablanca, Marruecos",
+                    "location_map_url": "https: //www.google.com/maps/search/?api=1&query=Casablanca+Morocco",
+                    "schedule": [
+                        "Desayuno en el alojamiento.",
+                        "Visita de la ciudad de Casablanca.",
+                        "Posible visita exterior o interior de la Mezquita Hassan II según horarios.",
+                        "Paseo por la Corniche o zonas céntricas.",
+                        "Noche en Casablanca."
+                    ],
+                    "recommendations": [
+                        "Consultar el horario de visitas de la Mezquita Hassan II antes de organizar el día.",
+                        "Combinar la visita monumental con un paseo junto al Atlántico.",
+                        "Reservar una cena tranquila para cerrar el viaje."
+                    ],
+                    "image_ids": [],
+                    "activities": [
+                        {
+                            "title": "Mezquita Hassan II",
+                            "description": "El gran icono monumental de Casablanca, situado frente al Atlántico y considerado una de las construcciones religiosas más impresionantes del país.",
+                            "modal_content": "La Mezquita Hassan II es el monumento más emblemático de Casablanca. Su ubicación frente al océano y la escala de su arquitectura la convierten en una visita imprescindible para entender la ambición contemporánea de la ciudad.A diferencia de muchas mezquitas de Marruecos, suele permitir visitas guiadas a no musulmanes en horarios concretos, por lo que conviene confirmar la disponibilidad antes de ir.Es el gran cierre visual del viaje: una imagen monumental del Marruecos moderno mirando al Atlántico.",
+                            "visiting_hours": "Visitas guiadas en horarios concretos. Confirmar el mismo día o con antelación.",
+                            "entry_price": "Entrada no incluida. Precio variable según modalidad de visita.",
+                            "location_name": "Mezquita Hassan II",
+                            "location_address": "Boulevard de la Corniche, Casablanca, Marruecos",
+                            "map_url": "https: //www.google.com/maps/search/?api=1&query=Hassan+II+Mosque+Casablanca",
+                            "image_ids": []
+                        }
+                    ]
+                },
+                {
+                    "day_number": 9,
+                    "title": "Últimas horas en Casablanca y regreso",
+                    "description": "Tiempo libre en Casablanca según el horario del vuelo. Jornada pensada para descansar, dar un último paseo o hacer alguna compra antes del traslado al aeropuerto para tomar el vuelo de regreso.",
+                    "location_name": "Aeropuerto de Casablanca",
+                    "location_address": "Aeropuerto Internacional Mohammed V, Casablanca, Marruecos",
+                    "location_map_url": "https: //www.google.com/maps/search/?api=1&query=Mohammed+V+International+Airport+Casablanca",
+                    "schedule": [
+                        "Desayuno en el alojamiento.",
+                        "Tiempo libre según horario de vuelo.",
+                        "Traslado al aeropuerto de Casablanca.",
+                        "Vuelo de regreso."
+                    ],
+                    "recommendations": [
+                        "Revisar la hora de salida del vuelo y calcular margen suficiente hasta el aeropuerto.",
+                        "Dejar preparadas las maletas la noche anterior.",
+                        "Utilizar la mañana para un paseo corto o descanso, sin alejarse demasiado."
+                    ],
+                    "image_ids": [],
+                    "activities": [
+                        {
+                            "title": "Tiempo libre antes del vuelo",
+                            "description": "Últimas horas en Casablanca para descansar, pasear o cerrar el viaje sin prisas.",
+                            "modal_content": "El último día queda condicionado por el horario del vuelo. Si el regreso es por la tarde, se puede aprovechar la mañana para un paseo corto, tomar algo con calma o hacer alguna compra final.Es recomendable no planificar visitas largas este día y priorizar una salida cómoda hacia el aeropuerto.",
+                            "visiting_hours": "Según horario de vuelo.",
+                            "entry_price": "Gratis",
+                            "location_name": "Casablanca",
+                            "location_address": "Casablanca, Marruecos",
+                            "map_url": "https: //www.google.com/maps/search/?api=1&query=Casablanca+Morocco",
+                            "image_ids": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "documents": [],
+    "recommendations": [
+        {
+            "title": "Dinero y pagos",
+            "items": [
+                "Llevar algo de efectivo en dirhams para pequeñas compras, cafés, propinas o mercados.",
+                "Consultar antes de pagar con tarjeta en comercios pequeños o medinas.",
+                "Guardar siempre algo de efectivo para entradas no incluidas."
+            ]
+        },
+        {
+            "title": "Ropa y comodidad",
+            "items": [
+                "Llevar calzado cómodo para medinas, cuestas y calles empedradas.",
+                "Incluir alguna prenda ligera de abrigo para Chefchaouen y zonas del Rif según temporada.",
+                "Vestir de forma respetuosa en espacios religiosos o tradicionales."
+            ]
+        },
+        {
+            "title": "Ritmo del viaje",
+            "items": [
+                "La ruta combina ciudades costeras, montaña, medinas y grandes ciudades, por lo que cada día tendrá un ritmo diferente.",
+                "Fez es la jornada culturalmente más intensa del viaje.",
+                "El día Fez - Meknes - Volubilis - Rabat es el más completo en carretera y visitas."
+            ]
+        }
+    ],
+    "contacts": [
+        {
+            "name": "Moha",
+            "role": "Conductor / servicios en ruta hasta Casablanca",
+            "phone": "",
+            "email": "",
+            "notes": "Servicios incluidos hasta la llegada a Casablanca el día 7."
+        },
+        {
+            "name": "Viajes Ukiyo",
+            "role": "Agencia organizadora",
+            "phone": "",
+            "email": "",
+            "notes": "Contacto para soporte, documentación y coordinación general del viaje."
+        }
+    ],
+    "proposal": {
+        "summary": "Tour privado por el norte de Marruecos con salida en Tánger y llegada a Casablanca. Incluye transporte privado, alojamientos, desayunos, visita guiada de Fez y paradas en puntos de interés durante el recorrido.",
+        "includes": [
+            "Recogida en Tánger puerto o aeropuerto.",
+            "Transporte privado con aire acondicionado durante el viaje.",
+            "Alojamiento en Asilah.",
+            "Alojamiento en Tetuán.",
+            "Alojamiento en Chefchaouen.",
+            "Alojamiento en Fez durante 2 noches.",
+            "Visita guiada de Fez con guía local.",
+            "Alojamiento en Rabat.",
+            "Alojamiento en Casablanca.",
+            "Todos los desayunos durante el tour.",
+            "Paradas en puntos de interés durante el recorrido."
+        ],
+        "excludes": [
+            "Comidas.",
+            "Bebidas.",
+            "Cenas.",
+            "Entradas a monumentos.",
+            "Gastos personales.",
+            "Vuelos internacionales o nacionales no especificados.",
+            "Propinas.",
+            "Cualquier servicio no indicado expresamente como incluido."
+        ],
+        "price_breakdown": [
+            {
+                "label": "Tour privado norte de Marruecos",
+                "amount": 0,
+                "note": "Importe pendiente de confirmar según número de viajeros, categoría de alojamientos y fechas finales."
+            },
+            {
+                "label": "Entradas a monumentos",
+                "amount": 0,
+                "note": "No incluidas. Pago directo en destino si se realizan."
+            },
+            {
+                "label": "Comidas, bebidas y cenas",
+                "amount": 0,
+                "note": "No incluidas. Pago directo por parte de los viajeros."
+            }
+        ]
+    }
+}
