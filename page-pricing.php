@@ -310,6 +310,52 @@ $pricing_imgs = [
   .ukiyo-precios .seg button[aria-pressed="true"]{background:#fff;color:var(--ink);box-shadow:0 2px 6px rgba(0,0,0,.08);font-weight:600}
   .ukiyo-precios .seg.seg-2{grid-template-columns:repeat(2,1fr)}
   .ukiyo-precios .seg.seg-3{grid-template-columns:repeat(3,1fr)}
+
+  /* Tooltips de los segmentos (Auténtico/Confort/Boutique) */
+  .ukiyo-precios .seg button[data-tooltip]{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.35rem}
+  .ukiyo-precios .seg__info{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:14px;height:14px;border-radius:50%;
+    background:rgba(0,0,0,.08);color:var(--ink-soft);
+    font-family:Georgia,serif;font-style:italic;font-size:.66rem;font-weight:700;line-height:1;
+    transition:background .2s,color .2s;
+  }
+  .ukiyo-precios .seg button[aria-pressed="true"] .seg__info{background:var(--primary-50,#FDF7F3);color:var(--primary,#8B4513)}
+  .ukiyo-precios .seg button[data-tooltip]:hover .seg__info,
+  .ukiyo-precios .seg button[data-tooltip]:focus-visible .seg__info{background:var(--primary,#8B4513);color:#fff}
+  .ukiyo-precios .seg button[data-tooltip]::before,
+  .ukiyo-precios .seg button[data-tooltip]::after{
+    opacity:0;pointer-events:none;
+    position:absolute;left:50%;transform:translateX(-50%) translateY(.4rem);
+    transition:opacity .25s ease,transform .25s ease;
+    z-index:10;
+  }
+  .ukiyo-precios .seg button[data-tooltip]::before{
+    content:attr(data-tooltip);
+    bottom:calc(100% + .7rem);
+    width:max-content;max-width:260px;
+    padding:.7rem .85rem;
+    background:var(--ink,#2C2C2C);color:#fff;
+    border-radius:10px;
+    font-family:var(--font-sans);
+    font-size:.78rem;line-height:1.4;font-weight:400;letter-spacing:0;
+    text-align:left;white-space:normal;
+    box-shadow:0 12px 32px -10px rgba(0,0,0,.35);
+  }
+  .ukiyo-precios .seg button[data-tooltip]::after{
+    content:"";
+    bottom:calc(100% + .3rem);
+    border:6px solid transparent;border-top-color:var(--ink,#2C2C2C);
+  }
+  .ukiyo-precios .seg button[data-tooltip]:hover::before,
+  .ukiyo-precios .seg button[data-tooltip]:hover::after,
+  .ukiyo-precios .seg button[data-tooltip]:focus-visible::before,
+  .ukiyo-precios .seg button[data-tooltip]:focus-visible::after{
+    opacity:1;transform:translateX(-50%) translateY(0);
+  }
+  @media (max-width:640px){
+    .ukiyo-precios .seg button[data-tooltip]::before{max-width:80vw;font-size:.74rem;padding:.6rem .75rem}
+  }
   .ukiyo-precios .field input[type=range]{
     -webkit-appearance:none;appearance:none;width:100%;height:4px;background:var(--surface);border-radius:999px;outline:none;
   }
@@ -786,9 +832,9 @@ $pricing_imgs = [
           <div class="field">
             <div class="field__label"><span class="name">Nivel de comodidad</span><span class="value" id="lblComfort">Auténtico</span></div>
             <div class="seg seg-3" data-field="comfort">
-              <button data-val="autentico" aria-pressed="true">Auténtico</button>
-              <button data-val="confort">Confort</button>
-              <button data-val="boutique">Boutique</button>
+              <button data-val="autentico" aria-pressed="true" data-tooltip="Alojamientos locales con carácter: posadas familiares, casas rurales, hoteles boutique de barrio. Autenticidad y trato cercano por encima del lujo." aria-describedby="tip-autentico">Auténtico<span class="seg__info" aria-hidden="true">i</span></button>
+              <button data-val="confort" data-tooltip="Hoteles de 4★ o equivalente con servicios completos. Equilibrio entre experiencia local y descanso consistente." aria-describedby="tip-confort">Confort<span class="seg__info" aria-hidden="true">i</span></button>
+              <button data-val="boutique" data-tooltip="Lodges premium, hoteles boutique de gama alta y villas privadas. Servicios exclusivos y máxima comodidad." aria-describedby="tip-boutique">Boutique<span class="seg__info" aria-hidden="true">i</span></button>
             </div>
           </div>
         </div>
