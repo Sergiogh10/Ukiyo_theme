@@ -35,11 +35,136 @@ $pricing_url      = ukiyo_get_route_url('pricing');
 $viajes_autor_url = ukiyo_get_route_url('viajes_autor');
 $about_url        = ukiyo_get_route_url('about');
 $reviews_url      = ukiyo_get_route_url('reviews');
-$blog_url         = home_url('/blog/');
+$blog_url         = ukiyo_get_route_url('blog');
 $plan_trip_url    = ukiyo_get_route_url('plan_trip');
 $is_blog_section  = is_home() || is_singular('post') || is_category() || is_tag() || is_author() || is_date();
-$logo_size_class  = $is_blog_section ? 'h-7 md:h-8 lg:h-9' : 'h-8 md:h-10 lg:h-12';
+$current_lang     = function_exists( 'pll_current_language' ) ? pll_current_language() : 'es';
+$is_en            = 'en' === $current_lang;
+$home_url         = ukiyo_get_home_url();
+$nav_labels       = $is_en
+    ? [
+        'home'          => 'Home',
+        'destinations'  => 'Destinations',
+        'pricing'       => 'Prices',
+        'viajes_autor'  => 'Signature trips',
+        'blog'          => 'Blog',
+        'about'         => 'About',
+        'reviews'       => 'Reviews',
+        'plan_trip'     => 'Plan your trip',
+        'menu'          => 'Menu',
+    ]
+    : [
+        'home'          => 'Inicio',
+        'destinations'  => 'Destinos',
+        'pricing'       => 'Precios',
+        'viajes_autor'  => 'Viajes de autor',
+        'blog'          => 'Blog',
+        'about'         => 'Nosotros',
+        'reviews'       => 'Reseñas',
+        'plan_trip'     => 'Planifica tu Viaje',
+        'menu'          => 'Menu',
+    ];
+// Logo size unificado en todo el sitio. La variante anterior para blog
+// (h-7 md:h-8 lg:h-9) usaba clases no compiladas en main.css → el logo se
+// renderizaba a tamaño natural. Mantenemos las clases que ya están en el build.
+$logo_size_class  = 'h-8 md:h-10 lg:h-12';
+
+$language_switcher = '';
+if ( function_exists( 'pll_the_languages' ) ) {
+    $languages = pll_the_languages(
+        [
+            'raw'                    => 1,
+            'hide_if_empty'          => 0,
+            'hide_if_no_translation' => 0,
+        ]
+    );
+
+    if ( is_array( $languages ) && count( $languages ) > 1 ) {
+        // Estilo "pill switcher" del Claude Design (Destino-Costa-Rica.html).
+        // Una píldora con dos botones (ES / EN) y un fondo blanco que se desliza
+        // hacia el idioma activo. Adaptado a Polylang: los botones son <a>
+        // con href al idioma, y el slug activo decide la posición del fondo.
+        $active_slug = 'es';
+        foreach ( $languages as $language ) {
+            if ( ! empty( $language['current_lang'] ) ) {
+                $active_slug = $language['slug'];
+                break;
+            }
+        }
+
+        $language_switcher .= sprintf(
+            '<div class="ukiyo-lang" data-lang="%s" role="group" aria-label="Idioma / Language">',
+            esc_attr( $active_slug )
+        );
+        $language_switcher .= '<span class="ukiyo-lang__pill" aria-hidden="true"></span>';
+        foreach ( $languages as $language ) {
+            $is_current   = ! empty( $language['current_lang'] );
+            $language_url = $language['url'];
+            if ( is_front_page() && function_exists( 'pll_home_url' ) && ! empty( $language['slug'] ) ) {
+                $language_url = pll_home_url( $language['slug'] );
+            }
+            $language_switcher .= sprintf(
+                '<a class="ukiyo-lang__btn" href="%1$s" hreflang="%2$s" lang="%2$s" data-lang-btn="%3$s" aria-pressed="%4$s">%5$s</a>',
+                esc_url( $language_url ),
+                esc_attr( $language['locale'] ),
+                esc_attr( $language['slug'] ),
+                $is_current ? 'true' : 'false',
+                esc_html( strtoupper( $language['slug'] ) )
+            );
+        }
+        $language_switcher .= '</div>';
+    }
+}
 ?>
+
+<style>
+  /* === Language switcher "pill" (Claude Design — Destino-Costa-Rica) === */
+  .ukiyo-lang{
+    display:inline-flex;align-items:center;
+    padding:.25rem;border-radius:999px;position:relative;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.28);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    font-family:'DM Mono',ui-monospace,monospace;
+    transition:background .3s,border-color .3s;
+  }
+  #site-header.scrolled .ukiyo-lang,
+  #site-header:not(.bg-transparent) .ukiyo-lang{
+    background:#F5F2ED;
+    border-color:#E8E0D2;
+  }
+  .ukiyo-lang__btn{
+    position:relative;z-index:2;
+    padding:.4rem .75rem;
+    font-size:.7rem;letter-spacing:.14em;font-weight:600;
+    color:rgba(255,255,255,.7);
+    background:transparent;border:0;cursor:pointer;
+    border-radius:999px;text-decoration:none;
+    transition:color .25s;
+  }
+  .ukiyo-lang__btn[aria-pressed="true"]{color:#2C2C2C}
+  .ukiyo-lang__btn:not([aria-pressed="true"]):hover{color:#fff}
+  #site-header.scrolled .ukiyo-lang__btn,
+  #site-header:not(.bg-transparent) .ukiyo-lang__btn{color:#6B6B6B}
+  #site-header.scrolled .ukiyo-lang__btn[aria-pressed="true"],
+  #site-header:not(.bg-transparent) .ukiyo-lang__btn[aria-pressed="true"]{color:#fff}
+  #site-header.scrolled .ukiyo-lang__btn:not([aria-pressed="true"]):hover,
+  #site-header:not(.bg-transparent) .ukiyo-lang__btn:not([aria-pressed="true"]):hover{color:#2C2C2C}
+  .ukiyo-lang__pill{
+    position:absolute;top:.25rem;bottom:.25rem;left:.25rem;
+    width:calc(50% - .25rem);background:#fff;border-radius:999px;
+    transition:transform .35s cubic-bezier(.4,0,.2,1);
+    z-index:1;box-shadow:0 4px 12px -4px rgba(0,0,0,.15);
+  }
+  #site-header.scrolled .ukiyo-lang__pill,
+  #site-header:not(.bg-transparent) .ukiyo-lang__pill{background:#5E6952}
+  .ukiyo-lang[data-lang="en"] .ukiyo-lang__pill{transform:translateX(100%)}
+  /* En móvil dentro del menú colapsable se ve sobre fondo claro */
+  #mobile-menu .ukiyo-lang{background:#F5F2ED;border-color:#E8E0D2}
+  #mobile-menu .ukiyo-lang__btn{color:#6B6B6B}
+  #mobile-menu .ukiyo-lang__btn[aria-pressed="true"]{color:#fff}
+  #mobile-menu .ukiyo-lang__pill{background:#5E6952}
+</style>
 
 <?php if ($use_transparent_header) : ?>
 <script>
@@ -136,11 +261,15 @@ $logo_size_class  = $is_blog_section ? 'h-7 md:h-8 lg:h-9' : 'h-8 md:h-10 lg:h-1
             
             <!-- Logo -->
             <div class="flex items-center space-x-3">
-                <a href="<?php echo esc_url(home_url('/')); ?>">
-                    <img 
+                <a href="<?php echo esc_url( $home_url ); ?>">
+                    <img
                         id="site-logo"
                         src="<?php echo get_template_directory_uri(); ?>/images/logo/<?php echo $use_transparent_header ? 'logoblanconuevo.png' : 'logoukiyo.png'; ?>"
                         alt="<?php bloginfo('name'); ?> Logo"
+                        width="160"
+                        height="48"
+                        decoding="async"
+                        fetchpriority="high"
                         class="<?php echo esc_attr( $logo_size_class ); ?> w-auto transition-all duration-300"
                     />
                 </a>
@@ -153,36 +282,38 @@ $logo_size_class  = $is_blog_section ? 'h-7 md:h-8 lg:h-9' : 'h-8 md:h-10 lg:h-1
                 $nav_base_class = $use_transparent_header ? 'text-lg' : 'text-text-secondary';
                 ?>
 
-                <a href="<?php echo esc_url( home_url('/') ); ?>" 
-                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_front_page() ? $active_class : ''; ?>">Inicio</a>
+                <a href="<?php echo esc_url( $home_url ); ?>" 
+                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_front_page() ? $active_class : ''; ?>"><?php echo esc_html( $nav_labels['home'] ); ?></a>
 
                 <a href="<?php echo esc_url( $destinations_url ); ?>" 
-                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_page( array('experiencias', 'destinos') ) || is_page_template('page-experiences.php') ? $active_class : ''; ?>">Destinos</a>
+                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_page( array('experiencias', 'destinos') ) || is_page_template('page-experiences.php') ? $active_class : ''; ?>"><?php echo esc_html( $nav_labels['destinations'] ); ?></a>
 
                 <a href="<?php echo esc_url( $pricing_url ); ?>" 
-                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_page( array('precios-viajes-a-medida', 'pricing') ) ? $active_class : ''; ?>">Precios</a>
+                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_page( array('precios-viajes-a-medida', 'pricing') ) ? $active_class : ''; ?>"><?php echo esc_html( $nav_labels['pricing'] ); ?></a>
 
                 <a href="<?php echo esc_url( $viajes_autor_url ); ?>" 
-                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_page('viajes-de-autor') ? $active_class : ''; ?>">Viajes de autor</a>
+                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_page('viajes-de-autor') ? $active_class : ''; ?>"><?php echo esc_html( $nav_labels['viajes_autor'] ); ?></a>
 
                 <a href="<?php echo esc_url( $blog_url ); ?>"
-                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo $is_blog_section ? $active_class : ''; ?>">Blog</a>
+                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo $is_blog_section ? $active_class : ''; ?>"><?php echo esc_html( $nav_labels['blog'] ); ?></a>
 
                 <a href="<?php echo esc_url( $about_url ); ?>"  
-                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_page( array('sobre-ukiyo', 'nosotros', 'about-ukiyo') ) ? $active_class : ''; ?>">Nosotros</a>
+                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_page( array('sobre-ukiyo', 'nosotros', 'about-ukiyo') ) ? $active_class : ''; ?>"><?php echo esc_html( $nav_labels['about'] ); ?></a>
                 
                 <a href="<?php echo esc_url( $reviews_url ); ?>"  
-                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_page( array('resenas', 'reseñas', 'reviews') ) ? $active_class : ''; ?>">Reseñas</a>
+                    class="nav-link <?php echo $nav_base_class; ?> hover:text-primary transition-colors duration-300 <?php echo is_page( array('resenas', 'reseñas', 'reviews') ) ? $active_class : ''; ?>"><?php echo esc_html( $nav_labels['reviews'] ); ?></a>
+
+                <?php echo $language_switcher; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
             </div>
 
             <!-- CTA Button -->
             <div class="hidden lg:block">
                 <a href="<?php echo esc_url( $plan_trip_url ); ?>"
-                   class="btn-secondary">Planifica tu Viaje</a>
+                   class="btn-secondary"><?php echo esc_html( $nav_labels['plan_trip'] ); ?></a>
             </div>
 
             <!-- Mobile Menu Button -->
-            <button class="lg:hidden p-2 group" id="mobile-menu-btn" aria-label="Menu">
+            <button class="lg:hidden p-2 group" id="mobile-menu-btn" aria-label="<?php echo esc_attr( $nav_labels['menu'] ); ?>">
                 <svg class="w-6 h-6 <?php echo $use_transparent_header ? 'text-white' : 'text-text-secondary'; ?> transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                           d="M4 6h16M4 12h16M4 18h16"/>
@@ -193,15 +324,20 @@ $logo_size_class  = $is_blog_section ? 'h-7 md:h-8 lg:h-9' : 'h-8 md:h-10 lg:h-1
         <!-- Mobile Navigation -->
         <div class="lg:hidden hidden mt-4 pb-4 border-t border-surface" id="mobile-menu">
             <div class="flex flex-col space-y-4 mt-4">
-                <a href="<?php echo esc_url( home_url('/') ); ?>" class="<?php echo is_front_page() ? 'text-primary' : 'text-primary-900'; ?> font-semibold hover:text-primary transition-colors">Inicio</a>
-                <a href="<?php echo esc_url( $destinations_url ); ?>" class="<?php echo is_page( array('experiencias', 'destinos') ) || is_page_template('page-experiences.php') ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors">Destinos</a>
-                <a href="<?php echo esc_url( $pricing_url ); ?>" class="<?php echo is_page( array('precios-viajes-a-medida', 'pricing') ) ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors">Precios</a>
-                <a href="<?php echo esc_url( $viajes_autor_url ); ?>" class="<?php echo is_page('viajes-de-autor') ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors">Viajes de autor</a>
-                <a href="<?php echo esc_url( $blog_url ); ?>" class="<?php echo $is_blog_section ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors">Blog</a>
-                <a href="<?php echo esc_url( $about_url ); ?>" class="<?php echo is_page( array('sobre-ukiyo', 'nosotros', 'about-ukiyo') ) ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors">Nosotros</a>
-                <a href="<?php echo esc_url( $reviews_url ); ?>" class="<?php echo is_page( array('resenas', 'reseñas', 'reviews') ) ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors">Reseñas</a>
+                <a href="<?php echo esc_url( $home_url ); ?>" class="<?php echo is_front_page() ? 'text-primary' : 'text-primary-900'; ?> font-semibold hover:text-primary transition-colors"><?php echo esc_html( $nav_labels['home'] ); ?></a>
+                <a href="<?php echo esc_url( $destinations_url ); ?>" class="<?php echo is_page( array('experiencias', 'destinos') ) || is_page_template('page-experiences.php') ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors"><?php echo esc_html( $nav_labels['destinations'] ); ?></a>
+                <a href="<?php echo esc_url( $pricing_url ); ?>" class="<?php echo is_page( array('precios-viajes-a-medida', 'pricing') ) ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors"><?php echo esc_html( $nav_labels['pricing'] ); ?></a>
+                <a href="<?php echo esc_url( $viajes_autor_url ); ?>" class="<?php echo is_page('viajes-de-autor') ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors"><?php echo esc_html( $nav_labels['viajes_autor'] ); ?></a>
+                <a href="<?php echo esc_url( $blog_url ); ?>" class="<?php echo $is_blog_section ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors"><?php echo esc_html( $nav_labels['blog'] ); ?></a>
+                <a href="<?php echo esc_url( $about_url ); ?>" class="<?php echo is_page( array('sobre-ukiyo', 'nosotros', 'about-ukiyo') ) ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors"><?php echo esc_html( $nav_labels['about'] ); ?></a>
+                <a href="<?php echo esc_url( $reviews_url ); ?>" class="<?php echo is_page( array('resenas', 'reseñas', 'reviews') ) ? 'text-primary font-bold' : 'text-gray-800'; ?> hover:text-primary transition-colors"><?php echo esc_html( $nav_labels['reviews'] ); ?></a>
+                <?php if ( $language_switcher ) : ?>
+                    <div class="pt-2">
+                        <?php echo $language_switcher; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+                    </div>
+                <?php endif; ?>
                 <a href="<?php echo esc_url( $plan_trip_url ); ?>" 
-                   class="btn-primary mt-4 inline-block text-center text-text-secondary">Planifica tu Viaje</a>
+                   class="btn-primary mt-4 inline-block text-center text-text-secondary"><?php echo esc_html( $nav_labels['plan_trip'] ); ?></a>
             </div>
         </div>
     </nav>

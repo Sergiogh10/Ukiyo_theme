@@ -1,429 +1,128 @@
 <?php
 /**
  * Template Name: Lanzarote Experience
+ *
+ * Implementa el layout Claude Design "Destino-Costa-Rica.html" vía el helper
+ * `ukiyo_render_destination_v2()`. Mantiene los textos del .php anterior.
  */
 get_header();
-?>
 
-<style>
-  .hero-gradient {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
-  }
-  .text-shadow {
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  }
-  .hero-responsive { height: 85vh; }
-  @media (min-width: 1024px) {
-    .hero-responsive { height: 85vh !important; }
-  }
-</style>
-<header class="hero-responsive relative w-full overflow-hidden">
-  <img alt="Paisaje volcánico de Lanzarote" class="absolute inset-0 w-full h-full object-cover" src="<?php echo get_template_directory_uri(); ?>/images/spain/lanzarote/vista-aerea-lanzarote.webp" loading="eager" fetchpriority="high" decoding="async"/>
-  <div class="absolute inset-0 hero-gradient flex flex-col items-center justify-center text-center px-4">
-    <?php
-    ukiyo_render_breadcrumbs([
-        'class'      => 'mb-6 justify-center text-white/80',
-        'link_class' => 'text-white/80 hover:text-white transition-colors',
-    ]);
-    ?>
-    <span class="text-white/80 uppercase tracking-[0.3em] text-sm mb-4">Islas Canarias · España</span>
-    <h1 class="text-6xl md:text-8xl font-rowdies text-white font-bold mb-2 text-shadow">LANZAROTE</h1>
-    <p class="text-2xl md:text-4xl font-satoshi text-white/90 italic font-light">Volcanes y Océano</p>
-    <div class="mt-8 max-w-2xl text-white/80 text-lg md:text-xl font-light leading-relaxed">
-      Paisajes lunares, arte de Manrique y playas salvajes en la isla más singular de Canarias.
-    </div>
-  </div>
-</header>
+$img = get_template_directory_uri() . '/images';
 
-<!-- Info Bar -->
-<div class="relative -mt-16 container mx-auto px-4 z-20">
-  <div class="bg-surface-light dark:bg-surface-dark shadow-xl rounded-2xl p-6 md:p-8 grid grid-cols-2 gap-4 md:flex md:flex-wrap md:justify-between md:items-center md:gap-6 border border-gray-100 dark:border-gray-700">
-    <div class="flex items-center gap-4 flex-1 md:min-w-[200px]">
-      <div class="p-3 bg-primary/10 rounded-full text-primary">
-        <?php echo ukiyo_icon( 'calendar_month' ); ?>
-      </div>
-      <div>
-        <h4 class="text-xs uppercase text-gray-500 dark:text-gray-400 font-bold tracking-wide">Mejor Época</h4>
-        <p class="font-satoshi text-lg text-gray-900 dark:text-white">Todo el año</p>
-      </div>
-    </div>
-    <div class="w-px h-12 bg-gray-200 dark:bg-gray-700 hidden md:block"></div>
-    <div class="flex items-center gap-4 flex-1 md:min-w-[200px]">
-      <div class="p-3 bg-primary/10 rounded-full text-primary">
-        <?php echo ukiyo_icon( 'flight' ); ?>
-      </div>
-      <div>
-        <h4 class="text-xs uppercase text-gray-500 dark:text-gray-400 font-bold tracking-wide">Vuelo</h4>
-        <p class="font-satoshi text-lg text-gray-900 dark:text-white">~2,5h desde Madrid</p>
-      </div>
-    </div>
-    <div class="w-px h-12 bg-gray-200 dark:bg-gray-700 hidden md:block"></div>
-    <div class="flex items-center gap-4 flex-1 md:min-w-[200px]">
-      <div class="p-3 bg-primary/10 rounded-full text-primary">
-        <?php echo ukiyo_icon( 'language' ); ?>
-      </div>
-      <div>
-        <h4 class="text-xs uppercase text-gray-500 dark:text-gray-400 font-bold tracking-wide">Idioma</h4>
-        <p class="font-satoshi text-lg text-gray-900 dark:text-white">Español</p>
-      </div>
-    </div>
-    <div class="w-px h-12 bg-gray-200 dark:bg-gray-700 hidden md:block"></div>
-    <div class="flex items-center gap-4 flex-1 md:min-w-[200px]">
-      <div class="p-3 bg-primary/10 rounded-full text-primary">
-        <?php echo ukiyo_icon( 'thermostat' ); ?>
-      </div>
-      <div>
-        <h4 class="text-xs uppercase text-gray-500 dark:text-gray-400 font-bold tracking-wide">Clima</h4>
-        <p class="font-satoshi text-lg text-gray-900 dark:text-white">Subtropical seco</p>
-      </div>
-    </div>
-  </div>
-</div>
+$ico_calendar = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>';
+$ico_money    = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9h4.5a2.5 2.5 0 0 1 0 5H9m0-5v8m0-3h5"/></svg>';
+$ico_lang     = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3.5 3 16 0 20M12 2c-3 3.5-3 16 0 20"/></svg>';
+$ico_temp     = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c4-6 7-6 10 0s6 6 10 0"/><path d="M2 6c4-6 7-6 10 0s6 6 10 0"/><path d="M2 18c4-6 7-6 10 0s6 6 10 0"/></svg>';
+$ico_plane    = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9 0-1.2.3L2 8.4l8 4-3 3-3-.5L2 16.5l6 1.5 1.5 6 1.8-1.8L11 19l3-3 4 8 1.9-1.6c.3-.3.4-.7.3-1.2Z"/></svg>';
 
-<!-- Intro Section -->
-<section class="py-24 px-4 container mx-auto">
-  <div class="max-w-3xl mx-auto text-center space-y-8">
-    <h2 class="text-4xl md:text-5xl font-rowdies text-secondary dark:text-white font-medium leading-tight">
-      Donde la tierra <span class="text-primary italic">respira</span>
-    </h2>
-    <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed font-light">
-      <span class="font-bold text-gray-800 dark:text-gray-100">Lanzarote</span> no es solo una isla, es una obra de arte esculpida por volcanes. Un lugar donde la naturaleza más extrema convive con la visión de César Manrique, creando paisajes que parecen de otro planeta. Declarada Reserva de la Biosfera por la UNESCO, Lanzarote es el destino perfecto para viajeros que buscan belleza salvaje, cultura auténtica y una calma que no se encuentra en ningún otro lugar.
-    </p>
-    <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-  </div>
-</section>
+$ico_landscape='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 20 6-8 4 5 3-4 5 7"/><circle cx="18" cy="6" r="2"/></svg>';
+$ico_palette = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2a10 10 0 1 0 0 20c.6 0 1-.4 1-1l-.5-1c-.4-.7.1-1.5 1-1.5h2c2.5 0 4.5-2 4.5-4.5 0-5-4.5-9-8-9Z"/></svg>';
+$ico_beach   = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="10" r="3"/><path d="M6 13v9"/><path d="M2 22h20"/><path d="M14 22c0-4 4-7 8-7"/></svg>';
+$ico_grapes  = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="2"/><circle cx="9" cy="11" r="2"/><circle cx="15" cy="11" r="2"/><circle cx="6" cy="16" r="2"/><circle cx="12" cy="16" r="2"/><circle cx="18" cy="16" r="2"/></svg>';
+$ico_sailing = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v16"/><path d="M12 4 4 18h8"/><path d="M12 8l8 10h-8"/><path d="M2 22h20"/></svg>';
+$ico_eco     = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8c-5 0-9 4-9 9 0-5-4-9-9-9 5 0 9-4 9-9 0 5 4 9 9 9Z"/></svg>';
 
-<!-- Features Section -->
-<?php
-$featuresData = [
-  ['id' => '1', 'title' => 'Paisajes Volcánicos', 'description' => 'Timanfaya, el Volcán del Cuervo y campos de lava que transforman la isla en un paisaje marciano. Naturaleza en estado bruto.', 'icon' => 'landscape'],
-  ['id' => '2', 'title' => 'Legado de Manrique', 'description' => 'Los Jameos del Agua, el Mirador del Río y la Fundación. Arte y naturaleza fundidos en una sola visión.', 'icon' => 'palette'],
-  ['id' => '3', 'title' => 'Playas Salvajes', 'description' => 'Papagayo, Las Conchas y Famara. Arena dorada, negra y aguas cristalinas en calas protegidas del viento.', 'icon' => 'beach_access'],
-  ['id' => '4', 'title' => 'Gastronomía Volcánica', 'description' => 'Vinos de La Geria, quesos artesanales y pescado fresco del día. Sabores únicos nacidos de la tierra volcánica.', 'icon' => 'restaurant'],
-  ['id' => '5', 'title' => 'La Graciosa', 'description' => 'La octava isla canaria: sin asfalto, sin prisas, solo arena blanca y un mar turquesa que parece el Caribe.', 'icon' => 'sailing'],
-  ['id' => '6', 'title' => 'Reserva de la Biosfera', 'description' => 'Toda la isla reconocida por la UNESCO. Un modelo de desarrollo sostenible y respeto por el entorno.', 'icon' => 'eco']
-];
-?>
+ukiyo_render_destination_v2( [
+	'slug'             => 'lz',
+	'breadcrumb'       => 'Lanzarote',
+	'eyebrow'          => 'Islas Canarias · España · Volcanes y océano',
+	'hero_title'       => 'Viajes a medida a Lanzarote,<br/><em>volcanes</em> y océano.',
+	'hero_sub'         => 'Paisajes lunares, arte de Manrique y playas salvajes en la isla más singular de Canarias. Diseñamos rutas para vivirla sin prisa.',
+	'hero_image'       => $img . '/spain/lanzarote/vista-aerea-lanzarote.webp',
+	'cta_primary'      => 'Diseñar mi viaje a Lanzarote',
+	'scroll_label'     => 'Con calma',
 
-<section class="py-12 bg-white dark:bg-gray-900">
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-rowdies text-gray-900 dark:text-white mb-4">Lo que hace <span class="text-primary">única</span> a Lanzarote</h2>
-      <p class="text-gray-600 dark:text-gray-400">Razones para perderse y encontrarse con UKIYO en la isla de los volcanes.</p>
-    </div>
-    
-    <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-      <?php foreach ($featuresData as $feature): ?>
-      <div class="bg-background-light dark:bg-surface-dark p-4 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition duration-300 group text-center md:text-left">
-        <div class="w-14 h-14 bg-amber-50 dark:bg-amber-900/30 rounded-full flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition mx-auto md:mx-0">
-          <?php echo ukiyo_icon( $feature['icon'], 'text-amber-700 dark:text-amber-400 text-3xl' ); ?>
-        </div>
-        <h3 class="text-xl font-satoshi font-bold text-gray-900 dark:text-white mb-3"><?php echo $feature['title']; ?></h3>
-        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed"><?php echo $feature['description']; ?></p>
-      </div>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</section>
+	'key_facts' => [
+		[ 'icon' => $ico_calendar, 'lbl' => 'Mejor época',    'val' => 'Todo el año' ],
+		[ 'icon' => $ico_temp,     'lbl' => 'Clima',          'val' => 'Subtropical seco' ],
+		[ 'icon' => $ico_lang,     'lbl' => 'Idioma',         'val' => 'Español' ],
+		[ 'icon' => $ico_plane,    'lbl' => 'Vuelo',          'val' => '~2,5 h desde Madrid' ],
+		[ 'icon' => $ico_money,    'lbl' => 'Moneda',         'val' => 'Euro' ],
+	],
 
-<!-- Experiences Carousel Section -->
-<?php
-$ukiyoCarouselItems = [
-    [
-        'id' => '1',
-        'title' => 'Timanfaya',
-        'description' => 'El Parque Nacional de los volcanes: geiseres, coladas de lava y paisajes imposibles. La ruta de los volcanes es imprescindible.',
-        'imagePath' => '/images/spain/lanzarote/Volcan_Cuervo_Lanzarote.webp',
-        'tag' => 'Parque Nacional'
-    ],
-    [
-        'id' => '2',
-        'title' => 'La Graciosa',
-        'description' => 'La isla más pequeña de Canarias. Playas vírgenes de arena blanca, aguas turquesas y caminos de tierra sin un solo semáforo.',
-        'imagePath' => '/images/spain/lanzarote/La_Graciosa.jpg',
-        'tag' => 'Archipiélago Chinijo'
-    ],
-    [
-        'id' => '3',
-        'title' => 'Jameos del Agua',
-        'description' => 'La obra maestra de César Manrique: una cueva volcánica transformada en espacio cultural con piscina natural y auditorio.',
-        'imagePath' => '/images/spain/lanzarote/Jameos_Lanzarote.jpg',
-        'tag' => 'Arte y Naturaleza'
-    ],
-    [
-        'id' => '4',
-        'title' => 'Playa de Papagayo',
-        'description' => 'Las calas más espectaculares de la isla: arena dorada, aguas cristalinas y acantilados protegidos del viento.',
-        'imagePath' => '/images/spain/lanzarote/playa-papagayo-en-el-sur-de-lanzarote-islas-canarias-s1713915070.avif',
-        'tag' => 'Monumento Natural'
-    ],
-    [
-        'id' => '5',
-        'title' => 'Teguise',
-        'description' => 'La antigua capital de la isla: arquitectura colonial, mercadillo dominical y la esencia de la Lanzarote más auténtica.',
-        'imagePath' => '/images/spain/lanzarote/Teguise_Lanzarote.jpg',
-        'tag' => 'Casco Histórico'
-    ],
-    [
-        'id' => '6',
-        'title' => 'Cueva de los Verdes',
-        'description' => 'Un túnel volcánico de más de 6 km formado por la erupción del Volcán de la Corona. Una catedral subterránea natural.',
-        'imagePath' => '/images/spain/lanzarote/Cueva_Verdes_Lanzarote.jpg',
-        'tag' => 'Geología'
-    ],
-    [
-        'id' => '7',
-        'title' => 'Mirador del Río',
-        'description' => 'La obra de Manrique con las vistas más impresionantes: toda La Graciosa y el archipiélago Chinijo a tus pies.',
-        'imagePath' => '/images/spain/lanzarote/miradorrisco_lanzarote.jpg',
-        'tag' => 'Vistas Panorámicas'
-    ],
-    [
-        'id' => '8',
-        'title' => 'La Geria',
-        'description' => 'El paisaje vinícola más insólito del mundo: viñas plantadas en hoyos volcánicos protegidas por muros de piedra semicirculares.',
-        'imagePath' => '/images/spain/lanzarote/stratvs_lanzarote.jpg',
-        'tag' => 'Enoturismo'
-    ]
-];
-?>
+	'intro' => [
+		'title_html' => '<span class="dot"></span> Volcanes, mar<br/><em>y calma atlántica.</em>',
+		'lede_html'  => '<strong>Lanzarote</strong> combina paisaje volcánico, arte, vino, pueblos blancos y playas atlánticas.',
+		'paragraphs' => [
+			'Diseñamos la ruta para disfrutar la isla sin prisas, con alojamientos y experiencias que encajen con tu forma de viajar.',
+			'No es Canarias de hotel grande y "todo incluido". Es la versión más estética y consciente del archipiélago.',
+		],
+		'marks' => [
+			[ 'n_html' => '<em>100%</em>', 'l' => 'Reserva de la Biosfera' ],
+			[ 'n_html' => '300+',           'l' => 'Volcanes en la isla' ],
+			[ 'n_html' => '1730',           'l' => 'Erupción de Timanfaya' ],
+			[ 'n_html' => '8',              'l' => 'Islas Canarias · 1 archipiélago' ],
+		],
+		'main_img' => $img . '/spain/lanzarote/Jameos_Lanzarote.webp',
+		'pip_img'  => $img . '/spain/lanzarote/Volcan_Cuervo_Lanzarote.webp',
+		'stamp'    => '道 · Con calma',
+	],
 
-<section class="py-12 bg-white dark:bg-gray-900 overflow-hidden relative">
-  <div class="container mx-auto px-4 mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-    <div>
-      <span class="uppercase tracking-widest text-primary text-sm font-bold">Experiencias Únicas</span>
-      <h3 class="text-3xl font-rowdies text-gray-900 dark:text-white mt-2">Momentos Inolvidables</h3>
-    </div>
-    <div class="flex gap-4 self-end md:self-auto">
-      <button id="scroll-left" class="p-3 border border-gray-200 dark:border-gray-700 rounded-full hover:bg-primary hover:text-white text-gray-900 dark:text-white transition-colors duration-300" aria-label="Anterior">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="m12 19-7-7 7-7"/>
-          <path d="M19 12H5"/>
-        </svg>
-      </button>
-      <button id="scroll-right" class="p-3 border border-gray-200 dark:border-gray-700 rounded-full hover:bg-primary hover:text-white text-gray-900 dark:text-white transition-colors duration-300" aria-label="Siguiente">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M5 12h14"/>
-          <path d="m12 5 7 7-7 7"/>
-        </svg>
-      </button>
-    </div>
-  </div>
+	'features_title_html' => 'Lo que hace <em>única</em><br/>a Lanzarote.',
+	'features_sub'        => 'Razones para vivir la isla con calma, criterio y buena planificación.',
+	'features' => [
+		[ 'title' => 'Paisajes volcánicos',     'description' => 'Timanfaya, el Volcán del Cuervo y campos de lava para entender la isla desde su origen.',                          'icon_svg' => $ico_landscape ],
+		[ 'title' => 'Legado de Manrique',      'description' => 'Los Jameos del Agua, el Mirador del Río y la Fundación. Arte y naturaleza fundidos en una sola visión.',           'icon_svg' => $ico_palette ],
+		[ 'title' => 'Playas salvajes',         'description' => 'Papagayo, Las Conchas y Famara. Arena dorada, negra y aguas cristalinas en calas protegidas del viento.',          'icon_svg' => $ico_beach ],
+		[ 'title' => 'Gastronomía volcánica',   'description' => 'Vinos de La Geria, quesos artesanales y pescado del día. Sabores únicos nacidos de la tierra volcánica.',         'icon_svg' => $ico_grapes ],
+		[ 'title' => 'La Graciosa',             'description' => 'La octava isla canaria: sin asfalto, sin prisas, solo arena blanca y un mar turquesa que parece el Caribe.',      'icon_svg' => $ico_sailing ],
+		[ 'title' => 'Reserva de la Biosfera',  'description' => 'Toda la isla reconocida por la UNESCO. Un modelo de desarrollo sostenible y respeto por el entorno.',              'icon_svg' => $ico_eco ],
+	],
 
-  <!-- Carousel Container -->
-  <div 
-    id="experiences-carousel"
-    class="flex gap-6 px-4 md:px-8 pb-12 pt-8"
-    style="overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; scroll-behavior: smooth;"
-  >
-    <style>
-      #experiences-carousel::-webkit-scrollbar {
-        display: none;
-      }
-      .carousel-card {
-        transition: transform 0.3s ease;
-      }
-      .carousel-card:hover {
-        transform: translateY(-10px);
-      }
-    </style>
+	'carousel_meta'       => 'Itinerario abierto',
+	'carousel_title_html' => 'Ocho lugares<br/>que <em>marcan</em> la ruta.',
+	'carousel_sub'        => 'De Timanfaya a La Geria. Cada ruta es única, pero estos son los puntos sobre los que conversamos contigo para diseñar tu viaje.',
+	'carousel_items' => [
+		[ 'title' => 'Timanfaya',          'description' => 'El Parque Nacional de los volcanes: geiseres, coladas de lava y paisajes imposibles. La ruta de los volcanes es imprescindible.', 'imagePath' => '/images/spain/lanzarote/Volcan_Cuervo_Lanzarote.webp',           'tag' => 'Parque Nacional' ],
+		[ 'title' => 'La Graciosa',        'description' => 'La isla más pequeña de Canarias. Playas vírgenes de arena blanca, aguas turquesas y caminos de tierra sin un solo semáforo.',     'imagePath' => '/images/spain/lanzarote/La_Graciosa.webp',                       'tag' => 'Archipiélago Chinijo' ],
+		[ 'title' => 'Jameos del Agua',    'description' => 'La obra maestra de César Manrique: una cueva volcánica transformada en espacio cultural con piscina natural y auditorio.',         'imagePath' => '/images/spain/lanzarote/Jameos_Lanzarote.webp',                  'tag' => 'Arte y Naturaleza' ],
+		[ 'title' => 'Playa de Papagayo',  'description' => 'Las calas más espectaculares de la isla: arena dorada, aguas cristalinas y acantilados protegidos del viento.',                    'imagePath' => '/images/spain/lanzarote/playa-papagayo-en-el-sur-de-lanzarote-islas-canarias-s1713915070.avif', 'tag' => 'Monumento Natural' ],
+		[ 'title' => 'Teguise',            'description' => 'La antigua capital de la isla: arquitectura colonial, mercadillo dominical y la esencia de la Lanzarote más auténtica.',           'imagePath' => '/images/spain/lanzarote/Teguise_Lanzarote.webp',                 'tag' => 'Casco Histórico' ],
+		[ 'title' => 'Cueva de los Verdes','description' => 'Un túnel volcánico de más de 6 km formado por la erupción del Volcán de la Corona. Una catedral subterránea natural.',             'imagePath' => '/images/spain/lanzarote/Cueva_Verdes_Lanzarote.webp',            'tag' => 'Geología' ],
+		[ 'title' => 'Mirador del Río',    'description' => 'La obra de Manrique con las vistas más impresionantes: toda La Graciosa y el archipiélago Chinijo a tus pies.',                    'imagePath' => '/images/spain/lanzarote/miradorrisco_lanzarote.webp',            'tag' => 'Vistas Panorámicas' ],
+		[ 'title' => 'La Geria',           'description' => 'El paisaje vinícola más insólito del mundo: viñas plantadas en hoyos volcánicos protegidas por muros de piedra semicirculares.',  'imagePath' => '/images/spain/lanzarote/stratvs_lanzarote.webp',                 'tag' => 'Enoturismo' ],
+	],
 
-        <?php 
+	'hosts' => [],
 
-        foreach ($ukiyoCarouselItems as $expItem): 
+	'tips_chip'       => 'Antes de salir',
+	'tips_title_html' => 'Recomendaciones <em>Ukiyo</em>',
+	'tips_sub'        => 'Lo que conviene llevar y lo que conviene saber.',
+	'tips_prep' => [
+		'badge' => 'Preparación',
+		'title' => 'Equipaje esencial',
+		'sub'   => 'Ligero, con capas y protección solar real.',
+		'items_html' => [
+			'<strong>Ropa ligera y cortavientos</strong>: el viento alisio sopla con frecuencia.',
+			'<strong>Calzado cómodo</strong> con buena suela para caminar sobre terreno volcánico.',
+			'<strong>Protección solar alta</strong> y gafas de sol: la radiación es intensa todo el año.',
+			'<strong>Bañador y escarpines</strong> para las playas rocosas y calas.',
+		],
+	],
+	'tips_notes' => [
+		'badge' => 'A tener en cuenta',
+		'title' => 'Notas importantes',
+		'sub'   => 'Logística básica para que la isla fluya.',
+		'items_html' => [
+			'Es imprescindible <strong>coche de alquiler</strong> para recorrer la isla a tu ritmo.',
+			'Reserva la entrada a <strong>Timanfaya</strong> con antelación, especialmente en temporada alta.',
+			'Para <strong>La Graciosa</strong>, el ferry sale desde Órzola y conviene reservar con antelación.',
+			'Respeta el entorno volcánico: <strong>no salirse de los senderos</strong> marcados en los parques naturales.',
+		],
+	],
 
-            $imageUrl = get_template_directory_uri() . $expItem['imagePath'];
-        ?>
-        <div 
-            style="
-                flex-shrink: 0;
-                width: 85vw;
-                max-width: 400px;
-                height: 500px;
-                background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('<?php echo esc_url($imageUrl); ?>');
-                background-size: cover;
-                background-position: center;
-                border-radius: 1.5rem;
-                overflow: hidden;
-                position: relative;
-            "
-            class="carousel-card snap-center cursor-pointer"
-        >
-            <!-- Content -->
-            <div class="carousel-card-content" style="position: absolute; bottom: 0; left: 0; padding: 2rem; width: 100%; transition: transform 0.3s ease; text-align: center;">
-                <div style="color: #FF8C42; font-size: 12px; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 600;">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline;">
-                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                        <circle cx="12" cy="10" r="3"/>
-                    </svg>
-                    <?php echo esc_html($expItem['tag']); ?>
-                </div>
-                <h3 style="font-family: 'Rowdies', sans-serif; font-size: 2rem; margin-bottom: 0.75rem; color: white; font-weight: 600;"><?php echo esc_html($expItem['title']); ?></h3>
-                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
-                    <?php echo esc_html($expItem['description']); ?>
-                </p>
+	'cta_bg'           => $img . '/spain/lanzarote/Jameos_Lanzarote.webp',
+	'cta_title_html'   => '¿Listo para vivir<br/><em>Lanzarote?</em>',
+	'cta_text'         => 'Cuéntanos qué ritmo de viaje buscas y diseñamos una ruta por Lanzarote con volcanes, mar, vino y tiempo para disfrutar.',
+	'cta_primary_btn'  => 'Diseñar mi viaje a Lanzarote',
 
-            </div>
-        </div>
-        <?php endforeach; ?>
+	'destination_key'  => 'destination_lanzarote',
+	'destination_name' => 'Lanzarote',
+	'related_keys'     => [ 'destination_marruecos', 'destination_italia', 'destination_costa_rica', 'destination_colombia' ],
+	'related_intro'    => 'Si te atraen las islas, el paisaje volcánico y los viajes tranquilos, estos destinos refuerzan la misma intención que un viaje a medida a Lanzarote.',
+	'blog_title'       => 'Guías para preparar tu viaje a Lanzarote',
+	'blog_intro'       => 'Clima, ruta, presupuesto y lugares imprescindibles para vivir Lanzarote con calma y buena lectura de la isla.',
+	'blog_category'    => 'lanzarote',
+] );
 
-  </div>
-</section>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const carousel = document.getElementById('experiences-carousel');
-    const leftBtn = document.getElementById('scroll-left');
-    const rightBtn = document.getElementById('scroll-right');
-
-    if (carousel && leftBtn && rightBtn) {
-        function getScrollAmount() {
-            const firstCard = carousel.querySelector('.carousel-card');
-            if (firstCard) {
-                const cardWidth = firstCard.offsetWidth;
-                const gap = 24;
-                return cardWidth + gap;
-            }
-            return 424;
-        }
-
-        leftBtn.addEventListener('click', () => {
-            const amount = getScrollAmount();
-            carousel.scrollBy({ left: -amount, behavior: 'smooth' });
-        });
-
-        // Autoplay
-        function handleAutoplay() {
-            if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
-                 carousel.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                 rightBtn.click();
-            }
-        }
-
-        let autoPlayInterval = setInterval(handleAutoplay, 4000);
-
-        rightBtn.addEventListener('click', () => {
-             const amount = getScrollAmount();
-             if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
-                 carousel.scrollTo({ left: 0, behavior: 'smooth' });
-             } else {
-                 carousel.scrollBy({ left: amount, behavior: 'smooth' });
-             }
-        });
-
-        // Pause/Reset on interaction
-        [leftBtn, rightBtn, carousel].forEach(el => {
-            el.addEventListener('mousedown', resetTimer);
-            el.addEventListener('touchstart', resetTimer);
-        });
-
-        function resetTimer() {
-            clearInterval(autoPlayInterval);
-            autoPlayInterval = setInterval(handleAutoplay, 4000);
-        }
-    }
-});
-</script>
-
-<!-- Practical Information -->
-<section class="py-24 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-rowdies text-center mb-16 text-gray-900 dark:text-white">Recomendaciones <span class="text-primary">UKIYO</span></h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-      <div class="bg-background-light dark:bg-surface-dark p-8 rounded-2xl border border-dashed border-gray-300 dark:border-gray-600 relative">
-        <div class="absolute -top-5 left-8 bg-primary text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide shadow-md">
-          Preparación
-        </div>
-        <h3 class="text-xl font-rowdies mb-6 mt-2 text-gray-800 dark:text-white flex items-center gap-2">
-          Equipaje Esencial
-        </h3>
-        <ul class="space-y-4">
-          <li class="flex items-start gap-3">
-            <?php echo ukiyo_icon( 'check_circle', 'text-primary text-xl flex-shrink-0 mt-0.5' ); ?>
-            <span class="text-gray-600 dark:text-gray-300 text-sm">Ropa ligera y cortavientos: el viento alisio sopla con frecuencia.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <?php echo ukiyo_icon( 'check_circle', 'text-primary text-xl flex-shrink-0 mt-0.5' ); ?>
-            <span class="text-gray-600 dark:text-gray-300 text-sm">Calzado cómodo con buena suela para caminar sobre terreno volcánico.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <?php echo ukiyo_icon( 'check_circle', 'text-primary text-xl flex-shrink-0 mt-0.5' ); ?>
-            <span class="text-gray-600 dark:text-gray-300 text-sm">Protección solar alta y gafas de sol: la radiación es intensa todo el año.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <?php echo ukiyo_icon( 'check_circle', 'text-primary text-xl flex-shrink-0 mt-0.5' ); ?>
-            <span class="text-gray-600 dark:text-gray-300 text-sm">Bañador y escarpines para las playas rocosas y calas.</span>
-          </li>
-        </ul>
-      </div>
-      <div class="bg-background-light dark:bg-surface-dark p-8 rounded-2xl border border-dashed border-gray-300 dark:border-gray-600 relative">
-        <div class="absolute -top-5 left-8 bg-secondary text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide shadow-md">
-          A tener en cuenta
-        </div>
-        <h3 class="text-xl font-rowdies mb-6 mt-2 text-gray-800 dark:text-white flex items-center gap-2">
-          Notas Importantes
-        </h3>
-        <ul class="space-y-4">
-          <li class="flex items-start gap-3">
-            <?php echo ukiyo_icon( 'info', 'text-secondary dark:text-amber-400 text-xl flex-shrink-0 mt-0.5' ); ?>
-            <span class="text-gray-600 dark:text-gray-300 text-sm">Es imprescindible coche de alquiler para recorrer la isla a tu ritmo.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <?php echo ukiyo_icon( 'info', 'text-secondary dark:text-amber-400 text-xl flex-shrink-0 mt-0.5' ); ?>
-            <span class="text-gray-600 dark:text-gray-300 text-sm">Reserva la entrada a Timanfaya con antelación, especialmente en temporada alta.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <?php echo ukiyo_icon( 'info', 'text-secondary dark:text-amber-400 text-xl flex-shrink-0 mt-0.5' ); ?>
-            <span class="text-gray-600 dark:text-gray-300 text-sm">Para La Graciosa, el ferry sale desde Órzola y conviene reservar con antelación.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <?php echo ukiyo_icon( 'info', 'text-secondary dark:text-amber-400 text-xl flex-shrink-0 mt-0.5' ); ?>
-            <span class="text-gray-600 dark:text-gray-300 text-sm">Respeta el entorno volcánico: no salirse de los senderos marcados en los parques naturales.</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<?php
-ukiyo_render_related_internal_links(
-  [
-    'title'   => 'Otros viajes relacionados',
-    'intro'   => 'Si te atraen las islas, el paisaje volcánico y los viajes tranquilos, estos destinos refuerzan la misma intención que un viaje a medida a Lanzarote.',
-    'current' => 'destination_lanzarote',
-    'keys'    => [ 'destination_marruecos', 'destination_italia', 'destination_costa_rica', 'destination_colombia' ],
-  ]
-);
-
-ukiyo_render_destination_blog_posts(
-  [
-    'title'           => 'Guías para preparar tu viaje a Lanzarote',
-    'intro'           => 'Clima, ruta, presupuesto y lugares imprescindibles para vivir Lanzarote con calma y buena lectura de la isla.',
-    'destination_key' => 'destination_lanzarote',
-    'category'        => 'lanzarote',
-  ]
-);
-?>
-
-<section class="py-24 text-center bg-background-light dark:bg-background-dark">
-  <div class="container mx-auto px-4">
-    <h2 class="text-4xl md:text-5xl font-satoshi text-gray-900 dark:text-white mb-6">¿Listo para vivir Lanzarote?</h2>
-    <p class="text-lg text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto">
-      Deja de soñarlo y empieza a vivirlo. Estamos listos para diseñar tu escapada perfecta a la isla de los volcanes.
-    </p>
-    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-      <a href="https://wa.me/message/CS2LNI6YHSETO1" target="_blank" class="btn-primary text-text-secondary flex items-center shadow-md hover:shadow-lg justify-center gap-2">
-        <img width="64" height="64" src="https://img.icons8.com/cotton/64/whatsapp--v4.png" alt="Contactar con Viajes Ukiyo por WhatsApp" class="w-6 h-6"/>
-        Escríbenos por WhatsApp
-      </a>
-      <a href="<?php echo esc_url( ukiyo_get_route_url( 'destinations' ) ); ?>" class="bg-white dark:bg-surface-dark hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-600 font-medium py-4 px-8 rounded-full shadow-md hover:shadow-lg transition transform hover:-translate-y-1">
-        Explorar destinos a medida
-      </a>
-    </div>
-  </div>
-</section>
-
-<?php get_footer(); ?>
+get_footer();

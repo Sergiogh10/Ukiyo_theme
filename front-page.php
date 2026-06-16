@@ -4,6 +4,14 @@
  * Muestra la homepage estática de UKIYO
  */
 
+if ( function_exists( 'pll_current_language' ) && 'en' === pll_current_language() ) {
+    $english_front_page = __DIR__ . '/front-page-en.php';
+    if ( file_exists( $english_front_page ) ) {
+        require $english_front_page;
+        return;
+    }
+}
+
 get_header(); ?>
 
 <?php
@@ -49,15 +57,15 @@ $destination_marruecos    = ukiyo_get_route_url( 'destination_marruecos' );
     // Array de slides para el hero
     $hero_slides = [
         [
-            'image' => get_template_directory_uri() . '/images/heroimages/viajes-personalizados-ukiyo-costaricatucan.jpg',
+            'image' => get_template_directory_uri() . '/images/heroimages/viajes-personalizados-ukiyo-costaricatucan.webp',
             'alt' => 'Viajes personalizados a Costa Rica',
         ],
         [
-            'image' => get_template_directory_uri() . '/images/heroimages/viajes-personalizados-ukiyo-marruecos.jpg',
+            'image' => get_template_directory_uri() . '/images/heroimages/viajes-personalizados-ukiyo-marruecos.webp',
             'alt' => 'Viajes personalizados a Marruecos',
         ],
         [
-            'image' => get_template_directory_uri() . '/images/heroimages/viajes-personalizados-ukiyo-colombiaplaya3.jpg',
+            'image' => get_template_directory_uri() . '/images/heroimages/viajes-personalizados-ukiyo-colombiaplaya3.webp',
             'alt' => 'Viajes personalizados a Colombia',
         ]
     ];
@@ -71,10 +79,12 @@ $destination_marruecos    = ukiyo_get_route_url( 'destination_marruecos' );
             <div class="hero-slide absolute inset-0 w-full h-full transition-opacity duration-300 <?php echo $index === 0 ? 'opacity-100 z-1' : 'opacity-0 z-0'; ?>">
                 <!-- Fondo -->
                <div class="absolute inset-0 w-full h-full">
-                <img 
+                <img
                     src="<?php echo esc_url($slide['image']); ?>"
                     alt="<?php echo esc_attr($slide['alt']); ?>"
                     class="w-full h-full object-cover"
+                    width="1920"
+                    height="1080"
                     fetchpriority="<?php echo $index === 0 ? 'high' : 'low'; ?>"
                     loading="<?php echo $index === 0 ? 'eager' : 'lazy'; ?>"
                     decoding="async"
@@ -436,7 +446,7 @@ $destination_marruecos    = ukiyo_get_route_url( 'destination_marruecos' );
                     style="
                         width: 100%;
                         height: 500px;
-                        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('<?php echo get_template_directory_uri(); ?>/images/indonesia/viajes-personalizados-ukiyo-artesano-balines.jpg');
+                        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('<?php echo get_template_directory_uri(); ?>/images/indonesia/viajes-personalizados-ukiyo-artesano-balines.webp');
                         background-size: cover;
                         background-position: center;
                         border-radius: 1.5rem;
@@ -455,7 +465,7 @@ $destination_marruecos    = ukiyo_get_route_url( 'destination_marruecos' );
                             </svg>
                             Sudeste Asiático
                         </div>
-                        <h3 class="text-card-title font-rowdies text-white font-semibold mb-3">Indonesia</h3>
+                        <h3 class="text-card-title font-rowdies text-white font-semibold mb-3"><a href="<?php echo esc_url( $destination_indonesia ); ?>" aria-label="Viaje a medida a Indonesia" style="color: inherit; text-decoration: none;">Indonesia</a></h3>
                         <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 0.875rem;">
                             Tradiciones vivas, templos y ceremonias. Ideal si buscas un viaje con mucha profundidad cultural.
                         </p>
@@ -467,7 +477,7 @@ $destination_marruecos    = ukiyo_get_route_url( 'destination_marruecos' );
                     style="
                         width: 100%;
                         height: 500px;
-                        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-personalizados-ukiyo-guacamayo.jpg');
+                        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-personalizados-ukiyo-guacamayo.webp');
                         background-size: cover;
                         background-position: center;
                         border-radius: 1.5rem;
@@ -486,7 +496,7 @@ $destination_marruecos    = ukiyo_get_route_url( 'destination_marruecos' );
                             </svg>
                             América Central
                         </div>
-                        <h3 class="text-card-title font-rowdies text-white font-semibold mb-3">Costa Rica</h3>
+                        <h3 class="text-card-title font-rowdies text-white font-semibold mb-3"><a href="<?php echo esc_url( $destination_costa_rica ); ?>" aria-label="Viaje a medida a Costa Rica" style="color: inherit; text-decoration: none;">Costa Rica</a></h3>
                         <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 0.875rem;">
                             Selvas, volcanes y vida salvaje. Perfecto si necesitas parar, respirar y reconectar con la naturaleza.
                         </p>
@@ -498,7 +508,7 @@ $destination_marruecos    = ukiyo_get_route_url( 'destination_marruecos' );
                     style="
                         width: 100%;
                         height: 500px;
-                        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('<?php echo get_template_directory_uri(); ?>/images/emotion-based/viajes-personalizados-ukiyo-palanquera.jpg');
+                        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('<?php echo get_template_directory_uri(); ?>/images/emotion-based/viajes-personalizados-ukiyo-palanquera.webp');
                         background-size: cover;
                         background-position: center;
                         border-radius: 1.5rem;
@@ -517,7 +527,7 @@ $destination_marruecos    = ukiyo_get_route_url( 'destination_marruecos' );
                             </svg>
                             Sudamérica
                         </div>
-                        <h3 class="text-card-title font-rowdies text-white font-semibold mb-3">Colombia</h3>
+                        <h3 class="text-card-title font-rowdies text-white font-semibold mb-3"><a href="<?php echo esc_url( $destination_colombia ); ?>" aria-label="Viaje a medida a Colombia" style="color: inherit; text-decoration: none;">Colombia</a></h3>
                         <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 0.875rem;">
                             Colores, música y gente que te hace sentir en casa desde el primer día. Perfecto si buscas un viaje lleno de vida y energía.
                         </p>
@@ -529,7 +539,7 @@ $destination_marruecos    = ukiyo_get_route_url( 'destination_marruecos' );
                     style="
                         width: 100%;
                         height: 500px;
-                        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('<?php echo get_template_directory_uri(); ?>/images/marruecos/viajes-personalizados-ukiyo-camello-marruecos.jpg');
+                        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('<?php echo get_template_directory_uri(); ?>/images/marruecos/viajes-personalizados-ukiyo-camello-marruecos.webp');
                         background-size: cover;
                         background-position: center;
                         border-radius: 1.5rem;
@@ -548,7 +558,7 @@ $destination_marruecos    = ukiyo_get_route_url( 'destination_marruecos' );
                             </svg>
                             Norte de África
                         </div>
-                        <h3 class="text-card-title font-rowdies text-white font-semibold mb-3">Marruecos</h3>
+                        <h3 class="text-card-title font-rowdies text-white font-semibold mb-3"><a href="<?php echo esc_url( $destination_marruecos ); ?>" aria-label="Viaje a medida a Marruecos" style="color: inherit; text-decoration: none;">Marruecos</a></h3>
                         <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 0.875rem;">
                             Desierto, medinas y rutas alejadas del turismo de masas. Ideal si buscas un viaje sensorial que te desconecte.
                         </p>
@@ -687,7 +697,7 @@ $destination_marruecos    = ukiyo_get_route_url( 'destination_marruecos' );
                             />
                         <?php else : ?>
                             <img 
-                                src="<?php echo get_template_directory_uri(); ?>/images/placeholders/viaje-autor-placeholder.jpg"
+                                src="<?php echo get_template_directory_uri(); ?>/images/heroimages/viajes-autor-ukiyo-viajeros2.webp"
                                 alt="<?php the_title_attribute(); ?>"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                 loading="lazy"
@@ -809,7 +819,7 @@ $destination_marruecos    = ukiyo_get_route_url( 'destination_marruecos' );
                     "review" => "Experiencia y plan de viaje con Ukiyo 200% recomendable. Fuimos de viaje de novios a Bali y la verdad es que no pudo ser mejor, no solo por el destino en sí que ofrece de todo (cultura, playas, paisajes preciosos y todo tipo de actividades), también gracias a Sergio que nos guió el viaje y nos lo cuadró todo perfectamente, además da consejos y recomendaciones que no lo suelen hacer las agencias habitualmente. Lo recomendaría una y mil veces, profesional como la copa de un pino!",
                     "date" => "Septiembre 2024",
                     "title" => "Sentimos que alguien pensó el viaje con nosotros",
-                    "image" => "resena-maite-ramon-bali-indonesia-2.jpg"
+                    "image" => "resena-maite-ramon-bali-indonesia-2.webp"
                 ],
                 [
                     "name" => "María y Edu",
@@ -818,7 +828,7 @@ $destination_marruecos    = ukiyo_get_route_url( 'destination_marruecos' );
                     "review" => "Gracias a Ukiyo no solo visitamos Indonesia, si no que la vivimos de verdad. Desde el primer día sentimos mucha tranquilidad ya que todo estaba perfectamente organizado y pudimos despreocuparnos y pensar solo en disfrutar. Cuidaron cada detalle y nos crearon un itinerario adaptado a lo que buscábamos, un viaje auténtico, con alma, lejos de lo típico y de los que te dejan huella.",
                     "date" => "Julio 2025",
                     "title" => "Un viaje auténtico, con alma",
-                    "image" => "resena-maria-edu-java-indonesia.jpg"
+                    "image" => "resena-maria-edu-java-indonesia.webp"
                 ],
                 [
                     "name" => "Carmen y Jose Ángel",
@@ -827,7 +837,7 @@ $destination_marruecos    = ukiyo_get_route_url( 'destination_marruecos' );
                     "review" => "Viajar a Indonesia con Ukiyo ha sido una aventura excepcional, un viaje personalizado al 100% donde hemos podido disfrutar de experiencias auténticas y humanas, sin el agobio del turismo masivo. El esfuerzo y el trabajo detrás de la organización ha hecho que nuestro viaje sea muy toppp. Muchas gracias equipo 🙌🏼 ¡Estamos deseando repetir!",
                     "date" => "Septiembre 2025",
                     "title" => "Experiencias auténticas y humanas",
-                    "image" => "resena-carmen-jose-komodo-indonesia.jpg"
+                    "image" => "resena-carmen-jose-komodo-indonesia.webp"
                 ],
                 [
                     "name" => "Carolina y Carmen",
@@ -836,7 +846,7 @@ $destination_marruecos    = ukiyo_get_route_url( 'destination_marruecos' );
                     "review" => "Lo mejor de Cuba es su gente. La calidez, las risas, las historias compartidas sin prisa… cada conversación parecía un pequeño tesoro. Pasar una tarde aprendiendo a bailar son con una familia local fue uno de esos momentos que te reconcilian con la vida. Regresé con el corazón lleno y la sensación de haber viajado no solo a un lugar, sino a una manera distinta de vivir.",
                     "date" => "Julio 2024",
                     "title" => "La sensación de estar en casa lejos de casa",
-                    "image" => "resena-carolina-carmen-cuba.jpg"
+                    "image" => "resena-carolina-carmen-cuba.webp"
                 ],
             ];
             ?>

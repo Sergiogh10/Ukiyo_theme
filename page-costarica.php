@@ -1,511 +1,171 @@
 <?php
 /**
  * Template Name: Costarica Experience
+ *
+ * Implementa el layout Claude Design "Destino-Costa-Rica.html" vía el helper
+ * `ukiyo_render_destination_v2()`, igual que el resto de destinos
+ * (Indonesia, Italia, Colombia, Marruecos, Lanzarote).
+ *
+ * Decisiones:
+ *   - Imágenes del banco /images/costarica/ y /images/autores/ (no /assets/ del export).
+ *   - WhatsApp en CTA usa el icono icons8 PNG que ya tenemos en otras plantillas.
+ *   - El grid "ocho lugares" del export se sustituye por los 8 items del Experiences
+ *     Carousel ya existente en la plantilla (preservados desde la versión anterior).
+ *   - Related + Blog posts: helpers del tema (`ukiyo_render_related_internal_links`,
+ *     `ukiyo_render_destination_blog_posts`).
  */
 get_header();
-?>
 
-<style>
-  .hero-gradient {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
-  }
-  .text-shadow {
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  }
-  .hero-responsive { height: 85vh; }
-  @media (min-width: 1024px) {
-    .hero-responsive { height: 85vh !important; }
-  }
-</style>
-<header class="hero-responsive relative w-full overflow-hidden">
-  <img alt="Toucan in Costa Rican rainforest" class="absolute inset-0 w-full h-full object-cover" src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-monteverde-bosque-nuboso.jpg" loading="eager" fetchpriority="high" decoding="async"/>
-  <div class="absolute inset-0 hero-gradient flex flex-col items-center justify-center text-center px-4">
-    <?php
-    ukiyo_render_breadcrumbs([
-        'class'      => 'mb-6 justify-center text-white/80',
-        'link_class' => 'text-white/80 hover:text-white transition-colors',
-    ]);
-    ?>
-    <span class="text-white/80 uppercase tracking-[0.3em] text-sm mb-4">América Central</span>
-    <h1 class="text-6xl md:text-8xl font-rowdies text-white font-bold mb-2 text-shadow">COSTA RICA</h1>
-    <p class="text-2xl md:text-4xl font-satoshi text-white/90 italic font-light">Biodiversidad Pura</p>
-    <div class="mt-8 max-w-2xl text-white/80 text-lg md:text-xl font-light leading-relaxed">
-      Explora la Península de Osa, Corcovado y los bosques nubosos de Monteverde.
-    </div>
-  </div>
-</header>
+$img = get_template_directory_uri() . '/images';
 
-<div class="relative -mt-16 container mx-auto px-4 z-20">
-  <div class="bg-surface-light dark:bg-surface-dark shadow-xl rounded-2xl p-6 md:p-8 grid grid-cols-2 gap-4 md:flex md:flex-wrap md:justify-between md:items-center md:gap-6 border border-gray-100 dark:border-gray-700">
-    <div class="flex items-center gap-4 flex-1 md:min-w-[200px]">
-      <div class="p-3 bg-primary/10 rounded-full text-primary">
-        <?php echo ukiyo_icon( 'calendar_month' ); ?>
-      </div>
-      <div>
-        <h4 class="text-xs uppercase text-gray-500 dark:text-gray-400 font-bold tracking-wide">Mejor Época</h4>
-        <p class="font-satoshi text-lg text-gray-900 dark:text-white">Dic - Abr</p>
-      </div>
-    </div>
-    <div class="w-px h-12 bg-gray-200 dark:bg-gray-700 hidden md:block"></div>
-    <div class="flex items-center gap-4 flex-1 md:min-w-[200px]">
-      <div class="p-3 bg-primary/10 rounded-full text-primary">
-        <?php echo ukiyo_icon( 'currency_exchange' ); ?>
-      </div>
-      <div>
-        <h4 class="text-xs uppercase text-gray-500 dark:text-gray-400 font-bold tracking-wide">Moneda</h4>
-        <p class="font-satoshi text-lg text-gray-900 dark:text-white">Colón (CRC)</p>
-      </div>
-    </div>
-    <div class="w-px h-12 bg-gray-200 dark:bg-gray-700 hidden md:block"></div>
-    <div class="flex items-center gap-4 flex-1 md:min-w-[200px]">
-      <div class="p-3 bg-primary/10 rounded-full text-primary">
-        <?php echo ukiyo_icon( 'language' ); ?>
-      </div>
-      <div>
-        <h4 class="text-xs uppercase text-gray-500 dark:text-gray-400 font-bold tracking-wide">Idioma</h4>
-        <p class="font-satoshi text-lg text-gray-900 dark:text-white">Español</p>
-      </div>
-    </div>
-    <div class="w-px h-12 bg-gray-200 dark:bg-gray-700 hidden md:block"></div>
-    <div class="flex items-center gap-4 flex-1 md:min-w-[200px]">
-      <div class="p-3 bg-primary/10 rounded-full text-primary">
-        <?php echo ukiyo_icon( 'thermostat' ); ?>
-      </div>
-      <div>
-        <h4 class="text-xs uppercase text-gray-500 dark:text-gray-400 font-bold tracking-wide">Clima</h4>
-        <p class="font-satoshi text-lg text-gray-900 dark:text-white">Tropical</p>
-      </div>
-    </div>
-  </div>
-</div>
+// SVGs para key facts (los mismos del export Destino-Costa-Rica.html).
+$ico_calendar = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>';
+$ico_temp     = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c4-6 7-6 10 0s6 6 10 0"/><path d="M2 6c4-6 7-6 10 0s6 6 10 0"/><path d="M2 18c4-6 7-6 10 0s6 6 10 0"/></svg>';
+$ico_lang     = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3.5 3 16 0 20M12 2c-3 3.5-3 16 0 20"/></svg>';
+$ico_clock    = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 6v6l3 1"/></svg>';
+$ico_plane    = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9 0-1.2.3L2 8.4l8 4-3 3-3-.5L2 16.5l6 1.5 1.5 6 1.8-1.8L11 19l3-3 4 8 1.9-1.6c.3-.3.4-.7.3-1.2Z"/></svg>';
 
-<section class="py-24 px-4 container mx-auto">
-  <div class="max-w-3xl mx-auto text-center space-y-8">
-    <h2 class="text-4xl md:text-5xl font-rowdies text-secondary dark:text-white font-medium leading-tight">
-      Donde la naturaleza <span class="text-primary italic">manda</span>
-    </h2>
-    <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed font-light">
-      <span class="font-bold text-gray-800 dark:text-gray-100">Costa Rica</span> no es solo un destino, es un estado mental. Es un país donde selvas infinitas tocan volcanes activos, donde la fauna salvaje se pasea libremente y playas vírgenes bañan ambos océanos. Es el destino perfecto para viajeros que buscan una conexión real con la vida local, lejos del ruido y cerca de la esencia.
-    </p>
-    <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-  </div>
-</section>
+// SVGs para features (los mismos del export Destino-Costa-Rica.html).
+$ico_compass  = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><path d="M5 5c3 3 3 11 0 14M19 5c-3 3-3 11 0 14M5 19c3-3 11-3 14 0M5 5c3-3 11-3 14 0"/></svg>';
+$ico_ocean    = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M3 18c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M12 2v6"/><circle cx="12" cy="3" r="1"/></svg>';
+$ico_people   = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="2"/><circle cx="6" cy="14" r="2"/><path d="M2 21c2-3 5-4 8-4s6 1 8 4"/></svg>';
+$ico_adv      = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l5-7 4 5 3-4 6 6"/><path d="M14 6l4-4 4 4"/><path d="M18 2v8"/></svg>';
+$ico_volcano  = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-3 4-3 8 0 12 3-4 3-8 0-12Z"/><path d="M5 22c0-4 3-7 7-7s7 3 7 7"/><path d="M9 18l-2-2M15 18l2-2"/></svg>';
+$ico_eco      = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8c-5 0-9 4-9 9 0-5-4-9-9-9 5 0 9-4 9-9 0 5 4 9 9 9Z"/></svg>';
 
-<!-- Features Section -->
-<?php
-$featuresData = [
-  ['id' => '1', 'title' => 'Naturaleza Salvaje', 'description' => 'El 5% de la biodiversidad mundial concentrada en un solo lugar. Observa perezosos, tucanes y jaguares en su hábitat natural.', 'icon' => 'eco'],
-  ['id' => '2', 'title' => 'Dos Océanos', 'description' => 'Despierta con el amanecer caribeño y despide el día con el atardecer del Pacífico. Dos mundos acuáticos en el mismo viaje.', 'icon' => 'water_drop'],
-  ['id' => '3', 'title' => 'Cultura "Pura Vida"', 'description' => 'La auténtica hospitalidad tica te espera. Pioneros en ecoturismo y sostenibilidad, aprende a vivir con menos prisa.', 'icon' => 'diversity_3'],
-  ['id' => '4', 'title' => 'Aventura Real', 'description' => 'Rafting de clase mundial, canopy entre nubes y trekking volcánico.', 'icon' => 'explore'],
-  ['id' => '5', 'title' => 'Biodiversidad', 'description' => 'Observa perezosos, tucanes y jaguares en su hábitat.', 'icon' => 'park'],
-  ['id' => '6', 'title' => 'Viaje Responsable', 'description' => 'Pioneros en ecoturismo y sostenibilidad global.', 'icon' => 'favorite']
-];
-?>
+ukiyo_render_destination_v2( [
+	'slug'             => 'cr',
+	'breadcrumb'       => 'Costa Rica',
+	'eyebrow'          => 'América Central · プラビダ · Pura vida',
+	'hero_title'       => 'Viajes a medida a Costa Rica,<br/>donde respira la <em>selva.</em>',
+	'hero_sub'         => 'El 5% de la biodiversidad del planeta entre dos océanos, volcanes vivos y bosques nubosos. Diseñamos rutas privadas para vivirlo con calma.',
+	'hero_image'       => $img . '/costarica/viajes-a-costa-rica-personalizados-monteverde-bosque-nuboso.webp',
+	'cta_primary'      => 'Diseñar mi viaje a Costa Rica',
+	'scroll_label'     => 'Pura vida',
 
-<section class="py-12 bg-white dark:bg-gray-900">
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-rowdies text-gray-900 dark:text-white mb-4">Lo que hace <span class="text-primary">única</span> a Costa Rica</h2>
-      <p class="text-gray-600 dark:text-gray-400">Razones para perderse y encontrarse con UKIYO en Costa Rica.</p>
-    </div>
-    
-    <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-      <?php foreach ($featuresData as $feature): ?>
-      <div class="bg-background-light dark:bg-surface-dark p-4 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition duration-300 group text-center md:text-left">
-        <div class="w-14 h-14 bg-green-50 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition mx-auto md:mx-0">
-          <?php echo ukiyo_icon( $feature['icon'], 'text-green-700 dark:text-green-400 text-3xl' ); ?>
-        </div>
-        <h3 class="text-xl font-satoshi font-bold text-gray-900 dark:text-white mb-3"><?php echo $feature['title']; ?></h3>
-        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed"><?php echo $feature['description']; ?></p>
-      </div>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</section>
+	'key_facts' => [
+		[ 'icon' => $ico_calendar, 'lbl' => 'Mejor época',       'val' => 'Dic — Abr' ],
+		[ 'icon' => $ico_temp,     'lbl' => 'Clima',             'val' => 'Tropical · 24-32°C' ],
+		[ 'icon' => $ico_lang,     'lbl' => 'Idioma',            'val' => 'Español' ],
+		[ 'icon' => $ico_clock,    'lbl' => 'Duración ideal',    'val' => '12 — 16 días' ],
+		[ 'icon' => $ico_plane,    'lbl' => 'Vuelo desde España','val' => '~11h directo' ],
+	],
 
-<!-- Experiences Carousel Section -->
-<?php
-$ukiyoCarouselItems = [
-    [
-        'id' => '1',
-        'title' => 'Corcovado',
-        'description' => 'La joya de la Península de Osa: selva primaria, playas salvajes y muchísima fauna. El lugar más intenso biológicamente.',
-        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-mono.jpg',
-        'tag' => 'Península de Osa'
-    ],
-    [
-        'id' => '2',
-        'title' => 'Monteverde',
-        'description' => 'El bosque nuboso más conocido: puentes colgantes, niebla, orquídeas y aves únicas en un clima fresco.',
-        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-monteverde.jpg',
-        'tag' => 'Bosque Nuboso'
-    ],
-    [
-        'id' => '3',
-        'title' => 'Tortuguero',
-        'description' => 'La Costa Rica de canales: selva, agua y Caribe. Safaris en bote y desove de tortugas en temporada.',
-        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-atardecer.jpg',
-        'tag' => 'Caribe Norte'
-    ],
-    [
-        'id' => '4',
-        'title' => 'La Fortuna',
-        'description' => 'Base para explorar el Volcán Arenal: cataratas, termales relajantes y rutas de senderismo con vistas.',
-        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-rio-celeste.jpg',
-        'tag' => 'Volcán Arenal'
-    ],
-    [
-        'id' => '5',
-        'title' => 'Puerto Viejo',
-        'description' => 'El Caribe Sur más bohemio: selva pegada al mar, ritmo afrocaribeño y el Parque Nacional Cahuita.',
-        'imagePath' => '/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-mono.jpg',
-        'tag' => 'Caribe Sur'
-    ],
-    [
-        'id' => '6',
-        'title' => 'Manuel Antonio',
-        'description' => 'Playas paradisíacas y selva tropical en perfecta armonía. Monos capuchinos y perezosos a metros del mar.',
-        'imagePath' => '/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-tucanazul.jpg',
-        'tag' => 'Pacífico Central'
-    ],
-    [
-        'id' => '7',
-        'title' => 'Cañón Jurásico',
-        'description' => 'El río de aguas turquesas más impresionante del país. Naturaleza volcánica en estado puro.',
-        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-cañonjurasico.jpg',
-        'tag' => 'Tenorio'
-    ],
-    [
-        'id' => '8',
-        'title' => 'Guanacaste',
-        'description' => 'Playas vírgenes del Pacífico, surf de clase mundial y atardeceres inolvidables.',
-        'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-guanacaste.jpg',
-        'tag' => 'Pacífico Norte'
-    ]
-];
-?>
+	'intro' => [
+		'title_html' => '<span class="dot"></span> Donde la naturaleza<br/><em>manda.</em>',
+		'lede_html'  => '<strong>Costa Rica</strong> es un país pequeño que esconde dos océanos, doce zonas de vida y media biósfera planetaria entre la niebla.',
+		'paragraphs' => [
+			'Aquí los días empiezan con el amanecer caribeño y terminan con el atardecer del Pacífico. Diseñamos rutas privadas que alternan selvas primarias, descansos junto al mar y encuentros con guías locales que llevan media vida en estos bosques.',
+			'No es un viaje de check-list. Es un cambio de ritmo: aprender a esperar al perezoso, callar para que cante el quetzal, dejar que el día decida.',
+		],
+		'marks' => [
+			[ 'n_html' => '<em>5%</em>', 'l' => 'Biodiversidad mundial' ],
+			[ 'n_html' => '28',          'l' => 'Parques nacionales' ],
+			[ 'n_html' => '2',           'l' => 'Océanos · 1 país' ],
+			[ 'n_html' => '+25%',        'l' => 'Territorio protegido' ],
+		],
+		'main_img' => $img . '/costarica/viajes-a-costa-rica-personalizados-rio-celeste.webp',
+		'pip_img'  => $img . '/costarica/viajes-a-costa-rica-personalizados-rana-ojos-rojos.webp',
+		'stamp'    => '道 · Pura vida',
+	],
 
-<section class="py-12 bg-white dark:bg-gray-900 overflow-hidden relative">
-  <div class="container mx-auto px-4 mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-    <div>
-      <span class="uppercase tracking-widest text-primary text-sm font-bold">Experiencias Únicas</span>
-      <h3 class="text-3xl font-rowdies text-gray-900 dark:text-white mt-2">Momentos Inolvidables</h3>
-    </div>
-    <div class="flex gap-4 self-end md:self-auto">
-      <button id="scroll-left" class="p-3 border border-gray-200 dark:border-gray-700 rounded-full hover:bg-primary hover:text-white text-gray-900 dark:text-white transition-colors duration-300" aria-label="Anterior">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="m12 19-7-7 7-7"/>
-          <path d="M19 12H5"/>
-        </svg>
-      </button>
-      <button id="scroll-right" class="p-3 border border-gray-200 dark:border-gray-700 rounded-full hover:bg-primary hover:text-white text-gray-900 dark:text-white transition-colors duration-300" aria-label="Siguiente">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M5 12h14"/>
-          <path d="m12 5 7 7-7 7"/>
-        </svg>
-      </button>
-    </div>
-  </div>
+	'features_chip'       => 'Razones para venir',
+	'features_title_html' => 'Lo que hace <em>única</em><br/>a Costa Rica.',
+	'features_sub'        => 'Seis razones por las que diseñar una ruta a medida por este país es muy distinto de cualquier viaje al trópico.',
+	'features' => [
+		[ 'title' => 'Naturaleza salvaje en estado puro', 'description' => 'El 5% de la biodiversidad del planeta concentrada en un territorio del tamaño de Suiza. Observa perezosos, tucanes y guacamayos en su hábitat real — sin zoo, sin truco.', 'icon_svg' => $ico_compass ],
+		[ 'title' => 'Dos océanos en una misma ruta',     'description' => 'Despierta con el amanecer caribeño y despide el día con el atardecer del Pacífico. Dos mundos acuáticos en menos de cinco horas de carretera.',                       'icon_svg' => $ico_ocean ],
+		[ 'title' => 'Cultura "Pura Vida"',               'description' => 'La hospitalidad tica auténtica. Pioneros mundiales en ecoturismo. Aprender a vivir con menos prisa es la lección de fondo.',                                          'icon_svg' => $ico_people ],
+		[ 'title' => 'Aventura real',                     'description' => 'Rafting de clase mundial, canopy entre nubes y trekking volcánico. Adrenalina con guías de campo, no de catálogo.',                                                   'icon_svg' => $ico_adv ],
+		[ 'title' => 'Volcanes vivos',                    'description' => 'Arenal, Poás, Tenorio, Rincón de la Vieja. Termales naturales, cráteres activos y caminos por bosques nacidos del fuego.',                                            'icon_svg' => $ico_volcano ],
+		[ 'title' => 'Viaje responsable, por diseño',     'description' => 'Más del 25% del país es área protegida. Trabajamos con lodges familiares, guías comunitarios y operadores con certificación CST. Lo que pisamos lo dejamos mejor.', 'icon_svg' => $ico_eco ],
+	],
 
-  <!-- Carousel Container -->
-  <div 
-    id="experiences-carousel"
-    class="flex gap-6 px-4 md:px-8 pb-12 pt-8"
-    style="overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; scroll-behavior: smooth;"
-  >
-    <style>
-      #experiences-carousel::-webkit-scrollbar {
-        display: none;
-      }
-      .carousel-card {
-        transition: transform 0.3s ease;
-      }
-      .carousel-card:hover {
-        transform: translateY(-10px);
-      }
-    </style>
+	'carousel_meta'       => 'Itinerario abierto',
+	'carousel_title_html' => 'Ocho lugares<br/>que <em>marcan</em> la ruta.',
+	'carousel_sub'        => 'De los canales de Tortuguero al Pacífico de Guanacaste. Cada ruta es única, pero estos son los puntos sobre los que conversamos contigo para diseñar tu viaje a medida.',
+	// 8 items del Experiences Carousel preservados de la implementación anterior.
+	'carousel_items' => [
+		[ 'title' => 'Corcovado',      'description' => 'La joya de la Península de Osa: selva primaria, playas salvajes y muchísima fauna. El lugar más intenso biológicamente.', 'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-mono.webp',          'tag' => 'Península de Osa' ],
+		[ 'title' => 'Monteverde',     'description' => 'El bosque nuboso más conocido: puentes colgantes, niebla, orquídeas y aves únicas en un clima fresco.',                  'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-monteverde.webp',                'tag' => 'Bosque Nuboso' ],
+		[ 'title' => 'Tortuguero',     'description' => 'La Costa Rica de canales: selva, agua y Caribe. Safaris en bote y desove de tortugas en temporada.',                     'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-atardecer.webp',     'tag' => 'Caribe Norte' ],
+		[ 'title' => 'La Fortuna',     'description' => 'Base para explorar el Volcán Arenal: cataratas, termales relajantes y rutas de senderismo con vistas.',                  'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-rio-celeste.webp',              'tag' => 'Volcán Arenal' ],
+		[ 'title' => 'Puerto Viejo',   'description' => 'El Caribe Sur más bohemio: selva pegada al mar, ritmo afrocaribeño y el Parque Nacional Cahuita.',                       'imagePath' => '/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-mono.webp', 'tag' => 'Caribe Sur' ],
+		[ 'title' => 'Manuel Antonio', 'description' => 'Playas paradisíacas y selva tropical en perfecta armonía. Monos capuchinos y perezosos a metros del mar.',               'imagePath' => '/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-tucanazul.webp', 'tag' => 'Pacífico Central' ],
+		[ 'title' => 'Cañón Jurásico', 'description' => 'El río de aguas turquesas más impresionante del país. Naturaleza volcánica en estado puro.',                              'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-cañonjurasico.webp',            'tag' => 'Tenorio' ],
+		[ 'title' => 'Guanacaste',     'description' => 'Playas vírgenes del Pacífico, surf de clase mundial y atardeceres inolvidables.',                                         'imagePath' => '/images/costarica/viajes-a-costa-rica-personalizados-guanacaste.webp',               'tag' => 'Pacífico Norte' ],
+	],
 
-        <?php 
+	'hosts_chip'       => 'La gente de la ruta',
+	'hosts_title_html' => 'Conoce a nuestros<br/><em>anfitriones.</em>',
+	'hosts_sub'        => 'Un viaje no son solo lugares: son personas. En Costa Rica trabajamos con guías que no enseñan el camino — comparten su tierra.',
+	'hosts' => [
+		[
+			'badge'     => 'Tortuguero · Pacífico',
+			'role'      => 'Guía & fotógrafo de naturaleza',
+			'name_html' => 'Luis · <em>el ojo del bosque</em>',
+			'bio'       => 'Lleva años esperando la luz justa en humedales y bosques tropicales. Su forma de guiar es silencio, paciencia y respeto absoluto por la fauna. Birdwatching, perezosos y las horas mágicas que ningún tour estándar conoce.',
+			'image'     => $img . '/autores/luis/autor-luis.png',
+			'meta'      => [
+				[ 'l' => 'Especialidad',   'v' => 'Wildlife & aves' ],
+				[ 'l' => 'Idiomas',        'v' => 'ES · EN' ],
+				[ 'l' => 'Años en campo',  'v' => '+12' ],
+			],
+		],
+		[
+			'badge'     => 'Caribe · Talamanca',
+			'role'      => 'Conservacionista & guía',
+			'name_html' => 'Alexis · <em>el cuidador</em>',
+			'bio'       => 'Amante de los animales y de su país. Lleva un santuario de perezosos donde los rehabilita y los devuelve a la selva. Con él aprendes mirando: por qué un dedo se mueve, qué dice un canto, cómo no romper lo que ves.',
+			'image'     => $img . '/autores/alexis/alexis.png',
+			'meta'      => [
+				[ 'l' => 'Especialidad', 'v' => 'Conservación' ],
+				[ 'l' => 'Idiomas',      'v' => 'ES · EN' ],
+				[ 'l' => 'Santuario',    'v' => 'Propio' ],
+			],
+		],
+	],
 
-        foreach ($ukiyoCarouselItems as $expItem): 
+	'tips_chip'       => 'Antes de salir',
+	'tips_title_html' => 'Recomendaciones <em>Ukiyo</em>',
+	'tips_sub'        => 'Lo que llevamos en la mochila y lo que nos gustaría que tuvieras en mente. Pequeñas cosas que cambian el viaje.',
+	'tips_prep' => [
+		'badge' => 'Preparación',
+		'title' => 'Equipaje esencial',
+		'sub'   => 'Pesa poco, pero pensar bien lo que va dentro de la mochila.',
+		'items_html' => [
+			'<strong>Ropa ligera de secado rápido</strong> y una capa impermeable (poncho/chubasquero). Llueve sin avisar.',
+			'<strong>Calzado cerrado</strong> con buena suela — botas de trekking ya domadas, no estrenadas.',
+			'<strong>Protector solar biodegradable</strong> y repelente de insectos de calidad. Innegociables.',
+			'<strong>Bolsa estanca</strong> para proteger cámara y móvil de la humedad y la lluvia de selva.',
+			'<strong>Prismáticos</strong> ligeros — la diferencia entre ver "un punto" y ver al quetzal.',
+		],
+	],
+	'tips_notes' => [
+		'badge' => 'A tener en cuenta',
+		'title' => 'Notas importantes',
+		'sub'   => 'Tres avisos honestos para que el viaje sea lo que esperas.',
+		'items_html' => [
+			'Nivel físico <strong>moderado</strong>: senderos húmedos, raíces y calor real. Nada extremo, pero hay que andar.',
+			'<strong>Respeto absoluto por la fauna</strong>: no alimentar, no tocar, no perseguir. La distancia es parte del lujo.',
+			'Grupos <strong>siempre pequeños</strong> (máx. 8) — para que la experiencia sea íntima y la huella mínima.',
+			'<strong>Seguro de viaje recomendado</strong> con cobertura médica completa. Lo organizamos contigo.',
+			'No hace falta vacuna obligatoria. Sí <strong>antimosquitos serio</strong> y precaución con el sol del trópico.',
+		],
+	],
 
-            $imageUrl = get_template_directory_uri() . $expItem['imagePath'];
-        ?>
-        <div 
-            style="
-                flex-shrink: 0;
-                width: 85vw;
-                max-width: 400px;
-                height: 500px;
-                background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('<?php echo esc_url($imageUrl); ?>');
-                background-size: cover;
-                background-position: center;
-                border-radius: 1.5rem;
-                overflow: hidden;
-                position: relative;
-            "
-            class="carousel-card snap-center cursor-pointer"
-        >
-            <!-- Content -->
-            <div class="carousel-card-content" style="position: absolute; bottom: 0; left: 0; padding: 2rem; width: 100%; transition: transform 0.3s ease; text-align: center;">
-                <div style="color: #FF8C42; font-size: 12px; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 600;">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline;">
-                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                        <circle cx="12" cy="10" r="3"/>
-                    </svg>
-                    <?php echo esc_html($expItem['tag']); ?>
-                </div>
-                <h3 style="font-family: 'Rowdies', sans-serif; font-size: 2rem; margin-bottom: 0.75rem; color: white; font-weight: 600;"><?php echo esc_html($expItem['title']); ?></h3>
-                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
-                    <?php echo esc_html($expItem['description']); ?>
-                </p>
+	'cta_bg'           => $img . '/costarica/viajes-a-costa-rica-personalizados-rana-ojos-rojos.webp',
+	'cta_title_html'   => '¿Listo para vivir<br/><em>Costa Rica?</em>',
+	'cta_text'         => 'Cuéntanos qué tipo de viaje tienes en mente — fauna, parejas, familias, fotografía — y diseñamos una ruta privada a Costa Rica a tu medida.',
+	'cta_primary_btn'  => 'Diseñar mi viaje a Costa Rica',
 
-            </div>
-        </div>
-        <?php endforeach; ?>
+	'destination_key'  => 'destination_costa_rica',
+	'destination_name' => 'Costa Rica',
+	'related_keys'     => [ 'destination_colombia', 'destination_indonesia', 'destination_lanzarote', 'destination_marruecos' ],
+	'related_intro'    => 'Si buscas naturaleza intensa, fauna y rutas con ritmo local, estos destinos comparten ADN con un viaje a medida a Costa Rica.',
+	'blog_title'       => 'Guías para preparar tu viaje a Costa Rica',
+	'blog_intro'       => 'Clima, presupuesto, ruta y lugares clave para organizar Costa Rica sin convertir el viaje en una carrera.',
+	'blog_category'    => 'costa-rica',
+] );
 
-  </div>
-</section>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const carousel = document.getElementById('experiences-carousel');
-    const leftBtn = document.getElementById('scroll-left');
-    const rightBtn = document.getElementById('scroll-right');
-
-    if (carousel && leftBtn && rightBtn) {
-        // Debug: Check if carousel is scrollable
-        console.log('Carousel dimensions:', {
-            scrollWidth: carousel.scrollWidth,
-            clientWidth: carousel.clientWidth,
-            isScrollable: carousel.scrollWidth > carousel.clientWidth,
-            overflowX: window.getComputedStyle(carousel).overflowX
-        });
-
-        // Calculate scroll amount based on card width + gap
-        function getScrollAmount() {
-            const firstCard = carousel.querySelector('.carousel-card');
-            if (firstCard) {
-                const cardWidth = firstCard.offsetWidth;
-                const gap = 24; // gap-6 = 24px
-                console.log('Card width:', cardWidth, 'Gap:', gap, 'Total:', cardWidth + gap);
-                return cardWidth + gap;
-            }
-            return 424; // fallback: 400px card + 24px gap
-        }
-
-        leftBtn.addEventListener('click', () => {
-            const amount = getScrollAmount();
-            console.log('Scroll left:', amount, 'Current scroll:', carousel.scrollLeft);
-            carousel.scrollBy({ left: -amount, behavior: 'smooth' });
-            setTimeout(() => {
-                console.log('After scroll left, new position:', carousel.scrollLeft);
-            }, 500);
-        });
-
-        // Autoplay
-        function handleAutoplay() {
-            // Check if we are at the end
-            if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
-                 carousel.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                 rightBtn.click();
-            }
-        }
-
-        let autoPlayInterval = setInterval(handleAutoplay, 4000);
-
-        // Loop logic for button
-        rightBtn.addEventListener('click', () => {
-             const amount = getScrollAmount();
-             if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
-                 carousel.scrollTo({ left: 0, behavior: 'smooth' });
-             } else {
-                 carousel.scrollBy({ left: amount, behavior: 'smooth' });
-             }
-             setTimeout(() => {
-                 console.log('After scroll right, new position:', carousel.scrollLeft);
-             }, 500);
-        });
-
-        // Pause/Reset on interaction
-        [leftBtn, rightBtn, carousel].forEach(el => {
-            el.addEventListener('mousedown', resetTimer);
-            el.addEventListener('touchstart', resetTimer);
-        });
-
-        function resetTimer() {
-            clearInterval(autoPlayInterval);
-            autoPlayInterval = setInterval(handleAutoplay, 4000);
-        }
-    }
-});
-</script>
-
-<!-- AUTORES (mini bios) -->
-  <section class="py-20 bg-background">
-  <div class="container mx-auto px-6">
-    
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-rowdies text-text-primary mb-4">Conoce a nuestros <span class="text-primary">anfitriones</span></h2>
-      <p class="text-text-secondary max-w-xl mx-auto">Un viaje no son solo lugares, son personas. En Ukiyo, trabajamos con guías que no solo muestran el camino, sino que comparten su alma y el amor por su tierra.</p>
-    </div>
-
-    <div class="grid gap-8 md:grid-cols-4">
-
-      <!-- CARD LUIS -->
-      <article class="rounded-2xl border-1 border-black bg-background backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
-
-        <!-- Imagen más alta -->
-        <div class="aspect-[3/3]">
-          <img
-            src="<?php echo get_template_directory_uri(); ?>/images/autores/luis/autor-luis.png"
-            alt="Luis Acuña, guía costarricense"
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] bg-background mask-image"
-          />
-        </div>
-
-        <!-- Texto más compacto -->
-        <div class="p-4">
-          <h3 class="text-base font-semibold text-text-primary">
-            Luis · Guía costarricense y fotógrafo
-          </h3>
-          <p class="text-text-secondary mt-1 text-sm leading-relaxed">
-            Lleva años esperando la luz justa en humedales y bosques tropicales. 
-            Su Pantanal es silencio, paciencia y respeto por la fauna.
-          </p>
-        </div>
-
-      </article>
-
-      <article class="rounded-2xl border-1 border-black bg-background backdrop-blur-md shadow-sm overflow-hidden flex flex-col">
-
-        <!-- Imagen más alta -->
-        <div class="aspect-[3/3]">
-          <img
-            src="<?php echo get_template_directory_uri(); ?>/images/autores/alexis/alexis.png"
-            alt="Alexis Torres, conservacionista costarricense"
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02] bg-background mask-image"
-          />
-        </div>
-
-        <!-- Texto más compacto -->
-        <div class="p-4">
-          <h3 class="text-base font-semibold text-text-primary">
-            Alexis · Conservacionista y guía
-          </h3>
-          <p class="text-text-secondary mt-1 text-sm leading-relaxed">
-            Amante de los animales y de su país. 
-            Tiene un santuario de perezosos donde los cuida y rehabilita.
-          </p>
-        </div>
-
-      </article>
-
-    </div>
-
-  </div>
-</section>
-
-
-<!-- Practical Information -->
-<section class="py-24 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-rowdies text-center mb-16 text-gray-900 dark:text-white">Recomendaciones <span class="text-primary">UKIYO</span></h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-      <div class="bg-background-light dark:bg-surface-dark p-8 rounded-2xl border border-dashed border-gray-300 dark:border-gray-600 relative">
-        <div class="absolute -top-5 left-8 bg-primary text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide shadow-md">
-          Preparación
-        </div>
-        <h3 class="text-xl font-rowdies mb-6 mt-2 text-gray-800 dark:text-white flex items-center gap-2">
-          Equipaje Esencial
-        </h3>
-        <ul class="space-y-4">
-          <li class="flex items-start gap-3">
-            <?php echo ukiyo_icon( 'check_circle', 'text-primary text-xl flex-shrink-0 mt-0.5' ); ?>
-            <span class="text-gray-600 dark:text-gray-300 text-sm">Ropa ligera de secado rápido y capa impermeable (poncho/chubasquero).</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <?php echo ukiyo_icon( 'check_circle', 'text-primary text-xl flex-shrink-0 mt-0.5' ); ?>
-            <span class="text-gray-600 dark:text-gray-300 text-sm">Calzado cerrado con buena suela (botas de trekking ya domadas).</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <?php echo ukiyo_icon( 'check_circle', 'text-primary text-xl flex-shrink-0 mt-0.5' ); ?>
-            <span class="text-gray-600 dark:text-gray-300 text-sm">Protector solar biodegradable y repelente de insectos fuerte.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <?php echo ukiyo_icon( 'check_circle', 'text-primary text-xl flex-shrink-0 mt-0.5' ); ?>
-            <span class="text-gray-600 dark:text-gray-300 text-sm">Bolsa estanca para proteger cámara y móvil de la humedad.</span>
-          </li>
-        </ul>
-      </div>
-      <div class="bg-background-light dark:bg-surface-dark p-8 rounded-2xl border border-dashed border-gray-300 dark:border-gray-600 relative">
-        <div class="absolute -top-5 left-8 bg-secondary text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide shadow-md">
-          A tener en cuenta
-        </div>
-        <h3 class="text-xl font-rowdies mb-6 mt-2 text-gray-800 dark:text-white flex items-center gap-2">
-          Notas Importantes
-        </h3>
-        <ul class="space-y-4">
-          <li class="flex items-start gap-3">
-            <?php echo ukiyo_icon( 'info', 'text-secondary dark:text-green-400 text-xl flex-shrink-0 mt-0.5' ); ?>
-            <span class="text-gray-600 dark:text-gray-300 text-sm">Se requiere un nivel físico moderado para los senderos húmedos y el calor.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <?php echo ukiyo_icon( 'info', 'text-secondary dark:text-green-400 text-xl flex-shrink-0 mt-0.5' ); ?>
-            <span class="text-gray-600 dark:text-gray-300 text-sm">Respeto absoluto por la fauna: no alimentar ni tocar animales.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <?php echo ukiyo_icon( 'info', 'text-secondary dark:text-green-400 text-xl flex-shrink-0 mt-0.5' ); ?>
-            <span class="text-gray-600 dark:text-gray-300 text-sm">Nuestros grupos son pequeños (máx. 8) para asegurar una experiencia íntima.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <?php echo ukiyo_icon( 'info', 'text-secondary dark:text-green-400 text-xl flex-shrink-0 mt-0.5' ); ?>
-            <span class="text-gray-600 dark:text-gray-300 text-sm">Se recomienda encarecidamente seguro de viaje con cobertura médica.</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<?php
-ukiyo_render_related_internal_links(
-  [
-    'title'   => 'Otros viajes relacionados',
-    'intro'   => 'Si buscas naturaleza intensa, fauna y rutas con mucho ritmo local, estos destinos conectan bien con un viaje a medida a Costa Rica.',
-    'current' => 'destination_costa_rica',
-    'keys'    => [ 'destination_colombia', 'destination_indonesia', 'destination_lanzarote', 'destination_marruecos' ],
-  ]
-);
-
-ukiyo_render_destination_blog_posts(
-  [
-    'title'           => 'Guías para preparar tu viaje a Costa Rica',
-    'intro'           => 'Clima, presupuesto, ruta y lugares clave para organizar Costa Rica sin convertir el viaje en una carrera.',
-    'destination_key' => 'destination_costa_rica',
-    'category'        => 'costa-rica',
-  ]
-);
-?>
-
-<section class="py-24 text-center bg-background-light dark:bg-background-dark">
-  <div class="container mx-auto px-4">
-    <h2 class="text-4xl md:text-5xl font-satoshi text-gray-900 dark:text-white mb-6">¿Listo para vivir Costa Rica?</h2>
-    <p class="text-lg text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto">
-      Deja de soñarlo y empieza a vivirlo. Estamos listos para diseñar tu aventura perfecta en Costa Rica a medida.
-    </p>
-    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-      <a href="https://wa.me/message/CS2LNI6YHSETO1" target="_blank" class="btn-primary text-text-secondary flex items-center shadow-md hover:shadow-lg justify-center gap-2">
-        <img width="64" height="64" src="https://img.icons8.com/cotton/64/whatsapp--v4.png" alt="Contactar con Viajes Ukiyo por WhatsApp" class="w-6 h-6"/>
-        Escríbenos por WhatsApp
-      </a>
-      <a href="<?php echo esc_url( ukiyo_get_route_url( 'destinations' ) ); ?>" class="bg-white dark:bg-surface-dark hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-600 font-medium py-4 px-8 rounded-full shadow-md hover:shadow-lg transition transform hover:-translate-y-1">
-        Explorar destinos a medida
-      </a>
-    </div>
-  </div>
-</section>
-
-<?php get_footer(); ?>
+get_footer();

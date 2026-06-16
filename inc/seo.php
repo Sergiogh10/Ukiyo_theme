@@ -25,9 +25,9 @@ function ukiyo_has_active_seo_plugin() {
 function ukiyo_get_seo_overrides() {
     $overrides = [
         'front_page' => [
-            'title'       => 'Viajes a medida a Costa Rica, Colombia, Indonesia y Marruecos | UKIYO',
-            'description' => 'Agencia de viajes personalizados a Costa Rica, Colombia, Indonesia y Marruecos. Diseñamos rutas auténticas, sostenibles y lejos del turismo masivo.',
-            'image'       => get_template_directory_uri() . '/images/heroimages/viajes-personalizados-ukiyo-costaricatucan.jpg',
+            'title'       => 'Agencia de viajes a medida y personalizados | UKIYO',
+            'description' => 'Agencia de viajes a medida especializada en Costa Rica, Indonesia, Marruecos, Colombia y más. Rutas personalizadas diseñadas por quienes las han vivido.',
+            'image'       => get_template_directory_uri() . '/images/heroimages/viajes-personalizados-ukiyo-costaricatucan.webp',
         ],
         'page-experiences.php' => [
             'title'       => 'Destinos para viajes a medida en Costa Rica, Colombia, Indonesia y Marruecos | UKIYO',
@@ -42,8 +42,8 @@ function ukiyo_get_seo_overrides() {
             'description' => 'Lee reseñas reales de viajeros que ya han vivido viajes a medida con UKIYO en Indonesia, Costa Rica, Colombia y Marruecos.',
         ],
         'page-viajesautor.php' => [
-            'title'       => 'Viajes de autor en grupos reducidos con expertos | UKIYO',
-            'description' => 'Descubre viajes de autor en grupos reducidos con expertos y autores que conocen el destino desde dentro. Salidas con alma, mirada propia y plazas limitadas.',
+            'title'       => 'Viajes de autor en grupo reducido | UKIYO',
+            'description' => 'Viajes de autor en grupo reducido con expertos locales, fotógrafos y anfitriones que conocen el destino desde dentro. Salidas cuidadas y plazas limitadas.',
         ],
         'page-costarica.php' => [
             'title'       => 'Viajes a medida a Costa Rica | Naturaleza y biodiversidad con UKIYO',
@@ -89,32 +89,42 @@ function ukiyo_get_destination_page_seo_overrides() {
         'viajes-a-medida-indonesia' => [
             'title' => 'Viajes a medida a Indonesia: rutas | Viajes Ukiyo',
             'meta'  => 'Diseñamos viajes a medida a Indonesia con Bali, Java, Komodo y playas remotas, adaptados a tu ritmo, intereses y forma de viajar.',
-            'image' => get_template_directory_uri() . '/images/destination-mood/viajes-a-medida-ukiyo-aventurero-bali.jpg',
+            'image' => get_template_directory_uri() . '/images/destination-mood/viajes-a-medida-ukiyo-aventurero-bali.webp',
         ],
         'viajes-a-medida-costa-rica' => [
             'title' => 'Viajes a medida a Costa Rica: naturaleza | Viajes Ukiyo',
             'meta'  => 'Creamos viajes a medida a Costa Rica con selva, volcanes, fauna y playas salvajes, diseñados con calma y conocimiento real del destino.',
-            'image' => get_template_directory_uri() . '/images/costarica/viajes-costa-rica-hero.jpg',
+            'image' => get_template_directory_uri() . '/images/costarica/viajes-costa-rica-hero.webp',
         ],
         'viajes-a-medida-colombia' => [
             'title' => 'Viajes a medida a Colombia: Caribe y café | Viajes Ukiyo',
             'meta'  => 'Diseñamos viajes a medida a Colombia entre Caribe, Andes, Eje Cafetero y cultura local, con rutas flexibles y experiencias auténticas.',
-            'image' => get_template_directory_uri() . '/images/colombia/viajes-colombia-hero.jpg',
+            'image' => get_template_directory_uri() . '/images/colombia/viajes-colombia-hero.webp',
         ],
         'viajes-a-medida-marruecos' => [
-            'title' => 'Viajes a medida a Marruecos: desierto | Viajes Ukiyo',
-            'meta'  => 'Creamos viajes a medida a Marruecos con medinas, Atlas, desierto y alojamientos con carácter, lejos del viaje estándar y sin prisas.',
-            'image' => get_template_directory_uri() . '/images/autores/moha/viajes-a-marruecos-personalizados-erg-chebbi-hero.jpg',
+            'title' => 'Viajes a medida a Marruecos: ruta país completa | Viajes Ukiyo',
+            'meta'  => 'Creamos viajes a medida por Marruecos con ruta multi-ciudad: Fez, Atlas, kasbahs, desierto y la costa atlántica. Diseñamos cada etapa sin prisas.',
+            'image' => get_template_directory_uri() . '/images/autores/moha/viajes-a-marruecos-personalizados-erg-chebbi-hero.webp',
         ],
         'viajes-a-medida-italia' => [
             'title' => 'Viajes a medida a Italia: rutas con calma | Viajes Ukiyo',
             'meta'  => 'Diseñamos viajes a medida a Italia con Roma, Toscana, costa y gastronomía, ordenando cada etapa para viajar sin prisas ni lugares de relleno.',
-            'image' => get_template_directory_uri() . '/images/italia/viajes-a-italia-personalizados-toscana.jpg',
+            'image' => get_template_directory_uri() . '/images/italia/viajes-a-italia-personalizados-toscana.webp',
         ],
         'viajes-a-medida-lanzarote' => [
             'title' => 'Viajes a medida a Lanzarote: volcanes | Viajes Ukiyo',
             'meta'  => 'Creamos viajes a medida a Lanzarote con volcanes, playas atlánticas, arte, vino y calma insular, adaptados a tu ritmo de viaje.',
             'image' => get_template_directory_uri() . '/images/spain/lanzarote/vista-aerea-lanzarote.webp',
+        ],
+        'viajes-a-medida-marrakech' => [
+            'title' => 'Viajes a Marrakech a medida: medina, riads y Atlas | Viajes Ukiyo',
+            'meta'  => 'Viaje a Marrakech como base: riads en la medina, escapadas al Atlas y a Esauira. Diseñamos tu estancia en la ciudad roja sin rutas estándar.',
+            'image' => get_template_directory_uri() . '/images/marruecos/viajes-personalizados-ukiyo-marruecos-marrakech.webp',
+        ],
+        'viajes-a-medida-bali' => [
+            'title' => 'Viajes a Bali a medida: arroz, templos y océano | Viajes Ukiyo',
+            'meta'  => 'Diseñamos viajes a Bali a medida con Ubud, el norte sin masificación, templos al amanecer y rutas privadas con guías locales.',
+            'image' => get_template_directory_uri() . '/images/indonesia/bali/viajes-a-indonesia-bali-13.webp',
         ],
     ];
 }
@@ -156,6 +166,19 @@ function ukiyo_get_current_seo_override() {
         $page = get_post( get_queried_object_id() );
         $destination_overrides = ukiyo_get_destination_page_seo_overrides();
 
+        if ( $page instanceof WP_Post && function_exists( 'ukiyo_get_service_page_data' ) ) {
+            $service_page = ukiyo_get_service_page_data( $page->post_name );
+
+            if ( is_array( $service_page ) ) {
+                return [
+                    'title'       => $service_page['title'],
+                    'description' => $service_page['description'],
+                    'image'       => $service_page['image'],
+                    'canonical'   => get_permalink( $page ),
+                ];
+            }
+        }
+
         if ( $page instanceof WP_Post && isset( $destination_overrides[ $page->post_name ] ) ) {
             return [
                 'title'       => $destination_overrides[ $page->post_name ]['title'],
@@ -170,7 +193,68 @@ function ukiyo_get_current_seo_override() {
         return $overrides[ $template ];
     }
 
+    if ( is_category() ) {
+        $term = get_queried_object();
+        if ( $term instanceof WP_Term ) {
+            return ukiyo_build_category_seo_override( $term );
+        }
+    }
+
     return [];
+}
+
+/**
+ * Builds title + description for a `/blog/{slug}/` category archive.
+ *
+ * Uses a per-destination map so the topical hubs target the informational
+ * KWs from the architecture spreadsheet without canibalizing the destination
+ * landings (transactional intent).
+ */
+function ukiyo_build_category_seo_override( WP_Term $term ) {
+    $map = [
+        'costa-rica' => [
+            'title' => 'Guías de viaje a Costa Rica: rutas, época y consejos | UKIYO',
+            'desc'  => 'Itinerarios, mejor época, presupuesto y consejos reales para viajar a Costa Rica. Guías escritas por viajeros que conocen el país de primera mano.',
+        ],
+        'marruecos' => [
+            'title' => 'Guías de viaje a Marruecos: rutas, desierto y medinas | UKIYO',
+            'desc'  => 'Rutas por Marruecos, mejor época, itinerarios al desierto y consejos prácticos para preparar tu viaje a Marrakech, Fez o el Atlas.',
+        ],
+        'indonesia' => [
+            'title' => 'Guías de viaje a Indonesia: Bali, Java y rutas | UKIYO',
+            'desc'  => 'Itinerarios por Indonesia, mejor época, consejos para Bali, Java o Komodo. Guías reales para preparar tu viaje sin prisas.',
+        ],
+        'colombia' => [
+            'title' => 'Guías de viaje a Colombia: rutas, café y Caribe | UKIYO',
+            'desc'  => 'Rutas por Colombia, mejor época y consejos para diseñar un itinerario por el Caribe, el Eje Cafetero y los Andes con criterio.',
+        ],
+        'italia' => [
+            'title' => 'Guías de viaje a Italia: rutas, gastronomía y cultura | UKIYO',
+            'desc'  => 'Itinerarios por Italia, mejor época y consejos para Toscana, Roma, costa y pueblos con alma. Guías para preparar tu viaje sin lugares de relleno.',
+        ],
+        'lanzarote' => [
+            'title' => 'Guías de viaje a Lanzarote: volcanes, playas y arte | UKIYO',
+            'desc'  => 'Rutas por Lanzarote, mejor época, gastronomía volcánica y consejos para visitar Timanfaya, La Geria o La Graciosa con calma.',
+        ],
+        'consejos' => [
+            'title' => 'Consejos para viajar a medida y con criterio | UKIYO',
+            'desc'  => 'Consejos prácticos para preparar viajes a medida: equipaje, presupuesto, seguros, salud, fotografía y planificación con tiempo.',
+        ],
+    ];
+
+    if ( isset( $map[ $term->slug ] ) ) {
+        return [
+            'title'       => $map[ $term->slug ]['title'],
+            'description' => $map[ $term->slug ]['desc'],
+            'canonical'   => get_category_link( $term ),
+        ];
+    }
+
+    return [
+        'title'       => sprintf( 'Guías de viaje: %s | UKIYO', $term->name ),
+        'description' => sprintf( 'Guías, rutas y consejos para viajar a %s con UKIYO. Itinerarios reales escritos por viajeros.', $term->name ),
+        'canonical'   => get_category_link( $term ),
+    ];
 }
 
 /**
@@ -243,7 +327,7 @@ function ukiyo_get_meta_title() {
     }
 
     if ( is_home() ) {
-        return ukiyo_format_seo_title( 'Blog de viajes auténticos' );
+        return ukiyo_format_seo_title( 'Blog de viajes a medida y guías de destino' );
     }
 
     if ( is_post_type_archive( 'viaje_autor' ) ) {
@@ -308,7 +392,7 @@ function ukiyo_get_meta_description() {
     }
 
     if ( is_home() ) {
-        return 'Historias, consejos y rutas para viajar de forma más auténtica, consciente y personalizada.';
+        return 'Guías, rutas y consejos prácticos para preparar viajes a medida con mejor época, presupuesto, itinerarios y lugares que merece la pena conocer.';
     }
 
     if ( is_category() || is_tag() || is_tax() ) {
@@ -346,6 +430,13 @@ function ukiyo_should_noindex_current_request() {
         return true;
     }
 
+    // Tag/date/author/destino archives compete with the commercial destination
+    // pages for the same queries; keep them out of the index. Category archives
+    // serve `/blog/{cat}/` topical hubs and are indexable on purpose.
+    if ( is_tag() || is_date() || is_author() || is_tax( 'destino' ) ) {
+        return true;
+    }
+
     $template = ukiyo_get_current_template_slug();
     if ( in_array( $template, [ 'page-privacidad.php', 'page-cookies.php', 'page-terminos.php' ], true ) ) {
         return true;
@@ -357,6 +448,140 @@ function ukiyo_should_noindex_current_request() {
 
     return false;
 }
+
+/**
+ * Archive URLs have no template in this theme (index.php is intentionally
+ * empty), so they would render as blank 200 pages. Redirect each archive to
+ * the page that owns its topic: destination categories and `destino` terms go
+ * to the matching destination page, the rest to the blog.
+ */
+function ukiyo_redirect_templateless_archives() {
+    if ( is_admin() || is_feed() ) {
+        return;
+    }
+
+    // Category archives now have their own template (category.php) and live as
+    // /blog/{slug}/ topical hubs, so they must NOT be redirected.
+    if ( ! ( is_tag() || is_date() || is_author() || is_tax( 'destino' ) ) ) {
+        return;
+    }
+
+    $target = function_exists( 'ukiyo_get_route_url' ) ? ukiyo_get_route_url( 'blog' ) : home_url( '/blog/' );
+
+    $term = get_queried_object();
+    if ( $term instanceof WP_Term && function_exists( 'ukiyo_get_route_url' ) ) {
+        $route_key = 'destination_' . str_replace( '-', '_', $term->slug );
+        $routes    = function_exists( 'ukiyo_get_route_candidates' ) ? ukiyo_get_route_candidates() : [];
+
+        if ( isset( $routes[ $route_key ] ) ) {
+            $target = ukiyo_get_route_url( $route_key );
+        } elseif ( 'destino' === $term->taxonomy ) {
+            $target = ukiyo_get_route_url( 'viajes_autor' );
+        }
+    }
+
+    wp_safe_redirect( $target, 301 );
+    exit;
+}
+add_action( 'template_redirect', 'ukiyo_redirect_templateless_archives' );
+
+/**
+ * Allows two posts/pages to share the same slug when they are in different
+ * Polylang languages (e.g. ES "blog" + EN "blog").
+ *
+ * WordPress core enforces unique slugs globally and appends "-2" when it finds
+ * a collision. Polylang Free does not patch this. The filter restores the
+ * original slug if the only conflicting post is in a different language, since
+ * the final URL is already namespaced by language (/blog/ vs /en/blog/).
+ */
+function ukiyo_pll_allow_cross_language_slug( $slug, $post_id, $post_status, $post_type, $post_parent, $original_slug ) {
+    if ( ! function_exists( 'pll_get_post_language' ) || $slug === $original_slug ) {
+        return $slug;
+    }
+
+    $current_lang = pll_get_post_language( $post_id );
+    if ( ! $current_lang ) {
+        return $slug;
+    }
+
+    global $wpdb;
+
+    $blocking_ids = $wpdb->get_col( $wpdb->prepare(
+        "SELECT ID FROM {$wpdb->posts}
+         WHERE post_name = %s
+           AND post_type = %s
+           AND ID != %d
+           AND post_status NOT IN ('trash','auto-draft')",
+        $original_slug,
+        $post_type,
+        $post_id
+    ) );
+
+    if ( empty( $blocking_ids ) ) {
+        return $original_slug;
+    }
+
+    foreach ( $blocking_ids as $blocking_id ) {
+        $blocking_lang = pll_get_post_language( (int) $blocking_id );
+
+        if ( ! $blocking_lang || $blocking_lang === $current_lang ) {
+            return $slug;
+        }
+    }
+
+    return $original_slug;
+}
+add_filter( 'wp_unique_post_slug', 'ukiyo_pll_allow_cross_language_slug', 10, 6 );
+
+/**
+ * Replaces the generic `blog/(.+?)` category rewrite with a specific one that
+ * matches only existing category slugs.
+ *
+ * With `category_base = blog` AND permalink `/blog/%postname%/`, the default
+ * category rule swallows every URL under /blog/ and posts 404. Limiting the
+ * regex to the actual category slugs lets post URLs fall through correctly.
+ * Rules are cached in wp_options#rewrite_rules until the user edits a
+ * category; the cache hook below handles that.
+ */
+function ukiyo_category_rewrite_rules_specific( $rules ) {
+    $cats = get_categories( [ 'hide_empty' => false, 'fields' => 'slugs' ] );
+
+    if ( empty( $cats ) ) {
+        return $rules;
+    }
+
+    $pattern = implode( '|', array_map( 'preg_quote', $cats ) );
+
+    $kept = [];
+    foreach ( $rules as $match => $query ) {
+        $is_generic_category = (
+            ( false !== strpos( $match, 'blog/(.+?)' ) || false !== strpos( $match, 'blog/(.+)' ) )
+            && false !== strpos( $query, 'category_name' )
+        );
+
+        if ( ! $is_generic_category ) {
+            $kept[ $match ] = $query;
+        }
+    }
+
+    $kept[ "blog/({$pattern})/?$" ]                                = 'index.php?category_name=$matches[1]';
+    $kept[ "blog/({$pattern})/page/?([0-9]{1,})/?$" ]              = 'index.php?category_name=$matches[1]&paged=$matches[2]';
+    $kept[ "blog/({$pattern})/feed/(feed|rdf|rss|rss2|atom)/?$" ]  = 'index.php?category_name=$matches[1]&feed=$matches[2]';
+
+    return $kept;
+}
+add_filter( 'category_rewrite_rules', 'ukiyo_category_rewrite_rules_specific' );
+
+/**
+ * Invalidates the rewrite-rules cache whenever a category is created, edited or
+ * removed, so the specific regex above always lists the current slugs.
+ */
+function ukiyo_flush_rewrites_on_category_change() {
+    flush_rewrite_rules( false );
+}
+add_action( 'created_category', 'ukiyo_flush_rewrites_on_category_change' );
+add_action( 'edited_category',  'ukiyo_flush_rewrites_on_category_change' );
+add_action( 'delete_category',  'ukiyo_flush_rewrites_on_category_change' );
 
 /**
  * Returns the best canonical URL available for the current request.
@@ -375,6 +600,10 @@ function ukiyo_get_canonical_url() {
     }
 
     if ( is_front_page() ) {
+        if ( function_exists( 'pll_home_url' ) ) {
+            return pll_home_url();
+        }
+
         return home_url( '/' );
     }
 
@@ -426,7 +655,7 @@ function ukiyo_get_seo_image_url() {
         }
     }
 
-    return get_template_directory_uri() . '/images/heroimages/viajes-personalizados-ukiyo-costaricatucan.jpg';
+    return get_template_directory_uri() . '/images/heroimages/viajes-personalizados-ukiyo-costaricatucan.webp';
 }
 
 /**
@@ -459,7 +688,7 @@ function ukiyo_get_seo_image_data() {
     }
 
     return [
-        'url'    => get_template_directory_uri() . '/images/heroimages/viajes-personalizados-ukiyo-costaricatucan.jpg',
+        'url'    => get_template_directory_uri() . '/images/heroimages/viajes-personalizados-ukiyo-costaricatucan.webp',
         'width'  => 0,
         'height' => 0,
         'type'   => 'image/jpeg',
@@ -627,155 +856,38 @@ function ukiyo_output_head_meta() {
 add_action( 'wp_head', 'ukiyo_output_head_meta', 5 );
 
 /**
- * Completes social metadata generated by SEO plugins when they omit images or
- * classify archive pages as articles.
+ * Outputs the x-default hreflang link.
+ *
+ * Polylang already emits per-language <link rel="alternate" hreflang>, but it
+ * doesn't include x-default. We add only that one to avoid duplicates while
+ * still telling Google the Spanish version is the fallback for unmatched
+ * locales.
+ */
+function ukiyo_output_hreflang_tags() {
+    if ( ! function_exists( 'pll_home_url' ) ) {
+        return;
+    }
+
+    $default_slug = defined( 'PLL_DEFAULT_LANG' ) ? PLL_DEFAULT_LANG : 'es';
+    $default_url  = pll_home_url( $default_slug );
+
+    if ( ! $default_url ) {
+        return;
+    }
+
+    printf(
+        '<link rel="alternate" hreflang="x-default" href="%s">' . "\n",
+        esc_url( $default_url )
+    );
+}
+add_action( 'wp_head', 'ukiyo_output_hreflang_tags', 6 );
+
+/**
+ * Returns the Open Graph type used by the theme fallback SEO layer.
  */
 function ukiyo_get_social_og_type() {
     return ( is_singular( 'post' ) || is_singular( 'viaje_autor' ) ) ? 'article' : 'website';
 }
-
-function ukiyo_filter_plugin_og_type( $type ) {
-    $og_data = ukiyo_get_og_data();
-
-    return ! empty( $og_data['type'] ) ? $og_data['type'] : $type;
-}
-add_filter( 'wpseo_opengraph_type', 'ukiyo_filter_plugin_og_type', 20 );
-add_filter( 'rank_math/opengraph/facebook/og_type', 'ukiyo_filter_plugin_og_type', 20 );
-
-/**
- * Fills the standard meta description when an SEO plugin is active but its
- * field is empty. This avoids duplicate tags while keeping our centralized
- * fallback chain for posts, destination pages, blog and taxonomy archives.
- */
-function ukiyo_filter_plugin_meta_description( $description ) {
-    $generated = ukiyo_get_meta_description();
-
-    return $generated ?: $description;
-}
-add_filter( 'wpseo_metadesc', 'ukiyo_filter_plugin_meta_description', 20 );
-add_filter( 'rank_math/frontend/description', 'ukiyo_filter_plugin_meta_description', 20 );
-add_filter( 'aioseo_description', 'ukiyo_filter_plugin_meta_description', 20 );
-
-function ukiyo_filter_plugin_social_title( $title ) {
-    $og_data = ukiyo_get_og_data();
-    $generated = ! empty( $og_data['title'] ) ? $og_data['title'] : '';
-
-    return $generated ?: $title;
-}
-add_filter( 'wpseo_opengraph_title', 'ukiyo_filter_plugin_social_title', 20 );
-add_filter( 'wpseo_twitter_title', 'ukiyo_filter_plugin_social_title', 20 );
-add_filter( 'rank_math/opengraph/facebook/title', 'ukiyo_filter_plugin_social_title', 20 );
-add_filter( 'rank_math/opengraph/twitter/title', 'ukiyo_filter_plugin_social_title', 20 );
-
-function ukiyo_filter_plugin_social_description( $description ) {
-    $og_data = ukiyo_get_og_data();
-    $generated = ! empty( $og_data['description'] ) ? $og_data['description'] : '';
-
-    return $generated ?: $description;
-}
-add_filter( 'wpseo_opengraph_desc', 'ukiyo_filter_plugin_social_description', 20 );
-add_filter( 'wpseo_twitter_description', 'ukiyo_filter_plugin_social_description', 20 );
-add_filter( 'rank_math/opengraph/facebook/description', 'ukiyo_filter_plugin_social_description', 20 );
-add_filter( 'rank_math/opengraph/twitter/description', 'ukiyo_filter_plugin_social_description', 20 );
-
-function ukiyo_filter_plugin_social_image( $image ) {
-    $og_data = ukiyo_get_og_data();
-
-    return ! empty( $og_data['image'] ) ? $og_data['image'] : $image;
-}
-add_filter( 'wpseo_opengraph_image', 'ukiyo_filter_plugin_social_image', 20 );
-add_filter( 'wpseo_twitter_image', 'ukiyo_filter_plugin_social_image', 20 );
-add_filter( 'rank_math/opengraph/facebook/image', 'ukiyo_filter_plugin_social_image', 20 );
-add_filter( 'rank_math/opengraph/twitter/image', 'ukiyo_filter_plugin_social_image', 20 );
-
-function ukiyo_filter_plugin_social_url( $url ) {
-    $og_data = ukiyo_get_og_data();
-    $canonical = ! empty( $og_data['url'] ) ? $og_data['url'] : '';
-
-    return $canonical ?: $url;
-}
-add_filter( 'wpseo_opengraph_url', 'ukiyo_filter_plugin_social_url', 20 );
-add_filter( 'rank_math/opengraph/facebook/og_url', 'ukiyo_filter_plugin_social_url', 20 );
-
-function ukiyo_filter_plugin_social_site_name( $site_name ) {
-    $og_data = ukiyo_get_og_data();
-
-    return ! empty( $og_data['site_name'] ) ? $og_data['site_name'] : $site_name;
-}
-add_filter( 'wpseo_opengraph_site_name', 'ukiyo_filter_plugin_social_site_name', 20 );
-add_filter( 'rank_math/opengraph/facebook/og_site_name', 'ukiyo_filter_plugin_social_site_name', 20 );
-
-/**
- * Disables plugin-rendered JSON-LD when the theme outputs the canonical graph.
- *
- * Metadata can still be handled by Yoast/RankMath/AIOSEO. We only take over
- * structured data to keep one strong TravelAgency entity and avoid duplicates.
- */
-add_filter( 'wpseo_json_ld_output', '__return_false', 99 );
-add_filter( 'rank_math/json_ld', '__return_empty_array', 99 );
-add_filter( 'aioseo_schema_disable', '__return_true', 99 );
-
-/**
- * Prevents redirected legacy/CPT archive URLs from being listed in XML sitemaps.
- *
- * The viaje_autor archive used to live at /viajes/, but that public URL now
- * redirects to the curated /viajes-de-autor/ landing. Sitemaps must only expose
- * final 200 URLs, so the post type archive is excluded while individual
- * viaje_autor posts remain indexable under /viajes/{slug}/.
- */
-function ukiyo_exclude_redirected_post_type_archives_from_sitemap( $archive_link, $post_type = '' ) {
-    if ( 'viaje_autor' !== $post_type ) {
-        return $archive_link;
-    }
-
-    return false;
-}
-add_filter( 'wpseo_sitemap_post_type_archive_link', 'ukiyo_exclude_redirected_post_type_archives_from_sitemap', 20, 2 );
-add_filter( 'rank_math/sitemap/post_type_archive_link', 'ukiyo_exclude_redirected_post_type_archives_from_sitemap', 20, 2 );
-
-function ukiyo_should_exclude_sitemap_loc( $loc ) {
-    if ( ! $loc ) {
-        return false;
-    }
-
-    $path = trim( (string) wp_parse_url( $loc, PHP_URL_PATH ), '/' );
-
-    return in_array(
-        $path,
-        [
-            'viajes',
-            'category/consejos',
-        ],
-        true
-    );
-}
-
-function ukiyo_filter_non_indexable_sitemap_entry( $url, $type = '', $object = null ) {
-    $loc = '';
-
-    if ( is_array( $url ) && ! empty( $url['loc'] ) ) {
-        $loc = (string) $url['loc'];
-    } elseif ( is_string( $url ) ) {
-        $loc = $url;
-    }
-
-    if ( ukiyo_should_exclude_sitemap_loc( $loc ) ) {
-        return false;
-    }
-
-    return $url;
-}
-add_filter( 'wpseo_sitemap_entry', 'ukiyo_filter_non_indexable_sitemap_entry', 20, 3 );
-add_filter( 'rank_math/sitemap/entry', 'ukiyo_filter_non_indexable_sitemap_entry', 20, 3 );
-
-function ukiyo_exclude_noindex_terms_from_sitemap( $exclude, $term = null ) {
-    if ( $term instanceof WP_Term && 'category' === $term->taxonomy && 'consejos' === $term->slug ) {
-        return true;
-    }
-
-    return $exclude;
-}
-add_filter( 'rank_math/sitemap/exclude_term', 'ukiyo_exclude_noindex_terms_from_sitemap', 20, 2 );
 
 /**
  * Returns a stable JSON-LD node id.
@@ -815,7 +927,7 @@ function ukiyo_get_schema_destination_map() {
             'name'        => 'Indonesia',
             'country'     => 'Indonesia',
             'url'         => ukiyo_get_route_url( 'destination_indonesia' ),
-            'image'       => $theme_uri . '/images/destination-mood/viajes-a-medida-ukiyo-aventurero-bali.jpg',
+            'image'       => $theme_uri . '/images/destination-mood/viajes-a-medida-ukiyo-aventurero-bali.webp',
             'description' => 'Indonesia como destino de viaje a medida: Bali, Java, Komodo, templos, arrozales, volcanes, cultura local e islas con rutas diseñadas sin prisas.',
         ],
         'destination_costa_rica' => [
@@ -823,7 +935,7 @@ function ukiyo_get_schema_destination_map() {
             'name'        => 'Costa Rica',
             'country'     => 'Costa Rica',
             'url'         => ukiyo_get_route_url( 'destination_costa_rica' ),
-            'image'       => $theme_uri . '/images/costarica/viajes-costa-rica-hero.jpg',
+            'image'       => $theme_uri . '/images/costarica/viajes-costa-rica-hero.webp',
             'description' => 'Costa Rica como destino de naturaleza a medida: volcanes, bosque nuboso, selva, fauna, playas salvajes y rutas equilibradas entre Caribe y Pacífico.',
         ],
         'destination_colombia' => [
@@ -831,7 +943,7 @@ function ukiyo_get_schema_destination_map() {
             'name'        => 'Colombia',
             'country'     => 'Colombia',
             'url'         => ukiyo_get_route_url( 'destination_colombia' ),
-            'image'       => $theme_uri . '/images/colombia/viajes-colombia-hero.jpg',
+            'image'       => $theme_uri . '/images/colombia/viajes-colombia-hero.webp',
             'description' => 'Colombia como destino de viaje personalizado: Caribe, Andes, Eje Cafetero, cultura local, pueblos coloniales y naturaleza con logística cuidada.',
         ],
         'destination_marruecos' => [
@@ -839,7 +951,7 @@ function ukiyo_get_schema_destination_map() {
             'name'        => 'Marruecos',
             'country'     => 'Marruecos',
             'url'         => ukiyo_get_route_url( 'destination_marruecos' ),
-            'image'       => $theme_uri . '/images/autores/moha/viajes-a-marruecos-personalizados-erg-chebbi-hero.jpg',
+            'image'       => $theme_uri . '/images/autores/moha/viajes-a-marruecos-personalizados-erg-chebbi-hero.webp',
             'description' => 'Marruecos como destino de viaje privado: Marrakech, medinas, Atlas, kasbahs, desierto del Sahara, pueblos bereberes y alojamientos con carácter.',
         ],
         'destination_italia' => [
@@ -847,7 +959,7 @@ function ukiyo_get_schema_destination_map() {
             'name'        => 'Italia',
             'country'     => 'Italia',
             'url'         => ukiyo_get_route_url( 'destination_italia' ),
-            'image'       => $theme_uri . '/images/italia/viajes-a-italia-personalizados-toscana.jpg',
+            'image'       => $theme_uri . '/images/italia/viajes-a-italia-personalizados-toscana.webp',
             'description' => 'Italia como destino de viaje a medida: Roma, Toscana, Florencia, Venecia, costa, gastronomía, pueblos con alma y rutas diseñadas con criterio.',
         ],
         'destination_lanzarote' => [
@@ -857,6 +969,22 @@ function ukiyo_get_schema_destination_map() {
             'url'         => ukiyo_get_route_url( 'destination_lanzarote' ),
             'image'       => $theme_uri . '/images/spain/lanzarote/vista-aerea-lanzarote.webp',
             'description' => 'Lanzarote como destino de viaje a medida en España: volcanes, playas atlánticas, arte de César Manrique, vino, pueblos blancos y calma insular.',
+        ],
+        'destination_marrakech' => [
+            'template'    => 'page-marrakech.php',
+            'name'        => 'Marrakech',
+            'country'     => 'Marruecos',
+            'url'         => ukiyo_get_route_url( 'destination_marrakech' ),
+            'image'       => $theme_uri . '/images/marruecos/viajes-personalizados-ukiyo-marruecos-marrakech.webp',
+            'description' => 'Marrakech como base del viaje a medida a Marruecos: medina viva, riads con patio, rutas al Atlas, Esauira y el desierto del Sahara.',
+        ],
+        'destination_bali' => [
+            'template'    => 'page-bali.php',
+            'name'        => 'Bali',
+            'country'     => 'Indonesia',
+            'url'         => ukiyo_get_route_url( 'destination_bali' ),
+            'image'       => $theme_uri . '/images/indonesia/bali/viajes-a-indonesia-bali-13.webp',
+            'description' => 'Bali como destino de viaje a medida en Indonesia: arrozales de Ubud, templos hindúes, norte sin masificación y rutas con guías locales.',
         ],
     ];
 }
@@ -1163,6 +1291,10 @@ function ukiyo_get_base_schema_graph() {
  * Prints the JSON-LD graph in the document head.
  */
 function ukiyo_output_schema_graph() {
+    if ( ukiyo_has_active_seo_plugin() ) {
+        return;
+    }
+
     $graph = array_values( array_filter( ukiyo_get_base_schema_graph() ) );
 
     if ( empty( $graph ) ) {
