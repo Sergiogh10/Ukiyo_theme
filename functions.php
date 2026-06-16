@@ -13,10 +13,19 @@ require_once __DIR__ . '/inc/meta-posts.php';
 require_once __DIR__ . '/inc/post-content.php';
 require_once __DIR__ . '/inc/icons.php';
 require_once __DIR__ . '/inc/routes.php';
+require_once __DIR__ . '/inc/service-pages.php';
 require_once __DIR__ . '/inc/portal/bootstrap.php';
 require_once __DIR__ . '/inc/seo.php';
+require_once __DIR__ . '/inc/seo-rankmath.php';
 require_once __DIR__ . '/inc/seo-helpers.php';
+require_once __DIR__ . '/inc/i18n-en.php';
 require_once __DIR__ . '/inc/performance.php';
+require_once __DIR__ . '/inc/shortcodes/loader.php';
+require_once __DIR__ . '/inc/destination-template-v2.php';
+
+if ( defined( 'WP_CLI' ) && WP_CLI ) {
+    require_once __DIR__ . '/inc/cli/creator-command.php';
+}
 
 /**
  * Remitente global de emails del sitio.
@@ -115,27 +124,6 @@ add_action(
 function ukiyo_should_noindex_generic_category() {
     return is_category( 'consejos' );
 }
-
-add_filter(
-    'wpseo_robots',
-    function ( $robots ) {
-        return ukiyo_should_noindex_generic_category() ? 'noindex, follow' : $robots;
-    },
-    20
-);
-
-add_filter(
-    'rank_math/frontend/robots',
-    function ( $robots ) {
-        if ( ukiyo_should_noindex_generic_category() ) {
-            $robots['index']  = 'noindex';
-            $robots['follow'] = 'follow';
-        }
-
-        return $robots;
-    },
-    20
-);
 
 add_action(
     'wp_head',

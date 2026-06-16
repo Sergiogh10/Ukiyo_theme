@@ -11,11 +11,11 @@ $uri = get_template_directory_uri();
 <section class="relative">
   <div class="relative h-[60vh] lg:h-[70vh] overflow-hidden">
     <img 
-      src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-rutadesierto.jpg"
+      src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-rutadesierto.webp"
       alt="Dunas de Erg Chebbi en Merzouga durante un viaje al desierto de Marruecos"
       class="w-full h-full object-cover object-bottom mask-image"
       loading="lazy"
-      onerror="this.src='https://images.pexels.com/photos/3889843/pexels-photo-3889843.jpeg'; this.onerror=null;"
+      onerror="this.src='https://images.pexels.com/photos/3889843/pexels-photo-3889843.webp'; this.onerror=null;"
     />
 
     <!-- Content Overlay -->
@@ -226,7 +226,7 @@ $uri = get_template_directory_uri();
             </div>
             <figure class="experienceSplit-media">
               <img
-                src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-ait.jpg"
+                src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-ait.webp"
                 alt="Kasbah de Ait Ben Haddou" />
             </figure>
           </div>
@@ -273,7 +273,7 @@ $uri = get_template_directory_uri();
             </div>
             <figure class="experienceSplit-media">
               <img
-                src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-valle.jpg"
+                src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-valle.webp"
                 alt="Dunas de Merzouga al atardecer" />
             </figure>
           </div>
@@ -320,7 +320,7 @@ $uri = get_template_directory_uri();
             </div>
             <figure class="experienceSplit-media">
               <img
-                src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-desierto-noche.jpg"
+                src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-desierto-noche.webp"
                 alt="Música Gnawa y vida nómada" />
             </figure>
           </div>
@@ -366,7 +366,7 @@ $uri = get_template_directory_uri();
             </div>
             <figure class="experienceSplit-media">
               <img
-                src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-ruta.jpg"
+                src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-ruta.webp"
                 alt="Gargantas del Todra" />
             </figure>
           </div>
@@ -782,9 +782,9 @@ $uri = get_template_directory_uri();
   <section class="py-20 bg-background">
     <div class="container mx-auto px-6 md:px-8 pb-12 md:pb-16">
       <div class="grid gap-4 md:grid-cols-3">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-marrakech.jpg" alt="Luis Acuña durante el viaje de autor al Pantanal" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-mercado.jpg" alt="Amanecer en el río durante un viaje de autor al Pantanal con Ukiyo" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-desierto-noche.jpg" alt="Aves del Pantanal en un viaje de autor con guía experto" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-marrakech.webp" alt="Luis Acuña durante el viaje de autor al Pantanal" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-mercado.webp" alt="Amanecer en el río durante un viaje de autor al Pantanal con Ukiyo" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-desierto-noche.webp" alt="Aves del Pantanal en un viaje de autor con guía experto" class="rounded-xl ring-1 ring-border/50 object-cover w-full h-64" loading="lazy">
       </div>
     </div>
   </section>
@@ -817,12 +817,7 @@ $uri = get_template_directory_uri();
 
 
 
-<?php
-if ( function_exists( 'ukiyo_render_viaje_autor_blog_resources_section' ) ) {
-    ukiyo_render_viaje_autor_blog_resources_section( get_the_ID(), 'bg-white' );
-}
-get_footer();
-?>
+<?php get_footer(); ?>
 
 <script>
 document.addEventListener('click', (e) => {

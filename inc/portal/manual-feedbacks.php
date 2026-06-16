@@ -28,7 +28,7 @@ function ukiyo_portal_get_manual_feedback_trips() {
                     'Francisco Javier Gomez Espinosa',
                 ]
             ),
-            'hero_image_url' => get_template_directory_uri() . '/images/destination-mood/viajes-personalizados-ukiyo-portada.jpg',
+            'hero_image_url' => get_template_directory_uri() . '/images/destination-mood/viajes-personalizados-ukiyo-portada.webp',
             'itinerary'      => [
                 [
                     'place'      => 'Puerto Viejo',

@@ -1,609 +1,542 @@
 <?php
 /**
- * The template for displaying all single posts
+ * Template: Single Post (Blog · Artículo).
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ * Implementación del export "Articulo-Bali.html" de Claude Design.
+ *
+ * Decisiones:
+ *   - Header/footer del tema (get_header / get_footer). Nav y footer del export omitidos.
+ *   - CSS scoped a .ukiyo-article para no contaminar otras plantillas.
+ *   - TOC sticky generado server-side por ukiyo_prepare_post_content() (ya existe).
+ *   - Intro highlight tira de ukiyo_get_post_intro() (meta ukiyo_intro o excerpt).
+ *   - Imágenes inline del post: editor de WordPress + media library.
+ *   - Featured image del post = hero del artículo.
+ *   - Related articles desde meta ukiyo_related_posts (existente), con fallback a misma categoría.
+ *   - Prev/next nav usa thumbnails del post anterior/siguiente.
+ *
+ * Shortcodes editoriales (registrados en inc/shortcodes/loader.php):
+ *   [ukiyo_callout], [ukiyo_h2], [ukiyo_seasons]/[ukiyo_season],
+ *   [ukiyo_quote], [ukiyo_trip_card]
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 get_header();
 
-while ( have_posts() ) :
-	the_post();
+if ( ! have_posts() ) {
+	get_footer();
+	return;
+}
 
-    // GET FIELDS
-    $feat_img_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
-	$author_id    = get_the_author_meta( 'ID' );
-    $author_name  = get_the_author();
-    $author_avatar = get_avatar_url( $author_id );
-    $date         = get_the_date( 'd \d\e F, Y' ); // "12 de Octubre, 2023" format
-    $intro_text   = ukiyo_get_post_intro( get_the_ID() );
-    
-    // Calculate Read Time
-    $content = get_post_field( 'post_content', get_the_ID() );
-    $word_count = str_word_count( strip_tags( $content ) );
-    $reading_time = ceil( $word_count / 200 ); // avg 200 words per minute
+the_post();
 
-    // Category
-    $cats = get_the_category();
-    $cat_name = !empty($cats) ? $cats[0]->name : 'Blog';
+$post_id         = get_the_ID();
+$category        = get_the_category();
+$primary_cat     = ! empty( $category ) ? $category[0] : null;
+$cat_label       = $primary_cat ? $primary_cat->name : '';
+$tags            = get_the_tags();
+$author_id       = (int) get_post_field( 'post_author', $post_id );
+$author_name     = get_the_author_meta( 'display_name', $author_id );
+$author_bio      = get_the_author_meta( 'description', $author_id );
+$reading_time    = function_exists( 'ukiyo_get_post_reading_time' ) ? ukiyo_get_post_reading_time( $post_id ) : 5;
+$intro           = function_exists( 'ukiyo_get_post_intro' ) ? ukiyo_get_post_intro( $post_id ) : '';
+$hero_image      = get_the_post_thumbnail_url( $post_id, 'full' );
+$blog_home_url   = function_exists( 'ukiyo_get_route_url' ) ? ukiyo_get_route_url( 'blog' ) : home_url( '/' );
+$about_url       = function_exists( 'ukiyo_get_route_url' ) ? ukiyo_get_route_url( 'about' ) : home_url( '/' );
 
-    // NEXT / PREV
-    $prev_post = get_previous_post();
-    $next_post = get_next_post();
+// Preparo el contenido con IDs estables en h2/h3 y obtengo el TOC.
+$prepared = function_exists( 'ukiyo_prepare_post_content' )
+	? ukiyo_prepare_post_content( apply_filters( 'the_content', get_the_content() ) )
+	: [ 'content' => apply_filters( 'the_content', get_the_content() ), 'toc' => [] ];
+
+$content_html = $prepared['content'];
+$toc          = array_values( array_filter( $prepared['toc'], static function ( $item ) {
+	return isset( $item['level'] ) && 'h2' === $item['level'];
+} ) );
+
+$related_trip_id   = (int) get_post_meta( $post_id, 'ukiyo_related_trip_id', true );
+$related_trip_link = $related_trip_id ? get_permalink( $related_trip_id ) : '';
+
+$related_posts_ids = get_post_meta( $post_id, 'ukiyo_related_posts', true );
+$related_posts_ids = is_array( $related_posts_ids ) ? array_map( 'intval', $related_posts_ids ) : [];
+$related_posts_ids = array_filter( $related_posts_ids, static function ( $id ) use ( $post_id ) {
+	return $id && $id !== $post_id;
+} );
+
+if ( count( $related_posts_ids ) < 2 && $primary_cat ) {
+	$fallback = get_posts(
+		[
+			'post_type'      => 'post',
+			'posts_per_page' => 4,
+			'post__not_in'   => array_merge( [ $post_id ], $related_posts_ids ),
+			'category__in'   => [ $primary_cat->term_id ],
+			'fields'         => 'ids',
+			'orderby'        => 'date',
+			'order'          => 'DESC',
+		]
+	);
+	$related_posts_ids = array_merge( $related_posts_ids, $fallback );
+}
+$related_posts_ids = array_slice( array_unique( $related_posts_ids ), 0, 2 );
+
+$prev_post = get_previous_post();
+$next_post = get_next_post();
 ?>
 
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-<script>
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          primary: "#A0522D", // Terracotta-like accent
-          secondary: "#1B4D3E", // Deep forest green
-          "background-light": "#F9F8F6", // Off-white
-          "background-dark": "#1a202c", // Dark gray/slate
-          "surface-light": "#FFFFFF",
-          "surface-dark": "#2D3748",
-        },
-        fontFamily: {
-          display: ["'Rowdies'", "sans-serif"],
-          sans: ["'Satoshi'", "sans-serif"],
-          rowdies: ["'Rowdies'", "sans-serif"],
-        },
-        borderRadius: {
-          DEFAULT: "0.5rem",
-          xl: "1rem",
-          '2xl': "1.5rem",
-        },
-      },
-    },
-  };
-</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap">
+
 <style>
-  .hero-gradient {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
+  .ukiyo-article{
+    --primary:#8B4513; --primary-50:#FDF7F3; --primary-100:#F9E8D9; --primary-300:#E8B48D; --primary-700:#6B3410;
+    --secondary:#9CAF88; --secondary-700:#5E6952;
+    --accent:#D4A574; --accent-300:#EBD2AE; --accent-50:#FDF9F4;
+    --bg:#FEFCF8; --surface:#F5F2ED; --paper:#F8F2E7;
+    --ink:#2C2C2C; --ink-soft:#6B6B6B; --line:#E8E0D2;
+    --font-sans:'Satoshi','Inter',system-ui,sans-serif;
+    --font-display:'Rowdies',serif;
+    --font-mono:'DM Mono',ui-monospace,monospace;
+    --maxw:1240px;
+    --radius:18px;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--font-sans);
+    font-weight:400;
+    font-size:17px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
   }
-  .text-shadow {
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  .ukiyo-article *{box-sizing:border-box}
+  .ukiyo-article img{max-width:100%;display:block}
+  .ukiyo-article a{color:inherit;text-decoration:none}
+  .ukiyo-article h1,
+  .ukiyo-article h2,
+  .ukiyo-article h3,
+  .ukiyo-article h4{font-family:var(--font-display);font-weight:400;letter-spacing:-0.01em;line-height:1.15;margin:0}
+  .ukiyo-article .container{max-width:var(--maxw);margin:0 auto;padding:0 1.75rem}
+
+  /* HERO */
+  .ukiyo-article .hero{position:relative;min-height:88vh;display:flex;align-items:center;color:#fff;overflow:hidden;padding:7rem 0 9rem}
+  .ukiyo-article .hero__bg{position:absolute;inset:0;z-index:0}
+  .ukiyo-article .hero__bg img{width:100%;height:100%;object-fit:cover}
+  .ukiyo-article .hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.4) 50%, rgba(0,0,0,.75) 100%)}
+  .ukiyo-article .hero__inner{position:relative;z-index:1;width:100%;text-align:center}
+  .ukiyo-article .breadcrumbs{display:flex;gap:.5rem;font-size:.85rem;opacity:.85;justify-content:center;margin-bottom:1.4rem;letter-spacing:.02em;flex-wrap:wrap}
+  .ukiyo-article .breadcrumbs span{opacity:.6}
+  .ukiyo-article .breadcrumbs a:hover{opacity:1;text-decoration:underline}
+  .ukiyo-article .hero__cat{display:inline-block;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent-300);margin-bottom:1.1rem;font-weight:500}
+  .ukiyo-article .hero__title{font-size:clamp(2.6rem, 5.6vw, 4.6rem);font-weight:300;letter-spacing:-0.025em;line-height:1.05;margin:0 auto;max-width:24ch;text-shadow:0 2px 24px rgba(0,0,0,.4)}
+  .ukiyo-article .hero__title em{font-style:italic;color:var(--accent-300);font-weight:400}
+
+  /* METABAR */
+  .ukiyo-article .metabar-wrap{position:relative;margin-top:-3rem;z-index:5}
+  .ukiyo-article .metabar{
+    background:#fff;border-radius:24px;
+    box-shadow:0 30px 80px -30px rgba(20,28,18,.32),0 0 0 1px var(--line);
+    padding:1.6rem 2rem;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;
+    max-width:1080px;margin-left:auto;margin-right:auto;
   }
-  body.single-post #site-logo {
-    height: 1.75rem !important;
-    max-height: 1.75rem;
+  .ukiyo-article .metabar__cell{display:flex;align-items:center;gap:.9rem;padding:0 .5rem;position:relative}
+  .ukiyo-article .metabar__cell+.metabar__cell::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:1px;height:42px;background:var(--line)}
+  .ukiyo-article .metabar__icon{width:44px;height:44px;border-radius:50%;background:var(--primary-50);color:var(--primary);display:grid;place-items:center;flex-shrink:0}
+  .ukiyo-article .metabar__icon svg{width:20px;height:20px}
+  .ukiyo-article .metabar__txt h4{font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;color:var(--ink-soft);font-weight:700;font-family:var(--font-sans);margin-bottom:.18rem}
+  .ukiyo-article .metabar__txt p{font-family:var(--font-display);font-size:1.05rem;color:var(--ink);font-weight:300;letter-spacing:-0.01em;margin:0;line-height:1.2}
+  @media (max-width:880px){
+    .ukiyo-article .metabar-wrap{margin-top:-2rem}
+    .ukiyo-article .metabar{grid-template-columns:1fr 1fr;gap:1.4rem 1rem;padding:1.6rem 1.4rem}
+    .ukiyo-article .metabar__cell+.metabar__cell::before{display:none}
   }
-  @media (min-width: 768px) {
-    body.single-post #site-logo {
-      height: 2rem !important;
-      max-height: 2rem;
-    }
+
+  /* ARTICLE BODY + TOC */
+  .ukiyo-article .article{padding:4rem 0 5rem;background:var(--bg)}
+  .ukiyo-article .article__layout{display:grid;grid-template-columns:240px 1fr;gap:4rem;max-width:1080px;margin:0 auto}
+  .ukiyo-article .toc{position:sticky;top:6rem;align-self:start;font-size:.88rem;line-height:1.5}
+  .ukiyo-article .toc__label{display:inline-block;font-family:var(--font-mono);font-size:.7rem;color:var(--primary);letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:1.1rem;padding-bottom:.6rem;border-bottom:2px solid var(--primary-100);width:100%}
+  .ukiyo-article .toc ol{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.5rem;counter-reset:toc}
+  .ukiyo-article .toc li{counter-increment:toc;position:relative;padding-left:2rem}
+  .ukiyo-article .toc li::before{content:counter(toc, decimal-leading-zero);position:absolute;left:0;top:.1rem;font-family:var(--font-mono);font-size:.72rem;color:var(--ink-soft);font-weight:500;letter-spacing:.04em}
+  .ukiyo-article .toc a{color:var(--ink-soft);transition:color .25s, transform .25s;display:inline-block}
+  .ukiyo-article .toc a:hover,
+  .ukiyo-article .toc a.is-current{color:var(--primary);transform:translateX(2px)}
+  .ukiyo-article .toc__divider{height:1px;background:var(--line);margin:1.4rem 0}
+  .ukiyo-article .toc__cta{font-family:var(--font-mono);font-size:.74rem;color:var(--primary);letter-spacing:.14em;text-transform:uppercase;font-weight:700;display:inline-flex;align-items:center;gap:.4rem;transition:gap .25s}
+  .ukiyo-article .toc__cta:hover{gap:.6rem}
+  @media (max-width:980px){
+    .ukiyo-article .article__layout{grid-template-columns:1fr;gap:2rem}
+    .ukiyo-article .toc{position:relative;top:auto;background:var(--paper);padding:1.4rem 1.6rem;border-radius:14px;border:1px solid var(--line)}
+    .ukiyo-article .toc__divider{margin:1.2rem 0}
   }
-  @media (min-width: 1024px) {
-    body.single-post #site-logo {
-      height: 2.25rem !important;
-      max-height: 2.25rem;
-    }
+
+  .ukiyo-article .article__content{max-width:42rem;min-width:0}
+
+  /* Intro highlight + callout */
+  .ukiyo-article .intro,
+  .ukiyo-article .ukiyo-callout{
+    background:var(--paper);border:1px solid var(--line);border-radius:18px;
+    padding:1.8rem 2rem;margin-bottom:3rem;position:relative;
   }
-  .hero-responsive { height: 85vh; }
-  .blog-hero-title {
-    inline-size: min(980px, calc(100vw - 2rem));
-    max-inline-size: calc(100vw - 2rem);
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    line-height: 1.08;
-    overflow-wrap: normal;
-    word-break: normal;
-    hyphens: manual;
-    white-space: normal;
+  .ukiyo-article .intro::before,
+  .ukiyo-article .ukiyo-callout::before{content:"";position:absolute;left:0;top:1.6rem;bottom:1.6rem;width:3px;background:var(--primary);border-radius:0 4px 4px 0}
+  .ukiyo-article .ukiyo-callout--sage::before{background:var(--secondary-700)}
+  .ukiyo-article .ukiyo-callout--accent::before{background:var(--accent)}
+  .ukiyo-article .intro p,
+  .ukiyo-article .ukiyo-callout p{font-size:1.18rem;line-height:1.65;color:var(--ink);margin:0 0 .8rem;font-weight:400}
+  .ukiyo-article .intro p:last-child,
+  .ukiyo-article .ukiyo-callout p:last-child{margin-bottom:0}
+
+  /* Prose */
+  .ukiyo-article .prose h2{
+    font-family:var(--font-display);font-size:clamp(1.7rem,3vw,2.3rem);font-weight:400;letter-spacing:-0.015em;
+    margin:3rem 0 1.2rem;color:var(--ink);scroll-margin-top:5rem
   }
-  .blog-related-title,
-  .blog-related-excerpt {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  .ukiyo-article .prose h2:first-child{margin-top:0}
+  .ukiyo-article .prose h2 em{font-style:italic;color:var(--primary);font-weight:300}
+  .ukiyo-article .prose h2 .num{font-family:var(--font-mono);font-size:.78rem;color:var(--primary);letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:.5rem;font-weight:600}
+  .ukiyo-article .prose h3{font-family:var(--font-display);font-size:1.35rem;font-weight:400;margin:2.2rem 0 .8rem;color:var(--ink);letter-spacing:-0.01em}
+  .ukiyo-article .prose p{margin:0 0 1.25rem;color:var(--ink);font-size:1.05rem;line-height:1.75}
+  .ukiyo-article .prose p strong{color:var(--ink);font-weight:600}
+  .ukiyo-article .prose p a{color:var(--primary);border-bottom:1px solid var(--primary-300);transition:border-color .25s}
+  .ukiyo-article .prose p a:hover{border-color:var(--primary)}
+  .ukiyo-article .prose ul,
+  .ukiyo-article .prose ol{margin:0 0 1.5rem;padding:0 0 0 1.4rem}
+  .ukiyo-article .prose ul li,
+  .ukiyo-article .prose ol li{margin-bottom:.5rem;line-height:1.7}
+  .ukiyo-article .prose ul li::marker{color:var(--primary)}
+  .ukiyo-article .prose figure,
+  .ukiyo-article .prose .wp-caption{margin:2.4rem 0;border-radius:18px;overflow:hidden}
+  .ukiyo-article .prose figure img,
+  .ukiyo-article .prose .wp-caption img{width:100%;height:auto;display:block;border-radius:18px}
+  .ukiyo-article .prose figcaption,
+  .ukiyo-article .prose .wp-caption-text{font-family:var(--font-mono);font-size:.78rem;color:var(--ink-soft);text-align:center;letter-spacing:.04em;margin-top:.8rem}
+
+  /* Quote (shortcode) */
+  .ukiyo-article .ukiyo-quote{
+    border-left:0;margin:2.4rem 0;padding:1.6rem 2rem;background:var(--accent-50);border-radius:14px;position:relative;
+    font-family:var(--font-display);font-size:1.25rem;line-height:1.4;color:var(--ink);font-weight:300;font-style:italic;
   }
-  .blog-related-title {
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    min-height: 3.5rem;
+  .ukiyo-article .ukiyo-quote::before{content:"\201C";position:absolute;top:-.6rem;left:1.2rem;font-family:var(--font-display);font-size:4rem;color:var(--primary-300);line-height:1}
+  .ukiyo-article .ukiyo-quote cite{display:block;margin-top:.8rem;font-family:var(--font-mono);font-size:.74rem;color:var(--ink-soft);letter-spacing:.14em;text-transform:uppercase;font-style:normal;font-weight:600}
+  .ukiyo-article .ukiyo-quote cite::before{content:"\2014 "}
+
+  /* Seasons grid (shortcode) */
+  .ukiyo-article .ukiyo-seasons{
+    display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1.8rem 0 2.6rem;
+    background:linear-gradient(160deg, var(--accent-50) 0%, var(--paper) 100%);
+    padding:1.6rem 1.8rem;border:1px solid var(--line);border-radius:16px;
   }
-  .blog-related-excerpt {
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    min-height: 5.25rem;
+  .ukiyo-article .ukiyo-season__item{display:flex;flex-direction:column;gap:.18rem;padding:.4rem .6rem .4rem 1rem;border-left:2px solid var(--primary)}
+  .ukiyo-article .ukiyo-season__k{font-family:var(--font-mono);font-size:.66rem;color:var(--primary);letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+  .ukiyo-article .ukiyo-season__v{font-family:var(--font-display);font-size:1.1rem;color:var(--ink);font-weight:400;letter-spacing:-0.01em}
+  @media (max-width:600px){.ukiyo-article .ukiyo-seasons{grid-template-columns:1fr}}
+
+  /* Trip card embedded (shortcode) */
+  .ukiyo-article .ukiyo-trip-card{
+    background:#fff;border:1px solid var(--primary-100);border-radius:20px;overflow:hidden;
+    box-shadow:0 24px 50px -30px rgba(139,69,19,.3);
+    display:grid;grid-template-columns:200px 1fr;gap:1.5rem;padding:1.5rem;margin:2.6rem 0;position:relative;
   }
-  @media (min-width: 1024px) {
-    .hero-responsive { height: 85vh !important; }
+  .ukiyo-article .ukiyo-trip-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--primary)}
+  .ukiyo-article .ukiyo-trip-card__img{aspect-ratio:1;border-radius:14px;overflow:hidden}
+  .ukiyo-article .ukiyo-trip-card__img img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+  .ukiyo-article .ukiyo-trip-card:hover .ukiyo-trip-card__img img{transform:scale(1.06)}
+  .ukiyo-article .ukiyo-trip-card__body{display:flex;flex-direction:column;justify-content:space-between;padding:.3rem 0}
+  .ukiyo-article .ukiyo-trip-card__kicker{font-family:var(--font-mono);font-size:.7rem;color:var(--primary);letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:.5rem}
+  .ukiyo-article .ukiyo-trip-card h3{font-family:var(--font-display);font-size:1.45rem;font-weight:400;color:var(--ink);margin-bottom:.6rem;line-height:1.15;letter-spacing:-0.01em}
+  .ukiyo-article .ukiyo-trip-card p{font-size:.92rem;color:var(--ink-soft);line-height:1.5;margin:0 0 1rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .ukiyo-article .ukiyo-trip-card__foot{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+  .ukiyo-article .ukiyo-trip-card__price{font-family:var(--font-display);font-size:1.5rem;color:var(--ink);letter-spacing:-0.01em}
+  .ukiyo-article .ukiyo-trip-card__price small{font-size:.7rem;color:var(--ink-soft);font-family:var(--font-mono);letter-spacing:.14em;text-transform:uppercase;font-weight:600;display:block}
+  .ukiyo-article .ukiyo-trip-card__btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--ink);color:#fff;padding:.7rem 1.2rem;border-radius:999px;font-weight:600;font-size:.85rem;transition:all .25s}
+  .ukiyo-article .ukiyo-trip-card__btn:hover{background:var(--primary);transform:translateY(-2px);box-shadow:0 12px 24px -10px rgba(139,69,19,.4)}
+  @media (max-width:760px){
+    .ukiyo-article .ukiyo-trip-card{grid-template-columns:1fr;text-align:center}
+    .ukiyo-article .ukiyo-trip-card::before{height:4px;width:auto;left:0;right:0;top:0;bottom:auto}
+    .ukiyo-article .ukiyo-trip-card__img{aspect-ratio:16/10;max-height:200px}
+    .ukiyo-article .ukiyo-trip-card__foot{justify-content:center}
+  }
+
+  /* Tags + author box */
+  .ukiyo-article .tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:3rem;padding-top:2.4rem;border-top:1px solid var(--line)}
+  .ukiyo-article .tag{padding:.35rem .8rem;background:var(--surface);color:var(--ink-soft);font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;border-radius:999px;border:1px solid var(--line);transition:all .25s}
+  .ukiyo-article .tag:hover{background:var(--primary-50);color:var(--primary);border-color:var(--primary-300)}
+  .ukiyo-article .authorbox{
+    margin-top:3rem;background:var(--paper);border:1px solid var(--line);border-radius:20px;
+    padding:2rem;display:grid;grid-template-columns:auto 1fr;gap:1.6rem;align-items:center;
+  }
+  .ukiyo-article .authorbox__avatar{width:88px;height:88px;border-radius:50%;overflow:hidden;border:3px solid #fff;box-shadow:0 0 0 2px var(--accent-300), 0 12px 30px -10px rgba(44,44,44,.2)}
+  .ukiyo-article .authorbox__avatar img{width:100%;height:100%;object-fit:cover}
+  .ukiyo-article .authorbox h4{font-size:1.25rem;margin-bottom:.4rem;font-weight:400;letter-spacing:-0.01em}
+  .ukiyo-article .authorbox p{margin:0 0 .8rem;color:var(--ink-soft);font-size:.95rem;line-height:1.55}
+  .ukiyo-article .authorbox a.more{font-family:var(--font-mono);font-size:.74rem;color:var(--primary);letter-spacing:.14em;text-transform:uppercase;font-weight:700;display:inline-flex;align-items:center;gap:.35rem;transition:gap .25s}
+  .ukiyo-article .authorbox a.more:hover{gap:.55rem}
+  @media (max-width:600px){
+    .ukiyo-article .authorbox{grid-template-columns:1fr;text-align:center;padding:1.6rem}
+    .ukiyo-article .authorbox__avatar{margin:0 auto}
+  }
+
+  /* Related */
+  .ukiyo-article .related{padding:5rem 0;background:var(--surface);border-top:1px solid var(--line)}
+  .ukiyo-article .related__head{display:flex;align-items:center;gap:.85rem;margin-bottom:2.4rem;max-width:1080px;margin-left:auto;margin-right:auto}
+  .ukiyo-article .related__head::before{content:"";width:36px;height:1px;background:var(--primary)}
+  .ukiyo-article .related__head h2{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:300;letter-spacing:-0.015em}
+  .ukiyo-article .related__head h2 em{font-style:italic;color:var(--primary);font-weight:300}
+  .ukiyo-article .related__grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;max-width:1080px;margin:0 auto}
+  .ukiyo-article .rcard{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;cursor:pointer;transition:transform .45s, box-shadow .45s, border-color .45s;display:grid;grid-template-columns:200px 1fr}
+  .ukiyo-article .rcard:hover{transform:translateY(-4px);box-shadow:0 24px 50px -25px rgba(44,44,44,.22);border-color:var(--primary-100)}
+  .ukiyo-article .rcard__media{position:relative;overflow:hidden}
+  .ukiyo-article .rcard__media img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+  .ukiyo-article .rcard:hover .rcard__media img{transform:scale(1.08)}
+  .ukiyo-article .rcard__cat{position:absolute;top:.7rem;left:.7rem;background:rgba(255,255,255,.94);color:var(--primary);font-family:var(--font-mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;padding:.22rem .55rem;border-radius:5px;font-weight:700}
+  .ukiyo-article .rcard__body{padding:1.2rem 1.3rem;display:flex;flex-direction:column}
+  .ukiyo-article .rcard__title{font-family:var(--font-display);font-size:1.1rem;line-height:1.2;font-weight:400;margin-bottom:.5rem;color:var(--ink)}
+  .ukiyo-article .rcard__excerpt{font-size:.85rem;color:var(--ink-soft);line-height:1.5;margin:0 0 1rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .ukiyo-article .rcard__foot{margin-top:auto;padding-top:.7rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+  .ukiyo-article .rcard__date{font-family:var(--font-mono);font-size:.7rem;color:var(--ink-soft)}
+  .ukiyo-article .rcard__more{color:var(--primary);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-family:var(--font-mono)}
+  @media (max-width:760px){
+    .ukiyo-article .related__grid{grid-template-columns:1fr}
+    .ukiyo-article .rcard{grid-template-columns:1fr}
+    .ukiyo-article .rcard__media{aspect-ratio:16/10}
+  }
+
+  /* Prev / next nav */
+  .ukiyo-article .pnnav{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);background:#000;color:#fff}
+  .ukiyo-article .pnnav a{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;overflow:hidden;min-height:320px;transition:background .35s}
+  .ukiyo-article .pnnav a::before{content:"";position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s;z-index:0;background-image:var(--pnnav-img)}
+  .ukiyo-article .pnnav a::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.6);transition:background .35s;z-index:1}
+  .ukiyo-article .pnnav a:hover::after{background:rgba(0,0,0,.45)}
+  .ukiyo-article .pnnav a:hover::before{transform:scale(1.08)}
+  .ukiyo-article .pnnav a > *{position:relative;z-index:2}
+  .ukiyo-article .pnnav .label{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:1rem;font-weight:600}
+  .ukiyo-article .pnnav .label svg{width:14px;height:14px}
+  .ukiyo-article .pnnav h3{font-size:clamp(1.3rem,2.4vw,1.9rem);font-weight:400;letter-spacing:-0.01em;max-width:24rem;margin:0 auto;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+  .ukiyo-article .pnnav .next{border-left:1px solid rgba(255,255,255,.1)}
+  @media (max-width:760px){
+    .ukiyo-article .pnnav{grid-template-columns:1fr}
+    .ukiyo-article .pnnav a{min-height:240px;padding:3rem 1.5rem}
+    .ukiyo-article .pnnav .next{border-left:0;border-top:1px solid rgba(255,255,255,.1)}
   }
 </style>
 
-<!-- HEADER HERO (Marruecos Style) -->
-<header class="hero-responsive relative w-full overflow-hidden">
-    <img 
-        alt="<?php the_title_attribute(); ?>" 
-        class="absolute inset-0 w-full h-full object-cover" 
-        src="<?php echo esc_url($feat_img_url ? $feat_img_url : 'https://via.placeholder.com/1920x1080'); ?>"
-        loading="eager"
-        fetchpriority="high"
-        decoding="async"
-    />
-    <div class="absolute inset-0 hero-gradient flex flex-col items-center justify-center text-center px-4">
-        <?php
-        ukiyo_render_breadcrumbs([
-            'class'      => 'mb-6 justify-center text-white/80',
-            'link_class' => 'text-white/80 hover:text-white transition-colors',
-        ]);
-        ?>
-        <span class="text-white/80 uppercase tracking-[0.3em] text-sm mb-4 font-satoshi">
-            <?php echo esc_html($cat_name); ?>
-        </span>
-        <h1 class="blog-hero-title min-w-0 mx-auto font-rowdies text-white font-bold mb-2 text-shadow text-center px-4">
-            <?php
-            $hero_title = wp_strip_all_tags( get_the_title() );
-            $hero_title = str_replace( "\xc2\xa0", ' ', $hero_title );
-            $hero_title = preg_replace( '/([,:;])\s+/u', '$1<wbr> ', $hero_title );
-            echo wp_kses( $hero_title, [ 'wbr' => [] ] );
-            ?>
-        </h1>
-    </div>
-</header>
+<div class="ukiyo-article">
 
-<!-- FLOATING META BAR (Exact Marruecos Style) -->
-<div class="bg-white dark:bg-gray-900">
-<div class="relative -mt-16 container mx-auto px-4 z-20 mb-6">
-  <div class="bg-surface-light dark:bg-surface-dark shadow-xl rounded-2xl p-6 md:p-8 flex flex-wrap justify-between items-center gap-6 border border-gray-100 dark:border-gray-700">
-    
-    <!-- Date -->
-    <div class="flex items-center gap-4 flex-1 min-w-[200px]">
-      <div class="p-3 bg-primary/10 rounded-full text-primary">
-        <?php echo ukiyo_icon( 'calendar_month' ); ?>
+  <header class="hero">
+    <?php if ( $hero_image ) : ?>
+      <div class="hero__bg">
+        <img src="<?php echo esc_url( $hero_image ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" loading="eager" fetchpriority="high" decoding="async" />
       </div>
-      <div>
-        <h4 class="text-xs uppercase text-gray-500 dark:text-gray-400 font-bold tracking-wide">Publicado</h4>
-        <p class="font-satoshi text-lg text-gray-900 dark:text-white"><?php echo esc_html($date); ?></p>
+    <?php endif; ?>
+    <div class="container hero__inner">
+      <div class="breadcrumbs">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Inicio</a><span>/</span>
+        <a href="<?php echo esc_url( $blog_home_url ); ?>">Blog</a>
+        <?php if ( $cat_label ) : ?>
+          <span>/</span>
+          <a href="<?php echo esc_url( get_category_link( $primary_cat->term_id ) ); ?>"><?php echo esc_html( $cat_label ); ?></a>
+        <?php endif; ?>
       </div>
+      <?php if ( $cat_label ) : ?>
+        <span class="hero__cat"><?php echo esc_html( $cat_label ); ?></span>
+      <?php endif; ?>
+      <h1 class="hero__title"><?php echo wp_kses( get_the_title(), [ 'em' => [], 'strong' => [] ] ); ?></h1>
     </div>
-    
-    <div class="w-px h-12 bg-gray-200 dark:bg-gray-700 hidden md:block"></div>
-    
-    <!-- Author -->
-    <div class="flex items-center gap-4 flex-1 min-w-[200px]">
-      <div class="p-3 bg-primary/10 rounded-full text-primary">
-        <?php echo ukiyo_icon( 'person' ); ?>
-      </div>
-      <div>
-        <h4 class="text-xs uppercase text-gray-500 dark:text-gray-400 font-bold tracking-wide">Autor</h4>
-        <p class="font-satoshi text-lg text-gray-900 dark:text-white"><?php echo esc_html( $author_name ); ?></p>
-      </div>
-    </div>
+  </header>
 
-    <div class="w-px h-12 bg-gray-200 dark:bg-gray-700 hidden md:block"></div>
-
-    <!-- Category -->
-    <div class="flex items-center gap-4 flex-1 min-w-[200px]">
-      <div class="p-3 bg-primary/10 rounded-full text-primary">
-        <?php echo ukiyo_icon( 'label' ); ?>
-      </div>
-      <div>
-        <h4 class="text-xs uppercase text-gray-500 dark:text-gray-400 font-bold tracking-wide">Categoría</h4>
-        <p class="font-satoshi text-lg text-gray-900 dark:text-white"><?php echo esc_html($cat_name); ?></p>
+  <div class="metabar-wrap">
+    <div class="container">
+      <div class="metabar">
+        <div class="metabar__cell">
+          <div class="metabar__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          </div>
+          <div class="metabar__txt"><h4>Publicado</h4><p><?php echo esc_html( get_the_date( 'd \d\e F, Y' ) ); ?></p></div>
+        </div>
+        <div class="metabar__cell">
+          <div class="metabar__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+          </div>
+          <div class="metabar__txt"><h4>Autor</h4><p><?php echo esc_html( $author_name ); ?></p></div>
+        </div>
+        <?php if ( $cat_label ) : ?>
+        <div class="metabar__cell">
+          <div class="metabar__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41 13.41 20.6a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.5"/></svg>
+          </div>
+          <div class="metabar__txt"><h4>Categoría</h4><p><?php echo esc_html( $cat_label ); ?></p></div>
+        </div>
+        <?php endif; ?>
+        <div class="metabar__cell">
+          <div class="metabar__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div class="metabar__txt"><h4>Lectura</h4><p><?php echo esc_html( $reading_time ); ?> min</p></div>
+        </div>
       </div>
     </div>
-
-    <div class="w-px h-12 bg-gray-200 dark:bg-gray-700 hidden md:block"></div>
-    
-    <!-- Reading Time -->
-    <div class="flex items-center gap-4 flex-1 min-w-[200px]">
-      <div class="p-3 bg-primary/10 rounded-full text-primary">
-        <?php echo ukiyo_icon( 'thermostat' ); ?>
-      </div>
-      <div>
-        <h4 class="text-xs uppercase text-gray-500 dark:text-gray-400 font-bold tracking-wide">Lectura</h4>
-        <p class="font-satoshi text-lg text-gray-900 dark:text-white"><?php echo $reading_time; ?> min</p>
-      </div>
-    </div>
-    
   </div>
-</div>
 
-<main class="relative bg-white dark:bg-gray-900 pb-24">
-    <article class="max-w-4xl xl:max-w-5xl mx-auto px-4 sm:px-6">
+  <main class="article">
+    <div class="container article__layout">
 
-        <?php if ( $intro_text ) : ?>
-        <section class="mb-12 rounded-2xl bg-background-light dark:bg-gray-800 border border-gray-100 dark:border-gray-700 p-6 md:p-8">
-            <p class="text-lg md:text-xl leading-relaxed text-gray-700 dark:text-gray-200 font-satoshi">
-                <?php echo esc_html( $intro_text ); ?>
-            </p>
-        </section>
+      <aside class="toc" aria-label="Índice del artículo">
+        <span class="toc__label">En este artículo</span>
+        <?php if ( ! empty( $toc ) ) : ?>
+          <ol>
+            <?php foreach ( $toc as $item ) : ?>
+              <li><a href="#<?php echo esc_attr( $item['id'] ); ?>"><?php echo esc_html( $item['label'] ); ?></a></li>
+            <?php endforeach; ?>
+          </ol>
+        <?php endif; ?>
+        <?php if ( $related_trip_link ) : ?>
+          <div class="toc__divider"></div>
+          <a href="<?php echo esc_url( $related_trip_link ); ?>" class="toc__cta">
+            Ver viaje a medida
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        <?php endif; ?>
+      </aside>
+
+      <article class="article__content">
+
+        <?php if ( '' !== $intro ) : ?>
+          <section class="intro">
+            <p><?php echo wp_kses( $intro, [ 'strong' => [], 'em' => [], 'br' => [], 'a' => [ 'href' => [], 'rel' => [], 'target' => [] ] ] ); ?></p>
+          </section>
         <?php endif; ?>
 
-        <!-- MAIN CONTENT PROSE -->
-        <div class="prose prose-lg prose-stone dark:prose-invert prose-headings:font-rowdies prose-headings:font-bold prose-p:font-satoshi prose-p:leading-8 prose-img:rounded-xl max-w-none">
-            <?php 
-            // Logic to inject the Related Trip Card
-            $related_trip_id = get_post_meta( get_the_ID(), 'ukiyo_related_trip_id', true );
-            $content_html = apply_filters( 'the_content', get_the_content() );
-            $prepared_post_content = ukiyo_prepare_post_content( $content_html );
-            $content_html = $prepared_post_content['content'];
-            $toc_items = $prepared_post_content['toc'];
-
-            if ( $related_trip_id ) {
-                $trip = get_post( $related_trip_id );
-                if ( $trip && $trip->post_type === 'viaje_autor' ) {
-                    // Fetch Data
-                    $hero_url = get_post_meta( $trip->ID, 'hero_image', true );
-                    $thumb_url = get_the_post_thumbnail_url( $trip->ID, 'large' );
-                    $trip_img = $hero_url ? $hero_url : $thumb_url;
-                    
-                    // Smart Fallback if no image found
-                    if ( ! $trip_img ) {
-                        $trip_title_lower = strtolower( $trip->post_title );
-                        $theme_dir = get_template_directory_uri();
-                        
-                        if ( strpos( $trip_title_lower, 'marruecos' ) !== false ) {
-                            $trip_img = $theme_dir . '/images/autores/moha/viajes-a-marruecos-personalizados-erg-chebbi-hero.jpg';
-                        } elseif ( strpos( $trip_title_lower, 'costa rica' ) !== false ) {
-                            $trip_img = $theme_dir . '/images/costarica/viajes-costa-rica-hero.jpg';
-                        } elseif ( strpos( $trip_title_lower, 'colombia' ) !== false ) {
-                            $trip_img = $theme_dir . '/images/colombia/viajes-colombia-hero.jpg';
-                        } else {
-                            // Generic Fallback
-                            $trip_img = $theme_dir . '/images/destination-mood/viajes-a-medida-ukiyo-pareja-acantilado.jpg';
-                        }
-                    }
-
-                    $trip_price = get_post_meta( $trip->ID, 'precio_final', true );
-                    $trip_link  = get_permalink( $trip->ID );
-                    
-                    // Description Hierarchy: Hero Subtitle -> Excerpt -> Content
-                    $hero_subtitle = get_post_meta( $trip->ID, 'hero_subtitle', true );
-                    $trip_desc = $hero_subtitle ? $hero_subtitle : get_the_excerpt( $trip->ID );
-                    
-                    if ( ! $trip_desc ) {
-                         $trip_desc = wp_trim_words( strip_tags( $trip->post_content ), 20 );
-                    }
-
-                    // Build Card HTML
-                    $card_html = '
-                    <div class="not-prose my-12">
-                        <div class="bg-white dark:bg-gray-800 border border-primary/20 rounded-xl p-6 md:p-8 shadow-xl flex flex-col md:flex-row gap-6 items-center md:items-start relative overflow-hidden group">
-                            <div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
-                            <div class="flex-shrink-0 w-full md:w-48 h-48 rounded-lg overflow-hidden relative">
-                                <img alt="' . esc_attr($trip->post_title) . '" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="' . esc_url($trip_img) . '"/>
-                            </div>
-                            <div class="flex-1 text-center md:text-left">
-                                <span class="text-xs font-bold text-primary tracking-widest uppercase mb-2 block">Experiencia Ukiyo</span>
-                                <h3 class="font-rowdies text-2xl font-bold text-gray-900 dark:text-white mb-2 leading-tight">' . esc_html($trip->post_title) . '</h3>
-                                <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2 font-satoshi">' . esc_html($trip_desc) . '</p>
-                                <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mt-16">
-                                    <span class="text-lg font-display italic text-gray-900 dark:text-gray-100 font-satoshi">Precio <span class="text-2xl font-bold not-italic font-sans">' . esc_html($trip_price) . '</span></span>
-                                    <button onclick="window.location.href=\'' . esc_url($trip_link) . '\'" class="bg-gray-900 dark:bg-primary text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-primary dark:hover:bg-white dark:hover:text-primary transition-colors w-full sm:w-auto">
-                                        Ver Itinerario
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>';
-
-                    // Inject after 2nd paragraph
-                    $paragraphs = explode( '</p>', $content_html );
-                    if ( count( $paragraphs ) > 2 ) {
-                        // Append card to 2nd paragraph (index 1) which creates a gap before index 2
-                        // Actually, explode removes '</p>'. We need to re-add it.
-                        // Better approach:
-                        // $paragraphs[1] .= '</p>' . $card_html;
-                        // But implode will add '</p>' back.
-                        // So we insert a new array element? No, array elements are paragraphs content.
-                        // We can just append the card to the content of the 2nd paragraph, but outside the p tag?
-                        // "explode" separates by delimiter.
-                        // Input: <p>P1</p><p>P2</p><p>P3</p>
-                        // Explode: [ "<p>P1", "<p>P2", "<p>P3" ] (Assuming closing p)
-                        // Wait, simpler:
-                        // array_splice inserts an element. If we insert the card HTML as a separate element, when we implode with '</p>', it will be:
-                        // "<p>P1" . "</p>" . "<p>P2" . "</p>" . "CARD_HTML" . "</p>" . "<p>P3" ...
-                        // The CARD_HTML will be followed by a closing </p> which is wrong if CARD_HTML is a div.
-                        // Correct logic:
-                        // $paragraphs[1] .= $card_html;
-                        // Then implode adds </p> AFTER the card HTML? No.
-                        // The formatting is usually: <p>text</p> \n <p>text</p>
-                        
-                        // Robust logic:
-                        $closing_p = '</p>';
-                        $chunks = explode( $closing_p, $content_html, 3 );
-                        if ( count( $chunks ) > 2 ) {
-                            // chunks[0] is First P (without closing p)
-                            // chunks[1] is Second P (without closing p)
-                            // chunks[2] is Rest
-                            $content_html = $chunks[0] . $closing_p . $chunks[1] . $closing_p . $card_html . $chunks[2];
-                        } else {
-                            $content_html .= $card_html;
-                        }
-                    } else {
-                         $content_html .= $card_html;
-                    }
-                }
-            }
-
-            if ( ! empty( $toc_items ) && count( $toc_items ) >= 2 ) :
-            ?>
-            <aside class="not-prose mb-8">
-                <details class="group rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50/70 dark:bg-gray-800/50 px-4 py-3 text-sm shadow-sm">
-                    <summary class="flex cursor-pointer list-none items-center justify-between gap-3 font-satoshi text-xs font-bold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-300">
-                        <span>En este artículo</span>
-                        <?php echo ukiyo_icon( 'expand_more', 'text-base text-primary transition-transform group-open:rotate-180' ); ?>
-                    </summary>
-                    <ol class="mt-4 max-h-72 space-y-2 overflow-y-auto border-t border-gray-100 dark:border-gray-700 pt-4">
-                        <?php foreach ( $toc_items as $item ) : ?>
-                            <li class="<?php echo 'h3' === $item['level'] ? 'pl-4' : ''; ?>">
-                                <a
-                                    href="#<?php echo esc_attr( $item['id'] ); ?>"
-                                    class="block truncate font-satoshi text-sm text-gray-500 dark:text-gray-300 hover:text-primary transition-colors"
-                                >
-                                    <?php echo esc_html( $item['label'] ); ?>
-                                </a>
-                            </li>
-                        <?php endforeach; ?>
-                    </ol>
-                </details>
-            </aside>
-            <?php
-            endif;
-            
-            echo $content_html;
-            ?>
+        <div class="prose">
+          <?php echo $content_html; // ya pasó por apply_filters('the_content') + ukiyo_prepare_post_content() ?>
         </div>
 
-        <!-- TAGS -->
-        <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-wrap gap-2">
-            <?php
-            $tags = get_the_tags();
-            if ( $tags ) {
-                foreach( $tags as $tag ) {
-                    echo '<span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs uppercase tracking-wide font-bold text-gray-600 dark:text-gray-400 rounded-sm">' . esc_html($tag->name) . '</span>';
-                }
-            } else {
-                 echo '<span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs uppercase tracking-wide font-bold text-gray-600 dark:text-gray-400 rounded-sm">' . esc_html($cat_name) . '</span>';
-            }
-            ?>
-        </div>
-
-        <?php ukiyo_render_blog_destination_links( get_the_ID() ); ?>
-
-        <?php
-        $manual_related_posts = get_post_meta( get_the_ID(), 'ukiyo_related_posts', true );
-        $manual_related_posts = is_array( $manual_related_posts ) ? array_values( array_filter( array_map( 'intval', $manual_related_posts ) ) ) : [];
-
-        if ( ! empty( $manual_related_posts ) ) :
-            $related_posts_query = new WP_Query( [
-                'post_type'           => 'post',
-                'post_status'         => 'publish',
-                'post__in'            => $manual_related_posts,
-                'orderby'             => 'post__in',
-                'posts_per_page'      => count( $manual_related_posts ),
-                'ignore_sticky_posts' => true,
-            ] );
-
-            if ( $related_posts_query->have_posts() ) :
-        ?>
-        <section class="mt-16 pt-10 border-t border-gray-200 dark:border-gray-800">
-            <div class="flex items-center gap-3 mb-8">
-                <span class="w-8 h-px bg-primary"></span>
-                <h2 class="font-rowdies text-2xl md:text-3xl text-gray-900 dark:text-white">Artículos relacionados</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <?php while ( $related_posts_query->have_posts() ) : $related_posts_query->the_post(); ?>
-                    <?php
-                    $related_image = get_the_post_thumbnail_url( get_the_ID(), 'large' );
-                    $related_cats  = get_the_category();
-                    $related_cat   = ! empty( $related_cats ) ? $related_cats[0]->name : 'Blog';
-                    ?>
-                    <article class="group rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-800 shadow-sm hover:shadow-lg transition-all h-full">
-                        <a href="<?php the_permalink(); ?>" class="flex h-full flex-col">
-                            <div class="relative aspect-[4/3] overflow-hidden">
-                                <img
-                                    alt="<?php the_title_attribute(); ?>"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                    src="<?php echo esc_url( $related_image ? $related_image : 'https://via.placeholder.com/800x600' ); ?>"
-                                    loading="lazy"
-                                    decoding="async"
-                                />
-                                <div class="absolute top-4 left-4 bg-white/90 dark:bg-black/80 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary rounded-sm backdrop-blur-sm shadow-sm">
-                                    <?php echo esc_html( $related_cat ); ?>
-                                </div>
-                            </div>
-                            <div class="p-5 flex flex-1 flex-col">
-                                <h3 class="blog-related-title font-rowdies text-xl text-gray-900 dark:text-white mb-3 leading-tight group-hover:text-primary transition-colors">
-                                    <?php the_title(); ?>
-                                </h3>
-                                <p class="blog-related-excerpt text-sm text-gray-600 dark:text-gray-300 leading-relaxed font-satoshi">
-                                    <?php echo esc_html( wp_trim_words( get_the_excerpt(), 22 ) ); ?>
-                                </p>
-                                <div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
-                                    <span class="text-xs text-gray-400 font-satoshi"><?php echo esc_html( get_the_date( 'd M Y' ) ); ?></span>
-                                    <span class="text-primary text-xs font-bold uppercase tracking-wide flex items-center">
-                                        Seguir leyendo <?php echo ukiyo_icon( 'east', 'text-sm ml-1 transition-transform group-hover:translate-x-1' ); ?>
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                <?php endwhile; ?>
-            </div>
-        </section>
-        <?php
-            endif;
-            wp_reset_postdata();
-        endif;
-        ?>
-
-        <!-- COUNTRY DISCOVERY / AUTHOR BOX -->
-        <?php 
-        $related_country = get_post_meta( get_the_ID(), 'ukiyo_related_country', true );
-        
-        if ( $related_country ) :
-            // Definition of Country Data
-            $country_data = [
-                'costa-rica' => [
-                    'name' => 'Costa Rica',
-                    'url'  => ukiyo_get_route_url('destination_costa_rica'),
-                    'img'  => get_template_directory_uri() . '/images/costarica/viajes-costa-rica-hero.jpg',
-                    'anchor' => 'Viaje a medida a Costa Rica',
-                    'desc' => 'Adéntrate en el santuario de la biodiversidad. Volcanes, playas salvajes y selva virgen te esperan.',
-                ],
-                'marruecos' => [
-                    'name' => 'Marruecos',
-                    'url'  => ukiyo_get_route_url('destination_marruecos'),
-                    'img'  => get_template_directory_uri() . '/images/autores/moha/viajes-a-marruecos-personalizados-erg-chebbi-hero.jpg',
-                    'anchor' => 'Viaje a medida a Marruecos',
-                    'desc' => 'Déjate envolver por la magia del desierto, los aromas de las medinas y la hospitalidad bereber.',
-                ],
-                'colombia' => [
-                    'name' => 'Colombia',
-                    'url'  => ukiyo_get_route_url('destination_colombia'),
-                    'img'  => get_template_directory_uri() . '/images/colombia/viajes-colombia-hero.jpg',
-                    'anchor' => 'Viaje a medida a Colombia',
-                    'desc' => 'Descubre el realismo mágico, desde el Caribe hasta los Andes. Cultura, café y paisajes infinitos.',
-                ],
-                'indonesia' => [
-                    'name' => 'Indonesia',
-                    'url'  => ukiyo_get_route_url('destination_indonesia'),
-                    'img'  => get_template_directory_uri() . '/images/destination-mood/viajes-a-medida-ukiyo-aventurero-bali.jpg', // Fallback or specific
-                    'anchor' => 'Viaje a medida a Indonesia',
-                    'desc' => 'Islas de dioses y dragones. Arrozales eternos, templos milenarios y playas de ensueño.',
-                ],
-                'italia' => [
-                    'name' => 'Italia',
-                    'url'  => ukiyo_get_route_url('destination_italia'),
-                    'img'  => get_template_directory_uri() . '/images/italia/viajes-a-italia-personalizados-toscana.jpg',
-                    'anchor' => 'Viaje a medida a Italia',
-                    'desc' => 'Cultura, gastronomía y rutas pausadas por Roma, Toscana, costa y pueblos con carácter.',
-                ],
-                'lanzarote' => [
-                    'name' => 'Lanzarote',
-                    'url'  => ukiyo_get_route_url('destination_lanzarote'),
-                    'img'  => get_template_directory_uri() . '/images/spain/lanzarote/vista-aerea-lanzarote.webp',
-                    'anchor' => 'Viaje a medida a Lanzarote',
-                    'desc' => 'Paisajes volcánicos, Atlántico, bodegas y pueblos blancos para una escapada con calma.',
-                ],
-            ];
-
-            $c_info = isset($country_data[$related_country]) ? $country_data[$related_country] : null;
-        endif;
-
-        if ( $related_country && $c_info ) : 
-        ?>
-            <div class="mt-16 bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left group cursor-pointer hover:shadow-md transition-shadow" onclick="window.location.href='<?php echo esc_url($c_info['url']); ?>'">
-                <div class="flex-shrink-0 relative w-24 h-24 rounded-full overflow-hidden ring-4 ring-primary/20">
-                    <img 
-                        alt="<?php echo esc_attr($c_info['name']); ?>" 
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                        src="<?php echo esc_url($c_info['img']); ?>"
-                    /> 
-                </div>
-                <div>
-                    <h4 class="font-rowdies text-xl font-bold text-gray-900 dark:text-white mb-2">
-                        Descubre <?php echo esc_html($c_info['name']); ?> con Ukiyo
-                    </h4>
-                    <p class="text-gray-600 dark:text-gray-300 font-satoshi text-sm leading-relaxed mb-4 max-w-lg">
-                        <?php echo esc_html($c_info['desc']); ?>
-                    </p>
-                    <a class="text-primary text-sm font-bold uppercase tracking-wider hover:underline flex items-center justify-center sm:justify-start gap-1" href="<?php echo esc_url($c_info['url']); ?>">
-                        <?php echo esc_html( $c_info['anchor'] ); ?>
-                        <?php echo ukiyo_icon( 'arrow_forward', 'text-sm' ); ?>
-                    </a>
-                </div>
-            </div>
-        <?php else : ?>
-            <!-- FALLBACK AUTHOR BOX -->
-            <div class="mt-16 bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left">
-                <div class="flex-shrink-0 relative">
-                    <img 
-                        alt="<?php echo esc_attr($author_name); ?>" 
-                        class="w-24 h-24 rounded-full object-cover ring-4 ring-primary/20" 
-                        src="<?php echo esc_url($author_avatar); ?>"
-                    /> 
-                </div>
-                <div>
-                    <h4 class="font-rowdies text-xl font-bold text-gray-900 dark:text-white mb-2">Sobre <?php echo esc_html($author_name); ?></h4>
-                    <p class="text-gray-600 dark:text-gray-300 font-satoshi text-sm leading-relaxed mb-4">
-                        <?php echo get_the_author_meta('description') ? get_the_author_meta('description') : 'Apasionado por descubrir nuevos horizontes y compartir historias que inspiran.'; ?>
-                    </p>
-                    <a class="text-primary text-sm font-bold uppercase tracking-wider hover:underline" href="<?php echo get_author_posts_url($author_id); ?>">Ver más artículos</a>
-                </div>
-            </div>
+        <?php if ( $tags ) : ?>
+          <div class="tags">
+            <?php foreach ( $tags as $tag ) : ?>
+              <a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" class="tag"><?php echo esc_html( $tag->name ); ?></a>
+            <?php endforeach; ?>
+          </div>
         <?php endif; ?>
 
-    </article>
-</main>
-</div>
+        <div class="authorbox">
+          <div class="authorbox__avatar">
+            <?php echo get_avatar( $author_id, 96 ); ?>
+          </div>
+          <div>
+            <h4>Sobre <?php echo esc_html( $author_name ); ?></h4>
+            <?php if ( $author_bio ) : ?>
+              <p><?php echo esc_html( $author_bio ); ?></p>
+            <?php endif; ?>
+            <a class="more" href="<?php echo esc_url( $about_url ); ?>">Conocer al equipo
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
 
-<!-- PREV / NEXT NAV -->
-<section class="grid grid-cols-1 md:grid-cols-2 border-t border-gray-200 dark:border-gray-800">
-    <?php if ( $prev_post ) : 
-        $prev_img = get_the_post_thumbnail_url($prev_post->ID, 'large');
-    ?>
-    <a class="group relative h-64 md:h-80 overflow-hidden flex items-center justify-center" href="<?php echo get_permalink($prev_post->ID); ?>">
-        <div class="absolute inset-0">
-            <img 
-                alt="<?php echo esc_attr($prev_post->post_title); ?>" 
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                src="<?php echo esc_url($prev_img ? $prev_img : 'https://via.placeholder.com/800x600'); ?>"
-            />
-            <div class="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors"></div>
-        </div>
-        <div class="relative z-10 text-center px-8">
-            <span class="block text-xs font-bold text-white uppercase tracking-widest mb-2 group-hover:translate-y-[-4px] transition-transform">Post Anterior</span>
-            <h3 class="font-rowdies text-2xl md:text-3xl font-bold text-white group-hover:underline decoration-white decoration-2 underline-offset-4">
-                <?php echo esc_html($prev_post->post_title); ?>
-            </h3>
-        </div>
-    </a>
-    <?php else: ?>
-        <div class="hidden md:block bg-gray-100 dark:bg-gray-900 h-64 md:h-80"></div>
-    <?php endif; ?>
+      </article>
+    </div>
+  </main>
 
-    <?php if ( $next_post ) : 
-        $next_img = get_the_post_thumbnail_url($next_post->ID, 'large');
-    ?>
-    <a class="group relative h-64 md:h-80 overflow-hidden flex items-center justify-center border-l border-white/10" href="<?php echo get_permalink($next_post->ID); ?>">
-        <div class="absolute inset-0">
-            <img 
-                alt="<?php echo esc_attr($next_post->post_title); ?>" 
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                src="<?php echo esc_url($next_img ? $next_img : 'https://via.placeholder.com/800x600'); ?>"
-            />
-            <div class="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors"></div>
+  <?php if ( ! empty( $related_posts_ids ) ) : ?>
+    <section class="related">
+      <div class="container">
+        <div class="related__head">
+          <h2>Artículos <em>relacionados.</em></h2>
         </div>
-        <div class="relative z-10 text-center px-8">
-            <span class="block text-xs font-bold text-white uppercase tracking-widest mb-2 group-hover:translate-y-[-4px] transition-transform">Siguiente Post</span>
-            <h3 class="font-rowdies text-2xl md:text-3xl font-bold text-white group-hover:underline decoration-white decoration-2 underline-offset-4">
-                <?php echo esc_html($next_post->post_title); ?>
-            </h3>
-        </div>
-    </a>
-    <?php else: ?>
-        <!-- FINAL CTA FALLBACK -->
-        <div class="h-auto md:h-80 bg-background text-text-secondary flex items-center justify-center p-8 border-l border-white/10 text-center">
-            <div class="max-w-md">
-                <h2 class="text-xl md:text-2xl font-rowdies mb-4 text-gray-900 dark:text-white">
-                    ¿No encuentras tu viaje ideal?
-                </h2>
-                <p class="text-sm md:text-base mb-6 opacity-90 text-gray-600 dark:text-gray-300 font-satoshi">
-                    Cada persona viaja a su manera.
-                    Cuéntanos qué te mueve y crearemos juntos una experiencia que encaje contigo.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://wa.me/message/CS2LNI6YHSETO1" target="_blank" class="btn-primary text-text-secondary flex items-center gap-2 justify-center">
-                        <img width="64" height="64" src="https://img.icons8.com/cotton/64/whatsapp--v4.png" alt="Contactar con Viajes Ukiyo por WhatsApp" class="w-6 h-6"/>
-                        Escríbenos
-                    </a>
-                    <a href="<?php echo esc_url( ukiyo_get_route_url( 'viajes_autor' ) ); ?>" class="btn-primary text-text-secondary">
-                        Ver viajes de autor de Ukiyo
-                    </a>
+        <div class="related__grid">
+          <?php foreach ( $related_posts_ids as $rid ) :
+            $r_thumb = get_the_post_thumbnail_url( $rid, 'large' );
+            $r_cat   = get_the_category( $rid );
+            $r_cat_l = ! empty( $r_cat ) ? $r_cat[0]->name : '';
+            ?>
+            <a class="rcard" href="<?php echo esc_url( get_permalink( $rid ) ); ?>">
+              <?php if ( $r_thumb ) : ?>
+                <div class="rcard__media">
+                  <?php if ( $r_cat_l ) : ?>
+                    <span class="rcard__cat"><?php echo esc_html( $r_cat_l ); ?></span>
+                  <?php endif; ?>
+                  <img src="<?php echo esc_url( $r_thumb ); ?>" alt="<?php echo esc_attr( get_the_title( $rid ) ); ?>" loading="lazy" />
                 </div>
-            </div>
+              <?php endif; ?>
+              <div class="rcard__body">
+                <h3 class="rcard__title"><?php echo esc_html( get_the_title( $rid ) ); ?></h3>
+                <?php $r_excerpt = get_the_excerpt( $rid ); if ( $r_excerpt ) : ?>
+                  <p class="rcard__excerpt"><?php echo esc_html( wp_trim_words( $r_excerpt, 22 ) ); ?></p>
+                <?php endif; ?>
+                <div class="rcard__foot">
+                  <span class="rcard__date"><?php echo esc_html( get_the_date( 'd M Y', $rid ) ); ?></span>
+                  <span class="rcard__more">Leer →</span>
+                </div>
+              </div>
+            </a>
+          <?php endforeach; ?>
         </div>
-    <?php endif; ?>
-</section>
+      </div>
+    </section>
+  <?php endif; ?>
 
-<?php
-endwhile; // End of the loop.
-get_footer();
+  <?php if ( $prev_post || $next_post ) : ?>
+    <nav class="pnnav">
+      <?php if ( $prev_post ) :
+        $p_thumb = get_the_post_thumbnail_url( $prev_post->ID, 'large' );
+        ?>
+        <a class="prev" href="<?php echo esc_url( get_permalink( $prev_post ) ); ?>"<?php echo $p_thumb ? ' style="--pnnav-img: url(\'' . esc_url( $p_thumb ) . '\')"' : ''; ?>>
+          <div>
+            <span class="label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Post anterior
+            </span>
+            <h3><?php echo esc_html( get_the_title( $prev_post ) ); ?></h3>
+          </div>
+        </a>
+      <?php endif; ?>
+      <?php if ( $next_post ) :
+        $n_thumb = get_the_post_thumbnail_url( $next_post->ID, 'large' );
+        ?>
+        <a class="next" href="<?php echo esc_url( get_permalink( $next_post ) ); ?>"<?php echo $n_thumb ? ' style="--pnnav-img: url(\'' . esc_url( $n_thumb ) . '\')"' : ''; ?>>
+          <div>
+            <span class="label">
+              Siguiente post
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h3><?php echo esc_html( get_the_title( $next_post ) ); ?></h3>
+          </div>
+        </a>
+      <?php endif; ?>
+    </nav>
+  <?php endif; ?>
+
+</div><!-- /.ukiyo-article -->
+
+<script>
+(function(){
+  const root = document.querySelector('.ukiyo-article');
+  if(!root) return;
+  const links = root.querySelectorAll('.toc a[href^="#"]');
+  const map = new Map();
+  links.forEach(a => {
+    const id = a.getAttribute('href').slice(1);
+    const target = document.getElementById(id);
+    if (target) map.set(target, a);
+  });
+  if (map.size === 0) return;
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      const link = map.get(e.target);
+      if (!link) return;
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('is-current'));
+        link.classList.add('is-current');
+      }
+    });
+  }, { rootMargin: '-30% 0px -55% 0px', threshold: 0 });
+  map.forEach((_link, section) => io.observe(section));
+})();
+</script>
+
+<?php get_footer(); ?>

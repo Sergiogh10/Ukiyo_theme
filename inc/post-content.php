@@ -8,6 +8,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Estima el tiempo de lectura de un post en minutos.
+ *
+ * Promedio asumido: 220 palabras/minuto (lectura cómoda en castellano).
+ * Mínimo: 1 min.
+ */
+function ukiyo_get_post_reading_time( $post_id ) {
+	$content = get_post_field( 'post_content', $post_id );
+	if ( ! $content ) {
+		return 1;
+	}
+	$plain = wp_strip_all_tags( strip_shortcodes( $content ) );
+	$words = preg_match_all( '/\\S+/u', $plain ) ?: 0;
+	$mins  = (int) ceil( $words / 220 );
+	return max( 1, $mins );
+}
+
+/**
  * Returns a sanitized editorial intro for a blog post.
  */
 function ukiyo_get_post_intro( $post_id ) {

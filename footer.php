@@ -1,116 +1,298 @@
 <?php
 /**
- * Footer global de UKIYO
+ * Footer global de UKIYO.
+ *
+ * Migrado al estilo de los exports de Claude Design (Junio 2026).
+ * CSS scoped a `.ukiyo-foot` para no contaminar otras zonas del tema.
+ * URLs y partners siguen viniendo de las rutas dinámicas del tema.
  */
-?>
-<?php
+
 $destination_indonesia_url   = ukiyo_get_route_url('destination_indonesia');
 $destination_costa_rica_url  = ukiyo_get_route_url('destination_costa_rica');
 $destination_marruecos_url   = ukiyo_get_route_url('destination_marruecos');
 $destination_colombia_url    = ukiyo_get_route_url('destination_colombia');
+$destination_italia_url      = ukiyo_get_route_url('destination_italia');
+$destination_lanzarote_url   = ukiyo_get_route_url('destination_lanzarote');
 $about_url                   = ukiyo_get_route_url('about');
 $destinations_url            = ukiyo_get_route_url('destinations');
+$service_custom_travel_url   = ukiyo_get_route_url('service_custom_travel');
+$service_honeymoon_url       = ukiyo_get_route_url('service_honeymoon');
+$service_group_travel_url    = ukiyo_get_route_url('service_group_travel');
+$service_private_url         = ukiyo_get_route_url('service_private');
 $viajes_autor_url            = ukiyo_get_route_url('viajes_autor');
 $pricing_url                 = ukiyo_get_route_url('pricing');
 $reviews_url                 = ukiyo_get_route_url('reviews');
-$blog_url                    = home_url('/blog/');
+$blog_url                    = ukiyo_get_route_url('blog');
 $privacy_url                 = ukiyo_get_route_url('privacy');
 $terms_url                   = ukiyo_get_route_url('terms');
 $cookies_url                 = ukiyo_get_route_url('cookies');
+$logo_white                  = get_template_directory_uri() . '/images/logo/logoblanconuevo.png';
+$wa_url                      = 'https://wa.me/message/CS2LNI6YHSETO1';
+$wa_icon                     = 'https://img.icons8.com/cotton/64/whatsapp--v4.png';
+$tur_base                    = get_template_directory_uri() . '/images/logo';
+$is_en                       = function_exists( 'pll_current_language' ) && 'en' === pll_current_language();
+$home_url                    = function_exists( 'ukiyo_get_home_url' ) ? ukiyo_get_home_url() : home_url('/');
+$foot_labels                 = $is_en
+    ? [
+        'tag'              => 'Authentic, mindful trips designed around you. <em>Walked first</em> by us.',
+        'whatsapp'         => 'Ask us on WhatsApp',
+        'email_label'      => 'Email',
+        'destinations'     => 'Destinations',
+        'morocco'          => 'Morocco',
+        'italy'            => 'Italy',
+        'services'         => 'Services',
+        'custom_travel'    => 'Tailor-made travel',
+        'honeymoon'        => 'Honeymoon travel',
+        'group_travel'     => 'Small group trips',
+        'private_travel'   => 'Private trips',
+        'signature_trips'  => 'Signature trips',
+        'company'          => 'Company',
+        'about'            => 'About',
+        'pricing'          => 'Prices',
+        'reviews'          => 'Reviews',
+        'partners_title'   => 'Endorsed by',
+        'partners_text'    => 'Official tourism<br/>boards',
+        'rights'           => 'All rights reserved.',
+        'stamp'            => '道 · Made with care',
+        'privacy'          => 'Privacy',
+        'terms'            => 'Terms',
+    ]
+    : [
+        'tag'              => 'Viajes auténticos, sostenibles y creados a tu medida. <em>Pisados antes</em> por nosotros.',
+        'whatsapp'         => 'Pregúntanos por WhatsApp',
+        'email_label'      => 'Correo',
+        'destinations'     => 'Destinos',
+        'morocco'          => 'Marruecos',
+        'italy'            => 'Italia',
+        'services'         => 'Servicios',
+        'custom_travel'    => 'Viajes a medida',
+        'honeymoon'        => 'Viajes de novios',
+        'group_travel'     => 'Viajes en grupo reducido',
+        'private_travel'   => 'Viajes privados',
+        'signature_trips'  => 'Viajes de autor',
+        'company'          => 'Compañía',
+        'about'            => 'Nosotros',
+        'pricing'          => 'Precios',
+        'reviews'          => 'Reseñas',
+        'partners_title'   => 'Avalados por',
+        'partners_text'    => 'Organismos oficiales<br/>de turismo',
+        'rights'           => 'Todos los derechos reservados.',
+        'stamp'            => '道 · Hecho con calma',
+        'privacy'          => 'Privacidad',
+        'terms'            => 'Términos',
+    ];
 ?>
-<footer class="bg-text-primary text-white py-16">
-    <div class="container mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            
-            <!-- Brand -->
-            <div class="lg:col-span-2">
-                <div class="flex items-center space-x-3 mb-6">
-                    <a href="<?php echo esc_url(home_url('/')); ?>">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/logo/logoblanconuevo.png"
-                             alt="<?php bloginfo('name'); ?> Logo"
-                             class="h-8 md:h-10 w-auto" />
-                    </a>
-                </div>
-                <p class="text-white/80 mb-6 max-w-md">
-Viajes auténticos, sostenibles y creados a tu medida.                </p>
-                <div class="flex flex-col space-y-3">
-                    <a href="https://wa.me/message/CS2LNI6YHSETO1" target="_blank" class="flex items-center text-white/60 hover:text-accent transition-colors" aria-label="WhatsApp">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier"> 
-                                <path d="M2 22L3.41152 16.8691C2.54422 15.3639 2.08876 13.6568 2.09099 11.9196C2.08095 6.44549 6.52644 2 11.99 2C14.6417 2 17.1315 3.02806 19.0062 4.9034C19.9303 5.82266 20.6627 6.91616 21.1611 8.12054C21.6595 9.32492 21.9139 10.6162 21.9096 11.9196C21.9096 17.3832 17.4641 21.8287 12 21.8287C10.3368 21.8287 8.71374 21.4151 7.26204 20.6192L2 22ZM7.49424 18.8349L7.79675 19.0162C9.06649 19.7676 10.5146 20.1644 11.99 20.1654C16.5264 20.1654 20.2263 16.4662 20.2263 11.9291C20.2263 9.73176 19.3696 7.65554 17.8168 6.1034C17.0533 5.33553 16.1453 4.72636 15.1453 4.31101C14.1452 3.89565 13.0728 3.68232 11.99 3.68331C7.44343 3.6839 3.74476 7.38316 3.74476 11.9202C3.74476 13.4724 4.17843 14.995 5.00502 16.3055L5.19645 16.618L4.35982 19.662L7.49483 18.8354L7.49424 18.8349Z" fill="#c0c0c0"></path> 
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.52024 7.76662C9.33885 7.35303 9.13737 7.34298 8.96603 7.34298C8.81477 7.33294 8.65288 7.33294 8.48154 7.33294C8.32083 7.33294 8.04845 7.39321 7.81684 7.64549C7.58464 7.89719 6.95007 8.49217 6.95007 9.71167C6.95007 10.9318 7.83693 12.1111 7.95805 12.2724C8.07858 12.4337 9.67149 15.0139 12.192 16.0124C14.2883 16.839 14.712 16.6777 15.1657 16.6269C15.6189 16.5767 16.6275 16.0325 16.839 15.4476C17.0405 14.8733 17.0405 14.3693 16.9802 14.2682C16.9199 14.1678 16.748 14.1069 16.5064 13.9758C16.2541 13.8552 15.0446 13.2502 14.813 13.1693C14.5808 13.0889 14.4195 13.0487 14.2582 13.2904C14.0969 13.5427 13.623 14.0969 13.4724 14.2582C13.3306 14.4195 13.1799 14.4396 12.9377 14.3185C12.686 14.1979 11.8895 13.9356 10.9418 13.0889C10.2056 12.4331 9.71167 11.6171 9.56041 11.3755C9.41979 11.1232 9.54032 10.992 9.67149 10.8709C9.78257 10.7604 9.92378 10.579 10.0449 10.4378C10.1654 10.296 10.2056 10.1855 10.2966 10.0242C10.377 9.86292 10.3368 9.71167 10.2765 9.59114C10.2157 9.48006 9.74239 8.25997 9.52024 7.76603V7.76662Z" fill="#c0c0c0"></path> 
-                            </g>
-                        </svg>
-                        <span>Pregúntanos tus dudas</span>
-                    </a>
-                    <a href="mailto:info@viajesukiyo.com" class="flex items-center text-white/60 hover:text-accent transition-colors" aria-label="Correo">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 mr-2">
-                            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
-                        <span>info@viajesukiyo.com</span>
-                    </a>
-                   <!-- <a href="https://instagram.com/ukiyo.oficial" target="_blank" class="flex items-center text-white/60 hover:text-accent transition-colors" aria-label="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 mr-2">
-                            <path d="M7.001 2C4.243 2 2 4.243 2 7.001v9.998C2 19.757 4.243 22 7.001 22h9.998C19.757 22 22 19.757 22 17V7.001C22 4.243 19.757 2 17 2H7.001zM20 17c0 1.654-1.346 3-3.001 3H7.001A3.004 3.004 0 0 1 4 17V7.001C4 5.346 5.346 4 7.001 4H17C18.654 4 20 5.346 20 7.001V17z"/>
-                            <path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.001A3.001 3.001 0 1 1 12 9a3.001 3.001 0 0 1 0 6.001zM17.5 6a1.5 1.5 0 1 1-3.001 0A1.5 1.5 0 0 1 17.5 6z"/>
-                        </svg>
-                        <span>Instagram</span>
-                    </a> -->
-                </div>
-            </div>
 
-            <!-- Experiencias -->
-            <div>
-                <h4 class="font-rowdies text-lg mb-4">Destinos</h4>
-                <ul class="space-y-2 text-white/80">
-                    <li><a href="<?php echo esc_url( $destination_indonesia_url ); ?>" class="hover:text-accent transition-colors">Indonesia</a></li>
-                    <li><a href="<?php echo esc_url( $destination_costa_rica_url ); ?>" class="hover:text-accent transition-colors">Costa Rica</a></li>
-                    <li><a href="<?php echo esc_url( $destination_marruecos_url ); ?>" class="hover:text-accent transition-colors">Marruecos</a></li>
-                    <li><a href="<?php echo esc_url( $destination_colombia_url ); ?>" class="hover:text-accent transition-colors">Colombia</a></li>
-                </ul>
-            </div>
+<style>
+  .ukiyo-foot{
+    --foot-bg:#1A1A1A;
+    --foot-line:rgba(255,255,255,.1);
+    --foot-accent:#EBD2AE;
+    --foot-sage:#9CAF88;
+    --foot-mono:'DM Mono',ui-monospace,monospace;
+    --foot-display:'Rowdies',serif;
+    --foot-sans:'Satoshi','Inter',system-ui,sans-serif;
+    background:var(--foot-bg);
+    color:#fff;
+    padding:5rem 0 2rem;
+    position:relative;
+    overflow:hidden;
+    font-family:var(--foot-sans);
+    font-size:.95rem;
+    line-height:1.55;
+  }
+  .ukiyo-foot::before{
+    content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+    width:90%;max-width:1240px;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);
+  }
+  .ukiyo-foot a{color:inherit;text-decoration:none}
+  .ukiyo-foot .container{max-width:1240px;margin:0 auto;padding:0 1.75rem}
 
-            <!-- Compañía -->
-            <div>
-                <h4 class="font-rowdies text-lg mb-4">Compañía</h4>
-                <ul class="space-y-2 text-white/80">
-                    <li><a href="<?php echo esc_url( $about_url ); ?>" class="hover:text-accent transition-colors">Nosotros</a></li>
-                    <li><a href="<?php echo esc_url( $destinations_url ); ?>" class="hover:text-accent transition-colors">Destinos</a></li>
-                    <li><a href="<?php echo esc_url( $viajes_autor_url ); ?>" class="hover:text-accent transition-colors">Viajes de autor</a></li>
-                    <li><a href="<?php echo esc_url( $blog_url ); ?>" class="hover:text-accent transition-colors">Blog</a></li>
-                   <!-- <li><a href="<?php echo esc_url( site_url('/sustainability') ); ?>" class="hover:text-accent transition-colors">Sostenibilidad</a></li> -->
-                    <li><a href="<?php echo esc_url( $pricing_url ); ?>" class="hover:text-accent transition-colors">Precios</a></li>
-                    <li><a href="<?php echo esc_url( $reviews_url ); ?>" class="hover:text-accent transition-colors">Reseñas</a></li>
-                </ul>
-            </div>
+  .ukiyo-foot__top{
+    display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:3rem;
+    padding-bottom:3rem;border-bottom:1px solid var(--foot-line);
+  }
+  .ukiyo-foot__brand .ukiyo-foot__logo{height:38px;width:auto;opacity:.95;margin-bottom:1.4rem;display:block}
+  .ukiyo-foot__brand .ukiyo-foot__tag{color:rgba(255,255,255,.72);font-size:1.02rem;line-height:1.55;max-width:24rem;margin:0 0 1.6rem}
+  .ukiyo-foot__brand .ukiyo-foot__tag em{font-style:italic;color:var(--foot-sage);font-weight:400;font-family:var(--foot-display)}
+  .ukiyo-foot__contact{display:flex;flex-direction:column;gap:.85rem}
+  .ukiyo-foot__contact a{
+    display:inline-flex;align-items:center;gap:.7rem;
+    color:rgba(255,255,255,.68);font-size:.92rem;
+    transition:color .25s, transform .25s;
+  }
+  .ukiyo-foot__contact a:hover{color:var(--foot-accent);transform:translateX(2px)}
+  .ukiyo-foot__contact .ico{
+    width:34px;height:34px;border-radius:50%;
+    background:rgba(255,255,255,.06);
+    display:grid;place-items:center;flex-shrink:0;
+    transition:background .25s,border-color .25s;
+    border:1px solid rgba(255,255,255,.1);
+  }
+  .ukiyo-foot__contact a:hover .ico{background:rgba(212,165,116,.18);border-color:rgba(212,165,116,.4)}
+  .ukiyo-foot__contact .ico svg{width:15px;height:15px}
+  .ukiyo-foot__contact .ico img{width:18px;height:18px;display:block}
+
+  .ukiyo-foot__col h4{
+    font-family:var(--foot-display);font-size:1rem;font-weight:400;color:#fff;
+    letter-spacing:.06em;text-transform:uppercase;
+    margin:0 0 1.3rem;position:relative;display:inline-block;padding-bottom:.6rem;
+  }
+  .ukiyo-foot__col h4::after{
+    content:"";position:absolute;left:0;bottom:0;
+    width:24px;height:2px;background:var(--foot-sage);
+  }
+  .ukiyo-foot__col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.7rem}
+  .ukiyo-foot__col ul a{color:rgba(255,255,255,.68);font-size:.93rem;transition:color .25s,padding-left .25s}
+  .ukiyo-foot__col ul a:hover{color:var(--foot-accent);padding-left:.3rem}
+
+  .ukiyo-foot__partners{
+    padding:2.4rem 0;border-bottom:1px solid var(--foot-line);
+    display:grid;grid-template-columns:auto 1fr;gap:2.5rem;align-items:center;
+  }
+  .ukiyo-foot__partners .lbl{
+    font-family:var(--foot-mono);font-size:.7rem;color:rgba(255,255,255,.5);
+    letter-spacing:.18em;text-transform:uppercase;line-height:1.4;max-width:11rem;
+  }
+  .ukiyo-foot__partners .lbl strong{
+    display:block;color:#fff;font-weight:400;font-size:.78rem;
+    margin-bottom:.3rem;letter-spacing:.12em;
+  }
+  .ukiyo-foot__partners__row{display:flex;flex-wrap:wrap;align-items:center;gap:2.5rem;justify-content:flex-end}
+  .ukiyo-foot__partners__row a{
+    opacity:.55;filter:grayscale(1) brightness(1.4);
+    transition:opacity .3s,filter .3s,transform .3s;display:inline-block;
+  }
+  .ukiyo-foot__partners__row a:hover{opacity:1;filter:grayscale(0) brightness(1);transform:translateY(-2px)}
+  .ukiyo-foot__partners__row img{height:42px;width:auto;display:block}
+
+  .ukiyo-foot__bottom{
+    padding-top:2rem;display:flex;justify-content:space-between;align-items:center;
+    gap:2rem;flex-wrap:wrap;
+  }
+  .ukiyo-foot__bottom .copy{color:rgba(255,255,255,.45);font-size:.84rem;letter-spacing:.02em;margin:0}
+  .ukiyo-foot__bottom .copy strong{color:rgba(255,255,255,.7);font-weight:500}
+  .ukiyo-foot__bottom .legal{display:flex;gap:1.6rem;flex-wrap:wrap}
+  .ukiyo-foot__bottom .legal a{font-size:.84rem;color:rgba(255,255,255,.5);transition:color .25s}
+  .ukiyo-foot__bottom .legal a:hover{color:var(--foot-accent)}
+  .ukiyo-foot__stamp{
+    display:inline-flex;align-items:center;gap:.6rem;
+    font-family:var(--foot-mono);font-size:.72rem;color:rgba(255,255,255,.42);
+    letter-spacing:.16em;text-transform:uppercase;
+  }
+  .ukiyo-foot__stamp .dot{width:6px;height:6px;border-radius:50%;background:var(--foot-sage)}
+
+  @media (max-width:980px){
+    .ukiyo-foot__top{grid-template-columns:1fr 1fr;gap:2.5rem}
+    .ukiyo-foot__brand{grid-column:span 2}
+    .ukiyo-foot__partners{grid-template-columns:1fr;gap:1.4rem;text-align:center}
+    .ukiyo-foot__partners .lbl{max-width:none}
+    .ukiyo-foot__partners__row{justify-content:center;gap:1.8rem}
+    .ukiyo-foot__bottom{justify-content:center;text-align:center}
+  }
+  @media (max-width:560px){
+    .ukiyo-foot__top{grid-template-columns:1fr}
+    .ukiyo-foot__brand{grid-column:span 1}
+    .ukiyo-foot__partners__row img{height:32px}
+  }
+</style>
+
+<footer class="ukiyo-foot">
+  <div class="container">
+
+    <div class="ukiyo-foot__top">
+
+      <div class="ukiyo-foot__brand">
+        <a href="<?php echo esc_url( $home_url ); ?>">
+          <img class="ukiyo-foot__logo" src="<?php echo esc_url( $logo_white ); ?>" alt="<?php bloginfo('name'); ?>" />
+        </a>
+        <p class="ukiyo-foot__tag"><?php echo wp_kses_post( $foot_labels['tag'] ); ?></p>
+        <div class="ukiyo-foot__contact">
+          <a href="<?php echo esc_url( $wa_url ); ?>" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <span class="ico"><img src="<?php echo esc_url( $wa_icon ); ?>" alt="" loading="lazy" /></span>
+            <span><?php echo esc_html( $foot_labels['whatsapp'] ); ?></span>
+          </a>
+          <a href="mailto:info@viajesukiyo.com" aria-label="<?php echo esc_attr( $foot_labels['email_label'] ); ?>">
+            <span class="ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            </span>
+            <span>info@viajesukiyo.com</span>
+          </a>
+          <a href="https://www.instagram.com/viajes.ukiyo" target="_blank" rel="noopener" aria-label="Instagram">
+            <span class="ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            </span>
+            <span>@viajes.ukiyo</span>
+          </a>
         </div>
+      </div>
 
-        <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p class="text-white/60 text-sm mb-4">© <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. Todos los derechos reservados.</p>
-            
-            <div class="flex flex-wrap justify-center items-center gap-2 md:gap-6 my-4 md:my-0">
-                <a href="https://colombia.travel" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300">
-                     <img src="<?php echo get_template_directory_uri(); ?>/images/logo/turismo_colombia.png" alt="Colombia Travel" class="h-8 md:h-12 w-auto">
-                </a>
-                <a href="https://www.visitcostarica.com" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300">
-                     <img src="<?php echo get_template_directory_uri(); ?>/images/logo/turismo_costarica.png" alt="Visit Costa Rica" class="h-8 md:h-12 w-auto">
-                </a>
-               <a href="https://www.indonesia.travel" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300">
-                     <img src="<?php echo get_template_directory_uri(); ?>/images/logo/turismo_indonesia.png" alt="Wonderful Indonesia" class="h-8 md:h-12 w-auto">
-                </a>
-               <a href="https://www.visitmorocco.com" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300">
-                     <img src="<?php echo get_template_directory_uri(); ?>/images/logo/turismo_marruecos.png" alt="Visit Morocco" class="h-8 md:h-12 w-auto">
-                </a>
-            </div>
-            <div class="flex space-x-6 mt-4 md:mt-0">
-                <a href="<?php echo esc_url( $privacy_url ); ?>" class="text-white/60 hover:text-accent text-sm transition-colors">Privacidad</a>
-                <a href="<?php echo esc_url( $terms_url ); ?>" class="text-white/60 hover:text-accent text-sm transition-colors">Términos</a>
-                <a href="<?php echo esc_url( $cookies_url ); ?>" class="text-white/60 hover:text-accent text-sm transition-colors">Cookies</a>
-            </div>
-        </div>
+      <div class="ukiyo-foot__col">
+        <h4><?php echo esc_html( $foot_labels['destinations'] ); ?></h4>
+        <ul>
+          <li><a href="<?php echo esc_url( $destination_indonesia_url ); ?>">Indonesia</a></li>
+          <li><a href="<?php echo esc_url( $destination_costa_rica_url ); ?>">Costa Rica</a></li>
+          <li><a href="<?php echo esc_url( $destination_marruecos_url ); ?>"><?php echo esc_html( $foot_labels['morocco'] ); ?></a></li>
+          <li><a href="<?php echo esc_url( $destination_colombia_url ); ?>">Colombia</a></li>
+          <li><a href="<?php echo esc_url( $destination_italia_url ); ?>"><?php echo esc_html( $foot_labels['italy'] ); ?></a></li>
+          <li><a href="<?php echo esc_url( $destination_lanzarote_url ); ?>">Lanzarote</a></li>
+        </ul>
+      </div>
+
+      <div class="ukiyo-foot__col">
+        <h4><?php echo esc_html( $foot_labels['services'] ); ?></h4>
+        <ul>
+          <li><a href="<?php echo esc_url( $service_custom_travel_url ); ?>"><?php echo esc_html( $foot_labels['custom_travel'] ); ?></a></li>
+          <li><a href="<?php echo esc_url( $service_honeymoon_url ); ?>"><?php echo esc_html( $foot_labels['honeymoon'] ); ?></a></li>
+          <li><a href="<?php echo esc_url( $service_group_travel_url ); ?>"><?php echo esc_html( $foot_labels['group_travel'] ); ?></a></li>
+          <li><a href="<?php echo esc_url( $service_private_url ); ?>"><?php echo esc_html( $foot_labels['private_travel'] ); ?></a></li>
+          <li><a href="<?php echo esc_url( $viajes_autor_url ); ?>"><?php echo esc_html( $foot_labels['signature_trips'] ); ?></a></li>
+        </ul>
+      </div>
+
+      <div class="ukiyo-foot__col">
+        <h4><?php echo esc_html( $foot_labels['company'] ); ?></h4>
+        <ul>
+          <li><a href="<?php echo esc_url( $about_url ); ?>"><?php echo esc_html( $foot_labels['about'] ); ?></a></li>
+          <li><a href="<?php echo esc_url( $destinations_url ); ?>"><?php echo esc_html( $foot_labels['destinations'] ); ?></a></li>
+          <li><a href="<?php echo esc_url( $pricing_url ); ?>"><?php echo esc_html( $foot_labels['pricing'] ); ?></a></li>
+          <li><a href="<?php echo esc_url( $blog_url ); ?>">Blog</a></li>
+          <li><a href="<?php echo esc_url( $reviews_url ); ?>"><?php echo esc_html( $foot_labels['reviews'] ); ?></a></li>
+        </ul>
+      </div>
+
     </div>
+
+    <div class="ukiyo-foot__partners">
+      <div class="lbl"><strong><?php echo esc_html( $foot_labels['partners_title'] ); ?></strong><?php echo wp_kses_post( $foot_labels['partners_text'] ); ?></div>
+      <div class="ukiyo-foot__partners__row">
+        <a href="https://www.visitcostarica.com" target="_blank" rel="noopener" aria-label="Visit Costa Rica">
+          <img src="<?php echo esc_url( $tur_base . '/turismo_costarica.png' ); ?>" alt="Visit Costa Rica" />
+        </a>
+        <a href="https://colombia.travel" target="_blank" rel="noopener" aria-label="Colombia Travel">
+          <img src="<?php echo esc_url( $tur_base . '/turismo_colombia.png' ); ?>" alt="Colombia Travel" />
+        </a>
+        <a href="https://www.indonesia.travel" target="_blank" rel="noopener" aria-label="Wonderful Indonesia">
+          <img src="<?php echo esc_url( $tur_base . '/turismo_indonesia.png' ); ?>" alt="Wonderful Indonesia" />
+        </a>
+        <a href="https://www.visitmorocco.com" target="_blank" rel="noopener" aria-label="Visit Morocco">
+          <img src="<?php echo esc_url( $tur_base . '/turismo_marruecos.png' ); ?>" alt="Visit Morocco" />
+        </a>
+      </div>
+    </div>
+
+    <div class="ukiyo-foot__bottom">
+      <p class="copy">© <?php echo esc_html( date('Y') ); ?> <strong><?php bloginfo('name'); ?></strong>. <?php echo esc_html( $foot_labels['rights'] ); ?></p>
+      <span class="ukiyo-foot__stamp"><span class="dot"></span><?php echo esc_html( $foot_labels['stamp'] ); ?></span>
+      <div class="legal">
+        <a href="<?php echo esc_url( $privacy_url ); ?>"><?php echo esc_html( $foot_labels['privacy'] ); ?></a>
+        <a href="<?php echo esc_url( $terms_url ); ?>"><?php echo esc_html( $foot_labels['terms'] ); ?></a>
+        <a href="<?php echo esc_url( $cookies_url ); ?>">Cookies</a>
+      </div>
+    </div>
+
+  </div>
 </footer>
 
 <?php wp_footer(); ?>

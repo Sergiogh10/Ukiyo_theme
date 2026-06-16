@@ -361,6 +361,7 @@ function ukiyo_render_expert_metabox($post) {
     $expert_quote = get_post_meta($post->ID, 'expert_quote', true);
     $expert_specialty = get_post_meta($post->ID, 'expert_specialty', true);
     $expert_focus = get_post_meta($post->ID, 'expert_focus', true);
+    $expert_languages = get_post_meta($post->ID, 'expert_languages', true);
     ?>
     <div class="ukiyo-metabox-row">
         <div class="ukiyo-metabox-field">
@@ -394,6 +395,13 @@ function ukiyo_render_expert_metabox($post) {
             <input type="text" id="expert_focus" name="expert_focus" value="<?php echo esc_attr($expert_focus); ?>" placeholder="Fotografía Fauna">
         </div>
     </div>
+    <div class="ukiyo-metabox-row">
+        <div class="ukiyo-metabox-field">
+            <label for="expert_languages">Idiomas</label>
+            <input type="text" id="expert_languages" name="expert_languages" value="<?php echo esc_attr($expert_languages); ?>" placeholder="ES · FR · AR · BER">
+            <p class="ukiyo-metabox-hint">Separa los idiomas con " · " (espacio + punto medio + espacio).</p>
+        </div>
+    </div>
     <?php
 }
 
@@ -406,6 +414,7 @@ function ukiyo_render_pricing_metabox($post) {
     $precio_desde = get_post_meta($post->ID, 'precio_desde', true);
     $precio_final = get_post_meta($post->ID, 'precio_final', true);
     $precio_habitacion = get_post_meta($post->ID, 'precio_habitacion', true);
+    $fecha_salida = get_post_meta($post->ID, 'fecha_salida', true);
     $trip_includes = get_post_meta($post->ID, 'trip_includes', true);
     $trip_excludes = get_post_meta($post->ID, 'trip_excludes', true);
     ?>
@@ -423,6 +432,11 @@ function ukiyo_render_pricing_metabox($post) {
         <div class="ukiyo-metabox-field">
             <label for="precio_final">Precio final (€)</label>
             <input type="text" id="precio_final" name="precio_final" value="<?php echo esc_attr($precio_final); ?>" placeholder="3.100€">
+        </div>
+        <div class="ukiyo-metabox-field">
+            <label for="fecha_salida">Fecha de salida</label>
+            <input type="text" id="fecha_salida" name="fecha_salida" value="<?php echo esc_attr($fecha_salida); ?>" placeholder="15 Oct 2026">
+            <p class="ukiyo-metabox-hint">Aparece en la tarjeta de precio del hero. Texto libre.</p>
         </div>
     </div>
     <div class="ukiyo-metabox-row">
@@ -665,8 +679,8 @@ add_action('save_post_viaje_autor', function ($post_id) {
     // Campos simples (texto de una línea)
     $simple_fields = [
         'hero_image', 'hero_subtitle', 'hero_tags',
-        'expert_name', 'expert_title', 'expert_image', 'expert_specialty', 'expert_focus',
-        'duracion_viaje', 'grupos_viaje', 'precio_desde', 'precio_final', 'precio_habitacion'
+        'expert_name', 'expert_title', 'expert_image', 'expert_specialty', 'expert_focus', 'expert_languages',
+        'duracion_viaje', 'grupos_viaje', 'precio_desde', 'precio_final', 'precio_habitacion', 'fecha_salida'
     ];
 
     foreach ($simple_fields as $field) {
@@ -916,47 +930,4 @@ add_action('admin_footer', function () {
     });
     </script>
     <?php
-});
-
-/**
- * Expose viaje_autor scalar meta fields via the REST API.
- *
- * Only scalar fields are registered here. The repeater / serialized fields
- * (itinerary_days, faq_items, hero_tags, trip_includes, trip_excludes) require
- * a custom REST schema and will be added in a later pass when UKIYO OS needs
- * to write them.
- *
- * `auth_callback` requires `edit_posts` so only logged-in users with at least
- * Author/Editor role can write through the REST API (used with Application
- * Passwords by UKIYO OS).
- */
-add_action('init', function () {
-    $auth = function () {
-        return current_user_can('edit_posts');
-    };
-
-    $scalar_meta = [
-        'hero_image'         => 'string',
-        'hero_subtitle'      => 'string',
-        'expert_name'        => 'string',
-        'expert_title'       => 'string',
-        'expert_specialty'   => 'string',
-        'expert_focus'       => 'string',
-        'expert_image'       => 'string',
-        'expert_quote'       => 'string',
-        'precio_desde'       => 'string',
-        'precio_final'       => 'string',
-        'precio_habitacion'  => 'string',
-        'duracion_viaje'     => 'string',
-        'grupos_viaje'       => 'string',
-    ];
-
-    foreach ($scalar_meta as $key => $type) {
-        register_post_meta('viaje_autor', $key, [
-            'show_in_rest'  => true,
-            'single'        => true,
-            'type'          => $type,
-            'auth_callback' => $auth,
-        ]);
-    }
 });

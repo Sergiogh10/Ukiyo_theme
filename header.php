@@ -266,10 +266,11 @@ if ( function_exists( 'pll_the_languages' ) ) {
                         id="site-logo"
                         src="<?php echo get_template_directory_uri(); ?>/images/logo/<?php echo $use_transparent_header ? 'logoblanconuevo.png' : 'logoukiyo.png'; ?>"
                         alt="<?php bloginfo('name'); ?> Logo"
-                        width="160"
+                        width="175"
                         height="48"
                         decoding="async"
                         fetchpriority="high"
+                        style="height:48px;width:auto;max-width:none;"
                         class="<?php echo esc_attr( $logo_size_class ); ?> w-auto transition-all duration-300"
                     />
                 </a>

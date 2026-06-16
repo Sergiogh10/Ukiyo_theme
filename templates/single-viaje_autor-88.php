@@ -9,11 +9,11 @@ $uri = get_template_directory_uri();
   <!-- HERO -->
 <section class="relative">
     <div class="relative h-[60vh] lg:h-[70vh] overflow-hidden">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viajes-a-marruecos-personalizados-erg-chebbi-merzouga.jpg"
+        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viajes-a-marruecos-personalizados-erg-chebbi-merzouga.webp"
              alt="Bromo"
              class="w-full h-full object-cover mask-image" 
              loading="lazy"
-             onerror="this.src='https://images.pexels.com/photos/2404370/pexels-photo-2404370.jpeg'; this.onerror=null;" />        
+             onerror="this.src='https://images.pexels.com/photos/2404370/pexels-photo-2404370.webp'; this.onerror=null;" />        
         <!-- Content Overlay -->
         <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-12">
             <div class="container mx-auto max-w-4xl">
@@ -151,7 +151,7 @@ $uri = get_template_directory_uri();
               </div>
               <figure class="experienceSplit-media">
                 <img
-                  src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-canales.jpg"
+                  src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-canales.webp"
                   alt="Recorrido por los canales de Tortuguero" />
               </figure>
             </div>
@@ -175,7 +175,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 1 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-bahia-drake.jpg" alt="" class="activity-cover">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-bahia-drake.webp" alt="" class="activity-cover">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -191,7 +191,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 2 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-canales.jpg" alt="" class="activity-cover">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-canales.webp" alt="" class="activity-cover">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -207,7 +207,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 3 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-caribe-sur-cahuita.jpg" alt="" class="activity-cover">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-caribe-sur-cahuita.webp" alt="" class="activity-cover">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -254,7 +254,7 @@ $uri = get_template_directory_uri();
               </div>
               <figure class="experienceSplit-media">
                 <img
-                  src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-canales.jpg"
+                  src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-canales.webp"
                   alt="Recorrido por los canales de Tortuguero" />
               </figure>
             </div>
@@ -278,7 +278,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 1 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-bahia-drake.jpg" alt="" class="activity-cover">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-bahia-drake.webp" alt="" class="activity-cover">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -294,7 +294,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 2 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-canales.jpg" alt="" class="activity-cover">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-canales.webp" alt="" class="activity-cover">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -310,7 +310,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 3 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-caribe-sur-cahuita.jpg" alt="" class="activity-cover">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-caribe-sur-cahuita.webp" alt="" class="activity-cover">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -357,7 +357,7 @@ $uri = get_template_directory_uri();
               </div>
               <figure class="experienceSplit-media">
                 <img
-                  src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-canales.jpg"
+                  src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-canales.webp"
                   alt="Recorrido por los canales de Tortuguero" />
               </figure>
             </div>
@@ -381,7 +381,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 1 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-bahia-drake.jpg" alt="" class="activity-cover">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-bahia-drake.webp" alt="" class="activity-cover">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -397,7 +397,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 2 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-canales.jpg" alt="" class="activity-cover">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-canales.webp" alt="" class="activity-cover">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -413,7 +413,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 3 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-caribe-sur-cahuita.jpg" alt="" class="activity-cover">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-caribe-sur-cahuita.webp" alt="" class="activity-cover">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -460,7 +460,7 @@ $uri = get_template_directory_uri();
               </div>
               <figure class="experienceSplit-media">
                 <img
-                  src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-canales.jpg"
+                  src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-canales.webp"
                   alt="Recorrido por los canales de Tortuguero" />
               </figure>
             </div>
@@ -484,7 +484,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 1 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-bahia-drake.jpg" alt="" class="activity-cover">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-bahia-drake.webp" alt="" class="activity-cover">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -500,7 +500,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 2 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-canales.jpg" alt="" class="activity-cover">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-canales.webp" alt="" class="activity-cover">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -516,7 +516,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 3 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-caribe-sur-cahuita.jpg" alt="" class="activity-cover">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-caribe-sur-cahuita.webp" alt="" class="activity-cover">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -817,12 +817,7 @@ $uri = get_template_directory_uri();
     </div>
 </section>
 
-<?php
-if ( function_exists( 'ukiyo_render_viaje_autor_blog_resources_section' ) ) {
-    ukiyo_render_viaje_autor_blog_resources_section( get_the_ID(), 'bg-white' );
-}
-get_footer();
-?>
+<?php get_footer(); ?>
 
 
 

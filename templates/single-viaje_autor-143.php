@@ -9,11 +9,11 @@ $uri = get_template_directory_uri();
   <!-- HERO -->
 <section class="relative">
     <div class="relative h-[60vh] lg:h-[70vh] overflow-hidden">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viajes-a-marruecos-personalizados-erg-chebbi-merzouga.jpg"
+        <img src="<?php echo get_template_directory_uri(); ?>/images/autores/moha/viajes-a-marruecos-personalizados-erg-chebbi-merzouga.webp"
              alt="Bromo"
              class="w-full h-full object-cover mask-image" 
              loading="lazy"
-             onerror="this.src='https://images.pexels.com/photos/2404370/pexels-photo-2404370.jpeg'; this.onerror=null;" />        
+             onerror="this.src='https://images.pexels.com/photos/2404370/pexels-photo-2404370.webp'; this.onerror=null;" />        
         <!-- Content Overlay -->
             <!-- Content Overlay -->
     <div class="absolute bottom-0 left-0 right-0 p-4 md:p-6 lg:p-12">
@@ -225,7 +225,7 @@ $uri = get_template_directory_uri();
               </div>
               <figure class="experienceSplit-media">
                 <img
-                src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-marrakech.jpg"
+                src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-marrakech.webp"
                 alt="Kasbah de Ait Ben Haddou y Valle del Dades" />
               </figure>
             </div>
@@ -250,7 +250,7 @@ $uri = get_template_directory_uri();
               <div class="ukiyo-activities-slider">
 
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-valle.jpg" alt="" class="activity-cover">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-valle.webp" alt="" class="activity-cover">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-clock.svg" width="14">
@@ -264,7 +264,7 @@ $uri = get_template_directory_uri();
                 </div>
 
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-ait.jpg" alt="" class="activity-cover">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-ait.webp" alt="" class="activity-cover">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-clock.svg" width="14">
@@ -307,7 +307,7 @@ $uri = get_template_directory_uri();
               </div>
               <figure class="experienceSplit-media">
                 <img
-                  src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-camellossalvajes.jpg"
+                  src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-camellossalvajes.webp"
                   alt="Dunas de Erg Chebbi" />
               </figure>
             </div>
@@ -330,7 +330,7 @@ $uri = get_template_directory_uri();
               <div class="ukiyo-activities-slider">
 
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-camello.jpg" alt="" class="activity-cover">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-camello.webp" alt="" class="activity-cover">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-clock.svg" width="14">
@@ -344,7 +344,7 @@ $uri = get_template_directory_uri();
                 </div>
 
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-desierto-noche.jpg" alt="" class="activity-cover">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-desierto-noche.webp" alt="" class="activity-cover">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-clock.svg" width="14">
@@ -387,7 +387,7 @@ $uri = get_template_directory_uri();
               </div>
               <figure class="experienceSplit-media">
                 <img
-                  src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-ruta.jpg"
+                  src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-ruta.webp"
                   alt="Palmeral del Valle del Draa" />
               </figure>
             </div>
@@ -410,7 +410,7 @@ $uri = get_template_directory_uri();
               <div class="ukiyo-activities-slider">
 
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-te.jpg" alt="" class="activity-cover">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-te.webp" alt="" class="activity-cover">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-clock.svg" width="14">
@@ -424,7 +424,7 @@ $uri = get_template_directory_uri();
                 </div>
 
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-mercado.jpg" alt="" class="activity-cover">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-mercado.webp" alt="" class="activity-cover">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-clock.svg" width="14">
@@ -467,7 +467,7 @@ $uri = get_template_directory_uri();
               </div>
               <figure class="experienceSplit-media">
                 <img
-                  src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-marrakech.jpg"
+                  src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-marrakech.webp"
                   alt="Kasbah de Taourirt en Ouarzazate" />
               </figure>
             </div>
@@ -481,7 +481,7 @@ $uri = get_template_directory_uri();
               <div class="ukiyo-activities-slider">
 
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-templo.jpg" alt="" class="activity-cover">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-templo.webp" alt="" class="activity-cover">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-clock.svg" width="14">
@@ -879,12 +879,7 @@ $uri = get_template_directory_uri();
       </div>
   </section>
 
-<?php
-if ( function_exists( 'ukiyo_render_viaje_autor_blog_resources_section' ) ) {
-    ukiyo_render_viaje_autor_blog_resources_section( get_the_ID(), 'bg-white' );
-}
-get_footer();
-?>
+<?php get_footer(); ?>
 
 <script>
 document.addEventListener('click', (e) => {

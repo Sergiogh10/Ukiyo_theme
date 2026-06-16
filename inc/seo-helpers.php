@@ -67,7 +67,7 @@ function ukiyo_get_destination_link_items() {
             'anchor'      => 'Viaje a medida a Italia',
             'url'         => ukiyo_get_route_url( 'destination_italia' ),
             'description' => 'Roma, Toscana, costa y experiencias gastronómicas sin prisas.',
-            'image'       => $theme_uri . '/images/italia/viajes-a-italia-personalizados-toscana.jpg',
+            'image'       => $theme_uri . '/images/italia/viajes-a-italia-personalizados-toscana.webp',
         ],
         'destination_lanzarote' => [
             'name'        => 'Lanzarote',
@@ -245,6 +245,109 @@ function ukiyo_render_related_internal_links( $args = [] ) {
                             </a>
                         <?php endif; ?>
                     <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </section>
+    <?php
+    $html = trim( ob_get_clean() );
+
+    if ( $args['echo'] ) {
+        echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+    }
+
+    return $html;
+}
+
+/**
+ * Renders a shared service block for destination landings.
+ */
+function ukiyo_render_destination_service_options( $args = [] ) {
+    $defaults = [
+        'destination' => '',
+        'class'       => '',
+        'echo'        => true,
+    ];
+    $args = wp_parse_args( $args, $defaults );
+
+    $services = [
+        [
+            'label'       => 'Viajes a medida',
+            'description' => 'Una ruta diseñada desde cero, con etapas, tiempos y experiencias ajustadas a tu forma de viajar.',
+            'route'       => 'service_custom_travel',
+        ],
+        [
+            'label'       => 'Viajes privados',
+            'description' => 'Un itinerario propio para parejas, familias o amigos, sin salidas cerradas ni ritmos impuestos.',
+            'route'       => 'service_private',
+        ],
+        [
+            'label'       => 'Viajes de novios',
+            'description' => 'Lunas de miel con alojamientos cuidados, momentos especiales y tiempo real para disfrutar.',
+            'route'       => 'service_honeymoon',
+        ],
+        [
+            'label'       => 'Viajes en grupo reducido',
+            'description' => 'Viajes compartidos con plazas limitadas, buena compañía y una mirada cercana al destino.',
+            'route'       => 'service_group_travel',
+        ],
+    ];
+
+    $ideas = [
+        'Ruta privada y flexible.',
+        'Alojamientos y experiencias según tu ritmo.',
+        'Acompañamiento antes y durante el viaje.',
+    ];
+
+    $destination = trim( (string) $args['destination'] );
+    $section_class = trim( 'py-16 bg-background-light dark:bg-background-dark border-t border-gray-100 dark:border-gray-800 ' . $args['class'] );
+
+    ob_start();
+    ?>
+    <section class="<?php echo esc_attr( $section_class ); ?>">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] items-start">
+                    <div>
+                        <span class="text-primary uppercase tracking-[0.24em] text-xs font-bold font-satoshi">
+                            Viaje a medida<?php echo $destination ? ' a ' . esc_html( $destination ) : ''; ?>
+                        </span>
+                        <h2 class="mt-3 text-3xl md:text-4xl font-rowdies text-gray-900 dark:text-white">
+                            Elige cómo quieres viajar
+                        </h2>
+                        <p class="mt-4 text-base md:text-lg text-gray-600 dark:text-gray-300 font-satoshi leading-relaxed">
+                            Cada destino puede vivirse de muchas formas: en una ruta privada, como viaje de novios, en grupo reducido o con una propuesta diseñada desde cero.
+                        </p>
+
+                        <ul class="mt-6 space-y-3">
+                            <?php foreach ( $ideas as $idea ) : ?>
+                                <li class="flex items-start gap-3 text-gray-700 dark:text-gray-200 font-satoshi">
+                                    <span class="mt-1 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <path d="m5 12 5 5L20 7"/>
+                                        </svg>
+                                    </span>
+                                    <span><?php echo esc_html( $idea ); ?></span>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+
+                    <div class="grid gap-4 sm:grid-cols-2">
+                        <?php foreach ( $services as $service ) : ?>
+                            <a
+                                href="<?php echo esc_url( ukiyo_get_route_url( $service['route'] ) ); ?>"
+                                class="group block rounded-2xl bg-white dark:bg-gray-900 p-6 border border-black/5 dark:border-white/10 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all"
+                            >
+                                <span class="block font-rowdies text-xl text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                                    <?php echo esc_html( $service['label'] ); ?>
+                                </span>
+                                <span class="mt-3 block text-sm leading-relaxed text-gray-600 dark:text-gray-300 font-satoshi">
+                                    <?php echo esc_html( $service['description'] ); ?>
+                                </span>
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -625,6 +728,275 @@ function ukiyo_render_blog_destination_links( $post_id ) {
             'variant' => 'compact',
         ]
     );
+}
+
+/**
+ * Returns editorial pillar articles for each destination.
+ */
+function ukiyo_get_blog_destination_article_clusters() {
+    return [
+        'costa-rica' => [
+            'destination_name' => 'Costa Rica',
+            'route_key'        => 'destination_costa_rica',
+            'landing_anchor'   => 'viaje a medida a Costa Rica',
+            'articles'         => [
+                'presupuesto'  => 'cuanto-cuesta-viajar-a-costa-rica',
+                'ruta'         => 'ruta-costa-rica-15-dias',
+                'que-ver'      => 'que-ver-en-costa-rica',
+                'mejor-epoca'  => 'mejor-epoca-para-viajar-a-costa-rica',
+            ],
+        ],
+        'indonesia' => [
+            'destination_name' => 'Indonesia',
+            'route_key'        => 'destination_indonesia',
+            'landing_anchor'   => 'viaje a medida a Indonesia',
+            'articles'         => [
+                'presupuesto'  => 'cuanto-cuesta-viajar-a-indonesia',
+                'ruta'         => 'ruta-indonesia-15-dias',
+                'que-ver'      => 'que-ver-en-indonesia',
+                'mejor-epoca'  => 'mejor-epoca-para-viajar-a-indonesia',
+            ],
+        ],
+        'marruecos' => [
+            'destination_name' => 'Marruecos',
+            'route_key'        => 'destination_marruecos',
+            'landing_anchor'   => 'viaje a medida a Marruecos',
+            'articles'         => [
+                'presupuesto'  => 'cuanto-cuesta-viajar-a-marruecos',
+                'ruta'         => 'ruta-marruecos-10-dias',
+                'que-ver'      => 'que-ver-en-marruecos',
+                'mejor-epoca'  => 'mejor-epoca-para-viajar-a-marruecos',
+            ],
+        ],
+        'colombia' => [
+            'destination_name' => 'Colombia',
+            'route_key'        => 'destination_colombia',
+            'landing_anchor'   => 'viaje a medida a Colombia',
+            'articles'         => [
+                'presupuesto'  => 'cuanto-cuesta-viajar-a-colombia',
+                'ruta'         => 'ruta-colombia-15-dias',
+                'que-ver'      => 'que-ver-en-colombia',
+                'mejor-epoca'  => 'mejor-epoca-para-viajar-a-colombia',
+            ],
+        ],
+        'lanzarote' => [
+            'destination_name' => 'Lanzarote',
+            'route_key'        => 'destination_lanzarote',
+            'landing_anchor'   => 'viaje a medida a Lanzarote',
+            'articles'         => [
+                'presupuesto'  => 'cuanto-cuesta-viajar-a-lanzarote',
+                'ruta'         => 'ruta-lanzarote-7-dias',
+                'que-ver'      => 'que-ver-en-lanzarote',
+                'mejor-epoca'  => 'mejor-epoca-para-viajar-a-lanzarote',
+            ],
+        ],
+    ];
+}
+
+/**
+ * Returns the editorial destination cluster and article type for a post.
+ */
+function ukiyo_get_blog_editorial_context( $post_id = 0 ) {
+    $post_id = $post_id ?: get_queried_object_id();
+    if ( ! $post_id || 'post' !== get_post_type( $post_id ) ) {
+        return null;
+    }
+
+    $slug     = get_post_field( 'post_name', $post_id );
+    $clusters = ukiyo_get_blog_destination_article_clusters();
+
+    foreach ( $clusters as $destination_slug => $cluster ) {
+        foreach ( $cluster['articles'] as $article_type => $article_slug ) {
+            if ( $slug === $article_slug ) {
+                $cluster['destination_slug'] = $destination_slug;
+                $cluster['article_type']     = $article_type;
+                $cluster['current_slug']     = $slug;
+
+                return $cluster;
+            }
+        }
+    }
+
+    return null;
+}
+
+/**
+ * Returns visible FAQ items for editorial destination posts.
+ */
+function ukiyo_get_blog_editorial_faqs( $context ) {
+    if ( ! is_array( $context ) || empty( $context['destination_name'] ) || empty( $context['article_type'] ) ) {
+        return [];
+    }
+
+    $destination = $context['destination_name'];
+    $type        = $context['article_type'];
+
+    $by_type = [
+        'presupuesto' => [
+            [
+                'question' => '¿Cuánto debería presupuestar para un viaje a ' . $destination . '?',
+                'answer'   => 'Depende del ritmo, los alojamientos, los traslados y las experiencias incluidas. Lo más útil es partir de una horquilla realista y ajustar la ruta según prioridades.',
+            ],
+            [
+                'question' => '¿Qué encarece más un viaje a ' . $destination . '?',
+                'answer'   => 'Normalmente influyen los alojamientos especiales, los traslados privados, las zonas remotas y las experiencias con guías locales o especialistas.',
+            ],
+            [
+                'question' => '¿Se puede adaptar el presupuesto sin perder calidad?',
+                'answer'   => 'Sí. La clave es elegir bien dónde invertir más y dónde simplificar, manteniendo una ruta coherente y sin recortar en seguridad o logística importante.',
+            ],
+        ],
+        'ruta' => [
+            [
+                'question' => '¿Cuántos días hacen falta para una buena ruta por ' . $destination . '?',
+                'answer'   => 'Depende del destino y del tipo de viaje, pero conviene dejar margen para traslados, descanso y experiencias locales, no solo encadenar visitas.',
+            ],
+            [
+                'question' => '¿Es mejor una ruta privada o una ruta cerrada?',
+                'answer'   => 'Una ruta privada permite ajustar tiempos, alojamientos y experiencias a tu forma de viajar. Es especialmente útil si quieres evitar jornadas demasiado cargadas.',
+            ],
+            [
+                'question' => '¿Se puede personalizar este itinerario?',
+                'answer'   => 'Sí. La ruta debe adaptarse a la época del año, al presupuesto, al nivel de actividad y a lo que más te interesa del destino.',
+            ],
+        ],
+        'que-ver' => [
+            [
+                'question' => '¿Qué lugares no debería perderme en ' . $destination . '?',
+                'answer'   => 'Depende de tus intereses. Lo recomendable es combinar lugares clave con zonas menos evidentes para que el viaje tenga equilibrio y no sea solo una lista de paradas.',
+            ],
+            [
+                'question' => '¿Cómo elegir qué ver si tengo pocos días?',
+                'answer'   => 'Prioriza una zona o una lógica de ruta clara. Intentar verlo todo suele restar calidad al viaje y aumentar demasiado los traslados.',
+            ],
+            [
+                'question' => '¿Merece la pena viajar con guía local?',
+                'answer'   => 'En muchas zonas sí. Un buen guía aporta contexto, ayuda a leer el destino y facilita experiencias que serían difíciles de organizar por libre.',
+            ],
+        ],
+        'mejor-epoca' => [
+            [
+                'question' => '¿Cuál es la mejor época para viajar a ' . $destination . '?',
+                'answer'   => 'Hay meses especialmente recomendables, pero la mejor época depende de la ruta, el clima, la afluencia y el tipo de experiencias que quieras priorizar.',
+            ],
+            [
+                'question' => '¿Se puede viajar fuera de la temporada ideal?',
+                'answer'   => 'Sí, siempre que la ruta esté bien adaptada. Viajar fuera de los meses más populares puede tener ventajas si se eligen bien las zonas y el ritmo.',
+            ],
+            [
+                'question' => '¿Cómo afecta la época del año al presupuesto?',
+                'answer'   => 'La temporada alta suele encarecer alojamientos y disponibilidad. En meses intermedios se puede conseguir mejor equilibrio entre clima, calma y presupuesto.',
+            ],
+        ],
+    ];
+
+    return isset( $by_type[ $type ] ) ? $by_type[ $type ] : [];
+}
+
+/**
+ * Renders a commercial CTA, same-destination article links and visible FAQs.
+ */
+function ukiyo_render_blog_editorial_support( $post_id = 0, $args = [] ) {
+    $post_id  = $post_id ?: get_queried_object_id();
+    $context  = ukiyo_get_blog_editorial_context( $post_id );
+    $defaults = [
+        'echo' => true,
+    ];
+    $args = wp_parse_args( $args, $defaults );
+
+    if ( ! is_array( $context ) ) {
+        return '';
+    }
+
+    $destination = $context['destination_name'];
+    $landing_url = ukiyo_get_route_url( $context['route_key'] );
+    $faqs        = ukiyo_get_blog_editorial_faqs( $context );
+    $article_labels = [
+        'presupuesto' => 'Presupuesto',
+        'ruta'        => 'Ruta recomendada',
+        'que-ver'     => 'Qué ver',
+        'mejor-epoca' => 'Mejor época',
+    ];
+
+    $related_articles = [];
+    foreach ( $context['articles'] as $article_type => $article_slug ) {
+        if ( $article_slug === $context['current_slug'] ) {
+            continue;
+        }
+
+        $article = get_page_by_path( $article_slug, OBJECT, 'post' );
+        if ( $article instanceof WP_Post && 'publish' === $article->post_status ) {
+            $related_articles[] = [
+                'type'  => $article_type,
+                'label' => isset( $article_labels[ $article_type ] ) ? $article_labels[ $article_type ] : get_the_title( $article ),
+                'title' => get_the_title( $article ),
+                'url'   => get_permalink( $article ),
+            ];
+        }
+    }
+
+    ob_start();
+    ?>
+    <section class="not-prose mt-14 rounded-2xl border border-primary/15 bg-background-light dark:bg-gray-800 p-6 md:p-8 shadow-sm">
+        <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+            <div>
+                <span class="text-primary uppercase tracking-[0.22em] text-xs font-bold font-satoshi">Viaje a medida</span>
+                <h2 class="mt-3 font-rowdies text-2xl md:text-3xl text-gray-900 dark:text-white">
+                    ¿Quieres preparar este viaje a <?php echo esc_html( $destination ); ?> con ayuda experta?
+                </h2>
+                <p class="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed font-satoshi">
+                    Podemos diseñar una ruta privada y flexible, con alojamientos, experiencias y tiempos ajustados a tu forma de viajar.
+                </p>
+                <a href="<?php echo esc_url( $landing_url ); ?>" class="mt-6 inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-secondary">
+                    <?php echo esc_html( $context['landing_anchor'] ); ?>
+                </a>
+            </div>
+
+            <?php if ( ! empty( $related_articles ) ) : ?>
+                <div>
+                    <h3 class="font-rowdies text-xl text-gray-900 dark:text-white">Sigue preparando tu viaje</h3>
+                    <div class="mt-4 grid gap-3">
+                        <?php foreach ( $related_articles as $article ) : ?>
+                            <a href="<?php echo esc_url( $article['url'] ); ?>" class="group rounded-xl bg-white dark:bg-gray-900 p-4 border border-black/5 dark:border-white/10 transition-all hover:-translate-y-0.5 hover:shadow-md">
+                                <span class="block text-[10px] uppercase tracking-[0.18em] text-primary font-bold font-satoshi">
+                                    <?php echo esc_html( $article['label'] ); ?>
+                                </span>
+                                <span class="mt-2 block font-satoshi text-sm leading-relaxed text-gray-700 dark:text-gray-200 group-hover:text-primary transition-colors">
+                                    <?php echo esc_html( $article['title'] ); ?>
+                                </span>
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+        </div>
+    </section>
+
+    <?php if ( ! empty( $faqs ) ) : ?>
+        <section class="not-prose mt-10 rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 md:p-8 shadow-sm">
+            <h2 class="font-rowdies text-2xl md:text-3xl text-gray-900 dark:text-white">Preguntas frecuentes</h2>
+            <div class="mt-6 space-y-4">
+                <?php foreach ( $faqs as $faq ) : ?>
+                    <details class="rounded-xl bg-background-light dark:bg-gray-800 p-5 border border-black/5 dark:border-white/10">
+                        <summary class="cursor-pointer font-satoshi font-bold text-gray-900 dark:text-white">
+                            <?php echo esc_html( $faq['question'] ); ?>
+                        </summary>
+                        <p class="mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-300 font-satoshi">
+                            <?php echo esc_html( $faq['answer'] ); ?>
+                        </p>
+                    </details>
+                <?php endforeach; ?>
+            </div>
+        </section>
+    <?php endif; ?>
+    <?php
+    $html = trim( ob_get_clean() );
+
+    if ( $args['echo'] ) {
+        echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+    }
+
+    return $html;
 }
 
 /**

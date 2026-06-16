@@ -204,7 +204,7 @@ $viajes_query = new WP_Query([
 
   <section class="hero-experiences relative flex items-center justify-center overflow-hidden pt-32 pb-16 mb-12">
     <div class="absolute inset-0 w-full h-full">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/heroimages/viajes-autor-ukiyo-viajeros2.jpg"
+      <img src="<?php echo get_template_directory_uri(); ?>/images/heroimages/viajes-autor-ukiyo-viajeros2.webp"
            alt="Viajes de autor"
            class="w-full h-full object-cover mask-image"
            loading="eager" />

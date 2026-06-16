@@ -10,11 +10,11 @@ $uri = get_template_directory_uri();
   <!-- HERO -->
 <section class="relative">
     <div class="relative h-[60vh] lg:h-[70vh] overflow-hidden">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-de-autor-a-costa-rica-fotografia-buitre.jpg"
+        <img src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-de-autor-a-costa-rica-fotografia-buitre.webp"
              alt="Buitre en Costa Rica durante un viaje de autor con guía experto (Luis)"
              class="w-full h-full object-cover object-bottom mask-image" 
              loading="lazy"
-             onerror="this.src='https://images.pexels.com/photos/2404370/pexels-photo-2404370.jpeg'; this.onerror=null;" />
+             onerror="this.src='https://images.pexels.com/photos/2404370/pexels-photo-2404370.webp'; this.onerror=null;" />
         <!-- Content Overlay -->
         <div class="absolute bottom-0 left-0 right-0 p-4 md:p-6 lg:p-12">
             <div class="container mx-auto max-w-4xl">
@@ -194,7 +194,7 @@ $uri = get_template_directory_uri();
               </div>
               <figure class="experienceSplit-media">
                 <img
-                  src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-monteverde.jpg"
+                  src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-monteverde.webp"
                   alt="Observación de aves en los alrededores de Orotina y Cerro Lodge" />
               </figure>
             </div>
@@ -223,7 +223,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 1 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-tucan.jpg" alt="" class="activity-cover mask-image">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-tucan.webp" alt="" class="activity-cover mask-image">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <!--<img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -242,7 +242,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 2 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-buho.jpg" alt="" class="activity-cover mask-image">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-buho.webp" alt="" class="activity-cover mask-image">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <!--<img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -290,7 +290,7 @@ $uri = get_template_directory_uri();
               </div>
               <figure class="experienceSplit-media">
                 <img
-                  src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-bahia-drake.jpg"
+                  src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-bahia-drake.webp"
                   alt="Puerto Jiménez, puerta de entrada a Corcovado" />
               </figure>
             </div>
@@ -318,7 +318,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 1 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-perezoso.jpg" alt="" class="activity-cover mask-image">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-perezoso.webp" alt="" class="activity-cover mask-image">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <!--<img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -385,7 +385,7 @@ $uri = get_template_directory_uri();
               </div>
               <figure class="experienceSplit-media">
                 <img
-                  src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-atardecer.jpg"
+                  src="<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-atardecer.webp"
                   alt="Exploración y fotografía en Corcovado" />
               </figure>
             </div>
@@ -413,7 +413,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 1 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-tapir.jpg" alt="" class="activity-cover mask-image">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-tapir.webp" alt="" class="activity-cover mask-image">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <!--<img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -432,7 +432,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 2 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-tucanazul.jpg" alt="" class="activity-cover mask-image">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-tucanazul.webp" alt="" class="activity-cover mask-image">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <!--<img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -479,7 +479,7 @@ $uri = get_template_directory_uri();
               </div>
               <figure class="experienceSplit-media">
                 <img
-                  src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-queztalvolando.jpg"
+                  src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-queztalvolando.webp"
                   alt="Bosque nuboso en San Gerardo de Dota" />
               </figure>
             </div>
@@ -507,7 +507,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 1 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-queztal.jpg" alt="" class="activity-cover mask-image">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-queztal.webp" alt="" class="activity-cover mask-image">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <!--<img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -526,7 +526,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 2 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-momoto.jpg" alt="" class="activity-cover mask-image">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-momoto.webp" alt="" class="activity-cover mask-image">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <!--<img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -573,7 +573,7 @@ $uri = get_template_directory_uri();
               </div>
               <figure class="experienceSplit-media">
                 <img
-                  src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-iguana.jpg"
+                  src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-iguana.webp"
                   alt="Fotografía de ranas y anfibios en Guápiles" />
               </figure>
             </div>
@@ -601,7 +601,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 1 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-rana.jpg" alt="" class="activity-cover mask-image">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-rana.webp" alt="" class="activity-cover mask-image">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <!--<img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -620,7 +620,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 2 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-whitebat.jpg" alt="" class="activity-cover mask-image">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-whitebat.webp" alt="" class="activity-cover mask-image">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <!--<img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -667,7 +667,7 @@ $uri = get_template_directory_uri();
               </div>
               <figure class="experienceSplit-media">
                 <img
-                  src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-bocatapada.jpg"
+                  src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-bocatapada.webp"
                   alt="Fotografía de aves en Boca Tapada" />
               </figure>
             </div>
@@ -695,7 +695,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 1 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-tucan.jpg" alt="" class="activity-cover mask-image">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-tucan.webp" alt="" class="activity-cover mask-image">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <!--<img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -714,7 +714,7 @@ $uri = get_template_directory_uri();
 
                 <!-- ACTIVITY CARD 2 -->
                 <div class="ukiyo-activity-card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-murcielago.jpg" alt="" class="activity-cover mask-image">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-murcielago.webp" alt="" class="activity-cover mask-image">
                   <div class="p-4">
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                       <!--<img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-people.svg" width="14">
@@ -1170,32 +1170,32 @@ $uri = get_template_directory_uri();
       // Definir las imágenes para el carrusel (6 únicas)
       $gallery_items = [
         [
-          'src' => get_template_directory_uri() . '/images/costarica/viajes-a-costa-rica-personalizados-rio-celeste.jpg',
+          'src' => get_template_directory_uri() . '/images/costarica/viajes-a-costa-rica-personalizados-rio-celeste.webp',
           'title' => 'Río Celeste',
           'alt' => 'Río Celeste en Costa Rica'
         ],
         [
-          'src' => get_template_directory_uri() . '/images/costarica/viajes-a-costa-rica-personalizados-tucan-corcovado.jpg',
+          'src' => get_template_directory_uri() . '/images/costarica/viajes-a-costa-rica-personalizados-tucan-corcovado.webp',
           'title' => 'Tucán en Corcovado',
           'alt' => 'Tucán en el Parque Nacional Corcovado'
         ],
         [
-          'src' => get_template_directory_uri() . '/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-mono.jpg',
+          'src' => get_template_directory_uri() . '/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-mono.webp',
           'title' => 'Fauna en Tortuguero',
           'alt' => 'Mono en Tortuguero'
         ],
         [
-          'src' => get_template_directory_uri() . '/images/costarica/viajes-a-costa-rica-personalizados-volcan-arenal-la-fortuna.jpg',
+          'src' => get_template_directory_uri() . '/images/costarica/viajes-a-costa-rica-personalizados-volcan-arenal-la-fortuna.webp',
           'title' => 'Volcán Arenal',
           'alt' => 'Vista del Volcán Arenal'
         ],
         [
-          'src' => get_template_directory_uri() . '/images/costarica/viajes-a-costa-rica-personalizados-rana-ojos-rojos.jpg',
+          'src' => get_template_directory_uri() . '/images/costarica/viajes-a-costa-rica-personalizados-rana-ojos-rojos.webp',
           'title' => 'Rana de Ojos Rojos',
           'alt' => 'Rana icónica de Costa Rica'
         ],
         [
-          'src' => get_template_directory_uri() . '/images/costarica/viajes-a-costa-rica-personalizados-monteverde-bosque-nuboso.jpg',
+          'src' => get_template_directory_uri() . '/images/costarica/viajes-a-costa-rica-personalizados-monteverde-bosque-nuboso.webp',
           'title' => 'Bosque Nuboso',
           'alt' => 'Bosque Nuboso de Monteverde'
         ]
@@ -1256,12 +1256,7 @@ $uri = get_template_directory_uri();
     </div>
 </section>
 
-<?php
-if ( function_exists( 'ukiyo_render_viaje_autor_blog_resources_section' ) ) {
-    ukiyo_render_viaje_autor_blog_resources_section( get_the_ID(), 'bg-white' );
-}
-get_footer();
-?>
+<?php get_footer(); ?>
 
 
 

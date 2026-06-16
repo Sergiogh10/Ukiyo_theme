@@ -73,7 +73,7 @@ npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/main.css --watch
 ## 🧱 Prácticas recomendadas
 	•	No edites directamente main.css generado por Tailwind.
 Trabaja sobre tailwind.css y recompila.
-	•	Mantén imágenes optimizadas (.jpg o .webp) antes de subirlas.
+	•	Mantén imágenes optimizadas (.webp o .webp) antes de subirlas.
 	•	Usa la convención font-satoshi y font-telma para tipografía.
 	•	Crea nuevos templates duplicando los existentes para mantener consistencia.
 

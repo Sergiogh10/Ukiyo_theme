@@ -118,7 +118,7 @@ $uri = get_template_directory_uri();
 <!-- Header Hero -->
 <header class="relative h-[80vh] w-full overflow-hidden flex items-center justify-center">
     <div class="absolute inset-0 z-0">
-        <img alt="Guacamayo en Costa Rica durante un viaje de autor con guía experto" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-guacamayo.jpg" onerror="this.src='https://images.pexels.com/photos/2404370/pexels-photo-2404370.jpeg'"/>
+        <img alt="Guacamayo en Costa Rica durante un viaje de autor con guía experto" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-guacamayo.webp" onerror="this.src='https://images.pexels.com/photos/2404370/pexels-photo-2404370.webp'"/>
         <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-background-light"></div>
     </div>
     <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
@@ -312,13 +312,13 @@ $uri = get_template_directory_uri();
                         <div class="carousel aspect-video mb-8 rounded-3xl" data-carousel>
                             <div class="carousel-track h-full">
                                 <div class="carousel-slide">
-                                    <img alt="Bosque nuboso San Gerardo" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/costarica/viajes-a-costa-rica-personalizados-monteverde.jpg" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg'"/>
+                                    <img alt="Bosque nuboso San Gerardo" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/costarica/viajes-a-costa-rica-personalizados-monteverde.webp" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.webp'"/>
                                 </div>
                                 <div class="carousel-slide">
-                                    <img alt="Quetzal resplandeciente" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-queztal.jpg" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg'"/>
+                                    <img alt="Quetzal resplandeciente" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-queztal.webp" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.webp'"/>
                                 </div>
                                 <div class="carousel-slide">
-                                    <img alt="Bosque nuboso montañas" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/costarica/viajes-a-costa-rica-personalizados-monteverde-bosque-nuboso.jpg" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg'"/>
+                                    <img alt="Bosque nuboso montañas" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/costarica/viajes-a-costa-rica-personalizados-monteverde-bosque-nuboso.webp" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.webp'"/>
                                 </div>
                             </div>
                             <button class="carousel-btn prev" aria-label="Anterior"><span class="material-symbols-outlined">chevron_left</span></button>
@@ -384,13 +384,13 @@ $uri = get_template_directory_uri();
                         <div class="carousel aspect-video mb-8 rounded-3xl" data-carousel>
                             <div class="carousel-track h-full">
                                 <div class="carousel-slide">
-                                    <img alt="Puerto Jiménez" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/costarica/viajes-a-costa-rica-personalizados-bahia-drake.jpg" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg'"/>
+                                    <img alt="Puerto Jiménez" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/costarica/viajes-a-costa-rica-personalizados-bahia-drake.webp" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.webp'"/>
                                 </div>
                                 <div class="carousel-slide">
-                                    <img alt="Caimán en manglares" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-caiman.jpg" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg'"/>
+                                    <img alt="Caimán en manglares" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-caiman.webp" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.webp'"/>
                                 </div>
                                 <div class="carousel-slide">
-                                    <img alt="Guacamayo salvaje" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/costarica/viajes-personalizados-ukiyo-guacamayo.jpg" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg'"/>
+                                    <img alt="Guacamayo salvaje" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/costarica/viajes-personalizados-ukiyo-guacamayo.webp" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.webp'"/>
                                 </div>
                             </div>
                             <button class="carousel-btn prev" aria-label="Anterior"><span class="material-symbols-outlined">chevron_left</span></button>
@@ -455,13 +455,13 @@ $uri = get_template_directory_uri();
                         <div class="carousel aspect-video mb-8 rounded-3xl" data-carousel>
                             <div class="carousel-track h-full">
                                 <div class="carousel-slide">
-                                    <img alt="Selva Corcovado" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-guacamayo.jpg" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg'"/>
+                                    <img alt="Selva Corcovado" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-guacamayo.webp" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.webp'"/>
                                 </div>
                                 <div class="carousel-slide">
-                                    <img alt="Tapir en Corcovado" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-tapir.jpg" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg'"/>
+                                    <img alt="Tapir en Corcovado" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-tapir.webp" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.webp'"/>
                                 </div>
                                 <div class="carousel-slide">
-                                    <img alt="Mono araña" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-mono.jpg" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg'"/>
+                                    <img alt="Mono araña" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-mono.webp" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.webp'"/>
                                 </div>
                             </div>
                             <button class="carousel-btn prev" aria-label="Anterior"><span class="material-symbols-outlined">chevron_left</span></button>
@@ -526,10 +526,10 @@ $uri = get_template_directory_uri();
                         <div class="carousel aspect-video mb-8 rounded-3xl" data-carousel>
                             <div class="carousel-track h-full">
                                 <div class="carousel-slide">
-                                    <img alt="Perezoso en Orotina" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-perezoso.jpg" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg'"/>
+                                    <img alt="Perezoso en Orotina" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-perezoso.webp" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.webp'"/>
                                 </div>
                                 <div class="carousel-slide">
-                                    <img alt="Momoto turquesa" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-momoto.jpg" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg'"/>
+                                    <img alt="Momoto turquesa" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-momoto.webp" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.webp'"/>
                                 </div>
                             </div>
                             <button class="carousel-btn prev" aria-label="Anterior"><span class="material-symbols-outlined">chevron_left</span></button>
@@ -594,16 +594,16 @@ $uri = get_template_directory_uri();
                         <div class="carousel aspect-video mb-8 rounded-3xl" data-carousel>
                             <div class="carousel-track h-full">
                                 <div class="carousel-slide">
-                                    <img alt="Pierella Garden" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/costarica/viajes-a-costa-rica-personalizados-osa-corcovado-hero.jpg" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg'"/>
+                                    <img alt="Pierella Garden" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/costarica/viajes-a-costa-rica-personalizados-osa-corcovado-hero.webp" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.webp'"/>
                                 </div>
                                 <div class="carousel-slide">
-                                    <img alt="Iguana verde" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-iguana.jpg" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg'"/>
+                                    <img alt="Iguana verde" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-iguana.webp" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.webp'"/>
                                 </div>
                                 <div class="carousel-slide">
-                                    <img alt="Murciélago blanco" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-whitebat.jpg" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg'"/>
+                                    <img alt="Murciélago blanco" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-whitebat.webp" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.webp'"/>
                                 </div>
                                 <div class="carousel-slide">
-                                    <img alt="Rana dardo" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-rana.jpg" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg'"/>
+                                    <img alt="Rana dardo" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-rana.webp" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.webp'"/>
                                 </div>
                             </div>
                             <button class="carousel-btn prev" aria-label="Anterior"><span class="material-symbols-outlined">chevron_left</span></button>
@@ -669,13 +669,13 @@ $uri = get_template_directory_uri();
                         <div class="carousel aspect-video mb-8 rounded-3xl" data-carousel>
                             <div class="carousel-track h-full">
                                 <div class="carousel-slide">
-                                    <img alt="Canales Tortuguero" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-canales.jpg" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg'"/>
+                                    <img alt="Canales Tortuguero" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-canales.webp" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.webp'"/>
                                 </div>
                                 <div class="carousel-slide">
-                                    <img alt="Mono en Tortuguero" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-mono.jpg" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg'"/>
+                                    <img alt="Mono en Tortuguero" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/costarica/viajes-a-costa-rica-personalizados-tortuguero-mono.webp" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.webp'"/>
                                 </div>
                                 <div class="carousel-slide">
-                                    <img alt="Murciélago nocturno" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-murcielago.jpg" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg'"/>
+                                    <img alt="Murciélago nocturno" class="w-full h-full object-cover" src="<?php echo $uri; ?>/images/viajesdeautor/wildcostarica/viajes-de-autor-a-costa-rica-fotografia-murcielago.webp" onerror="this.src='https://images.pexels.com/photos/2559941/pexels-photo-2559941.webp'"/>
                                 </div>
                             </div>
                             <button class="carousel-btn prev" aria-label="Anterior"><span class="material-symbols-outlined">chevron_left</span></button>
@@ -921,9 +921,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<?php
-if ( function_exists( 'ukiyo_render_viaje_autor_blog_resources_section' ) ) {
-    ukiyo_render_viaje_autor_blog_resources_section( get_the_ID(), 'bg-white' );
-}
-get_footer();
-?>
+<?php get_footer(); ?>

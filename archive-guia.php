@@ -152,7 +152,7 @@ function sel($a,$b){ echo selected($a,$b,false); }
                      alt="<?php the_title_attribute(); ?>"
                      class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500">
               <?php else : ?>
-                <img src="https://images.pexels.com/photos/2404370/pexels-photo-2404370.jpeg"
+                <img src="https://images.pexels.com/photos/2404370/pexels-photo-2404370.webp"
                      alt="<?php the_title_attribute(); ?>"
                      class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500">
               <?php endif; ?>

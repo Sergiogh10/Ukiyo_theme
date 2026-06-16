@@ -22,12 +22,7 @@ add_action('init', function () {
     register_post_type('viaje_autor', [
         'labels' => $labels,
         'public' => true,
-        // REST API enabled so UKIYO OS (and other internal tools) can create
-        // viaje_autor drafts. The classic editor is preserved via the
-        // `use_block_editor_for_post_type` filter below — Gutenberg stays off
-        // so the existing metaboxes keep working.
-        'show_in_rest' => true,
-        'rest_base'    => 'viaje_autor',
+        'show_in_rest' => false, // Disable Gutenberg - use classic editor for meta boxes
         'show_in_menu' => true,
         // The public listing is the curated page /viajes-de-autor/.
         // Keeping the CPT archive enabled exposes /viajes/, which redirects and
@@ -59,15 +54,6 @@ add_action('init', function () {
         'rewrite' => ['slug' => 'destino'],
     ]);
 });
-
-// Keep the classic editor for viaje_autor even though show_in_rest is true.
-// The existing metaboxes (`inc/meta-viaje-autor.php`) rely on it.
-add_filter('use_block_editor_for_post_type', function ($use, $post_type) {
-    if ($post_type === 'viaje_autor') {
-        return false;
-    }
-    return $use;
-}, 10, 2);
 
 add_filter('single_template', 'load_post_template_by_id');
 

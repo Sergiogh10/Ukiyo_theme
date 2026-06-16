@@ -753,7 +753,7 @@ function ukiyo_portal_get_airline_asset_url( $airline_key, $custom_label = '' ) 
         'wizz air'   => 'wizz_air',
     ];
     $files   = [
-        'air_europa' => 'aireuropa_airline.jpeg',
+        'air_europa' => 'aireuropa_airline.webp',
         'ryanair'    => 'ryanair_airline.png',
         'iberia'     => 'iberia_airline.png',
         'delta'      => 'delta_airline.png',
@@ -1737,7 +1737,7 @@ function ukiyo_portal_get_trip_hero_image_data( $trip ) {
     }
 
     return [
-        'url'    => get_template_directory_uri() . '/images/destination-mood/viajes-personalizados-ukiyo-portada.jpg',
+        'url'    => get_template_directory_uri() . '/images/destination-mood/viajes-personalizados-ukiyo-portada.webp',
         'width'  => 0,
         'height' => 0,
         'type'   => 'image/jpeg',

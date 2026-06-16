@@ -34,15 +34,15 @@ function ukiyo_get_lcp_image_preload_url() {
     $uri      = get_template_directory_uri();
 
     $map = [
-        'front_page'           => $uri . '/images/heroimages/viajes-personalizados-ukiyo-costaricatucan.jpg',
-        'page-experiences.php' => $uri . '/images/indonesia/viajes-a-indonesia-personalizados-islas.jpg',
-        'page-pricing.php'     => $uri . '/images/heroimages/viajes-autor-ukiyo-indonesiaplaya.jpg',
-        'page-reviews2.php'    => $uri . '/images/heroimages/viajes-autor-ukiyo-reviewfinal.jpg',
+        'front_page'           => $uri . '/images/heroimages/viajes-personalizados-ukiyo-costaricatucan.webp',
+        'page-experiences.php' => $uri . '/images/indonesia/viajes-a-indonesia-personalizados-islas.webp',
+        'page-pricing.php'     => $uri . '/images/heroimages/viajes-autor-ukiyo-indonesiaplaya.webp',
+        'page-reviews2.php'    => $uri . '/images/heroimages/viajes-autor-ukiyo-reviewfinal.webp',
         'page-viajesautor.php' => null,
-        'page-costarica.php'   => $uri . '/images/costarica/viajes-a-costa-rica-personalizados-monteverde-bosque-nuboso.jpg',
-        'page-colombia.php'    => $uri . '/images/colombia/viajes-colombia-hero2.jpg',
-        'page-indonesia.php'   => $uri . '/images/indonesia/viajes-autor-ukiyo-indonesiamanta.jpg',
-        'page-marruecos.php'   => $uri . '/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-pareja.jpg',
+        'page-costarica.php'   => $uri . '/images/costarica/viajes-a-costa-rica-personalizados-monteverde-bosque-nuboso.webp',
+        'page-colombia.php'    => $uri . '/images/colombia/viajes-colombia-hero2.webp',
+        'page-indonesia.php'   => $uri . '/images/indonesia/viajes-autor-ukiyo-indonesiamanta.webp',
+        'page-marruecos.php'   => $uri . '/images/viajesdeautor/marruecos/viajes-de-autor-a-costa-rica-fotografia-pareja.webp',
     ];
 
     if ( is_front_page() ) {
@@ -50,7 +50,7 @@ function ukiyo_get_lcp_image_preload_url() {
     }
 
     if ( is_singular( 'viaje_autor' ) ) {
-        return get_post_meta( get_queried_object_id(), 'hero_image', true ) ?: $uri . '/images/heroimages/default-hero.jpg';
+        return get_post_meta( get_queried_object_id(), 'hero_image', true ) ?: $uri . '/images/heroimages/viajes-personalizados-ukiyo-indonesia.webp';
     }
 
     if ( isset( $map[ $template ] ) ) {
@@ -334,8 +334,13 @@ function ukiyo_humanize_image_filename( $src ) {
     return $name ? ucfirst( $name ) : '';
 }
 
+function ukiyo_current_language_is_english() {
+    return function_exists( 'pll_current_language' ) && 'en' === pll_current_language();
+}
+
 function ukiyo_image_destination_label( $src ) {
     $haystack = strtolower( remove_accents( ukiyo_normalize_image_url_path( $src ) ) );
+    $is_en    = ukiyo_current_language_is_english();
 
     $destinations = [
         'costa-rica' => 'Costa Rica',
@@ -343,16 +348,16 @@ function ukiyo_image_destination_label( $src ) {
         'colombia'   => 'Colombia',
         'indonesia'  => 'Indonesia',
         'bali'       => 'Bali',
-        'marruecos'  => 'Marruecos',
-        'morocco'    => 'Marruecos',
+        'marruecos'  => $is_en ? 'Morocco' : 'Marruecos',
+        'morocco'    => $is_en ? 'Morocco' : 'Marruecos',
         'lanzarote'  => 'Lanzarote',
-        'italia'     => 'Italia',
+        'italia'     => $is_en ? 'Italy' : 'Italia',
         'komodo'     => 'Komodo',
         'borneo'     => 'Borneo',
         'java'       => 'Java',
         'sulawesi'   => 'Sulawesi',
         'lombok'     => 'Lombok',
-        'gilis'      => 'islas Gili',
+        'gilis'      => $is_en ? 'Gili Islands' : 'islas Gili',
         'raja-ampat' => 'Raja Ampat',
     ];
 
@@ -406,54 +411,75 @@ function ukiyo_image_has_css_layout_sizing( $attributes ) {
 function ukiyo_generate_image_alt( $src, $attributes = [] ) {
     $path        = strtolower( remove_accents( ukiyo_normalize_image_url_path( $src ) ) );
     $destination = ukiyo_image_destination_label( $src );
+    $is_en       = ukiyo_current_language_is_english();
 
     if ( ukiyo_is_decorative_image_src( $src ) ) {
         return '';
     }
 
     if ( false !== strpos( $path, 'whatsapp--v4' ) || false !== strpos( $path, 'icons8.com/cotton/64/whatsapp' ) ) {
-        return 'Contactar con Viajes Ukiyo por WhatsApp';
+        return $is_en ? 'Contact Viajes Ukiyo on WhatsApp' : 'Contactar con Viajes Ukiyo por WhatsApp';
     }
 
     if ( false !== strpos( $path, 'turismo_colombia' ) ) {
-        return 'Logo oficial de turismo de Colombia';
+        return $is_en ? 'Official Colombia tourism logo' : 'Logo oficial de turismo de Colombia';
     }
 
     if ( false !== strpos( $path, 'turismo_costarica' ) ) {
-        return 'Logo oficial de turismo de Costa Rica';
+        return $is_en ? 'Official Costa Rica tourism logo' : 'Logo oficial de turismo de Costa Rica';
     }
 
     if ( false !== strpos( $path, 'turismo_indonesia' ) ) {
-        return 'Logo oficial de turismo de Indonesia';
+        return $is_en ? 'Official Indonesia tourism logo' : 'Logo oficial de turismo de Indonesia';
     }
 
     if ( false !== strpos( $path, 'turismo_marruecos' ) ) {
-        return 'Logo oficial de turismo de Marruecos';
+        return $is_en ? 'Official Morocco tourism logo' : 'Logo oficial de turismo de Marruecos';
     }
 
     if ( false !== strpos( $path, 'logo' ) ) {
-        return 'Logo de Viajes Ukiyo';
+        return $is_en ? 'Viajes Ukiyo logo' : 'Logo de Viajes Ukiyo';
     }
 
     if ( false !== strpos( $path, 'autor-' ) || false !== strpos( $path, '/autores/' ) ) {
         $name = ukiyo_humanize_image_filename( $src );
 
+        if ( $is_en ) {
+            return $name ? 'Local host for Viajes Ukiyo: ' . $name : 'Local host for a Viajes Ukiyo signature trip';
+        }
+
         return $name ? 'Autor local de Viajes Ukiyo: ' . $name : 'Autor local de un viaje de autor de Viajes Ukiyo';
     }
 
     if ( false !== strpos( $path, 'resena' ) || false !== strpos( $path, 'reviews' ) ) {
+        if ( $is_en ) {
+            return $destination ? 'Viajes Ukiyo travelers during an experience in ' . $destination : 'Viajes Ukiyo travelers during a tailor-made experience';
+        }
+
         return $destination ? 'Viajeros de Viajes Ukiyo durante una experiencia en ' . $destination : 'Viajeros de Viajes Ukiyo durante una experiencia personalizada';
     }
 
     if ( false !== strpos( $path, 'viajes-de-autor' ) ) {
+        if ( $is_en ) {
+            return $destination ? 'Signature trip in ' . $destination . ' with Viajes Ukiyo' : 'Signature trip with Viajes Ukiyo';
+        }
+
         return $destination ? 'Viaje de autor en ' . $destination . ' con Viajes Ukiyo' : 'Viaje de autor con Viajes Ukiyo';
     }
 
     if ( $destination ) {
+        if ( $is_en ) {
+            return 'Tailor-made trip to ' . $destination . ' with Viajes Ukiyo';
+        }
+
         return 'Viaje a medida a ' . $destination . ' con Viajes Ukiyo';
     }
 
     $fallback = ukiyo_humanize_image_filename( $src );
+
+    if ( $is_en ) {
+        return $fallback ? $fallback . ' with Viajes Ukiyo' : 'Tailor-made travel experience with Viajes Ukiyo';
+    }
 
     return $fallback ? $fallback . ' con Viajes Ukiyo' : 'Experiencia de viaje a medida con Viajes Ukiyo';
 }
@@ -534,29 +560,58 @@ function ukiyo_generate_image_link_label( $href, $img_tag ) {
     $img_alt    = trim( ukiyo_get_html_attr_value( $img_attrs, 'alt' ) );
     $image_src  = ukiyo_get_html_attr_value( $img_attrs, 'src' );
     $destination = ukiyo_image_destination_label( $href ?: $image_src );
+    $is_en      = ukiyo_current_language_is_english();
 
     if ( '/' === $href_path || '' === trim( $href_path, '/' ) ) {
+        if ( $is_en ) {
+            return 'Go to the Viajes Ukiyo homepage';
+        }
+
         return 'Ir a la página de inicio de Viajes Ukiyo';
     }
 
     if ( false !== strpos( $href_path, 'planifica' ) ) {
+        if ( $is_en ) {
+            return 'Plan a tailor-made trip with Viajes Ukiyo';
+        }
+
         return 'Planificar un viaje a medida con Viajes Ukiyo';
     }
 
     if ( false !== strpos( $href_path, 'viajes-de-autor' ) ) {
+        if ( $is_en ) {
+            return 'View Viajes Ukiyo signature trips';
+        }
+
         return 'Ver viajes de autor de Viajes Ukiyo';
     }
 
     if ( false !== strpos( $href_path, '/viajes/' ) ) {
+        if ( $is_en ) {
+            return $destination ? 'View signature trip in ' . $destination : 'View signature trip details';
+        }
+
         return $destination ? 'Ver viaje de autor en ' . $destination : 'Ver detalle del viaje de autor';
     }
 
     if ( $destination ) {
+        if ( $is_en ) {
+            return 'View tailor-made trips to ' . $destination;
+        }
+
         return 'Ver viajes a medida a ' . $destination;
     }
 
     if ( $img_alt && ! ukiyo_is_generic_image_alt( $img_alt ) ) {
+        if ( $is_en ) {
+            return 'View ' . $img_alt;
+        }
+
         return 'Ver ' . $img_alt;
+    }
+
+    if ( $is_en ) {
+        return 'Open related Viajes Ukiyo link';
     }
 
     return 'Abrir enlace relacionado con Viajes Ukiyo';
