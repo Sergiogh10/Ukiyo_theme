@@ -423,6 +423,43 @@ function ukiyo_get_meta_description() {
 }
 
 /**
+ * 301 redirect from legacy post URLs ("/{slug}/") to the new "/blog/{slug}/"
+ * structure after the permalink migration.
+ *
+ * Fires only on 404 with single-segment paths that match an existing published
+ * post. Pages, archives and anything already under /blog/ are not affected.
+ */
+function ukiyo_legacy_post_slug_redirect() {
+    if ( ! is_404() || is_admin() ) {
+        return;
+    }
+
+    $path = isset( $_SERVER['REQUEST_URI'] ) ? wp_parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ) : '';
+    if ( ! $path ) {
+        return;
+    }
+
+    $segments = array_values( array_filter( explode( '/', $path ) ) );
+    if ( count( $segments ) !== 1 ) {
+        return;
+    }
+
+    $slug = sanitize_title( $segments[0] );
+    if ( ! $slug ) {
+        return;
+    }
+
+    $post = get_page_by_path( $slug, OBJECT, 'post' );
+    if ( ! $post instanceof WP_Post || 'publish' !== $post->post_status ) {
+        return;
+    }
+
+    wp_safe_redirect( get_permalink( $post ), 301 );
+    exit;
+}
+add_action( 'template_redirect', 'ukiyo_legacy_post_slug_redirect', 5 );
+
+/**
  * Returns whether the current request should be excluded from the index.
  */
 function ukiyo_should_noindex_current_request() {
