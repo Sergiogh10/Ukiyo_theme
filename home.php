@@ -259,9 +259,8 @@ $post_card_image = function ( $post_id ) use ( $fallback_image ) {
   .ukiyo-blog .post__head{display:flex;gap:.85rem;margin-bottom:1rem}
   .ukiyo-blog .post__avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;border:2px solid #fff;box-shadow:0 4px 10px rgba(0,0,0,.1);flex-shrink:0}
   .ukiyo-blog .post__avatar img{width:100%;height:100%;object-fit:cover}
-  .ukiyo-blog .post__head__txt{padding-top:.15rem;flex:1;min-width:0}
-  .ukiyo-blog .post__title{font-family:var(--font-display);font-size:1.25rem;line-height:1.15;font-weight:400;color:var(--ink);margin-bottom:.2rem;letter-spacing:-0.01em;transition:color .25s;text-wrap:balance;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-  .ukiyo-blog .post__head__txt{min-width:0}
+  .ukiyo-blog .post__head__txt{padding-top:.15rem;flex:1 1 0;min-width:0}
+  .ukiyo-blog .post__title{font-family:var(--font-display);font-size:1.25rem;line-height:1.15;font-weight:400;color:var(--ink);margin-bottom:.2rem;letter-spacing:-0.01em;transition:color .25s;text-wrap:balance;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;width:100%;max-width:100%}
   .ukiyo-blog .post:hover .post__title{color:var(--primary)}
   .ukiyo-blog .post__byline{font-family:var(--font-mono);font-size:.7rem;color:var(--ink-soft);letter-spacing:.12em;text-transform:uppercase}
   .ukiyo-blog .post__excerpt{font-size:.92rem;color:var(--ink-soft);line-height:1.55;margin-bottom:1.6rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
