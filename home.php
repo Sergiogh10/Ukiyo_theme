@@ -217,15 +217,15 @@ $post_card_image = function ( $post_id ) use ( $fallback_image ) {
 
   /* FEATURED */
   .ukiyo-blog .featured{padding:6rem 0 2rem;background:var(--bg)}
-  .ukiyo-blog .featured__wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:4.5rem;align-items:center;max-width:1140px;margin:0 auto}
-  .ukiyo-blog .featured__media{position:relative;aspect-ratio:4/3;border-radius:24px;overflow:hidden;box-shadow:0 30px 70px -35px rgba(44,44,44,.4)}
-  .ukiyo-blog .featured__media img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.4,0,.2,1)}
+  .ukiyo-blog .featured__wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:4.5rem;align-items:center;max-width:1140px;margin:0 auto}
+  .ukiyo-blog .featured__media{display:block;width:100%;position:relative;aspect-ratio:4/3;border-radius:24px;overflow:hidden;box-shadow:0 30px 70px -35px rgba(44,44,44,.4)}
+  .ukiyo-blog .featured__media img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.4,0,.2,1)}
   .ukiyo-blog .featured__wrap:hover .featured__media img{transform:scale(1.04)}
   .ukiyo-blog .featured__media .cat{position:absolute;top:1.2rem;left:1.2rem;z-index:2;background:rgba(255,255,255,.94);color:var(--primary);font-family:var(--font-mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;padding:.4rem .8rem;border-radius:6px;font-weight:600;backdrop-filter:blur(4px)}
   .ukiyo-blog .featured__copy{min-width:0}
   .ukiyo-blog .featured__copy .mark{display:flex;align-items:center;gap:.75rem;font-size:.78rem;font-weight:600;color:var(--primary);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.5rem;font-family:var(--font-mono)}
   .ukiyo-blog .featured__copy .mark::before{content:"";width:32px;height:1px;background:var(--primary)}
-  .ukiyo-blog .featured__copy h2{font-size:clamp(2.2rem, 4.2vw, 3.4rem);font-weight:400;letter-spacing:-0.02em;line-height:1.05;margin-bottom:1.2rem;color:var(--ink);overflow-wrap:break-word}
+  .ukiyo-blog .featured__copy h2{font-size:clamp(1.7rem, 3.2vw, 2.8rem);font-weight:400;letter-spacing:-0.02em;line-height:1.1;margin-bottom:1.2rem;color:var(--ink);overflow-wrap:break-word;text-wrap:balance}
   .ukiyo-blog .featured__copy h2 em{font-style:italic;color:var(--primary);font-weight:300}
   .ukiyo-blog .featured__meta{display:flex;align-items:center;gap:.6rem;color:var(--ink-soft);font-size:.88rem;margin-bottom:1.4rem;flex-wrap:wrap}
   .ukiyo-blog .featured__meta strong{color:var(--ink);font-weight:600}
