@@ -222,6 +222,7 @@ $post_card_image = function ( $post_id ) use ( $fallback_image ) {
   .ukiyo-blog .featured__media img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.4,0,.2,1)}
   .ukiyo-blog .featured__wrap:hover .featured__media img{transform:scale(1.04)}
   .ukiyo-blog .featured__media .cat{position:absolute;top:1.2rem;left:1.2rem;z-index:2;background:rgba(255,255,255,.94);color:var(--primary);font-family:var(--font-mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;padding:.4rem .8rem;border-radius:6px;font-weight:600;backdrop-filter:blur(4px)}
+  .ukiyo-blog .featured__copy{min-width:0}
   .ukiyo-blog .featured__copy .mark{display:flex;align-items:center;gap:.75rem;font-size:.78rem;font-weight:600;color:var(--primary);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.5rem;font-family:var(--font-mono)}
   .ukiyo-blog .featured__copy .mark::before{content:"";width:32px;height:1px;background:var(--primary)}
   .ukiyo-blog .featured__copy h2{font-size:clamp(2.2rem, 4.2vw, 3.4rem);font-weight:400;letter-spacing:-0.02em;line-height:1.05;margin-bottom:1.2rem;color:var(--ink)}
