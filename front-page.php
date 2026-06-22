@@ -1,8 +1,11 @@
 <?php
 /**
  * Template: Front Page (Inicio)
- * Muestra la homepage estática de UKIYO
+ * Home rediseñada (Claude Design / Home.html) con el HEADER y el FOOTER del tema.
+ * El CSS del diseño se acota al contenedor .uk-home para no afectar a la cabecera/pie.
  */
+
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 if ( function_exists( 'pll_current_language' ) && 'en' === pll_current_language() ) {
     $english_front_page = __DIR__ . '/front-page-en.php';
@@ -12,1142 +15,651 @@ if ( function_exists( 'pll_current_language' ) && 'en' === pll_current_language(
     }
 }
 
-get_header(); ?>
+$tpl              = get_template_directory_uri();
+$destinations_url = function_exists( 'ukiyo_get_route_url' ) ? ukiyo_get_route_url( 'destinations' ) : home_url( '/destinos/' );
+$pricing_url      = function_exists( 'ukiyo_get_route_url' ) ? ukiyo_get_route_url( 'pricing' )      : home_url( '/precios/' );
+$blog_url         = function_exists( 'ukiyo_get_route_url' ) ? ukiyo_get_route_url( 'blog' )         : home_url( '/blog/' );
+$about_url        = function_exists( 'ukiyo_get_route_url' ) ? ukiyo_get_route_url( 'about' )        : home_url( '/nosotros/' );
+$viajes_autor_url = function_exists( 'ukiyo_get_route_url' ) ? ukiyo_get_route_url( 'viajes_autor' ) : home_url( '/viajes-de-autor/' );
+$plan_trip_url    = function_exists( 'ukiyo_get_route_url' ) ? ukiyo_get_route_url( 'plan_trip' )    : home_url( '/planifica-tu-viaje/' );
 
-<?php
-$plan_trip_url            = ukiyo_get_route_url( 'plan_trip' );
-$viajes_autor_url         = ukiyo_get_route_url( 'viajes_autor' );
-$destinations_url         = ukiyo_get_route_url( 'destinations' );
-$reviews_url              = ukiyo_get_route_url( 'reviews' );
-$destination_indonesia    = ukiyo_get_route_url( 'destination_indonesia' );
-$destination_costa_rica   = ukiyo_get_route_url( 'destination_costa_rica' );
-$destination_colombia     = ukiyo_get_route_url( 'destination_colombia' );
-$destination_marruecos    = ukiyo_get_route_url( 'destination_marruecos' );
+// Tipografias del diseno (Rowdies, DM Mono, Satoshi).
+add_action( 'wp_enqueue_scripts', function () {
+    wp_enqueue_style( 'ukiyo-home-fonts',   'https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&family=DM+Mono:wght@400;500&display=swap', array(), null );
+    wp_enqueue_style( 'ukiyo-home-satoshi', 'https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap', array(), null );
+} );
+
+get_header();
 ?>
-
 <style>
-  .hero-responsive { height: 100vh; }
-  @media (min-width: 1024px) {
-    .hero-responsive { height: auto !important; min-height: 50vh !important; }
+.uk-home{
+    --primary:#8B4513;
+    --primary-50:#FDF7F3;
+    --primary-100:#F9E8D9;
+    --primary-300:#E8B48D;
+    --primary-700:#6B3410;
+    --secondary:#9CAF88;
+    --secondary-700:#5E6952;
+    --accent:#D4A574;
+    --accent-300:#EBD2AE;
+    --accent-50:#FDF9F4;
+    --bg:#FEFCF8;
+    --surface:#F5F2ED;
+    --paper:#F8F2E7;
+    --ink:#2C2C2C;
+    --ink-soft:#6B6B6B;
+    --line:#E8E0D2;
+
+    --font-sans:'Satoshi','Inter',system-ui,sans-serif;
+    --font-display:'Rowdies',serif;
+    --font-mono:'DM Mono',ui-monospace,monospace;
+
+    --maxw:1240px;
+    --section-y:6.5rem;
+    --radius:18px;
+  }.uk-home *{box-sizing:border-box}html, .uk-home{margin:0;padding:0}html{scroll-behavior:smooth}.uk-home{background:var(--bg);color:var(--ink);font-family:var(--font-sans);font-weight:400;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}.uk-home img{max-width:100%;display:block}.uk-home a{color:inherit;text-decoration:none}.uk-home button{font-family:inherit;cursor:pointer;border:none;background:none}.uk-home h1, .uk-home h2, .uk-home h3, .uk-home h4{font-family:var(--font-display);font-weight:400;letter-spacing:-0.01em;line-height:1.1;margin:0}.uk-home .container{max-width:var(--maxw);margin:0 auto;padding:0 1.75rem}.uk-home .nav{position:fixed;inset:0 0 auto 0;z-index:50;padding:1.1rem 0;transition:background .35s, backdrop-filter .35s, border-color .35s;border-bottom:1px solid transparent}.uk-home .nav .row{display:flex;align-items:center;justify-content:space-between;gap:2rem}.uk-home .nav.scrolled{background:rgba(254,252,248,.92);backdrop-filter:blur(14px) saturate(1.1);-webkit-backdrop-filter:blur(14px) saturate(1.1);border-bottom:1px solid var(--surface)}.uk-home .nav__logo img{height:38px;width:auto}.uk-home .nav__links{display:flex;gap:1.75rem;align-items:center}.uk-home .nav__links a{font-size:.95rem;color:#fff;transition:color .25s, opacity .25s;opacity:.92}.uk-home .nav__links a:hover{opacity:1}.uk-home .nav__links a.active{font-weight:600;border-bottom:2px solid currentColor;padding-bottom:2px}.uk-home .nav.scrolled .nav__links a{color:var(--ink-soft)}.uk-home .nav.scrolled .nav__links a:hover{color:var(--primary)}.uk-home .nav__cta{padding:.65rem 1.25rem;border-radius:999px;font-weight:600;font-size:.92rem;border:1.5px solid #fff;color:#fff;transition:all .25s}.uk-home .nav.scrolled .nav__cta{border-color:var(--secondary);color:#fff;background:var(--secondary)}.uk-home .nav__cta:hover{transform:translateY(-1px)}.uk-home .nav__mobile{display:none}
+  @media (max-width:980px){.uk-home .nav__links, .uk-home .nav__cta{display:none}.uk-home .nav__mobile{display:flex;align-items:center;justify-content:center;width:40px;height:40px;color:#fff}.uk-home .nav.scrolled .nav__mobile{color:var(--ink-soft)}
+  }.uk-home .hero{position:relative;height:100vh;min-height:640px;overflow:hidden;color:#fff}.uk-home .hero__slides{position:absolute;inset:0}.uk-home .hero__slide{position:absolute;inset:0;opacity:0;transition:opacity 1.1s ease;z-index:0}.uk-home .hero__slide.is-active{opacity:1;z-index:1}.uk-home .hero__slide img{width:100%;height:100%;object-fit:cover}.uk-home .hero__slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55) 0%, rgba(0,0,0,.25) 38%, rgba(0,0,0,.6) 100%)}.uk-home .hero__inner{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:6rem 1.5rem 7rem}.uk-home .hero__eyebrow{display:inline-flex;align-items:center;gap:.6rem;padding:.45rem 1rem;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(8px);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase}.uk-home .hero__eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent-300)}.uk-home .hero__title{font-size:clamp(2.8rem, 7vw, 6rem);font-weight:300;letter-spacing:-0.02em;line-height:.98;margin:1.6rem auto 1.6rem;max-width:18ch;text-shadow:0 2px 24px rgba(0,0,0,.3)}.uk-home .hero__title em{font-style:italic;color:var(--accent-300);font-weight:400}.uk-home .hero__sub{max-width:36rem;margin:0 auto;font-size:1.2rem;line-height:1.5;opacity:.95;text-shadow:0 2px 12px rgba(0,0,0,.4)}.uk-home .hero__cta{display:flex;gap:1rem;justify-content:center;margin-top:2.6rem;flex-wrap:wrap}.uk-home .btn{display:inline-flex;align-items:center;gap:.7rem;padding:1rem 1.6rem;border-radius:999px;font-weight:600;font-size:.95rem;transition:transform .25s, box-shadow .25s, background .25s;border:1.5px solid transparent}.uk-home .btn:hover{transform:translateY(-2px)}.uk-home .btn-primary{background:var(--primary);color:#fff;box-shadow:0 10px 30px -10px rgba(139,69,19,.5)}.uk-home .btn-primary:hover{background:var(--primary-700);box-shadow:0 14px 40px -10px rgba(139,69,19,.6)}.uk-home .btn-ghost{border-color:rgba(255,255,255,.5);color:#fff;backdrop-filter:blur(6px)}.uk-home .btn-ghost:hover{background:rgba(255,255,255,.12)}.uk-home .btn-outline{border-color:var(--ink);color:var(--ink)}.uk-home .btn-outline:hover{background:var(--ink);color:#fff}.uk-home .btn-soft{background:var(--surface);color:var(--ink);border:1px solid var(--line)}.uk-home .btn-soft:hover{background:#fff;border-color:var(--primary-300)}.uk-home .hero__arrows{position:absolute;inset:0;z-index:3;pointer-events:none}.uk-home .hero__arrow{position:absolute;top:50%;transform:translateY(-50%);pointer-events:auto;width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.3);color:#fff;display:grid;place-items:center;transition:all .25s}.uk-home .hero__arrow:hover{background:rgba(255,255,255,.28);transform:translateY(-50%) scale(1.06)}.uk-home .hero__arrow.prev{left:1.5rem}.uk-home .hero__arrow.next{right:1.5rem}.uk-home .hero__arrow svg{width:18px;height:18px}
+  @media (max-width:760px){.uk-home .hero__arrow{display:none}}.uk-home .hero__dots{position:absolute;bottom:2.4rem;left:50%;transform:translateX(-50%);display:flex;gap:.6rem;z-index:3}.uk-home .hero__dot{width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,.5);transition:all .35s;cursor:pointer}.uk-home .hero__dot.is-active{background:#fff;width:30px}.uk-home section.section{padding:var(--section-y) 0;position:relative}.uk-home .section-head{display:grid;grid-template-columns:auto 1fr;gap:2.5rem;align-items:end;margin-bottom:3.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--line)}.uk-home .section-head__num{font-family:var(--font-mono);font-size:.85rem;color:var(--primary);letter-spacing:.12em;text-transform:uppercase}.uk-home .section-head__title{font-size:clamp(1.9rem, 3.6vw, 3rem);font-weight:300;letter-spacing:-0.015em;color:var(--ink)}.uk-home .section-head__title em{font-style:italic;color:var(--primary);font-weight:300}.uk-home .section-head__sub{color:var(--ink-soft);max-width:36rem;margin-top:.8rem}.uk-home .section-head__right{justify-self:end;text-align:right;max-width:28rem}
+  @media (max-width:760px){.uk-home .section-head{grid-template-columns:1fr;gap:1rem}.uk-home .section-head__right{justify-self:start;text-align:left}
+  }.uk-home .value{background:linear-gradient(180deg,var(--bg) 0%, var(--paper) 100%)}.uk-home .value__grid{display:grid;grid-template-columns:0.85fr 1fr 1fr 1fr;gap:3rem;align-items:start}.uk-home .value__title{font-size:clamp(2rem, 3.4vw, 2.8rem);font-weight:300;letter-spacing:-0.015em;line-height:1.05}.uk-home .value__title em{font-style:italic;color:var(--primary)}.uk-home .value__col h3{font-size:1.15rem;font-weight:600;font-family:var(--font-sans);margin:0 0 .35rem;position:relative;padding-bottom:.7rem;display:inline-block}.uk-home .value__col h3::after{content:"";position:absolute;left:0;right:-1rem;bottom:0;height:6px;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8' preserveAspectRatio='none'><path d='M0 4 Q 25 0 50 4 T 100 4' stroke='%239CAF88' stroke-width='2' fill='none'/></svg>") no-repeat;background-size:100% 100%;opacity:.7}.uk-home .value__col .kicker{display:block;font-size:.82rem;font-weight:700;color:var(--primary);margin-bottom:.6rem;letter-spacing:.02em;text-transform:none}.uk-home .value__col p{color:var(--ink-soft);font-size:.95rem;line-height:1.6;margin:0}
+  @media (max-width:980px){.uk-home .value__grid{grid-template-columns:1fr 1fr;gap:2rem}}
+  @media (max-width:620px){.uk-home .value__grid{grid-template-columns:1fr}}.uk-home .process{background:var(--bg)}.uk-home .process__wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}.uk-home .process__intro h2{font-size:clamp(2.2rem, 4vw, 3.4rem);font-weight:300;line-height:1;margin-bottom:1.4rem;letter-spacing:-0.02em}.uk-home .process__intro h2 em{font-style:italic;color:var(--secondary-700);font-weight:300}.uk-home .process__intro p{color:var(--ink-soft);margin-bottom:1.4rem;font-size:1.05rem;line-height:1.6}.uk-home .process__intro ul{list-style:none;padding:0;margin:0 0 2rem;display:flex;flex-direction:column;gap:.95rem}.uk-home .process__intro li{display:flex;align-items:flex-start;gap:.85rem;font-size:.97rem;line-height:1.5}.uk-home .process__intro li::before{content:"";flex:0 0 10px;width:10px;height:10px;border-radius:50%;background:var(--secondary);margin-top:.45rem}.uk-home .process__intro li strong{color:var(--ink);font-weight:600}.uk-home .process__intro .cta-row{display:flex;gap:.8rem;flex-wrap:wrap}.uk-home .process__steps{display:flex;flex-direction:column;gap:1.1rem}.uk-home .process__step{display:grid;grid-template-columns:auto 1fr;gap:1.4rem;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem 1.7rem;align-items:start;transition:transform .35s, box-shadow .35s, border-color .35s}.uk-home .process__step:hover{transform:translateY(-2px);box-shadow:0 18px 40px -25px rgba(139,69,19,.18);border-color:var(--primary-100)}.uk-home .process__num{font-family:var(--font-display);font-size:1.4rem;color:var(--primary);width:48px;height:48px;border:1px solid var(--primary-100);border-radius:50%;display:grid;place-items:center;flex-shrink:0}.uk-home .process__step h3{font-size:1.2rem;margin:0 0 .35rem;color:var(--ink)}.uk-home .process__step p{color:var(--ink-soft);font-size:.93rem;margin:0;line-height:1.55}
+  @media (max-width:880px){.uk-home .process__wrap{grid-template-columns:1fr;gap:2.5rem}}.uk-home .ways{background:var(--surface)}.uk-home .ways__wrap{display:grid;grid-template-columns:0.9fr 1.1fr;gap:3rem;align-items:start}.uk-home .ways__intro p.eyebrow-text{font-family:var(--font-mono);font-size:.78rem;color:var(--primary);text-transform:uppercase;letter-spacing:.18em;margin:0 0 1rem}.uk-home .ways__intro h2{font-size:clamp(2rem, 3.8vw, 3.2rem);font-weight:300;letter-spacing:-0.015em;line-height:1.05;margin-bottom:1.2rem}.uk-home .ways__intro h2 em{font-style:italic;color:var(--primary)}.uk-home .ways__intro p{color:var(--ink-soft);font-size:1.05rem;line-height:1.6;max-width:34rem}.uk-home .ways__grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.uk-home .way{display:block;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.8rem 1.6rem;transition:transform .35s, box-shadow .35s, border-color .35s;position:relative;overflow:hidden}.uk-home .way:hover{transform:translateY(-4px);box-shadow:0 24px 50px -28px rgba(44,44,44,.22);border-color:var(--primary-100)}.uk-home .way__icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--primary-50);color:var(--primary);margin-bottom:1.2rem}.uk-home .way:nth-child(2) .way__icon{background:rgba(156,175,136,.18);color:var(--secondary-700)}.uk-home .way:nth-child(3) .way__icon{background:var(--accent-50);color:#9C7B4A}.uk-home .way:nth-child(4) .way__icon{background:#FEF1EC;color:var(--primary-700)}.uk-home .way h3{font-size:1.4rem;font-weight:400;margin-bottom:.55rem;color:var(--ink)}.uk-home .way p{color:var(--ink-soft);font-size:.93rem;line-height:1.55;margin:0 0 1.2rem}.uk-home .way__link{display:inline-flex;align-items:center;gap:.45rem;color:var(--primary);font-weight:600;font-size:.88rem;transition:gap .25s}.uk-home .way:hover .way__link{gap:.7rem}
+  @media (max-width:880px){.uk-home .ways__wrap{grid-template-columns:1fr;gap:2.5rem}.uk-home .ways__grid{grid-template-columns:1fr}}.uk-home .dest{background:var(--bg)}.uk-home .dest__carousel{position:relative}.uk-home .dest__viewport{overflow:hidden}.uk-home .dest__track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 3 * 1.25rem) / 4);gap:1.25rem;transition:transform .55s cubic-bezier(.4,0,.2,1)}.uk-home .dest__card{position:relative;height:480px;border-radius:22px;overflow:hidden;cursor:pointer;background:#000;display:block}.uk-home .dest__card img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.4,0,.2,1)}.uk-home .dest__card:hover img{transform:scale(1.06)}.uk-home .dest__card::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.05) 30%, rgba(0,0,0,.78) 100%)}.uk-home .dest__body{position:absolute;left:0;right:0;bottom:0;padding:1.7rem;z-index:1;color:#fff}.uk-home .dest__region{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--font-mono);color:var(--accent-300);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.5rem;font-weight:500}.uk-home .dest__region svg{width:13px;height:13px}.uk-home .dest__body h3{font-size:1.9rem;font-weight:400;line-height:1;margin-bottom:.6rem;text-shadow:0 2px 12px rgba(0,0,0,.3)}.uk-home .dest__body p{font-size:.88rem;line-height:1.5;opacity:.88;margin:0;max-width:24rem}.uk-home .dest__eu{position:absolute;top:1.2rem;right:1.2rem;background:rgba(255,255,255,.92);color:var(--primary-700);font-family:var(--font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .65rem;border-radius:999px;z-index:2;font-weight:600}.uk-home .dest__controls{display:flex;justify-content:space-between;align-items:center;margin-top:1.6rem}.uk-home .dest__dots{display:flex;gap:.4rem}.uk-home .dest__dots span{width:8px;height:8px;border-radius:50%;background:var(--line);transition:all .3s}.uk-home .dest__dots span.is-on{background:var(--primary);width:24px;border-radius:4px}.uk-home .dest__arrows{display:flex;gap:.6rem}.uk-home .dest__arrow{width:46px;height:46px;border-radius:50%;background:#fff;border:1px solid var(--line);color:var(--ink);display:grid;place-items:center;transition:all .25s}.uk-home .dest__arrow:hover:not(:disabled){background:var(--primary);color:#fff;border-color:var(--primary);transform:scale(1.06)}.uk-home .dest__arrow:disabled{opacity:.3;cursor:not-allowed}.uk-home .dest__arrow svg{width:18px;height:18px}
+
+  @media (max-width:980px){.uk-home .dest__track{grid-auto-columns:calc((100% - 1.25rem) / 2)}
   }
-  
-  .text-shadow {
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  }
-  
-  /* Forced Custom Styles for Cards */
-  .ukiyo-card {
-      border-radius: 30px !important;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-      background: white;
-      border: 1px solid #f3f4f6;
-  }
-  .ukiyo-card:hover {
-      box-shadow: 0 25px 50px rgba(0,0,0,0.15) !important;
-      transform: translateY(-8px) !important;
-      border-color: #e5e7eb;
+  @media (max-width:620px){.uk-home .dest__track{grid-auto-columns:85%}.uk-home .dest__card{height:420px}
+  }.uk-home .autor{background:var(--paper)}.uk-home .autor__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}.uk-home .autor__card{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:transform .4s, box-shadow .4s, border-color .4s}.uk-home .autor__card:hover{transform:translateY(-5px);box-shadow:0 30px 60px -30px rgba(44,44,44,.25);border-color:var(--primary-300)}.uk-home .autor__media{position:relative;height:220px;overflow:hidden}.uk-home .autor__media img{width:100%;height:100%;object-fit:cover;transition:transform .8s}.uk-home .autor__card:hover .autor__media img{transform:scale(1.08)}.uk-home .autor__tag{position:absolute;top:1rem;left:1rem;background:rgba(254,252,248,.92);color:var(--primary-700);font-family:var(--font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;padding:.3rem .7rem;border-radius:999px;font-weight:600;backdrop-filter:blur(6px)}.uk-home .autor__body{padding:1.5rem 1.6rem 1.7rem;display:flex;flex-direction:column;flex:1}.uk-home .autor__author{display:flex;align-items:center;gap:.7rem;margin-bottom:1rem}.uk-home .autor__author img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.1);flex:0 0 42px}.uk-home .autor__author .name{font-size:.78rem;font-weight:700;color:var(--primary);letter-spacing:.04em}.uk-home .autor__author .role{display:block;font-size:.72rem;color:var(--ink-soft);font-weight:500;margin-top:1px}.uk-home .autor__title{font-size:1.3rem;font-weight:400;line-height:1.15;margin-bottom:.7rem;color:var(--ink)}.uk-home .autor__desc{color:var(--ink-soft);font-size:.92rem;line-height:1.55;margin:0 0 1.3rem;flex:1}.uk-home .autor__meta{display:flex;justify-content:space-between;align-items:center;padding-top:1.1rem;border-top:1px dashed var(--line)}.uk-home .autor__pills{display:flex;gap:.4rem;flex-wrap:wrap}.uk-home .autor__pills span{font-size:.7rem;font-weight:600;border:1.5px solid var(--accent-300);color:var(--ink);padding:.3rem .65rem;border-radius:999px;font-family:var(--font-mono);letter-spacing:.03em}.uk-home .autor__price{font-family:var(--font-display);font-size:1.3rem;color:var(--ink);line-height:1}.uk-home .autor__price small{font-family:var(--font-sans);font-size:.66rem;color:var(--ink-soft);font-weight:500;display:block;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.15rem}.uk-home .autor__more{text-align:center;margin-top:3rem}
+  @media (max-width:980px){.uk-home .autor__grid{grid-template-columns:1fr;max-width:36rem;margin:0 auto}}.uk-home .reviews{background:var(--bg)}.uk-home .reviews__slider{position:relative;background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 30px 80px -45px rgba(44,44,44,.2)}.uk-home .reviews__track{display:grid;grid-template-columns:repeat(4, 100%);transition:transform .65s cubic-bezier(.4,0,.2,1)}.uk-home .review{display:grid;grid-template-columns:1fr 1fr;min-height:480px}.uk-home .review__media{position:relative;overflow:hidden}.uk-home .review__media img{width:100%;height:100%;object-fit:cover}.uk-home .review__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,.3) 100%)}.uk-home .review__body{padding:3rem 3rem;display:flex;flex-direction:column;justify-content:center;background:#fff;position:relative}.uk-home .review__body::before{content:"\201C";position:absolute;top:1.5rem;right:2rem;font-family:var(--font-display);font-size:7rem;color:var(--primary-100);line-height:.5;font-weight:400}.uk-home .review__stars{color:var(--accent);display:flex;gap:.25rem;margin-bottom:1.2rem}.uk-home .review__title{font-size:1.6rem;font-weight:400;line-height:1.2;margin-bottom:1rem;color:var(--ink);max-width:24rem}.uk-home .review__text{font-size:1rem;line-height:1.65;color:var(--ink-soft);margin-bottom:2rem;max-width:28rem}.uk-home .review__footer{display:flex;align-items:center;justify-content:space-between;padding-top:1.2rem;border-top:1px solid var(--line);max-width:28rem}.uk-home .review__author strong{display:block;color:var(--ink);font-weight:600;font-size:1rem}.uk-home .review__author span{color:var(--ink-soft);font-size:.85rem}.uk-home .review__date{font-family:var(--font-mono);font-size:.75rem;color:var(--ink-soft);letter-spacing:.05em}
+  @media (max-width:860px){.uk-home .review{grid-template-columns:1fr;min-height:auto}.uk-home .review__media{height:260px}.uk-home .review__body{padding:2rem 1.8rem}.uk-home .review__body::before{font-size:5rem;top:1rem;right:1.4rem}
+  }.uk-home .reviews__nav{display:flex;justify-content:space-between;align-items:center;margin-top:1.6rem}.uk-home .reviews__dots{display:flex;gap:.4rem}.uk-home .reviews__dots span{width:8px;height:8px;border-radius:50%;background:var(--line);transition:all .3s;cursor:pointer}.uk-home .reviews__dots span.is-on{background:var(--primary);width:24px;border-radius:4px}.uk-home .reviews__arrows{display:flex;gap:.6rem}.uk-home .reviews__arrow{width:46px;height:46px;border-radius:50%;background:#fff;border:1px solid var(--line);color:var(--ink);display:grid;place-items:center;transition:all .25s}.uk-home .reviews__arrow:hover{background:var(--primary);color:#fff;border-color:var(--primary);transform:scale(1.06)}.uk-home .reviews__arrow svg{width:18px;height:18px}.uk-home .ctafinal{background:linear-gradient(160deg, var(--paper) 0%, #FDF7F3 100%);position:relative;overflow:hidden}.uk-home .ctafinal__box{max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:1;padding:1rem 0}.uk-home .ctafinal__stamp{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--font-mono);font-size:.78rem;color:var(--primary);letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.2rem}.uk-home .ctafinal__stamp .dot{width:6px;height:6px;border-radius:50%;background:var(--primary)}.uk-home .ctafinal h2{font-size:clamp(2.2rem, 4.5vw, 3.6rem);font-weight:300;letter-spacing:-0.02em;line-height:1.05;margin-bottom:1.2rem}.uk-home .ctafinal h2 em{font-style:italic;color:var(--primary)}.uk-home .ctafinal p{font-size:1.15rem;color:var(--ink-soft);margin-bottom:2.2rem;line-height:1.55;max-width:34rem;margin-left:auto;margin-right:auto}.uk-home .ctafinal__buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}.uk-home .ctafinal::before{content:"";position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle, rgba(212,165,116,.25), transparent 70%);z-index:0}.uk-home .ctafinal::after{content:"";position:absolute;bottom:-200px;left:-200px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle, rgba(156,175,136,.18), transparent 70%);z-index:0}.uk-home .wa-icon{width:22px;height:22px;display:inline-block;background:#25D366;border-radius:50%;position:relative}.uk-home .wa-icon::after{content:"";position:absolute;inset:5px;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><path d='M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15h-.01c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.264 8.264 0 0 1-1.26-4.39c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.183 8.183 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.24 8.24z'/></svg>") no-repeat center/contain}.uk-home footer.foot{background:var(--ink);color:#fff;padding:3.5rem 0 2rem}.uk-home .foot__row{display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}.uk-home .foot__row .legal{opacity:.6;font-size:.85rem}.uk-home .foot__row img{height:34px;width:auto;opacity:.92}.uk-home .foot__row .links{display:flex;gap:1.4rem;flex-wrap:wrap}.uk-home .foot__row .links a{font-size:.92rem;opacity:.85;transition:opacity .25s}.uk-home .foot__row .links a:hover{opacity:1}.uk-home .reveal{opacity:0;transform:translateY(28px);transition:opacity .85s ease, transform .85s ease;will-change:opacity,transform}.uk-home .reveal.is-visible{opacity:1;transform:translateY(0)}
+  @media (prefers-reduced-motion:reduce){.uk-home .reveal{opacity:1;transform:none;transition:none}.uk-home .hero__slide{transition:none}
   }
 </style>
 
-<main>
+<main class="uk-home">
+<!-- ============== HERO ============== -->
+<section class="hero" id="hero">
+  <div class="hero__slides" id="heroSlides">
+    <div class="hero__slide is-active"><img src="<?php echo $tpl; ?>/assets/home/hero-costarica.webp" alt="Viajes personalizados a Costa Rica" /></div>
+    <div class="hero__slide"><img src="<?php echo $tpl; ?>/assets/home/hero-marruecos.webp" alt="Viajes personalizados a Marruecos" /></div>
+    <div class="hero__slide"><img src="<?php echo $tpl; ?>/assets/home/hero-colombia.webp" alt="Viajes personalizados a Colombia" /></div>
+  </div>
 
-    <!-- HERO: SLIDER DINÁMICO CON AUTOPLAY -->
-    <?php
-    // Array de slides para el hero
-    $hero_slides = [
-        [
-            'image' => get_template_directory_uri() . '/images/heroimages/viajes-personalizados-ukiyo-costaricatucan.webp',
-            'alt' => 'Viajes personalizados a Costa Rica',
-        ],
-        [
-            'image' => get_template_directory_uri() . '/images/heroimages/viajes-personalizados-ukiyo-marruecos.webp',
-            'alt' => 'Viajes personalizados a Marruecos',
-        ],
-        [
-            'image' => get_template_directory_uri() . '/images/heroimages/viajes-personalizados-ukiyo-colombiaplaya3.webp',
-            'alt' => 'Viajes personalizados a Colombia',
-        ]
-    ];
-    ?>
-    
-    <section class="relative h-screen overflow-hidden">
-        <!-- Slider Container -->
-        <div id="heroSlider" class="relative h-full">
-            <?php foreach ($hero_slides as $index => $slide) : ?>
-            <!-- Slide <?php echo $index + 1; ?> -->
-            <div class="hero-slide absolute inset-0 w-full h-full transition-opacity duration-300 <?php echo $index === 0 ? 'opacity-100 z-1' : 'opacity-0 z-0'; ?>">
-                <!-- Fondo -->
-               <div class="absolute inset-0 w-full h-full">
-                <img
-                    src="<?php echo esc_url($slide['image']); ?>"
-                    alt="<?php echo esc_attr($slide['alt']); ?>"
-                    class="w-full h-full object-cover"
-                    width="1920"
-                    height="1080"
-                    fetchpriority="<?php echo $index === 0 ? 'high' : 'low'; ?>"
-                    loading="<?php echo $index === 0 ? 'eager' : 'lazy'; ?>"
-                    decoding="async"
-                    sizes="100vw"
-                    width="1600"
-                    height="1067"
-                />
-                <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
-                </div>
-            </div>
-            <?php endforeach; ?>
+  <div class="hero__inner">
+    <span class="hero__eyebrow"><span class="dot"></span>浮世 · Ukiyo · El mundo flotante</span>
+    <h1 class="hero__title"><em>Viajes a medida</em><br/>diseñados contigo.</h1>
+    <p class="hero__sub">Diseñamos rutas en destinos que conocemos de primera mano. Nada de catálogos genéricos. Solo experiencia real.</p>
+    <div class="hero__cta">
+      <a class="btn btn-primary" href="#cta">Diseña tu viaje a medida
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="#autor">Ver viajes de autor</a>
+    </div>
+  </div>
 
-            <!-- STATIC CONTENT OVERLAY -->
-            <div class="absolute inset-0 z-50 flex flex-col items-center justify-center text-center px-4 pointer-events-none">
-                
-                <!-- Título principal -->
-                <h1 class="text-hero md:text-6xl font-rowdies text-white font-bold mb-4 text-shadow leading-none">
-                <span class="text-accent italic">Viajes a medida</span> y personalizados para quienes buscan algo más
-                </h1>
-                
-                <!-- Subtítulo elegante -->
-                <p class="text-xl font-satoshi text-white/90 italic font-light mb-6 text-shadow">
-                    Solo organizamos viajes que hemos vivido. Y eso lo cambia todo.
-                </p>
-                
-                <!-- Botones elegantes con glassmorphism -->
-                <div class="flex flex-col sm:flex-row gap-5 justify-center pointer-events-auto">
-                    <a href="<?php echo esc_url( $plan_trip_url ); ?>" 
-                       class="group relative overflow-hidden px-8 py-4 rounded-full font-semibold text-white transition-all duration-300"
-                       style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border: 1.5px solid rgba(255,255,255,0.4);">
-                        <span class="relative z-10">Diseña tu viaje a medida</span>
-                        <div class="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                    </a>
-                    <a href="<?php echo esc_url( $viajes_autor_url ); ?>" 
-                       class="px-8 py-4 text-white font-medium transition-all duration-300 hover:text-white/80"
-                       style="letter-spacing: 0.05em;">
-                        Ver viajes de autor →
-                    </a>
-                </div>
+  <div class="hero__arrows">
+    <button class="hero__arrow prev" id="heroPrev" aria-label="Anterior">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="hero__arrow next" id="heroNext" aria-label="Siguiente">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  <div class="hero__dots" id="heroDots">
+    <span class="hero__dot is-active"></span>
+    <span class="hero__dot"></span>
+    <span class="hero__dot"></span>
+  </div>
+</section>
+
+<!-- ============== VALUE ============== -->
+<section class="section value">
+  <div class="container">
+    <div class="value__grid">
+      <div class="value__col reveal">
+        <h2 class="value__title"><em>¿Por qué</em><br/>somos<br/>mejores?</h2>
+      </div>
+      <div class="value__col reveal">
+        <h3>Sabemos lo que hacemos</h3>
+        <span class="kicker">Más que una agencia de viajes</span>
+        <p>Solo organizamos viajes a destinos donde hemos estado, explorado y entendido cada detalle. Nada de catálogos genéricos.</p>
+      </div>
+      <div class="value__col reveal">
+        <h3>Experiencias inolvidables</h3>
+        <span class="kicker">Diseñados contigo, desde cero</span>
+        <p>Cada viaje es único porque cada viajero lo es. Escuchamos, proponemos y ajustamos hasta que la ruta encaje contigo, no con un modelo predefinido.</p>
+      </div>
+      <div class="value__col reveal">
+        <h3>Centrados en ti</h3>
+        <span class="kicker">Menos cantidad. Más intención.</span>
+        <p>Preferimos hacer pocos viajes bien hechos. Sin prisas, sin masificación y con el tiempo necesario para que cada viaje tenga sentido.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PROCESO ============== -->
+<section class="section process">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="section-head__num">01 · Cómo trabajamos</div>
+        <h2 class="section-head__title">Viajes personalizados<br/><em>diseñados contigo.</em></h2>
+      </div>
+      <div class="section-head__right">
+        <p class="section-head__sub">No vendemos paquetes cerrados. Escuchamos lo que te mueve y construimos una ruta que encaje con tu ritmo, tu presupuesto y tu forma de viajar.</p>
+      </div>
+    </div>
+
+    <div class="process__wrap">
+      <div class="process__intro reveal">
+        <ul>
+          <li><span><strong>Asesoría honesta.</strong> Te contamos qué merece la pena y qué no. Sin turistas en masa.</span></li>
+          <li><span><strong>Alojamientos con alma.</strong> Pequeños hoteles, lodges y casas locales que suman al viaje.</span></li>
+          <li><span><strong>Contacto cercano.</strong> Estamos contigo antes y durante el viaje por si algo se tuerce.</span></li>
+        </ul>
+        <div class="cta-row">
+          <a href="#cta" class="btn btn-primary">Empezar mi viaje
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="<?php echo esc_url($destinations_url); ?>" class="btn btn-outline">Ver destinos</a>
+        </div>
+      </div>
+
+      <div class="process__steps">
+        <div class="process__step reveal">
+          <span class="process__num">1</span>
+          <div>
+            <h3>Cuéntanos qué te apetece</h3>
+            <p>Un breve formulario o una videollamada donde nos hablas de ti, tus fechas, tu presupuesto y cómo te gusta viajar.</p>
+          </div>
+        </div>
+        <div class="process__step reveal">
+          <span class="process__num">2</span>
+          <div>
+            <h3>Diseñamos tu ruta ideal</h3>
+            <p>Te proponemos un itinerario claro, con opciones de actividades y alojamientos. Lo afinamos juntos hasta que encaje contigo.</p>
+          </div>
+        </div>
+        <div class="process__step reveal">
+          <span class="process__num">3</span>
+          <div>
+            <h3>Reservas seguras y acompañamiento</h3>
+            <p>Te ayudamos con la parte práctica y nos quedamos al otro lado del WhatsApp durante el viaje. Tú solo te ocupas de vivirlo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FORMAS DE VIAJAR ============== -->
+<section class="section ways">
+  <div class="container">
+    <div class="ways__wrap">
+      <div class="ways__intro reveal">
+        <p class="eyebrow-text">02 · Elige tu forma de viajar</p>
+        <h2>Cuatro formas de<br/><em>diseñar tu viaje.</em></h2>
+        <p>Cada viajero necesita algo distinto. Podemos crear una ruta privada, una luna de miel, un viaje para tu grupo o una propuesta completamente a medida.</p>
+      </div>
+
+      <div class="ways__grid">
+        <a href="#cta" class="way reveal">
+          <div class="way__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.5 6 6.5.5-5 4.5 1.5 6.5L12 17l-5.5 3.5L8 14 3 9.5l6.5-.5L12 3z" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Viajes a medida</h3>
+          <p>Rutas privadas y flexibles, pensadas desde cero para tu ritmo y tus intereses.</p>
+          <span class="way__link">Diseñar mi ruta →</span>
+        </a>
+
+        <a href="#cta" class="way reveal">
+          <div class="way__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.5-7-11a4.5 4.5 0 0 1 7-3.7A4.5 4.5 0 0 1 19 10c0 6.5-7 11-7 11z" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Viajes de novios</h3>
+          <p>Lunas de miel con calma, alojamientos cuidados y momentos especiales bien elegidos.</p>
+          <span class="way__link">Diseñar mi luna de miel →</span>
+        </a>
+
+        <a href="#cta" class="way reveal">
+          <div class="way__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c0-2.4 1.6-4.5 3.8-5.2"/></svg>
+          </div>
+          <h3>Viajes en grupo reducido</h3>
+          <p>Viajes para compartir ruta sin perder cuidado, criterio ni cercanía con el destino.</p>
+          <span class="way__link">Ver grupos abiertos →</span>
+        </a>
+
+        <a href="#cta" class="way reveal">
+          <div class="way__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Viajes privados</h3>
+          <p>Una ruta propia para parejas, familias, amigos o celebraciones, sin salidas cerradas.</p>
+          <span class="way__link">Diseñar viaje privado →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== DESTINOS ============== -->
+<section class="section dest" id="destinos">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="section-head__num">03 · Nuestros destinos</div>
+        <h2 class="section-head__title">Estos son nuestros<br/><em>destinos.</em></h2>
+      </div>
+      <div class="section-head__right">
+        <p class="section-head__sub">Cada uno nos despertó algo distinto. Recorridos por completo para ofrecerte la mejor experiencia de viaje, sin preocupaciones.</p>
+      </div>
+    </div>
+
+    <div class="dest__carousel reveal">
+      <div class="dest__viewport">
+        <div class="dest__track" id="destTrack">
+
+          <a class="dest__card" href="#cta">
+            <img src="<?php echo $tpl; ?>/assets/home/dest-indonesia.webp" alt="Indonesia" />
+            <div class="dest__body">
+              <span class="dest__region">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Sudeste Asiático
+              </span>
+              <h3>Indonesia</h3>
+              <p>Tradiciones vivas, templos y ceremonias. Ideal si buscas un viaje con mucha profundidad cultural.</p>
             </div>
+          </a>
+
+          <a class="dest__card" href="#cta">
+            <img src="<?php echo $tpl; ?>/assets/home/dest-costarica.webp" alt="Costa Rica" />
+            <div class="dest__body">
+              <span class="dest__region">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                América Central
+              </span>
+              <h3>Costa Rica</h3>
+              <p>Selvas, volcanes y vida salvaje. Perfecto si necesitas parar, respirar y reconectar con la naturaleza.</p>
+            </div>
+          </a>
+
+          <a class="dest__card" href="#cta">
+            <img src="<?php echo $tpl; ?>/assets/home/dest-colombia.webp" alt="Colombia" />
+            <div class="dest__body">
+              <span class="dest__region">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Sudamérica
+              </span>
+              <h3>Colombia</h3>
+              <p>Colores, música y gente que te hace sentir en casa desde el primer día. Un viaje lleno de vida y energía.</p>
+            </div>
+          </a>
+
+          <a class="dest__card" href="#cta">
+            <img src="<?php echo $tpl; ?>/assets/home/dest-marruecos.webp" alt="Marruecos" />
+            <div class="dest__body">
+              <span class="dest__region">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Norte de África
+              </span>
+              <h3>Marruecos</h3>
+              <p>Desierto, medinas y rutas alejadas del turismo de masas. Un viaje sensorial que desconecta.</p>
+            </div>
+          </a>
+
+          <a class="dest__card" href="#cta">
+            <span class="dest__eu">🇪🇺 Europa · 390 €</span>
+            <img src="<?php echo $tpl; ?>/assets/home/dest-lanzarote.webp" alt="Lanzarote" />
+            <div class="dest__body">
+              <span class="dest__region">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Islas Canarias · España
+              </span>
+              <h3>Lanzarote</h3>
+              <p>Volcanes, vino en arena negra y La Graciosa. Una isla escenográfica para desconectar sin coger un avión largo.</p>
+            </div>
+          </a>
+
+          <a class="dest__card" href="#cta">
+            <span class="dest__eu">🇪🇺 Europa · 390 €</span>
+            <img src="<?php echo $tpl; ?>/assets/home/dest-italia.webp" alt="Italia" />
+            <div class="dest__body">
+              <span class="dest__region">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Europa Mediterránea
+              </span>
+              <h3>Italia</h3>
+              <p>De los Dolomitas a Sicilia, pasando por Puglia y la Costa Amalfitana. Sabor, arte y paisaje en un mismo viaje.</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="dest__controls">
+        <div class="dest__dots" id="destDots"></div>
+        <div class="dest__arrows">
+          <button class="dest__arrow" id="destPrev" aria-label="Anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="dest__arrow" id="destNext" aria-label="Siguiente">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== VIAJES DE AUTOR ============== -->
+<section class="section autor" id="autor">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="section-head__num">04 · Viajes de autor</div>
+        <h2 class="section-head__title">Viajes de autor<br/><em>creados por locales.</em></h2>
+      </div>
+      <div class="section-head__right">
+        <p class="section-head__sub">Itinerarios únicos diseñados por personas que viven en el destino. No son guías turísticos: son locales que comparten su mundo contigo.</p>
+      </div>
+    </div>
+
+    <div class="autor__grid">
+      <article class="autor__card reveal">
+        <div class="autor__media">
+          <span class="autor__tag">Marruecos</span>
+          <img src="<?php echo $tpl; ?>/assets/home/autor-marruecos.webp" alt="Camellos salvajes en Marruecos" />
+        </div>
+        <div class="autor__body">
+          <div class="autor__author">
+            <img src="<?php echo $tpl; ?>/assets/home/autor-david.webp" alt="Moha" />
+            <div>
+              <span class="name">Moha Ait Lahsen</span>
+              <span class="role">Berebere, guía del Atlas</span>
+            </div>
+          </div>
+          <h3 class="autor__title">Marruecos profundo: del Atlas al Sáhara</h3>
+          <p class="autor__desc">Una ruta que se aleja del circuito clásico. Noches en casa de familias bereberes, rutas a pie y silencio absoluto en las dunas.</p>
+          <div class="autor__meta">
+            <div class="autor__pills"><span>12 días</span><span>4–6 pers.</span></div>
+            <div class="autor__price"><small>desde</small>2 490 €</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="autor__card reveal">
+        <div class="autor__media">
+          <span class="autor__tag">Costa Rica</span>
+          <img src="<?php echo $tpl; ?>/assets/home/autor-costarica.png" alt="Buitre rey en Costa Rica" />
+        </div>
+        <div class="autor__body">
+          <div class="autor__author">
+            <img src="<?php echo $tpl; ?>/assets/home/autor-alexis.webp" alt="Alexis" />
+            <div>
+              <span class="name">Alexis Mora</span>
+              <span class="role">Conservacionista en Tortuguero</span>
+            </div>
+          </div>
+          <h3 class="autor__title">Wild Costa Rica: fotografía de naturaleza</h3>
+          <p class="autor__desc">Corcovado, Sarapiquí y Talamanca con un biólogo de campo. Esperas en hides, salidas nocturnas y acceso a lugares fuera de ruta.</p>
+          <div class="autor__meta">
+            <div class="autor__pills"><span>14 días</span><span>6–8 pers.</span></div>
+            <div class="autor__price"><small>desde</small>3 290 €</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="autor__card reveal">
+        <div class="autor__media">
+          <span class="autor__tag">Indonesia</span>
+          <img src="<?php echo $tpl; ?>/assets/home/autor-indonesia.webp" alt="Orangután en Indonesia" />
+        </div>
+        <div class="autor__body">
+          <div class="autor__author">
+            <img src="<?php echo $tpl; ?>/assets/home/autor-david.webp" alt="David" />
+            <div>
+              <span class="name">David Soler</span>
+              <span class="role">Instructor de buceo en Tulamben</span>
+            </div>
+          </div>
+          <h3 class="autor__title">Indonesia bajo el agua: Bali y Komodo</h3>
+          <p class="autor__desc">Buceo con mantas, volcanes activos y ceremonias balinesas. Una mirada al país desde quien lo conoce por sus arrecifes.</p>
+          <div class="autor__meta">
+            <div class="autor__pills"><span>16 días</span><span>2–6 pers.</span></div>
+            <div class="autor__price"><small>desde</small>3 590 €</div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="autor__more">
+      <a href="<?php echo esc_url($viajes_autor_url); ?>" class="btn btn-soft">Ver todos los viajes de autor
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== RESEÑAS ============== -->
+<section class="section reviews" id="reviews">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="section-head__num">05 · Lo que cuentan</div>
+        <h2 class="section-head__title">Historias que<br/><em>dejan huella.</em></h2>
+      </div>
+      <div class="section-head__right">
+        <p class="section-head__sub">Más allá de las fotos, lo que queda son las sensaciones. Esto cuentan algunas de las personas que ya viajaron con Ukiyo.</p>
+      </div>
+    </div>
+
+    <div class="reviews__slider reveal">
+      <div class="reviews__track" id="reviewsTrack">
+
+        <div class="review">
+          <div class="review__media"><img src="<?php echo $tpl; ?>/assets/home/review-maite.webp" alt="Maite y Ramón en Bali" /></div>
+          <div class="review__body">
+            <div class="review__stars">★★★★★</div>
+            <h3 class="review__title">"Sentimos que alguien pensó el viaje con nosotros"</h3>
+            <p class="review__text">Experiencia y plan de viaje con Ukiyo 200% recomendable. Fuimos de viaje de novios a Bali y la verdad es que no pudo ser mejor. Sergio nos guió el viaje, nos lo cuadró todo perfectamente y da consejos que las agencias habitualmente no dan. Profesional como la copa de un pino.</p>
+            <div class="review__footer">
+              <div class="review__author"><strong>Maite y Ramón</strong><span>Bali, Indonesia</span></div>
+              <span class="review__date">Septiembre 2024</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Navigation Arrows -->
-        <button id="prevHero" class="hidden lg:block absolute left-4 md:left-8 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-3 md:p-4 rounded-full transition-all duration-300 hover:scale-110 z-40">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-            </svg>
+        <div class="review">
+          <div class="review__media"><img src="<?php echo $tpl; ?>/assets/home/review-maria.webp" alt="María y Edu en Java" /></div>
+          <div class="review__body">
+            <div class="review__stars">★★★★★</div>
+            <h3 class="review__title">"Un viaje auténtico, con alma"</h3>
+            <p class="review__text">Gracias a Ukiyo no solo visitamos Indonesia, la vivimos de verdad. Desde el primer día sentimos mucha tranquilidad: todo estaba perfectamente organizado y pudimos despreocuparnos. Cuidaron cada detalle y nos crearon un itinerario adaptado a lo que buscábamos: un viaje auténtico, con alma, lejos de lo típico.</p>
+            <div class="review__footer">
+              <div class="review__author"><strong>María y Edu</strong><span>Isla de Java, Indonesia</span></div>
+              <span class="review__date">Julio 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review">
+          <div class="review__media"><img src="<?php echo $tpl; ?>/assets/home/review-carmen.webp" alt="Carmen y Jose Ángel en Komodo" /></div>
+          <div class="review__body">
+            <div class="review__stars">★★★★★</div>
+            <h3 class="review__title">"Experiencias auténticas y humanas"</h3>
+            <p class="review__text">Viajar a Indonesia con Ukiyo ha sido una aventura excepcional, un viaje personalizado al 100% donde hemos podido disfrutar de experiencias auténticas y humanas, sin el agobio del turismo masivo. El esfuerzo y el trabajo detrás de la organización ha hecho que el viaje sea muy top. ¡Estamos deseando repetir!</p>
+            <div class="review__footer">
+              <div class="review__author"><strong>Carmen y Jose Ángel</strong><span>Komodo, Indonesia</span></div>
+              <span class="review__date">Septiembre 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review">
+          <div class="review__media"><img src="<?php echo $tpl; ?>/assets/home/review-carolina.webp" alt="Carolina y Carmen en Cuba" /></div>
+          <div class="review__body">
+            <div class="review__stars">★★★★★</div>
+            <h3 class="review__title">"Cada conversación, un pequeño tesoro"</h3>
+            <p class="review__text">Lo mejor de Cuba es su gente. La calidez, las risas, las historias compartidas sin prisa… cada conversación parecía un pequeño tesoro. Pasar una tarde aprendiendo a bailar son con una familia local fue uno de esos momentos que te reconcilian con la vida.</p>
+            <div class="review__footer">
+              <div class="review__author"><strong>Carolina y Carmen</strong><span>Cuba</span></div>
+              <span class="review__date">Marzo 2025</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="reviews__nav">
+      <div class="reviews__dots" id="reviewsDots"></div>
+      <div class="reviews__arrows">
+        <button class="reviews__arrow" id="reviewsPrev" aria-label="Anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <button id="nextHero" class="hidden lg:block absolute right-4 md:right-8 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-3 md:p-4 rounded-full transition-all duration-300 hover:scale-110 z-40">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-            </svg>
+        <button class="reviews__arrow" id="reviewsNext" aria-label="Siguiente">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CTA FINAL ============== -->
+<section class="section ctafinal" id="cta">
+  <div class="container">
+    <div class="ctafinal__box reveal">
+      <span class="ctafinal__stamp"><span class="dot"></span>道 · Empezamos juntos</span>
+      <h2>Empezamos por<br/><em>entender tu viaje.</em></h2>
+      <p>Cuéntanos qué destino tienes en mente, cómo te gusta viajar y qué ritmo necesitas. A partir de ahí diseñamos una ruta clara, cuidada y a medida.</p>
+      <div class="ctafinal__buttons">
+        <a href="<?php echo esc_url($plan_trip_url); ?>" class="btn btn-primary">Diseñar mi viaje a medida
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="https://wa.me/message/CS2LNI6YHSETO1" target="_blank" rel="noopener" class="btn btn-outline">
+          <span class="wa-icon"></span> Escríbenos por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- Pagination Dots -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3 z-40">
-            <?php foreach ($hero_slides as $index => $slide) : ?>
-            <button class="hero-dot h-3 rounded-full bg-white transition-all duration-300 <?php echo $index === 0 ? 'w-8' : 'w-3 opacity-50 hover:opacity-100'; ?>" data-index="<?php echo $index; ?>"></button>
-            <?php endforeach; ?>
-        </div>
-    </section>
-
-    <!-- Hero Slider JavaScript -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const slides = document.querySelectorAll('.hero-slide');
-        const prevBtn = document.getElementById('prevHero');
-        const nextBtn = document.getElementById('nextHero');
-        const dots = document.querySelectorAll('.hero-dot');
-        const totalSlides = <?php echo count($hero_slides); ?>;
-        let currentSlide = 0;
-        let autoplayInterval;
-
-        function goToSlide(index) {
-            if (index < 0) {
-                currentSlide = totalSlides - 1;
-            } else if (index >= totalSlides) {
-                currentSlide = 0;
-            } else {
-                currentSlide = index;
-            }
-
-            // Update slides
-            slides.forEach((slide, i) => {
-                if (i === currentSlide) {
-                    slide.classList.remove('opacity-0', 'z-0');
-                    slide.classList.add('opacity-100', 'z-1');
-                } else {
-                    slide.classList.remove('opacity-100', 'z-1');
-                    slide.classList.add('opacity-0', 'z-0');
-                }
-            });
-
-            // Update dots
-            dots.forEach((dot, i) => {
-                if (i === currentSlide) {
-                    dot.classList.remove('w-3', 'opacity-50', 'hover:opacity-100');
-                    dot.classList.add('w-8');
-                } else {
-                    dot.classList.remove('w-8');
-                    dot.classList.add('w-3', 'opacity-50', 'hover:opacity-100');
-                }
-            });
-        }
-
-        function nextSlide() {
-            goToSlide(currentSlide + 1);
-        }
-
-        function prevSlide() {
-            goToSlide(currentSlide - 1);
-        }
-
-        function startAutoplay() {
-            autoplayInterval = setInterval(nextSlide, 6000); // Change slide every 6 seconds
-        }
-
-        function stopAutoplay() {
-            clearInterval(autoplayInterval);
-        }
-
-        // Event listeners
-        nextBtn.addEventListener('click', () => {
-            nextSlide();
-            stopAutoplay();
-            startAutoplay(); // Restart autoplay after manual interaction
-        });
-
-        prevBtn.addEventListener('click', () => {
-            prevSlide();
-            stopAutoplay();
-            startAutoplay(); // Restart autoplay after manual interaction
-        });
-
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                goToSlide(index);
-                stopAutoplay();
-                startAutoplay(); // Restart autoplay after manual interaction
-            });
-        });
-
-        // Pause autoplay on hover
-        document.getElementById('heroSlider').addEventListener('mouseenter', stopAutoplay);
-        document.getElementById('heroSlider').addEventListener('mouseleave', startAutoplay);
-
-        // Start autoplay
-        startAutoplay();
-
-        // Swipe support (Touch and Mouse)
-        let startX = 0;
-        let endX = 0;
-        const sliderContainer = document.getElementById('heroSlider');
-
-        // Touch events
-        sliderContainer.addEventListener('touchstart', (e) => {
-            startX = e.changedTouches[0].screenX;
-        }, {passive: true});
-
-        sliderContainer.addEventListener('touchend', (e) => {
-            endX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, {passive: true});
-
-        // Mouse events
-        sliderContainer.addEventListener('mousedown', (e) => {
-            startX = e.screenX;
-        });
-
-        sliderContainer.addEventListener('mouseup', (e) => {
-            endX = e.screenX;
-            handleSwipe();
-        });
-
-        function handleSwipe() {
-            const swipeThreshold = 50; // minimum distance for swipe
-            if (endX < startX - swipeThreshold) {
-                // Swipe left -> Next slide
-                nextSlide();
-                stopAutoplay();
-                startAutoplay();
-            }
-            if (endX > startX + swipeThreshold) {
-                // Swipe right -> Prev slide
-                prevSlide();
-                stopAutoplay();
-                startAutoplay();
-            }
-        }
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                prevSlide();
-                stopAutoplay();
-                startAutoplay();
-            } else if (e.key === 'ArrowRight') {
-                nextSlide();
-                stopAutoplay();
-                startAutoplay();
-            }
-        });
-    });
-    </script>
-
-    <!-- VALUE PROPOSITION -->
-    <section class="py-16" style="background-color: #f5f8f1ff;">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 items-start">
-                
-                <!-- Columna 1: Titular -->
-                <div class="lg:col-span-1">
-                    <h2 class="relative font-rowdies text-4xl md:text-5xl leading-tight text-text-primary inline-block">
-                        <span class="relative z-10">
-                            <span class="italic text-[#1B4E38]">¿Por qué</span> somos<br>
-                            mejores?
-                        </span>
-                    </h2>
-                </div>
-
-                <!-- Columna 2 -->
-                <div class="lg:col-span-1">
-                    <div class="relative mb-4">
-                        <h3 class="font-satoshi font-semibold text-lg text-text-primary relative z-10">Sabemos lo que hacemos</h3>
-                        <svg class="absolute -bottom-2 left-0 w-24 h-2 text-[#C4D9C8]" viewBox="0 0 100 10" preserveAspectRatio="none">
-                             <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="2" fill="none" />
-                        </svg>
-                    </div>
-                    <p class="font-satoshi font-bold text-[#1B4E38] text-sm mb-2">Más que una agencia de viajes</p>
-                    <p class="font-satoshi text-text-secondary text-sm leading-relaxed">
-                        Viajes que conocemos porque los hemos vivido.
-                        Solo organizamos viajes a destinos donde hemos estado, explorado y entendido cada detalle.
-                        Nada de catálogos genéricos. Solo experiencia real.
-                    </p>
-                </div>
-
-                <!-- Columna 3 -->
-                <div class="lg:col-span-1">
-                    <div class="relative mb-4">
-                        <h3 class="font-satoshi font-semibold text-lg text-text-primary relative z-10">Experiencias inolvidables</h3>
-                        <svg class="absolute -bottom-2 left-0 w-24 h-2 text-[#C4D9C8]" viewBox="0 0 100 10" preserveAspectRatio="none">
-                             <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="2" fill="none" />
-                        </svg>
-                    </div>
-                    <p class="font-satoshi font-bold text-[#1B4E38] text-sm mb-2">Viajes diseñados contigo, desde cero</p>
-                    <p class="font-satoshi text-text-secondary text-sm leading-relaxed">
-                        Cada viaje es único porque cada viajero lo es.
-                        Escuchamos, proponemos y ajustamos cada itinerario para que encaje contigo,
-                        no con un modelo predefinido.
-                    </p>
-                </div>
-
-                <!-- Columna 4 -->
-                <div class="lg:col-span-1">
-                    <div class="relative mb-4">
-                        <h3 class="font-satoshi font-semibold text-lg text-text-primary relative z-10">Centrados en tí</h3>
-                        <svg class="absolute -bottom-2 left-0 w-24 h-2 text-[#C4D9C8]" viewBox="0 0 100 10" preserveAspectRatio="none">
-                             <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="2" fill="none" />
-                        </svg>
-                    </div>
-                    <p class="font-satoshi font-bold text-[#1B4E38] text-sm mb-2">Menos cantidad. Más intención.</p>
-                    <p class="font-satoshi text-text-secondary text-sm leading-relaxed">
-                        Preferimos hacer pocos viajes bien hechos.
-                        Sin prisas, sin masificación y con el tiempo necesario
-                        para que cada viaje tenga sentido.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN: VIAJES PERSONALIZADOS (EXPLICACIÓN + PASOS) -->
-    <section class="py-12 bg-background">
-        <div class="container mx-auto px-6">
-            <div class="grid gap-12 lg:grid-cols-2 items-center">
-                <!-- Texto principal -->
-                <div>
-                    <h2 class="text-display font-rowdies text-text-primary mb-4 reveal-on-scroll">
-                        Viajes personalizados<br><span class="text-secondary">diseñados contigo</span>
-                    </h2>
-                    <p class="text-lg text-text-secondary mb-6 reveal-on-scroll delay-100">
-                        No vendemos paquetes cerrados. Escuchamos lo que te mueve y, a partir de ahí,
-                        construimos una ruta que encaje con tu ritmo, tu presupuesto y tu forma de viajar.
-                    </p>
-                    <ul class="space-y-3 text-text-secondary reveal-on-scroll delay-200">
-                        <li class="flex items-start">
-                            <span class="w-3 h-3 rounded-full bg-secondary mr-3 mt-1"></span>
-                            <span><strong>Asesoría honesta:</strong> te contamos qué merece la pena y qué no, sin turistas en masa.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="w-3 h-3 rounded-full bg-secondary mr-3 mt-1"></span>
-                            <span><strong>Alojamientos con alma:</strong> pequeños hoteles, lodges y casas locales que suman al viaje.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="w-3 h-3 rounded-full bg-secondary mr-3 mt-1"></span>
-                            <span><strong>Contacto cercano:</strong> estamos contigo antes y durante el viaje por si algo se tuerce.</span>
-                        </li>
-                    </ul>
-                    <div class="mt-8 flex flex-wrap gap-4 reveal-on-scroll delay-300">
-                        <a href="<?php echo esc_url( $plan_trip_url ); ?>" class="btn-primary text-text-secondary">
-                            Empezar mi viaje a medida
-                        </a>
-                        <a href="<?php echo esc_url( $destinations_url ); ?>" class="btn-primary text-text-secondary">
-                            Ver ideas de viaje
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Pasos / proceso -->
-                <div class="space-y-6">
-                    <div class="card flex gap-4 items-start bg-background reveal-on-scroll delay-100">
-                        <div class="w-10 h-10 rounded-full btn-primary flex items-center justify-center text-secondary font-semibold">1</div>
-                        <div>
-                            <h3 class="font-semibold text-text-primary mb-1">Cuéntanos qué te apetece</h3>
-                            <p class="text-text-secondary text-sm">
-                                Un breve formulario o una videollamada donde nos hablas de ti, tus fechas, tu presupuesto y cómo te gusta viajar.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card flex gap-4 items-start bg-background reveal-on-scroll delay-200">
-                        <div class="w-10 h-10 rounded-full btn-primary flex items-center justify-center text-secondary font-semibold">2</div>
-                        <div>
-                            <h3 class="font-semibold text-text-primary mb-1">Diseñamos tu ruta ideal</h3>
-                            <p class="text-text-secondary text-sm">
-                                Te proponemos un itinerario claro, con opciones de actividades y alojamientos. Lo afinamos juntos hasta que encaje contigo.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card flex gap-4 items-start bg-background reveal-on-scroll delay-300">
-                        <div class="w-10 h-10 rounded-full btn-primary flex items-center justify-center text-secondary font-semibold">3</div>
-                        <div>
-                            <h3 class="font-semibold text-text-primary mb-1">Reservas seguras y acompañamiento</h3>
-                            <p class="text-text-secondary text-sm">
-                                Te ayudamos con la parte práctica y nos quedamos al otro lado del WhatsApp durante el viaje. Tú solo te ocupas de vivirlo.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NAVEGACIÓN POR EMOCIONES (APOYO A VIAJES PERSONALIZADOS) -->
-    <section class="py-12 bg-background">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-display font-rowdies text-text-primary mb-4 reveal-on-scroll">
-                    Estos son nuestros <span class="text-primary">destinos</span>
-                </h2>
-                <p class="text-lg text-text-secondary max-w-2xl mx-auto reveal-on-scroll delay-100">
-                    Cada uno nos despertó algo distinto. Recorridos por completo para ofrecerte la mejor experiencia de viaje. Viajar sin preocupaciones nunca ha sido tan fácil.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-                <!-- Indonesia -->
-                <div 
-                    style="
-                        width: 100%;
-                        height: 500px;
-                        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('<?php echo get_template_directory_uri(); ?>/images/indonesia/viajes-personalizados-ukiyo-artesano-balines.webp');
-                        background-size: cover;
-                        background-position: center;
-                        border-radius: 1.5rem;
-                        overflow: hidden;
-                        position: relative;
-                        cursor: pointer;
-                    "
-                    class="reveal-on-scroll delay-100"
-                    onclick="window.location.href='<?php echo esc_url( $destination_indonesia ); ?>'"
-                >
-                    <div style="position: absolute; bottom: 0; left: 0; padding: 2rem; width: 100%;">
-                        <div style="color: #FF8C42; font-size: 12px; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 600;">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline;">
-                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                                <circle cx="12" cy="10" r="3"/>
-                            </svg>
-                            Sudeste Asiático
-                        </div>
-                        <h3 class="text-card-title font-rowdies text-white font-semibold mb-3"><a href="<?php echo esc_url( $destination_indonesia ); ?>" aria-label="Viaje a medida a Indonesia" style="color: inherit; text-decoration: none;">Indonesia</a></h3>
-                        <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 0.875rem;">
-                            Tradiciones vivas, templos y ceremonias. Ideal si buscas un viaje con mucha profundidad cultural.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Costa Rica -->
-                <div 
-                    style="
-                        width: 100%;
-                        height: 500px;
-                        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('<?php echo get_template_directory_uri(); ?>/images/costarica/viajes-personalizados-ukiyo-guacamayo.webp');
-                        background-size: cover;
-                        background-position: center;
-                        border-radius: 1.5rem;
-                        overflow: hidden;
-                        position: relative;
-                        cursor: pointer;
-                    "
-                    class="reveal-on-scroll delay-200"
-                    onclick="window.location.href='<?php echo esc_url( $destination_costa_rica ); ?>'"
-                >
-                    <div style="position: absolute; bottom: 0; left: 0; padding: 2rem; width: 100%;">
-                        <div style="color: #FF8C42; font-size: 12px; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 600;">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline;">
-                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                                <circle cx="12" cy="10" r="3"/>
-                            </svg>
-                            América Central
-                        </div>
-                        <h3 class="text-card-title font-rowdies text-white font-semibold mb-3"><a href="<?php echo esc_url( $destination_costa_rica ); ?>" aria-label="Viaje a medida a Costa Rica" style="color: inherit; text-decoration: none;">Costa Rica</a></h3>
-                        <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 0.875rem;">
-                            Selvas, volcanes y vida salvaje. Perfecto si necesitas parar, respirar y reconectar con la naturaleza.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Colombia -->
-                <div 
-                    style="
-                        width: 100%;
-                        height: 500px;
-                        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('<?php echo get_template_directory_uri(); ?>/images/emotion-based/viajes-personalizados-ukiyo-palanquera.webp');
-                        background-size: cover;
-                        background-position: center;
-                        border-radius: 1.5rem;
-                        overflow: hidden;
-                        position: relative;
-                        cursor: pointer;
-                    "
-                    class="reveal-on-scroll delay-300"
-                    onclick="window.location.href='<?php echo esc_url( $destination_colombia ); ?>'"
-                >
-                    <div style="position: absolute; bottom: 0; left: 0; padding: 2rem; width: 100%;">
-                        <div style="color: #FF8C42; font-size: 12px; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 600;">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline;">
-                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                                <circle cx="12" cy="10" r="3"/>
-                            </svg>
-                            Sudamérica
-                        </div>
-                        <h3 class="text-card-title font-rowdies text-white font-semibold mb-3"><a href="<?php echo esc_url( $destination_colombia ); ?>" aria-label="Viaje a medida a Colombia" style="color: inherit; text-decoration: none;">Colombia</a></h3>
-                        <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 0.875rem;">
-                            Colores, música y gente que te hace sentir en casa desde el primer día. Perfecto si buscas un viaje lleno de vida y energía.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Marruecos -->
-                <div 
-                    style="
-                        width: 100%;
-                        height: 500px;
-                        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('<?php echo get_template_directory_uri(); ?>/images/marruecos/viajes-personalizados-ukiyo-camello-marruecos.webp');
-                        background-size: cover;
-                        background-position: center;
-                        border-radius: 1.5rem;
-                        overflow: hidden;
-                        position: relative;
-                        cursor: pointer;
-                    "
-                    class="reveal-on-scroll delay-400"
-                    onclick="window.location.href='<?php echo esc_url( $destination_marruecos ); ?>'"
-                >
-                    <div style="position: absolute; bottom: 0; left: 0; padding: 2rem; width: 100%;">
-                        <div style="color: #FF8C42; font-size: 12px; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 600;">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline;">
-                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                                <circle cx="12" cy="10" r="3"/>
-                            </svg>
-                            Norte de África
-                        </div>
-                        <h3 class="text-card-title font-rowdies text-white font-semibold mb-3"><a href="<?php echo esc_url( $destination_marruecos ); ?>" aria-label="Viaje a medida a Marruecos" style="color: inherit; text-decoration: none;">Marruecos</a></h3>
-                        <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 0.875rem;">
-                            Desierto, medinas y rutas alejadas del turismo de masas. Ideal si buscas un viaje sensorial que te desconecte.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN: VIAJES DE AUTOR (EXPLICACIÓN + PASOS) -->
-    <section class="py-12 bg-background">
-        <div class="container mx-auto px-6">
-            <div class="grid gap-12 lg:grid-cols-2 items-center">
-                <!-- Texto principal -->
-                <div>
-                    <h2 class="text-display font-rowdies text-text-primary mb-4 reveal-on-scroll">
-                        Viajes de autor<br><span class="text-secondary">creados por locales</span>
-                    </h2>
-                    <p class="text-lg text-text-secondary mb-6 reveal-on-scroll delay-100">
-                        Itinerarios únicos diseñados por personas que viven en el destino. 
-                        No son guías turísticos, son locales apasionados que comparten su mundo contigo.
-                    </p>
-                    <ul class="space-y-3 text-text-secondary reveal-on-scroll delay-200">
-                        <li class="flex items-start">
-                            <span class="w-3 h-3 rounded-full bg-secondary mr-3 mt-1"></span>
-                            <span><strong>Experiencia auténtica:</strong> conoce el destino desde dentro, con acceso a lugares y personas que solo un local conoce.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="w-3 h-3 rounded-full bg-secondary mr-3 mt-1"></span>
-                            <span><strong>Grupos reducidos:</strong> viajes en grupos pequeños para mantener la calidad de la experiencia y el contacto cercano.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="w-3 h-3 rounded-full bg-secondary mr-3 mt-1"></span>
-                            <span><strong>Todo organizado:</strong> solo tienes que presentarte. Nosotros nos ocupamos de alojamientos, traslados y actividades.</span>
-                        </li>
-                    </ul>
-                    <div class="mt-8 flex flex-wrap gap-4 reveal-on-scroll delay-300">
-                        <a href="<?php echo esc_url( $viajes_autor_url ); ?>" class="btn-primary text-text-secondary">
-                            Ver todos los viajes de autor
-                        </a>
-                        <a href="<?php echo esc_url( $plan_trip_url ); ?>" class="btn-primary text-text-secondary">
-                            Prefiero un viaje a medida
-                        </a>
-                    </div>
-                </div>
-                <!-- Pasos / proceso -->
-                <div class="space-y-6">
-                    <div class="card flex gap-4 items-start bg-background reveal-on-scroll delay-100">
-                        <div class="w-10 h-10 rounded-full btn-primary flex items-center justify-center text-secondary font-semibold">1</div>
-                        <div>
-                            <h3 class="font-semibold text-text-primary mb-1">Elige tu viaje de autor</h3>
-                            <p class="text-text-secondary text-sm">
-                                Explora los itinerarios diseñados por personas locales que conocen cada rincón de su destino. Cada viaje tiene su propia personalidad.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card flex gap-4 items-start bg-background reveal-on-scroll delay-200">
-                        <div class="w-10 h-10 rounded-full btn-primary flex items-center justify-center text-secondary font-semibold">2</div>
-                        <div>
-                            <h3 class="font-semibold text-text-primary mb-1">Reserva tu plaza</h3>
-                            <p class="text-text-secondary text-sm">
-                                Los viajes de autor tienen fechas fijas y grupos reducidos. Reservas tu plaza y nosotros nos encargamos de toda la organización.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card flex gap-4 items-start bg-background reveal-on-scroll delay-300">
-                        <div class="w-10 h-10 rounded-full btn-primary flex items-center justify-center text-secondary font-semibold">3</div>
-                        <div>
-                            <h3 class="font-semibold text-text-primary mb-1">Viaja con el autor local</h3>
-                            <p class="text-text-secondary text-sm">
-                                Viajas acompañado por quien diseñó la ruta. Conoce el destino a través de sus ojos, sus historias y sus contactos locales.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NUEVA SECCIÓN: VIAJES DE AUTOR -->
-    <section class="py-12 bg-background">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-display font-rowdies text-text-primary mb-4 reveal-on-scroll">
-                    Viajes de autor <span class="text-accent">creados por personas locales</span>
-                </h2>
-                <p class="text-lg text-text-secondary max-w-3xl mx-auto reveal-on-scroll delay-100">
-                    Si prefieres una ruta ya diseñada, pero con el mismo cuidado y autenticidad, descubre los viajes de autor:
-                    itinerarios creados por personas que conocen su destino como la palma de su mano.
-                </p>
-            </div>
-
-            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <?php
-                // Consulta para obtener los 3 últimos viajes de autor publicados
-                $args = array(
-                    'post_type' => 'viaje_autor',
-                    'posts_per_page' => 3,
-                    'post_status' => 'publish',
-                    'orderby' => 'date',
-                    'order' => 'DESC'
-                );
-                
-                $viajes_query = new WP_Query($args);
-                
-                if ($viajes_query->have_posts()) :
-                    while ($viajes_query->have_posts()) : $viajes_query->the_post(); // INICIO LOOP
-                        
-                        // Opcionales: campos personalizados (si los quieres usar luego)
-                        $autor_subtitulo = get_post_meta( get_the_ID(), 'autor_subtitulo', true );
-                        $hero_subtitle   = get_post_meta( get_the_ID(), 'hero_subtitle', true );
-                        $duracion        = get_post_meta( get_the_ID(), 'duracion_viaje', true );
-                        $grupos          = get_post_meta( get_the_ID(), 'grupos_viaje', true );
-                        $precio_final    = get_post_meta( get_the_ID(), 'precio_final', true );
-                        
-                        // Expert Data
-                        $expert_name = get_post_meta( get_the_ID(), 'expert_name', true );
-                        $expert_title = get_post_meta( get_the_ID(), 'expert_title', true );
-                        $expert_image = get_post_meta( get_the_ID(), 'expert_image', true );
-                ?>
-                <article class="ukiyo-card group overflow-hidden flex flex-col bg-white border-2 border-transparent hover:border-black transition-all duration-300 rounded-2xl shadow-sm">
-                    <a href="<?php the_permalink(); ?>" class="block relative h-48 overflow-hidden">
-                        <?php 
-                        $hero_img = get_post_meta( get_the_ID(), 'hero_image', true );
-                        if ( has_post_thumbnail() ) : ?>
-                            <?php the_post_thumbnail( 'large', [
-                                'class'   => 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-105',
-                                'loading' => 'lazy',
-                            ] ); ?>
-                        <?php elseif ( $hero_img ) : ?>
-                            <img 
-                                src="<?php echo esc_url( $hero_img ); ?>"
-                                alt="<?php the_title_attribute(); ?>"
-                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                loading="lazy"
-                            />
-                        <?php else : ?>
-                            <img 
-                                src="<?php echo get_template_directory_uri(); ?>/images/heroimages/viajes-autor-ukiyo-viajeros2.webp"
-                                alt="<?php the_title_attribute(); ?>"
-                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                loading="lazy"
-                            />
-                        <?php endif; ?>
-                        
-                        <!-- White gradient overlay -->
-                        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent opacity-20"></div>
-                    </a>
-
-                    <div class="p-6 flex-1 flex flex-col bg-white"> <!-- Ensure white bg for card body -->
-                        <div class="flex items-start gap-3 mb-6">
-                            <?php if ( $expert_image ) : ?>
-                                <div class="flex-shrink-0 relative rounded-full overflow-hidden border-2 border-white shadow-md" style="width: 48px; height: 48px; min-width: 48px;">
-                                    <img 
-                                        src="<?php echo esc_url( $expert_image ); ?>"
-                                        alt="<?php echo esc_attr( $expert_name ); ?>"
-                                        class="w-full h-full object-cover"
-                                        loading="lazy"
-                                    />
-                                </div>
-                            <?php endif; ?>
-
-                            <div class="pt-0.5">
-                                <h3 class="text-xl font-rowdies font-black text-gray-900 leading-tight mb-1">
-                                    <a href="<?php the_permalink(); ?>" class="text-gray-900 hover:text-primary transition-colors">
-                                        <?php the_title(); ?><?php echo $hero_subtitle ? ': ' . esc_html($hero_subtitle) : ''; ?>
-                                    </a>
-                                </h3>
-                                <p class="text-sm text-gray-500 font-satoshi font-medium">
-                                    <?php
-                                    if ( $expert_name ) {
-                                        echo '<span class="text-[#B08D55] font-bold">' . esc_html( $expert_name ) . '</span>';
-                                        if ( $expert_title ) echo ' · ' . esc_html( $expert_title );
-                                    } elseif ( $autor_subtitulo ) {
-                                        echo esc_html( $autor_subtitulo );
-                                    } else {
-                                        printf( 'Por %s', esc_html( get_the_author() ) );
-                                    }
-                                    ?>
-                                </p>
-                            </div>
-                        </div>
-
-                        <?php if ( has_excerpt() ) : ?>
-                            <p class="mt-2 mb-6 text-gray-600 text-sm leading-relaxed line-clamp-2 hidden">
-                                <?php echo get_the_excerpt(); ?>
-                            </p>
-                        <?php endif; ?>
-
-                        <!-- Meta pills + precio -->
-                        <div class="mt-auto flex items-end justify-between gap-4 pt-4 border-t border-gray-50">
-                            <!-- Pills a la izquierda -->
-                            <div class="flex flex-wrap items-center gap-2 text-sm mt-4">
-                                <?php if ( $duracion ) : ?>
-                                    <span class="px-4 py-1.5 rounded-full text-xs font-bold text-gray-700 border-2 border-[#F6CF66] bg-transparent">
-                                        <?php echo esc_html( $duracion ); ?>
-                                    </span>
-                                <?php endif; ?>
-
-                                <?php if ( $grupos ) : ?>
-                                    <span class="px-4 py-1.5 rounded-full text-xs font-bold text-gray-700 border-2 border-[#F6CF66] bg-transparent">
-                                        <?php echo esc_html( $grupos ); ?>
-                                    </span>
-                                <?php endif; ?>
-                            </div>
-
-                            <!-- Precio a la derecha -->
-                            <?php if ( $precio_final ) : ?>
-                                <div class="text-right mt-4">
-                                    <span class="text-xl font-rowdies font-bold text-gray-900 leading-none">
-                                        <?php echo esc_html( $precio_final ); ?>
-                                    </span>
-                                </div>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                </article>
-                <?php
-                    endwhile; // END LOOP
-                    wp_reset_postdata();
-                else :
-                ?>
-                <div class="col-span-full text-center py-12">
-                    <p class="text-text-secondary">No hay viajes de autor disponibles en este momento.</p>
-                </div>
-                <?php endif; ?>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="<?php echo esc_url( $viajes_autor_url ); ?>" class="btn-primary text-text-secondary inline-flex items-center gap-2">
-                    Ver todos los viajes
-                    <?php echo ukiyo_icon( 'arrow_forward', 'text-sm' ); ?>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- REVIEWS: SLIDER DINÁMICO CON AUTOPLAY -->
-    <section class="py-12 bg-background" id="reviews">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-display font-rowdies text-text-primary mb-4 reveal-on-scroll">
-                    Historias que <span class="text-accent">dejan huella</span>
-                </h2>
-                <p class="text-lg text-text-secondary max-w-2xl mx-auto reveal-on-scroll delay-100">
-                    Más allá de las fotos, lo que queda son las sensaciones. 
-                    Esto es lo que cuentan algunas de las personas que ya viajaron con UKIYO.
-                </p>
-            </div>
-
-            <?php
-            // Array de reseñas
-            $reviews = [
-                [
-                    "name" => "Maite y Ramón",
-                    "destination" => "Bali, Indonesia",
-                    "rating" => 5,
-                    "review" => "Experiencia y plan de viaje con Ukiyo 200% recomendable. Fuimos de viaje de novios a Bali y la verdad es que no pudo ser mejor, no solo por el destino en sí que ofrece de todo (cultura, playas, paisajes preciosos y todo tipo de actividades), también gracias a Sergio que nos guió el viaje y nos lo cuadró todo perfectamente, además da consejos y recomendaciones que no lo suelen hacer las agencias habitualmente. Lo recomendaría una y mil veces, profesional como la copa de un pino!",
-                    "date" => "Septiembre 2024",
-                    "title" => "Sentimos que alguien pensó el viaje con nosotros",
-                    "image" => "resena-maite-ramon-bali-indonesia-2.webp"
-                ],
-                [
-                    "name" => "María y Edu",
-                    "destination" => "Isla de Java, Indonesia",
-                    "rating" => 5,
-                    "review" => "Gracias a Ukiyo no solo visitamos Indonesia, si no que la vivimos de verdad. Desde el primer día sentimos mucha tranquilidad ya que todo estaba perfectamente organizado y pudimos despreocuparnos y pensar solo en disfrutar. Cuidaron cada detalle y nos crearon un itinerario adaptado a lo que buscábamos, un viaje auténtico, con alma, lejos de lo típico y de los que te dejan huella.",
-                    "date" => "Julio 2025",
-                    "title" => "Un viaje auténtico, con alma",
-                    "image" => "resena-maria-edu-java-indonesia.webp"
-                ],
-                [
-                    "name" => "Carmen y Jose Ángel",
-                    "destination" => "Komodo, Indonesia",
-                    "rating" => 5,
-                    "review" => "Viajar a Indonesia con Ukiyo ha sido una aventura excepcional, un viaje personalizado al 100% donde hemos podido disfrutar de experiencias auténticas y humanas, sin el agobio del turismo masivo. El esfuerzo y el trabajo detrás de la organización ha hecho que nuestro viaje sea muy toppp. Muchas gracias equipo 🙌🏼 ¡Estamos deseando repetir!",
-                    "date" => "Septiembre 2025",
-                    "title" => "Experiencias auténticas y humanas",
-                    "image" => "resena-carmen-jose-komodo-indonesia.webp"
-                ],
-                [
-                    "name" => "Carolina y Carmen",
-                    "destination" => "Cuba",
-                    "rating" => 5,
-                    "review" => "Lo mejor de Cuba es su gente. La calidez, las risas, las historias compartidas sin prisa… cada conversación parecía un pequeño tesoro. Pasar una tarde aprendiendo a bailar son con una familia local fue uno de esos momentos que te reconcilian con la vida. Regresé con el corazón lleno y la sensación de haber viajado no solo a un lugar, sino a una manera distinta de vivir.",
-                    "date" => "Julio 2024",
-                    "title" => "La sensación de estar en casa lejos de casa",
-                    "image" => "resena-carolina-carmen-cuba.webp"
-                ],
-            ];
-            ?>
-
-            <!-- Slider Container -->
-            <div class="relative max-w-6xl mx-auto reveal-on-scroll delay-200">
-                <!-- Slider Wrapper -->
-                <div class="overflow-hidden">
-                    <div id="reviewsSlider" class="flex transition-transform duration-500 ease-in-out">
-                        <?php foreach ($reviews as $index => $review) :
-                            $img_url = get_template_directory_uri() . '/images/reviews/' . $review['image'];
-                        ?>
-                        <div class="w-full flex-shrink-0 px-4">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <!-- Imagen grande a la izquierda -->
-                                <div class="relative aspect-[4/3] md:aspect-[3/4] overflow-hidden rounded-2xl">
-                                    <img src="<?php echo esc_url($img_url); ?>" 
-                                         alt="<?php echo esc_attr($review['name'] . ' - ' . $review['destination']); ?>"
-                                         class="w-full h-full object-cover"
-                                         loading="lazy"
-                                         onerror="this.src='https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg'; this.onerror=null;" />
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                                    <div class="absolute">
-                                        <p class="text-white font-rowdies text-lg font-medium"><?php echo esc_html($review['destination']); ?></p>
-                                    </div>
-                                </div>
-                                
-                                <!-- Contenido a la derecha -->
-                                <div class="flex flex-col justify-center">
-                                    <div class="flex items-center gap-1 text-accent mb-4">
-                                        <?php for ($i = 0; $i < 5; $i++) : ?>
-                                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.562-.954L10 0l2.948 5.956 6.562.954-4.755 4.635 1.123 6.545z"/>
-                                        </svg>
-                                        <?php endfor; ?>
-                                    </div>
-                                    
-                                    <h3 class="text-2xl md:text-3xl font-rowdies font-semibold text-text-primary mb-4">
-                                        "<?php echo esc_html($review['title']); ?>"
-                                    </h3>
-                                    
-                                    <p class="text-text-secondary text-base md:text-lg mb-6 leading-relaxed">
-                                        <?php echo esc_html($review['review']); ?>
-                                    </p>
-                                    
-                                    <div class="pt-6 border-t border-border">
-                                        <p class="font-semibold text-text-primary text-lg"><?php echo esc_html($review['name']); ?></p>
-                                        <p class="text-text-secondary"><?php echo esc_html($review['date']); ?></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-
-                <!-- Navigation Arrows -->
-                <button id="prevReview" class="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-white/90 hover:bg-white text-text-primary p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-40">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                    </svg>
-                </button>
-                <button id="nextReview" class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-white/90 hover:bg-white text-text-primary p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-40">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                </button>
-
-                <!-- Pagination Dots -->
-                <div class="flex justify-center gap-2 mt-8">
-                    <?php foreach ($reviews as $index => $review) : ?>
-                    <button class="review-dot h-3 rounded-full bg-accent transition-all duration-300 <?php echo $index === 0 ? 'w-8' : 'w-3 opacity-50 hover:opacity-100'; ?>" data-index="<?php echo $index; ?>"></button>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-
-            <div class="text-center mt-12">
-                <a href="<?php echo esc_url( $reviews_url ); ?>" class="btn-primary text-text-secondary">
-                    Leer más reseñas
-                </a>
-            </div>
-        </div>
-
-        <!-- Slider JavaScript -->
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const slider = document.getElementById('reviewsSlider');
-            const prevBtn = document.getElementById('prevReview');
-            const nextBtn = document.getElementById('nextReview');
-            const dots = document.querySelectorAll('.review-dot');
-            const totalSlides = <?php echo count($reviews); ?>;
-            let currentSlide = 0;
-            let autoplayInterval;
-
-            function goToSlide(index) {
-                if (index < 0) {
-                    currentSlide = totalSlides - 1;
-                } else if (index >= totalSlides) {
-                    currentSlide = 0;
-                } else {
-                    currentSlide = index;
-                }
-
-                slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-                // Update dots
-                dots.forEach((dot, i) => {
-                    if (i === currentSlide) {
-                        dot.classList.remove('w-3', 'opacity-50', 'hover:opacity-100');
-                        dot.classList.add('w-8');
-                    } else {
-                        dot.classList.remove('w-8');
-                        dot.classList.add('w-3', 'opacity-50', 'hover:opacity-100');
-                    }
-                });
-            }
-
-            function nextSlide() {
-                goToSlide(currentSlide + 1);
-            }
-
-            function prevSlide() {
-                goToSlide(currentSlide - 1);
-            }
-
-            function startAutoplay() {
-                autoplayInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
-            }
-
-            function stopAutoplay() {
-                clearInterval(autoplayInterval);
-            }
-
-            // Event listeners
-            nextBtn.addEventListener('click', () => {
-                nextSlide();
-                stopAutoplay();
-                startAutoplay(); // Restart autoplay after manual interaction
-            });
-
-            prevBtn.addEventListener('click', () => {
-                prevSlide();
-                stopAutoplay();
-                startAutoplay(); // Restart autoplay after manual interaction
-            });
-
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    goToSlide(index);
-                    stopAutoplay();
-                    startAutoplay(); // Restart autoplay after manual interaction
-                });
-            });
-
-            // Pause autoplay on hover
-            slider.parentElement.addEventListener('mouseenter', stopAutoplay);
-            slider.parentElement.addEventListener('mouseleave', startAutoplay);
-
-            // Swipe support (Touch and Mouse)
-            let startX = 0;
-            let endX = 0;
-            const sliderContainer = slider.parentElement; // Swipe on the container, not just the track
-
-            // Touch events
-            sliderContainer.addEventListener('touchstart', (e) => {
-                startX = e.changedTouches[0].screenX;
-            }, {passive: true});
-
-            sliderContainer.addEventListener('touchend', (e) => {
-                endX = e.changedTouches[0].screenX;
-                handleSwipe();
-            }, {passive: true});
-
-            // Mouse events
-            sliderContainer.addEventListener('mousedown', (e) => {
-                startX = e.screenX;
-            });
-
-            sliderContainer.addEventListener('mouseup', (e) => {
-                endX = e.screenX;
-                handleSwipe();
-            });
-
-            function handleSwipe() {
-                const swipeThreshold = 50; // minimum distance for swipe
-                if (endX < startX - swipeThreshold) {
-                    // Swipe left -> Next slide
-                    nextSlide();
-                    stopAutoplay();
-                    startAutoplay();
-                }
-                if (endX > startX + swipeThreshold) {
-                    // Swipe right -> Prev slide
-                    prevSlide();
-                    stopAutoplay();
-                    startAutoplay();
-                }
-            }
-
-            // Start autoplay
-            startAutoplay();
-
-            // Keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowLeft') {
-                    prevSlide();
-                    stopAutoplay();
-                    startAutoplay();
-                } else if (e.key === 'ArrowRight') {
-                    nextSlide();
-                    stopAutoplay();
-                    startAutoplay();
-                }
-            });
-        });
-        </script>
-    </section>
-
-    <!-- CTA FINAL -->
-    <section class="py-12 text-text-secondary" style="background-color: #f5f8f1ff;">
-        <div class="container mx-auto px-6 text-center">
-            <div class="max-w-3xl mx-auto">
-                <h2 class="text-display font-rowdies mb-6 reveal-on-scroll">
-                    Tu aventura empieza aquí
-                </h2>
-                <p class="text-xl mb-8 opacity-90 reveal-on-scroll delay-100">
-                    Todo gran viaje nace de una idea, una emoción o una simple curiosidad.
-                    Cuéntanos qué te mueve y diseñaremos una experiencia que te haga sentir el mundo de verdad.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center reveal-on-scroll delay-200">
-                    <a href="<?php echo esc_url( $plan_trip_url ); ?>" class="btn-primary text-text-secondary">
-                        Diseñar mi viaje a medida
-                    </a>
-                    <a href="https://wa.me/message/CS2LNI6YHSETO1" target="_blank" class="btn-primary text-text-secondary flex items-center justify-center gap-2">
-                        <img width="64" height="64" src="https://img.icons8.com/cotton/64/whatsapp--v4.png" alt="Contactar con Viajes Ukiyo por WhatsApp" class="w-6 h-6"/>
-                        Escríbenos por WhatsApp
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SCRIPTS & STYLES FOR SCROLL ANIMATIONS -->
-    <style>
-        /* Base state for reveal elements */
-        .reveal-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-            will-change: opacity, transform;
-        }
-
-        /* Visible state */
-        .reveal-on-scroll.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Staggered delays for children if needed */
-        .delay-100 { transition-delay: 100ms; }
-        .delay-200 { transition-delay: 200ms; }
-        .delay-300 { transition-delay: 300ms; }
-        .delay-400 { transition-delay: 400ms; }
-        .delay-500 { transition-delay: 500ms; }
-    </style>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Intersection Observer for Reveal on Scroll
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15 // Trigger when 15% of the element is visible
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target); // Only animate once
-                }
-            });
-        }, observerOptions);
-
-        const revealElements = document.querySelectorAll('.reveal-on-scroll');
-        revealElements.forEach(el => observer.observe(el));
-
-        // Parallax Effect for Hero Image (Subtle movement within the sticky container)
-        const heroImage = document.querySelector('.sticky img');
-        if (heroImage) {
-            window.addEventListener('scroll', () => {
-                const scrolled = window.scrollY;
-                // Move image slightly slower than scroll to create depth
-                // Since the container is sticky, we translate the image slightly down
-                // to make it look like it's moving deeper
-                heroImage.style.transform = `translateY(${scrolled * 0.1}px) scale(1.05)`;
-            });
-        }
-    });
-    </script>
 
 </main>
 
-<?php get_footer(); ?>
+<script>
+  // ---------- Reveal on scroll ----------
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){e.target.classList.add('is-visible'); io.unobserve(e.target);}
+    });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // ---------- HERO slider ----------
+  (function(){
+    const slides = document.querySelectorAll('.hero__slide');
+    const dots   = document.querySelectorAll('.hero__dot');
+    const prev   = document.getElementById('heroPrev');
+    const next   = document.getElementById('heroNext');
+    let i = 0; let timer;
+    function go(n){
+      i = (n + slides.length) % slides.length;
+      slides.forEach((s,k)=>s.classList.toggle('is-active', k===i));
+      dots.forEach((d,k)=>d.classList.toggle('is-active', k===i));
+    }
+    function start(){ timer = setInterval(()=>go(i+1), 6500); }
+    function stop(){ clearInterval(timer); }
+    prev.addEventListener('click', ()=>{go(i-1); stop(); start();});
+    next.addEventListener('click', ()=>{go(i+1); stop(); start();});
+    dots.forEach((d,k)=>d.addEventListener('click', ()=>{go(k); stop(); start();}));
+    document.getElementById('hero').addEventListener('mouseenter', stop);
+    document.getElementById('hero').addEventListener('mouseleave', start);
+    // touch
+    let sx=0;
+    document.getElementById('hero').addEventListener('touchstart', e=>sx=e.changedTouches[0].screenX,{passive:true});
+    document.getElementById('hero').addEventListener('touchend', e=>{
+      const dx = e.changedTouches[0].screenX - sx;
+      if(Math.abs(dx)>50){ go(dx<0 ? i+1 : i-1); stop(); start(); }
+    });
+    start();
+  })();
+
+  // ---------- DESTINOS carousel ----------
+  (function(){
+    const track = document.getElementById('destTrack');
+    const prev  = document.getElementById('destPrev');
+    const next  = document.getElementById('destNext');
+    const dotsW = document.getElementById('destDots');
+    const cards = Array.from(track.children);
+    const VISIBLE = () => window.innerWidth <= 620 ? 1 : window.innerWidth <= 980 ? 2 : 4;
+    let offset = 0;
+    let visible = VISIBLE();
+    let maxOffset = Math.max(0, cards.length - visible);
+
+    function buildDots(){
+      dotsW.innerHTML='';
+      for(let k=0;k<=maxOffset;k++){
+        const d = document.createElement('span');
+        if(k===offset) d.classList.add('is-on');
+        d.addEventListener('click', ()=>{offset=k; update();});
+        dotsW.appendChild(d);
+      }
+    }
+    function update(){
+      const cardW = cards[0].getBoundingClientRect().width;
+      const gap = parseFloat(getComputedStyle(track).columnGap || '20');
+      track.style.transform = `translateX(-${offset * (cardW + gap)}px)`;
+      prev.disabled = offset === 0;
+      next.disabled = offset >= maxOffset;
+      dotsW.querySelectorAll('span').forEach((d,k)=>d.classList.toggle('is-on', k===offset));
+    }
+    function refresh(){
+      visible = VISIBLE();
+      maxOffset = Math.max(0, cards.length - visible);
+      offset = Math.min(offset, maxOffset);
+      buildDots();
+      update();
+    }
+    prev.addEventListener('click', ()=>{offset = Math.max(0, offset-1); update();});
+    next.addEventListener('click', ()=>{offset = Math.min(maxOffset, offset+1); update();});
+    window.addEventListener('resize', refresh);
+    requestAnimationFrame(refresh);
+  })();
+
+  // ---------- RESEÑAS slider ----------
+  (function(){
+    const track = document.getElementById('reviewsTrack');
+    const prev  = document.getElementById('reviewsPrev');
+    const next  = document.getElementById('reviewsNext');
+    const dotsW = document.getElementById('reviewsDots');
+    const total = track.children.length;
+    let i = 0; let timer;
+
+    for(let k=0;k<total;k++){
+      const d = document.createElement('span');
+      if(k===0) d.classList.add('is-on');
+      d.addEventListener('click', ()=>{i=k; update(); restart();});
+      dotsW.appendChild(d);
+    }
+    function update(){
+      track.style.transform = `translateX(-${i*100}%)`;
+      dotsW.querySelectorAll('span').forEach((d,k)=>d.classList.toggle('is-on', k===i));
+    }
+    function go(n){ i = (n+total)%total; update(); }
+    function restart(){ clearInterval(timer); timer = setInterval(()=>go(i+1), 7000); }
+    prev.addEventListener('click', ()=>{go(i-1); restart();});
+    next.addEventListener('click', ()=>{go(i+1); restart();});
+    timer = setInterval(()=>go(i+1), 7000);
+    track.parentElement.addEventListener('mouseenter', ()=>clearInterval(timer));
+    track.parentElement.addEventListener('mouseleave', ()=>{timer = setInterval(()=>go(i+1), 7000);});
+  })();
+</script>
+
+<?php
+get_footer();
