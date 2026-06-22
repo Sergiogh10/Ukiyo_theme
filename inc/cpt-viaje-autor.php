@@ -1,10 +1,19 @@
 <?php
 
 add_action('after_switch_theme', function () {
-    // Asegura que el CPT esté registrado antes de flushear:
-    do_action('init');
-    flush_rewrite_rules();
+    // No llamar a do_action('init') aquí: provoca recursión infinita con
+    // check_theme_switched() del core (init -> after_switch_theme -> init -> ...),
+    // que agota el tiempo de ejecución y deja el tema inutilizable tras activarlo.
+    // En su lugar, diferimos el flush al siguiente init, cuando el CPT ya está registrado.
+    set_transient('ukiyo_flush_rewrite_rules', 1, MINUTE_IN_SECONDS);
 });
+
+add_action('init', function () {
+    if (get_transient('ukiyo_flush_rewrite_rules')) {
+        delete_transient('ukiyo_flush_rewrite_rules');
+        flush_rewrite_rules();
+    }
+}, 999);
 
 add_action('init', function () {
     $labels = [
