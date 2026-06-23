@@ -71,7 +71,7 @@ get_header();
   @media (max-width:980px){.uk-home .dest__track{grid-auto-columns:calc((100% - 1.25rem) / 2)}
   }
   @media (max-width:620px){.uk-home .dest__track{grid-auto-columns:85%}.uk-home .dest__card{height:420px}
-  }.uk-home .autor{background:var(--paper)}.uk-home .autor__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}.uk-home .autor__card{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:transform .4s, box-shadow .4s, border-color .4s}.uk-home .autor__card:hover{transform:translateY(-5px);box-shadow:0 30px 60px -30px rgba(44,44,44,.25);border-color:var(--primary-300)}.uk-home .autor__media{position:relative;height:220px;overflow:hidden}.uk-home .autor__media img{width:100%;height:100%;object-fit:cover;transition:transform .8s}.uk-home .autor__card:hover .autor__media img{transform:scale(1.08)}.uk-home .autor__tag{position:absolute;top:1rem;left:1rem;background:rgba(254,252,248,.92);color:var(--primary-700);font-family:var(--font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;padding:.3rem .7rem;border-radius:999px;font-weight:600;backdrop-filter:blur(6px)}.uk-home .autor__body{padding:1.5rem 1.6rem 1.7rem;display:flex;flex-direction:column;flex:1}.uk-home .autor__author{display:flex;align-items:center;gap:.7rem;margin-bottom:1rem}.uk-home .autor__author img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.1);flex:0 0 42px}.uk-home .autor__author .name{font-size:.78rem;font-weight:700;color:var(--primary);letter-spacing:.04em}.uk-home .autor__author .role{display:block;font-size:.72rem;color:var(--ink-soft);font-weight:500;margin-top:1px}.uk-home .autor__title{font-size:1.3rem;font-weight:400;line-height:1.15;margin-bottom:.7rem;color:var(--ink)}.uk-home .autor__desc{color:var(--ink-soft);font-size:.92rem;line-height:1.55;margin:0 0 1.3rem;flex:1}.uk-home .autor__meta{display:flex;justify-content:space-between;align-items:center;padding-top:1.1rem;border-top:1px dashed var(--line)}.uk-home .autor__pills{display:flex;gap:.4rem;flex-wrap:wrap}.uk-home .autor__pills span{font-size:.7rem;font-weight:600;border:1.5px solid var(--accent-300);color:var(--ink);padding:.3rem .65rem;border-radius:999px;font-family:var(--font-mono);letter-spacing:.03em}.uk-home .autor__price{font-family:var(--font-display);font-size:1.3rem;color:var(--ink);line-height:1}.uk-home .autor__price small{font-family:var(--font-sans);font-size:.66rem;color:var(--ink-soft);font-weight:500;display:block;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.15rem}.uk-home .autor__more{text-align:center;margin-top:3rem}
+  }.uk-home .autor{background:var(--paper)}.uk-home .autor__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}.uk-home .autor__card{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:transform .4s, box-shadow .4s, border-color .4s;color:inherit;text-decoration:none}.uk-home .autor__card:hover{transform:translateY(-5px);box-shadow:0 30px 60px -30px rgba(44,44,44,.25);border-color:var(--primary-300)}.uk-home .autor__media{position:relative;height:220px;overflow:hidden}.uk-home .autor__media img{width:100%;height:100%;object-fit:cover;transition:transform .8s}.uk-home .autor__card:hover .autor__media img{transform:scale(1.08)}.uk-home .autor__tag{position:absolute;top:1rem;left:1rem;background:rgba(254,252,248,.92);color:var(--primary-700);font-family:var(--font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;padding:.3rem .7rem;border-radius:999px;font-weight:600;backdrop-filter:blur(6px)}.uk-home .autor__body{padding:1.5rem 1.6rem 1.7rem;display:flex;flex-direction:column;flex:1}.uk-home .autor__author{display:flex;align-items:center;gap:.7rem;margin-bottom:1rem}.uk-home .autor__author img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.1);flex:0 0 42px}.uk-home .autor__author .name{font-size:.78rem;font-weight:700;color:var(--primary);letter-spacing:.04em}.uk-home .autor__author .role{display:block;font-size:.72rem;color:var(--ink-soft);font-weight:500;margin-top:1px}.uk-home .autor__title{font-size:1.3rem;font-weight:400;line-height:1.15;margin-bottom:.7rem;color:var(--ink)}.uk-home .autor__desc{color:var(--ink-soft);font-size:.92rem;line-height:1.55;margin:0 0 1.3rem;flex:1}.uk-home .autor__meta{display:flex;justify-content:space-between;align-items:center;padding-top:1.1rem;border-top:1px dashed var(--line)}.uk-home .autor__pills{display:flex;gap:.4rem;flex-wrap:wrap}.uk-home .autor__pills span{font-size:.7rem;font-weight:600;border:1.5px solid var(--accent-300);color:var(--ink);padding:.3rem .65rem;border-radius:999px;font-family:var(--font-mono);letter-spacing:.03em}.uk-home .autor__price{font-family:var(--font-display);font-size:1.3rem;color:var(--ink);line-height:1}.uk-home .autor__price small{font-family:var(--font-sans);font-size:.66rem;color:var(--ink-soft);font-weight:500;display:block;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.15rem}.uk-home .autor__more{text-align:center;margin-top:3rem}
   @media (max-width:980px){.uk-home .autor__grid{grid-template-columns:1fr;max-width:36rem;margin:0 auto}}.uk-home .reviews{background:var(--bg)}.uk-home .reviews__slider{position:relative;background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 30px 80px -45px rgba(44,44,44,.2)}.uk-home .reviews__track{display:grid;grid-template-columns:repeat(4, 100%);transition:transform .65s cubic-bezier(.4,0,.2,1)}.uk-home .review{display:grid;grid-template-columns:1fr 1fr;min-height:480px}.uk-home .review__media{position:relative;overflow:hidden}.uk-home .review__media img{width:100%;height:100%;object-fit:cover}.uk-home .review__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,.3) 100%)}.uk-home .review__body{padding:3rem 3rem;display:flex;flex-direction:column;justify-content:center;background:#fff;position:relative}.uk-home .review__body::before{content:"\201C";position:absolute;top:1.5rem;right:2rem;font-family:var(--font-display);font-size:7rem;color:var(--primary-100);line-height:.5;font-weight:400}.uk-home .review__stars{color:var(--accent);display:flex;gap:.25rem;margin-bottom:1.2rem}.uk-home .review__title{font-size:1.6rem;font-weight:400;line-height:1.2;margin-bottom:1rem;color:var(--ink);max-width:24rem}.uk-home .review__text{font-size:1rem;line-height:1.65;color:var(--ink-soft);margin-bottom:2rem;max-width:28rem}.uk-home .review__footer{display:flex;align-items:center;justify-content:space-between;padding-top:1.2rem;border-top:1px solid var(--line);max-width:28rem}.uk-home .review__author strong{display:block;color:var(--ink);font-weight:600;font-size:1rem}.uk-home .review__author span{color:var(--ink-soft);font-size:.85rem}.uk-home .review__date{font-family:var(--font-mono);font-size:.75rem;color:var(--ink-soft);letter-spacing:.05em}
   @media (max-width:860px){.uk-home .review{grid-template-columns:1fr;min-height:auto}.uk-home .review__media{height:260px}.uk-home .review__body{padding:2rem 1.8rem}.uk-home .review__body::before{font-size:5rem;top:1rem;right:1.4rem}
   }.uk-home .reviews__nav{display:flex;justify-content:space-between;align-items:center;margin-top:1.6rem}.uk-home .reviews__dots{display:flex;gap:.4rem}.uk-home .reviews__dots span{width:8px;height:8px;border-radius:50%;background:var(--line);transition:all .3s;cursor:pointer}.uk-home .reviews__dots span.is-on{background:var(--primary);width:24px;border-radius:4px}.uk-home .reviews__arrows{display:flex;gap:.6rem}.uk-home .reviews__arrow{width:46px;height:46px;border-radius:50%;background:#fff;border:1px solid var(--line);color:var(--ink);display:grid;place-items:center;transition:all .25s}.uk-home .reviews__arrow:hover{background:var(--primary);color:#fff;border-color:var(--primary);transform:scale(1.06)}.uk-home .reviews__arrow svg{width:18px;height:18px}.uk-home .ctafinal{background:linear-gradient(160deg, var(--paper) 0%, #FDF7F3 100%);position:relative;overflow:hidden}.uk-home .ctafinal__box{max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:1;padding:1rem 0}.uk-home .ctafinal__stamp{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--font-mono);font-size:.78rem;color:var(--primary);letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.2rem}.uk-home .ctafinal__stamp .dot{width:6px;height:6px;border-radius:50%;background:var(--primary)}.uk-home .ctafinal h2{font-size:clamp(2.2rem, 4.5vw, 3.6rem);font-weight:300;letter-spacing:-0.02em;line-height:1.05;margin-bottom:1.2rem}.uk-home .ctafinal h2 em{font-style:italic;color:var(--primary)}.uk-home .ctafinal p{font-size:1.15rem;color:var(--ink-soft);margin-bottom:2.2rem;line-height:1.55;max-width:34rem;margin-left:auto;margin-right:auto}.uk-home .ctafinal__buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}.uk-home .ctafinal::before{content:"";position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle, rgba(212,165,116,.25), transparent 70%);z-index:0}.uk-home .ctafinal::after{content:"";position:absolute;bottom:-200px;left:-200px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle, rgba(156,175,136,.18), transparent 70%);z-index:0}.uk-home .wa-icon{width:22px;height:22px;display:inline-block;background:#25D366;border-radius:50%;position:relative}.uk-home .wa-icon::after{content:"";position:absolute;inset:5px;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><path d='M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15h-.01c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.264 8.264 0 0 1-1.26-4.39c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.183 8.183 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.24 8.24z'/></svg>") no-repeat center/contain}.uk-home footer.foot{background:var(--ink);color:#fff;padding:3.5rem 0 2rem}.uk-home .foot__row{display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}.uk-home .foot__row .legal{opacity:.6;font-size:.85rem}.uk-home .foot__row img{height:34px;width:auto;opacity:.92}.uk-home .foot__row .links{display:flex;gap:1.4rem;flex-wrap:wrap}.uk-home .foot__row .links a{font-size:.92rem;opacity:.85;transition:opacity .25s}.uk-home .foot__row .links a:hover{opacity:1}.uk-home .reveal{opacity:0;transform:translateY(28px);transition:opacity .85s ease, transform .85s ease;will-change:opacity,transform}.uk-home .reveal.is-visible{opacity:1;transform:translateY(0)}
@@ -369,72 +369,71 @@ get_header();
       </div>
     </div>
 
+    <?php
+    // Query: 3 viajes de autor publicados más recientes (sticky priorizados si los hay).
+    $home_autor_query = new WP_Query( [
+      'post_type'       => 'viaje_autor',
+      'post_status'     => 'publish',
+      'posts_per_page'  => 3,
+      'orderby'         => 'date',
+      'order'           => 'DESC',
+      'ignore_sticky_posts' => false,
+    ] );
+    ?>
     <div class="autor__grid">
-      <article class="autor__card reveal">
-        <div class="autor__media">
-          <span class="autor__tag">Marruecos</span>
-          <img src="<?php echo $tpl; ?>/assets/home/autor-marruecos.webp" alt="Camellos salvajes en Marruecos" />
-        </div>
-        <div class="autor__body">
-          <div class="autor__author">
-            <img src="<?php echo $tpl; ?>/assets/home/autor-david.webp" alt="Moha" />
-            <div>
-              <span class="name">Moha Ait Lahsen</span>
-              <span class="role">Berebere, guía del Atlas</span>
+      <?php if ( $home_autor_query->have_posts() ) : ?>
+        <?php while ( $home_autor_query->have_posts() ) : $home_autor_query->the_post();
+          $tid     = get_the_ID();
+          $img     = get_post_meta( $tid, 'hero_image', true ) ?: get_the_post_thumbnail_url( $tid, 'large' );
+          $tags_r  = get_post_meta( $tid, 'hero_tags', true );
+          $tags    = $tags_r ? array_values( array_filter( array_map( 'trim', explode( ',', $tags_r ) ) ) ) : [];
+          $subt    = get_post_meta( $tid, 'hero_subtitle', true );
+          $exp_n   = get_post_meta( $tid, 'expert_name', true );
+          $exp_t   = get_post_meta( $tid, 'expert_title', true );
+          $exp_img = get_post_meta( $tid, 'expert_image', true );
+          $dur     = get_post_meta( $tid, 'duracion_viaje', true );
+          $grp     = get_post_meta( $tid, 'grupos_viaje', true );
+          $price   = get_post_meta( $tid, 'precio_final', true ) ?: get_post_meta( $tid, 'precio_desde', true );
+          $primary_tag = $tags[0] ?? '';
+        ?>
+        <a class="autor__card reveal" href="<?php the_permalink(); ?>">
+          <div class="autor__media">
+            <?php if ( $primary_tag ) : ?>
+              <span class="autor__tag"><?php echo esc_html( $primary_tag ); ?></span>
+            <?php endif; ?>
+            <?php if ( $img ) : ?>
+              <img src="<?php echo esc_url( $img ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" loading="lazy" decoding="async" />
+            <?php endif; ?>
+          </div>
+          <div class="autor__body">
+            <?php if ( $exp_n || $exp_img ) : ?>
+              <div class="autor__author">
+                <?php if ( $exp_img ) : ?>
+                  <img src="<?php echo esc_url( $exp_img ); ?>" alt="<?php echo esc_attr( $exp_n ); ?>" loading="lazy" />
+                <?php endif; ?>
+                <div>
+                  <?php if ( $exp_n ) : ?><span class="name"><?php echo esc_html( $exp_n ); ?></span><?php endif; ?>
+                  <?php if ( $exp_t ) : ?><span class="role"><?php echo esc_html( $exp_t ); ?></span><?php endif; ?>
+                </div>
+              </div>
+            <?php endif; ?>
+            <h3 class="autor__title"><?php echo wp_kses( get_the_title(), [ 'em' => [], 'strong' => [] ] ); ?></h3>
+            <?php if ( $subt ) : ?>
+              <p class="autor__desc"><?php echo esc_html( $subt ); ?></p>
+            <?php endif; ?>
+            <div class="autor__meta">
+              <div class="autor__pills">
+                <?php if ( $dur ) : ?><span><?php echo esc_html( $dur ); ?></span><?php endif; ?>
+                <?php if ( $grp ) : ?><span><?php echo esc_html( $grp ); ?></span><?php endif; ?>
+              </div>
+              <?php if ( $price ) : ?>
+                <div class="autor__price"><small>desde</small><?php echo esc_html( $price ); ?></div>
+              <?php endif; ?>
             </div>
           </div>
-          <h3 class="autor__title">Marruecos profundo: del Atlas al Sáhara</h3>
-          <p class="autor__desc">Una ruta que se aleja del circuito clásico. Noches en casa de familias bereberes, rutas a pie y silencio absoluto en las dunas.</p>
-          <div class="autor__meta">
-            <div class="autor__pills"><span>12 días</span><span>4–6 pers.</span></div>
-            <div class="autor__price"><small>desde</small>2 490 €</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="autor__card reveal">
-        <div class="autor__media">
-          <span class="autor__tag">Costa Rica</span>
-          <img src="<?php echo $tpl; ?>/assets/home/autor-costarica.png" alt="Buitre rey en Costa Rica" />
-        </div>
-        <div class="autor__body">
-          <div class="autor__author">
-            <img src="<?php echo $tpl; ?>/assets/home/autor-alexis.webp" alt="Alexis" />
-            <div>
-              <span class="name">Alexis Mora</span>
-              <span class="role">Conservacionista en Tortuguero</span>
-            </div>
-          </div>
-          <h3 class="autor__title">Wild Costa Rica: fotografía de naturaleza</h3>
-          <p class="autor__desc">Corcovado, Sarapiquí y Talamanca con un biólogo de campo. Esperas en hides, salidas nocturnas y acceso a lugares fuera de ruta.</p>
-          <div class="autor__meta">
-            <div class="autor__pills"><span>14 días</span><span>6–8 pers.</span></div>
-            <div class="autor__price"><small>desde</small>3 290 €</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="autor__card reveal">
-        <div class="autor__media">
-          <span class="autor__tag">Indonesia</span>
-          <img src="<?php echo $tpl; ?>/assets/home/autor-indonesia.webp" alt="Orangután en Indonesia" />
-        </div>
-        <div class="autor__body">
-          <div class="autor__author">
-            <img src="<?php echo $tpl; ?>/assets/home/autor-david.webp" alt="David" />
-            <div>
-              <span class="name">David Soler</span>
-              <span class="role">Instructor de buceo en Tulamben</span>
-            </div>
-          </div>
-          <h3 class="autor__title">Indonesia bajo el agua: Bali y Komodo</h3>
-          <p class="autor__desc">Buceo con mantas, volcanes activos y ceremonias balinesas. Una mirada al país desde quien lo conoce por sus arrecifes.</p>
-          <div class="autor__meta">
-            <div class="autor__pills"><span>16 días</span><span>2–6 pers.</span></div>
-            <div class="autor__price"><small>desde</small>3 590 €</div>
-          </div>
-        </div>
-      </article>
+        </a>
+        <?php endwhile; wp_reset_postdata(); ?>
+      <?php endif; ?>
     </div>
 
     <div class="autor__more">
