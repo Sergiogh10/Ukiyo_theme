@@ -5462,3 +5462,440 @@ body.portal-modal-open {
     min-height: 440px;
   }
 }
+
+/* ==========================================================================
+   Refinamientos del diseño "Portal del Aventurero" (handoff Claude Design)
+   ========================================================================== */
+
+/* Chips del hero con icono */
+.portal-chip {
+  gap: 8px;
+}
+
+.portal-chip__icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+/* Chip de estado con punto pulsante */
+.ukiyo-portal-trip--editorial .portal-chip--status {
+  gap: 9px;
+  background: rgba(156, 175, 136, 0.55);
+  border-color: rgba(255, 255, 255, 0.45);
+  font-weight: 700;
+}
+
+.ukiyo-portal-trip--editorial .portal-chip--status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.25);
+  animation: portal-chip-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes portal-chip-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.28); }
+  50% { box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ukiyo-portal-trip--editorial .portal-chip--status::before {
+    animation: none;
+  }
+}
+
+/* Flecha del botón primario */
+.portal-btn__arrow {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.portal-btn--primary:hover .portal-btn__arrow {
+  transform: translateX(3px);
+}
+
+/* Conector de vuelos con avión + "Directo" */
+.portal-flight-card__line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--portal-terracotta, #8b4513);
+}
+
+.portal-flight-card__line::before,
+.portal-flight-card__line::after {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139, 69, 19, 0.45), transparent);
+}
+
+.portal-flight-card__plane {
+  width: 18px;
+  height: 18px;
+}
+
+.portal-flight-card__nonstop {
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  color: var(--portal-muted, #a0998d);
+}
+
+/* ==========================================================================
+   Pantalla de acceso del portal — diseño "Portal Acceso" (handoff Claude Design)
+   Layout de dos paneles a pantalla completa. Clases prefijadas con .pa- y
+   acotadas a .ukiyo-portal-auth para no colisionar con el resto del tema.
+   ========================================================================== */
+.ukiyo-portal-auth-page { margin: 0; }
+
+.ukiyo-portal-auth {
+  --pa-primary: #8b4513;
+  --pa-primary-300: #e8b48d;
+  --pa-primary-700: #6b3410;
+  --pa-accent: #d4a574;
+  --pa-accent-300: #ebd2ae;
+  --pa-secondary-700: #5e6952;
+  --pa-cream: #fbf7f2;
+  --pa-ink: #2c2c2c;
+  --pa-ink-soft: #6b6b6b;
+  --pa-ink-faint: #a0998d;
+  --pa-line: #e8e0d2;
+  --pa-font-sans: 'Satoshi', 'Inter', system-ui, sans-serif;
+  --pa-font-display: 'Rowdies', sans-serif;
+  --pa-font-mono: 'DM Mono', ui-monospace, monospace;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  min-height: 100vh;
+  font-family: var(--pa-font-sans);
+  color: var(--pa-ink);
+  background: linear-gradient(180deg, #fbf7f2 0%, #f7f1e9 100%);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.ukiyo-portal-auth *,
+.ukiyo-portal-auth *::before,
+.ukiyo-portal-auth *::after { box-sizing: border-box; }
+
+.ukiyo-portal-auth h1,
+.ukiyo-portal-auth h2 {
+  font-family: var(--pa-font-display);
+  font-weight: 400;
+  letter-spacing: -0.012em;
+  line-height: 1.08;
+  margin: 0;
+}
+
+.ukiyo-portal-auth p { margin: 0; }
+.ukiyo-portal-auth a { color: inherit; text-decoration: none; }
+.ukiyo-portal-auth img { max-width: 100%; display: block; }
+
+/* ---------- Panel visual ---------- */
+.pa-visual {
+  position: relative;
+  overflow: hidden;
+  background: #1f1410;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 2.6rem 2.8rem 2.8rem;
+}
+.pa-visual__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.06);
+}
+.pa-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(20, 12, 8, 0.3) 0%, rgba(20, 12, 8, 0.16) 40%, rgba(20, 12, 8, 0.82) 100%),
+    linear-gradient(90deg, rgba(20, 12, 8, 0.45) 0%, rgba(20, 12, 8, 0) 55%);
+}
+.pa-visual__top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.pa-visual__logo img { height: 30px; width: auto; }
+.pa-visual__site {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(8px);
+  transition: all 0.25s;
+}
+.pa-visual__site:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+.pa-visual__site svg { width: 14px; height: 14px; }
+
+.pa-visual__body {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 30ch;
+}
+.pa-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--pa-font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--pa-accent-300);
+}
+.pa-eyebrow::before { content: ""; width: 22px; height: 1px; background: currentColor; }
+.pa-visual__body h2 {
+  font-size: clamp(2.2rem, 3.4vw, 3.2rem);
+  font-weight: 300;
+  letter-spacing: -0.022em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
+}
+.pa-visual__body h2 em { font-style: italic; color: var(--pa-accent-300); font-weight: 400; }
+.pa-visual__body p {
+  font-size: 1rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Panel de formulario ---------- */
+.pa-form-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 2rem;
+  position: relative;
+  background:
+    radial-gradient(circle at 90% 0%, rgba(212, 165, 116, 0.12), transparent 34%),
+    radial-gradient(circle at 0% 100%, rgba(156, 175, 136, 0.1), transparent 32%);
+}
+.pa-form-card { width: min(420px, 100%); display: flex; flex-direction: column; gap: 1.6rem; }
+
+.pa-form-card__head { display: flex; flex-direction: column; gap: 0.7rem; }
+.pa-kicker {
+  font-family: var(--pa-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pa-primary);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.pa-kicker::before { content: ""; width: 18px; height: 1px; background: currentColor; }
+.pa-form-card__head h1 { font-size: 2.3rem; font-weight: 300; letter-spacing: -0.02em; }
+.pa-form-card__head h1 em { font-style: italic; color: var(--pa-primary); font-weight: 300; }
+.pa-form-card__head p { color: var(--pa-ink-soft); font-size: 0.94rem; line-height: 1.55; }
+
+.pa-form { display: flex; flex-direction: column; gap: 1.1rem; }
+.pa-field { display: flex; flex-direction: column; gap: 0.5rem; }
+.pa-field label {
+  font-family: var(--pa-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pa-ink-faint);
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pa-field label a {
+  color: var(--pa-primary);
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-family: var(--pa-font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.pa-field label a:hover { text-decoration: underline; }
+.pa-input-wrap { position: relative; display: flex; align-items: center; }
+.pa-input-wrap > .pa-ic {
+  position: absolute;
+  left: 1rem;
+  color: var(--pa-ink-faint);
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+.pa-input-wrap > .pa-ic svg { width: 17px; height: 17px; }
+.pa-input-wrap input {
+  width: 100%;
+  padding: 0.95rem 1rem 0.95rem 2.8rem;
+  border: 1.5px solid var(--pa-line);
+  border-radius: 14px;
+  background: #fff;
+  font-family: var(--pa-font-sans);
+  font-size: 0.96rem;
+  color: var(--pa-ink);
+  transition: border-color 0.25s, box-shadow 0.25s;
+  outline: none;
+}
+.pa-input-wrap input::placeholder { color: var(--pa-ink-faint); }
+.pa-input-wrap input:focus { border-color: var(--pa-primary-300); box-shadow: 0 0 0 4px rgba(212, 165, 116, 0.18); }
+.pa-input-wrap input:disabled { background: var(--pa-cream); color: var(--pa-ink-soft); }
+.pa-input-wrap .pa-toggle {
+  position: absolute;
+  right: 0.7rem;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  color: var(--pa-ink-faint);
+  transition: all 0.2s;
+}
+.pa-input-wrap .pa-toggle:hover { color: var(--pa-primary); background: var(--pa-cream); }
+.pa-input-wrap .pa-toggle svg { width: 18px; height: 18px; }
+
+.pa-row-between { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.pa-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  font-size: 0.86rem;
+  color: var(--pa-ink-soft);
+  user-select: none;
+}
+.pa-check input { position: absolute; opacity: 0; width: 0; height: 0; }
+.pa-check .pa-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 1.5px solid var(--pa-line);
+  background: #fff;
+  display: grid;
+  place-items: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.pa-check .pa-box svg { width: 12px; height: 12px; color: #fff; opacity: 0; transform: scale(0.5); transition: all 0.2s; }
+.pa-check input:checked + .pa-box { background: var(--pa-primary); border-color: var(--pa-primary); }
+.pa-check input:checked + .pa-box svg { opacity: 1; transform: scale(1); }
+.pa-check input:focus-visible + .pa-box { box-shadow: 0 0 0 4px rgba(212, 165, 116, 0.18); }
+
+.pa-btn-submit {
+  margin-top: 0.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem 1.25rem;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  background: var(--pa-primary);
+  color: #fff;
+  font-family: var(--pa-font-sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 12px 26px -12px rgba(139, 69, 19, 0.55);
+  transition: transform 0.25s, background 0.25s, box-shadow 0.25s;
+}
+.pa-btn-submit:hover { background: var(--pa-primary-700); transform: translateY(-1px); }
+.pa-btn-submit svg { width: 16px; height: 16px; transition: transform 0.25s; }
+.pa-btn-submit:hover svg { transform: translateX(3px); }
+
+.pa-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--pa-ink-faint);
+  font-family: var(--pa-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.pa-divider::before, .pa-divider::after { content: ""; flex: 1; height: 1px; background: var(--pa-line); }
+
+.pa-help {
+  padding: 1rem 1.1rem;
+  background: var(--pa-cream);
+  border: 1px solid var(--pa-line);
+  border-radius: 14px;
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+}
+.pa-help__ic {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid var(--pa-line);
+  display: grid;
+  place-items: center;
+  color: var(--pa-primary);
+  flex-shrink: 0;
+}
+.pa-help__ic svg { width: 18px; height: 18px; }
+.pa-help__txt { display: grid; gap: 0.15rem; line-height: 1.45; }
+.pa-help__txt strong { font-size: 0.88rem; color: var(--pa-ink); font-weight: 600; }
+.pa-help__txt p { font-size: 0.82rem; color: var(--pa-ink-soft); }
+.pa-help__txt a { color: var(--pa-primary); font-weight: 600; }
+.pa-help__txt a:hover { text-decoration: underline; }
+
+.pa-form-foot {
+  margin-top: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--pa-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--pa-ink-faint);
+}
+.pa-form-foot svg { width: 13px; height: 13px; color: var(--pa-secondary-700); }
+
+.pa-notice {
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  background: rgba(156, 175, 136, 0.16);
+  border: 1px solid rgba(156, 175, 136, 0.4);
+  color: var(--pa-secondary-700);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+.pa-notice--error {
+  background: rgba(197, 88, 44, 0.1);
+  border-color: rgba(197, 88, 44, 0.32);
+  color: #9a3f1d;
+}
+
+@media (max-width: 880px) {
+  .ukiyo-portal-auth { grid-template-columns: 1fr; }
+  .pa-visual { min-height: 300px; padding: 1.8rem; }
+  .pa-visual__body { max-width: none; }
+}
+@media (max-width: 480px) {
+  .pa-visual { min-height: 230px; }
+  .pa-visual__body h2 { font-size: 2rem; }
+  .pa-form-side { padding: 2rem 1.3rem; }
+}
