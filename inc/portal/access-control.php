@@ -184,6 +184,11 @@ function ukiyo_portal_handle_access() {
         return;
     }
 
+    // Previsualización del rediseño para administradores (?skin=new): omite el gate del portal.
+    if ( current_user_can( 'manage_options' ) && isset( $_GET['skin'] ) && 'new' === $_GET['skin'] ) {
+        return;
+    }
+
     nocache_headers();
     header( 'X-Robots-Tag: noindex, nofollow', true );
 
