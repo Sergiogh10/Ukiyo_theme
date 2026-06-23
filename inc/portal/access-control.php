@@ -378,6 +378,21 @@ function ukiyo_portal_enqueue_assets() {
         ukiyo_asset_ver( '/assets/css/portal-aventurero.css' )
     );
 
+    // Pantalla de acceso (login/activación): diseño Portal Acceso.html, encolado
+    // después de portal-aventurero.css para que sus estilos manden.
+    $pa_is_auth_screen = ukiyo_portal_is_activation_request()
+        || ( ukiyo_portal_is_dashboard_request() && ! ukiyo_portal_is_authenticated() );
+    if ( $pa_is_auth_screen ) {
+        wp_enqueue_style(
+            'ukiyo-portal-acceso',
+            get_template_directory_uri() . '/assets/css/portal-acceso.css',
+            [ 'ukiyo-portal-aventurero' ],
+            ukiyo_asset_ver( '/assets/css/portal-acceso.css' )
+        );
+        wp_enqueue_style( 'ukiyo-portal-acceso-rowdies', 'https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&family=DM+Mono:wght@400;500&display=swap', [], null );
+        wp_enqueue_style( 'ukiyo-portal-acceso-satoshi', 'https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap', [], null );
+    }
+
     wp_enqueue_script(
         'ukiyo-portal-frontend',
         get_template_directory_uri() . '/assets/js/portal-frontend.js',
